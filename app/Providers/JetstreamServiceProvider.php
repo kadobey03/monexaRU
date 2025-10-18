@@ -35,6 +35,9 @@ class JetstreamServiceProvider extends ServiceProvider
         $this->configurePermissions();
         Jetstream::deleteUsersUsing(DeleteUser::class);
 
+        // Load Jetstream views
+        $this->loadViewsFrom(resource_path('views/vendor/jetstream'), 'jetstream');
+
         Fortify::loginView(function () {
             return view('auth.login', [
                 'title' => 'Sign In to Continue',
