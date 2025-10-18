@@ -11,7 +11,7 @@ services:
       - ./:/var/www/html
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     depends_on:
-      - mysql
+      - mysql-vicsafe
 
   # Nginx Service
   nginx:
@@ -25,14 +25,14 @@ services:
       - app
 
   # MySQL Service
-  mysql:
+  mysql-vicsafe:
     image: mysql:8.0
     container_name: monexa-ru-mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: monexa
+      MYSQL_DATABASE: vicsafe
       MYSQL_ROOT_PASSWORD: si6echoYuc98asti
-      MYSQL_USER: monexa_user
+      MYSQL_USER: user
       MYSQL_PASSWORD: sPl2ltlt1emaV5t9
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -51,18 +51,18 @@ services:
     container_name: monexa-ru-phpmyadmin
     restart: unless-stopped
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: mysql-vicsafe
       PMA_PORT: 3306
       PMA_ARBITRARY: 1
       APACHE_HTTP_PORT_NUMBER: 80
       APACHE_HTTPS_PORT_NUMBER: 443
-      PMA_CONTROLUSER: monexa_user
+      PMA_CONTROLUSER: user
       PMA_CONTROLPASS: sPl2ltlt1emaV5t9
       UPLOAD_LIMIT: 100M
       MEMORY_LIMIT: 512M
       MAX_EXECUTION_TIME: 300
     depends_on:
-      - mysql
+      - mysql-vicsafe
 
 # Docker Networks
 networks:
