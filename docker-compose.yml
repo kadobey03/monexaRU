@@ -37,7 +37,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data_vicsafe:/var/lib/mysql
 
   # Redis Service (optional but useful for Laravel)
   redis:
@@ -72,5 +72,5 @@ networks:
 
 # Volumes
 volumes:
-  mysql_data:
+  mysql_data_vicsafe:
     driver: local
