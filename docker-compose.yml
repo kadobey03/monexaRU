@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: monexaRU-app
+    container_name: monexa-ru-app
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
@@ -16,7 +16,7 @@ services:
   # Nginx Service
   nginx:
     image: nginx:alpine
-    container_name: monexaRU-nginx
+    container_name: monexa-ru-nginx
     restart: unless-stopped
     volumes:
       - ./:/var/www/html
@@ -27,12 +27,12 @@ services:
   # MySQL Service
   mysql:
     image: mysql:8.0
-    container_name: monexaRU-mysql
+    container_name: monexa-ru-mysql
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: monexaRU
+      MYSQL_DATABASE: monexa
       MYSQL_ROOT_PASSWORD: si6echoYuc98asti
-      MYSQL_USER: monexaRU_user
+      MYSQL_USER: monexa_user
       MYSQL_PASSWORD: sPl2ltlt1emaV5t9
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
@@ -42,13 +42,13 @@ services:
   # Redis Service (optional but useful for Laravel)
   redis:
     image: redis:alpine
-    container_name: monexaRU-redis
+    container_name: monexa-ru-redis
     restart: unless-stopped
 
   # PhpMyAdmin Service (optional for database management)
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: monexaRU-phpmyadmin
+    container_name: monexa-ru-phpmyadmin
     restart: unless-stopped
     environment:
       PMA_HOST: mysql
@@ -56,7 +56,7 @@ services:
       PMA_ARBITRARY: 1
       APACHE_HTTP_PORT_NUMBER: 80
       APACHE_HTTPS_PORT_NUMBER: 443
-      PMA_CONTROLUSER: monexaRU_user
+      PMA_CONTROLUSER: monexa_user
       PMA_CONTROLPASS: sPl2ltlt1emaV5t9
       UPLOAD_LIMIT: 100M
       MEMORY_LIMIT: 512M
