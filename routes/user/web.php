@@ -152,9 +152,9 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
 
         // Update emal preference
         Route::put('update-email-preference', [ProfileController::class, 'updateemail'])->name('updateemail');
-        Route::get('loan', [ViewsController::class, 'loan'])->name('loan');
-		Route::get('viewloan', [LoanController::class, 'veiwloans'])->name('veiwloan');
-        Route::post('loan', [LoanController::class, 'loan'])->name('loan');
+        Route::get('loan', [ViewsController::class, 'loan'])->name('loan.view');
+  Route::get('viewloan', [LoanController::class, 'veiwloans'])->name('veiwloan');
+        Route::post('loan', [LoanController::class, 'loan'])->name('loan.store');
 
         // Deposits Rotoute
         Route::get('get-method/{id}', [DepositController::class, 'getmethod'])->name('getmethod');

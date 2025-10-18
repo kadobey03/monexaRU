@@ -31,7 +31,7 @@
 
                 <!-- Quick Action -->
                 <div class="flex gap-3">
-                    <a href="{{ route('loan') }}"
+                    <a href="{{ route('loan.view') }}"
                        class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-105">
                         <i data-lucide="plus-circle" class="w-5 h-5"></i>
                         New Application
@@ -322,7 +322,7 @@
             <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
                 You haven't submitted any loan applications yet. Start by applying for a loan that fits your needs.
             </p>
-            <a href="{{ route('loan') }}"
+            <a href="{{ route('loan.view') }}"
                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors">
                 <i data-lucide="plus-circle" class="w-5 h-5"></i>
                 Apply for Loan

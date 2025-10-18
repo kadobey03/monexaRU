@@ -74,7 +74,7 @@
             </div>
 
             <!-- Form Content -->
-            <form action="{{ route('loan') }}" method="post" class="p-6 space-y-6" @submit="handleSubmit">
+            <form action="{{ route('loan.store') }}" method="post" class="p-6 space-y-6" @submit="handleSubmit">
                 @csrf
 
                 <!-- Loan Amount Section -->
