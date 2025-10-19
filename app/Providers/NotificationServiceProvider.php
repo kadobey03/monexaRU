@@ -9,7 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
-use Jenssegers\Agent\Agent;
+use hisorange\BrowserDetect\Parser as Agent;
 use Illuminate\Support\Facades\Request;
 
 class NotificationServiceProvider extends ServiceProvider
@@ -40,8 +40,7 @@ class NotificationServiceProvider extends ServiceProvider
             if (get_class($event->user) === 'App\Models\User') {
                 try {
                     $notificationService = app(NotificationService::class);
-                    $agent = new Agent();
-                    $device = $agent->device() . ' - ' . $agent->browser();
+                    $device = (Agent::deviceModel() ?: 'Unknown') . ' - ' . Agent::browserName();
                     $ipAddress = Request::ip();
 
                     $notificationService->notifyLogin($event->user, $ipAddress, $device);
