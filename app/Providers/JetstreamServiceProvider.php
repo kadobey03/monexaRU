@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Fortify\Fortify;
 use Illuminate\Support\Facades\DB;
 use App\Models\Settings;
-use Jenssegers\Agent\Agent;
+use hisorange\BrowserDetect\Parser as Agent;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -49,8 +49,6 @@ class JetstreamServiceProvider extends ServiceProvider
         Fortify::authenticateUsing(function (Request $request) {
              $user = User::where('email', $request->email) ->orWhere('username', $request->email)->first();
             // $user = User::where('email', $request->email)->first();
-            $agent = new Agent();
-
             if (
                 $user &&
                 Hash::check($request->password, $user->password)
@@ -59,9 +57,9 @@ class JetstreamServiceProvider extends ServiceProvider
                 DB::table('activities')->insert([
                     'user' => $user->id,
                     'ip_address' => $request->ip(),
-                    'device' => $agent->device(),
-                    'browser' => $agent->browser(),
-                    'os' => $agent->platform(),
+                    'device' => Agent::deviceModel() ?: 'Unknown',
+                    'browser' => Agent::browserName(),
+                    'os' => Agent::platformName(),
                 ]);
                 return $user;
             }
