@@ -9,7 +9,7 @@
                 @if ($course)
                     <a href="{{ route('user.mycoursedetails', ['id' => $course->id]) }}" class="btn btn-outline-light btn-sm">
                         <i class="fa fa-arrow-left"></i>
-                        Back
+                        Назад
                     </a>
                 @endif
 
@@ -34,12 +34,12 @@
                         <a href="{{ route('user.learning', ['course' => $course->id, 'lesson' => $previous]) }}"
                             class="btn btn-primary btn-sm">
                             <i class="fa fa-arrow-left"></i>
-                            Prev Lesson
+                            Предыдущий урок
                         </a>
                     @else
                         <button class="btn btn-primary btn-sm" disabled>
                             <i class="fa fa-arrow-left"></i>
-                            Prev Lesson
+                            Предыдущий урок
                         </button>
                     @endif
                 </div>
@@ -47,12 +47,12 @@
                     @if ($next)
                         <a href="{{ route('user.learning', ['course' => $course->id, 'lesson' => $next]) }}"
                             class="btn btn-primary btn-sm">
-                            Next Lesson
+                            Следующий урок
                             <i class="fa fa-arrow-right"></i>
                         </a>
                     @else
                         <button class="btn btn-primary btn-sm" disabled>
-                            Next Lesson
+                            Следующий урок
                             <i class="fa fa-arrow-right"></i>
                         </button>
                     @endif

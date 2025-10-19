@@ -1,5 +1,5 @@
 @extends('layouts.dasht')
-@section('title', 'İşlem Pazarları')
+@section('title', 'Торговые рынки')
 @section('content')
 
 <div class="container mx-auto px-4 py-8" x-data="tradingMarkets()" x-cloak>
@@ -35,8 +35,8 @@
     <div class="mb-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">İşlem Pazarları</h1>
-                <p class="text-gray-600 dark:text-gray-400 mt-1">Çoklu varlık sınıflarında binlerce işlem enstrümanından seçin</p>
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Торговые рынки</h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">Выберите из тысяч торговых инструментов в нескольких классах активов</p>
             </div>
 
             <!-- Search and Stats -->
@@ -44,7 +44,7 @@
                 <div class="relative">
                     <input type="text"
                            x-model="searchQuery"
-                           placeholder="Enstrüman ara..."
+                           placeholder="Поиск инструмента..."
                            class="w-64 pl-10 pr-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white">
                     <i data-lucide="search" class="absolute left-3 top-2.5 h-5 w-5 text-gray-400"></i>
                 </div>
@@ -52,12 +52,12 @@
                 <div class="hidden md:flex items-center gap-4 text-sm">
                     <div class="text-center">
                         <div class="text-gray-900 dark:text-white font-semibold" x-text="totalInstruments"></div>
-                        <div class="text-gray-500 dark:text-gray-400">Enstrümanlar</div>
+                        <div class="text-gray-500 dark:text-gray-400">Инструменты</div>
                     </div>
                     <div class="w-px h-8 bg-gray-300 dark:bg-gray-600"></div>
                     <div class="text-center">
                         <div class="text-green-600 dark:text-green-400 font-semibold">7/24</div>
-                        <div class="text-gray-500 dark:text-gray-400">İşlem</div>
+                        <div class="text-gray-500 dark:text-gray-400">Торговля</div>
                     </div>
                 </div>
             </div>
@@ -72,42 +72,42 @@
                         :class="selectedType === 'all' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="grid-3x3" class="w-4 h-4"></i>
-                    Tüm Pazarlar
+                    Все рынки
                 </button>
 
                 <button @click="selectedType = 'crypto'"
                         :class="selectedType === 'crypto' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="bitcoin" class="w-4 h-4"></i>
-                    Kripto Para
+                    Криптовалюты
                 </button>
 
                 <button @click="selectedType = 'stock'"
                         :class="selectedType === 'stock' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="trending-up" class="w-4 h-4"></i>
-                    Hisseler
+                    Акции
                 </button>
 
                 <button @click="selectedType = 'forex'"
                         :class="selectedType === 'forex' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="globe" class="w-4 h-4"></i>
-                    Döviz
+                    Валюта
                 </button>
 
                 <button @click="selectedType = 'commodity'"
                         :class="selectedType === 'commodity' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="zap" class="w-4 h-4"></i>
-                    Emtialar
+                    Товары
                 </button>
 
                 <button @click="selectedType = 'bond'"
                         :class="selectedType === 'bond' ? 'bg-blue-500 text-white shadow-md' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'"
                         class="px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center gap-2">
                     <i data-lucide="landmark" class="w-4 h-4"></i>
-                    Tahviller
+                    Облигации
                 </button>
             </div>
         </div>
@@ -119,7 +119,7 @@
         <div x-show="loading" class="flex items-center justify-center py-12">
             <div class="flex items-center gap-3">
                 <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-                <span class="text-gray-600 dark:text-gray-400">Loading instruments...</span>
+                <span class="text-gray-600 dark:text-gray-400">Загрузка инструментов...</span>
             </div>
         </div>
 
@@ -127,8 +127,8 @@
         <div x-show="!loading && filteredInstruments.length === 0" class="text-center py-12">
             <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-8">
                 <i data-lucide="search-x" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">No instruments found</h3>
-                <p class="text-gray-600 dark:text-gray-400">Try adjusting your search or filter criteria</p>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Инструменты не найдены</h3>
+                <p class="text-gray-600 dark:text-gray-400">Попробуйте изменить поисковый запрос или критерии фильтра</p>
             </div>
         </div>
 
@@ -155,7 +155,7 @@
                         </template>
 
                         <h2 class="text-xl font-bold text-gray-900 dark:text-white capitalize" x-text="getTypeDisplayName(type)"></h2>
-                        <span class="text-sm text-gray-500 dark:text-gray-400" x-text="`(${typeGroup.length} enstrüman)`"></span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400" x-text="`(${typeGroup.length} инструментов)`"></span>
                     </div>
                 </div>
 
@@ -164,11 +164,11 @@
                     <!-- Table Header -->
                     <div class="bg-gray-50 dark:bg-gray-700/50 px-6 py-4 border-b border-gray-200 dark:border-gray-600">
                         <div class="grid grid-cols-12 gap-4 items-center text-sm font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                            <div class="col-span-8 md:col-span-3">Varlık</div>
-                            <div class="col-span-2 text-right hidden md:block">Fiyat</div>
-                            <div class="col-span-2 text-right hidden md:block">24s Değişim</div>
-                            <div class="col-span-2 text-right hidden md:block">Hacim</div>
-                            <div class="col-span-4 md:col-span-3 text-right">İşlem</div>
+                            <div class="col-span-8 md:col-span-3">Актив</div>
+                            <div class="col-span-2 text-right hidden md:block">Цена</div>
+                            <div class="col-span-2 text-right hidden md:block">Изм. за 24ч</div>
+                            <div class="col-span-2 text-right hidden md:block">Объём</div>
+                            <div class="col-span-4 md:col-span-3 text-right">Торговля</div>
                         </div>
                     </div>
 
@@ -228,7 +228,7 @@
                                         <a :href="`{{ url('dashboard/trade') }}/${instrument.id}`"
                                            class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-sm hover:shadow-md">
                                             <i data-lucide="trending-up" class="w-4 h-4"></i>
-                                            <span>İşle</span>
+                                            <span>Торговать</span>
                                         </a>
                                     </div>
                                 </div>
@@ -292,11 +292,11 @@ function tradingMarkets() {
 
         getTypeDisplayName(type) {
             const names = {
-                'crypto': 'Cryptocurrency',
-                'stock': 'Stocks',
-                'forex': 'Foreign Exchange',
-                'commodity': 'Commodities',
-                'bond': 'Bonds'
+                'crypto': 'Криптовалюты',
+                'stock': 'Акции',
+                'forex': 'Валютные пары',
+                'commodity': 'Товары',
+                'bond': 'Облигации'
             };
             return names[type] || type;
         },

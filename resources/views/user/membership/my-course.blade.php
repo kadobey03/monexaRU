@@ -5,7 +5,7 @@
     <div class="page-title mb-4">
         <div class="row justify-content-between align-items-center">
             <div class="mb-3 col-12">
-                <h5 class="mb-0 text-white h3 font-weight-400">Your Courses</h5>
+                <h5 class="mb-0 text-white h3 font-weight-400">Ваши курсы</h5>
                 {{-- <p class="text-white">Learning often happens in classrooms but it doesn’t have to. Use
                     {{ $settings->site_name }} to facilitate
                     learning experiences no matter the context. </p> --}}
@@ -31,7 +31,7 @@
                                         <i class="mr-1 fa fa-book"></i>
                                         <span>
                                             {{ count($course->lessons) }}
-                                            {{ count($course->lessons) > 1 ? 'Lessons' : 'Lesson' }}
+                                            {{ count($course->lessons) > 1 ? 'Уроков' : 'Урок' }}
                                         </span>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                     <a href="{{ route('user.mycoursedetails', $course->course->id) }}"
                                         class="btn btn-primary btn-block rounded-0 d-flex align-items-center justify-content-center">
                                         <i class="fas fa-play-circle fa-2x text-danger mr-2"></i>
-                                        <span>Watch</span>
+                                        <span>Смотреть</span>
                                     </a>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body text-center py-2">
-                                <p>No Data Available</p>
+                                <p>Данные недоступны</p>
                             </div>
                         </div>
                     </div>

@@ -10,17 +10,17 @@
                 <!-- Status Badge -->
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-lg mb-4" x-cloak>
                     <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span class="text-gray-600 dark:text-gray-300 text-sm">{{ $experts->count() }} Expert Traders Available</span>
+                    <span class="text-gray-600 dark:text-gray-300 text-sm">{{ $experts->count() }} экспертов-трейдеров доступно</span>
                 </div>
 
                 <!-- Title -->
                 <h1 class="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4">
-                    Copy Expert Traders
+                    Копирование экспертов-трейдеров
                 </h1>
 
                 <!-- Description -->
                 <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    Choose from our top-performing traders and automatically copy their trades to your portfolio.
+                    Выберите из наших лучших трейдеров и автоматически копируйте их сделки в свой портфель.
                 </p>
 
                 <!-- Navigation -->
@@ -28,17 +28,17 @@
                     <a href="{{ route('copy.dashboard') }}"
                        class="inline-flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                         <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        Back to Dashboard
+                        Вернуться в панель
                     </a>
 
                     <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                         <div class="flex items-center gap-1">
                             <i data-lucide="shield-check" class="w-4 h-4"></i>
-                            <span>Verified</span>
+                            <span>Верифицированы</span>
                         </div>
                         <div class="flex items-center gap-1">
                             <i data-lucide="trending-up" class="w-4 h-4"></i>
-                            <span>Proven Results</span>
+                            <span>Доказанные результаты</span>
                         </div>
                     </div>
                 </div>
@@ -77,16 +77,16 @@
                             <i data-lucide="search" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"></i>
                             <input type="text"
                                    id="expertSearch"
-                                   placeholder="Search experts by name..."
+                                   placeholder="Поиск экспертов по имени..."
                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
                         </div>
                     </div>
 
                     <!-- Search Stats -->
                     <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                        <span id="searchResults">{{ $experts->count() }} experts found</span>
+                        <span id="searchResults">{{ $experts->count() }} экспертов найдено</span>
                         <button id="clearSearch" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hidden">
-                            Clear
+                            Очистить
                         </button>
                     </div>
                 </div>
@@ -100,13 +100,13 @@
                 <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="search-x" class="w-8 h-8 text-gray-400"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Experts Found</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Эксперты не найдены</h3>
                 <p class="text-gray-500 dark:text-gray-400 max-w-md mx-auto mb-4">
-                    No experts match your search criteria. Try adjusting your search terms.
+                    Ни один эксперт не соответствует вашим критериям поиска. Попробуйте изменить поисковые запросы.
                 </p>
                 <button onclick="document.getElementById('clearSearch').click()"
                         class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-                    Clear search and show all experts
+                    Очистить поиск и показать всех экспертов
                 </button>
             </div>
 
@@ -119,7 +119,7 @@
                             <!-- Status Badge -->
                             <div class="flex justify-between items-start mb-4">
                                 <span class="px-2 py-1 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded text-xs font-medium">
-                                    Active
+                                    Активен
                                 </span>
                             </div>
 
@@ -155,7 +155,7 @@
 
                                 <!-- Followers -->
                                 <div class="text-sm text-gray-500 dark:text-gray-400">
-                                    {{ number_format($expert->followers) }} followers
+                                    {{ number_format($expert->followers) }} подписчиков
                                 </div>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                                 <!-- Win Rate -->
                                 <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
                                     <div class="text-lg font-semibold text-gray-900 dark:text-white">{{ $expert->win_rate }}%</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Win Rate</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Процент побед</div>
                                     <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-1 mt-2">
                                         <div class="bg-green-500 h-1 rounded-full transition-all duration-500"
                                              style="width: {{ $expert->win_rate }}%"></div>
@@ -176,19 +176,19 @@
                                 <!-- Total Profit -->
                                 <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
                                     <div class="text-lg font-semibold text-green-600 dark:text-green-400">+{{ number_format((float)$expert->total_profit, 0) }}%</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Total Return</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Общая доходность</div>
                                 </div>
 
                                 <!-- Equity -->
                                 <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
                                     <div class="text-lg font-semibold text-gray-900 dark:text-white">${{ number_format((float)$expert->equity, 0) }}</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Equity</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Капитал</div>
                                 </div>
 
                                 <!-- Total Trades -->
                                 <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/30 rounded-lg">
                                     <div class="text-lg font-semibold text-gray-900 dark:text-white">{{ number_format($expert->total_trades) }}</div>
-                                    <div class="text-xs text-gray-500 dark:text-gray-400">Total Trades</div>
+                                    <div class="text-xs text-gray-500 dark:text-gray-400">Всего сделок</div>
                                 </div>
                             </div>
 
@@ -202,7 +202,7 @@
                             <!-- Minimum Investment -->
                             <div class="mb-4 p-3 bg-gray-50 dark:bg-gray-700/30 rounded-lg border border-gray-200 dark:border-gray-600">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-sm text-gray-600 dark:text-gray-400">Minimum Investment</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Минимальные инвестиции</span>
                                     <span class="text-base font-semibold text-gray-900 dark:text-white">${{ number_format((float)$expert->price, 2) }}</span>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@
                                         disabled x-cloak>
                                     <span class="flex items-center justify-center gap-2">
                                         <i data-lucide="check" class="w-4 h-4"></i>
-                                        Already Copying
+                                        Уже копируется
                                     </span>
                                 </button>
                             @else
@@ -221,16 +221,16 @@
                                     <!-- Amount Input -->
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                            Investment Amount ($)
+                                            Сумма инвестиций ($)
                                         </label>
                                         <input type="number"
                                                id="amount_{{ $expert->id }}"
                                                min="{{ $expert->price }}"
                                                step="0.01"
-                                               placeholder="Min: ${{ number_format((float)$expert->price, 2) }}"
+                                               placeholder="Мин.: ${{ number_format((float)$expert->price, 2) }}"
                                                class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm">
                                         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                            Minimum: ${{ number_format((float)$expert->price, 2) }}
+                                            Минимум: ${{ number_format((float)$expert->price, 2) }}
                                         </p>
                                     </div>
 
@@ -240,7 +240,7 @@
                                             class="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl" x-cloak>
                                         <span class="flex items-center justify-center gap-2">
                                             <i data-lucide="copy" class="w-4 h-4"></i>
-                                            Start Copying
+                                            Начать копирование
                                         </span>
                                     </button>
                                 </div>
@@ -255,9 +255,9 @@
                 <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="users" class="w-8 h-8 text-gray-400"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Expert Traders Available</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Эксперты-трейдеры недоступны</h3>
                 <p class="text-gray-500 dark:text-gray-400 max-w-md mx-auto">
-                    Expert traders are being added soon. Check back later for trading opportunities.
+                    Эксперты-трейдеры скоро будут добавлены. Вернитесь позже за торговыми возможностями.
                 </p>
             </div>
         @endif
@@ -322,10 +322,10 @@
 
                 // Update search results count
                 if (searchTerm === '') {
-                    searchResults.textContent = `${totalExperts} experts found`;
+                    searchResults.textContent = `${totalExperts} экспертов найдено`;
                     clearButton.classList.add('hidden');
                 } else {
-                    searchResults.textContent = `${visibleCount} of ${totalExperts} experts found`;
+                    searchResults.textContent = `${visibleCount} из ${totalExperts} экспертов найдено`;
                     clearButton.classList.remove('hidden');
                 }
             }
@@ -338,7 +338,7 @@
                 });
                 if (expertGrid) expertGrid.style.display = 'grid';
                 if (noResultsMessage) noResultsMessage.classList.add('hidden');
-                searchResults.textContent = `${totalExperts} experts found`;
+                searchResults.textContent = `${totalExperts} экспертов найдено`;
                 clearButton.classList.add('hidden');
                 searchInput.focus();
             }
@@ -368,13 +368,13 @@
             if (!userAmount || isNaN(userAmount)) {
                 if (typeof Swal !== 'undefined') {
                     Swal.fire({
-                        title: 'Invalid Amount',
-                        text: 'Please enter a valid investment amount.',
+                        title: 'Неверная сумма',
+                        text: 'Пожалуйста, введите правильную сумму инвестиций.',
                         icon: 'error',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'ОК'
                     });
                 } else {
-                    alert('Please enter a valid investment amount.');
+                    alert('Пожалуйста, введите правильную сумму инвестиций.');
                 }
                 return;
             }
@@ -382,39 +382,39 @@
             if (userAmount < minAmount) {
                 if (typeof Swal !== 'undefined') {
                     Swal.fire({
-                        title: 'Amount Too Low',
-                        text: `Minimum investment for ${expertName} is $${minAmount}.`,
+                        title: 'Сумма слишком мала',
+                        text: `Минимальные инвестиции для ${expertName} составляют $${minAmount}.`,
                         icon: 'error',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'ОК'
                     });
                 } else {
-                    alert(`Minimum investment for ${expertName} is $${minAmount}.`);
+                    alert(`Минимальные инвестиции для ${expertName} составляют $${minAmount}.`);
                 }
                 return;
             }
 
             if (typeof Swal === 'undefined') {
-                alert('SweetAlert2 not loaded. Falling back to basic confirmation.');
-                if (confirm(`Start copying ${expertName} with investment of $${userAmount}?`)) {
+                alert('SweetAlert2 не загружен. Переход к базовому подтверждению.');
+                if (confirm(`Начать копирование ${expertName} с инвестициями $${userAmount}?`)) {
                     submitCopyForm(expertId, userAmount);
                 }
                 return;
             }
 
             Swal.fire({
-                title: `Start copying ${expertName}?`,
+                title: `Начать копирование ${expertName}?`,
                 html: `<div class="text-left space-y-4">
-                    <p><strong>Expert:</strong> ${expertName}</p>
-                    <p><strong>Investment Amount:</strong> $${userAmount.toLocaleString()}</p>
-                    <p><strong>Minimum Required:</strong> $${minAmount}</p>
+                    <p><strong>Эксперт:</strong> ${expertName}</p>
+                    <p><strong>Сумма инвестиций:</strong> $${userAmount.toLocaleString()}</p>
+                    <p><strong>Минимум требуется:</strong> $${minAmount}</p>
                     <div class="bg-blue-50 p-3 rounded-lg mt-3">
-                        <p class="text-sm text-blue-800">You will automatically copy this expert's trades with your investment amount.</p>
+                        <p class="text-sm text-blue-800">Вы будете автоматически копировать сделки этого эксперта с вашей суммой инвестиций.</p>
                     </div>
                 </div>`,
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonText: 'Start Copying',
-                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Начать копирование',
+                cancelButtonText: 'Отмена',
                 reverseButtons: true,
                 confirmButtonColor: '#3b82f6'
             }).then((result) => {

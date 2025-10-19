@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Yatırım Sözleşmesi')
+@section('title', 'Инвестиционный договор')
 
 @section('styles')
 @parent
@@ -108,7 +108,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                 </svg>
-                Back to Plan Details
+                Вернуться к деталям плана
             </a>
         </div>
 
@@ -117,7 +117,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
                 </svg>
-                Print Contract
+                Распечатать договор
             </button>
         </div>
     </div>
@@ -128,98 +128,98 @@
             <div class="flex justify-center mb-4">
                 <img src="{{ asset('dash/images/logo.png') }}" alt="BlueTrade Logo" class="h-16">
             </div>
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">INVESTMENT AGREEMENT</h1>
-            <p class="text-gray-500 dark:text-gray-400">Contract #{{ strtoupper(substr(md5($userPlan->id), 0, 8)) }}</p>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">ИНВЕСТИЦИОННЫЙ ДОГОВОР</h1>
+            <p class="text-gray-500 dark:text-gray-400">Договор #{{ strtoupper(substr(md5($userPlan->id), 0, 8)) }}</p>
         </div>
 
         <div class="contract-section">
-            <p>This Investment Agreement (the "Agreement") is entered into on {{ $userPlan->created_at->format('F d, Y') }} ("Effective Date") by and between:</p>
-            <p><strong>BlueTrade Ltd</strong>, a company registered under the laws of England and Wales with registered address at 123 Financial Street, London, EC1A 1BB, United Kingdom ("Company")</p>
-            <p>and</p>
-            <p><strong>{{ auth()->user()->name }}</strong>, with registered address at {{ auth()->user()->address ?: 'Address on file' }} ("Investor").</p>
+            <p>Данный Инвестиционный договор ("Договор") заключен {{ $userPlan->created_at->format('d.m.Y') }} ("Дата вступления в силу") между:</p>
+            <p><strong>BlueTrade Ltd</strong>, компанией, зарегистрированной в соответствии с законодательством Англии и Уэльса по адресу 123 Financial Street, London, EC1A 1BB, United Kingdom ("Компания")</p>
+            <p>и</p>
+            <p><strong>{{ auth()->user()->name }}</strong>, с зарегистрированным адресом {{ auth()->user()->address ?: 'Адрес в файле' }} ("Инвестор").</p>
         </div>
 
         <div class="contract-section">
-            <h3>1. INVESTMENT DETAILS</h3>
-            <p>The Investor agrees to invest in the Company's {{ $userPlan->plan->name }} investment plan with the following terms:</p>
+            <h3>1. ДЕТАЛИ ИНВЕСТИЦИЙ</h3>
+            <p>Инвестор соглашается инвестировать в инвестиционный план Компании {{ $userPlan->plan->name }} на следующих условиях:</p>
 
             <table class="contract-table">
                 <tr>
-                    <td><strong>Investment Plan:</strong></td>
+                    <td><strong>Инвестиционный план:</strong></td>
                     <td>{{ $userPlan->plan->name }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Investment Amount:</strong></td>
+                    <td><strong>Сумма инвестиций:</strong></td>
                     <td>{{ Auth::user()->currency }}{{ number_format($userPlan->invested_amount, 2) }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Return Rate:</strong></td>
-                    <td>{{ $userPlan->plan->expected_return }}% per {{ $userPlan->plan->return_interval }}</td>
+                    <td><strong>Доходность:</strong></td>
+                    <td>{{ $userPlan->plan->expected_return }}% за {{ $userPlan->plan->return_interval }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Total Expected Return:</strong></td>
+                    <td><strong>Общий ожидаемый доход:</strong></td>
                     <td>{{ $userPlan->plan->total_return }}% ({{ Auth::user()->currency }}{{ number_format($userPlan->expected_profit, 2) }})</td>
                 </tr>
                 <tr>
-                    <td><strong>Investment Term:</strong></td>
-                    <td>{{ $userPlan->plan->duration }} {{ Str::plural('Day', $userPlan->plan->duration) }}</td>
+                    <td><strong>Срок инвестиций:</strong></td>
+                    <td>{{ $userPlan->plan->duration }} {{ Str::plural('день', $userPlan->plan->duration) }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Start Date:</strong></td>
-                    <td>{{ $userPlan->activated_at ? $userPlan->activated_at->format('F d, Y') : 'Upon payment confirmation' }}</td>
+                    <td><strong>Дата начала:</strong></td>
+                    <td>{{ $userPlan->activated_at ? $userPlan->activated_at->format('d.m.Y') : 'После подтверждения оплаты' }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Maturity Date:</strong></td>
-                    <td>{{ $userPlan->expires_at ? $userPlan->expires_at->format('F d, Y') : 'To be determined upon activation' }}</td>
+                    <td><strong>Дата погашения:</strong></td>
+                    <td>{{ $userPlan->expires_at ? $userPlan->expires_at->format('d.m.Y') : 'Определяется после активации' }}</td>
                 </tr>
                 <tr>
-                    <td><strong>Payout Schedule:</strong></td>
+                    <td><strong>График выплат:</strong></td>
                     <td>{{ ucfirst($userPlan->plan->return_interval) }}</td>
                 </tr>
                 @if($userPlan->compound_interest)
                 <tr>
-                    <td><strong>Compound Interest:</strong></td>
-                    <td>Enabled</td>
+                    <td><strong>Сложные проценты:</strong></td>
+                    <td>Включено</td>
                 </tr>
                 @endif
                 @if($userPlan->auto_renewal)
                 <tr>
-                    <td><strong>Auto-Renewal:</strong></td>
-                    <td>Enabled</td>
+                    <td><strong>Автопродление:</strong></td>
+                    <td>Включено</td>
                 </tr>
                 @endif
             </table>
         </div>
 
         <div class="contract-section">
-            <h3>2. INVESTMENT PURPOSE</h3>
-            <p>The funds invested by the Investor will be allocated to {{ strtolower($userPlan->plan->category->name) }} investments as per the Company's investment strategy. The Company will manage these investments on behalf of the Investor to generate the returns specified in this Agreement.</p>
+            <h3>2. ЦЕЛЬ ИНВЕСТИЦИЙ</h3>
+            <p>Средства, инвестированные Инвестором, будут направлены на {{ strtolower($userPlan->plan->category->name) }} инвестиции в соответствии с инвестиционной стратегией Компании. Компания будет управлять этими инвестициями от имени Инвестора для получения доходности, указанной в данном Договоре.</p>
         </div>
 
         <div class="contract-section">
-            <h3>3. PAYMENT OF RETURNS</h3>
-            <p>The Company shall pay returns to the Investor according to the specified payout schedule. Returns will be calculated based on the original investment amount and credited to the Investor's account within the platform.</p>
-            <p>At the end of the investment term, the original investment amount plus any remaining returns will be made available for withdrawal or reinvestment at the Investor's discretion, unless auto-renewal has been selected.</p>
+            <h3>3. ВЫПЛАТА ДОХОДОВ</h3>
+            <p>Компания выплачивает доходы Инвестору согласно указанному графику выплат. Доходы рассчитываются на основе первоначальной суммы инвестиций и зачисляются на счет Инвестора в рамках платформы.</p>
+            <p>По окончании инвестиционного периода первоначальная сумма инвестиций плюс любые оставшиеся доходы будут доступны для вывода или реинвестирования по усмотрению Инвестора, если не выбрано автопродление.</p>
         </div>
 
         <div class="contract-section">
-            <h3>4. RISK DISCLOSURE</h3>
-            <p>The Investor acknowledges that all investments carry risks and that past performance is not indicative of future results. The Company makes reasonable efforts to achieve the projected returns but cannot guarantee them due to market fluctuations and other factors beyond its control.</p>
-            <p>The risk level for this investment plan is classified as: {{ $userPlan->plan->risk_level <= 2 ? 'Low' : ($userPlan->plan->risk_level <= 3 ? 'Medium' : 'High') }}</p>
+            <h3>4. РАСКРЫТИЕ РИСКОВ</h3>
+            <p>Инвестор признает, что все инвестиции связаны с рисками и что прошлые результаты не являются показателем будущих результатов. Компания предпринимает разумные усилия для достижения прогнозируемой доходности, но не может гарантировать ее из-за рыночных колебаний и других факторов, находящихся вне ее контроля.</p>
+            <p>Уровень риска для этого инвестиционного плана классифицируется как: {{ $userPlan->plan->risk_level <= 2 ? 'Низкий' : ($userPlan->plan->risk_level <= 3 ? 'Средний' : 'Высокий') }}</p>
         </div>
 
         <div class="contract-section">
-            <h3>5. EARLY TERMINATION</h3>
-            <p>Should the Investor request early termination of this Agreement before the maturity date, an early withdrawal fee of {{ $userPlan->plan->early_withdrawal_fee }}% of the invested amount may be applied, and returns may be prorated or forfeited as per the Company's policies.</p>
+            <h3>5. ДОСРОЧНОЕ РАСТОРЖЕНИЕ</h3>
+            <p>В случае если Инвестор запросит досрочное расторжение данного Договора до даты погашения, может быть применена комиссия за досрочный вывод в размере {{ $userPlan->plan->early_withdrawal_fee }}% от инвестированной суммы, а доходы могут быть пропорционально распределены или аннулированы согласно политике Компании.</p>
         </div>
 
         <div class="contract-section">
-            <h3>6. TERMS AND CONDITIONS</h3>
-            <p>This Agreement is subject to the Company's general Terms and Conditions, Privacy Policy, and AML/KYC procedures, which are incorporated herein by reference. The Investor confirms having read and agreed to these policies as published on the Company's website.</p>
+            <h3>6. УСЛОВИЯ И ПОЛОЖЕНИЯ</h3>
+            <p>Данный Договор подпадает под действие общих Условий и положений Компании, Политики конфиденциальности и процедур AML/KYC, которые включены в него посредством ссылки. Инвестор подтверждает, что прочитал и согласился с этими политиками, опубликованными на веб-сайте Компании.</p>
         </div>
 
         <div class="signature-section">
-            <p>IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the Effective Date.</p>
+            <p>В ПОДТВЕРЖДЕНИЕ ЧЕГО стороны подписали данный Договор с даты вступления в силу.</p>
 
             <div class="signature-row">
                 <div>
@@ -228,8 +228,8 @@
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAA2CAMAAAC3a6dCAAAAqFBMVEVHcEz///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8X+nl7AAAAOHR0cHMAAABGaXJtIFNpZ25hdHVyZVxuQmx1ZVRyYWRlIE1hbmFnZW1lbnQDc3oIZmllbGQtaWTFu7DaAAAAEXRSTlMAgEAwQL/vYBDfn69wj1CPcKUGkV4AAAYgSURBVHja7Zrpkps4FIYRiwADMgZ7Ft/2pJ3updNLMt3p93+xHAEGYzC2y5mqpKb+dZUxxuiTdM5Bomna2UtLS0tLS0tLS0tLS0tL6yTRszWvSqlfakymAcF0daUzXQEzLOmY9VGdcU5vpWpUJMY4+7F80APPUEA8RuX5LLzdpneCq8S4MmGtMmPZLvUdXk+LH5ldd7fWdfszuBTrC2xts36Ul9+iLdPRms1n2KhM4zzYUuM9pKrid8xrWfFGeWs38zvlDYfKiO7HVamJQtsxDM9+Rjg9Ngyn3x3G9vMjzmj1+FYPLdNx3Poo1aP1zOv2Q13uvVmaelyN+o4k+jOvZlBXnPmETsq2vvMG1oxfLnwcZXHCo/JTEZW8nHi/nKdRnvLcz4LHhy8cLkXR43weFzz3o6d0JMswdd2wuL7j2oP3aKZlALel21F4Y5VZlmn2u+0GzzIM37bNbvug+1mndLFtBLovKK/nDjtr3vU98FR7VIRRnfnBpWwrBJLJ0/Ffl+m2o9uB1e+2S5YY6NnuIZ5tGFHfrG9xvhWAD95wYUutZ7HGfRlEiYYvfbBG+VwSeGV+4TUOmLhJ8DsuDxHhcp6J5yQ84YpokiZRHuRJVCaB7/Ne1k/3LBWs2aFw7Z7YYU3BO2hJNob8Ly7dkL2Nfzc8YXkfr2mLDvJOK8oKX75GZZjkZVx+7Q4sye/87kaXtqTACoUFrzV39MiLPGziiDH5XtufHy6DpYxg6LppSj3a7Fz0j8BiB1h7dXOTuV+CJZfJg7YSyfzolmdNnDUPd+CQFw6Gjq7LNyvLj7Deu+TbwavZ6kPyblRJL20zvmRdkk0Rt3k63GCLrChQvA0/QpHIazv6/gkWjGkh3QysjEmeOE+DJrY+AouMEyIEcP8grCZdoKhZ122nT7VGl8fRu7C0+hhSm+33p9ImT7rPdB5Fkcc8OcXw9U9Y3z8FS5aRnf0/frTZueTtw1LNoTsJVkOu+WStJ+SZh0X1JziRnwVMFgcH/2lYb++yL26z7m7ic7DUntJWw+rcxBCWJS+EHCw8AksetQlSYcnVIPC+zaYeYdl7WGbz6tib5mMY81+GtRu9Nk2yd/1zPLDtH2D9eoI1bsn5rtYTcvO/wqsrnL+FBfOpJix9vR5/gNd6kBU97Xlmwmo8rtVwsdmydZ5efXkNll0fdLv+Mu2WOv4eBSs/XB2sxOq1WazvtAsm/VN7WwfSzbaONFv54wt42Wyx1q4TYUklIWJmW2XlmzfViN2Vf7Qi5nSXVYKDpX7kJgfttujcF/oRy9GdgzOMy+s+LPNk/2EYfc0VzqBb5OPmvMzoaz1I1dFrdn2KznKF82cRtrQix6ClSKsVPd/EGY97p+egAQSLGCGmohZhp/xwO2hJ9g/M9d6BZ2c9XVKzhg/6AYekc7vCfobF5dXhQtYb9ursYQnX+qaKdHun4OAlWP3Orv+AgjWX6nIrlT3JOijLd3cJTFIohF7sXmxfFXkPa+YzLRPctquvZZfFSZZkd2FtaxjGcW1su5fHz8laxmj1vCnwp2SNpQV6E1yJC46cc/EeVnroqQc1gu3vYQUSeRIEcNPpvEVWQq69jMdy6CMIirKGBawvspw07Fd5qa4JULzFL6tfB8uiCYyqMNTSkXstZtNcwjJc08NMz/KGz8FqNzmwIw28SYzTpLjJI9n0vZOVO6/xPqvirvvmu4YVzZd5wFMuRpnHRZyM+uxh/ZQJT5tYTnNVFmdpnJbxaJyHY57HDzc8HCWB0IX78zSPJPGlOP4bnjwR9cGqwkJQUw+QZahbOqM4Y54MYwCrcA3Tkotq9vMyCLMwKeafn+6qrm74rrswdZ1xJSAGu4YPXd0YiKs77BYljK0bRg+uORB3RV3LGN4MxyWM3QPbuYZywTZm7SSEfwzT0F0dXEPe5wnw7oPRP0IngjWpkfWxSA+j9yP8dRfIklLFcgn5HqaqwwrgO1cg64RnXYGsS551BbLOdtYVyDpJWVcg65JnXYGsc551/TfI0qLQ0tLS0tLS0tLS0tLS+mv6E3r2AeMv+vxZAAAAAElFTkSuQmCC" alt="Signature" style="max-width: 150px;">
                         @endif
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Investor: {{ auth()->user()->name }}</p>
-                    <p class="text-xs text-gray-500 dark:text-gray-500">Date: {{ $userPlan->created_at->format('F d, Y') }}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Инвестор: {{ auth()->user()->name }}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-500">Дата: {{ $userPlan->created_at->format('d.m.Y') }}</p>
                 </div>
 
                 <div>
@@ -238,8 +238,8 @@
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABSCAYAAADIJIhQAAAGfklEQVR4nO3dT2/bVBgG8GfZiRPHTlzXl9ZtVnfKCkw7QBoHYBKaOPEnOyJO8w0Q38AXQXwFDhMXDhMHJK47VGlJ2q5ZG6epkzof3FqO7byO3Th50/p5pEpt7Th1rJ+f9z3vezGKoogqlUoJ0gsUCoVeD0KURJ4kEEEAVI6/Lm8ANqqXoKeeSGEYYnNzE9VqFdvb2/A8D77vo1AooFgsYn5+HktLS1hcXISmaYmPSZQnfR/AfQCtJ7e3AU/JNbbrAL7sOB+Oj4+xubmJjY0NnJyc9HQCSZLAMAw8fPgQKysr0DQt8TGJsmzgAdzZ2cH6+jp2d3f7PsHs7CxWV1dx//79vh+LaL8GNoClUgmrq6uo1+s9HUdRFFiWhZmZGZimiUKhAFVVoaoqwjBEEASo1+soFotYW1tDpVLpaqzZ2VmsrKzg0aNHPb0OoiwYSADL5TJWVlawt7cndX9FUTAzM4OHDx/CNE3p5/u+j/X1dXz++ef1SUp0LvJBN0ErKyvS4dM0Dbdv38azzz6barxcLofHjx/j5s2b0s9dX19PNRbRoOQmgOVyueuwGIaBJ0+ewLKsvsd/8uQJDMOQum+9Xke5XO57XKJByk0A19bWpO9r2zbu3LmT2TxzTdNw584d2LYtdf/19fXMxiUahNw0QcfHx4kNj6Io8DwPFy9ezHzsarWKGzduYGdnp+P9ms0QNTe5CeDOzk7i/XK53EDBa1IUBblcDo1GI/G+3YwPNGy5CeDu7m7i/RYWFgYa9KaFhQXs7e11vF83b0E0bLkJ4PHxceL9ZmZmBjJT3m56ehq+74fuF4bhQIJPNAi5CWC73YgkiqIkNkxZ0nQdYRgm3q+b8YGGLT8B7OIHGcbeQxncSUqUJbkJYFJIAODChQsDn4Vumpmh35OSnKPcBDCpgQEAVVUzW/MnqijKufq3UH7kJoCWZSXe78cffxx4c9z04sWL0MNk8Lp5C6Jhy00Ar169Kj2TnZVarZb4w2+Hj3IvNwG8dOkSbty4kXjfzc3Nrhtimfpdvny5bRfNxsZGJmMSDVJuAgggcf+foigwDAPPnz9Ps79wz549g2EYUvt2uz1QdJ7kKoDz8/O4ceNG4v1s28bTp08zG/vZs2dS2+CCIMjN8jfRsOQqgACwuLgodb9CoYAnT54kzo5LaTabePr0KQqFgtT9FxcXU41FNGi5C+Ddu3el9+IZhoGnT59KbbDuVbPZxLNnz6QnH3K5HO7evZtqPKJBy10AAWBpaQmLi4tS93UcB8+fP0exWOx7zOPjYzx//hyO40jdf3FxEUtLS32PRzQMuQwgANy/f79t3V87juOgVCqhVCr1tEWvWCyiVCrh5OREKny5XI7v/elMODMBVFX12OkjLUVRsLy8jIcPH0pdwjFNE47jwPd9FAoF6d5S0zT4vo9yuYydnZ3EiYdcLofHjx9jfn5e+nmJRlluA6goCq5cuYJarYb379/XK1sk9Iu0oigYGxuDpmmwLAuWZbW9BFI7juNgb28Ph4eHODg4QK1Wq9eqkSTp+4mGLbcBbMrlcrh27Ro+fPgAz/NQrVbheV7HR0iSJB2vTyxJEsZkLtvY3NzE/v5+x+qoTZcvX8a1a9eQy+X+/rNKhfWA9FHuA9ikKAosy2prYLLAcRyUSiXs7+8n3ldRFCwvL+Pq1at4//49Xr161fY+iqLg/v37uHXrFu9J+ZGbAMbj8fh9bOlnoXtRq9XgeR58328Lbj9s24ZlWbBtG4eHhzg4OGj7d9i2jVu3bsFxnNTjEI2KXFTF830fBwcHODw8rNfDdzod1kur1YLv+2g0Gn2HrxdTU1OYnp7G1NQUJiYmMDk5WW+qLcsamlcMV6qAfwCMITr9swGoj0/1rE8BPPm/z3iq1TA1NQXDMPLbBJfLZayvr+PVq1c4OjqSWofXi+ZasGaFVNOERW8Mw4BlWTBNE5OTk/UNBvl8Hrquw7Is2LYtVdptmCqV6BfRdQChGLxmCH/oEmg2gB+ajwcRxNUq0Oh9EtTNrPmoalvbrNeN+FKEcRrvFxTHb57hU6lEz28GcHMT+P69dRtafjYfR0OCcBk4+AVYXo7+PSHWgNERfDEVxCOgWo3el+XzwPg4UK9HH1dXo8cGAfDmTfTxYgH47ru2Y/16pYrf0kXwEUD1iXgCOIqfnz4FgugIH/8SthmGAoC3b4EvvuCR/E8zfGO43X1z9/4WPkUJ8eYN8O5d1PN9/hwOoOIXsPOotjdvgK+/jt4KDaNoq8SnT9Hvqfk8DYc70Y9v2sgIUTxFPH3qtotJhP/az8vtZ5n/AtvsYZJUwOUPAAAAAElFTkSuQmCC" alt="Signature" style="max-width: 150px;">
                         @endif
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">For BlueTrade Ltd</p>
-                    <p class="text-xs text-gray-500 dark:text-gray-500">Date: {{ $userPlan->activated_at ? $userPlan->activated_at->format('F d, Y') : 'Pending activation' }}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">За BlueTrade Ltd</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-500">Дата: {{ $userPlan->activated_at ? $userPlan->activated_at->format('d.m.Y') : 'Ожидает активации' }}</p>
                 </div>
             </div>
 
@@ -253,9 +253,9 @@
         </div>
 
         <div class="contract-footer">
-            <p>This document is electronically generated and is valid without a handwritten signature.</p>
-            <p>Document ID: {{ strtoupper(substr(md5($userPlan->id . auth()->user()->id), 0, 16)) }}</p>
-            <p>Generated on: {{ now()->format('F d, Y - h:i A') }}</p>
+            <p>Данный документ создан электронно и действителен без рукописной подписи.</p>
+            <p>ID документа: {{ strtoupper(substr(md5($userPlan->id . auth()->user()->id), 0, 16)) }}</p>
+            <p>Создан: {{ now()->format('d.m.Y - H:i') }}</p>
         </div>
     </div>
 </div>

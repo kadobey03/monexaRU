@@ -1,5 +1,5 @@
 @extends('layouts.dasht')
-@section('title', 'Bildirimler')
+@section('title', 'Уведомления')
 
 @section('content')
 <div x-data="{
@@ -18,19 +18,19 @@
     <div class="relative">
       <h1 class="text-3xl font-bold text-gray-800 dark:text-white flex items-center">
         <span class="relative">
-          Notifications
+          Уведомления
           <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-primary-300 dark:from-primary-500 dark:to-primary-700"></span>
         </span>
         <span class="ml-2 inline-flex items-center justify-center w-7 h-7 rounded-full bg-primary-100 text-primary-700 text-xs font-medium dark:bg-primary-900/50 dark:text-primary-400">{{ $notifications->total() }}</span>
       </h1>
-      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 max-w-lg">Your personal notification center for staying updated with important system alerts and messages</p>
+      <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 max-w-lg">Ваш персональный центр уведомлений для получения важных системных сообщений и оповещений</p>
     </div>
 
     {{-- <div class="flex flex-wrap items-center gap-3 mt-6 md:mt-0">
       @if(count($notifications) > 0)
         <a href="/mark-all-read" class="inline-flex items-center px-4 py-2.5 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white text-sm font-medium rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-primary-500/25 dark:shadow-none">
           <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-          Mark All as Read
+          Отметить Все Как Прочитанные
         </a>
       @endif
     </div> --}}
@@ -88,23 +88,23 @@
       <div class="flex items-center gap-3">
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
           <i data-lucide="filter" class="h-4 w-4 text-gray-500 dark:text-gray-400"></i>
-          Filter
+          Фильтр
         </span>
         <div class="flex rounded-full backdrop-blur-sm bg-gray-100/80 dark:bg-gray-700/80 p-1 overflow-hidden">
           <button @click="filterStatus = 'all'"
                   :class="{'bg-white dark:bg-gray-800 text-primary-700 dark:text-primary-400 shadow-sm font-medium': filterStatus === 'all'}"
                   class="px-4 py-1.5 text-sm transition-all duration-200 rounded-full">
-            All
+            Все
           </button>
           <button @click="filterStatus = 'unread'"
                   :class="{'bg-white dark:bg-gray-800 text-primary-700 dark:text-primary-400 shadow-sm font-medium': filterStatus === 'unread'}"
                   class="px-4 py-1.5 text-sm transition-all duration-200 rounded-full">
-            Unread
+            Непрочитанные
           </button>
           <button @click="filterStatus = 'read'"
                   :class="{'bg-white dark:bg-gray-800 text-primary-700 dark:text-primary-400 shadow-sm font-medium': filterStatus === 'read'}"
                   class="px-4 py-1.5 text-sm transition-all duration-200 rounded-full">
-            Read
+            Прочитанные
           </button>
         </div>
       </div>
@@ -113,7 +113,7 @@
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <i data-lucide="search" class="h-4 w-4 text-gray-500 dark:text-gray-400"></i>
         </div>
-        <input x-model="searchTerm" type="text" id="search" class="pl-10 pr-4 py-2.5 w-full bg-gray-100/80 dark:bg-gray-700/80 border-0 rounded-full text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 transition-all duration-200" placeholder="Search notifications...">
+        <input x-model="searchTerm" type="text" id="search" class="pl-10 pr-4 py-2.5 w-full bg-gray-100/80 dark:bg-gray-700/80 border-0 rounded-full text-sm focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-600 transition-all duration-200" placeholder="Поиск уведомлений...">
       </div>
     </div>
   </div>
@@ -164,7 +164,7 @@
                             ($notification->type === 'danger' ? 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400' :
                             'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400')) }}">
                             <i data-lucide="{{ $notification->type === 'warning' ? 'alert-triangle' : ($notification->type === 'success' ? 'check-circle' : ($notification->type === 'danger' ? 'alert-octagon' : 'info')) }}" class="h-3 w-3 mr-1"></i>
-                            {{ ucfirst($notification->type) }}
+                            {{ $notification->type === 'warning' ? 'Предупреждение' : ($notification->type === 'success' ? 'Успех' : ($notification->type === 'danger' ? 'Опасность' : 'Информация')) }}
                           </span>
                           <span class="text-xs text-gray-500 dark:text-gray-400 flex items-center">
                             <i data-lucide="clock" class="h-3.5 w-3.5 mr-1"></i>
@@ -172,7 +172,7 @@
                           </span>
                           <span class="text-xs text-gray-500 dark:text-gray-400 flex items-center">
                             <i data-lucide="{{ $notification->is_read ? 'check-circle-2' : 'circle' }}" class="h-3.5 w-3.5 mr-1 {{ $notification->is_read ? 'text-primary-500 dark:text-primary-400' : '' }}"></i>
-                            {{ $notification->is_read ? 'Read' : 'Unread' }}
+                            {{ $notification->is_read ? 'Прочитано' : 'Непрочитано' }}
                           </span>
                         </div>
                       </div>
@@ -181,7 +181,7 @@
                       <div class="flex items-center mt-4 md:mt-0 space-x-2 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
                         <a href="{{ route('notifications.show', $notification->id) }}" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-md">
                           <i data-lucide="eye" class="h-4 w-4 mr-1.5"></i>
-                          View
+                          Просмотр
                         </a>
 
                         @if(!$notification->is_read)
@@ -190,7 +190,7 @@
                             <input type="hidden" name="notification_id" value="{{ $notification->id }}">
                             <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-primary-600 dark:text-primary-400 bg-primary-100/80 dark:bg-primary-900/30 hover:bg-primary-200 dark:hover:bg-primary-900/50 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-md">
                               <i data-lucide="check-circle" class="h-4 w-4 mr-1.5"></i>
-                              Mark Read
+                              Отметить Прочитанным
                             </button>
                           </form>
                         @endif
@@ -201,7 +201,7 @@
                           <input type="hidden" name="notification_id" value="{{ $notification->id }}">
                           <button type="button" @click="confirmDelete = true" class="inline-flex items-center px-4 py-2 text-sm font-medium text-red-600 dark:text-red-400 bg-red-50/80 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/40 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-md">
                             <i data-lucide="trash-2" class="h-4 w-4 mr-1.5"></i>
-                            Delete
+                            Удалить
                           </button>
 
                           <!-- Futuristic Confirmation Modal -->
@@ -224,24 +224,24 @@
                                       <i data-lucide="trash-2" class="h-6 w-6 text-red-600 dark:text-red-400"></i>
                                     </div>
                                     <div class="ml-4">
-                                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Delete Notification</h3>
-                                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">This action cannot be undone.</p>
+                                      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Удалить Уведомление</h3>
+                                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Это действие нельзя отменить.</p>
                                     </div>
                                   </div>
 
                                   <div class="mt-5 bg-red-50/50 dark:bg-red-900/10 rounded-xl p-4 border border-red-100 dark:border-red-900/20">
                                     <p class="text-sm text-red-800 dark:text-red-300 flex items-start">
                                       <i data-lucide="alert-circle" class="h-5 w-5 mr-2 flex-shrink-0 text-red-500 dark:text-red-400"></i>
-                                      Are you sure you want to permanently delete this notification?
+                                      Вы уверены, что хотите навсегда удалить это уведомление?
                                     </p>
                                   </div>
 
                                   <div class="mt-6 flex justify-end space-x-3">
                                     <button @click="confirmDelete = false" type="button" class="px-4 py-2.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-gray-800">
-                                      Cancel
+                                      Отмена
                                     </button>
                                     <button type="submit" class="px-4 py-2.5 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white text-sm font-medium hover:from-red-500 hover:to-red-600 transition-all duration-200 shadow-lg hover:shadow-red-500/25 dark:shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-800 transform hover:scale-105">
-                                      Delete
+                                      Удалить
                                     </button>
                                   </div>
                                 </div>
@@ -264,9 +264,9 @@
         <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <div class="mb-4 sm:mb-0">
             <p class="text-sm text-gray-600 dark:text-gray-400">
-              Showing <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->firstItem() ?? 0 }}</span> to
-              <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->lastItem() ?? 0 }}</span> of
-              <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->total() }}</span> notifications
+              Показано <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->firstItem() ?? 0 }}</span> до
+              <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->lastItem() ?? 0 }}</span> из
+              <span class="font-semibold text-primary-600 dark:text-primary-400">{{ $notifications->total() }}</span> уведомлений
             </p>
           </div>
           <div>
@@ -283,14 +283,14 @@
             <i data-lucide="bell-off" class="h-16 w-16 text-gray-400 dark:text-gray-500 animate-pulse"></i>
           </div>
         </div>
-        <h3 class="mt-8 text-xl font-semibold text-gray-900 dark:text-white">No Notifications</h3>
-        <p class="mt-2 text-base text-gray-600 dark:text-gray-300 text-center max-w-md">You don't have any notifications at the moment.</p>
-        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">We'll notify you when something important happens.</p>
+        <h3 class="mt-8 text-xl font-semibold text-gray-900 dark:text-white">Нет Уведомлений</h3>
+        <p class="mt-2 text-base text-gray-600 dark:text-gray-300 text-center max-w-md">У вас пока нет уведомлений.</p>
+        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Мы уведомим вас, когда произойдет что-то важное.</p>
 
         <div class="mt-6">
           <a href="{{ route('dashboard') }}" class="inline-flex items-center px-5 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-600 text-white text-sm font-medium rounded-full transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-primary-500/25 dark:shadow-none">
             <i data-lucide="arrow-left" class="h-4 w-4 mr-2"></i>
-            Return to Dashboard
+            Вернуться на Панель
           </a>
         </div>
       </div>

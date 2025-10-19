@@ -1,5 +1,5 @@
 @extends('layouts.dasht')
-@section('title', 'Demo Trading')
+@section('title', 'Демо-торговля')
 @section('content')
 
 <!-- Simple Header -->
@@ -8,19 +8,19 @@
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div class="text-center lg:text-left">
                 <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-                    Demo Trading
+                    Демо-торговля
                 </h1>
                 <p class="mt-2 text-gray-600 dark:text-gray-400">
-                    Practice trading with virtual money - Risk Free!
+                    Практикуйтесь в торговле с виртуальными деньгами - без рисков!
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <div class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm sm:text-base">
                     <i data-lucide="wallet" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                    Demo Balance: ${{ number_format(auth()->user()->demo_balance, 2) }}
+                    Демо-баланс: ${{ number_format(auth()->user()->demo_balance, 2) }}
                 </div>
                 <a href="{{ route('demo.dashboard') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg shadow transition-colors text-sm sm:text-base">
-                    <i data-lucide="arrow-left" class="w-4 h-4 sm:w-5 sm:h-5"></i> Back to Dashboard
+                    <i data-lucide="arrow-left" class="w-4 h-4 sm:w-5 sm:h-5"></i> Вернуться в панель
                 </a>
             </div>
         </div>
@@ -43,15 +43,15 @@
                 <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800">
                     <div class="flex items-center justify-between">
                         <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
-                            Place Demo Trade
+                            Разместить демо-сделку
                         </h2>
                         <div class="flex items-center gap-2 px-3 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-full">
                             <i data-lucide="shield-check" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>
-                            <span class="text-sm text-blue-600 dark:text-blue-400">Virtual Money</span>
+                            <span class="text-sm text-blue-600 dark:text-blue-400">Виртуальные деньги</span>
                         </div>
                     </div>
                     <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                        Select an asset and configure your virtual trade
+                        Выберите актив и настройте свою виртуальную сделку
                     </p>
                 </div>
 
@@ -61,12 +61,12 @@
                     <!-- Asset Selection -->
                     <div class="space-y-2">
                         <label for="asset" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Select Asset <span class="text-red-500">*</span>
+                            Выберите актив <span class="text-red-500">*</span>
                         </label>
                         <select name="asset" id="asset" required
                                 class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                        rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <option value="">Choose an asset to trade...</option>
+                            <option value="">Выберите актив для торговли...</option>
                             @foreach($instruments as $instrument)
                                 <option value="{{ $instrument->symbol }}"
                                         data-name="{{ $instrument->name }}"
@@ -87,7 +87,7 @@
                         <!-- Trade Type -->
                         <div class="space-y-2">
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Trade Direction <span class="text-red-500">*</span>
+                                Направление торговли <span class="text-red-500">*</span>
                             </label>
                             <div class="grid grid-cols-2 gap-3">
                                 <label class="relative flex items-center justify-center p-4 border-2 border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:border-green-300 dark:hover:border-green-600 transition-colors">
@@ -96,8 +96,8 @@
                                         <div class="w-8 h-8 mx-auto mb-2 flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30 peer-checked:bg-green-200 dark:peer-checked:bg-green-800/50">
                                             <i data-lucide="trending-up" class="w-4 h-4 text-green-600 dark:text-green-400"></i>
                                         </div>
-                                        <span class="text-sm font-medium">BUY</span>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Price goes up</p>
+                                        <span class="text-sm font-medium">ПОКУПКА</span>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Цена растет</p>
                                     </div>
                                     <div class="absolute inset-0 border-2 border-transparent peer-checked:border-green-500 rounded-lg"></div>
                                 </label>
@@ -108,8 +108,8 @@
                                         <div class="w-8 h-8 mx-auto mb-2 flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 peer-checked:bg-red-200 dark:peer-checked:bg-red-800/50">
                                             <i data-lucide="trending-down" class="w-4 h-4 text-red-600 dark:text-red-400"></i>
                                         </div>
-                                        <span class="text-sm font-medium">SELL</span>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Price goes down</p>
+                                        <span class="text-sm font-medium">ПРОДАЖА</span>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Цена падает</p>
                                     </div>
                                     <div class="absolute inset-0 border-2 border-transparent peer-checked:border-red-500 rounded-lg"></div>
                                 </label>
@@ -119,7 +119,7 @@
                         <!-- Amount -->
                         <div class="space-y-2">
                             <label for="amount" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Investment Amount <span class="text-red-500">*</span>
+                                Сумма инвестиций <span class="text-red-500">*</span>
                             </label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -132,7 +132,7 @@
                                               rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                             </div>
                             <p class="text-xs text-gray-500 dark:text-gray-400">
-                                Max: ${{ number_format(auth()->user()->demo_balance, 2) }}
+                                Максимум: ${{ number_format(auth()->user()->demo_balance, 2) }}
                             </p>
                         </div>
                     </div>
@@ -142,61 +142,61 @@
                         <!-- Leverage -->
                         <div class="space-y-2">
                             <label for="leverage" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Leverage <span class="text-red-500">*</span>
+                                Плечо <span class="text-red-500">*</span>
                             </label>
                             <select name="leverage" id="leverage" required
                                     class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                            rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="1">1x (No Leverage)</option>
+                                <option value="1">1x (Без плеча)</option>
                                 <option value="2">2x</option>
                                 <option value="5">5x</option>
                                 <option value="10">10x</option>
                                 <option value="20">20x</option>
                                 <option value="50">50x</option>
-                                <option value="100">100x (High Risk)</option>
+                                <option value="100">100x (Высокий риск)</option>
                             </select>
                             <p class="text-xs text-gray-500 dark:text-gray-400">
-                                Higher leverage = Higher potential profit/loss
+                                Больше плечо = Больше потенциальная прибыль/убыток
                             </p>
                         </div>
 
                         <!-- Expiration -->
                         <div class="space-y-2">
                             <label for="expire" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                Trade Duration <span class="text-red-500">*</span>
+                                Длительность сделки <span class="text-red-500">*</span>
                             </label>
                             <select name="expire" id="expire" required
                                     class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                            rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                <option value="5 minutes">5 Minutes</option>
-                                <option value="15 minutes">15 Minutes</option>
-                                <option value="30 minutes">30 Minutes</option>
-                                <option value="1 hour">1 Hour</option>
-                                <option value="4 hours">4 Hours</option>
-                                <option value="1 day">1 Day</option>
-                                <option value="1 week">1 Week</option>
+                                <option value="5 minutes">5 минут</option>
+                                <option value="15 minutes">15 минут</option>
+                                <option value="30 minutes">30 минут</option>
+                                <option value="1 hour">1 час</option>
+                                <option value="4 hours">4 часа</option>
+                                <option value="1 day">1 день</option>
+                                <option value="1 week">1 неделя</option>
                             </select>
                         </div>
                     </div>
 
                     <!-- Trade Summary -->
                     <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Trade Summary</h4>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Резюме сделки</h4>
                         <div class="grid grid-cols-2 gap-4 text-sm">
                             <div>
-                                <span class="text-gray-500 dark:text-gray-400">Asset:</span>
+                                <span class="text-gray-500 dark:text-gray-400">Актив:</span>
                                 <span id="summary-asset" class="font-medium text-gray-900 dark:text-white ml-2">-</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 dark:text-gray-400">Amount:</span>
+                                <span class="text-gray-500 dark:text-gray-400">Сумма:</span>
                                 <span id="summary-amount" class="font-medium text-gray-900 dark:text-white ml-2">$0.00</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 dark:text-gray-400">Leverage:</span>
+                                <span class="text-gray-500 dark:text-gray-400">Плечо:</span>
                                 <span id="summary-leverage" class="font-medium text-gray-900 dark:text-white ml-2">1x</span>
                             </div>
                             <div>
-                                <span class="text-gray-500 dark:text-gray-400">Max Risk:</span>
+                                <span class="text-gray-500 dark:text-gray-400">Макс. риск:</span>
                                 <span id="summary-risk" class="font-medium text-red-600 dark:text-red-400 ml-2">$0.00</span>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                         <button type="submit"
                                 class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
                             <i data-lucide="play" class="w-5 h-5"></i>
-                            Execute Demo Trade
+                            Выполнить демо-сделку
                         </button>
                     </div>
                 </form>
@@ -219,36 +219,36 @@
             <!-- Demo Trading Tips Card -->
             <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
                 <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Trading Tips</h3>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Советы по торговле</h3>
                 </div>
                 <div class="p-4 sm:p-6">
                     <div class="space-y-4">
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Risk Management</h4>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Never risk more than you can afford to lose, even in demo trading.</p>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Управление рисками</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Никогда не рискуйте больше, чем можете позволить себе потерять, даже в демо-торговле.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Start Small</h4>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Begin with smaller amounts and lower leverage to learn the basics.</p>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Начинайте с малого</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Начните с небольших сумм и низкого плеча, чтобы изучить основы.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Leverage Caution</h4>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Higher leverage amplifies both profits and losses significantly.</p>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Осторожность с плечом</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Высокое плечо значительно увеличивает как прибыль, так и убытки.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
                             <div>
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Practice Makes Perfect</h4>
-                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Use demo trading to test strategies before going live.</p>
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Практика делает совершенство</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Используйте демо-торговлю для тестирования стратегий перед переходом к реальным сделкам.</p>
                             </div>
                         </div>
                     </div>
@@ -258,32 +258,32 @@
             <!-- Demo Account Info Card -->
             <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
                 <div class="p-4 sm:p-6 border-b border-gray-100 dark:border-gray-800">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Demo Account</h3>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Демо-счет</h3>
                 </div>
                 <div class="p-4 sm:p-6">
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Available Balance</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Доступный баланс</span>
                             <span class="text-sm font-semibold text-gray-900 dark:text-white">${{ number_format(auth()->user()->demo_balance, 2) }}</span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Currency</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Валюта</span>
                             <span class="text-sm font-medium text-gray-900 dark:text-white">USD</span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500 dark:text-gray-400">Trading Mode</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">Режим торговли</span>
                             <span class="inline-flex items-center px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full">
-                                Demo
+                                Демо
                             </span>
                         </div>
                     </div>
 
                     <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
-                        <form action="{{ route('demo.reset') }}" method="POST" onsubmit="return confirm('Reset demo account to $100,000?')">
+                        <form action="{{ route('demo.reset') }}" method="POST" onsubmit="return confirm('Сбросить демо-счет до $100,000?')">
                             @csrf
                             <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-2.5 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2">
                                 <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                                Reset Demo Account
+                                Сбросить демо-счет
                             </button>
                         </form>
                     </div>
@@ -347,13 +347,13 @@
 
             if (amount > maxBalance) {
                 e.preventDefault();
-                alert('Amount exceeds your demo balance of $' + maxBalance.toFixed(2));
+                alert('Сумма превышает ваш демо-баланс $' + maxBalance.toFixed(2));
                 return;
             }
 
             if (amount < 1) {
                 e.preventDefault();
-                alert('Minimum trade amount is $1.00');
+                alert('Минимальная сумма сделки $1.00');
                 return;
             }
         });

@@ -8,8 +8,8 @@
         <div class="relative max-w-7xl mx-auto px-6 py-16">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Bot Trading Dashboard</h1>
-                    <p class="text-xl text-white/90 max-w-2xl">Monitor and manage your automated trading investments</p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Панель Торговых Ботов</h1>
+                    <p class="text-xl text-white/90 max-w-2xl">Контролируйте и управляйте своими автоматизированными торговыми инвестициями</p>
                 </div>
                 <div class="hidden lg:block">
                     <div class="w-32 h-32 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center">
@@ -39,7 +39,7 @@
                 <div class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     ${{ number_format($stats['total_invested'], 2) }}
                 </div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Total Invested</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Всего Инвестировано</div>
             </div>
 
             <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 p-6">
@@ -51,7 +51,7 @@
                 <div class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     ${{ number_format($stats['current_balance'], 2) }}
                 </div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Current Balance</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Текущий Баланс</div>
             </div>
 
             <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 p-6">
@@ -63,7 +63,7 @@
                 <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">
                     +${{ number_format($stats['total_profit'], 2) }}
                 </div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Total Profit</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Общая Прибыль</div>
             </div>
 
             <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 p-6">
@@ -75,7 +75,7 @@
                 <div class="text-2xl font-bold text-red-600 dark:text-red-400 mb-1">
                     -${{ number_format($stats['total_loss'], 2) }}
                 </div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Total Loss</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Общие Убытки</div>
             </div>
 
             <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 p-6">
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="text-2xl font-bold text-gray-900 dark:text-white mb-1">{{ $stats['active_bots'] }}</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">Active Bots</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">Активные Боты</div>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
                             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Your Investments</h2>
                             <a href="{{ route('user.bots.index') }}" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-2xl transition-colors duration-200">
                                 <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
-                                New Investment
+                                Новая Инвестиция
                             </a>
                         </div>
 
@@ -113,24 +113,24 @@
                                             </div>
                                             <div>
                                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $investment->bot->name }}</h3>
-                                                <p class="text-sm text-gray-600 dark:text-gray-400">{{ $investment->bot->description ?? 'Advanced Trading Bot' }}</p>
+                                                <p class="text-sm text-gray-600 dark:text-gray-400">{{ $investment->bot->description ?? 'Продвинутый Торговый Бот' }}</p>
                                             </div>
                                         </div>
                                         <div class="text-right">
                                             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
                                                 {{ $investment->status == 'active' ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400' : 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400' }}">
-                                                {{ ucfirst($investment->status) }}
+                                                {{ $investment->status == 'active' ? 'Активный' : ucfirst($investment->status) }}
                                             </span>
                                         </div>
                                     </div>
 
                                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                         <div>
-                                            <div class="text-sm text-gray-600 dark:text-gray-400">Invested</div>
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">Инвестировано</div>
                                             <div class="font-semibold text-gray-900 dark:text-white">${{ number_format($investment->investment_amount, 2) }}</div>
                                         </div>
                                         <div>
-                                            <div class="text-sm text-gray-600 dark:text-gray-400">Current Value</div>
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">Текущая Стоимость</div>
                                             <div class="font-semibold text-gray-900 dark:text-white">${{ number_format($investment->current_balance ?? $investment->investment_amount, 2) }}</div>
                                         </div>
                                         <div>
@@ -155,17 +155,17 @@
 
                                     <div class="flex items-center justify-between mt-6 pt-4 border-t border-gray-200 dark:border-gray-600">
                                         <div class="text-sm text-gray-600 dark:text-gray-400">
-                                            Started: {{ $investment->created_at->format('M d, Y') }}
+                                            Начато: {{ $investment->created_at->format('d.m.Y') }}
                                         </div>
                                         <div class="flex space-x-2">
                                             <a href="{{ route('user.bots.show', $investment->bot) }}" class="inline-flex items-center px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
                                                 <i data-lucide="eye" class="w-3 h-3 mr-1"></i>
-                                                View
+                                                Просмотр
                                             </a>
                                             @if($investment->status == 'active')
                                             <button class="inline-flex items-center px-3 py-1 bg-red-100 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-xs font-medium rounded-lg hover:bg-red-200 dark:hover:bg-red-900/30 transition-colors duration-200">
                                                 <i data-lucide="pause" class="w-3 h-3 mr-1"></i>
-                                                Pause
+                                                Пауза
                                             </button>
                                             @endif
                                         </div>
@@ -178,11 +178,11 @@
                                 <div class="w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <i data-lucide="bot" class="w-12 h-12 text-gray-400"></i>
                                 </div>
-                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">No Investments Yet</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-6">Start your automated trading journey today</p>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Пока Нет Инвестиций</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-6">Начните свой путь автоматической торговли сегодня</p>
                                 <a href="{{ route('user.bots.index') }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 text-white font-medium rounded-2xl transition-all duration-300 transform hover:scale-105">
                                     <i data-lucide="plus" class="w-5 h-5 mr-2"></i>
-                                    Start Investing
+                                    Начать Инвестировать
                                 </a>
                             </div>
                         @endif
@@ -195,7 +195,7 @@
                 <!-- Recent Trading Activity -->
                 <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 overflow-hidden">
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Recent Activity</h3>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Недавняя Активность</h3>
 
                         @if($recentTrades->count() > 0)
                             <div class="space-y-4">
@@ -206,7 +206,7 @@
                                             <i data-lucide="{{ $trade->profit_loss >= 0 ? 'trending-up' : 'trending-down' }}" class="w-4 h-4 {{ $trade->profit_loss >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400' }}"></i>
                                         </div>
                                         <div>
-                                            <div class="text-sm font-medium text-gray-900 dark:text-white">{{ $trade->userBotInvestment->bot->name ?? 'Bot Trade' }}</div>
+                                            <div class="text-sm font-medium text-gray-900 dark:text-white">{{ $trade->userBotInvestment->bot->name ?? 'Торговля Бота' }}</div>
                                             <div class="text-xs text-gray-500 dark:text-gray-400">{{ $trade->opened_at->format('M d, H:i') }}</div>
                                         </div>
                                     </div>
@@ -223,7 +223,7 @@
                                 <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <i data-lucide="activity" class="w-8 h-8 text-gray-400"></i>
                                 </div>
-                                <p class="text-gray-600 dark:text-gray-400">No trading activity yet</p>
+                                <p class="text-gray-600 dark:text-gray-400">Пока нет торговой активности</p>
                             </div>
                         @endif
                     </div>
@@ -232,27 +232,27 @@
                 <!-- Quick Actions -->
                 <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 overflow-hidden">
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Quick Actions</h3>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Быстрые Действия</h3>
 
                         <div class="space-y-3">
                             <a href="{{ route('user.bots.index') }}" class="flex items-center w-full px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 text-blue-700 dark:text-blue-300 rounded-2xl hover:from-blue-100 hover:to-blue-200 dark:hover:from-blue-900/30 dark:hover:to-blue-800/30 transition-all duration-200 group">
                                 <i data-lucide="plus" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-200"></i>
-                                <span class="font-medium">New Investment</span>
+                                <span class="font-medium">Новая Инвестиция</span>
                             </a>
 
                             <a href="{{ route('withdrawalsdeposits') }}" class="flex items-center w-full px-4 py-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 text-green-700 dark:text-green-300 rounded-2xl hover:from-green-100 hover:to-green-200 dark:hover:from-green-900/30 dark:hover:to-green-800/30 transition-all duration-200 group">
                                 <i data-lucide="download" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-200"></i>
-                                <span class="font-medium">Withdraw Funds</span>
+                                <span class="font-medium">Вывести Средства</span>
                             </a>
 
                             <a href="{{ route('deposits') }}" class="flex items-center w-full px-4 py-3 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 text-blue-700 dark:text-blue-300 rounded-2xl hover:from-blue-100 hover:to-blue-200 dark:hover:from-blue-900/30 dark:hover:to-blue-800/30 transition-all duration-200 group">
                                 <i data-lucide="upload" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-200"></i>
-                                <span class="font-medium">Deposit Funds</span>
+                                <span class="font-medium">Пополнить Средства</span>
                             </a>
 
                             <a href="{{ route('support') }}" class="flex items-center w-full px-4 py-3 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 text-orange-700 dark:text-orange-300 rounded-2xl hover:from-orange-100 hover:to-orange-200 dark:hover:from-orange-900/30 dark:hover:to-orange-800/30 transition-all duration-200 group">
                                 <i data-lucide="life-buoy" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-200"></i>
-                                <span class="font-medium">Get Support</span>
+                                <span class="font-medium">Получить Поддержку</span>
                             </a>
                         </div>
                     </div>

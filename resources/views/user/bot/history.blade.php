@@ -14,7 +14,7 @@
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                                 </svg>
-                                Bot Dashboard
+                                Панель Ботов
                             </a>
                         </li>
                         <li aria-current="page">
@@ -22,14 +22,14 @@
                                 <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Trading History</span>
+                                <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">История Торговли</span>
                             </div>
                         </li>
                     </ol>
                 </nav>
 
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $investment->bot->name ?? 'Bot' }} Trading History</h1>
-                <p class="text-gray-600 dark:text-gray-400 mt-2">Track detailed trading performance and analytics</p>
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">История Торговли {{ $investment->bot->name ?? 'Бота' }}</h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Отслеживайте детальную торговую эффективность и аналитику</p>
             </div>
 
             <a href="{{ route('user.bots.dashboard') }}"
@@ -37,14 +37,14 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
-                Back to Dashboard
+                Вернуться на Панель
             </a>
         </div>
 
         <!-- Investment Overview -->
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 mb-8">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Investment Overview</h2>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Обзор Инвестиции</h2>
             </div>
 
             <div class="p-6">
@@ -57,7 +57,7 @@
                             </svg>
                         </div>
                         <div class="text-2xl font-bold text-gray-900 dark:text-white">${{ number_format($investment->amount, 2) }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Initial Investment</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Начальная Инвестиция</div>
                     </div>
 
                     <!-- Current Balance -->
@@ -68,7 +68,7 @@
                             </svg>
                         </div>
                         <div class="text-2xl font-bold text-gray-900 dark:text-white">${{ number_format($investment->current_balance, 2) }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Current Balance</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Текущий Баланс</div>
                     </div>
 
                     <!-- Total Profit/Loss -->
@@ -81,7 +81,7 @@
                         <div class="text-2xl font-bold {{ ($investment->total_profit - $investment->total_loss) >= 0 ? 'text-green-600' : 'text-red-600' }}">
                             {{ ($investment->total_profit - $investment->total_loss) >= 0 ? '+' : '' }}${{ number_format($investment->total_profit - $investment->total_loss, 2) }}
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Net P&L</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Чистая П&У</div>
                     </div>
 
                     <!-- Performance -->
@@ -96,7 +96,7 @@
                             $winRate = $totalTrades > 0 ? ($investment->successful_trades / $totalTrades) * 100 : 0;
                         @endphp
                         <div class="text-2xl font-bold text-gray-900 dark:text-white">{{ number_format($winRate, 1) }}%</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Win Rate</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Процент Успеха</div>
                     </div>
                 </div>
 
@@ -105,21 +105,21 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                         <div>
                             <div class="text-lg font-semibold text-gray-900 dark:text-white">{{ $investment->successful_trades + $investment->failed_trades }}</div>
-                            <div class="text-xs text-gray-600 dark:text-gray-400">Total Trades</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Всего Сделок</div>
                         </div>
                         <div>
                             <div class="text-lg font-semibold text-green-600">{{ $investment->successful_trades }}</div>
-                            <div class="text-xs text-gray-600 dark:text-gray-400">Winning Trades</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Выигрышные Сделки</div>
                         </div>
                         <div>
                             <div class="text-lg font-semibold text-red-600">{{ $investment->failed_trades }}</div>
-                            <div class="text-xs text-gray-600 dark:text-gray-400">Losing Trades</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Проигрышные Сделки</div>
                         </div>
                         <div>
                             <div class="text-lg font-semibold text-gray-900 dark:text-white">
                                 {{ $investment->created_at->diffInDays(now()) }} days
                             </div>
-                            <div class="text-xs text-gray-600 dark:text-gray-400">Active Duration</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">Период Активности</div>
                         </div>
                     </div>
                 </div>
@@ -130,11 +130,11 @@
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
                 <div>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Trading History</h2>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Detailed history of all trades executed by this bot</p>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">История Торговли</h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Детальная история всех сделок, выполненных этим ботом</p>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ $trades->total() }} total trades</span>
+                    <span class="text-sm text-gray-600 dark:text-gray-400">{{ $trades->total() }} всего сделок</span>
                 </div>
             </div>
 
@@ -143,13 +143,13 @@
                     <table class="w-full">
                         <thead class="bg-gray-50 dark:bg-gray-700/50">
                             <tr>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Trade Details</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Type</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Amount</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">P&L</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Strategy</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Duration</th>
-                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Status</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Детали Сделки</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Тип</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Сумма</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">П&У</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Стратегия</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Длительность</th>
+                                <th class="text-left py-4 px-6 font-semibold text-gray-900 dark:text-white text-sm">Статус</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -161,8 +161,8 @@
                                                 {{ $trade->trading_pair ?? 'N/A' }}
                                             </div>
                                             <div class="text-sm text-gray-600 dark:text-gray-400">
-                                                Entry: ${{ number_format($trade->entry_price, 4) }}
-                                                → Exit: ${{ number_format($trade->exit_price, 4) }}
+                                                Вход: ${{ number_format($trade->entry_price, 4) }}
+                                                → Выход: ${{ number_format($trade->exit_price, 4) }}
                                             </div>
                                         </div>
                                     </td>
@@ -186,7 +186,7 @@
                                         </div>
                                     </td>
                                     <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
-                                        {{ $trade->strategy_used ?? 'Auto' }}
+                                        {{ $trade->strategy_used ?? 'Авто' }}
                                     </td>
                                     <td class="py-4 px-6 text-gray-600 dark:text-gray-400">
                                         @if($trade->opened_at && $trade->closed_at)
@@ -201,7 +201,7 @@
                                     <td class="py-4 px-6">
                                         <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
                                             {{ $trade->result == 'profit' ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300' }}">
-                                            {{ ucfirst($trade->result ?? 'completed') }}
+                                            {{ $trade->result == 'profit' ? 'Прибыль' : ($trade->result == 'loss' ? 'Убыток' : 'Завершена') }}
                                         </span>
                                     </td>
                                 </tr>
@@ -224,9 +224,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">No Trading History</h3>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Нет Истории Торговли</h3>
                     <p class="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
-                        This bot hasn't executed any trades yet. Trading history will appear here once the bot starts making trades.
+                        Этот бот еще не выполнил никаких сделок. История торговли появится здесь, когда бот начнет совершать сделки.
                     </p>
                 </div>
             @endif

@@ -1,5 +1,5 @@
 @extends('layouts.dasht')
-@section('title', 'Demo Ticaret Geçmişi')
+@section('title', 'История демо-торговли')
 @section('content')
 
 <!-- Simple Header -->
@@ -8,23 +8,23 @@
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div class="text-center lg:text-left">
                 <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-                    Demo Trading History
+                    История демо-торговли
                 </h1>
                 <p class="mt-2 text-gray-600 dark:text-gray-400">
-                    Review your past demo trades and track your performance
+                    Просматривайте свои прошлые демо-сделки и отслеживайте эффективность
                 </p>
             </div>
             <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <div class="inline-flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-xs sm:text-sm lg:text-base">
                     <i data-lucide="wallet" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5"></i>
-                    <span class="hidden sm:inline">Balance:</span> ${{ number_format(auth()->user()->demo_balance, 2) }}
+                    <span class="hidden sm:inline">Баланс:</span> ${{ number_format(auth()->user()->demo_balance, 2) }}
                 </div>
                 <a href="{{ route('demo.trade') }}" class="inline-flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition-colors text-xs sm:text-sm lg:text-base">
                     <i data-lucide="plus" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5"></i>
-                    <span class="hidden sm:inline">New</span> Trade
+                    <span class="hidden sm:inline">Новая</span> сделка
                 </a>
                 <a href="{{ route('demo.dashboard') }}" class="inline-flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg shadow transition-colors text-xs sm:text-sm lg:text-base">
-                    <i data-lucide="arrow-left" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5"></i> Dashboard
+                    <i data-lucide="arrow-left" class="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5"></i> Панель управления
                 </a>
             </div>
         </div>
@@ -56,7 +56,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 dark:text-white">{{ $totalTrades }}</h3>
-                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Total Trades</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Всего сделок</p>
                 </div>
                 <div class="p-2 sm:p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
                     <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-blue-600 dark:text-blue-400"></i>
@@ -68,7 +68,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 dark:text-white">{{ $winRate }}%</h3>
-                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Win Rate</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Процент побед</p>
                 </div>
                 <div class="p-2 sm:p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
                     <i data-lucide="target" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-green-600 dark:text-green-400"></i>
@@ -82,7 +82,7 @@
                     <h3 class="text-sm sm:text-lg lg:text-2xl xl:text-3xl font-bold {{ $totalPnL >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400' }}">
                         ${{ number_format($totalPnL, 2) }}
                     </h3>
-                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Total P&L</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Общая прибыль/убыток</p>
                 </div>
                 <div class="p-2 sm:p-3 bg-{{ $totalPnL >= 0 ? 'green' : 'red' }}-100 dark:bg-{{ $totalPnL >= 0 ? 'green' : 'red' }}-900/30 rounded-lg">
                     <i data-lucide="dollar-sign" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-{{ $totalPnL >= 0 ? 'green' : 'red' }}-600 dark:text-{{ $totalPnL >= 0 ? 'green' : 'red' }}-400"></i>
@@ -94,7 +94,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h3 class="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 dark:text-white">{{ $activeTrades }}</h3>
-                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Active Trades</p>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Активные сделки</p>
                 </div>
                 <div class="p-2 sm:p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
                     <i data-lucide="activity" class="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-orange-600 dark:text-orange-400"></i>
@@ -107,9 +107,9 @@
     <div class="bg-white dark:bg-gray-900 rounded-lg sm:rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm mb-6">
         <div class="p-3 sm:p-4 lg:p-6 border-b border-gray-100 dark:border-gray-800">
             <div class="flex items-center justify-between">
-                <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white">Filters</h3>
+                <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white">Фильтры</h3>
                 <button type="button" id="toggleFilters" class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
-                    <span id="filterToggleText">Show Filters</span>
+                    <span id="filterToggleText">Показать фильтры</span>
                     <i data-lucide="chevron-down" id="filterToggleIcon" class="w-3 h-3 sm:w-4 sm:h-4 inline-block ml-1 transition-transform"></i>
                 </button>
             </div>
@@ -120,37 +120,37 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                     <!-- Status Filter -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Status</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Статус</label>
                         <select name="status" class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                            <option value="">All Status</option>
-                            <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Active</option>
-                            <option value="closed" {{ request('status') === 'closed' ? 'selected' : '' }}>Closed</option>
+                            <option value="">Все статусы</option>
+                            <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Активные</option>
+                            <option value="closed" {{ request('status') === 'closed' ? 'selected' : '' }}>Закрытые</option>
                         </select>
                     </div>
 
                     <!-- Type Filter -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Trade Type</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Тип сделки</label>
                         <select name="type" class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                            <option value="">All Types</option>
-                            <option value="Buy" {{ request('type') === 'Buy' ? 'selected' : '' }}>Buy</option>
-                            <option value="Sell" {{ request('type') === 'Sell' ? 'selected' : '' }}>Sell</option>
+                            <option value="">Все типы</option>
+                            <option value="Buy" {{ request('type') === 'Buy' ? 'selected' : '' }}>Покупка</option>
+                            <option value="Sell" {{ request('type') === 'Sell' ? 'selected' : '' }}>Продажа</option>
                         </select>
                     </div>
 
                     <!-- Result Filter -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Result</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Результат</label>
                         <select name="result" class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                            <option value="">All Results</option>
-                            <option value="WIN" {{ request('result') === 'WIN' ? 'selected' : '' }}>Win</option>
-                            <option value="LOSE" {{ request('result') === 'LOSE' ? 'selected' : '' }}>Loss</option>
+                            <option value="">Все результаты</option>
+                            <option value="WIN" {{ request('result') === 'WIN' ? 'selected' : '' }}>Прибыль</option>
+                            <option value="LOSE" {{ request('result') === 'LOSE' ? 'selected' : '' }}>Убыток</option>
                         </select>
                     </div>
 
                     <!-- Per Page -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Per Page</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">На странице</label>
                         <select name="per_page" class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                             <option value="20" {{ request('per_page', 20) == 20 ? 'selected' : '' }}>20</option>
                             <option value="50" {{ request('per_page') == 50 ? 'selected' : '' }}>50</option>
@@ -162,22 +162,22 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     <!-- Asset Filter -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Asset</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Актив</label>
                         <input type="text" name="asset" value="{{ request('asset') }}"
-                               placeholder="e.g., BTC, ETH, EUR/USD"
+                               placeholder="например, BTC, ETH, EUR/USD"
                                class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     </div>
 
                     <!-- Date From -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">From Date</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">С даты</label>
                         <input type="date" name="date_from" value="{{ request('date_from') }}"
                                class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     </div>
 
                     <!-- Date To -->
                     <div>
-                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">To Date</label>
+                        <label class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">До даты</label>
                         <input type="date" name="date_to" value="{{ request('date_to') }}"
                                class="w-full px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs sm:text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     </div>
@@ -186,11 +186,11 @@
                 <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4">
                     <button type="submit" class="inline-flex items-center justify-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs sm:text-sm font-medium transition-colors">
                         <i data-lucide="search" class="w-3 h-3 sm:w-4 sm:h-4"></i>
-                        Apply Filters
+                        Применить фильтры
                     </button>
                     <a href="{{ route('demo.history') }}" class="inline-flex items-center justify-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-xs sm:text-sm font-medium transition-colors">
                         <i data-lucide="x" class="w-3 h-3 sm:w-4 sm:h-4"></i>
-                        Clear Filters
+                        Очистить фильтры
                     </a>
                 </div>
             </form>
@@ -202,10 +202,10 @@
     <div class="bg-white dark:bg-gray-900 rounded-lg sm:rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
         <div class="p-3 sm:p-4 lg:p-6 border-b border-gray-100 dark:border-gray-800">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <h2 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Trading History</h2>
+                <h2 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">История торговли</h2>
                 @if($trades->count() > 0)
                     <span class="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full">
-                        {{ $trades->total() }} {{ $trades->total() === 1 ? 'Trade' : 'Trades' }}
+                        {{ $trades->total() }} {{ $trades->total() === 1 ? 'сделка' : ($trades->total() < 5 ? 'сделки' : 'сделок') }}
                     </span>
                 @endif
             </div>
@@ -233,7 +233,7 @@
                 <!-- Amount and P&L Row -->
                 <div class="grid grid-cols-2 gap-4 mb-3">
                     <div>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Amount</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Сумма</p>
                         <p class="text-sm font-medium text-gray-900 dark:text-white">${{ number_format($trade->amount, 2) }}</p>
                     </div>
                     <div>
@@ -257,7 +257,7 @@
                     <div class="flex items-center gap-3">
                         @if($trade->active === 'yes')
                             <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
-                                Active
+                                Активно
                             </span>
                         @else
                             @php
@@ -268,7 +268,7 @@
                                 };
                             @endphp
                             <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $resultClass }}">
-                                {{ $trade->result_type ?? 'Closed' }}
+                                {{ $trade->result_type === 'WIN' ? 'Прибыль' : ($trade->result_type === 'LOSE' ? 'Убыток' : 'Закрыто') }}
                             </span>
                         @endif
                         <span class="text-xs text-gray-500 dark:text-gray-400">
@@ -281,9 +281,9 @@
                             @method('DELETE')
                             <button type="submit"
                                     class="inline-flex items-center px-3 py-1.5 text-xs font-medium bg-red-100 hover:bg-red-200 dark:bg-red-900/30 dark:hover:bg-red-900/50 text-red-700 dark:text-red-400 rounded-lg transition-colors"
-                                    onclick="return confirm('Are you sure you want to close this trade?')">
+                                    onclick="return confirm('Вы уверены, что хотите закрыть эту сделку?')">
                                 <i data-lucide="x" class="w-3 h-3 mr-1"></i>
-                                Close
+                                Закрыть
                             </button>
                         </form>
                     @endif
@@ -297,16 +297,16 @@
             <table class="w-full">
                 <thead class="bg-gray-50 dark:bg-gray-800">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Asset</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Type</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Amount</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Leverage</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Entry</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Current</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">P&L</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Актив</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Тип</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Сумма</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Плечо</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Вход</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Текущая</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Прибыль/убыток</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Статус</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Дата</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Действия</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
@@ -364,7 +364,7 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             @if($trade->active === 'yes')
                                 <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
-                                    Active
+                                    Активно
                                 </span>
                             @else
                                 @php
@@ -375,7 +375,7 @@
                                     };
                                 @endphp
                                 <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full {{ $resultClass }}">
-                                    {{ $trade->result_type ?? 'Closed' }}
+                                    {{ $trade->result_type === 'WIN' ? 'Прибыль' : ($trade->result_type === 'LOSE' ? 'Убыток' : 'Закрыто') }}
                                 </span>
                             @endif
                         </td>
@@ -390,9 +390,9 @@
                                     @method('DELETE')
                                     <button type="submit"
                                             class="inline-flex items-center px-3 py-1.5 text-xs font-medium bg-red-100 hover:bg-red-200 dark:bg-red-900/30 dark:hover:bg-red-900/50 text-red-700 dark:text-red-400 rounded-lg transition-colors"
-                                            onclick="return confirm('Are you sure you want to close this trade?')">
+                                            onclick="return confirm('Вы уверены, что хотите закрыть эту сделку?')">
                                         <i data-lucide="x" class="w-3 h-3 mr-1"></i>
-                                        Close
+                                        Закрыть
                                     </button>
                                 </form>
                             @else
@@ -414,15 +414,15 @@
                 <div class="text-center sm:text-left">
                     <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                         @if($trades->hasPages())
-                            Showing {{ $trades->firstItem() ?? 0 }} to {{ $trades->lastItem() ?? 0 }}
-                            of {{ number_format($trades->total()) }} {{ $trades->total() === 1 ? 'trade' : 'trades' }}
+                            Показано {{ $trades->firstItem() ?? 0 }} до {{ $trades->lastItem() ?? 0 }}
+                            из {{ number_format($trades->total()) }} {{ $trades->total() === 1 ? 'сделки' : ($trades->total() < 5 ? 'сделок' : 'сделок') }}
                         @else
-                            Showing {{ $trades->count() }} {{ $trades->count() === 1 ? 'trade' : 'trades' }}
+                            Показано {{ $trades->count() }} {{ $trades->count() === 1 ? 'сделка' : ($trades->count() < 5 ? 'сделки' : 'сделок') }}
                         @endif
                     </div>
                     @if($trades->hasPages() && $trades->total() > $trades->perPage())
                         <div class="text-xs text-gray-400 dark:text-gray-500 mt-1">
-                            {{ $trades->perPage() }} trades per page
+                            {{ $trades->perPage() }} сделок на странице
                         </div>
                     @endif
                 </div>
@@ -434,25 +434,25 @@
                     <div class="flex items-center gap-2 sm:hidden w-full">
                         @if($trades->onFirstPage())
                             <span class="flex-1 px-3 py-2 text-xs bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 rounded-lg text-center">
-                                Previous
+                                Предыдущая
                             </span>
                         @else
                             <a href="{{ $trades->previousPageUrl() }}" class="flex-1 px-3 py-2 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center transition-colors">
-                                Previous
+                                Предыдущая
                             </a>
                         @endif
 
                         <span class="px-3 py-2 text-xs bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-lg">
-                            Page {{ $trades->currentPage() }} of {{ $trades->lastPage() }}
+                            Страница {{ $trades->currentPage() }} из {{ $trades->lastPage() }}
                         </span>
 
                         @if($trades->hasMorePages())
                             <a href="{{ $trades->nextPageUrl() }}" class="flex-1 px-3 py-2 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center transition-colors">
-                                Next
+                                Следующая
                             </a>
                         @else
                             <span class="flex-1 px-3 py-2 text-xs bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 rounded-lg text-center">
-                                Next
+                                Следующая
                             </span>
                         @endif
                     </div>
@@ -463,11 +463,11 @@
                             <!-- Previous Button -->
                             @if($trades->onFirstPage())
                                 <span class="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 rounded-lg">
-                                    Previous
+                                    Предыдущая
                                 </span>
                             @else
                                 <a href="{{ $trades->previousPageUrl() }}" class="px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                                    Previous
+                                    Предыдущая
                                 </a>
                             @endif
 
@@ -495,11 +495,11 @@
                             <!-- Next Button -->
                             @if($trades->hasMorePages())
                                 <a href="{{ $trades->nextPageUrl() }}" class="px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                                    Next
+                                    Следующая
                                 </a>
                             @else
                                 <span class="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 rounded-lg">
-                                    Next
+                                    Следующая
                                 </span>
                             @endif
                         </nav>
@@ -516,12 +516,12 @@
                             <input type="hidden" name="{{ $key }}" value="{{ $value }}">
                         @endforeach
 
-                        <label class="text-xs text-gray-500 dark:text-gray-400">Go to page:</label>
+                        <label class="text-xs text-gray-500 dark:text-gray-400">Перейти на страницу:</label>
                         <input type="number" name="page" min="1" max="{{ $trades->lastPage() }}"
                                value="{{ $trades->currentPage() }}"
                                class="w-16 px-2 py-1 text-xs border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
                         <button type="submit" class="px-3 py-1 text-xs bg-blue-600 hover:bg-blue-700 text-white rounded transition-colors">
-                            Go
+                            Перейти
                         </button>
                     </form>
                 </div>
@@ -535,11 +535,11 @@
             <div class="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
                 <i data-lucide="bar-chart-3" class="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 dark:text-gray-500"></i>
             </div>
-            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">No Trading History</h3>
-            <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 max-w-sm mx-auto">You haven't placed any demo trades yet. Start trading to build your history and track your performance!</p>
+            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Нет истории торговли</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 max-w-sm mx-auto">Вы еще не разместили ни одной демо-сделки. Начните торговать, чтобы создать историю и отслеживать свою эффективность!</p>
             <a href="{{ route('demo.trade') }}" class="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors text-sm sm:text-base">
                 <i data-lucide="plus" class="w-3 h-3 sm:w-4 sm:h-4"></i>
-                Place Your First Trade
+                Разместить первую сделку
             </a>
         </div>
         @endif
@@ -565,7 +565,7 @@
 
         if (hasActiveFilters) {
             filterSection.classList.remove('hidden');
-            filterToggleText.textContent = 'Hide Filters';
+            filterToggleText.textContent = 'Скрыть фильтры';
             filterToggleIcon.style.transform = 'rotate(180deg)';
         }
 
@@ -575,11 +575,11 @@
 
                 if (isHidden) {
                     filterSection.classList.remove('hidden');
-                    filterToggleText.textContent = 'Hide Filters';
+                    filterToggleText.textContent = 'Скрыть фильтры';
                     filterToggleIcon.style.transform = 'rotate(180deg)';
                 } else {
                     filterSection.classList.add('hidden');
-                    filterToggleText.textContent = 'Show Filters';
+                    filterToggleText.textContent = 'Показать фильтры';
                     filterToggleIcon.style.transform = 'rotate(0deg)';
                 }
             });

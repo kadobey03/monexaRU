@@ -6,20 +6,20 @@
         <!-- Header -->
         <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-6 sm:mb-8 gap-4">
             <div>
-                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Copy Trading Dashboard</h1>
-                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2">Manage your copy trading portfolio and track performance</p>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Панель копи-трейдинга</h1>
+                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2">Управляйте портфелем копи-трейдинга и отслеживайте эффективность</p>
             </div>
             <div class="flex flex-col sm:flex-row gap-3">
                 <a href="{{ route('copy.experts') }}"
                    class="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base">
                     <i data-lucide="users" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                    <span class="hidden sm:inline">Browse Experts</span>
-                    <span class="sm:hidden">Experts</span>
+                    <span class="hidden sm:inline">Обзор экспертов</span>
+                    <span class="sm:hidden">Эксперты</span>
                 </a>
                 <button onclick="refreshDashboard()"
                         class="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base">
                     <i data-lucide="refresh-cw" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                    <span class="hidden sm:inline">Refresh</span>
+                    <span class="hidden sm:inline">Обновить</span>
                 </button>
             </div>
         </div>
@@ -49,9 +49,9 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div class="flex items-center justify-between">
                     <div class="flex-1 min-w-0">
-                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Active Copies</p>
+                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Активные копии</p>
                         <p class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1 truncate">{{ $stats['active_copies'] }}</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Experts being copied</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Копируемые эксперты</p>
                     </div>
                     <div class="p-2 sm:p-3 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl flex-shrink-0">
                         <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400"></i>
@@ -63,9 +63,9 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div class="flex items-center justify-between">
                     <div class="flex-1 min-w-0">
-                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Total Invested</p>
+                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Общие инвестиции</p>
                         <p class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1 truncate">{{Auth::user()->currency}}{{ number_format($stats['total_invested'], 2) }}</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Capital deployed</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Размещенный капитал</p>
                     </div>
                     <div class="p-2 sm:p-3 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-xl flex-shrink-0">
                         <i data-lucide="dollar-sign" class="w-5 h-5 sm:w-6 sm:h-6 text-green-600 dark:text-green-400"></i>
@@ -77,9 +77,9 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div class="flex items-center justify-between">
                     <div class="flex-1 min-w-0">
-                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Current Value</p>
+                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Текущая стоимость</p>
                         <p class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1 truncate">{{Auth::user()->currency}}{{ number_format($stats['current_balance'], 2) }}</p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400">Portfolio value</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Стоимость портфеля</p>
                     </div>
                     <div class="p-2 sm:p-3 bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-indigo-900/30 dark:to-indigo-800/30 rounded-xl flex-shrink-0">
                         <i data-lucide="wallet" class="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600 dark:text-indigo-400"></i>
@@ -91,7 +91,7 @@
             <div class="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div class="flex items-center justify-between">
                     <div class="flex-1 min-w-0">
-                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Total P&L</p>
+                        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mb-1 sm:mb-2">Общая прибыль/убыток</p>
                         <p class="text-2xl sm:text-3xl font-bold {{ $stats['total_profit'] >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400' }} mb-1 truncate">
                             {{ $stats['total_profit'] >= 0 ? '+' : '' }}{{Auth::user()->currency}}{{ number_format($stats['total_profit'], 2) }}
                         </p>
@@ -115,13 +115,13 @@
                         <div>
                             <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                                 <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400"></i>
-                                Active Copy Positions
+                                Активные позиции копи-трейдинга
                             </h2>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Currently copying {{ $copyTrades->where('active', 'yes')->count() }} expert trader(s)</p>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">В настоящее время копируется {{ $copyTrades->where('active', 'yes')->count() }} эксперт(ов)</p>
                         </div>
                         <div class="flex items-center space-x-2">
                             <div class="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                            <span class="text-xs sm:text-sm font-medium text-green-600 dark:text-green-400">Live</span>
+                            <span class="text-xs sm:text-sm font-medium text-green-600 dark:text-green-400">В реальном времени</span>
                         </div>
                     </div>
                 </div>
@@ -150,15 +150,15 @@
                                         @endif
                                         <div class="min-w-0 flex-1">
                                             <h3 class="font-semibold text-gray-900 dark:text-white text-base sm:text-lg truncate">{{ $copyTrade->name }}</h3>
-                                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate">{{ $copyTrade->tag ?? 'Expert Trader' }}</p>
+                                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 truncate">{{ $copyTrade->tag ?? 'Эксперт-трейдер' }}</p>
                                         </div>
                                     </div>
                                     <div class="flex flex-col items-end space-y-1 sm:space-y-2 flex-shrink-0">
                                         <span class="px-2 sm:px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg text-xs font-medium shadow-sm">
-                                            Active
+                                            Активно
                                         </span>
                                         <span class="text-xs text-gray-500 dark:text-gray-400 text-right">
-                                            {{ $copyTrade->started_at ? $copyTrade->started_at->diffForHumans() : 'Recently' }}
+                                            {{ $copyTrade->started_at ? $copyTrade->started_at->diffForHumans() : 'Недавно' }}
                                         </span>
                                     </div>
                                 </div>
@@ -166,11 +166,11 @@
                                 <!-- Investment Details -->
                                 <div class="space-y-4 mb-6 relative z-10">
                                     <div class="flex justify-between items-center p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Investment</span>
+                                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Инвестиции</span>
                                         <span class="font-bold text-gray-900 dark:text-white text-lg">{{Auth::user()->currency}}{{ number_format($copyTrade->price, 2) }}</span>
                                     </div>
                                     <div class="flex justify-between items-center p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Current Value</span>
+                                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Текущая стоимость</span>
                                         <span class="font-bold text-gray-900 dark:text-white text-lg">${{ number_format($copyTrade->current_balance, 2) }}</span>
                                     </div>
                                     <div class="flex justify-between items-center p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -190,8 +190,8 @@
                                 <!-- Performance Bar -->
                                 <div class="mb-6 relative z-10">
                                     <div class="flex justify-between text-xs font-medium text-gray-600 dark:text-gray-400 mb-2">
-                                        <span>Performance</span>
-                                        <span>{{ $copyTrade->total_trades ?? 0 }} trades</span>
+                                        <span>Эффективность</span>
+                                        <span>{{ $copyTrade->total_trades ?? 0 }} сделок</span>
                                     </div>
                                     <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 sm:h-3 overflow-hidden">
                                         @php
@@ -201,7 +201,7 @@
                                              style="width: {{ $winRate }}%"></div>
                                     </div>
                                     <div class="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 text-center">
-                                        {{ number_format($winRate, 1) }}% win rate
+                                        {{ number_format($winRate, 1) }}% выигрышных сделок
                                     </div>
                                 </div>
 
@@ -211,15 +211,15 @@
                                             class="view-details-btn flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
                                             data-id="{{ $copyTrade->id }}">
                                         <i data-lucide="bar-chart-3" class="w-4 h-4 inline mr-2"></i>
-                                        <span class="hidden sm:inline">View Details</span>
-                                        <span class="sm:hidden">Details</span>
+                                        <span class="hidden sm:inline">Подробности</span>
+                                        <span class="sm:hidden">Детали</span>
                                     </button>
                                     <button type="button"
                                             class="stop-copy-btn px-3 sm:px-4 py-2 sm:py-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm flex items-center justify-center"
                                             data-id="{{ $copyTrade->id }}"
                                             data-name="{{ $copyTrade->name }}">
                                         <i data-lucide="square" class="w-4 h-4"></i>
-                                        <span class="ml-1 sm:hidden">Stop</span>
+                                        <span class="ml-1 sm:hidden">Стоп</span>
                                     </button>
                                 </div>
                             </div>
@@ -235,9 +235,9 @@
                 <div class="px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50">
                     <h2 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                         <i data-lucide="history" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-gray-400"></i>
-                        Copy Trading History
+                        История копи-трейдинга
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Previous copy positions and their performance</p>
+                    <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Предыдущие позиции копирования и их эффективность</p>
                 </div>
 
                 <!-- Mobile Card View -->
@@ -251,20 +251,20 @@
                                     </div>
                                     <div class="min-w-0 flex-1">
                                         <div class="font-medium text-gray-900 dark:text-white truncate">{{ $copyTrade->name }}</div>
-                                        <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ $copyTrade->tag ?? 'Expert Trader' }}</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ $copyTrade->tag ?? 'Эксперт-трейдер' }}</div>
                                     </div>
                                     <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-medium flex-shrink-0">
-                                        Closed
+                                        Закрыто
                                     </span>
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-3 text-sm">
                                     <div>
-                                        <div class="text-gray-500 dark:text-gray-400 text-xs">Investment</div>
+                                        <div class="text-gray-500 dark:text-gray-400 text-xs">Инвестиции</div>
                                         <div class="font-medium text-gray-900 dark:text-white">${{ number_format($copyTrade->price, 2) }}</div>
                                     </div>
                                     <div>
-                                        <div class="text-gray-500 dark:text-gray-400 text-xs">Final Value</div>
+                                        <div class="text-gray-500 dark:text-gray-400 text-xs">Финальная стоимость</div>
                                         <div class="font-medium text-gray-900 dark:text-white">${{ number_format($copyTrade->current_balance, 2) }}</div>
                                     </div>
                                     <div>
@@ -287,7 +287,7 @@
                                     @endphp
                                     <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600">
                                         <div class="text-xs text-gray-500 dark:text-gray-400">
-                                            Duration: {{ $duration }} day{{ $duration != 1 ? 's' : '' }}
+                                            Продолжительность: {{ $duration }} {{ $duration == 1 ? 'день' : ($duration < 5 ? 'дня' : 'дней') }}
                                         </div>
                                     </div>
                                 @endif
@@ -301,13 +301,13 @@
                     <table class="w-full">
                         <thead class="bg-gray-50 dark:bg-gray-700/50">
                             <tr>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Expert</th>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Investment</th>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Final Value</th>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">P&L</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Эксперт</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Инвестиции</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Финальная стоимость</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Прибыль/убыток</th>
                                 <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">ROI</th>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Duration</th>
-                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Status</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Длительность</th>
+                                <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Статус</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -320,7 +320,7 @@
                                             </div>
                                             <div>
                                                 <span class="font-medium text-gray-900 dark:text-white">{{ $copyTrade->name }}</span>
-                                                <p class="text-xs text-gray-500 dark:text-gray-400">{{ $copyTrade->tag ?? 'Expert Trader' }}</p>
+                                                <p class="text-xs text-gray-500 dark:text-gray-400">{{ $copyTrade->tag ?? 'Эксперт-трейдер' }}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -341,14 +341,14 @@
                                             @php
                                                 $duration = $copyTrade->started_at->diffInDays($copyTrade->updated_at);
                                             @endphp
-                                            {{ $duration }} day{{ $duration != 1 ? 's' : '' }}
+                                            {{ $duration }} {{ $duration == 1 ? 'день' : ($duration < 5 ? 'дня' : 'дней') }}
                                         @else
                                             N/A
                                         @endif
                                     </td>
                                     <td class="py-4 px-6">
                                         <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg text-xs font-medium">
-                                            Closed
+                                            Закрыто
                                         </span>
                                     </td>
                                 </tr>
@@ -373,9 +373,9 @@
                     <div class="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8 shadow-lg">
                         <i data-lucide="copy" class="w-8 h-8 sm:w-12 sm:h-12 text-blue-600 dark:text-blue-400"></i>
                     </div>
-                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Start Copy Trading</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">Начать копи-трейдинг</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-lg mx-auto text-base sm:text-lg leading-relaxed px-4">
-                        You haven't started copying any traders yet. Browse our expert traders and start copying their winning strategies to earn profits automatically.
+                        Вы еще не начали копировать ни одного трейдера. Просмотрите наших экспертов-трейдеров и начните копировать их выигрышные стратегии для автоматического получения прибыли.
                     </p>
 
                     <!-- Feature Highlights -->
@@ -384,24 +384,24 @@
                             <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i data-lucide="users" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Expert Traders</h4>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Copy from verified professional traders with proven track records</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Эксперты-трейдеры</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Копируйте верифицированных профессиональных трейдеров с доказанными результатами</p>
                         </div>
 
                         <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl p-4 sm:p-6">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Auto Trading</h4>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Trades are executed automatically when experts make moves</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Автоматическая торговля</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Сделки выполняются автоматически при движениях экспертов</p>
                         </div>
 
                         <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
                             <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
                                 <i data-lucide="shield" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                             </div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Risk Management</h4>
-                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Set your own risk limits and stop-loss parameters</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Управление рисками</h4>
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Устанавливайте собственные лимиты риска и параметры стоп-лосса</p>
                         </div>
                     </div>
 
@@ -409,13 +409,13 @@
                         <a href="{{ route('copy.experts') }}"
                            class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base">
                             <i data-lucide="search" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                            <span class="hidden sm:inline">Browse Expert Traders</span>
-                            <span class="sm:hidden">Browse Experts</span>
+                            <span class="hidden sm:inline">Просмотреть экспертов-трейдеров</span>
+                            <span class="sm:hidden">Эксперты</span>
                         </a>
                         <button onclick="showHowItWorks()"
                                class="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm sm:text-base">
                             <i data-lucide="help-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                            How It Works
+                            Как это работает
                         </button>
                     </div>
                 </div>
@@ -430,8 +430,8 @@
         <div class="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
             <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                 <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400"></i>
-                <span class="hidden sm:inline">Copy Position Details</span>
-                <span class="sm:hidden">Position Details</span>
+                <span class="hidden sm:inline">Детали позиции копирования</span>
+                <span class="sm:hidden">Детали позиции</span>
             </h3>
             <button onclick="closeDetailsModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                 <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -449,7 +449,7 @@
         <div class="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 dark:border-gray-700 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
             <h3 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                 <i data-lucide="help-circle" class="w-5 h-5 sm:w-6 sm:h-6 text-green-600 dark:text-green-400"></i>
-                How Copy Trading Works
+                Как работает копи-трейдинг
             </h3>
             <button onclick="closeHowItWorksModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                 <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6"></i>
@@ -463,8 +463,8 @@
                             <span class="text-white font-bold text-sm sm:text-base">1</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Choose an Expert</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Browse through our verified expert traders and select one based on their performance, strategy, and risk profile.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Выберите эксперта</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Просмотрите наших верифицированных экспертов-трейдеров и выберите одного на основе их эффективности, стратегии и рискового профиля.</p>
                         </div>
                     </div>
 
@@ -473,8 +473,8 @@
                             <span class="text-white font-bold text-sm sm:text-base">2</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Set Your Investment</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Decide how much you want to invest and set your risk parameters including stop-loss and take-profit levels.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Установите размер инвестиций</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Решите, сколько вы хотите инвестировать, и установите параметры риска, включая уровни стоп-лосса и тейк-профита.</p>
                         </div>
                     </div>
 
@@ -483,8 +483,8 @@
                             <span class="text-white font-bold text-sm sm:text-base">3</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Auto-Copy Trades</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Our system automatically copies the expert's trades to your account in real-time, proportional to your investment.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Автокопирование сделок</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Наша система автоматически копирует сделки эксперта на ваш счет в реальном времени, пропорционально вашим инвестициям.</p>
                         </div>
                     </div>
 
@@ -493,40 +493,40 @@
                             <span class="text-white font-bold text-sm sm:text-base">4</span>
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Monitor & Profit</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">Track your performance in real-time and watch your investment grow as the expert trader makes profitable trades.</p>
+                            <h4 class="font-bold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Мониторинг и прибыль</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Отслеживайте свою эффективность в реальном времени и наблюдайте, как растут ваши инвестиции при прибыльных сделках эксперта-трейдера.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-4 sm:p-6">
-                    <h4 class="font-bold text-gray-900 dark:text-white mb-4 text-sm sm:text-base">Benefits of Copy Trading</h4>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4 text-sm sm:text-base">Преимущества копи-трейдинга</h4>
                     <ul class="space-y-3">
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">No trading experience required</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-sm">Не требуется опыт торговли</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">Learn from expert strategies</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-sm">Учитесь на стратегиях экспертов</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">Diversify your portfolio</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-sm">Диверсифицируйте портфель</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">24/7 automated trading</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-sm">Автоматическая торговля 24/7</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i data-lucide="check" class="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">Full control over your funds</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-sm">Полный контроль над средствами</span>
                         </li>
                     </ul>
 
                     <div class="mt-4 sm:mt-6 p-3 sm:p-4 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded">
                         <p class="text-xs sm:text-sm text-yellow-700 dark:text-yellow-400">
-                            <strong>Risk Warning:</strong> Copy trading involves risk. Past performance is not indicative of future results.
+                            <strong>Предупреждение о рисках:</strong> Копи-трейдинг связан с рисками. Прошлые результаты не гарантируют будущих результатов.
                         </p>
                     </div>
                 </div>
@@ -543,22 +543,22 @@
     <script>
         function stopCopyPosition(copyTradeId, expertName) {
             Swal.fire({
-                title: 'Stop Copy Trading?',
+                title: 'Остановить копи-трейдинг?',
                 html: `
                     <div class="text-left">
-                        <p class="mb-4">Are you sure you want to stop copying <strong>${expertName}</strong>?</p>
+                        <p class="mb-4">Вы уверены, что хотите прекратить копирование <strong>${expertName}</strong>?</p>
                         <div class="bg-blue-50 p-3 rounded-lg">
                             <p class="text-sm text-blue-800">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                Your current balance will be returned to your account immediately.
+                                Ваш текущий баланс будет немедленно возвращен на ваш счет.
                             </p>
                         </div>
                     </div>
                 `,
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Yes, Stop Copying',
-                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Да, прекратить копирование',
+                cancelButtonText: 'Отмена',
                 customClass: {
                     popup: 'rounded-2xl',
                     confirmButton: 'bg-red-600 hover:bg-red-700 text-white rounded-xl px-6 py-2',
@@ -667,11 +667,11 @@
                                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                         <div class="text-center">
                                             <div class="text-2xl font-bold text-gray-900 dark:text-white">$${Number(copyTrade.price || 0).toLocaleString()}</div>
-                                            <div class="text-sm text-gray-600 dark:text-gray-400">Investment</div>
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">Инвестиции</div>
                                         </div>
                                         <div class="text-center">
                                             <div class="text-2xl font-bold text-gray-900 dark:text-white">$${Number(copyTrade.current_balance || 0).toLocaleString()}</div>
-                                            <div class="text-sm text-gray-600 dark:text-gray-400">Current Value</div>
+                                            <div class="text-sm text-gray-600 dark:text-gray-400">Текущая стоимость</div>
                                         </div>
                                         <div class="text-center">
                                             <div class="text-2xl font-bold ${(copyTrade.total_profit || 0) >= 0 ? 'text-green-600' : 'text-red-600'}">${(copyTrade.total_profit || 0) >= 0 ? '+' : ''}$${Number(copyTrade.total_profit || 0).toLocaleString()}</div>
@@ -686,10 +686,10 @@
 
                                 <!-- Performance Chart -->
                                 <div>
-                                    <h5 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Performance History</h5>
+                                    <h5 class="text-lg font-bold text-gray-900 dark:text-white mb-4">История эффективности</h5>
                                     <div class="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4">
                                         <p class="text-sm text-gray-600 dark:text-gray-400 text-center">
-                                            Days Active: ${data.daysActive || 0} days
+                                            Дней активности: ${data.daysActive || 0} дней
                                         </p>
                                         ${dailyPerformance.length > 0 ? `
                                             <div class="mt-4 space-y-2 max-h-40 overflow-y-auto">
@@ -703,7 +703,7 @@
                                                     </div>
                                                 `).join('')}
                                             </div>
-                                        ` : '<p class="text-gray-600 dark:text-gray-400 text-center mt-4">No performance data available</p>'}
+                                        ` : '<p class="text-gray-600 dark:text-gray-400 text-center mt-4">Данные об эффективности отсутствуют</p>'}
                                     </div>
                                 </div>
                             </div>
@@ -711,8 +711,8 @@
                     } else {
                         document.getElementById('detailsContent').innerHTML = `
                             <div class="p-4 bg-red-100 dark:bg-red-900/30 border-l-4 border-red-500 text-red-700 dark:text-red-300 rounded-lg">
-                                <h3 class="font-bold mb-2">Invalid Response</h3>
-                                <p>Unexpected response format from server</p>
+                                <h3 class="font-bold mb-2">Неверный ответ</h3>
+                                <p>Неожиданный формат ответа от сервера</p>
                                 <pre class="text-xs mt-2 bg-red-50 dark:bg-red-900/50 p-2 rounded">${JSON.stringify(data, null, 2)}</pre>
                             </div>
                         `;
@@ -722,15 +722,15 @@
                     console.error('Error fetching analytics:', error);
                     document.getElementById('detailsContent').innerHTML = `
                         <div class="p-4 bg-red-100 dark:bg-red-900/30 border-l-4 border-red-500 text-red-700 dark:text-red-300 rounded-lg">
-                            <h3 class="font-bold mb-2">Network/Server Error</h3>
-                            <p>Error: ${error.message}</p>
+                            <h3 class="font-bold mb-2">Ошибка сети/сервера</h3>
+                            <p>Ошибка: ${error.message}</p>
                             <div class="mt-3 text-xs">
-                                <p><strong>Troubleshooting steps:</strong></p>
+                                <p><strong>Шаги по устранению неполадок:</strong></p>
                                 <ul class="list-disc list-inside mt-1">
-                                    <li>Check if the route exists in web.php</li>
-                                    <li>Verify the controller method exists</li>
-                                    <li>Check server logs for errors</li>
-                                    <li>Ensure the copyTradeId is valid: ${copyTradeId}</li>
+                                    <li>Проверьте, существует ли маршрут в web.php</li>
+                                    <li>Убедитесь, что метод контроллера существует</li>
+                                    <li>Проверьте журналы сервера на наличие ошибок</li>
+                                    <li>Убедитесь, что copyTradeId действителен: ${copyTradeId}</li>
                                 </ul>
                             </div>
                         </div>

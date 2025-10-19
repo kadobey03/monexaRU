@@ -18,10 +18,10 @@
                 </div>
                 <div>
                     <h1 class="text-4xl font-light text-gray-800 dark:text-white mb-2">
-                        Destek Merkezi
+                        Центр поддержки
                     </h1>
                     <p class="text-gray-500 dark:text-gray-400 font-light text-lg">
-                        Herhangi bir soru veya endişeniz için buradayız
+                        Мы здесь для любых ваших вопросов или проблем
                     </p>
                 </div>
             </div>
@@ -44,11 +44,11 @@
                         <i data-lucide="mail" class="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">E-posta Desteği</h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">E-posta yoluyla yardım alın</p>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">Поддержка по электронной почте</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Получите помощь через электронную почту</p>
                     </div>
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Ayrıntılı sorular ve destek talepleri için doğrudan e-posta iletişimi.</p>
+                <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Прямая связь по электронной почте для подробных вопросов и запросов поддержки.</p>
                 <a href="mailto:{{$settings->contact_email}}" 
                    class="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors">
                     <span>{{$settings->contact_email}}</span>
@@ -63,9 +63,9 @@
         <!-- Contact Form Section -->
         <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-light text-gray-800 dark:text-white mb-4">Bize Mesaj Gönderin</h2>
+                <h2 class="text-3xl font-light text-gray-800 dark:text-white mb-4">Отправьте нам сообщение</h2>
                 <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-                    Belirli bir sorunuz mu var veya yardıma mı ihtiyacınız var? Aşağıdaki formu doldurun ve destek ekibimiz en kısa sürede size geri dönecek.
+                    У вас есть конкретный вопрос или нужна помощь? Заполните форму ниже, и наша команда поддержки свяжется с вами как можно скорее.
                 </p>
             </div>
 
@@ -80,7 +80,7 @@
                     <!-- User Info Display -->
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Adınız</label>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ваше имя</label>
                             <div class="flex items-center space-x-3">
                                 <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center">
                                     <span class="text-white font-semibold text-sm">{{substr(Auth::user()->name, 0, 1)}}</span>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">E-posta Adresiniz</label>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ваш адрес электронной почты</label>
                             <div class="flex items-center space-x-3">
                                 <i data-lucide="mail" class="w-5 h-5 text-gray-500"></i>
                                 <span class="text-gray-800 dark:text-white">{{Auth::user()->email}}</span>
@@ -100,7 +100,7 @@
                     <!-- Message Field -->
                     <div class="mb-6">
                         <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                            Mesaj <span class="text-red-500">*</span>
+                            Сообщение <span class="text-red-500">*</span>
                         </label>
                         <textarea 
                             name="message" 
@@ -109,12 +109,12 @@
                             @input="messageLength = $el.value.length"
                             class="w-full px-4 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none" 
                             rows="6" 
-                            placeholder="Lütfen sorunuzu veya sorununuzu detaylı olarak açıklayın..."
+                            placeholder="Пожалуйста, подробно опишите ваш вопрос или проблему..."
                             required
                             maxlength="1000"></textarea>
                         <div class="flex justify-between items-center mt-2">
                             <p class="text-sm text-gray-500 dark:text-gray-400">
-                                Size daha iyi yardımcı olmak için lütfen mümkün olduğunca fazla detay sağlayın.
+                                Пожалуйста, предоставьте как можно больше деталей, чтобы мы могли лучше вам помочь.
                             </p>
                             <span class="text-sm text-gray-400" x-text="messageLength + '/1000'"></span>
                         </div>
@@ -127,18 +127,18 @@
                             :disabled="isSubmitting || message.trim().length < 10"
                             :class="isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'"
                             class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span x-show="!isSubmitting">Mesaj Gönder</span>
+                            <span x-show="!isSubmitting">Отправить сообщение</span>
                             <span x-show="isSubmitting" class="flex items-center space-x-2">
                                 <svg class="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                <span>Gönderiliyor...</span>
+                                <span>Отправляется...</span>
                             </span>
                             <i data-lucide="send" class="w-5 h-5" x-show="!isSubmitting"></i>
                         </button>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                            Genellikle iş günlerinde 24 saat içinde yanıt veririz.
+                            Обычно мы отвечаем в течение 24 часов в рабочие дни.
                         </p>
                     </div>
                 </form>
@@ -163,13 +163,13 @@
                     <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="message-circle" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Canlı Sohbet Desteği</h3>
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Поддержка в чате</h3>
                     <p class="text-gray-500 dark:text-gray-400 mb-6">
-                        Canlı sohbet özelliğimiz yakında gelecek! Şimdilik lütfen iletişim formunu kullanın veya doğrudan bize e-posta gönderin.
+                        Наша функция живого чата скоро будет доступна! А пока, пожалуйста, используйте контактную форму или отправьте нам электронное письмо напрямую.
                     </p>
                     <button @click="showContactModal = false" 
                             class="w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        Kapat
+                        Закрыть
                     </button>
                 </div>
             </div>

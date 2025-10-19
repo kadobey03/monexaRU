@@ -17,33 +17,33 @@
         <div class="text-center max-w-3xl mx-auto">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/20 mb-4">
                 <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span class="text-blue-200 text-sm font-medium">AI-Powered Trading</span>
+                <span class="text-blue-200 text-sm font-medium">ИИ-Торговля</span>
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
                 <span class="bg-gradient-to-r from-white via-blue-200 to-blue-200 bg-clip-text text-transparent">
-                    Bot Trading
+                    Торговля Ботами
                 </span>
                 <br>
                 <span class="bg-gradient-to-r from-blue-400 to-blue-400 bg-clip-text text-transparent">
-                    Hub
+                    Центр
                 </span>
             </h1>
 
             <p class="text-lg text-blue-100/80 mb-6 max-w-xl mx-auto leading-relaxed">
-                Invest in AI-powered trading bots that work 24/7 to maximize your profits across multiple markets.
+                Инвестируйте в торговых ботов с искусственным интеллектом, которые работают 24/7 для максимизации ваших прибылей на различных рынках.
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <a href="{{ route('dashboard') }}"
                    class="group relative inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 text-white hover:bg-white/20 transition-all duration-300">
                     <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
-                    Back to Dashboard
+                    Вернуться на Панель
                 </a>
                 <a href="{{ route('user.bots.dashboard') }}"
                    class="group relative inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white transition-all duration-300">
                     <i data-lucide="activity" class="w-4 h-4"></i>
-                    My Bot Investments
+                    Мои Инвестиции в Ботов
                 </a>
             </div>
         </div>
@@ -64,7 +64,7 @@
         @if($userInvestments->count() > 0)
         <!-- Active Investments Overview -->
         <div class="mb-12">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Your Active Bot Investments</h2>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ваши Активные Инвестиции в Ботов</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($userInvestments as $investment)
                 <div class="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/20 dark:border-gray-700/30 p-6">
@@ -85,26 +85,26 @@
                             </div>
                         </div>
                         <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-full">
-                            Active
+                            Активный
                         </span>
                     </div>
 
                     <div class="space-y-3">
                         <div class="flex justify-between">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">Investment</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Инвестиция</span>
                             <span class="font-medium text-gray-900 dark:text-white">${{ number_format($investment->investment_amount, 2) }}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">Current Balance</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Текущий Баланс</span>
                             <span class="font-medium text-gray-900 dark:text-white">${{ number_format($investment->current_balance, 2) }}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">Total Profit</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Общая Прибыль</span>
                             <span class="font-medium text-green-600 dark:text-green-400">+${{ number_format($investment->total_profit, 2) }}</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-sm text-gray-600 dark:text-gray-400">Days Remaining</span>
-                            <span class="font-medium text-gray-900 dark:text-white">{{ $investment->days_remaining }} days</span>
+                            <span class="text-sm text-gray-600 dark:text-gray-400">Осталось Дней</span>
+                            <span class="font-medium text-gray-900 dark:text-white">{{ $investment->days_remaining }} дней</span>
                         </div>
                     </div>
 
@@ -112,11 +112,11 @@
                         <div class="flex gap-2">
                             <a href="{{ route('user.bots.show', $investment->bot) }}"
                                class="flex-1 text-center py-2 px-3 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-medium transition-colors">
-                                View Details
+                                Просмотр Деталей
                             </a>
                             <a href="{{ route('user.bots.history', $investment) }}"
                                class="flex-1 text-center py-2 px-3 bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-600 dark:text-gray-400 rounded-lg text-sm font-medium transition-colors">
-                                History
+                                История
                             </a>
                         </div>
                     </div>
@@ -130,26 +130,26 @@
         <div class="mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
                 <div>
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Available Trading Bots</h2>
-                    <p class="text-gray-600 dark:text-gray-400">Choose from our AI-powered trading bots</p>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Доступные Торговые Боты</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Выберите из наших торговых ботов с искусственным интеллектом</p>
                 </div>
 
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap gap-2">
                     <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-filter="all">
-                        All Bots
+                        Все Боты
                     </button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-filter="forex">
-                        Forex
+                        Форекс
                     </button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-filter="crypto">
-                        Crypto
+                        Криптовалюта
                     </button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-filter="stocks">
-                        Stocks
+                        Акции
                     </button>
                     <button class="filter-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors" data-filter="commodities">
-                        Commodities
+                        Товары
                     </button>
                 </div>
             </div>
@@ -177,11 +177,11 @@
                                     <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                         {{ $bot->name }}
                                     </h3>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400 capitalize">{{ $bot->bot_type }} Trading</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400 capitalize">{{ $bot->bot_type == 'forex' ? 'Торговля Форекс' : ($bot->bot_type == 'crypto' ? 'Торговля Криптовалютой' : ($bot->bot_type == 'stocks' ? 'Торговля Акциями' : ($bot->bot_type == 'commodities' ? 'Торговля Товарами' : $bot->bot_type . ' Торговля'))) }}</p>
                                 </div>
                             </div>
                             <span class="px-3 py-1 text-xs font-semibold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 rounded-full">
-                                {{ $bot->success_rate }}% Success
+                                {{ $bot->success_rate }}% Успех
                             </span>
                         </div>
 
@@ -193,17 +193,17 @@
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
                                 <div class="text-lg font-bold text-gray-900 dark:text-white">{{ $bot->daily_profit_range }}</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Daily Profit</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">Ежедневная Прибыль</div>
                             </div>
                             <div class="text-center p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                                <div class="text-lg font-bold text-gray-900 dark:text-white">{{ $bot->duration_days }} Days</div>
-                                <div class="text-xs text-gray-500 dark:text-gray-400">Duration</div>
+                                <div class="text-lg font-bold text-gray-900 dark:text-white">{{ $bot->duration_days }} Дней</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">Длительность</div>
                             </div>
                         </div>
 
                         <!-- Investment Range -->
                         <div class="flex items-center justify-between text-sm mb-4">
-                            <span class="text-gray-600 dark:text-gray-400">Investment Range:</span>
+                            <span class="text-gray-600 dark:text-gray-400">Диапазон Инвестиций:</span>
                             <span class="font-medium text-gray-900 dark:text-white">
                                 ${{ number_format($bot->min_investment) }} - ${{ number_format($bot->max_investment) }}
                             </span>
@@ -212,7 +212,7 @@
                         <!-- Trading Pairs -->
                         @if($bot->trading_pairs && count($bot->trading_pairs) > 0)
                         <div class="mb-4">
-                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">Trading Pairs:</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400 mb-2">Торговые Пары:</div>
                             <div class="flex flex-wrap gap-1">
                                 @foreach(array_slice($bot->trading_pairs, 0, 4) as $pair)
                                 <span class="px-2 py-1 text-xs bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400 rounded">
@@ -221,7 +221,7 @@
                                 @endforeach
                                 @if(count($bot->trading_pairs) > 4)
                                 <span class="px-2 py-1 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded">
-                                    +{{ count($bot->trading_pairs) - 4 }} more
+                                    +{{ count($bot->trading_pairs) - 4 }} ещё
                                 </span>
                                 @endif
                             </div>
@@ -256,8 +256,8 @@
                 <div class="w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="bot" class="w-12 h-12 text-gray-400"></i>
                 </div>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">No Trading Bots Available</h3>
-                <p class="text-gray-600 dark:text-gray-400">Trading bots will be available soon. Check back later!</p>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Торговые Боты Недоступны</h3>
+                <p class="text-gray-600 dark:text-gray-400">Торговые боты скоро будут доступны. Проверьте позже!</p>
             </div>
             @endif
         </div>

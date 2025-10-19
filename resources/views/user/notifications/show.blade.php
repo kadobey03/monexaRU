@@ -1,5 +1,5 @@
 @extends('layouts.dasht')
-@section('title', 'Bildirim Detayları')
+@section('title', 'Детали уведомления')
 
 @section('content')
 <div class="container mx-auto px-4 py-6" x-data="{ showDeleteModal: false }">
@@ -9,7 +9,7 @@
             <a href="{{ route('notifications') }}" class="mr-3 flex items-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <i data-lucide="arrow-left" class="w-5 h-5"></i>
             </a>
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Notification Details</h1>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Детали уведомления</h1>
         </div>
         <div>
             <span class="px-3 py-1 rounded-full text-xs font-semibold
@@ -43,13 +43,13 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm mt-6">
                 <div class="flex items-center text-gray-600 dark:text-gray-400">
                     <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                    <span class="mr-1 font-medium">Date:</span> {{ $notification->created_at->format('F d, Y h:i A') }}
+                    <span class="mr-1 font-medium">Дата:</span> {{ $notification->created_at->format('d.m.Y H:i') }}
                 </div>
                 <div class="flex items-center text-gray-600 dark:text-gray-400 sm:justify-end">
                     <i data-lucide="{{ $notification->is_read ? 'check-circle' : 'circle' }}" class="w-4 h-4 mr-2 {{ $notification->is_read ? 'text-green-500 dark:text-green-400' : 'text-gray-500 dark:text-gray-400' }}"></i>
-                    <span class="mr-1 font-medium">Status:</span>
+                    <span class="mr-1 font-medium">Статус:</span>
                     <span class="{{ $notification->is_read ? 'text-green-500 dark:text-green-400' : 'text-gray-500 dark:text-gray-400' }}">
-                        {{ $notification->is_read ? 'Read' : 'Unread' }}
+                        {{ $notification->is_read ? 'Прочитано' : 'Не прочитано' }}
                     </span>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="flex items-center justify-between cursor-pointer mb-2" @click="isOpen = !isOpen">
                         <h3 class="text-base font-semibold text-gray-800 dark:text-white flex items-center">
                             <i data-lucide="link" class="w-4 h-4 mr-2"></i>
-                            Related Information
+                            Связанная информация
                         </h3>
                         <button class="text-gray-500 dark:text-gray-400 focus:outline-none">
                             <i x-show="!isOpen" data-lucide="chevron-down" class="w-5 h-5"></i>
@@ -87,67 +87,67 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
                                     @if($notification->source_type == 'App\\Models\\Deposit')
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Amount</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Сумма</span>
                                             <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ $sourceModel->amount }}</span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Status</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Статус</span>
                                             <span class="capitalize {{ $sourceModel->status == 'approved' ? 'text-green-500 dark:text-green-400' : ($sourceModel->status == 'pending' ? 'text-yellow-500 dark:text-yellow-400' : 'text-red-500 dark:text-red-400') }}">
                                                 {{ $sourceModel->status }}
                                             </span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md md:col-span-2">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Payment Mode</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Способ оплаты</span>
                                             <span class="text-gray-600 dark:text-gray-400">{{ $sourceModel->payment_mode }}</span>
                                         </div>
                                     @elseif($notification->source_type == 'App\\Models\\Withdrawal')
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Amount</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Сумма</span>
                                             <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ $sourceModel->amount }}</span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Status</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Статус</span>
                                             <span class="capitalize {{ $sourceModel->status == 'approved' ? 'text-green-500 dark:text-green-400' : ($sourceModel->status == 'pending' ? 'text-yellow-500 dark:text-yellow-400' : 'text-red-500 dark:text-red-400') }}">
                                                 {{ $sourceModel->status }}
                                             </span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md md:col-span-2">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Payment Mode</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Способ оплаты</span>
                                             <span class="text-gray-600 dark:text-gray-400">{{ $sourceModel->payment_mode }}</span>
                                         </div>
                                     @elseif($notification->source_type == 'App\\Models\\User_plans')
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Amount</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Сумма</span>
                                             <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ $sourceModel->amount }}</span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Status</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Статус</span>
                                             <span class="{{ $sourceModel->active ? 'text-green-500 dark:text-green-400' : 'text-red-500 dark:text-red-400' }}">
-                                                {{ $sourceModel->active ? 'Active' : 'Inactive' }}
+                                                {{ $sourceModel->active ? 'Активный' : 'Неактивный' }}
                                             </span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md md:col-span-2">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Asset</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Актив</span>
                                             <span class="text-gray-600 dark:text-gray-400">{{ $sourceModel->assets }}</span>
                                         </div>
                                         @elseif($notification->source_type == 'App\\Models\\UserBotInvestment')
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Amount</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Сумма</span>
                                             <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ $sourceModel->investment_amount }}</span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Status</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Статус</span>
                                             <span class="capitalize {{ $sourceModel->status == 'active' ? 'text-green-500 dark:text-green-400' : ($sourceModel->status == 'pending' ? 'text-yellow-500 dark:text-yellow-400' : 'text-red-500 dark:text-red-400') }}">
                                                 {{ $sourceModel->status }}
                                             </span>
                                         </div>
                                         <div class="flex justify-between p-3 bg-white dark:bg-gray-800 rounded-md md:col-span-2">
-                                            <span class="font-medium text-gray-700 dark:text-gray-300">Current Balance</span>
+                                            <span class="font-medium text-gray-700 dark:text-gray-300">Текущий баланс</span>
                                             <span class="text-primary-600 dark:text-primary-400 font-semibold">{{ $sourceModel->current_balance }}</span>
                                         </div>
                                         @else
                                         <div class="p-4 bg-white dark:bg-gray-800 rounded-md col-span-2 text-center">
-                                            <p class="text-gray-500 dark:text-gray-400">No detailed information available.</p>
+                                            <p class="text-gray-500 dark:text-gray-400">Подробная информация недоступна.</p>
                                         </div>
                                     @endif
                                 </div>
@@ -155,7 +155,7 @@
                         @else
                             <div class="p-4 text-center text-gray-500 dark:text-gray-400">
                                 <i data-lucide="info" class="h-6 w-6 mx-auto mb-2"></i>
-                                <p>No related information available.</p>
+                                <p>Связанная информация недоступна.</p>
                             </div>
                         @endif
                     </div>
@@ -166,7 +166,7 @@
             <div class="flex flex-wrap gap-3 mt-8">
                 <a href="{{ route('notifications') }}" class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-900 transition-all duration-200">
                     <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-                    Back to Notifications
+                    Назад к уведомлениям
                 </a>
 
                 {{-- @if(!$notification->is_read)
@@ -175,14 +175,14 @@
                         <input type="hidden" name="notification_id" value="{{ $notification->id }}">
                         <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium bg-primary-600 dark:bg-primary-700 text-white hover:bg-primary-700 dark:hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-900 transition-all duration-200">
                             <i data-lucide="check-circle" class="w-4 h-4 mr-2"></i>
-                            Mark as Read
+                            Отметить как прочитанное
                         </button>
                     </form>
                 @endif --}}
 
                 <button @click="showDeleteModal = true" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium bg-red-600 dark:bg-red-700 text-white hover:bg-red-700 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-900 transition-all duration-200">
                     <i data-lucide="trash-2" class="w-4 h-4 mr-2"></i>
-                    Delete
+                    Удалить
                 </button>
             </div>
         </div>
@@ -208,20 +208,20 @@
             <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 dark:bg-red-900/30 rounded-full mb-4">
                 <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600 dark:text-red-400"></i>
             </div>
-            <h3 class="text-lg font-medium text-center text-gray-900 dark:text-white mb-4">Delete Notification</h3>
+            <h3 class="text-lg font-medium text-center text-gray-900 dark:text-white mb-4">Удалить уведомление</h3>
             <p class="text-sm text-gray-500 dark:text-gray-400 text-center mb-6">
-                Are you sure you want to delete this notification? This action cannot be undone.
+                Вы уверены, что хотите удалить это уведомление? Это действие нельзя отменить.
             </p>
             <div class="flex justify-center gap-3">
                 <button @click="showDeleteModal = false" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-900">
-                    Cancel
+                    Отмена
                 </button>
                 <form method="POST" action="/notifications/delete">
                     @csrf
                     @method('DELETE')
                     <input type="hidden" name="notification_id" value="{{ $notification->id }}">
                     <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium bg-red-600 dark:bg-red-700 text-white hover:bg-red-700 dark:hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-900">
-                        Delete
+                        Удалить
                     </button>
                 </form>
             </div>

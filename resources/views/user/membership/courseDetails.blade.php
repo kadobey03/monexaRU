@@ -16,26 +16,26 @@
                     </div>
                     <div class="p-2 d-lg-flex justify-content-lg-between align-items-center mt-3">
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">CREATED BY</p>
+                            <p class="m-0 text-primary font-weight-bold">СОЗДАНО</p>
                             <P class="m-0">{{ $settings->site_name }}</P>
                         </div>
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">CATEGORY</p>
+                            <p class="m-0 text-primary font-weight-bold">КАТЕГОРИЯ</p>
                             <P class="m-0">{{ $course->category }}</P>
                         </div>
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">LAST UPDATED</p>
+                            <p class="m-0 text-primary font-weight-bold">ОБНОВЛЕНО</p>
                             <P class="m-0">{{ \Carbon\Carbon::parse($course->updated_at)->toDayDateTimeString() }}</P>
                         </div>
                     </div>
                     <div class="mt-5">
-                        <h4>About Course</h4>
+                        <h4>О курсе</h4>
                         <p class="mt-2">
                             {{ $course->description }}
                         </p>
                     </div>
                     <div class="mt-5">
-                        <h4>Course Lessons</h4>
+                        <h4>Уроки курса</h4>
                         @forelse ($lessons as $lesson)
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
@@ -50,7 +50,7 @@
                                     <div>
                                         @if ($lesson->locked == 'true')
                                             <a href="#" data-toggle="modal" data-target="#preview{{ $lesson->id }}"
-                                                class="px-3 shadow bg-info text-white rounded-4 rounded-md">Preview</a>
+                                                class="px-3 shadow bg-info text-white rounded-4 rounded-md">Предпросмотр</a>
                                             <i class="fas fa-unlock"></i>
                                         @else
                                             <i class="fas fa-lock"></i>
@@ -66,8 +66,8 @@
                                         <div class="d-flex align-items-center justify-content-start">
                                             {{-- <i class="fas fa-play-circle fa-2x text-danger mr-2"></i> --}}
                                             <div>
-                                                <h6 class="h6 m-0">{{ $loop->remaining }} More
-                                                    Lesson{{ $loop->remaining > 1 ? 's' : '' }}</h6>
+                                                <h6 class="h6 m-0">Еще {{ $loop->remaining }}
+                                                    урок{{ $loop->remaining > 1 ? 'ов' : '' }}</h6>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                             {{-- End modal --}}
                         @empty
                             <div class="text-center py-3">
-                                <p>No Data Available</p>
+                                <p>Данные недоступны</p>
                             </div>
                         @endforelse
                     </div>
@@ -103,10 +103,10 @@
                     class="card-img-top" alt="course image">
                 <div class="card-body">
                     <h2 class="font-weight-bolder text-black">
-                        {{ !$course->amount ? 'Free' : $settings->currency . number_format($course->amount) }}
+                        {{ !$course->amount ? 'Бесплатно' : $settings->currency . number_format($course->amount) }}
                     </h2>
                     <button class="btn btn-danger btn-lg py-3 btn-block rounded-none rounded-0" data-bs-toggle="modal"
-                        data-bs-target="#buyModal">Buy Now</button>
+                        data-bs-target="#buyModal">Купить сейчас</button>
                 </div>
             </div>
         </div>
@@ -118,14 +118,14 @@
                         <div class="text-center">
                             <p class="mb-3">
                                 {{ !$course->amount ? $settings->currency . '0' : $settings->currency . number_format($course->amount) }}
-                                will be
-                                deducted from your account balance.
+                                будет
+                                списано с вашего баланса.
                             </p>
                             <form action="{{ route('user.buycourse') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="amount" value="{{ $course->amount }}">
                                 <input type="hidden" name="course" value="{{ $course->id }}">
-                                <button type="submit" class="btn btn-primary btn-block">Purchase now</button>
+                                <button type="submit" class="btn btn-primary btn-block">Приобрести сейчас</button>
                             </form>
                         </div>
                     </div>

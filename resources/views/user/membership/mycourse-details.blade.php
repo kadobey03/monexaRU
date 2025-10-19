@@ -16,22 +16,22 @@
                     </div>
                     <div class="p-2 d-lg-flex justify-content-lg-between align-items-center mt-3">
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">CREATED BY</p>
+                            <p class="m-0 text-primary font-weight-bold">СОЗДАНО</p>
                             <P class="m-0">{{ $settings->site_name }}</P>
                         </div>
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">CATEGORY</p>
+                            <p class="m-0 text-primary font-weight-bold">КАТЕГОРИЯ</p>
                             <P class="m-0">{{ $course->course->category }}</P>
                         </div>
                         <div class="mt-2 mt-lg-0">
-                            <p class="m-0 text-primary font-weight-bold">PURCHASED</p>
+                            <p class="m-0 text-primary font-weight-bold">ПРИОБРЕТЕНО</p>
                             <P class="m-0">
                                 {{ \Carbon\Carbon::parse($course->course->created_at)->toDayDateTimeString() }}</P>
                         </div>
                     </div>
 
                     <div class="mt-5">
-                        <h4>Course Lessons</h4>
+                        <h4>Уроки курса</h4>
                         @forelse ($lessons as $lesson)
                             <div>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
@@ -45,14 +45,14 @@
                                     </div>
                                     <div>
                                         <a href="{{ route('user.learning', ['lesson' => $lesson->id, 'course' => $course->course->id]) }}"
-                                            class="px-3 shadow bg-info text-white rounded-4 rounded-md">Watch</a>
+                                            class="px-3 shadow bg-info text-white rounded-4 rounded-md">Смотреть</a>
                                     </div>
                                 </div>
                                 <div style="border-top: 1px dashed black;" class="my-3"></div>
                             </div>
                         @empty
                             <div class="text-center py-3">
-                                <p>No Data Available</p>
+                                <p>Данные недоступны</p>
                             </div>
                         @endforelse
                     </div>

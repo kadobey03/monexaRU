@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Plan Ödemesi')
+@section('title', 'Оплата плана')
 
 @section('styles')
 @parent
@@ -75,8 +75,8 @@
 <div class="container mx-auto px-4 py-8">
     <!-- Page Header -->
     <div class="max-w-4xl mx-auto mb-8">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Yatırımınızı Tamamlayın</h1>
-        <p class="text-gray-600 dark:text-gray-300">Yatırım planınızı finanse etmek için tercih ettiğiniz ödeme yöntemini seçin.</p>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Завершите вашу инвестицию</h1>
+        <p class="text-gray-600 dark:text-gray-300">Выберите предпочитаемый способ оплаты для финансирования вашего инвестиционного плана.</p>
     </div>
 
     <!-- Alerts -->
@@ -88,7 +88,7 @@
             <!-- Left Column - Payment Methods -->
             <div class="md:col-span-2">
                 <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-8 animate-fade-in stagger-item">
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Ödeme Yöntemi</h2>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Способ оплаты</h2>
 
                     <form action="{{ route('user.plans.payment.process', $userPlan->id) }}" method="POST" id="paymentForm">
                         @csrf
@@ -107,11 +107,11 @@
                                         </div>
                                         <div>
                                             <label for="wallet" class="block text-lg font-medium text-gray-900 dark:text-white cursor-pointer">
-                                                Hesap Bakiyesi
+                                                Баланс счета
                                             </label>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Mevcut hesap bakiyenizi kullanarak ödeyin</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Оплата с использованием существующего баланса счета</p>
                                             <p class="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                                                Mevcut: {{ Auth::user()->currency }}{{ number_format(auth()->user()->account_bal, 2) }}
+                                                Доступно: {{ Auth::user()->currency }}{{ number_format(auth()->user()->account_bal, 2) }}
                                             </p>
                                         </div>
                                     </div>
@@ -128,9 +128,9 @@
                                         </div>
                                         <div>
                                             <label for="crypto" class="block text-lg font-medium text-gray-900 dark:text-white cursor-pointer">
-                                                Kripto Para
+                                                Криптовалюта
                                             </label>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Bitcoin, Ethereum veya diğer kripto paraları kullanarak ödeyin</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Оплата Bitcoin, Ethereum или другими криптовалютами</p>
                                         </div>
                                     </div>
                                 </div>
@@ -146,9 +146,9 @@
                                         </div>
                                         <div>
                                             <label for="bank" class="block text-lg font-medium text-gray-900 dark:text-white cursor-pointer">
-                                                Banka Transferi
+                                                Банковский перевод
                                             </label>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Hesabımıza doğrudan banka transferi ile ödeyin</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Оплата прямым банковским переводом на наш счет</p>
                                         </div>
                                     </div>
                                 </div>
@@ -164,9 +164,9 @@
                                         </div>
                                         <div>
                                             <label for="card" class="block text-lg font-medium text-gray-900 dark:text-white cursor-pointer">
-                                                Kredi/Banka Kartı
+                                                Кредитная/Банковская карта
                                             </label>
-                                            <p class="text-sm text-gray-500 dark:text-gray-400">Kredi veya banka kartınızla güvenli bir şekilde ödeyin</p>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Безопасная оплата кредитной или банковской картой</p>
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                                         </svg>
                                         <p class="text-sm text-indigo-700 dark:text-indigo-300">
-                                            Tutar hesap bakiyenizden düşülecektir.
+                                            Сумма будет списана с баланса вашего счета.
                                         </p>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
                                         </svg>
                                         <p class="text-sm text-red-700 dark:text-red-300">
-                                            Yetersiz bakiye. Daha fazla yatırın veya başka bir ödeme yöntemi seçin.
+                                            Недостаточно средств. Пополните счет или выберите другой способ оплаты.
                                         </p>
                                     </div>
                                 </div>
@@ -206,7 +206,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                     </svg>
-                                    Fon Yatır
+                                    Пополнить счет
                                 </a>
                                 @endif
                             </div>
@@ -214,7 +214,7 @@
                             <!-- Crypto Payment Section -->
                             <div id="crypto-section" class="payment-section hidden">
                                 <div class="mb-6">
-                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Kripto Para Seçin</h3>
+                                    <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Выберите криптовалюту</h3>
 
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                                         <div class="relative">
@@ -258,8 +258,8 @@
                                     </div>
 
                                     <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
-                                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Ödeme Talimatları</h4>
-                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Lütfen tam olarak <span class="font-bold text-indigo-600 dark:text-indigo-400">0.0043 BTC</span> aşağıdaki adrese gönderin:</p>
+                                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Инструкции по оплате</h4>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Пожалуйста, отправьте точно <span class="font-bold text-indigo-600 dark:text-indigo-400">0.0043 BTC</span> на следующий адрес:</p>
 
                                         <div class="bg-white dark:bg-gray-800 p-3 rounded-md border border-gray-200 dark:border-gray-600 mb-4 flex items-center justify-between">
                                             <code class="text-sm break-all text-gray-800 dark:text-gray-200">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</code>
@@ -285,15 +285,15 @@
                                         </div>
 
                                         <div class="text-sm text-gray-600 dark:text-gray-300">
-                                            <p class="mb-2">• Gönderdikten sonra, lütfen aşağıdaki işlem kimliğini sağlayın.</p>
-                                            <p class="mb-2">• Ödeme 1 ağ onayı sonrasında onaylanacaktır.</p>
-                                            <p>• Planınız onay sonrasında otomatik olarak etkinleştirilecektir.</p>
+                                            <p class="mb-2">• После отправки, пожалуйста, укажите ID транзакции ниже.</p>
+                                            <p class="mb-2">• Оплата будет подтверждена после 1 сетевого подтверждения.</p>
+                                            <p>• Ваш план будет автоматически активирован после подтверждения.</p>
                                         </div>
                                     </div>
 
                                     <div class="mt-6">
-                                        <label for="transaction_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">İşlem Kimliği</label>
-                                        <input type="text" id="transaction_id" name="transaction_id" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="Ödemeden sonra işlem kimliğini girin">
+                                        <label for="transaction_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">ID транзакции</label>
+                                        <input type="text" id="transaction_id" name="transaction_id" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="Введите ID транзакции после оплаты">
                                     </div>
                                 </div>
                             </div>
@@ -302,45 +302,45 @@
                             <div id="bank-section" class="payment-section hidden">
                                 <div class="mb-6">
                                     <div class="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 mb-6">
-                                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Banka Transfer Talimatları</h4>
-                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Lütfen <span class="font-bold text-indigo-600 dark:text-indigo-400">{{ Auth::user()->currency }}{{ number_format($userPlan->invested_amount, 2) }}</span> aşağıdaki banka hesabına aktarın:</p>
+                                        <h4 class="font-medium text-gray-900 dark:text-white mb-2">Инструкции по банковскому переводу</h4>
+                                        <p class="text-gray-600 dark:text-gray-300 mb-4">Пожалуйста, переведите <span class="font-bold text-indigo-600 dark:text-indigo-400">{{ Auth::user()->currency }}{{ number_format($userPlan->invested_amount, 2) }}</span> на следующий банковский счет:</p>
 
                                         <div class="space-y-3">
                                             <div class="flex justify-between">
-                                                <span class="text-gray-600 dark:text-gray-400">Banka Adı:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Название банка:</span>
                                                 <span class="font-medium text-gray-900 dark:text-white">{{ config('app.bank_name', 'BlueTrade Bank') }}</span>
                                             </div>
 
                                             <div class="flex justify-between">
-                                                <span class="text-gray-600 dark:text-gray-400">Hesap Adı:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Имя счета:</span>
                                                 <span class="font-medium text-gray-900 dark:text-white">{{ config('app.account_name', 'BlueTrade Ltd') }}</span>
                                             </div>
 
                                             <div class="flex justify-between">
-                                                <span class="text-gray-600 dark:text-gray-400">Hesap Numarası:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Номер счета:</span>
                                                 <span class="font-medium text-gray-900 dark:text-white">{{ config('app.account_number', '1234567890') }}</span>
                                             </div>
 
                                             <div class="flex justify-between">
-                                                <span class="text-gray-600 dark:text-gray-400">Şube Kodu/Rota Numarası:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Код филиала/Маршрутный номер:</span>
                                                 <span class="font-medium text-gray-900 dark:text-white">{{ config('app.sort_code', '012345') }}</span>
                                             </div>
 
                                             <div class="flex justify-between">
-                                                <span class="text-gray-600 dark:text-gray-400">Referans:</span>
+                                                <span class="text-gray-600 dark:text-gray-400">Ссылка:</span>
                                                 <span class="font-medium text-gray-900 dark:text-white">INV-{{ $userPlan->id }}-{{ Auth::user()->id }}</span>
                                             </div>
                                         </div>
 
                                         <div class="mt-4 text-sm text-gray-600 dark:text-gray-300">
-                                            <p class="mb-2">• Please use the reference number above in your transfer description.</p>
-                                            <p class="mb-2">• Upload the receipt/proof of transfer below.</p>
-                                            <p>• Your plan will be activated within 24 hours after verification.</p>
+                                            <p class="mb-2">• Пожалуйста, используйте номер ссылки выше в описании вашего перевода.</p>
+                                            <p class="mb-2">• Загрузите квитанцию/доказательство перевода ниже.</p>
+                                            <p>• Ваш план будет активирован в течение 24 часов после проверки.</p>
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Ödeme Kanıtı Yükle</label>
+                                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Загрузить подтверждение оплаты</label>
                                         <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-md">
                                             <div class="space-y-1 text-center">
                                                 <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
@@ -348,13 +348,13 @@
                                                 </svg>
                                                 <div class="flex text-sm text-gray-600 dark:text-gray-400">
                                                     <label for="payment_proof" class="relative cursor-pointer bg-white dark:bg-gray-800 rounded-md font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 focus-within:outline-none">
-                                                        <span>Bir dosya yükle</span>
+                                                        <span>Загрузить файл</span>
                                                         <input id="payment_proof" name="payment_proof" type="file" class="sr-only">
                                                     </label>
-                                                    <p class="pl-1">veya sürükleyip bırakın</p>
+                                                    <p class="pl-1">или перетащите сюда</p>
                                                 </div>
                                                 <p class="text-xs text-gray-500 dark:text-gray-400">
-                                                    PNG, JPG, PDF 10MB'ye kadar
+                                                    PNG, JPG, PDF до 10МБ
                                                 </p>
                                             </div>
                                         </div>
@@ -366,14 +366,14 @@
                             <div id="card-section" class="payment-section hidden">
                                 <div class="mb-6">
                                     <div class="mb-6">
-                                        <label for="card_number" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Kart Numarası</label>
+                                        <label for="card_number" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Номер карты</label>
                                         <input type="text" id="card_number" name="card_number" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="0000 0000 0000 0000">
                                     </div>
 
                                     <div class="grid grid-cols-2 gap-4 mb-6">
                                         <div>
-                                            <label for="expiry_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Son Kullanma Tarihi</label>
-                                            <input type="text" id="expiry_date" name="expiry_date" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="AA/YY">
+                                            <label for="expiry_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Срок действия</label>
+                                            <input type="text" id="expiry_date" name="expiry_date" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="ММ/ГГ">
                                         </div>
 
                                         <div>
@@ -383,8 +383,8 @@
                                     </div>
 
                                     <div class="mb-6">
-                                        <label for="card_holder" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Kart Sahibi Adı</label>
-                                        <input type="text" id="card_holder" name="card_holder" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="John Doe">
+                                        <label for="card_holder" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Имя держателя карты</label>
+                                        <input type="text" id="card_holder" name="card_holder" class="block w-full rounded-md border-gray-300 dark:border-gray-700 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-800 dark:text-white sm:text-sm" placeholder="Иван Иванов">
                                     </div>
 
                                     <div>
@@ -404,7 +404,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                             </svg>
-                            Ödemeyi Tamamla
+                            Завершить оплату
                         </button>
                     </form>
                 </div>
@@ -414,37 +414,37 @@
             <div>
                 <div class="sticky top-6">
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 animate-fade-in stagger-item">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Yatırım Özeti</h3>
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Сводка инвестиций</h3>
 
                         <div class="mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                             <div class="flex items-center justify-between mb-2">
-                                <span class="text-gray-600 dark:text-gray-300">Plan:</span>
+                                <span class="text-gray-600 dark:text-gray-300">План:</span>
                                 <span class="font-medium text-gray-900 dark:text-white">{{ $userPlan->plan->name }}</span>
                             </div>
                             <div class="flex items-center justify-between mb-2">
-                                <span class="text-gray-600 dark:text-gray-300">Süre:</span>
-                                <span class="font-medium text-gray-900 dark:text-white">{{ $userPlan->plan->duration }} {{ Str::plural('Gün', $userPlan->plan->duration) }}</span>
+                                <span class="text-gray-600 dark:text-gray-300">Длительность:</span>
+                                <span class="font-medium text-gray-900 dark:text-white">{{ $userPlan->plan->duration }} {{ Str::plural('день', $userPlan->plan->duration) }}</span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-gray-600 dark:text-gray-300">Getiri Oranı:</span>
+                                <span class="text-gray-600 dark:text-gray-300">Доходность:</span>
                                 <span class="font-medium text-green-600 dark:text-green-500">{{ $userPlan->plan->expected_return }}% / {{ $userPlan->plan->return_interval }}</span>
                             </div>
                         </div>
 
                         <div class="mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
                             <div class="flex items-center justify-between mb-2">
-                                <span class="text-gray-600 dark:text-gray-300">Yatırım Tutarı:</span>
+                                <span class="text-gray-600 dark:text-gray-300">Сумма инвестиций:</span>
                                 <span class="font-medium text-gray-900 dark:text-white">{{ Auth::user()->currency }}{{ number_format($userPlan->invested_amount, 2) }}</span>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="text-gray-600 dark:text-gray-300">Beklenen Kar:</span>
+                                <span class="text-gray-600 dark:text-gray-300">Ожидаемая прибыль:</span>
                                 <span class="font-medium text-green-600 dark:text-green-500">{{ Auth::user()->currency }}{{ number_format($userPlan->expected_profit, 2) }}</span>
                             </div>
                         </div>
 
                         <div class="mb-4">
                             <div class="flex items-center justify-between text-lg font-bold">
-                                <span class="text-gray-900 dark:text-white">Total Payout:</span>
+                                <span class="text-gray-900 dark:text-white">Общая выплата:</span>
                                 <span class="text-indigo-600 dark:text-indigo-400">{{ Auth::user()->currency }}{{ number_format($userPlan->invested_amount + $userPlan->expected_profit, 2) }}</span>
                             </div>
                         </div>
@@ -458,8 +458,8 @@
                                 </svg>
                             </div>
                             <div class="ml-3">
-                                <h4 class="text-sm font-medium text-gray-900 dark:text-white">Secure Payment</h4>
-                                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">All transactions are secured and encrypted with industry-standard security measures.</p>
+                                <h4 class="text-sm font-medium text-gray-900 dark:text-white">Безопасная оплата</h4>
+                                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Все транзакции защищены и зашифрованы с применением стандартных мер безопасности.</p>
                             </div>
                         </div>
                     </div>
