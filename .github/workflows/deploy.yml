@@ -19,6 +19,6 @@ jobs:
             cd /home/monexaRU
             docker-compose down --remove-orphans
             git pull origin main
-            docker-compose up -d --remove-orphans
-            docker-compose exec app composer install --no-interaction --no-dev --optimize-autoloader
-            docker-compose exec app php artisan optimize
+            docker-compose up -d --remove-orphans --build
+            docker-compose exec app-vicsafe composer install --no-interaction --no-dev --optimize-autoloader
+            docker-compose exec app-vicsafe php artisan optimize
