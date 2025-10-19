@@ -3,7 +3,7 @@
 @section('content')
     <!-- Title -->
     <h1 class="h2">
-        Kurslarınız/öğrenme merkezi
+        Ваши курсы/учебный центр
     </h1>
     <x-danger-alert />
     <x-success-alert />
@@ -24,7 +24,7 @@
                                         &nbsp;
                                         <span>
                                             {{ count($course->lessons) }}
-                                            {{ count($course->lessons) > 1 ? 'Dersler' : 'Ders' }}
+                                            {{ count($course->lessons) > 1 ? 'Уроки' : 'Урок' }}
                                         </span>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                         class="btn btn-primary btn-block d-flex align-items-center justify-content-center">
                                         <i class="bi bi-play-circle-fill mr-1"></i>
                                         &nbsp;
-                                        <span>İzle</span>
+                                        <span>Смотреть</span>
                                     </a>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body text-center py-2">
-                                <p>Veri Mevcut Değil</p>
+                                <p>Данные недоступны</p>
                             </div>
                         </div>
                     </div>

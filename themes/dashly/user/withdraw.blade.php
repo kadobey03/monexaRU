@@ -3,15 +3,15 @@
 @section('content')
     <!-- Title -->
     <h1 class="h2">
-        Çekim talebini tamamla
+        Завершить запрос на вывод
     </h1>
     @if (session('status'))
         <script type="text/javascript">
             Swal.fire({
-                title: 'Hata!',
+                title: 'Ошибка!',
                 text: "{{ session('status') }}",
                 icon: 'error',
-                confirmButtonText: 'Tamam'
+                confirmButtonText: 'Хорошо'
             })
         </script>
         {{ session()->forget('status') }}
@@ -33,53 +33,53 @@
                                 <form action="{{ route('completewithdrawal') }}" method="post">
                                     @csrf
                                     <div class="mb-3">
-                                        <label class="">Çekilecek miktarı
-                                            girin({{ $settings->currency }})</label>
-                                        <input class="form-control " placeholder="Miktarı Girin" type="number"
+                                        <label class="">Введите сумму для вывода
+                                            ({{ $settings->currency }})</label>
+                                        <input class="form-control " placeholder="Введите сумму" type="number"
                                             name="amount" step="any" required>
                                     </div>
                                     <input value="{{ $payment_mode }}" type="hidden" name="method">
 
                                     @if (Auth::user()->sendotpemail == 'Yes')
                                         <div class="mb-3">
-                                            <label class="m-1 d-inline">OTP Girin</label>
+                                            <label class="m-1 d-inline">Введите OTP</label>
                                             <div class="float-right m-1 btn-group d-inline">
                                                 <a class="btn btn-primary btn-sm" href="{{ route('getotp') }}"> <i
-                                                        class="fa fa-envelope"></i> OTP Talep Et</a>
+                                                        class="fa fa-envelope"></i> Запросить OTP</a>
                                             </div>
-                                            <input class="form-control " placeholder="OTP Girin" type="text"
+                                            <input class="form-control " placeholder="Введите OTP" type="text"
                                                 name="otpcode" required>
-                                            <small class="">OTP, talep ettiğinizde
-                                                e-postanıza gönderilecektir</small>
+                                            <small class="">OTP будет отправлен на вашу электронную почту
+                                                при запросе</small>
                                         </div>
                                     @endif
                                     @if (!$default or $payment_mode == 'BUSD')
                                         @if ($methodtype == 'crypto')
                                             <div class="mb-3">
-                                                <h5 class="">{{ $payment_mode }} Adresini Girin </h5>
-                                                <input class="form-control " placeholder="{{ $payment_mode }} Adresini Girin"
+                                                <h5 class="">Введите адрес {{ $payment_mode }} </h5>
+                                                <input class="form-control " placeholder="Введите адрес {{ $payment_mode }}"
                                                     type="text" name="details" required>
-                                                <small class="">{{ $payment_mode }} hesabınızda varsayılan
-                                                    çekim seçeneği değildir, fonlarınızı almak için doğru
-                                                    cüzdan adresini girin.</small>
+                                                <small class="">{{ $payment_mode }} не является опцией по умолчанию
+                                                    для вывода с вашего аккаунта, введите правильный
+                                                    адрес кошелька для получения средств.</small>
                                             </div>
                                         @else
                                             <div class="mb-3">
-                                                <label class="">{{ $payment_mode }} Detaylarını Girin </label>
+                                                <label class="">Введите данные {{ $payment_mode }} </label>
                                                 <textarea class="form-control " row="4" name="details"
-                                                    placeholder="Banka Adı: Ad, Hesap Numarası: Numara, Hesap Adı: Ad, Swift Kodu: Kod" required>
+                                                    placeholder="Название банка: Название, Номер счета: Номер, Имя счета: Имя, Swift код: Код" required>
 
                                             </textarea>
-                                                <small class="">{{ $payment_mode }} hesabınızda varsayılan
-                                                    çekim seçeneği değildir, fonlarınızı almak için virgülle ayrılmış doğru banka
-                                                    detaylarını girin.</small> <br />
-                                                <span class="text-danger">Banka Adı: Ad, Hesap Numarası: Numara,
-                                                    Hesap Adı: Ad, Swift Kodu: Kod</span>
+                                                <small class="">{{ $payment_mode }} не является опцией по умолчанию
+                                                    для вывода с вашего аккаунта, введите правильные банковские
+                                                    данные через запятую для получения средств.</small> <br />
+                                                <span class="text-danger">Название банка: Название, Номер счета: Номер,
+                                                    Имя счета: Имя, Swift код: Код</span>
                                             </div>
                                         @endif
                                     @endif
                                     <div class="mb-3">
-                                        <button class="btn btn-primary" type='submit'>Talebi Tamamla</button>
+                                        <button class="btn btn-primary" type='submit'>Завершить запрос</button>
                                     </div>
                                 </form>
                             @endif

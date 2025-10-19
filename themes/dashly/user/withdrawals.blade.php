@@ -4,9 +4,9 @@
     <!-- Title -->
     <div class="mb-5">
         <h1 class="h2 m-0">
-            Hesabınızdan çekin.
+            Снимайте со своего аккаунта.
         </h1>
-        <p class="m-0">Aşağıdaki ödeme yöntemlerinden herhangi birini kullanarak çekim talebi yerleştirin.</p>
+        <p class="m-0">Разместите запрос на вывод, используя любой из платежных методов ниже.</p>
     </div>
     <x-danger-alert />
     <x-success-alert />
@@ -33,7 +33,7 @@
                                         d="M23.37.29a1.49,1.49,0,0,0-2.09.34L7.25,20.2,2.56,15.51A1.5,1.5,0,0,0,.44,17.63l5.93,5.94a1.53,1.53,0,0,0,2.28-.19l15.07-21A1.49,1.49,0,0,0,23.37.29Z"
                                         style="fill: currentColor" />
                                 </svg>
-                                Minimum miktar: {{ $settings->currency }}{{ number_format($method->minimum) }}
+                                Минимальная сумма: {{ $settings->currency }}{{ number_format($method->minimum) }}
                             </li>
                             <li class="mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="12" width="12"
@@ -42,7 +42,7 @@
                                         d="M23.37.29a1.49,1.49,0,0,0-2.09.34L7.25,20.2,2.56,15.51A1.5,1.5,0,0,0,.44,17.63l5.93,5.94a1.53,1.53,0,0,0,2.28-.19l15.07-21A1.49,1.49,0,0,0,23.37.29Z"
                                         style="fill: currentColor" />
                                 </svg>
-                                Ücret Türü: {{ $method->charges_type }}
+                                Тип комиссии: {{ $method->charges_type }}
                             </li>
                             <li class="mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="12" width="12"
@@ -51,7 +51,7 @@
                                         d="M23.37.29a1.49,1.49,0,0,0-2.09.34L7.25,20.2,2.56,15.51A1.5,1.5,0,0,0,.44,17.63l5.93,5.94a1.53,1.53,0,0,0,2.28-.19l15.07-21A1.49,1.49,0,0,0,23.37.29Z"
                                         style="fill: currentColor" />
                                 </svg>
-                                Ücret Miktarı:
+                                Размер комиссии:
                                 @if ($method->charges_type == 'percentage')
                                     {{ $method->charges_amount }}%
                                 @else
@@ -65,19 +65,19 @@
                                         d="M23.37.29a1.49,1.49,0,0,0-2.09.34L7.25,20.2,2.56,15.51A1.5,1.5,0,0,0,.44,17.63l5.93,5.94a1.53,1.53,0,0,0,2.28-.19l15.07-21A1.49,1.49,0,0,0,23.37.29Z"
                                         style="fill: currentColor" />
                                 </svg>
-                                Süre: {{ $method->duration }}
+                                Длительность: {{ $method->duration }}
                             </li>
                         </ul>
                         @if ($settings->enable_with == 'false')
                             <button class="btn btn-lg btn-primary w-100" data-bs-toggle="modal"
-                                data-bs-target="#withdrawdisabled" type="button">Bu yöntemi seç</button>
+                                data-bs-target="#withdrawdisabled" type="button">Выбрать этот метод</button>
                         @else
                             <form action='{{ route('withdrawamount') }}' method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <input type="hidden" value="{{ $method->name }}" name="method">
                                     <button class="btn btn-lg btn-primary w-100" type='submit'>
-                                        Bu yöntemi seç
+                                        Выбрать этот метод
                                     </button>
                                 </div>
                             </form>
@@ -87,7 +87,7 @@
             </div>
         @empty
             <div class="col-12 text-center">
-                <h3>Çekim yöntemi etkinleştirilmemiş.</h3>
+                <h3>Методы вывода не активированы.</h3>
             </div>
         @endforelse
 
@@ -96,10 +96,10 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalCenterTitle">Çekim devre dışı</h3>
+                        <h3 class="modal-title" id="exampleModalCenterTitle">Вывод отключен</h3>
                     </div>
                     <div class="modal-footer m-0">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Kapat</button>
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Закрыть</button>
                     </div>
                 </div>
             </div>

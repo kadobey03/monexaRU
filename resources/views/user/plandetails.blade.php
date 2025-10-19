@@ -11,8 +11,8 @@
                     <i data-lucide="arrow-left" class="w-5 h-5 md:w-6 md:h-6 text-gray-300 dark:text-gray-300"></i>
                 </a>
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Plan Details</h1>
-                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-1">Investment performance and transactions</p>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">Детали плана</h1>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-1">Результаты инвестиций и транзакции</p>
                 </div>
             </div>
         </div>
@@ -29,11 +29,11 @@
                         <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
                             <h2 class="text-xl md:text-2xl font-bold text-white dark:text-white">{{ $plan->uplan->name }}</h2>
                             @if ($plan->active == 'yes')
-                                <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium rounded-full">Active</span>
+                                <span class="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-medium rounded-full">Активный</span>
                             @elseif($plan->active == 'expired')
-                                <span class="inline-block px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-sm font-medium rounded-full">Expired</span>
+                                <span class="inline-block px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 text-sm font-medium rounded-full">Истёк</span>
                             @else
-                                <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-400 text-sm font-medium rounded-full">Inactive</span>
+                                <span class="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-400 text-sm font-medium rounded-full">Неактивный</span>
                             @endif
                         </div>
                         <p class="text-sm md:text-base text-gray-300 dark:text-gray-400">
@@ -47,7 +47,7 @@
                             @click="showCancelModal = true"
                             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all duration-200 text-sm">
                             <i data-lucide="x" class="w-4 h-4"></i>
-                            <span>Cancel Plan</span>
+                            <span>Отменить план</span>
                         </button>
                     @endif
                 </div>
@@ -56,7 +56,7 @@
             <!-- Financial Overview -->
             <div class="border-t border-gray-700 dark:border-gray-600">
                 <div class="p-4 md:p-6">
-                    <h3 class="text-lg font-semibold text-white dark:text-white mb-4">Financial Overview</h3>
+                    <h3 class="text-lg font-semibold text-white dark:text-white mb-4">Финансовый обзор</h3>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                         <!-- Invested Amount -->
                         <div class="bg-gray-800 dark:bg-gray-700/50 rounded-xl p-4 border border-gray-700 dark:border-gray-600">
@@ -65,7 +65,7 @@
                                     <i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 text-blue-600 dark:text-blue-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Invested Amount</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Инвестированная сумма</p>
                                     <p class="text-xl md:text-2xl font-bold text-white dark:text-white break-words">
                                         {{ Auth::user()->currency }}{{ number_format($plan->amount, 2, '.', ',') }}
                                     </p>
@@ -80,7 +80,7 @@
                                     <i data-lucide="trending-up" class="w-5 h-5 md:w-6 md:h-6 text-green-600 dark:text-green-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Profit Earned</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Полученная прибыль</p>
                                     <p class="text-xl md:text-2xl font-bold text-green-400 dark:text-green-400 break-words">
                                         {{ Auth::user()->currency }}{{ number_format($plan->profit_earned, 2, '.', ',') }}
                                     </p>
@@ -95,7 +95,7 @@
                                     <i data-lucide="wallet" class="w-5 h-5 md:w-6 md:h-6 text-purple-600 dark:text-purple-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Total Return</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Общий доход</p>
                                     <p class="text-xl md:text-2xl font-bold text-purple-400 dark:text-purple-400 break-words">
                                         @if ($settings->return_capital)
                                             {{ Auth::user()->currency }}{{ number_format($plan->amount + $plan->profit_earned, 2, '.', ',') }}
@@ -113,7 +113,7 @@
             <!-- Plan Timeline & Details -->
             <div class="border-t border-gray-700 dark:border-gray-600">
                 <div class="p-4 md:p-6">
-                    <h3 class="text-lg font-semibold text-white dark:text-white mb-4">Plan Details</h3>
+                    <h3 class="text-lg font-semibold text-white dark:text-white mb-4">Детали плана</h3>
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                         <!-- Timeline -->
                         <div class="space-y-4">
@@ -122,7 +122,7 @@
                                     <i data-lucide="calendar" class="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Duration</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Продолжительность</p>
                                     <p class="font-medium text-white dark:text-white break-words">{{ $plan->uplan->expiration }}</p>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                                     <i data-lucide="calendar-plus" class="w-4 h-4 md:w-5 md:h-5 text-green-600 dark:text-green-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Start Date</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Дата начала</p>
                                     <p class="font-medium text-white dark:text-white text-sm md:text-base break-words">{{ $plan->created_at->addHour()->toDayDateTimeString() }}</p>
                                 </div>
                             </div>
@@ -142,7 +142,7 @@
                                     <i data-lucide="calendar-check" class="w-4 h-4 md:w-5 md:h-5 text-red-600 dark:text-red-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">End Date</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Дата окончания</p>
                                     <p class="font-medium text-white dark:text-white text-sm md:text-base break-words">{{ \Carbon\Carbon::parse($plan->expire_date)->addHour()->toDayDateTimeString() }}</p>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                                     <i data-lucide="bar-chart-2" class="w-4 h-4 md:w-5 md:h-5 text-amber-600 dark:text-amber-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">ROI Interval</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Интервал ROI</p>
                                     <p class="font-medium text-white dark:text-white break-words">{{ $plan->uplan->increment_interval }}</p>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                     <i data-lucide="trending-up" class="w-4 h-4 md:w-5 md:h-5 text-green-600 dark:text-green-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Minimum Return</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Минимальный доход</p>
                                     <p class="font-medium text-white dark:text-white break-words">{{ $plan->uplan->minr }}%</p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                     <i data-lucide="trending-up" class="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400"></i>
                                 </div>
                                 <div class="min-w-0 flex-1">
-                                    <p class="text-sm text-gray-300 dark:text-gray-400">Maximum Return</p>
+                                    <p class="text-sm text-gray-300 dark:text-gray-400">Максимальный доход</p>
                                     <p class="font-medium text-white dark:text-white break-words">{{ $plan->uplan->maxr }}%</p>
                                 </div>
                             </div>
@@ -192,7 +192,7 @@
                     <div class="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex-shrink-0">
                         <i data-lucide="list" class="w-4 h-4 md:w-5 md:h-5 text-indigo-600 dark:text-indigo-400"></i>
                     </div>
-                    <h3 class="text-lg font-semibold text-white dark:text-white">Transaction History</h3>
+                    <h3 class="text-lg font-semibold text-white dark:text-white">История транзакций</h3>
                 </div>
 
                 <div class="overflow-hidden rounded-xl border border-gray-700 dark:border-gray-600">
@@ -206,7 +206,7 @@
                                             <i data-lucide="trending-up" class="w-4 h-4 text-green-600 dark:text-green-400"></i>
                                         </div>
                                         <div>
-                                            <p class="font-medium text-white dark:text-white text-sm">Profit</p>
+                                            <p class="font-medium text-white dark:text-white text-sm">Прибыль</p>
                                             <p class="text-xs text-gray-300 dark:text-gray-400">{{ $history->created_at->addHour()->format('M d, Y h:i A') }}</p>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@
                                     <div class="p-3 bg-gray-700 dark:bg-gray-600 rounded-full mb-3">
                                         <i data-lucide="info" class="w-6 h-6 text-gray-400 dark:text-gray-500"></i>
                                     </div>
-                                    <p class="text-sm">No transaction records found yet</p>
+                                    <p class="text-sm">Записи о транзакциях пока не найдены</p>
                                 </div>
                             </div>
                         @endforelse
@@ -232,9 +232,9 @@
                         <table class="w-full">
                             <thead>
                                 <tr class="bg-gray-800 dark:bg-gray-700/50">
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Type</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Date</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Amount</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Тип</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Дата</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-400 uppercase tracking-wider">Сумма</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-gray-900 dark:bg-gray-800 divide-y divide-gray-700 dark:divide-gray-600">
@@ -245,7 +245,7 @@
                                                 <div class="p-1.5 bg-green-100 dark:bg-green-900/30 rounded-full mr-3">
                                                     <i data-lucide="trending-up" class="w-4 h-4 text-green-600 dark:text-green-400"></i>
                                                 </div>
-                                                <span class="font-medium text-white dark:text-white">Profit</span>
+                                                <span class="font-medium text-white dark:text-white">Прибыль</span>
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-gray-300 dark:text-gray-300">
@@ -264,7 +264,7 @@
                                                 <div class="p-3 bg-gray-700 dark:bg-gray-600 rounded-full mb-3">
                                                     <i data-lucide="info" class="w-6 h-6 text-gray-400 dark:text-gray-500"></i>
                                                 </div>
-                                                <p>No transaction records found yet</p>
+                                                <p>Записи о транзакциях пока не найдены</p>
                                             </div>
                                         </td>
                                     </tr>
@@ -300,7 +300,7 @@
                                     <a href="{{ $transactions->previousPageUrl() }}"
                                        class="px-3 py-2 text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 flex items-center gap-1">
                                         <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                                        <span class="hidden sm:inline">Previous</span>
+                                        <span class="hidden sm:inline">Предыдущая</span>
                                     </a>
                                 @endif
 
@@ -349,7 +349,7 @@
                                 @if ($transactions->hasMorePages())
                                     <a href="{{ $transactions->nextPageUrl() }}"
                                        class="px-3 py-2 text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-white hover:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-all duration-200 flex items-center gap-1">
-                                        <span class="hidden sm:inline">Next</span>
+                                        <span class="hidden sm:inline">Следующая</span>
                                         <i data-lucide="chevron-right" class="w-4 h-4"></i>
                                     </a>
                                 @else
@@ -366,7 +366,7 @@
                                     @for ($page = 1; $page <= $transactions->lastPage(); $page++)
                                         <option value="{{ $transactions->url($page) }}"
                                                 {{ $page == $transactions->currentPage() ? 'selected' : '' }}>
-                                            Page {{ $page }} of {{ $transactions->lastPage() }}
+                                            Страница {{ $page }} из {{ $transactions->lastPage() }}
                                         </option>
                                     @endfor
                                 </select>
@@ -403,14 +403,14 @@
                         <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 dark:bg-red-900/30 mb-4">
                             <i data-lucide="alert-triangle" class="h-8 w-8 text-red-600 dark:text-red-400"></i>
                         </div>
-                        <h3 class="text-xl font-semibold text-white dark:text-white mb-2">Cancel Investment Plan</h3>
-                        <p class="mb-6 text-gray-300 dark:text-gray-400 text-sm md:text-base">Are you sure you want to cancel your <span class="font-semibold text-white">{{ $plan->uplan->name }}</span> plan?</p>
+                        <h3 class="text-xl font-semibold text-white dark:text-white mb-2">Отменить инвестиционный план</h3>
+                        <p class="mb-6 text-gray-300 dark:text-gray-400 text-sm md:text-base">Вы уверены, что хотите отменить ваш план <span class="font-semibold text-white">{{ $plan->uplan->name }}</span>?</p>
                         <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
                             <button @click="showCancelModal = false" class="w-full sm:w-auto px-4 py-2 bg-gray-700 dark:bg-gray-700 text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-600 dark:hover:bg-gray-600 focus:outline-none transition-colors text-sm font-medium">
-                                Cancel
+                                Отменить
                             </button>
                             <a href="{{ route('cancelplan', $plan->id) }}" class="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none transition-colors text-sm font-medium text-center">
-                                Confirm Cancellation
+                                Подтвердить отмену
                             </a>
                         </div>
                     </div>

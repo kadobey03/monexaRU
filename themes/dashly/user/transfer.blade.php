@@ -4,9 +4,9 @@
     <div>
         <!-- Title -->
         <h1 class="h2 m-0">
-            Fon transferi
+            Перевод средств
         </h1>
-        <p class="m-0">{{ $settings->site_name }} üzerinde kayıtlı olan arkadaşlarınıza ve sevdiklerinize para gönderebilirsiniz.</p>
+        <p class="m-0">Вы можете отправлять деньги своим друзьям и близким, зарегистрированным на {{ $settings->site_name }}.</p>
     </div>
     <x-danger-alert />
     <x-success-alert />
@@ -19,25 +19,25 @@
                             <form method="post" action="javascript:void(0)" id="transferform">
                                 @csrf
                                 <div class="mb-3">
-                                    <label>Alıcı E-posta veya kullanıcı adı</label>
+                                    <label>Email получателя или имя пользователя</label>
                                     <input type="text" name="email" class="form-control mt-2" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label>Miktar({{ $settings->currency }})</label>
+                                    <label>Сумма({{ $settings->currency }})</label>
                                     <input type="number" min="{{ $moresettings->min_transfer }}" name="amount"
-                                        placeholder="Alıcıya transfer etmek istediğiniz miktarı girin"
+                                        placeholder="Введите сумму, которую хотите перевести получателю"
                                         class="form-control mt-2" required>
                                 </div>
                                 <div class="mb-3">
                                     <h6>
-                                        Transfer Ücretleri:
+                                        Комиссия за перевод:
                                         <strong class=" text-danger">{{ $moresettings->transfer_charges }}%</strong>
                                     </h6>
                                 </div>
                                 <input type="hidden" name="password" id="acntpass">
                                 <div>
-                                    <button type="reset" class="btn btn-dark">Temizle</button>
-                                    <input type="submit" id="subbtn" class="py-2 btn btn-primary" value="Devam Et">
+                                    <button type="reset" class="btn btn-dark">Очистить</button>
+                                    <input type="submit" id="subbtn" class="py-2 btn btn-primary" value="Продолжить">
                                 </div>
                             </form>
                         </div>
@@ -54,16 +54,16 @@
                 const {
                     value: password
                 } = await Swal.fire({
-                    title: 'Şifrenizi girin',
+                    title: 'Введите ваш пароль',
                     input: 'password',
-                    inputLabel: 'Transferi tamamlamak için hesap şifrenizi girin',
-                    inputPlaceholder: 'Hesap şifrenizi girin'
+                    inputLabel: 'Введите пароль вашего аккаунта для завершения перевода',
+                    inputPlaceholder: 'Введите пароль аккаунта'
                 })
 
                 if (password) {
 
                     document.getElementById('acntpass').value = password;
-                    $("#subbtn").attr("disabled", "disabled").val('Lütfen bekleyin....');
+                    $("#subbtn").attr("disabled", "disabled").val('Пожалуйста, подождите....');
                     $.ajax({
                         url: "{{ route('transfertouser') }}",
                         type: 'POST',
@@ -71,10 +71,10 @@
                         success: function(response) {
                             if (response.status === 200) {
                                 Swal.fire({
-                                    title: 'Başarılı!',
+                                    title: 'Успешно!',
                                     text: response.message,
                                     icon: 'success',
-                                    confirmButtonText: 'Harika'
+                                    confirmButtonText: 'Отлично'
                                 });
                                 $("#subbtn").removeAttr("disabled").val('Proceed');
                                 setTimeout(() => {
@@ -84,7 +84,7 @@
                             } else {
                                 $("#subbtn").removeAttr("disabled").val('Proceed');
                                 Swal.fire({
-                                    title: 'Hata!',
+                                    title: 'Ошибка!',
                                     text: response.message,
                                     icon: 'error',
                                 });
@@ -97,10 +97,10 @@
                     });
                 } else {
                     Swal.fire({
-                        title: 'Hata!',
-                        text: 'Şifre gerekli',
+                        title: 'Ошибка!',
+                        text: 'Пароль обязателен',
                         icon: 'error',
-                        confirmButtonText: 'Tamam'
+                        confirmButtonText: 'Хорошо'
                     })
                 }
 

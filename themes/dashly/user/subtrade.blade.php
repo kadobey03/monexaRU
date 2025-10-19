@@ -3,7 +3,7 @@
 @section('content')
     <!-- Title -->
     <h1 class="h2">
-        Yönetilen Hesaplar
+        Управляемые счета
     </h1>
     <x-danger-alert />
     <x-success-alert />
@@ -14,31 +14,31 @@
                 <div class="card-header border-0">
                     <!-- Title -->
                     <h2 class="h3 mb-0">
-                        Gelişmiş {{ $settings->site_name }} Hesap yöneticisi
+                        Продвинутый менеджер счетов {{ $settings->site_name }}
                     </h2>
                 </div>
 
                 <div class="card-body">
-                    <h4 class="mb-3">Açıklama</h4>
+                    <h4 class="mb-3">Описание</h4>
 
                     <p class="mb-3">
-                        Ticaret yapmak veya ticaret öğrenmek için zamanınız yok mu?</p>
+                        У вас нет времени торговать или изучать торговлю?</p>
                     <p>
-                        Hesap Yönetim Hizmetimiz sizin için En İyi Kârlı Ticaret Seçeneğidir,
-                        mali piyasada hesabınızı basit bir abonelik modeli ile yönetmenize yardımcı olabiliriz.
+                        Наша служба управления счетами - лучший прибыльный торговый вариант для вас,
+                        мы можем помочь вам управлять вашим счетом на финансовом рынке с помощью простой модели подписки.
                     </p>
                     <small>
-                        Şartlar ve Koşullar geçerlidir</small><br>{{ $settings->contact_email }} adresinden bize ulaşın
-                    daha fazla bilgi için.
+                        Действуют условия и положения</small><br>Свяжитесь с нами по адресу {{ $settings->contact_email }}
+                    для получения дополнительной информации.
 
-                    <h4 class="my-3">Kontrol Listesi</h4>
+                    <h4 class="my-3">Контрольный список</h4>
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checklist1" checked
                                     disabled>
                                 <label class="form-check-label" for="checklist1">
-                                    Sizin adınıza ticaret yapın
+                                    Торговля от вашего имени
                                 </label>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist2" checked
                                     disabled>
                                 <label class="form-check-label" for="checklist2">
-                                    Hesabınızı yönetin
+                                    Управление вашим счетом
                                 </label>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist3" disabled
                                     checked>
                                 <label class="form-check-label" for="checklist3">
-                                    Karınızı kendiniz çekin
+                                    Снимайте прибыль самостоятельно
                                 </label>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist3" disabled
                                     checked>
                                 <label class="form-check-label" for="checklist3">
-                                    7/24 Destek
+                                    Поддержка 24/7
                                 </label>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist3" disabled
                                     checked>
                                 <label class="form-check-label" for="checklist3">
-                                    100% Şeffaflık
+                                    100% прозрачность
                                 </label>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist3" disabled
                                     checked>
                                 <label class="form-check-label" for="checklist3">
-                                    100% Kontrol Sizde
+                                    100% контроль у вас
                                 </label>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="checklist3" disabled
                                     checked>
                                 <label class="form-check-label" for="checklist3">
-                                    100% Güvenli ve Güvenli
+                                    100% безопасность и надежность
                                 </label>
                             </div>
                         </div>
@@ -103,28 +103,28 @@
             <!-- Card -->
             <div class="card border-0">
                 <div class="card-body">
-                    <h4 class="mb-5">Yönetim altındaki hesaplar.</h4>
+                    <h4 class="mb-5">Счета под управлением.</h4>
                     @if ($subscriptions->count() === 0)
                         <div class="text-center">
                             <i class="bi bi-database-fill-exclamation" style="font-size: 50px"></i>
-                            <h2 class="h3">Yönetilen hesabınız yok</h2>
+                            <h2 class="h3">У вас нет управляемых счетов</h2>
                             <a class="btn btn-primary" data-toggle="modal" data-target="#submitmt4modal">
-                                Hesap Ekle
+                                Добавить счет
                             </a>
                         </div>
                     @else
                         <div class=" table-responsive">
                             <table class="table table-hover">
                                 <thead>
-                                    <th>Hesap</th>
-                                    <th>Para Birimi</th>
-                                    <th>Kaldıraç</th>
-                                    <th>Sunucu</th>
-                                    <th>Süre</th>
-                                    <th>Hesap Şifresi</th>
-                                    <th>Durum</th>
-                                    <th>Gönderildi</th>
-                                    <th>Başlangıç/Bitiş tarihi</th>
+                                    <th>Счет</th>
+                                    <th>Валюта</th>
+                                    <th>Кредитное плечо</th>
+                                    <th>Сервер</th>
+                                    <th>Продолжительность</th>
+                                    <th>Пароль счета</th>
+                                    <th>Статус</th>
+                                    <th>Отправлено</th>
+                                    <th>Дата начала/окончания</th>
                                     <th></th>
                                 </thead>
                                 <tbody>
@@ -173,10 +173,10 @@
                                                     $remindAt = \Carbon\Carbon::parse($sub->reminded_at);
                                                 @endphp
                                                 <a href="#" data-bs-toggle="modal" class="btn btn-danger btn-sm"
-                                                    onclick="deletemt4()">İptal</a>
+                                                    onclick="deletemt4()">Отменить</a>
                                                 @if (($sub->status != 'Pending' && now()->isSameDay($remindAt)) || $sub->status == 'Expired')
                                                     <a href="{{ route('renewsub', $sub->id) }}"
-                                                        class="btn btn-primary btn-sm">Yenile</a>
+                                                        class="btn btn-primary btn-sm">Обновить</a>
                                                 @endif
                                             </td>
                                         </tr>
@@ -198,10 +198,10 @@
     <script type="text/javascript">
         function deletemt4() {
             Swal.fire({
-                title: 'Hata!',
-                text: 'Hesabınızın iptal edilmesi için {{ $settings->contact_email }} adresine bir E-posta gönderin.',
+                title: 'Ошибка!',
+                text: 'Отправьте электронное письмо на адрес {{ $settings->contact_email }} для отмены вашего счета.',
                 icon: 'error',
-                confirmButtonText: 'Tamam'
+                confirmButtonText: 'Хорошо'
             });
         }
     </script>

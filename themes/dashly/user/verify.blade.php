@@ -5,7 +5,7 @@
     <div class="d-flex align-items-baseline justify-content-between">
         <!-- Title -->
         <h1 class="h2">
-            KYC Doğrulama
+            KYC Верификация
         </h1>
     </div>
     <x-danger-alert />
@@ -45,13 +45,13 @@
                             <div class="card-body">
                                 @if (Auth::user()->account_verify == 'Verified' or Auth::user()->account_verify == 'Under review')
                                     <div class="alert alert-info">
-                                        KYC doğrulamınız {{ Auth::user()->account_verify }}.
+                                        Ваша KYC верификация {{ Auth::user()->account_verify }}.
                                     </div>
                                 @endif
-                                <h2 class="text-center mb-0">KYC Doğrulama</h2>
-                                <p class="text-secondary text-center">Düzenlemeye uymak için, her katılımcı
-                                    dolandırıcılık nedenlerini önlemek için kimlik
-                                    doğrulamasından (KYC/AML) geçmek zorunda kalacaktır.</p>
+                                <h2 class="text-center mb-0">KYC Верификация</h2>
+                                <p class="text-secondary text-center">Для соблюдения регулирования каждый участник
+                                    должен пройти верификацию личности (KYC/AML) для предотвращения
+                                    мошенничества.</p>
 
                             </div>
                             <div class="card-footer">
@@ -60,9 +60,9 @@
                                     <!-- Button -->
                                     @if (Auth::user()->account_verify == 'Verified' or Auth::user()->account_verify == 'Under review')
                                         <a class="btn btn-primary" data-toggle="wizard" href="#wizardStepTwo"
-                                            disabled>Sonraki</a>
+                                            disabled>Далее</a>
                                     @else
-                                        <a class="btn btn-primary" data-toggle="wizard" href="#wizardStepTwo">Sonraki</a>
+                                        <a class="btn btn-primary" data-toggle="wizard" href="#wizardStepTwo">Далее</a>
                                     @endif
 
                                 </div>
@@ -71,15 +71,15 @@
                         <div class="card">
                             <div class="card-body d-lg-flex justify-content-lg-between">
                                 <div>
-                                    <h4 class="m-0">Size yardımcı olmak için buradayız!</h4>
+                                    <h4 class="m-0">Мы здесь, чтобы помочь вам!</h4>
                                     <p class="m-0">
-                                        Bir soru sorun, istekleri yönetin, bir sorun bildirin. Destek ekibimiz
-                                        size e-posta ile geri dönecektir.
+                                        Задайте вопрос, управляйте запросами, сообщите о проблеме. Наша команда поддержки
+                                        свяжется с вами по электронной почте.
                                     </p>
                                 </div>
                                 <div>
                                     <a href="{{ route('support') }}"
-                                        class="px-3 btn btn-outline-primary btn-sm">Yardım/Destek</a>
+                                        class="px-3 btn btn-outline-primary btn-sm">Помощь/Поддержка</a>
                                 </div>
                             </div>
                         </div>
@@ -93,69 +93,69 @@
                                         class="needs-validation">
                                         @csrf
                                         <div class="col-12 border-bottom">
-                                            <h5>Kişisel Detaylar</h5>
-                                            <p>Kimlik için gereken basit kişisel bilgileriniz</p>
+                                            <h5>Личные данные</h5>
+                                            <p>Ваша простая личная информация, необходимая для идентификации</p>
                                         </div>
                                         <div class="col-12">
                                             <small>
-                                                Lütfen dikkatlice yazın ve formu kişisel bilgilerinizle doldurun.
-                                                Formu gönderdikten sonra bu detayları düzenleyemezsiniz.
+                                                Пожалуйста, внимательно заполните форму своими личными данными.
+                                                После отправки формы вы не сможете редактировать эти данные.
                                             </small>
                                         </div>
                                         <div class="mt-4 col-12">
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="firstname">İlk ad <span
+                                                    <label for="firstname">Имя <span
                                                             class="text-danger">*</span></label>
                                                     <input type="text" name="first_name" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="lastname">Soyad <span
+                                                    <label for="lastname">Фамилия <span
                                                             class="text-danger">*</span></label>
                                                     <input type="text" name="last_name" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="email">E-posta <span class="text-danger">*</span></label>
+                                                    <label for="email">Email <span class="text-danger">*</span></label>
                                                     <input type="email" name="email" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="phone_number">Telefon Numarası <span
+                                                    <label for="phone_number">Номер телефона <span
                                                             class="text-danger">*</span></label>
                                                     <input type="text" name="phone_number" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="dob">Doğum tarihi <span
+                                                    <label for="dob">Дата рождения <span
                                                             class="text-danger">*</span></label>
                                                     <input type="date" name="dob" class="form-control"
-                                                        data-toggle="date" placeholder="Tarih seçin" required>
+                                                        data-toggle="date" placeholder="Выберите дату" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="social_media">Twitter veya Facebook kullanıcı adı</label>
+                                                    <label for="social_media">Имя пользователя Twitter или Facebook</label>
                                                     <input type="text" name="social_media" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="pt-3 mt-3 col-12 border-bottom border-top">
-                                            <h5>Adresiniz</h5>
-                                            <p>Kimlik için gereken basit konum bilgileriniz</p>
+                                            <h5>Ваш адрес</h5>
+                                            <p>Ваша простая информация о местоположении, необходимая для идентификации</p>
                                         </div>
                                         <div class="mt-4 col-12">
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="address">Adres satırı<span
+                                                    <label for="address">Адресная строка<span
                                                             class="text-danger">*</span></label>
                                                     <input type="text" name="address" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="city">Şehir<span class="text-danger">*</span></label>
+                                                    <label for="city">Город<span class="text-danger">*</span></label>
                                                     <input type="text" name="city" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="state">Eyalet<span class="text-danger">*</span></label>
+                                                    <label for="state">Область<span class="text-danger">*</span></label>
                                                     <input type="text" name="state" class="form-control" required>
                                                 </div>
                                                 <div class="mb-3 col-md-6">
-                                                    <label for="country">Milliyet <span
+                                                    <label for="country">Национальность <span
                                                             class="text-danger">*</span></label>
                                                     <input type="text" name="country" class="form-control" required>
                                                 </div>
@@ -163,8 +163,8 @@
                                             </div>
                                         </div>
                                         <div class="pt-3 mt-3 col-12 border-bottom border-top">
-                                            <h5>Belge Yükleme</h5>
-                                            <p>Kimlik için gereken basit kişisel belgeniz</p>
+                                            <h5>Загрузка документа</h5>
+                                            <p>Ваш простой личный документ, необходимый для идентификации</p>
                                         </div>
                                         <div class="mt-4 col-12">
                                             <div class="row">
@@ -174,39 +174,39 @@
                                                         <label class="mb-2 shadow-sm btn btn-primary active">
 
                                                             <input type="radio" name="document_type"
-                                                                value="Int'l Passport" autocomplete="off" checked> Uluslararası
-                                                            Pasaport
+                                                                value="Int'l Passport" autocomplete="off" checked> Международный
+                                                            Паспорт
                                                         </label>
                                                         <label class="mb-2 shadow-sm btn btn-primary">
 
                                                             <input type="radio" name="document_type"
-                                                                value="National ID" autocomplete="off"> Ulusal Kimlik
+                                                                value="National ID" autocomplete="off"> Национальный ID
                                                         </label>
                                                         <label class="mb-2 shadow-sm btn btn-primary">
 
                                                             <input type="radio" name="document_type"
-                                                                value="Drivers License" autocomplete="off"> Ehliyet
+                                                                value="Drivers License" autocomplete="off"> Водительские права
                                                         </label>
                                                     </div>
                                                     <div class="mt-4">
-                                                        <h6 class=" font-weight-bold">Hesap doğrulamasında gecikmeleri önlemek için,
-                                                            lütfen belgenizin aşağıdaki kriterleri karşıladığından emin olun:</h6>
+                                                        <h6 class=" font-weight-bold">Чтобы избежать задержек в верификации аккаунта,
+                                                            убедитесь, что ваш документ соответствует следующим критериям:</h6>
                                                         <ul class=" list-group">
                                                             <li>
                                                                 <i class="fas fa-check-square text-primary"></i>
-                                                                Seçilen kimlik belgesinin süresi dolmamış olmalıdır.
+                                                                Выбранный документ удостоверения личности не должен быть просроченным.
                                                             </li>
                                                             <li>
                                                                 <i class="fas fa-check-square text-primary"></i>
-                                                                Belge iyi durumda ve açıkça görünür olmalıdır.
+                                                                Документ должен быть в хорошем состоянии и четко видимым.
                                                             </li>
                                                             <li>
                                                                 <i class="fas fa-check-square text-primary"></i>
-                                                                Belgede ışık parlaması olmadığından emin olun.
+                                                                Убедитесь, что на документе нет бликов от света.
                                                             </li>
                                                         </ul>
                                                     </div>
-                                                    <p class="mt-3 text-black h6">Ön tarafı yükleyin <span
+                                                    <p class="mt-3 text-black h6">Загрузите переднюю сторону <span
                                                             class="text-danger">*</span></p>
                                                     <div class="mt-3 align-items-center justify-content-around d-md-flex">
                                                         <div class="p-2 border p-md-5 ">
@@ -220,7 +220,7 @@
                                                         </div>
                                                     </div>
                                                     <hr>
-                                                    <p class="mt-3 text-black h6">Arka tarafı yükleyin <span
+                                                    <p class="mt-3 text-black h6">Загрузите заднюю сторону <span
                                                             class="text-danger">*</span></p>
                                                     <div class="mt-3 align-items-center justify-content-around d-md-flex">
                                                         <div class="p-2 border p-md-5 ">
@@ -241,18 +241,18 @@
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="defaultCheck1" required>
                                                 <label class="form-check-label" for="defaultCheck1">
-                                                    Girdiğim Tüm Bilgiler Doğrudur.
+                                                    Вся информация, которую я ввел, верна.
                                                 </label>
                                             </div>
                                             @if (Auth::user()->account_verify == 'Under review')
                                                 <button type="submit" class="px-4 btn btn-primary d-block"
-                                                    disabled>Başvuru
-                                                    Gönder</button>
-                                                <small class="text-success">Önceki başvurunuz inceleniyor,
-                                                    lütfen bekleyin</small>
+                                                    disabled>Отправить
+                                                    Заявку</button>
+                                                <small class="text-success">Ваша предыдущая заявка рассматривается,
+                                                    пожалуйста, подождите</small>
                                             @else
-                                                <button type="submit" class="px-4 btn btn-primary">Başvuru
-                                                    Gönder</button>
+                                                <button type="submit" class="px-4 btn btn-primary">Отправить
+                                                    Заявку</button>
                                             @endif
                                         </div>
                                     </form>
@@ -262,7 +262,7 @@
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between">
                                     <!-- Button -->
-                                    <a class="btn btn-light" data-toggle="wizard" href="#wizardStepOne">Önceki</a>
+                                    <a class="btn btn-light" data-toggle="wizard" href="#wizardStepOne">Назад</a>
                                 </div>
                             </div>
                         </div>
