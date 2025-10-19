@@ -33,10 +33,10 @@
             <!-- Header Content -->
             <div class="space-y-6">
                 <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                    <p class="text-sm font-medium text-blue-400">Mükemmeli Seçin</p>
+                    <p class="text-sm font-medium text-blue-400">Выберите Совершенство</p>
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                    Neden <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">{{$settings->site_name}}</span>'yi Seçmelisiniz?
+                    Почему Стоит Выбрать <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">{{$settings->site_name}}</span>?
                 </h1>
 
                 <!-- Breadcrumb -->
@@ -55,7 +55,7 @@
                                 <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                                 </svg>
-                                <a href="#" class="text-gray-400 hover:text-white ml-1 md:ml-2 transition-colors">Şirket</a>
+                                <a href="#" class="text-gray-400 hover:text-white ml-1 md:ml-2 transition-colors">Компания</a>
                             </div>
                         </li>
                         <li>
@@ -63,7 +63,7 @@
                                 <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-gray-300 ml-1 md:ml-2">Neden Biz</span>
+                                <span class="text-gray-300 ml-1 md:ml-2">Почему Мы</span>
                             </div>
                         </li>
                     </ol>
@@ -91,7 +91,7 @@
             "position": 2,
             "item": {
                 "@@id": "{{$settings->site_address}}company",
-                "name": "Şirket"
+                "name": "Компания"
             }
         },
         {
@@ -99,7 +99,7 @@
             "position": 3,
             "item": {
                 "@@id": "{{$settings->site_address}}/why-us",
-                "name": "Neden Biz"
+                "name": "Почему Мы"
             }
         }
     ]
@@ -119,8 +119,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Güvenilir</h3>
-                        <p class="text-gray-300">Piyasadaki en keskin yürütme özelliğine sahip olan {{$settings->site_name}} cTrader, emirlerinizi yeniden fiyatlandırma veya fiyat manipülasyonu olmadan milisaniyeler içinde doldurur.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Надежная</h3>
+                        <p class="text-gray-300">Обладая самым острым исполнением на рынке, {{$settings->site_name}} cTrader заполняет ваши ордера за миллисекунды без каких-либо реквот или манипуляции ценами.</p>
                     </div>
                 </div>
             </div>
@@ -135,8 +135,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Akıllı</h3>
-                        <p class="text-gray-300">Trading Central'den gelen akıllı piyasa analiz araçları, canlı duyarlılık verileri ve platform içi piyasa içgörüleri ile bilinçli kararlar alın.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Интеллектуальная</h3>
+                        <p class="text-gray-300">Принимайте обоснованные решения с помощью интеллектуальных инструментов анализа рынка от Trading Central, данных живых настроений и рыночных insights в платформе.</p>
                     </div>
                 </div>
             </div>
@@ -151,8 +151,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Şeffaf</h3>
-                        <p class="text-gray-300">Performansınızı kristal netliğinde anlamak için işlem istatistiklerine, özkaynak grafiklerine ve işlemlerinizin detaylı geçmişine erişin.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Прозрачная</h3>
+                        <p class="text-gray-300">Получите доступ к статистике транзакций, графикам капитала и подробной истории ваших сделок для кристально чистого понимания вашей производительности.</p>
                     </div>
                 </div>
             </div>
@@ -167,8 +167,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Sezgisel</h3>
-                        <p class="text-gray-300">Kullanımı ve gezinmesi kolay olan {{$settings->site_name}} Trader, gerçek trader'ların ihtiyaçları göz önünde bulundurularak geliştirildi. {{$settings->site_name}} cTrader ile işlem yapın ve farklı avantajını deneyimleyin.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Интуитивная</h3>
+                        <p class="text-gray-300">Простая в использовании и навигации, {{$settings->site_name}} Trader была построена с учетом потребностей реальных трейдеров. Торгуйте с {{$settings->site_name}} cTrader и ощутите ее особое преимущество.</p>
                     </div>
                 </div>
             </div>
@@ -198,9 +198,9 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Güven Göstergeleri</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Показатели Доверия</span>
             </h2>
-            <p class="text-lg text-gray-300">Güçlü işlem platformumuzla güvenliğinizi ve emniyetinizi ön planda tutuyoruz.</p>
+            <p class="text-lg text-gray-300">Мы ставим вашу безопасность и защищенность на первое место с нашей мощной торговой платформой.</p>
         </div>
 
     </div>
@@ -216,8 +216,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0 0h3m-3 0H9m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Küresel Olarak Düzenlenmiş</h3>
-                        <p class="text-gray-300">Üst düzey finansal otoriteler tarafından düzenleniyoruz ve devlet destekleri ile fonlarınızın güvende olduğunu garanti ediyoruz.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Глобально Регулируемая</h3>
+                        <p class="text-gray-300">Мы регулируемся высокоуровневыми финансовыми органами и гарантируем безопасность ваших средств с государственной поддержкой.</p>
                     </div>
                 </div>
             </div>
@@ -233,8 +233,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0 0h3m-3 0H9m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">40+ Uluslararası Ödül</h3>
-                        <p class="text-gray-300">İşlem hizmetleri ve müşteri desteğindeki mükemmelliğimiz ile dünya çapında tanınıyoruz. Devlet destekli projelerimizle sektörde lider konumdayız.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">40+ Международных Наград</h3>
+                        <p class="text-gray-300">Мы признаны во всем мире за наше совершенство в торговых услугах и поддержке клиентов. Мы являемся лидерами в отрасли с нашими государственно поддерживаемыми проектами.</p>
                     </div>
                 </div>
             </div>
@@ -248,8 +248,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0 0h3m-3 0H9m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">7/24 Destek</h3>
-                        <p class="text-gray-300">Adanmış destek ekibimiz, herhangi bir işlem ihtiyacınız veya sorunuz için 7/24 hizmetinizdedir.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Поддержка 24/7</h3>
+                        <p class="text-gray-300">Наша преданная команда поддержки к вашим услугам 24/7 для любых торговых потребностей или вопросов.</p>
                     </div>
                 </div>
             </div>
@@ -264,8 +264,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0 0h3m-3 0H9m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Güvenli İşlemler</h3>
-                        <p class="text-gray-300">Tüm işlemler gelişmiş şifreleme protokolleri ile güvence altına alınır ve devlet destekli güvenlik standartları ile verileriniz ve fonlarınız her zaman korunur.</p>
+                        <h3 class="text-xl font-bold text-white mb-4">Безопасные Транзакции</h3>
+                        <p class="text-gray-300">Все транзакции защищены продвинутыми протоколами шифрования, и ваши данные и средства всегда защищены государственно поддерживаемыми стандартами безопасности.</p>
                     </div>
                 </div>
             </div>

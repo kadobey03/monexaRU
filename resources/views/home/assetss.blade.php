@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -43,7 +43,7 @@
   <style>
    
     .omb_login .omb_socialButtons a {
-      color: white; // In yourUse @body-bg
+      color: white; /* In yourUse @body-bg */
       opacity:0.9;
     }
     .omb_login .omb_socialButtons a:hover {

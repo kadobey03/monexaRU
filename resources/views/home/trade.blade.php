@@ -98,7 +98,7 @@
             "position": 3,
             "item": {
                 "@id": "{{$settings->site_address}}ctrader/trade",
-                "name": "Trade"
+                "name": "Торговля"
             }
         }
     ]

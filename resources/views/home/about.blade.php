@@ -67,7 +67,7 @@
                 <!-- Card Content -->
                 <div class="relative bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 p-6 transition-all duration-300 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-900/20 h-full flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
-                        <img src="temp/custom/img/users.png" alt="Client Focus" class="w-10 h-10">
+                        <img src="temp/custom/img/users.png" alt="Клиентоориентированность" class="w-10 h-10">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Клиентоориентированность</h3>
                     <p class="text-gray-300 text-center">Предоставление лучшего обслуживания клиентов является нашей основной ценностью. Более 100 менеджеров по работе с клиентами сосредоточены на потребностях наших клиентов.</p>
@@ -79,7 +79,7 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-800/5 rounded-xl transform group-hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                 <div class="relative bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 p-6 transition-all duration-300 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-900/20 h-full flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
-                        <img src="temp/custom/img/website.png" alt="Simplicity" class="w-10 h-10">
+                        <img src="temp/custom/img/website.png" alt="Простота" class="w-10 h-10">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Простота</h3>
                     <p class="text-gray-300 text-center">Каждый может стать трейдером с помощью нашей самой простой в использовании торговой платформы. {{$settings->site_name}} доступен на всех современных платформах: Web, Windows, MacOS, iPhone, iPad и Android.</p>
@@ -91,7 +91,7 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-800/5 rounded-xl transform group-hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                 <div class="relative bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 p-6 transition-all duration-300 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-900/20 h-full flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
-                        <img src="temp/custom/img/speed.png" alt="Speed" class="w-10 h-10">
+                        <img src="temp/custom/img/speed.png" alt="Скорость" class="w-10 h-10">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Скорость</h3>
                     <p class="text-gray-300 text-center">Мы обеспечиваем самую быструю торговлю с использованием новейших технологий. Нет задержек в исполнении ордеров и зависаний пользовательского интерфейса.</p>
@@ -103,7 +103,7 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-blue-600/20 to-blue-800/5 rounded-xl transform group-hover:scale-105 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
                 <div class="relative bg-gray-800 bg-opacity-80 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 p-6 transition-all duration-300 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-900/20 h-full flex flex-col items-center">
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
-                        <img src="temp/custom/img/1497835.png" alt="Reliability" class="w-10 h-10">
+                        <img src="temp/custom/img/1497835.png" alt="Надежность" class="w-10 h-10">
                     </div>
                     <h3 class="text-xl font-bold text-white mb-4">Надежность</h3>
                     <p class="text-gray-300 text-center">Как лидер отрасли мы обеспечиваем нашим клиентам дополнительную надежность. Мы делаем больше, чем кто-либо другой, чтобы удовлетворить потребности наших клиентов.</p>
@@ -136,7 +136,7 @@
         <div class="flex flex-col lg:flex-row gap-8 items-center">
             <div class="w-full lg:w-1/2">
                 <div class="bg-gray-900 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden shadow-lg">
-                    <img src="temp/custom/img/commission-scheme-crypt1d.png" alt="Trading Platform" class="w-full h-auto">
+                    <img src="temp/custom/img/commission-scheme-crypt1d.png" alt="Торговая платформа" class="w-full h-auto">
                 </div>
             </div>
 
@@ -257,7 +257,7 @@
 
                     <!-- Image -->
                     <div class="relative bg-gray-900 bg-opacity-50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden shadow-lg">
-                        <img src="temp/custom/img/commission-scheme-crypt1t.png" alt="Expert Support" class="w-full h-auto">
+                        <img src="temp/custom/img/commission-scheme-crypt1t.png" alt="Экспертная поддержка" class="w-full h-auto">
                     </div>
                 </div>
             </div>

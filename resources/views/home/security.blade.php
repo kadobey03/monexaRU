@@ -58,9 +58,9 @@
 				<div>
 					<img src="temp/custom/images/stock-investment-sm.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Stock & Commodities</h5>
-						<p>Stock &amp; Commodities can actually reduce overall risk as a part of a diversified portfolio.</p>
-						<p>Investing in stocks can be very costly if you trade constantly, especially with a minimum amount of money available to invest. Stock investing &amp; Commodity investing do not always deliver the same return, there are times when one investment outperforms the other; maintaining an allocation to each group may help contribute to a portfolio's overall long-term performance.</p>
+						<h5>Акции и Товары</h5>
+						<p>Акции и товары могут фактически снизить общий риск как часть диверсифицированного портфеля.</p>
+						<p>Инвестирование в акции может быть очень дорогостоящим, если вы торгуете постоянно, особенно при минимальной сумме денег, доступной для инвестиций. Инвестирование в акции и инвестирование в товары не всегда дают одинаковую отдачу, есть времена, когда одна инвестиция превосходит другую; поддержание распределения между каждой группой может помочь способствовать общей долгосрочной производительности портфеля.</p>
 					</div>
 				</div>
 			</div>

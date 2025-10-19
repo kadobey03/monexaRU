@@ -53,7 +53,7 @@
                             "position": 2,
                             "item": {
                                 "@@id": "{{$settings->site_address}}for-traders",
-                                "name": "Traderlar İçin"
+                                "name": "Для Трейдеров"
                             }
                         }
                     ]

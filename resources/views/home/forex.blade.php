@@ -786,7 +786,7 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Trade What You Want, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">When You Want</span>
+                Торгуйте Тем, Что Хотите, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Когда Хотите</span>
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto"></div>
         </div>
@@ -809,7 +809,7 @@
             <div class="space-y-8">
                 <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                     <p class="text-xl text-gray-200 leading-relaxed mb-8">
-                        One of the primary goals of {{$settings->name}} is to provide the best product in the market. Our relationships with leading tier one financial institutions mean deep liquidity and tighter spreads for Forex traders.
+                        Одна из основных целей {{$settings->name}} - предоставить лучший продукт на рынке. Наши отношения с ведущими финансовыми институтами первого уровня означают глубокую ликвидность и более узкие спреды для Forex трейдеров.
                     </p>
 
                     <ul class="space-y-4">
@@ -819,7 +819,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                 </svg>
                             </div>
-                            <span class="text-gray-300 text-lg">Trade Forex, Indices, Shares & Commodities</span>
+                            <span class="text-gray-300 text-lg">Торгуйте Forex, Индексами, Акциями и Товарами</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <div class="flex-shrink-0">
@@ -827,7 +827,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                 </svg>
                             </div>
-                            <span class="text-gray-300 text-lg">Access global markets 24 hours / 7 days</span>
+                            <span class="text-gray-300 text-lg">Доступ к глобальным рынкам 24 часа / 7 дней</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <div class="flex-shrink-0">
@@ -835,7 +835,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                 </svg>
                             </div>
-                            <span class="text-gray-300 text-lg">Multilingual customer support</span>
+                            <span class="text-gray-300 text-lg">Многоязычная поддержка клиентов</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <div class="flex-shrink-0">
@@ -843,13 +843,13 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                                 </svg>
                             </div>
-                            <span class="text-gray-300 text-lg">Trade on the go on our mobile apps</span>
+                            <span class="text-gray-300 text-lg">Торгуйте в дороге с нашими мобильными приложениями</span>
                         </li>
                     </ul>
 
                     <div class="mt-8">
                         <a href="about" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl" title="Learn About {{$settings->name}}">
-                            Learn More About Our Services
+                            Узнать Больше о Наших Услугах
                             <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>

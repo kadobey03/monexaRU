@@ -50,21 +50,21 @@
                     class="space-y-6"
                 >
                     <div class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                        Yatırım Ürünleri
+                        Инвестиционные продукты
                     </div>
                     <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                        <span class="block">Borsa Yatırım Fonları</span>
-                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Çeşitlendirilmiş Yatırım Çözümleri</span>
+                        <span class="block">Биржевые инвестиционные фонды</span>
+                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Диверсифицированные инвестиционные решения</span>
                     </h1>
                     <p class="mt-3 text-lg text-gray-300 max-w-2xl">
-                        Borsa yatırım fonu, yatırım fonu ve borsa işlem gören ürün türüdür, yani borsa'da işlem görürler. ETF'ler birçok yönden yatırım fonlarına benzer, ancak ETF'ler gün boyunca borsa'da alınıp satılırken yatırım fonları günün sonunda fiyatına göre alınıp satılır.
+                        Биржевой инвестиционный фонд - это тип инвестиционного фонда и биржевого продукта, который торгуется на бирже. ETF во многом похожи на взаимные фонды, но ETF покупаются и продаются на бирже в течение дня, в то время как взаимные фонды покупаются и продаются по цене на конец дня.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6">
                         <a href="#etf-markets" class="px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            ETF'leri Keşfedin
+                            Исследовать ETF
                         </a>
                         <a href="/register" class="px-6 py-3 text-base font-medium text-gray-300 bg-gray-800 border border-gray-700 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            Alım Satıma Başla
+                            Начать торговлю
                         </a>
                     </div>
                 </div>
@@ -84,11 +84,11 @@
                             <div class="flex items-center justify-between">
                                 <div>
                                     <h3 class="text-lg font-bold text-white">S&P 500 ETF</h3>
-                                    <p class="text-sm text-gray-400">S&P 500 Endeksini Takip Eder</p>
+                                    <p class="text-sm text-gray-400">Отслеживает индекс S&P 500</p>
                                 </div>
                                 <div class="text-right">
                                     <div class="text-green-400 font-medium">+1.2%</div>
-                                    <div class="text-xs text-gray-400">Bugün</div>
+                                    <div class="text-xs text-gray-400">Сегодня</div>
                                 </div>
                             </div>
                             <!-- Mini Chart -->
@@ -103,12 +103,12 @@
                         <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-4 rounded-xl border border-gray-700 transform hover:translate-y-[-5px] transition-all duration-300">
                             <div class="flex items-center justify-between">
                                 <div>
-                                    <h3 class="text-lg font-bold text-white">Teknoloji Sektör ETF'si</h3>
-                                    <p class="text-sm text-gray-400">Teknoloji şirketleri</p>
+                                    <h3 class="text-lg font-bold text-white">ETF технологического сектора</h3>
+                                    <p class="text-sm text-gray-400">Технологические компании</p>
                                 </div>
                                 <div class="text-right">
                                     <div class="text-green-400 font-medium">+2.5%</div>
-                                    <div class="text-xs text-gray-400">Bugün</div>
+                                    <div class="text-xs text-gray-400">Сегодня</div>
                                 </div>
                             </div>
                             <!-- Mini Chart -->
@@ -134,13 +134,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Mevcut ETF'ler
+                Доступные ETF
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">ETF Piyasaları</span>
+                <span class="block">Рынки ETF</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                Rekabetçi spread'ler ve gelişmiş araçlarla geniş bir Borsa Yatırım Fonları yelpazesi ticareti yapın
+                Торгуйте широким спектром биржевых инвестиционных фондов с конкурентными спредами и продвинутыми инструментами
             </p>
         </div>
 
@@ -154,9 +154,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Endeks ETF'leri</h3>
+                    <h3 class="text-lg font-bold text-white">Индексные ETF</h3>
                 </div>
-                <p class="text-gray-400 text-sm">S&P 500, NASDAQ ve Dow Jones gibi ana piyasa endekslerini takip edin</p>
+                <p class="text-gray-400 text-sm">Отслеживайте основные рыночные индексы, такие как S&P 500, NASDAQ и Dow Jones</p>
             </div>
 
             <!-- Category 2 -->
@@ -167,9 +167,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Sektör ETF'leri</h3>
+                    <h3 class="text-lg font-bold text-white">Секторальные ETF</h3>
                 </div>
-                <p class="text-gray-400 text-sm">Teknoloji, Sağlık ve Enerji gibi belirli sektörlere odaklanın</p>
+                <p class="text-gray-400 text-sm">Фокусируйтесь на определенных секторах, таких как технологии, здравоохранение и энергетика</p>
             </div>
 
             <!-- Category 3 -->
@@ -180,9 +180,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Uluslararası ETF'ler</h3>
+                    <h3 class="text-lg font-bold text-white">Международные ETF</h3>
                 </div>
-                <p class="text-gray-400 text-sm">Gelişen piyasalar ve gelişmiş ekonomiler dahil küresel piyasalara erişin</p>
+                <p class="text-gray-400 text-sm">Получите доступ к глобальным рынкам, включая развивающиеся рынки и развитые экономики</p>
             </div>
 
             <!-- Category 4 -->
@@ -193,9 +193,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-bold text-white">Tematik ETF'ler</h3>
+                    <h3 class="text-lg font-bold text-white">Тематические ETF</h3>
                 </div>
-                <p class="text-gray-400 text-sm">Temiz Enerji, AI, Siber Güvenlik ve daha fazlası gibi belirli temalara odaklanın</p>
+                <p class="text-gray-400 text-sm">Фокусируйтесь на определенных темах, таких как чистая энергия, ИИ, кибербезопасность и многое другое</p>
             </div>
         </div>
 
@@ -203,21 +203,21 @@
             <!-- Search and Filter Controls -->
             <div class="p-4 border-b border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="relative w-full md:w-64">
-                    <input type="text" class="search-box w-full bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 pl-10 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="ETF'leri ara...">
+                    <input type="text" class="search-box w-full bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 pl-10 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Поиск ETF...">
                     <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <select class="selfi bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="All">Tüm ETF'ler</option>
-                        <option value="Index">Endeks ETF'leri</option>
-                        <option value="Sector">Sektör ETF'leri</option>
-                        <option value="International">Uluslararası ETF'ler</option>
-                        <option value="Thematic">Tematik ETF'ler</option>
+                        <option value="All">Все ETF</option>
+                        <option value="Index">Индексные ETF</option>
+                        <option value="Sector">Секторальные ETF</option>
+                        <option value="International">Международные ETF</option>
+                        <option value="Thematic">Тематические ETF</option>
                     </select>
                     <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
-                        Filtrele
+                        Фильтровать
                     </button>
                 </div>
             </div>
@@ -231,13 +231,13 @@
                     <table id="tt-spreads-6023e31647d95" class="w-full text-sm text-left text-gray-300">
                         <thead class="text-xs uppercase bg-gray-800 text-gray-400">
                             <tr>
-                                <th class="px-6 py-3">Sembol</th>
-                                <th class="px-6 py-3">İsim</th>
-                                <th class="px-6 py-3">Fiyat</th>
-                                <th class="px-6 py-3">24s Değişim</th>
-                                <th class="px-6 py-3">Yönetilen Varlıklar</th>
-                                <th class="px-6 py-3">Spread</th>
-                                <th class="px-6 py-3">Eylem</th>
+                                <th class="px-6 py-3">Символ</th>
+                                <th class="px-6 py-3">Название</th>
+                                <th class="px-6 py-3">Цена</th>
+                                <th class="px-6 py-3">Изменение 24ч</th>
+                                <th class="px-6 py-3">Управляемые активы</th>
+                                <th class="px-6 py-3">Спред</th>
+                                <th class="px-6 py-3">Действие</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -255,13 +255,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                ETF Ticareti Neden
+                Почему торговать ETF
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">ETF Ticareti Faydaları</span>
+                <span class="block">Преимущества торговли ETF</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                ETF'leri alım satım stratejinize dahil etmenin avantajlarını keşfedin
+                Откройте для себя преимущества включения ETF в вашу торговую стратегию
             </p>
         </div>
 
@@ -273,8 +273,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Anında Çeşitlendirme</h3>
-                <p class="text-gray-300">ETF'ler, tek bir işlemde bir sepet menkul kıymete maruziyet sağlar ve şirketler, sektörler veya hatta ülkeler genelinde çeşitlendirme yoluyla riski azaltır.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Мгновенная диверсификация</h3>
+                <p class="text-gray-300">ETF обеспечивают экспозицию к корзине ценных бумаг в одной сделке, снижая риск за счет диверсификации по компаниям, секторам или даже странам.</p>
             </div>
 
             <!-- Benefit 2 -->
@@ -284,8 +284,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Maliyet-Etkili</h3>
-                <p class="text-gray-300">ETF'ler genellikle yatırım fonlarına kıyasla daha düşük gider oranlarına sahiptir, bu da çeşitli piyasalara ve sektörlere maruziyeti elde etmenin maliyet-etkili bir yolu olmasını sağlar.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Экономически эффективный</h3>
+                <p class="text-gray-300">ETF обычно имеют более низкие коэффициенты расходов по сравнению с взаимными фондами, что делает их экономически эффективным способом получения экспозиции к различным рынкам и секторам.</p>
             </div>
 
             <!-- Benefit 3 -->
@@ -295,8 +295,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Likidite ve Şeffaflık</h3>
-                <p class="text-gray-300">ETF'ler gün boyunca hisse senetleri gibi işlem görür, yatırım fonlarında bulunmayan yüksek likidite ve gerçek zamanlı fiyat şeffaflığı sunar.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Ликвидность и прозрачность</h3>
+                <p class="text-gray-300">ETF торгуются в течение дня как акции, предлагая высокую ликвидность и прозрачность цен в реальном времени, которая недоступна в взаимных фондах.</p>
             </div>
         </div>
     </div>
@@ -312,7 +312,7 @@
             "ordering": false,
             "searching": true,
             "language": {
-                "zeroRecords": "Eşleşen kayıt bulunamadı"
+                "zeroRecords": "Соответствующие записи не найдены"
             },
             "columnDefs": [{
                 targets: ['category', 'sub_category'],
@@ -392,14 +392,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Alım Satım Esnekliği
+                Гибкость торговли
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">Ne İstediğinizi Ticaret Edin,</span>
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Ne Zaman İstediğinizde</span>
+                <span class="block">Торгуйте тем, чем хотите,</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Когда хотите</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                Platformumuz başarılı ticaret için ihtiyacınız olan araçları ve erişimi sağlar
+                Наша платформа предоставляет инструменты и доступ, необходимые для успешной торговли
             </p>
         </div>
 
@@ -414,7 +414,7 @@
                     class="relative z-10"
                 >
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="temp/custom/img/commission-scheme-crypt1t1.png" alt="Trading Platform" class="w-full">
+                        <img src="temp/custom/img/commission-scheme-crypt1t1.png" alt="Торговая платформа" class="w-full">
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-400 opacity-20"></div>
                     </div>
 
@@ -433,7 +433,7 @@
                     x-transition:enter-end="opacity-100 transform translate-y-0"
                 >
                     <h3 class="text-2xl font-bold text-white mb-6">
-                        {{$settings->site_name}}'ın birincil hedeflerinden biri piyasada en iyi ürünü sağlamaktır. Önde gelen birinci kademe finans kurumlarıyla olan ilişkilerimiz, Forex trader'ları için derin likidite ve daha sıkı spread'ler anlamına gelir.
+                        Одной из основных целей {{$settings->site_name}} является предоставление лучшего продукта на рынке. Наши отношения с ведущими финансовыми учреждениями первого уровня означают глубокую ликвидность и более узкие спреды для форекс-трейдеров.
                     </h3>
 
                     <ul class="space-y-4">
@@ -444,7 +444,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Forex, Endeksler, Hisseler ve Emtialar Ticareti Yapın
+                                Торгуйте валютами, индексами, акциями и товарами
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -454,7 +454,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Dünya çapındaki piyasalara 24 saat / 7 gün erişin
+                                Получайте доступ к мировым рынкам 24/7
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -464,7 +464,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Çok dilli müşteri desteği
+                                Многоязычная поддержка клиентов
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -474,14 +474,14 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Mobil uygulamalarımızda hareket halinde ticaret yapın
+                                Торгуйте на ходу в наших мобильных приложениях
                             </p>
                         </li>
                     </ul>
 
                     <div class="mt-8">
                         <a href="about" title="Learn About {{$settings->site_name}}" class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-all duration-200">
-                            Daha Fazla Bilgi Edinin
+                            Узнать больше
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -513,17 +513,17 @@
                 <!-- Content -->
                 <div class="relative z-10 text-center max-w-2xl mx-auto">
                     <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                        ETF Ticareti Yapmaya Hazır mısınız?
+                        Готовы торговать ETF?
                     </h2>
                     <p class="mt-4 text-xl text-blue-100">
-                        Rekabetçi spread'lerle küresel ETF piyasalarına erişmek için platformumuzu kullanan binlerce trader'a katılın.
+                        Присоединяйтесь к тысячам трейдеров, которые используют нашу платформу для доступа к мировым рынкам ETF с конкурентными спредами.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
                         <a href="register" class="px-8 py-4 text-base font-medium text-blue-900 bg-white border border-transparent rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 transition-all duration-200">
-                            Ücretsiz Hesap Oluşturun
+                            Создать бесплатный аккаунт
                         </a>
                         <a href="login" class="px-8 py-4 text-base font-medium text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 transition-all duration-200">
-                            Giriş
+                            Войти
                         </a>
                     </div>
                 </div>

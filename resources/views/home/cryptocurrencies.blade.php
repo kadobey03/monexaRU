@@ -76,39 +76,39 @@
                         <!-- Bitcoin -->
                         <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-4 rounded-xl border border-gray-700 transform hover:translate-y-[-5px] transition-all duration-300">
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="dash/bitcoin-btc-logo.png" alt="Bitcoin" class="w-10 h-10">
+                                <img src="dash/bitcoin-btc-logo.png" alt="Биткоин" class="w-10 h-10">
                                 <div>
                                     <h3 class="text-lg font-bold text-white">BTC/USD</h3>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-400">Fiyat</span>
+                                <span class="text-sm text-gray-400">Цена</span>
                                 <span class="text-green-400 font-medium">$48,795.20</span>
                             </div>
                         </div>
                         <!-- Ethereum -->
                         <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-4 rounded-xl border border-gray-700 transform hover:translate-y-[-5px] transition-all duration-300">
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="dash/ethereum-eth-logo.png" alt="Ethereum" class="w-10 h-10">
+                                <img src="dash/ethereum-eth-logo.png" alt="Эфириум" class="w-10 h-10">
                                 <div>
                                     <h3 class="text-lg font-bold text-white">ETH/USD</h3>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-400">Fiyat</span>
+                                <span class="text-sm text-gray-400">Цена</span>
                                 <span class="text-green-400 font-medium">$2,873.50</span>
                             </div>
                         </div>
                         <!-- Tether -->
                         <div class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-4 rounded-xl border border-gray-700 transform hover:translate-y-[-5px] transition-all duration-300">
                             <div class="flex items-center space-x-3 mb-2">
-                                <img src="dash/tether-usdt-logo.png" alt="Tether" class="w-10 h-10">
+                                <img src="dash/tether-usdt-logo.png" alt="Тезер" class="w-10 h-10">
                                 <div>
                                     <h3 class="text-lg font-bold text-white">USDT/USD</h3>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-400">Fiyat</span>
+                                <span class="text-sm text-gray-400">Цена</span>
                                 <span class="text-gray-300 font-medium">$1.00</span>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-400">Fiyat</span>
+                                <span class="text-sm text-gray-400">Цена</span>
                                 <span class="text-red-400 font-medium">$0.72</span>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
                     data.forEach(coin => {
                         var changeClass = coin.price_change_percentage_24h >= 0 ? 'text-green-400' : 'text-red-400';
                         var changeSymbol = coin.price_change_percentage_24h >= 0 ? '+' : '';
-                        var actionButton = '<button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded text-xs">Al</button>';
+                        var actionButton = '<button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded text-xs">Купить</button>';
                         var spread = '0.1%'; // Sabit spread değeri
 
                         rows.push([
@@ -367,7 +367,7 @@
                     class="relative z-10"
                 >
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="temp/custom/img/commission-scheme-crypt1t1.png" alt="Trading Platform" class="w-full">
+                        <img src="temp/custom/img/commission-scheme-crypt1t1.png" alt="Торговая платформа" class="w-full">
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-400 opacity-20"></div>
                     </div>
 

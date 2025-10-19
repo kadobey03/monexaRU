@@ -33,9 +33,9 @@
             <!-- Title and Breadcrumb -->
             <div class="mb-8">
                 <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 uppercase bg-emerald-900 bg-opacity-30 rounded-full mb-4">
-                    Yatırım Ürünleri
+                    Инвестиционные Продукты
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hisse Senedi İşlemleri</h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Торговля Акциями</h1>
                 <nav class="flex" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <li class="inline-flex items-center">
@@ -51,7 +51,7 @@
                                 <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                                 </svg>
-                                <a href="#" class="text-gray-400 hover:text-white ml-1 md:ml-2">İşlem</a>
+                                <a href="#" class="text-gray-400 hover:text-white ml-1 md:ml-2">Торговля</a>
                             </div>
                         </li>
                     </ol>
@@ -75,7 +75,7 @@
                                 "position": 2,
                                 "item": {
                                     "@id": "{{$settings->site_address}}trading",
-                                    "name": "İşlem"
+                                    "name": "Торговля"
                                 }
                             }
                         ]
@@ -87,7 +87,7 @@
             <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                 <div class="prose prose-lg prose-invert max-w-none">
                     <p class="text-gray-300 leading-relaxed">
-                        Hisse senetleri, bir şirketteki öz sermaye mülkiyet hissesinin birimleridir ve kar payları şeklinde kalan karların eşit dağılımını sağlayan bir finansal varlık olarak var olur. Hisse senedi sahipleri ayrıca şirketin değeri yükseldiğinde sermaye kazançlarından da yararlanabilir.
+                        Акции представляют собой единицы долевого владения в компании и существуют как финансовый актив, который обеспечивает равное распределение остаточной прибыли в форме дивидендов. Акционеры также могут получать выгоду от прироста капитала при росте стоимости компании.
                     </p>
                 </div>
             </div>
@@ -103,12 +103,12 @@
             <!-- Table Header -->
             <div class="p-6 bg-gray-800 border-b border-gray-700">
                 <div class="flex flex-wrap items-center justify-between gap-4">
-                    <h2 class="text-2xl font-bold text-white">Mevcut Hisse Senetleri</h2>
+                    <h2 class="text-2xl font-bold text-white">Доступные Акции</h2>
                     <div class="flex items-center space-x-4">
                         <!-- Search Box -->
                         <div class="relative">
                             <input type="text" class="search-box w-64 px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-200 focus:outline-none focus:border-blue-500 placeholder-gray-400"
-                                placeholder="Hisse senetlerini ara...">
+                                placeholder="Искать акции...">
                             <svg class="absolute right-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                             </svg>
@@ -122,11 +122,11 @@
                 <table id="tt-spreads-6023e31008b95" class="w-full">
                     <thead class="bg-gray-700">
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Sembol</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Şirket</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Fiyat</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Değişim</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Hacim</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Символ</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Компания</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Цена</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Изменение</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Объем</th>
                         </tr>
                     </thead>
                 </table>
@@ -145,7 +145,7 @@ $(function() {
         "ordering": true,
         "searching": true,
         "language": {
-            "zeroRecords": "Eşleşen kayıt bulunamadı",
+            "zeroRecords": "Соответствующих записей не найдено",
             "search": ""
         },
         "dom": '<"top"f>rt<"bottom"ilp><"clear">',
@@ -213,7 +213,7 @@ $(function() {
                 .catch(error => {
                     console.error(`Error fetching data for ${symbol}:`, error);
                     // Optional: Add error row or alert
-                    // alert(`Hata: ${symbol} için veri alınamadı.`);
+                    // alert(`Ошибка: Не удалось получить данные для ${symbol}.`);
                 });
         });
     }
@@ -224,7 +224,7 @@ $(function() {
 <section class="py-16 bg-gray-900">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">İstediğiniz Şeyi, İstediğiniz Zaman İşleyin</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Торгуйте Тем, Что Хотите, Когда Хотите</h2>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto"></div>
         </div>
 
@@ -241,7 +241,7 @@ $(function() {
             <div class="space-y-8">
                 <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                     <p class="text-xl text-gray-200 leading-relaxed mb-6">
-                        {{$settings->site_name}}'ın birincil hedeflerinden biri, piyasadaki en iyi ürünü sağlamaktır. Önde gelen birinci sınıf finans kurumlarıyla olan ilişkilerimiz, Forex traderları için derin likidite ve daha sık spreadler anlamına gelir.
+                        Одна из основных целей {{$settings->site_name}} - предоставить лучший продукт на рынке. Наши отношения с ведущими финансовыми учреждениями первого класса означают глубокую ликвидность и более частые спреды для трейдеров Forex.
                     </p>
 
                     <ul class="space-y-4">
@@ -249,31 +249,31 @@ $(function() {
                             <svg class="flex-shrink-0 h-6 w-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span class="text-gray-300">Forex, Endeksler, Hisse Senetleri ve Emtialar İşleyin</span>
+                            <span class="text-gray-300">Торгуйте Forex, Индексами, Акциями и Товарами</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <svg class="flex-shrink-0 h-6 w-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span class="text-gray-300">Küresel pazarlara 24 saat / 7 gün erişin</span>
+                            <span class="text-gray-300">Доступ к мировым рынкам 24 часа / 7 дней</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <svg class="flex-shrink-0 h-6 w-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span class="text-gray-300">Çok dilli müşteri desteği</span>
+                            <span class="text-gray-300">Многоязычная поддержка клиентов</span>
                         </li>
                         <li class="flex items-center space-x-3">
                             <svg class="flex-shrink-0 h-6 w-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                            <span class="text-gray-300">Mobil uygulamalarımızda hareket halindeyken işlem yapın</span>
+                            <span class="text-gray-300">Торгуйте на ходу в наших мобильных приложениях</span>
                         </li>
                     </ul>
 
                     <div class="mt-8">
                         <a href="trading-conditions" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl" title="{{$settings->site_name}} Komisyonları Hakkında Bilgi Edinin">
-                            Komisyonlarımız Hakkında Daha Fazla Bilgi Edinin
+                            Узнать Больше о Наших Комиссиях
                             <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                             </svg>
@@ -298,8 +298,8 @@ $(function() {
                 <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                     <!-- Contact Section -->
                     <div class="text-center md:text-left">
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Bize Ulaşın</h3>
-                        <p class="text-gray-300 mb-6">Kişiselleştirilmiş destek için uzman ekibimizle iletişime geçin</p>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Свяжитесь с Нами</h3>
+                        <p class="text-gray-300 mb-6">Свяжитесь с нашей экспертной командой для персонализированной поддержки</p>
                         <div class="flex items-center justify-center md:justify-start space-x-4">
                             <a href="mailto:{{$settings->contact_email}}" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors duration-300">
                                 <i class="fa fa-envelope text-gray-200"></i>
@@ -310,10 +310,10 @@ $(function() {
 
                     <!-- Live Chat Section -->
                     <div class="text-center md:text-right">
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Yardıma İhtiyacınız Var mı?</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Нужна Помощь?</h3>
                         <a onclick="openLiveChat(event)" href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl">
                             <i class="fa fa-commenting mr-2"></i>
-                            Canlı Sohbeti Başlat
+                            Начать Живой Чат
                         </a>
                     </div>
                 </div>

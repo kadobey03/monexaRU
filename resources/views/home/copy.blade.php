@@ -186,7 +186,7 @@
                     class="relative z-10"
                 >
                     <div class="relative rounded-lg overflow-hidden shadow-2xl">
-                        <img src="temp/custom/img/commission-scheme-crypt1t.png" alt="Expert Support" class="w-full">
+                        <img src="temp/custom/img/commission-scheme-crypt1t.png" alt="Экспертная поддержка" class="w-full">
                         <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-400 opacity-20"></div>
                     </div>
 

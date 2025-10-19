@@ -70,7 +70,7 @@
                     "colorTheme": "dark",
                     "isTransparent": false,
                     "displayMode": "adaptive",
-                    "locale": "tr"
+                    "locale": "ru"
                     }
                     </script>
                 </div>
