@@ -15,6 +15,7 @@ services:
   # Nginx Service
   nginx-vicsafe:
     image: nginx:alpine
+    container_name: nginx-vicsafe
     restart: unless-stopped
     volumes:
       - ./:/var/www/html
