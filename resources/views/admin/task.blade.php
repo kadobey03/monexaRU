@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div>
-                    <h1 class="title1 mb-1">Yeni Görev Oluştur</h1>
-                    <p class="text-muted mb-0">Sistemde yeni görev tanımlayın ve yöneticiye atayın</p>
+                    <h1 class="title1 mb-1">Создать новую задачу</h1>
+                    <p class="text-muted mb-0">Определите новую задачу в системе и назначьте администратору</p>
                 </div>
             </div>
                 <x-danger-alert />
@@ -59,7 +59,7 @@
                             <div class="card-header bg-gradient-primary text-white py-3">
                                 <div class="d-flex align-items-center">
                                     <i class="fas fa-plus-circle fa-lg me-2"></i>
-                                    <h4 class="mb-0 text-white">Görev Bilgileri</h4>
+                                    <h4 class="mb-0 text-white">Информация о задаче</h4>
                                 </div>
                             </div>
                             <div class="card-body p-4">
@@ -69,16 +69,16 @@
                                         <div class="col-md-6">
                                             <div class="form-card bg-light p-3 rounded-lg h-100">
                                                 <i class="fas fa-heading text-primary fa-2x mb-3"></i>
-                                                <h6 class="text-primary mb-2">Görev Başlığı</h6>
+                                                <h6 class="text-primary mb-2">Заголовок задачи</h6>
                                                 <input type="text" name="tasktitle" class="form-control form-control-lg"
-                                                    placeholder="Görev başlığını buraya yazın..." required>
+                                                    placeholder="Введите заголовок задачи здесь..." required>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-card bg-light p-3 rounded-lg h-100">
                                                 <i class="fas fa-user-tie text-success fa-2x mb-3"></i>
-                                                <h6 class="text-success mb-2">Sorumlu Yönetici</h6>
+                                                <h6 class="text-success mb-2">Ответственный администратор</h6>
                                                 <select class="form-control form-control-lg" name="delegation" required>
                                                     @foreach ($admin as $user)
                                                         <option value="{{ $user->id }}">{{ $user->firstName }} {{ $user->lastName }}</option>
@@ -90,11 +90,11 @@
 
                                     <div class="form-group mb-4">
                                         <label class="form-label text-primary font-weight-bold">
-                                            <i class="fas fa-align-left me-2"></i>Görev Açıklaması
+                                            <i class="fas fa-align-left me-2"></i>Описание задачи
                                         </label>
                                         <textarea name="note" id="" rows="5"
                                             class="form-control form-control-lg"
-                                            placeholder="Görev ile ilgili detaylı açıklamayı buraya yazın..."
+                                            placeholder="Введите подробное описание задачи здесь..."
                                             required></textarea>
                                     </div>
 
@@ -107,8 +107,8 @@
                                                         <i class="fas fa-play"></i>
                                                     </div>
                                                     <div>
-                                                        <h6 class="text-success mb-0">Başlangıç Tarihi</h6>
-                                                        <small class="text-muted">Görev başlangıç zamanı</small>
+                                                        <h6 class="text-success mb-0">Дата начала</h6>
+                                                        <small class="text-muted">Время начала задачи</small>
                                                     </div>
                                                 </div>
                                                 <input type="date" name="start_date" class="form-control form-control-lg" required>
@@ -121,8 +121,8 @@
                                                         <i class="fas fa-stop"></i>
                                                     </div>
                                                     <div>
-                                                        <h6 class="text-danger mb-0">Bitiş Tarihi</h6>
-                                                        <small class="text-muted">Görev bitiş zamanı</small>
+                                                        <h6 class="text-danger mb-0">Дата окончания</h6>
+                                                        <small class="text-muted">Время окончания задачи</small>
                                                     </div>
                                                 </div>
                                                 <input type="date" name="end_date" class="form-control form-control-lg" required>
@@ -137,15 +137,15 @@
                                                     <i class="fas fa-exclamation-triangle"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-warning mb-0">Öncelik Seviyesi</h6>
-                                                    <small class="text-muted">Görevin aciliyet derecesi</small>
+                                                    <h6 class="text-warning mb-0">Уровень приоритета</h6>
+                                                    <small class="text-muted">Степень срочности задачи</small>
                                                 </div>
                                             </div>
                                             <select class="form-control form-control-lg" name="priority" required>
-                                                <option value="Hemen">🚨 Hemen</option>
-                                                <option value="Yüksek">🔥 Yüksek</option>
-                                                <option value="Orta">⚡ Orta</option>
-                                                <option value="Düşük">⏰ Düşük</option>
+                                                <option value="Hemen">🚨 Немедленно</option>
+                                                <option value="Yüksek">🔥 Высокий</option>
+                                                <option value="Orta">⚡ Средний</option>
+                                                <option value="Düşük">⏰ Низкий</option>
                                             </select>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@
                                         <input type="hidden" name="id" value="{{ Auth('admin')->User()->id }}">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
-                                            <i class="fas fa-paper-plane me-2"></i>Görev Oluştur
+                                            <i class="fas fa-paper-plane me-2"></i>Создать задачу
                                         </button>
                                     </div>
 

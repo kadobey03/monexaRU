@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Terms')
+@section('title', 'Условия')
 
 @section('content')
 
@@ -36,14 +36,14 @@
     <div class="relative z-10 px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Legal Documentation
+                Юридическая документация
             </div>
             <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                <span class="block">Privacy Policy</span>
-                <span class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Your Data Protection</span>
+                <span class="block">Политика конфиденциальности</span>
+                <span class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Защита ваших данных</span>
             </h1>
             <p class="max-w-2xl mt-5 mx-auto text-xl text-gray-300">
-                Understanding how we protect your information and respect your privacy
+                Понимание того, как мы защищаем вашу информацию и уважаем вашу конфиденциальность
             </p>
         </div>
     </div>
@@ -59,114 +59,114 @@
                     <div class="space-y-8">
 
                         <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Our Commitment</h2>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Наши обязательства</h2>
                             <p class="text-gray-300 mb-4">
-                                Privacy is of utmost importance at {{$settings->site_name}}. We recognize the significance of protecting information which is stored on our servers or network or is intended to be stored on our servers or network and which relates to an individual. The data we protect are the "Personal Data" which is any information relating to an identified or identifiable natural person, sometimes called a data subject, and have made protecting the privacy and the confidentiality of Personal Data a fundamental component of the way we do business.
+                                Конфиденциальность имеет первостепенное значение для {{$settings->site_name}}. Мы понимаем важность защиты информации, которая хранится на наших серверах или в сети, или предназначена для хранения на наших серверах или в сети и которая относится к физическому лицу. Данные, которые мы защищаем, - это "Персональные данные", которые представляют собой любую информацию, относящуюся к идентифицированному или идентифицируемому физическому лицу, иногда называемому субъектом данных, и мы сделали защиту конфиденциальности и конфиденциальности Персональных данных фундаментальной частью того, как мы ведем бизнес.
                             </p>
                             <p class="text-gray-300 mb-4">
-                                This Privacy Policy informs you of the ways we work to ensure privacy and the confidentiality of Personal Data and describes the information we gather, how we use those Personal Data and the circumstances under which we disclose such information to third-parties.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Regulatory Compliance</h2>
-                            <p class="text-gray-300 mb-4">
-                                This Privacy Policy is designed to address regulatory requirements of the jurisdictions in which {{$settings->site_name}} offers its Services, including the General Data Protection Regulation ("GDPR"), as enacted by the European Commission. In this Privacy Policy, the term "Service" and "Services" has the same meaning as described in the User Agreement.
-                            </p>
-                            <p class="text-gray-300 mb-4">
-                                If you do not agree with this Privacy Policy, in general, or any part of it, you should not use the Services. This Privacy Policy is periodically reviewed to ensure that any new obligations and changes to our business model are taken into consideration. We may amend this Privacy Policy at any time by posting an amended version on our website.
-                            </p>
-                            <p class="text-gray-300 mb-4">
-                                Our Services are offered through one or more subsidiaries of {{$settings->site_name}}. By using the Services, you understand that your Personal Data may be used by {{$settings->site_name}}.
+                                Настоящая Политика конфиденциальности информирует вас о способах, которыми мы работаем для обеспечения конфиденциальности и конфиденциальности Персональных данных, и описывает информацию, которую мы собираем, как мы используем эти Персональные данные и обстоятельства, при которых мы раскрываем такую информацию третьим лицам.
                             </p>
                         </div>
 
                         <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Collection of Personal Data</h2>
-                            <p class="text-gray-300 mb-4">When you access or use the Services, we collect the following information:</p>
-
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Information You May Provide to Us</h3>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Соответствие нормативным требованиям</h2>
                             <p class="text-gray-300 mb-4">
-                                You may give us information about you by filling in forms on our website or through our app or by corresponding with us by phone, email or otherwise. This includes information you provide when you register to use the Services and when you report a problem with the website.
+                                Настоящая Политика конфиденциальности разработана для удовлетворения нормативным требованиям юрисдикций, в которых {{$settings->site_name}} предлагает свои Услуги, включая Общий регламент по защите данных ("GDPR"), принятый Европейской комиссией. В настоящей Политике конфиденциальности термин "Услуга" и "Услуги" имеют то же значение, что и описано в Пользовательском соглашении.
+                            </p>
+                            <p class="text-gray-300 mb-4">
+                                Если вы не согласны с настоящей Политикой конфиденциальности в целом или любой ее частью, вам не следует использовать Услуги. Настоящая Политика конфиденциальности периодически пересматривается для обеспечения учета любых новых обязательств и изменений в нашей бизнес-модели. Мы можем вносить поправки в настоящую Политику конфиденциальности в любое время путем размещения измененной версии на нашем веб-сайте.
+                            </p>
+                            <p class="text-gray-300 mb-4">
+                                Наши Услуги предлагаются через одну или несколько дочерних компаний {{$settings->site_name}}. Используя Услуги, вы понимаете, что ваши Персональные данные могут использоваться {{$settings->site_name}}.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Сбор персональных данных</h2>
+                            <p class="text-gray-300 mb-4">Когда вы получаете доступ к Услугам или используете их, мы собираем следующую информацию:</p>
+
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Информация, которую вы можете предоставить нам</h3>
+                            <p class="text-gray-300 mb-4">
+                                Вы можете предоставить нам информацию о себе, заполняя формы на нашем веб-сайте или через наше приложение, или общаясь с нами по телефону, электронной почте или иным образом. Это включает информацию, которую вы предоставляете при регистрации для использования Услуг и когда вы сообщаете о проблеме с веб-сайтом.
                             </p>
 
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Information We Collect About You</h3>
-                            <p class="text-gray-300 mb-4">With regard to each of your visits to our website, we automatically collect the following information:</p>
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Информация, которую мы собираем о вас</h3>
+                            <p class="text-gray-300 mb-4">В отношении каждого вашего посещения нашего веб-сайта мы автоматически собираем следующую информацию:</p>
 
                             <ul class="list-disc pl-6 text-gray-300 space-y-2 mb-6">
                                 <li>
-                                    <span class="text-white font-medium">Login Information:</span> We log technical information about your use of the Services, including the type of browser and version you use, the last access time of your account, the Internet Protocol (IP) address used to create the account and the most recent IP address used to access the account.
+                                    <span class="text-white font-medium">Информация для входа:</span> Мы регистрируем техническую информацию о вашем использовании Услуг, включая тип браузера и версию, которую вы используете, время последнего доступа к вашей учетной записи, IP-адрес, используемый для создания учетной записи, и самый последний IP-адрес, используемый для доступа к учетной записи.
                                 </li>
                                 <li>
-                                    <span class="text-white font-medium">Device Information:</span> We collect information about the device you use to access your account, including the hardware model, operating system and version, and unique device identifiers, but this information is anonymous and not tied to any particular person.
+                                    <span class="text-white font-medium">Информация об устройстве:</span> Мы собираем информацию об устройстве, которое вы используете для доступа к вашей учетной записи, включая модель оборудования, операционную систему и версию, а также уникальные идентификаторы устройства, но эта информация является анонимной и не привязана к какому-либо конкретному человеку.
                                 </li>
                                 <li>
-                                    <span class="text-white font-medium">Transaction Information:</span> In connection with our Conversion Service, as such term is defined in our User Agreement, we may collect and maintain information relating to transactions you effect in your account.
+                                    <span class="text-white font-medium">Информация о транзакциях:</span> В связи с нашей Конверсионной услугой, как этот термин определен в нашем Пользовательском соглашении, мы можем собирать и хранить информацию, относящуюся к транзакциям, которые вы осуществляете в своей учетной записи.
                                 </li>
                             </ul>
 
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Information We Collect Required By Law, Rule, or Regulation</h3>
-                            <p class="text-gray-300 mb-4">Depending on the Service, we may collect information from you in order to meet regulatory obligations around know-your-customer ("KYC") and anti-money laundering ("AML") requirements. Information that we collect from you includes the following:</p>
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Информация, которую мы собираем в соответствии с требованиями закона, правил или нормативных актов</h3>
+                            <p class="text-gray-300 mb-4">В зависимости от Услуги, мы можем собирать информацию от вас для выполнения нормативных обязательств в отношении требований "знай своего клиента" ("KYC") и противодействия отмыванию денег ("AML"). Информация, которую мы собираем от вас, включает следующее:</p>
 
                             <ul class="list-disc pl-6 text-gray-300 space-y-2">
-                                <li>Full name</li>
-                                <li>Residential address</li>
-                                <li>Contact details (telephone number, email address)</li>
-                                <li>Date and place of birth, gender, place of citizenship</li>
-                                <li>Your status as a politically exposed person</li>
-                                <li>Source of funds & proof of address</li>
-                                <li>Passport and/or national driver's license or government-issued identification card to verify your identity</li>
-                                <li>Transaction history and account balances in connection with your use of certain Services</li>
+                                <li>Полное имя</li>
+                                <li>Адрес проживания</li>
+                                <li>Контактные данные (номер телефона, адрес электронной почты)</li>
+                                <li>Дата и место рождения, пол, место гражданства</li>
+                                <li>Ваш статус как политически значимого лица</li>
+                                <li>Источник средств и подтверждение адреса</li>
+                                <li>Паспорт и/или национальное водительское удостоверение или государственное удостоверение личности для подтверждения вашей личности</li>
+                                <li>История транзакций и балансы счетов в связи с использованием вами определенных Услуг</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Disclosure of Personal Data</h2>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Раскрытие персональных данных</h2>
                             <p class="text-gray-300 mb-4">
-                                We may share your information with selected recipients to perform functions required to provide certain Services to you.
+                                Мы можем передавать вашу информацию выбранным получателям для выполнения функций, необходимых для предоставления вам определенных Услуг.
                             </p>
                             <p class="text-gray-300 mb-4">
-                                We also may share Personal Data with a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution or other sale or transfer of some or all of {{$settings->site_name}}' assets, whether as a going concern or as part of bankruptcy, liquidation or similar proceeding, in which Personal Data held by {{$settings->site_name}} is among the assets transferred.
+                                Мы также можем передавать Персональные данные покупателю или другому правопреемнику в случае слияния, выделения, реструктуризации, реорганизации, роспуска или другой продажи или передачи части или всех активов {{$settings->site_name}}, независимо от того, происходит ли это в рамках действующего предприятия или в рамках процедуры банкротства, ликвидации или аналогичной процедуры, в которой Персональные данные, хранящиеся в {{$settings->site_name}}, входят в число передаваемых активов.
                             </p>
                             <p class="text-gray-300 mb-4">
-                                Except where we are required by law to disclose Personal Data, or are exempted from, released from or not subject to any legal requirement concerning the disclosure of Personal Data, we will require any person to whom we provide your Personal Data to agree to comply with our Privacy Policy in force at that time or requirements substantially similar to such policy. We will make reasonable commercial efforts to ensure that they comply with such policy or requirements, however, where not expressly prohibited by law, we will have no liability to you, if any person fails to do so.
+                                За исключением случаев, когда мы обязаны по закону раскрывать Персональные данные, или освобождены от этого, освобождены от или не подчиняемся какому-либо юридическому требованию относительно раскрытия Персональных данных, мы потребуем от любого лица, которому мы предоставляем ваши Персональные данные, согласиться соблюдать нашу Политику конфиденциальности, действующую на тот момент, или требования, существенно аналогичные такой политике. Мы приложим разумные коммерческие усилия для обеспечения соблюдения ими такой политики или требований, однако, если это прямо не запрещено законом, мы не несем ответственности перед вами, если какое-либо лицо не выполнит это.
                             </p>
                             <p class="text-gray-300 mb-4">
-                                We shall require any third-party, including without limitation, any government or enforcement entity, seeking access to the data we hold to a court order, or equivalent proof that they are statutorily authorized to access your data and that their request is valid and within their statutory or regulatory power.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Security of Your Personal Data</h2>
-                            <p class="text-gray-300 mb-4">
-                                We protect Personal Data with appropriate physical, technological and organizational safeguards and security measures. Your Personal Data comes to us via the internet which chooses its own routes and means, whereby information is conveyed from location to location. We audit our procedures and security measures regularly to ensure they are being properly administered and remain effective and appropriate.
-                            </p>
-                            <p class="text-gray-300 mb-4">
-                                Every member of {{$settings->site_name}} is committed to our privacy policies and procedures to safeguard Personal Data. Our site has security measures in place to protect against the loss, misuse and unauthorized alteration of the information under our control. More specifically, our server uses TLS (Transport Layer Security) security protection by encrypting your Personal Data to prevent individuals from accessing such Personal Data as it travels over the internet.
+                                Мы потребуем от любой третьей стороны, включая, без ограничений, любой государственный или правоохранительный орган, желающий получить доступ к данным, которые мы храним, судебного приказа или эквивалентного доказательства того, что они законодательно уполномочены на доступ к вашим данным и что их запрос является действительным и находится в пределах их законодательной или регуляторной власти.
                             </p>
                         </div>
 
                         <div>
-                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Your Rights</h2>
-                            <p class="text-gray-300 mb-4">The rights that are available to you in relation to the Personal Data we hold about you are outlined below:</p>
-
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Information Access</h3>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Безопасность ваших персональных данных</h2>
                             <p class="text-gray-300 mb-4">
-                                If you ask us, we will confirm whether we are processing your Personal Data and, if so, what information we process and, if requested, provide you with a copy of that information within 30 days from the date of your request.
+                                Мы защищаем Персональные данные с помощью соответствующих физических, технологических и организационных мер защиты и безопасности. Ваши Персональные данные поступают к нам через интернет, который выбирает свои собственные маршруты и средства, посредством которых информация передается из места в место. Мы регулярно проводим аудит наших процедур и мер безопасности для обеспечения их надлежащего администрирования и сохранения эффективности и соответствия.
+                            </p>
+                            <p class="text-gray-300 mb-4">
+                                Каждый член команды {{$settings->site_name}} привержен нашим политикам и процедурам конфиденциальности для защиты Персональных данных. Наш сайт имеет меры безопасности для защиты от потери, неправильного использования и несанкционированного изменения информации под нашим контролем. Более конкретно, наш сервер использует защиту TLS (Transport Layer Security) путем шифрования ваших Персональных данных для предотвращения доступа к таким Персональным данным во время их передачи через интернет.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-bold text-blue-400 mb-4">Ваши права</h2>
+                            <p class="text-gray-300 mb-4">Права, доступные вам в отношении Персональных данных, которые мы храним о вас, изложены ниже:</p>
+
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Доступ к информации</h3>
+                            <p class="text-gray-300 mb-4">
+                                Если вы попросите нас, мы подтвердим, обрабатываем ли мы ваши Персональные данные и, если да, какую информацию мы обрабатываем и, если потребуется, предоставим вам копию этой информации в течение 30 дней с даты вашего запроса.
                             </p>
 
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Erasure</h3>
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Удаление</h3>
                             <p class="text-gray-300 mb-4">
-                                You can ask us to delete or remove your Personal Data in certain circumstances such as if we no longer need it, provided that we have no legal or regulatory obligation to retain that data. Such requests will be subject to any agreements that you have entered into with us, and to any retention limits, we are required to comply with in accordance with applicable laws and regulations. If we have disclosed your Personal Data to others, we will let them know about the erasure request where possible. If you ask us, if possible and lawful to do so, we will also inform you with whom we have shared your Personal Data so that you can contact them directly.
+                                Вы можете попросить нас удалить или удалить ваши Персональные данные в определенных обстоятельствах, например, если мы больше не нуждаемся в них, при условии, что у нас нет юридического или регуляторного обязательства сохранять эти данные. Такие запросы будут подчиняться любым соглашениям, которые вы заключили с нами, и любым ограничениям хранения, которые мы обязаны соблюдать в соответствии с применимыми законами и нормативными актами. Если мы раскрыли ваши Персональные данные другим лицам, мы сообщим им о запросе на удаление, где это возможно. Если вы попросите нас, если это возможно и законно, мы также сообщим вам, с кем мы поделились вашими Персональными данными, чтобы вы могли связаться с ними напрямую.
                             </p>
 
-                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Processing Restrictions</h3>
+                            <h3 class="text-xl font-semibold text-white mt-6 mb-3">Ограничения обработки</h3>
                             <p class="text-gray-300 mb-4">
-                                You can ask us to block or suppress the processing of your Personal Data in certain circumstances, such as, if you contest the accuracy of that Personal Data or object to us processing it. It will not stop us from storing your Personal Data. We will inform you before we decide not to agree with any requested restriction. If we have disclosed your Personal Data to others, we will let them know about the restriction of processing where possible. If you ask us, if possible and lawful to do so, we will also inform you with whom we have shared your Personal Data so that you can contact them directly.
+                                Вы можете попросить нас заблокировать или подавить обработку ваших Персональных данных в определенных обстоятельствах, например, если вы оспариваете точность этих Персональных данных или возражаете против их обработки. Это не остановит нас от хранения ваших Персональных данных. Мы сообщим вам, прежде чем решим не соглашаться с любым запрошенным ограничением. Если мы раскрыли ваши Персональные данные другим лицам, мы сообщим им об ограничении обработки, где это возможно. Если вы попросите нас, если это возможно и законно, мы также сообщим вам, с кем мы поделились вашими Персональными данными, чтобы вы могли связаться с ними напрямую.
                             </p>
 
                             <p class="text-gray-300 mt-8 mb-4">
-                                By using the Services, you signify your agreement to this Privacy Policy. {{$settings->site_name}} reserves the right to change or amend this Privacy Policy at any time. If we make any material changes to this Privacy Policy, the revised Policy will be posted here and we will notify our users at least 30 days prior to the changes taking effect so that you are always aware of what information we collect, how we use it and under what circumstances we disclose it. Please check this page frequently to see any updates or changes to this Privacy Policy.
+                                Используя Услуги, вы подтверждаете свое согласие с настоящей Политикой конфиденциальности. {{$settings->site_name}} оставляет за собой право изменять или дополнять настоящую Политику конфиденциальности в любое время. Если мы внесем какие-либо существенные изменения в настоящую Политику конфиденциальности, пересмотренная Политика будет размещена здесь, и мы уведомим наших пользователей не менее чем за 30 дней до вступления изменений в силу, чтобы вы всегда знали, какую информацию мы собираем, как мы ее используем и при каких обстоятельствах мы ее раскрываем. Пожалуйста, регулярно проверяйте эту страницу на наличие обновлений или изменений в настоящей Политике конфиденциальности.
                             </p>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                     <button
                         @click="open = !open"
                         class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150">
-                        <span x-text="open ? 'Hide Data Protection Details' : 'Learn More About Data Protection'">Learn More About Data Protection</span>
+                        <span x-text="open ? 'Скрыть детали защиты данных' : 'Узнайте больше о защите данных'">Узнайте больше о защите данных</span>
                         <svg class="ml-2 -mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
                              :class="{'transform rotate-180': open}">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -193,7 +193,7 @@
                          x-transition:leave-end="opacity-0 transform scale-95"
                          class="mt-8 bg-gray-900 bg-opacity-50 p-6 rounded-xl backdrop-blur-sm border border-gray-700">
                         <p class="text-gray-300">
-                            At {{$settings->site_name}}, we are committed to protecting your personal data and privacy rights. For any questions about our privacy practices or to exercise your data protection rights, please contact our Data Protection Officer at privacy@{{$settings->site_name}}.com.
+                            В {{$settings->site_name}} мы стремимся защищать ваши персональные данные и права конфиденциальности. По любым вопросам о наших методах обеспечения конфиденциальности или для осуществления ваших прав на защиту данных, пожалуйста, свяжитесь с нашим специалистом по защите данных по адресу privacy@{{$settings->site_name}}.com.
                         </p>
                     </div>
                 </div>
@@ -203,16 +203,16 @@
         <!-- Quick Navigation -->
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             <a href="/about" class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors duration-300 group">
-                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">About Us</h3>
-                <p class="text-gray-400">Learn more about our company and mission</p>
+                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">О нас</h3>
+                <p class="text-gray-400">Узнайте больше о нашей компании и миссии</p>
             </a>
             <a href="/contact" class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors duration-300 group">
-                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Contact Us</h3>
-                <p class="text-gray-400">Questions about privacy? Get in touch</p>
+                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Свяжитесь с нами</h3>
+                <p class="text-gray-400">Вопросы о конфиденциальности? Свяжитесь с нами</p>
             </a>
             <a href="/register" class="bg-gray-800 bg-opacity-50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-colors duration-300 group">
-                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Start Trading</h3>
-                <p class="text-gray-400">Create an account to begin trading</p>
+                <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-blue-400">Начать торговлю</h3>
+                <p class="text-gray-400">Создайте аккаунт для начала торговли</p>
             </a>
         </div>
     </div>

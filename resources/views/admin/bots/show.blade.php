@@ -16,7 +16,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
     <div class="content">
         <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">{{ $bot->name }} Details</h4>
+            <h4 class="page-title">Детали {{ $bot->name }}</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="{{ route('admin.dashboard') }}">
@@ -58,7 +58,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <div class="card-body">
                         <div class="user-profile text-center">
                             <div class="name">{{ $bot->name }}</div>
-                            <div class="job">{{ ucfirst($bot->bot_type) }} Trading Bot</div>
+                            <div class="job">Торговый бот {{ ucfirst($bot->bot_type) }}</div>
                             <div class="desc">{{ $bot->description }}</div>
                             <div class="social-media">
                                 <a class="btn btn-info btn-twitter btn-sm btn-link" href="{{ route('admin.bots.edit', $bot) }}">
@@ -101,7 +101,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                 <!-- Bot Statistics -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Bot Performance Statistics</div>
+                        <div class="card-title">Статистика производительности бота</div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -116,7 +116,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers">
-                                                    <p class="card-category">Total Earned</p>
+                                                    <p class="card-category">Всего заработано</p>
                                                     <h4 class="card-title">${{ number_format($bot->total_earned, 2) }}</h4>
                                                 </div>
                                             </div>
@@ -135,7 +135,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers">
-                                                    <p class="card-category">Total Users</p>
+                                                    <p class="card-category">Всего пользователей</p>
                                                     <h4 class="card-title">{{ $bot->total_users }}</h4>
                                                 </div>
                                             </div>
@@ -154,7 +154,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers">
-                                                    <p class="card-category">Profit Range</p>
+                                                    <p class="card-category">Диапазон прибыли</p>
                                                     <h4 class="card-title">{{ $bot->daily_profit_min }}%-{{ $bot->daily_profit_max }}%</h4>
                                                 </div>
                                             </div>
@@ -173,12 +173,12 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                             </div>
                                             <div class="col col-stats ml-3 ml-sm-0">
                                                 <div class="numbers">
-                                                    <p class="card-category">Last Trade</p>
+                                                    <p class="card-category">Последняя сделка</p>
                                                     <h4 class="card-title">
                                                         @if($bot->last_trade)
                                                             {{ $bot->last_trade->diffForHumans() }}
                                                         @else
-                                                            Never
+                                                            Никогда
                                                         @endif
                                                     </h4>
                                                 </div>
@@ -194,7 +194,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                 <!-- Bot Configuration -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Bot Configuration</div>
+                        <div class="card-title">Конфигурация бота</div>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -202,24 +202,24 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                 <table class="table table-typo">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Market Type:</strong></td>
+                                            <td><strong>Тип рынка:</strong></td>
                                             <td>{{ ucfirst($bot->bot_type) }}</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Min Investment:</strong></td>
+                                            <td><strong>Мин. инвестиция:</strong></td>
                                             <td>${{ number_format($bot->min_investment, 2) }}</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Max Investment:</strong></td>
+                                            <td><strong>Макс. инвестиция:</strong></td>
                                             <td>${{ number_format($bot->max_investment, 2) }}</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Success Rate:</strong></td>
+                                            <td><strong>Успешность:</strong></td>
                                             <td>{{ $bot->success_rate }}%</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Duration:</strong></td>
-                                            <td>{{ $bot->duration_days }} days</td>
+                                            <td><strong>Продолжительность:</strong></td>
+                                            <td>{{ $bot->duration_days }} дней</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -228,31 +228,31 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                 <table class="table table-typo">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Status:</strong></td>
+                                            <td><strong>Статус:</strong></td>
                                             <td>
                                                 @if($bot->status == 'active')
-                                                    <span class="badge badge-success">Active</span>
+                                                    <span class="badge badge-success">Активный</span>
                                                 @elseif($bot->status == 'inactive')
-                                                    <span class="badge badge-secondary">Inactive</span>
+                                                    <span class="badge badge-secondary">Неактивный</span>
                                                 @else
-                                                    <span class="badge badge-warning">Maintenance</span>
+                                                    <span class="badge badge-warning">Обслуживание</span>
                                                 @endif
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Daily Profit Min:</strong></td>
+                                            <td><strong>Мин. дневная прибыль:</strong></td>
                                             <td>{{ $bot->daily_profit_min }}%</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Daily Profit Max:</strong></td>
+                                            <td><strong>Макс. дневная прибыль:</strong></td>
                                             <td>{{ $bot->daily_profit_max }}%</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Created:</strong></td>
+                                            <td><strong>Создан:</strong></td>
                                             <td>{{ $bot->created_at->format('M d, Y') }}</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Updated:</strong></td>
+                                            <td><strong>Обновлен:</strong></td>
                                             <td>{{ $bot->updated_at->format('M d, Y') }}</td>
                                         </tr>
                                     </tbody>
@@ -263,7 +263,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                         @if($bot->trading_pairs)
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <h5>Trading Pairs</h5>
+                                <h5>Торговые пары</h5>
                                 <div class="d-flex flex-wrap">
                                     @php
                                         $tradingPairs = $bot->trading_pairs;
@@ -291,19 +291,19 @@ if (Auth('admin')->User()->dashboard_style == "light") {
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Recent Trading Activity</div>
+                        <div class="card-title">Недавняя торговая активность</div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>User</th>
-                                        <th>Investment</th>
-                                        <th>Pair</th>
-                                        <th>Result</th>
-                                        <th>Profit/Loss</th>
-                                        <th>Date</th>
+                                        <th>Пользователь</th>
+                                        <th>Инвестиция</th>
+                                        <th>Пара</th>
+                                        <th>Результат</th>
+                                        <th>Прибыль/Убыток</th>
+                                        <th>Дата</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -314,9 +314,9 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                         <td>{{ $trade->trading_pair }}</td>
                                         <td>
                                             @if($trade->result == 'profit')
-                                                <span class="badge badge-success">Profit</span>
+                                                <span class="badge badge-success">Прибыль</span>
                                             @else
-                                                <span class="badge badge-danger">Loss</span>
+                                                <span class="badge badge-danger">Убыток</span>
                                             @endif
                                         </td>
                                         <td>

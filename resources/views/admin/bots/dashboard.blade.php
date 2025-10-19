@@ -16,7 +16,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
     <div class="content">
         <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">Bot Trading Analytics</h4>
+            <h4 class="page-title">Аналитика торговых ботов</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="{{ route('admin.dashboard') }}">
@@ -33,7 +33,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Analytics</a>
+                    <a href="#">Аналитика</a>
                 </li>
             </ul>
         </div>
@@ -51,7 +51,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Bots</p>
+                                    <p class="card-category">Всего ботов</p>
                                     <h4 class="card-title">{{ $stats['total_bots'] }}</h4>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Active Bots</p>
+                                    <p class="card-category">Активные боты</p>
                                     <h4 class="card-title">{{ $stats['active_bots'] }}</h4>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Investments</p>
+                                    <p class="card-category">Всего инвестиций</p>
                                     <h4 class="card-title">${{ number_format($stats['total_investments'], 2) }}</h4>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Profits</p>
+                                    <p class="card-category">Всего прибыли</p>
                                     <h4 class="card-title">${{ number_format($stats['total_profits'], 2) }}</h4>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Daily Profits (Last 30 Days)</div>
+                        <div class="card-title">Дневная прибыль (последние 30 дней)</div>
                     </div>
                     <div class="card-body">
                         <div class="chart-container" style="min-height: 375px">
@@ -135,7 +135,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Top Performing Bots</div>
+                        <div class="card-title">Лучшие боты</div>
                     </div>
                     <div class="card-body pb-0">
                         @foreach($topBots as $bot)
@@ -177,7 +177,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Active Investments</p>
+                                    <p class="card-category">Активные инвестиции</p>
                                     <h4 class="card-title">{{ $stats['active_investments'] }}</h4>
                                 </div>
                             </div>
@@ -196,7 +196,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Completed Investments</p>
+                                    <p class="card-category">Завершенные инвестиции</p>
                                     <h4 class="card-title">{{ $stats['completed_investments'] }}</h4>
                                 </div>
                             </div>
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
             }),
             datasets: [{
-                label: 'Daily Profits ($)',
+                label: 'Дневная прибыль ($)',
                 data: dailyProfits.map(item => item.profit),
                 borderColor: '#1f8ef1',
                 backgroundColor: 'rgba(31, 142, 241, 0.1)',
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip: {
                     callbacks: {
                         label: function(context) {
-                            return 'Profit: $' + context.parsed.y.toLocaleString();
+                            return 'Прибыль: $' + context.parsed.y.toLocaleString();
                         }
                     }
                 }

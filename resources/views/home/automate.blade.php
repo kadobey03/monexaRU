@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @inject('content', 'App\Http\Controllers\FrontController')
-@section('title', 'cTrader Automate - Algoritmik Ticaret')
+@section('title', 'cTrader Automate - Алгоритмическая торговля')
 
 @section('content')
 
@@ -45,21 +45,21 @@
                     class="space-y-6"
                 >
                     <div class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                        Otomatik Ticaret
+                        Автоматическая торговля
                     </div>
                     <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
                         <span class="block">cTrader Automate</span>
-                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Alım Satım Algoritmalarını Basitleştirin</span>
+                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Упростите торговые алгоритмы</span>
                     </h1>
                     <p class="mt-3 text-lg text-gray-300">
-                        Kolayca algoritmik alım satım stratejileri oluşturun, özelleştirin ve dağıtın. Akıllı otomasyon ile piyasa fırsatlarından 24/7 yararlanın.
+                        Легко создавайте, настраивайте и развертывайте алгоритмические торговые стратегии. Используйте интеллектуальную автоматизацию для круглосуточного использования рыночных возможностей.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6">
                         <a href="#features" class="px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            Özellikleri Keşfedin
+                            Изучите возможности
                         </a>
                         <a href="#faq" class="px-6 py-3 text-base font-medium text-gray-300 bg-gray-800 border border-gray-700 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            Daha Fazla Bilgi Edinin
+                            Узнать больше
                         </a>
                     </div>
                 </div>
@@ -142,13 +142,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Gelişmiş Alım Satım Otomasyonu
+                Расширенная автоматизация торговли
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">Algoritmik Ticareti Gücünü Açığa Çıkarın</span>
+                <span class="block">Раскройте мощь алгоритмической торговли</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                Otomasyon platformumuz, tüm deneyim seviyelerindeki traderların kapsamlı programlama bilgisi olmadan karmaşık alım satım stratejilerini uygulamalarını sağlar.
+                Наша платформа автоматизации позволяет трейдерам всех уровней опыта реализовывать сложные торговые стратегии без глубоких знаний программирования.
             </p>
         </div>
 
@@ -160,8 +160,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Şimşek Hızlı Yürütme</h3>
-                <p class="text-gray-300">Algoritmik alım satım sistemimiz, işlemleri milisaniyeler içinde yürütür ve insan gecikmesi olmadan piyasa fırsatlarından yararlanır.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Молниеносное исполнение</h3>
+                <p class="text-gray-300">Наша система алгоритмической торговли исполняет сделки в течение миллисекунд, используя рыночные возможности без человеческой задержки.</p>
             </div>
 
             <!-- Feature 2 -->
@@ -171,8 +171,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Geri Test ve Optimizasyon</h3>
-                <p class="text-gray-300">Gerçek sermayeyi riske atmadan önce parametreleri ince ayar yapmak ve performansı optimize etmek için stratejilerinizi geçmiş verilere karşı test edin.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Бэктестирование и оптимизация</h3>
+                <p class="text-gray-300">Тестируйте свои стратегии на исторических данных для тонкой настройки параметров и оптимизации производительности перед риском реального капитала.</p>
             </div>
 
             <!-- Feature 3 -->
@@ -182,8 +182,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                     </svg>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-3">Gelişmiş Risk Yönetimi</h3>
-                <p class="text-gray-300">Sermayenizi korumak için stop-loss, take-profit ve pozisyon boyutlandırma dahil olmak üzere karmaşık risk yönetimi kuralları uygulayın.</p>
+                <h3 class="text-xl font-bold text-white mb-3">Расширенное управление рисками</h3>
+                <p class="text-gray-300">Применяйте сложные правила управления рисками, включая стоп-лосс, тейк-профит и определение размера позиции для защиты вашего капитала.</p>
             </div>
         </div>
     </div>

@@ -1,73 +1,73 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-# {{ $salutaion ? $salutaion : "Önemli Güncelleme" }} {{ $recipient}},
+# {{ $salutaion ? $salutaion : "Важное обновление" }} {{ $recipient}},
 
 @if ($attachment != null)
     @component('mail::panel')
-    **Eklenen Belge:** Bu bildirimle ilgili ek detaylar için lütfen eklenen belgeyi inceleyin.
+    **Прикрепленный документ:** Пожалуйста, ознакомьтесь с прикрепленным документом для получения дополнительных деталей по этому уведомлению.
     @endcomponent
     <div style="text-align: center; margin: 24px 0;">
         <img src="{{ $message->embed(asset('storage/'. $attachment)) }}" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" alt="Attachment">
     </div>
 @endif
 
-## Hesap Bildirimi
+## Уведомление об аккаунте
 
 {!! $body !!}
 
 ---
 
-### 📞 **Yardıma İhtiyacınız Var mı?**
+### 📞 **Нужна помощь?**
 
-Bu bildirimle ilgili sorularınız varsa veya yatırım ile ilgili konularda açıklama ihtiyacınız varsa, profesyonel destek ekibimiz burada yardımcı olmaya hazır.
+Если у вас есть вопросы по этому уведомлению или вам нужны разъяснения по инвестиционным вопросам, наша профессиональная команда поддержки готова помочь.
 
 @component('mail::button', ['url' => config('app.url').'/support', 'color' => 'success'])
-Destek Ekibiyle İletişime Geçin
+Связаться с командой поддержки
 @endcomponent
 
-**Hızlı Destek Seçenekleri:**
-- **7/24 Canlı Sohbet:** Panonuz aracılığıyla anında yardım
-- **E-posta Desteği:** {{$settings->contact_email}}
-- **Telefon Desteği:** İş saatleri boyunca mevcut
-- **Yatırım Danışmanlığı:** Uzmanlarımızla danışmanlık planlayın
+**Быстрые варианты поддержки:**
+- **Круглосуточный чат:** Мгновенная помощь через вашу панель
+- **Поддержка по электронной почте:** {{$settings->contact_email}}
+- **Телефонная поддержка:** Доступна в рабочее время
+- **Инвестиционные консультации:** Запланируйте консультацию с нашими экспертами
 
-### 🔔 **Bildirim Tercihleri**
+### 🔔 **Настройки уведомлений**
 
-Bildirim tercihlerinizi yönetebilir ve hesap ayarlarınız üzerinden hangi güncellemeleri almak istediğinizi seçebilirsiniz.
+Вы можете управлять своими предпочтениями в уведомлениях и выбирать, какие обновления получать через настройки аккаунта.
 
 @component('mail::button', ['url' => config('app.url').'/dashboard/settings'])
-Bildirimleri Yönet
+Управление уведомлениями
 @endcomponent
 
-### 📊 **Bilgilendirilmiş Kalın**
+### 📊 **Будьте в курсе**
 
-**Yatırım yolculuğunuzu takip edin:**
-- Portföy performans güncellemeleri
-- Piyasa içgörüleri ve analizleri
-- Ticaret fırsatları ve uyarıları
-- Hesap güvenliği bildirimleri
-- Platform güncellemeleri ve yeni özellikler
+**Следите за своим инвестиционным путешествием:**
+- Обновления о производительности портфеля
+- Анализ и понимание рынка
+- Торговые возможности и предупреждения
+- Уведомления о безопасности аккаунта
+- Обновления платформы и новые функции
 
 ---
 
-### 🛡️ **Güvenlik Bildirimi**
+### 🛡️ **Уведомление о безопасности**
 
 @component('mail::panel', ['color' => 'warning'])
-**Önemli:** {{config('app.name')}} hiçbir zaman giriş kimlik bilgilerinizi, şifrelerinizi veya hassas hesap bilgilerinizi e-posta yoluyla sormayacaktır. Şüpheli iletişimler alırsanız, lütfen güvenlik ekibimizle hemen iletişime geçin.
+**Важно:** {{config('app.name')}} никогда не будет запрашивать ваши учетные данные, пароли или конфиденциальную информацию об аккаунте по электронной почте. Если вы получили подозрительные сообщения, пожалуйста, немедленно свяжитесь с нашей командой безопасности.
 @endcomponent
 
-**Saygılarımla,**<br>
-**{{config('app.name')}} Ekibi**<br>
-*Güvenilir Yatırım Ortağınız*
+**С уважением,**<br>
+**Команда {{config('app.name')}}**<br>
+*Ваш надежный инвестиционный партнер*
 
 ---
 
 @component('mail::subcopy')
-Bu bildirim, {{config('app.name')}} hesap iletişimlerinizin bir parçası olarak size gönderildi. Bu e-postayı yanlışlıkla aldığınızı düşünüyorsanız veya hesap güvenliğiniz hakkında endişeleriniz varsa, lütfen destek ekibimizle hemen iletişime geçin.
+Это уведомление было отправлено вам как часть коммуникации по аккаунту {{config('app.name')}}. Если вы считаете, что получили это письмо по ошибке или у вас есть опасения по поводу безопасности аккаунта, пожалуйста, немедленно свяжитесь с нашей командой поддержки.
 
-İletişim tercihlerinizi güncelleyebilir veya belirli bildirimlerden çıkabilirsiniz [Hesap Ayarları]({{config('app.url')}}/dashboard/settings) aracılığıyla. Önemli güvenlik ve hesap ile ilgili bildirimler için, bildirimleri etkin tutmanızı öneririz.
+Вы можете обновить свои предпочтения в коммуникации или отказаться от определенных уведомлений через [Настройки аккаунта]({{config('app.url')}}/dashboard/settings). Для важных уведомлений о безопасности и аккаунте мы рекомендуем оставлять уведомления активными.
 
-© {{date('Y')}} {{$settings->site_name}}. Tüm hakları saklıdır. | [Gizlilik Politikası]({{$settings->site_address}}/privacy) | [Hizmet Şartları]({{$settings->site_address}}/terms)
+© {{date('Y')}} {{$settings->site_name}}. Все права защищены. | [Политика конфиденциальности]({{$settings->site_address}}/privacy) | [Условия использования]({{$settings->site_address}}/terms)
 @endcomponent
 
 @endcomponent

@@ -1,88 +1,88 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-# Para Çekme Talebi - {{$foramin  ? 'İdari İnceleme Gerekli' : 'Fon Transfer Güncellemesi'}}
+# Запрос на вывод средств - {{$foramin  ? 'Требуется административная проверка' : 'Обновление перевода средств'}}
 
 @if ($foramin)
-## İdari Uyarı: Para Çekme Talebi Beklemede
+## Административное предупреждение: Запрос на вывод средств в ожидании
 
-Sayın Yönetici,
+Уважаемый администратор,
 
-Bir para çekme talebi gönderildi ve inceleme ve işleme için acil dikkat gerektiriyor.
+Был отправлен запрос на вывод средств, требующий немедленного внимания для проверки и обработки.
 
-**Para Çekme Talebi Detayları:**
-- **Müşteri:** {{$user->name}}
-- **Miktar:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
-- **Talep Tarihi:** {{now()->format('F j, Y \a\t g:i A')}}
-- **Durum:** İdari İnceleme Beklemede
-- **Referans ID:** #{{$withdrawal->id ?? 'WDR'.time()}}
+**Детали запроса на вывод:**
+- **Клиент:** {{$user->name}}
+- **Сумма:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
+- **Дата запроса:** {{now()->format('F j, Y \a\t g:i A')}}
+- **Статус:** Ожидает административной проверки
+- **ID ссылки:** #{{$withdrawal->id ?? 'WDR'.time()}}
 
-**Gerekli Eylem:** Lütfen müşterinin hesap durumunu inceleyin, uyumluluk gereksinimlerini doğrulayın ve yönetici panosu aracılığıyla para çekme talebini işleyin.
+**Требуемое действие:** Пожалуйста, проверьте статус аккаунта клиента, подтвердите требования соответствия и обработайте запрос на вывод средств через административную панель.
 
 @component('mail::button', ['url' => config('app.url').'/admin/withdrawals'])
-Para Çekme Talebini İncele
+Проверить запрос на вывод
 @endcomponent
 
 @component('mail::panel')
-**Uyumluluk Kontrolü:** İşlemeden önce tüm KYC/AML gereksinimlerinin karşılandığından ve hesap doğrulamasının tamamlandığından emin olun.
+**Проверка соответствия:** Перед обработкой убедитесь, что все требования KYC/AML выполнены и верификация аккаунта завершена.
 @endcomponent
 
 @else
-## Sayın {{$user->name}},
+## Уважаемый {{$user->name}},
 
 @if ($withdrawal->status == 'Processed')
-**Para çekme işleminiz başarıyla işlendi! 🎉**
+**Ваш запрос на вывод средств успешно обработан! 🎉**
 
-Para çekme talebinizin onaylandığını ve işlendiğini doğrulamaktan memnuniyet duyuyoruz. Fonlar şimdi belirlenen hesabınıza gönderiliyor.
+Мы рады подтвердить, что ваш запрос на вывод средств был одобрен и обработан. Средства сейчас переводятся на указанный вами счет.
 
-**İşlem Özeti:**
-- **Miktar:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
-- **İşleme Tarihi:** {{now()->format('F j, Y \a\t g:i A')}}
-- **Durum:** Başarıyla İşlendi
-- **Referans ID:** #{{$withdrawal->id ?? 'WDR'.time()}}
+**Сводка транзакции:**
+- **Сумма:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
+- **Дата обработки:** {{now()->format('F j, Y \a\t g:i A')}}
+- **Статус:** Успешно обработан
+- **ID ссылки:** #{{$withdrawal->id ?? 'WDR'.time()}}
 
 @component('mail::panel', ['color' => 'success'])
-**Fon Transfer Tamamlandı:** Para çekme işleminiz kayıtlı hesabınıza gönderildi. Bankanıza veya ödeme yöntemine bağlı olarak, fonlar 1-5 iş günü içinde görünmelidir.
+**Перевод средств завершен:** Ваш запрос на вывод средств был отправлен на ваш зарегистрированный счет. В зависимости от вашего банка или метода оплаты, средства должны появиться в течение 1-5 рабочих дней.
 @endcomponent
 
-**Bekleyebileceğiniz:**
-- **Banka Transferleri:** 2-5 iş günü
-- **Dijital Cüzdanlar:** 24 saat içinde
-- **Kripto Para:** 1-3 ağ onayı
+**Что ожидать:**
+- **Банковские переводы:** 2-5 рабочих дней
+- **Цифровые кошельки:** В течение 24 часов
+- **Криптовалюта:** 1-3 подтверждения сети
 
 @component('mail::button', ['url' => config('app.url').'/dashboard/transactions'])
-İşlem Geçmişini Görüntüle
+Посмотреть историю транзакций
 @endcomponent
 
-**Portföyünüzü Büyütmeye Devam Edin:**
-- Bileşik büyüme için karlarınızı yeniden yatırım yapın
-- Kopya Ticaret fırsatlarımızı keşfedin
-- Premium yatırım stratejilerine erişin
+**Продолжайте развивать свой портфель:**
+- Реинвестируйте свою прибыль для составного роста
+- Исследуйте наши возможности копирования торговли
+- Получите доступ к премиум инвестиционным стратегиям
 
 @else
-**Para çekme talebiniz işleniyor - Sabrınız için teşekkür ederiz**
+**Ваш запрос на вывод средств обрабатывается - Спасибо за терпение**
 
-Para çekme talebinizi başarıyla aldık ve finansal operasyon ekibimiz şu anda işleminizi inceliyor ve işliyor.
+Мы успешно получили ваш запрос на вывод средств, и наша команда финансовых операций в настоящее время проверяет и обрабатывает вашу транзакцию.
 
-**İşleme Durumu:**
-- **Miktar:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
-- **Durum:** İnceleme ve İşleme Altında
-- **Referans ID:** #{{$withdrawal->id ?? 'WDR'.time()}}
-- **Gönderildi:** {{now()->format('F j, Y \a\t g:i A')}}
+**Статус обработки:**
+- **Сумма:** {{$user->currency}}{{number_format($withdrawal->amount, 2)}}
+- **Статус:** На проверке и обработке
+- **ID ссылки:** #{{$withdrawal->id ?? 'WDR'.time()}}
+- **Отправлено:** {{now()->format('F j, Y \a\t g:i A')}}
 
 @component('mail::panel')
-**İşleme Zaman Çizelgesi:** Para çekme talepleri genellikle 1-3 iş günü içinde işlenir. Ekibimiz fonlarınızın güvenli ve emniyetli bir şekilde transfer edilmesini sağlamak için kapsamlı güvenlik kontrolleri yapar.
+**График обработки:** Запросы на вывод средств обычно обрабатываются в течение 1-3 рабочих дней. Наша команда проводит комплексные проверки безопасности, чтобы обеспечить безопасный и надежный перевод ваших средств.
 @endcomponent
 
-**Güvenlik Doğrulama Süreci:**
-✅ Hesap doğrulama ve uyumluluk kontrolü<br>
-✅ Dolandırıcılık karşıtı ve güvenlik taraması<br>
-🔄 **Şu anda para çekmenizi işliyor**<br>
-⏳ Nihai onay ve fon transferi
+**Процесс верификации безопасности:**
+✅ Верификация аккаунта и проверка соответствия<br>
+✅ Антимошенническая и security проверка<br>
+🔄 **В настоящее время обрабатываем ваш вывод средств**<br>
+⏳ Финальное одобрение и перевод средств
 
-Para çekme onaylandıktan ve fonlar hesabınıza transfer edildikten sonra anında bir bildirim alacaksınız.
+Как только вывод средств будет одобрен и средства будут переведены на ваш счет, вы получите мгновенное уведомление.
 
 @component('mail::button', ['url' => config('app.url').'/dashboard/withdrawals'])
-Para Çekme Durumunu Takip Et
+Отследить статус вывода
 @endcomponent
 
 @endif
@@ -90,30 +90,30 @@ Para Çekme Durumunu Takip Et
 
 ---
 
-**Önemli Güvenlik Bilgileri:**
+**Важная информация о безопасности:**
 
 @component('mail::panel', ['color' => 'warning'])
-**Güvenlik Hatırlatma:** Korumanız için, giriş kimlik bilgilerinizi asla e-posta yoluyla sormayacağız. Bu para çekmeyi siz talep etmediyseniz, lütfen güvenlik ekibimizle hemen iletişime geçin.
+**Напоминание о безопасности:** В целях вашей защиты мы никогда не будем запрашивать ваши учетные данные по электронной почте. Если вы не запрашивали этот вывод средств, пожалуйста, немедленно свяжитесь с нашей командой безопасности.
 @endcomponent
 
-**Yardıma İhtiyacınız Var mı?**
-Özel finansal operasyon ekibimiz para çekmenizle ilgili sorularınızda size yardımcı olmak için hazır.
+**Нужна помощь?**
+Наша специальная команда финансовых операций готова помочь вам с любыми вопросами по вашему выводу средств.
 
 @component('mail::button', ['url' => config('app.url').'/support', 'color' => 'success'])
-Destek Ekibiyle İletişime Geçin
+Связаться с командой поддержки
 @endcomponent
 
-**Hızlı Destek Seçenekleri:**
-- 7/24 Canlı Sohbet Desteği
-- Doğrudan E-posta: {{$settings->contact_email}}
-- Telefon: İş saatleri boyunca mevcut
+**Быстрые варианты поддержки:**
+- Круглосуточная поддержка в чате
+- Прямая электронная почта: {{$settings->contact_email}}
+- Телефон: Доступен в рабочее время
 
-Saygılarımla,<br>
-**{{config('app.name')}} Finansal Operasyon Ekibi**<br>
-*Güvenli. Güvenilir. Güvenilir.*
+С уважением,<br>
+**Команда финансовых операций {{config('app.name')}}**<br>
+*Безопасный. Надежный. Доверенный.*
 
 @component('mail::subcopy')
-Bu para çekme bildirimi güvenlik amacıyla gönderildi. {{config('app.name')}} fonlarınızı korumak için endüstri standardı güvenlik protokolleri kullanır. Tüm para çekme talepleri standart doğrulama prosedürlerimize tabidir. Daha fazla bilgi için [Güvenlik Merkezi]({{config('app.url')}}/terms)'mizi ziyaret edin.
+Это уведомление о выводе средств отправлено в целях безопасности. {{config('app.name')}} использует протоколы безопасности промышленного стандарта для защиты ваших средств. Все запросы на вывод средств подлежат нашим стандартным процедурам верификации. Для получения дополнительной информации посетите наш [Центр безопасности]({{config('app.url')}}/terms).
 @endcomponent
 
 @endcomponent

@@ -16,7 +16,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
     <div class="content">
         <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">Trading Bots Management</h4>
+            <h4 class="page-title">Управление торговыми ботами</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="{{ route('admin.dashboard') }}">
@@ -27,7 +27,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Bot Trading</a>
+                    <a href="#">Торговые боты</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +45,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Bots</p>
+                                    <p class="card-category">Всего ботов</p>
                                     <h4 class="card-title">{{ $stats['total_bots'] }}</h4>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Active Bots</p>
+                                    <p class="card-category">Активные боты</p>
                                     <h4 class="card-title">{{ $stats['active_bots'] }}</h4>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Investments</p>
+                                    <p class="card-category">Всего инвестиций</p>
                                     <h4 class="card-title">${{ number_format($stats['total_investments'], 2) }}</h4>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Total Profits</p>
+                                    <p class="card-category">Всего прибыли</p>
                                     <h4 class="card-title">${{ number_format($stats['total_profits'], 2) }}</h4>
                                 </div>
                             </div>
@@ -118,13 +118,13 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">Trading Bots</h4>
+                            <h4 class="card-title">Торговые боты</h4>
                             <div class="ml-auto">
                                 <button id="bulkTradeBtn" class="btn btn-success btn-round mr-2" onclick="generateBulkTrades()">
-                                    <i class="fa fa-chart-line"></i> Generate 20 Trades Per Bot
+                                    <i class="fa fa-chart-line"></i> Создать 20 сделок для каждого бота
                                 </button>
                                 <a href="{{ route('admin.bots.create') }}" class="btn btn-primary btn-round">
-                                    <i class="fa fa-plus"></i> Add New Bot
+                                    <i class="fa fa-plus"></i> Добавить нового бота
                                 </a>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                         @if(session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('success') }}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -143,13 +143,13 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                             <table id="botsTable" class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Bot</th>
-                                        <th>Market</th>
-                                        <th>Investment Range</th>
-                                        <th>Success Rate</th>
-                                        <th>Investors</th>
-                                        <th>Status</th>
-                                        <th style="width: 10%">Actions</th>
+                                        <th>Бот</th>
+                                        <th>Рынок</th>
+                                        <th>Диапазон инвестиций</th>
+                                        <th>Успешность</th>
+                                        <th>Инвесторы</th>
+                                        <th>Статус</th>
+                                        <th style="width: 10%">Действия</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -193,27 +193,27 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                         </td>
                                         <td>
                                             @if($bot->status == 'active')
-                                                <span class="badge badge-success">Active</span>
+                                                <span class="badge badge-success">Активный</span>
                                             @elseif($bot->status == 'inactive')
-                                                <span class="badge badge-secondary">Inactive</span>
+                                                <span class="badge badge-secondary">Неактивный</span>
                                             @else
-                                                <span class="badge badge-warning">Maintenance</span>
+                                                <span class="badge badge-warning">Обслуживание</span>
                                             @endif
                                         </td>
                                         <td>
                                             <div class="form-button-action">
                                                 <a href="{{ route('admin.bots.show', $bot) }}"
                                                    class="btn btn-link btn-primary btn-lg"
-                                                   data-toggle="tooltip" data-original-title="View Details">
+                                                   data-toggle="tooltip" data-original-title="Посмотреть детали">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                                 <a href="{{ route('admin.bots.edit', $bot) }}"
                                                    class="btn btn-link btn-primary btn-lg"
-                                                   data-toggle="tooltip" data-original-title="Edit Bot">
+                                                   data-toggle="tooltip" data-original-title="Редактировать бота">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-link btn-danger btn-lg"
-                                                        data-toggle="tooltip" data-original-title="Delete Bot"
+                                                        data-toggle="tooltip" data-original-title="Удалить бота"
                                                         onclick="confirmDelete({{ $bot->id }})">
                                                     <i class="fa fa-times"></i>
                                                 </button>
@@ -231,10 +231,10 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                         <td colspan="7" class="text-center">
                                             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
                                                 <i class="fas fa-robot fa-3x text-muted mb-3"></i>
-                                                <h5 class="text-muted">No trading bots found</h5>
-                                                <p class="text-muted">Create your first trading bot to get started</p>
+                                                <h5 class="text-muted">Торговые боты не найдены</h5>
+                                                <p class="text-muted">Создайте своего первого торгового бота для начала работы</p>
                                                 <a href="{{ route('admin.bots.create') }}" class="btn btn-primary">
-                                                    <i class="fa fa-plus"></i> Create Trading Bot
+                                                    <i class="fa fa-plus"></i> Создать торгового бота
                                                 </a>
                                             </div>
                                         </td>
@@ -279,12 +279,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function confirmDelete(botId) {
     swal({
-        title: 'Are you sure?',
-        text: "This will permanently delete the trading bot and all associated data!",
+        title: 'Вы уверены?',
+        text: "Это навсегда удалит торгового бота и все связанные данные!",
         type: 'warning',
         buttons: {
             confirm: {
-                text: 'Yes, delete it!',
+                text: 'Да, удалить!',
                 className: 'btn btn-success'
             },
             cancel: {
@@ -304,12 +304,12 @@ function generateBulkTrades() {
     const originalText = btn.innerHTML;
 
     swal({
-        title: 'Generate Bulk Trades?',
-        text: "This will generate 20 trades for each active bot investment. Are you sure?",
+        title: 'Создать массовые сделки?',
+        text: "Это создаст 20 сделок для каждой активной инвестиции бота. Вы уверены?",
         type: 'info',
         buttons: {
             confirm: {
-                text: 'Yes, generate trades!',
+                text: 'Да, создать сделки!',
                 className: 'btn btn-success'
             },
             cancel: {
@@ -339,8 +339,8 @@ function generateBulkTrades() {
 
                 if (data.success) {
                     swal({
-                        title: 'Success!',
-                        text: `Generated ${data.total_trades_created} trades across ${data.investments_processed} bot investments`,
+                        title: 'Успешно!',
+                        text: `Создано ${data.total_trades_created} сделок для ${data.investments_processed} инвестиций ботов`,
                         type: 'success',
                         buttons: {
                             confirm: {
@@ -353,8 +353,8 @@ function generateBulkTrades() {
                     });
                 } else {
                     swal({
-                        title: 'Error!',
-                        text: data.message || 'Failed to generate trades',
+                        title: 'Ошибка!',
+                        text: data.message || 'Не удалось создать сделки',
                         type: 'error',
                         buttons: {
                             confirm: {
@@ -370,8 +370,8 @@ function generateBulkTrades() {
                 btn.disabled = false;
 
                 swal({
-                    title: 'Error!',
-                    text: 'Network error occurred while generating trades',
+                    title: 'Ошибка!',
+                    text: 'Произошла сетевая ошибка при создании сделок',
                     type: 'error',
                     buttons: {
                         confirm: {

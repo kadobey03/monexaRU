@@ -1,5 +1,5 @@
 @extends('layouts.guest1')
-@section('title', 'Hesap Geçici Olarak Kilitlendi')
+@section('title', 'Аккаунт временно заблокирован')
 @section('content')
 
 <div class="min-h-screen bg-gray-900 relative overflow-hidden flex items-center justify-center px-4 py-8">
@@ -25,19 +25,19 @@
 
                 <!-- Title -->
                 <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                    Hesabınız
+                    Ваш аккаунт
                 </h1>
                 <h2 class="text-2xl sm:text-3xl font-bold text-red-400 mb-6">
-                    Geçici Olarak Kilitlendi
+                    временно заблокирован
                 </h2>
 
                 <!-- Message -->
                 <div class="bg-gray-800/50 border border-red-500/20 rounded-2xl p-6 mb-8">
                     <p class="text-gray-300 text-lg leading-relaxed">
                         @if(session('user_name'))
-                            Dear <span class="text-white font-semibold">{{ session('user_name') }}</span>,
+                            Уважаемый <span class="text-white font-semibold">{{ session('user_name') }}</span>,
                         @else
-                            Sevgili Değerli Kullanıcı,
+                            Уважаемый пользователь,
                         @endif
                     </p>
 
@@ -48,12 +48,12 @@
                     @endif
 
                     <p class="text-gray-300 text-lg leading-relaxed mt-4">
-                        Hesabınızda potansiyel olarak fraudulent bir işlem fark ettik ve güvenliğiniz için geçici olarak kilitledik.
-                        Etkinliği doğrulamak ve erişiminizi geri yüklemek için lütfen en kısa sürede bizimle iletişime geçin
+                        Мы заметили потенциально мошенническую операцию на вашем аккаунте и временно заблокировали его для вашей безопасности.
+                        Пожалуйста, свяжитесь с нами как можно скорее для подтверждения активности и восстановления доступа по электронной почте
                         <a href="mailto:{{$settings->contact_email}}" class="text-blue-400 hover:text-blue-300 transition-colors">
                            {{$settings->contact_email}}
                         </a>
-                        adresinden veya canlı sohbet yoluyla.
+                        или через живой чат.
                     </p>
                 </div>
 
@@ -66,7 +66,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <span class="text-blue-400 font-semibold">E-posta Desteği</span>
+                            <span class="text-blue-400 font-semibold">Поддержка по email</span>
                         </div>
                         <a href="mailto:{{$settings->contact_email}}"
                            class="text-white hover:text-blue-300 transition-colors text-sm">
@@ -81,9 +81,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a9.863 9.863 0 01-4.255-.949L5 20l1.395-3.72C5.512 15.042 5 13.574 5 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"/>
                             </svg>
-                            <span class="text-green-400 font-semibold">Canlı Sohbet</span>
+                            <span class="text-green-400 font-semibold">Живой чат</span>
                         </div>
-                        <span class="text-white text-sm">7/24 Mevcut</span>
+                        <span class="text-white text-sm">Доступен 24/7</span>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
-                        Şimdi Destekle İletişime Geç
+                        Связаться с поддержкой сейчас
                     </a>
 
                     <div class="text-center">
@@ -105,7 +105,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                             </svg>
-                            Ana Sayfaya Dön
+                            Вернуться на главную страницу
                         </a>
                     </div>
                 </div>
@@ -118,9 +118,9 @@
                                   d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
                         </svg>
                         <div class="text-left">
-                            <p class="text-yellow-200 text-sm font-medium mb-1">Güvenlik Bildirimi</p>
+                            <p class="text-yellow-200 text-sm font-medium mb-1">Уведомление о безопасности</p>
                             <p class="text-yellow-100 text-sm">
-                                Bu geçici kilitlenme korumanız içindir. Hesap güvenliğini ciddiye alıyoruz ve doğrulama tamamlandıktan sonra erişimi geri yükleyeceğiz.
+                                Эта временная блокировка сделана для вашей защиты. Мы серьезно относимся к безопасности аккаунтов и восстановим доступ после завершения проверки.
                             </p>
                         </div>
                     </div>

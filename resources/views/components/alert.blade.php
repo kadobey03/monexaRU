@@ -9,8 +9,8 @@
                         </span>
                     </div>
                     <div class="alert-content">
-                        <p>{{ Auth::user()->user_signal }} satın almanız gerekiyor. </p>
-                        <p> <a href="{{route('deposits')}}"  class='btn btn-warning'>Şimdi Satın Al</a></p>
+                        <p>Вам нужно приобрести {{ Auth::user()->user_signal }}.</p>
+                        <p> <a href="{{route('deposits')}}"  class='btn btn-warning'>Купить сейчас</a></p>
                     </div> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>

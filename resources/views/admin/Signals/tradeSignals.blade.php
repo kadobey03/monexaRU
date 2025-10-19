@@ -8,12 +8,12 @@
                 <x-danger-alert />
                 <x-success-alert />
                 <div class="mt-2 mb-4 d-flex justify-content-between align-items-center">
-                    <h1 class="title1 ">Trade Signals</h1>
+                    <h1 class="title1 ">Торговые сигналы</h1>
                     <div>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary btn-sm px-3" data-toggle="modal"
                             data-target="#exampleModal">
-                            Add Signal
+                            Добавить сигнал
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -21,7 +21,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Add Signal</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Добавить сигнал</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -31,36 +31,36 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Trade Direction</label>
+                                                    <label for="">Направление торговли</label>
                                                     <select name="direction" id=""
                                                         class=" form-control rounded-none py-3" required>
-                                                        <option value="Sell">Sell</option>
-                                                        <option value="Buy">Buy</option>
+                                                        <option value="Sell">Продажа</option>
+                                                        <option value="Buy">Покупка</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Currency Pair</label>
+                                                    <label for="">Валютная пара</label>
                                                     <input type="text" name="pair"
-                                                        class="form-control rounded-none py-3" placeholder="eg EUR/USD"
+                                                        class="form-control rounded-none py-3" placeholder="например EUR/USD"
                                                         required>
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Price</label>
+                                                    <label for="">Цена</label>
                                                     <input type="text" name="price"
                                                         class="form-control rounded-none py-3" placeholder="" required>
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Take Profit 1</label>
+                                                    <label for="">Тейк-профит 1</label>
                                                     <input type="text" step="any" name="tp1"
                                                         class="form-control rounded-none py-3" id="" required>
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Take Profit 2</label>
+                                                    <label for="">Тейк-профит 2</label>
                                                     <input type="text" step="any" name="tp2"
                                                         class="form-control rounded-none py-3" id="">
                                                 </div>
                                                 <div class="col-md-6 mt-3">
-                                                    <label for="">Stop Loss</label>
+                                                    <label for="">Стоп-лосс</label>
                                                     <input type="text" step="any" name="sl1"
                                                         class="form-control rounded-none py-3" id="" required>
                                                 </div>
@@ -70,7 +70,7 @@
                                                         class="form-control rounded-none py-3" id="">
                                                 </div> --}}
                                                 <div class="col-12 mt-3">
-                                                    <button type="submit" class="btn btn-primary px-3">Add Signal</button>
+                                                    <button type="submit" class="btn btn-primary px-3">Добавить сигнал</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -84,42 +84,42 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Signals</h5>
+                                <h5 class="card-title">Сигналы</h5>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead class="bg-primary text-white">
                                             <th>
-                                                Ref
+                                                Ссылка
                                             </th>
                                             <th>
-                                                Trade Direction
+                                                Направление торговли
                                             </th>
                                             <th>
-                                                Currency Pair
+                                                Валютная пара
                                             </th>
                                             <th>
-                                                Price
+                                                Цена
                                             </th>
                                             <th>
-                                                Take Profit-1
+                                                Тейк-профит-1
                                             </th>
                                             <th>
-                                                Take Profit-2
+                                                Тейк-профит-2
                                             </th>
                                             <th>
-                                                Stop Loss
+                                                Стоп-лосс
                                             </th>
                                             {{-- <th>
                                                 Stop Loss-2
                                             </th> --}}
                                             <th>
-                                                Result
+                                                Результат
                                             </th>
                                             <th>
-                                                Status
+                                                Статус
                                             </th>
                                             <th>
-                                                Date Added
+                                                Дата добавления
                                             </th>
                                             <th>
                                             </th>
@@ -156,19 +156,19 @@
                                                         @if ($signal->status == 'unpublished')
                                                             <a href="{{ route('pubsignals', ['signal' => $signal->id]) }}"
                                                                 class="btn btn-info btn-sm m-1">
-                                                                Publish
+                                                                Опубликовать
                                                             </a>
                                                         @else
                                                             <a href="#" class="btn btn-secondary btn-sm m-1"
                                                                 data-toggle="modal"
                                                                 data-target="#resultModal{{ $signal->id }}">
-                                                                Add Result
+                                                                Добавить результат
                                                             </a>
                                                         @endif
 
                                                         <a href="{{ route('delete.signal', ['signal' => $signal->id]) }}"
                                                             class="btn btn-danger btn-sm m-1">
-                                                            Delete
+                                                            Удалить
                                                         </a>
                                                         <!-- Modal -->
                                                         <div class="modal fade" id="resultModal{{ $signal->id }}"
@@ -178,7 +178,7 @@
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
                                                                         <h5 class="modal-title" id="exampleModalLabel">
-                                                                            Update Signal Result
+                                                                            Обновить результат сигнала
                                                                         </h5>
                                                                         <button type="button" class="close"
                                                                             data-dismiss="modal" aria-label="Close">
@@ -193,7 +193,7 @@
                                                                             <input type="hidden" name="signalId"
                                                                                 value="{{ $signal->id }}">
                                                                             <div class="form-group">
-                                                                                <label for="">Result</label>
+                                                                                <label for="">Результат</label>
                                                                                 <input type="text" name="result"
                                                                                     value="{{ $signal->result }}"
                                                                                     class="form-control rounded-none py-3"
@@ -202,13 +202,13 @@
                                                                             <div class="form-group">
                                                                                 <button type="submit"
                                                                                     class="btn btn-primary btn-sm">
-                                                                                    Publish Result
+                                                                                    Опубликовать результат
                                                                                 </button>
                                                                                 <button type="button"
                                                                                     class="btn btn-danger btn-sm"
                                                                                     data-dismiss="modal"
                                                                                     aria-label="Close">
-                                                                                    Cancel
+                                                                                    Отмена
                                                                                 </button>
                                                                             </div>
                                                                         </form>
@@ -221,7 +221,7 @@
                                             @empty
                                                 <tr>
                                                     <td colspan="10" class="text-center">
-                                                        No Data Available
+                                                        Данные отсутствуют
                                                     </td>
                                                 </tr>
                                             @endforelse

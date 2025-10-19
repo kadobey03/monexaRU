@@ -272,7 +272,7 @@
                          <h5 class=" ">Select Asset</h5>
 
                          <select class="form-control  " name="plan" required>
-                             <option value="" selected disabled>Select Asset</option>
+                             <option value="" selected disabled>Выбрать актив</option>
                              <optgroup label="Currency">
                                 <option selected>EURUSD</option>
                                 <option>EURJPY</option>
@@ -322,21 +322,21 @@
 
                      <div class="form-group">
                         <select class="form-control" name="leverage" id="leverage" required>
-                            <option selected disable value="">Leverage</option><option value="10">1:10</option><option value="20">1:20</option><option value="30">1:30</option><option value="40">1:40</option><option value="50">1:50</option><option value="60">1:60</option><option value="70">1:70</option><option value="80">1:80</option><option value="90">1:90</option><option value="100">1:100</option>
+                            <option selected disable value="">Кредитное плечо</option><option value="10">1:10</option><option value="20">1:20</option><option value="30">1:30</option><option value="40">1:40</option><option value="50">1:50</option><option value="60">1:60</option><option value="70">1:70</option><option value="80">1:80</option><option value="90">1:90</option><option value="100">1:100</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="expire" id="expire" required>
-                            <option selected disable value="">Expiration</option>
-                            <option value="1 Minutes">1 Minute</option>
-                            <option value="5 Minutes">5 Minutes</option>
-                            <option value="15 Minutes">15 Minutes</option>
-                            <option value="30 Minutes">30 Minutes</option>
-                            <option value="60 Minutes">1 Hour</option>
-                            <option value="4 Hours">4 Hours</option>
-                            <option value="1 Days">1 Day</option>
-                            <option value="2 Days">2 Days</option>
-                            <option value="7 Days">7 Days</option>
+                            <option selected disable value="">Истечение</option>
+                            <option value="1 Minutes">1 минута</option>
+                            <option value="5 Minutes">5 минут</option>
+                            <option value="15 Minutes">15 минут</option>
+                            <option value="30 Minutes">30 минут</option>
+                            <option value="60 Minutes">1 час</option>
+                            <option value="4 Hours">4 часа</option>
+                            <option value="1 Days">1 день</option>
+                            <option value="2 Days">2 дня</option>
+                            <option value="7 Days">7 дней</option>
                         </select>
                     </div>
                      <div class="form-group">
@@ -349,11 +349,11 @@
                      </div>
 
                      <div class="form-group">
-                        <h5 class=" ">Trade Type</h5>
+                        <h5 class=" ">Тип сделки</h5>
                         <select class="form-control  " name="tradetype" required>
-                            <option value="" selected disabled>Select type  Buy/Sell</option>
-                            <option value="Buy">Buy</option>
-                            <option value="Sell">Sell</option>
+                            <option value="" selected disabled>Выбрать тип Купить/Продать</option>
+                            <option value="Buy">Купить</option>
+                            <option value="Sell">Продать</option>
                         </select>
                     </div>
                      <div class="form-group">
@@ -387,7 +387,7 @@
                         <h5 class=" ">Select Asset</h5>
 
                         <select class="form-control  " name="asset" required>
-                            <option value="" selected disabled>Select Asset</option>
+                            <option value="" selected disabled>Выбрать актив</option>
                             <optgroup label="Currency">
                                <option selected>EURUSD</option>
                                <option>EURJPY</option>
@@ -437,7 +437,7 @@
 
                     <div class="form-group">
                        <select class="form-control" name="leverage" id="leverage" required>
-                           <option selected disable value="">Leverage</option><option value="10">1:10</option><option value="20">1:20</option><option value="30">1:30</option><option value="40">1:40</option><option value="50">1:50</option><option value="60">1:60</option><option value="70">1:70</option><option value="80">1:80</option><option value="90">1:90</option><option value="100">1:100</option>
+                           <option selected disable value="">Кредитное плечо</option><option value="10">1:10</option><option value="20">1:20</option><option value="30">1:30</option><option value="40">1:40</option><option value="50">1:50</option><option value="60">1:60</option><option value="70">1:70</option><option value="80">1:80</option><option value="90">1:90</option><option value="100">1:100</option>
                        </select>
                    </div>
 
@@ -450,33 +450,33 @@
                 </div>
                    <div class="form-group">
                        <select class="form-control" name="expire"  required>
-                           <option selected disable value="">Expiration</option>
-                           <option value="1 Minutes">1 Minute</option>
-                           <option value="5 Minutes">5 Minutes</option>
-                           <option value="15 Minutes">15 Minutes</option>
-                           <option value="30 Minutes">30 Minutes</option>
-                           <option value="60 Minutes">1 Hour</option>
-                           <option value="4 Hours">4 Hours</option>
-                           <option value="1 Days">1 Day</option>
-                           <option value="2 Days">2 Days</option>
-                           <option value="7 Days">7 Days</option>
+                           <option selected disable value="">Истечение</option>
+                           <option value="1 Minutes">1 минута</option>
+                           <option value="5 Minutes">5 минут</option>
+                           <option value="15 Minutes">15 минут</option>
+                           <option value="30 Minutes">30 минут</option>
+                           <option value="60 Minutes">1 час</option>
+                           <option value="4 Hours">4 часа</option>
+                           <option value="1 Days">1 день</option>
+                           <option value="2 Days">2 дня</option>
+                           <option value="7 Days">7 дней</option>
                        </select>
                    </div>
                     {{-- <div class="form-group">
-                        <h5 class=" ">Profit/Loss</h5>
+                        <h5 class=" ">Прибыль/Убыток</h5>
                         <select class="form-control  " name="type" required>
-                            <option value="" selected disabled>Select type  profit/loss</option>
+                            <option value="" selected disabled>Выбрать тип прибыль/убыток</option>
                             <option value="WIN">Profit</option>
                             <option value="LOSE">Loss</option>
                         </select>
                     </div> --}}
 
                     <div class="form-group">
-                       <h5 class=" ">Order Type</h5>
+                       <h5 class=" ">Тип ордера</h5>
                        <select class="form-control  " name="order_type" required>
-                           <option value="" selected disabled>Select type  Buy/Sell</option>
-                           <option value="Buy">Buy</option>
-                           <option value="Sell">Sell</option>
+                           <option value="" selected disabled>Выбрать тип Купить/Продать</option>
+                           <option value="Buy">Купить</option>
+                           <option value="Sell">Продать</option>
                        </select>
                    </div>
                     <div class="form-group">
@@ -507,16 +507,16 @@
                 <form role="form" method="post" action="{{ route('addplanhistory') }}">
                     @csrf
                     <div class="form-group">
-                        <h5 class=" ">Select Investment Plan</h5>
+                        <h5 class=" ">Выбрать инвестиционный план</h5>
                         <select class="form-control  " name="plan">
-                            <option value="" selected disabled>Select Plan</option>
+                            <option value="" selected disabled>Выбрать план</option>
                             @foreach ($pl as $plns)
                                 <option value="{{ $plns->name }}">{{ $plns->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <h5 class=" ">Amount</h5>
+                        <h5 class=" ">Сумма</h5>
                         <input type="number" name="amount" class="form-control" placeholder="Plan tutarını giriniz" min="0.01" step="0.01" required>
                         <div class="invalid-feedback">
                             Lütfen geçerli bir plan tutarı giriniz (minimum 0.01).
@@ -547,7 +547,7 @@
          <div class="modal-content">
              <div class="modal-header bg-success text-white">
                  <h4 class="modal-title">
-                     <i class="fas fa-user-edit me-2"></i>Edit {{ $user->name }} Details
+                     <i class="fas fa-user-edit me-2"></i>Редактировать детали {{ $user->name }}
                  </h4>
                  <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
              </div>
@@ -557,19 +557,19 @@
                      <div class="row g-4">
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-user me-2 text-success"></i>Username
+                                 <i class="fas fa-user me-2 text-success"></i>Имя пользователя
                              </label>
                              <input class="form-control form-control-lg" id="input1" value="{{ $user->username }}" type="text" name="username" pattern="[a-zA-Z0-9_]{3,50}" maxlength="50" required>
                              <div class="invalid-feedback">
                                  Kullanıcı adı 3-50 karakter arası olmalı ve sadece harf, rakam ve alt çizgi içerebilir.
                              </div>
                              <small class="text-muted mt-1 d-block">
-                                 <i class="fas fa-info-circle me-1"></i>Note: Same username should be used in the referral link.
+                                 <i class="fas fa-info-circle me-1"></i>Примечание: То же имя пользователя должно использоваться в реферальной ссылке.
                              </small>
                          </div>
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-signature me-2 text-success"></i>Full Name
+                                 <i class="fas fa-signature me-2 text-success"></i>Полное имя
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->name }}" type="text" name="name" required>
                          </div>
@@ -577,7 +577,7 @@
                      <div class="row g-4 mt-3">
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-envelope me-2 text-success"></i>Email Address
+                                 <i class="fas fa-envelope me-2 text-success"></i>Электронная почта
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->email }}" type="email" name="email" maxlength="100" required>
                              <div class="invalid-feedback">
@@ -586,7 +586,7 @@
                          </div>
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-phone me-2 text-success"></i>Phone Number
+                                 <i class="fas fa-phone me-2 text-success"></i>Номер телефона
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->phone }}" type="tel" name="phone" pattern="[+]?[0-9\s\-\(\)]{10,20}" maxlength="20" required>
                              <div class="invalid-feedback">
@@ -597,13 +597,13 @@
                      <div class="row g-4 mt-3">
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-flag me-2 text-success"></i>Country
+                                 <i class="fas fa-flag me-2 text-success"></i>Страна
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->country }}" type="text" name="country">
                          </div>
                          <div class="col-md-6">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-money-bill me-2 text-success"></i>Currency
+                                 <i class="fas fa-money-bill me-2 text-success"></i>Валюта
                              </label>
                              <input name="s_currency" value="{{$user->currency}}" id="s_c" type="hidden">
                              <select name="currency" id="select_c" class="form-select form-select-lg select2" onchange="changecurr()" style="width: 100%">
@@ -618,7 +618,7 @@
                      <div class="row g-4 mt-3">
                          <div class="col-12">
                              <label class="form-label fw-semibold">
-                                 <i class="fas fa-link me-2 text-success"></i>Referral Link
+                                 <i class="fas fa-link me-2 text-success"></i>Реферальная ссылка
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->ref_link }}" type="url" name="ref_link" required>
                          </div>
@@ -645,14 +645,14 @@
          <div class="modal-content">
              <div class="modal-header bg-warning text-dark">
                  <h4 class="modal-title">
-                     <i class="fas fa-key me-2"></i>Reset User Password
+                     <i class="fas fa-key me-2"></i>Сбросить пароль пользователя
                  </h4>
                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body p-4 text-center">
                  <div class="mb-4">
                      <i class="fas fa-lock fa-4x text-warning mb-3"></i>
-                     <h5 class="mb-3">Reset Password for {{ $user->name }}?</h5>
+                     <h5 class="mb-3">Сбросить пароль для {{ $user->name }}?</h5>
                      <div class="alert alert-warning py-3">
                          <p class="mb-2">The password will be reset to: <strong>user01236</strong></p>
                          <small class="text-muted">Make sure to inform the user about this change.</small>
@@ -661,7 +661,7 @@
                  <div class="row g-3">
                      <div class="col-6">
                          <button type="button" class="btn btn-secondary btn-lg w-100" data-dismiss="modal">
-                             <i class="fas fa-times me-2"></i>Cancel
+                             <i class="fas fa-times me-2"></i>Отмена
                          </button>
                      </div>
                      <div class="col-6">
@@ -683,18 +683,18 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header bg-{{$bg}}">
-                <h4 class="modal-title text-{{$text}}">Set Trading Signal</strong></h4>
+                <h4 class="modal-title text-{{$text}}">Установить торговый сигнал</strong></h4>
 
             </div>
             <div class="modal-body bg-{{$bg}}">
                 <form role="form" method="post" action="{{route('tradingprogress')}}">
                     <div class="form-group">
-                        <h5 class=" text-{{$text}}">Trading Signal %</h5>
+                        <h5 class=" text-{{$text}}">Торговый сигнал %</h5>
                         <input class="form-control bg-{{$bg}} text-{{$text}}" value="{{$user->progress}}" type="number" name="progress" min="0" max="100" step="0.1" required>
                         <div class="invalid-feedback">
                             Lütfen 0-100 arasında geçerli bir yüzde değeri giriniz.
                         </div>
-                         <small>Signal strength in %. For signal strength to show on user dashoard increase its value </small>
+                         <small>Сила сигнала в %. Для отображения силы сигнала на панели пользователя увеличьте его значение </small>
                     </div>
 
 
@@ -717,22 +717,22 @@
          <div class="modal-content">
              <div class="modal-header bg-info text-white">
                  <h4 class="modal-title">
-                     <i class="fas fa-exchange-alt me-2"></i>Login as {{ $user->name }}
+                     <i class="fas fa-exchange-alt me-2"></i>Войти как {{ $user->name }}
                  </h4>
                  <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body p-4 text-center">
                  <div class="mb-4">
                      <i class="fas fa-user-circle fa-4x text-info mb-3"></i>
-                     <h5 class="mb-3">Switch to {{ $user->name }}'s Account?</h5>
+                     <h5 class="mb-3">Переключиться на аккаунт {{ $user->name }}?</h5>
                      <p class="text-muted mb-0">
-                         You will be logged in as this user. You can return to admin panel anytime.
+                         Вы войдете в систему как этот пользователь. Вы можете вернуться в админ-панель в любое время.
                      </p>
                  </div>
                  <div class="row g-3">
                      <div class="col-6">
                          <button type="button" class="btn btn-secondary btn-lg w-100" data-dismiss="modal">
-                             <i class="fas fa-times me-2"></i>Cancel
+                             <i class="fas fa-times me-2"></i>Отмена
                          </button>
                      </div>
                      <div class="col-6">
@@ -752,19 +752,19 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header ">
-                <h4 class="modal-title ">Notify {{$user->username}} Dashboard</h4>
+                <h4 class="modal-title ">Уведомить панель {{$user->username}}</h4>
                 <button type="button" class="close " data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body ">
-                <p class="">This show notice on  {{ $user->name }} Dashboard</p>
+                <p class="">Это покажет уведомление на панели {{ $user->name }}</p>
                 <form style="padding:3px;" role="form" method="post" action="{{ route('notifyuser') }}">
                     @csrf
                     <div class=" form-group">
-                        <label>Turn on/off  Dashboard Notification : {{$user->notify}}</label>
+                        <label>Включить/выключить уведомление панели : {{$user->notify}}</label>
                         <select class="form-control  " name="notifystatus">
 
-                            <option value="on">On</option>
-                                <option value="off">Off</option>
+                            <option value="on">Включено</option>
+                                <option value="off">Выключено</option>
 
                         </select>
                     </div>
@@ -875,22 +875,22 @@
          <div class="modal-content">
              <div class="modal-header bg-danger text-white">
                  <h4 class="modal-title">
-                     <i class="fas fa-exclamation-triangle me-2"></i>Delete User Account
+                     <i class="fas fa-exclamation-triangle me-2"></i>Удалить аккаунт пользователя
                  </h4>
                  <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body p-4 text-center">
                  <div class="mb-4">
                      <i class="fas fa-user-times fa-4x text-danger mb-3"></i>
-                     <h5 class="mb-3">Delete {{ $user->name }}'s Account?</h5>
+                     <h5 class="mb-3">Удалить аккаунт {{ $user->name }}?</h5>
                      <p class="text-muted mb-0">
-                         This action is irreversible. All data associated with this account will be permanently lost.
+                         Это действие необратимо. Все данные, связанные с этим аккаунтом, будут безвозвратно потеряны.
                      </p>
                  </div>
                  <div class="row g-3">
                      <div class="col-6">
                          <button type="button" class="btn btn-secondary btn-lg w-100" data-dismiss="modal">
-                             <i class="fas fa-times me-2"></i>Cancel
+                             <i class="fas fa-times me-2"></i>Отмена
                          </button>
                      </div>
                      <div class="col-6">

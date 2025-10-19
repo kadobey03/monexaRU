@@ -45,21 +45,21 @@
                     class="space-y-6"
                 >
                     <div class="inline-block px-3 py-1 mb-2 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                        Dijital Varlıklar
+                        Цифровые активы
                     </div>
                     <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                        <span class="block">Kripto Para</span>
-                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400">Bitcoin, Ethereum, Ripple ve daha fazlasında CFD'ler</span>
+                        <span class="block">Криптовалюта</span>
+                        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-orange-400">CFD на Bitcoin, Ethereum, Ripple и многое другое</span>
                     </h1>
                     <p class="mt-3 text-lg text-gray-300 max-w-2xl">
-                        Kripto para, elektronik olarak oluşturulan ve tutulan dijital bir para birimidir. Finansal işlemler yürütmek için kriptografik işlevleri kullanan internet tabanlı bir değişim aracıdır. Diğer para birimleri gibi basılmazlar – matematiksel problemleri çözen yazılımlar kullanarak dünya çapında bilgisayarları çalıştıran insanlar ve giderek artan şekilde işletmeler tarafından üretilirler.
+                        Криптовалюта — это цифровая валюта, созданная и хранимая в электронном виде. Это интернет-ориентированное средство обмена, использующее криптографические функции для проведения финансовых транзакций. В отличие от других валют, криптовалюты не печатаются — они производятся людьми, запускающими компьютеры по всему миру с помощью программного обеспечения, решающего математические задачи, и в возрастающем объеме компаниями.
                     </p>
                     <div class="flex flex-wrap gap-4 mt-6">
                         <a href="#crypto-table" class="px-6 py-3 text-base font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            Pazarları Görüntüle
+                            Посмотреть рынки
                         </a>
                         <a href="register" class="px-6 py-3 text-base font-medium text-gray-300 bg-gray-800 border border-gray-700 rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200">
-                            Alım Satıma Başla
+                            Начать торговлю
                         </a>
                     </div>
                 </div>
@@ -145,13 +145,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Canlı Piyasalar
+                Живые рынки
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">Kripto Para Piyasaları</span>
+                <span class="block">Криптовалютные рынки</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                Dünyanın en popüler kripto para birimlerinde rekabetçi spread'ler ve gelişmiş araçlarla CFD ticareti yapın
+                Торгуйте CFD на самых популярных криптовалютах мира с конкурентными спредами и продвинутыми инструментами
             </p>
         </div>
 
@@ -159,20 +159,20 @@
             <!-- Search and Filter Controls -->
             <div class="p-4 border-b border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="relative w-full md:w-64">
-                    <input type="text" class="search-box w-full bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 pl-10 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Kripto paraları ara...">
+                    <input type="text" class="search-box w-full bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 pl-10 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Поиск криптовалют...">
                     <svg class="absolute left-3 top-2.5 h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
                 <div class="flex flex-wrap gap-2">
                     <select class="selfi bg-gray-900 border border-gray-700 rounded-lg py-2 px-4 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        <option value="All">Tüm Kripto Paralar</option>
-                        <option value="Major">Ana Kripto Paralar</option>
-                        <option value="Altcoins">Altcoin'ler</option>
-                        <option value="DeFi">DeFi Token'ları</option>
+                        <option value="All">Все криптовалюты</option>
+                        <option value="Major">Основные криптовалюты</option>
+                        <option value="Altcoins">Альткоины</option>
+                        <option value="DeFi">DeFi токены</option>
                     </select>
                     <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
-                        Filtrele
+                        Фильтр
                     </button>
                 </div>
             </div>
@@ -186,13 +186,13 @@
                     <table id="tt-spreads-6023e3178f8b3" class="w-full text-sm text-left text-gray-300">
                         <thead class="text-xs uppercase bg-gray-800 text-gray-400">
                             <tr>
-                                <th class="px-6 py-3">Sembol</th>
-                                <th class="px-6 py-3">İsim</th>
-                                <th class="px-6 py-3">Fiyat</th>
-                                <th class="px-6 py-3">24s Değişim</th>
-                                <th class="px-6 py-3">Pazar Değeri</th>
-                                <th class="px-6 py-3">Spread</th>
-                                <th class="px-6 py-3">Eylem</th>
+                                <th class="px-6 py-3">Символ</th>
+                                <th class="px-6 py-3">Название</th>
+                                <th class="px-6 py-3">Цена</th>
+                                <th class="px-6 py-3">Изменение 24ч</th>
+                                <th class="px-6 py-3">Рыночная капитализация</th>
+                                <th class="px-6 py-3">Спред</th>
+                                <th class="px-6 py-3">Действие</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -215,7 +215,7 @@
             "ordering": false,
             "searching": true,
             "language": {
-                "zeroRecords": "Eşleşen kayıt bulunamadı"
+                "zeroRecords": "Соответствующие записи не найдены"
             },
             "columnDefs": [{
                 targets: ['category', 'sub_category'],
@@ -289,7 +289,7 @@
             fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('API çağrısı başarısız');
+                        throw new Error('Вызов API неудачен');
                     }
                     return response.json();
                 })
@@ -315,11 +315,11 @@
                     $dttble.rows.add(rows).draw();
                 })
                 .catch(error => {
-                    console.error('Kripto para verisi çekme hatası:', error);
-                    // Hata durumunda tabloya hata mesajı ekle
+                    console.error('Ошибка загрузки данных криптовалюты:', error);
+                    // Добавить сообщение об ошибке в таблицу в случае ошибки
                     var errorRow = [
                         '',
-                        'Veri yüklenirken hata oluştu',
+                        'Ошибка при загрузке данных',
                         '',
                         '',
                         '',
@@ -345,14 +345,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Alım Satım Esnekliği
+                Гибкость торговли
             </div>
             <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-                <span class="block">Ne İstediğinizi Ticaret Edin,</span>
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Ne Zaman İstediğinizde</span>
+                <span class="block">Торгуйте тем, что хотите,</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Когда хотите</span>
             </h2>
             <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-                Platformumuz başarılı ticaret için ihtiyacınız olan araçları ve erişimi sağlar
+                Наша платформа предоставляет инструменты и доступ, необходимые для успешной торговли
             </p>
         </div>
 
@@ -386,7 +386,7 @@
                     x-transition:enter-end="opacity-100 transform translate-y-0"
                 >
                     <h3 class="text-2xl font-bold text-white mb-6">
-                        {{$settings->site_name}}'ın birincil hedeflerinden biri piyasada en iyi ürünü sağlamaktır. Önde gelen birinci kademe finans kurumlarıyla olan ilişkilerimiz, Forex trader'ları için derin likidite ve daha sıkı spread'ler anlamına gelir.
+                        Одной из основных целей {{$settings->site_name}} является предоставление лучшего продукта на рынке. Наши отношения с ведущими финансовыми учреждениями первого уровня означают глубокую ликвидность и более узкие спреды для трейдеров Forex.
                     </h3>
 
                     <ul class="space-y-4">
@@ -397,7 +397,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Forex, Endeksler, Hisseler ve Emtialar Ticareti Yapın
+                                Торгуйте Forex, индексами, акциями и товарами
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -407,7 +407,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Dünya çapındaki piyasalara 24 saat / 7 gün erişin
+                                Получите доступ к мировым рынкам 24 часа в сутки / 7 дней в неделю
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -417,7 +417,7 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Çok dilli müşteri desteği
+                                Многоязычная поддержка клиентов
                             </p>
                         </li>
                         <li class="flex items-start">
@@ -427,14 +427,14 @@
                                 </svg>
                             </div>
                             <p class="ml-3 text-lg text-gray-300">
-                                Mobil uygulamalarımızda hareket halinde ticaret yapın
+                                Торгуйте на ходу в наших мобильных приложениях
                             </p>
                         </li>
                     </ul>
 
                     <div class="mt-8">
                         <a href="about" title="Learn {{$settings->site_name}}" class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 transition-all duration-200">
-                            Daha Fazla Bilgi Edinin
+                            Узнать больше
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -466,17 +466,17 @@
                 <!-- Content -->
                 <div class="relative z-10 text-center max-w-2xl mx-auto">
                     <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                        Kripto Para Ticareti Yapmaya Hazır mısınız?
+                        Готовы торговать криптовалютой?
                     </h2>
                     <p class="mt-4 text-xl text-blue-100">
-                        Kripto para ve diğer varlıkları ticaret yapmak için platformumuzu kullanan binlerce trader'a katılın.
+                        Присоединяйтесь к тысячам трейдеров, которые используют нашу платформу для торговли криптовалютой и другими активами.
                     </p>
                     <div class="mt-8 flex flex-wrap justify-center gap-4">
                         <a href="/register" class="px-8 py-4 text-base font-medium text-blue-900 bg-white border border-transparent rounded-lg shadow-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 transition-all duration-200">
-                            Ücretsiz Hesap Oluşturun
+                            Создать бесплатный аккаунт
                         </a>
                         <a href="login" class="px-8 py-4 text-base font-medium text-white bg-transparent border border-white rounded-lg shadow-lg hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-800 transition-all duration-200">
-                            Giriş
+                            Войти
                         </a>
                     </div>
                 </div>

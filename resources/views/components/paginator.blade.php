@@ -1,6 +1,6 @@
 <div class="my-3">
     @isset($links->current_page)
-        <nav aria-label="Page navigation example">
+        <nav aria-label="Пример навигации по страницам">
             <ul class="pagination justify-content-start pagination-sm">
                 @foreach ($links->links as $link)
                     @php

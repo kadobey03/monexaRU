@@ -26,7 +26,7 @@
 				<h1> @yield('code') </h1>
 			</div>
 			<h2>@yield('message')</h2>
-			<a href="{{ url()->previous() }}" class="home-btn">Go Back</a>
+			<a href="{{ url()->previous() }}" class="home-btn">Назад</a>
 		</div>
 	</div>
 </body>

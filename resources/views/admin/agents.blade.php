@@ -13,7 +13,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Temsilciler</h1>
+                    <h1 class="title1 ">Представители</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -22,13 +22,13 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="bs-example widget-shadow table-responsive" data-example-id="hoverable-table">
                             <a href="#" data-toggle="modal" data-target="#addagentModal" class="btn btn-lg"
                                 style="margin:10px;"> <i class="fa fa-plus"></i>
-                                Temsilci Ekle</a>
+                                Добавить представителя</a>
                             <table id="ShipTable" class="table table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Temsilci Adı</th>
-                                        <th>Yönlendirilen Müşteriler</th>
-                                        <th>Seçenek(ler)</th>
+                                        <th>Имя представителя</th>
+                                        <th>Привлеченные клиенты</th>
+                                        <th>Опции</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +45,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
 
                                                 <a class="btn "
                                                     href="{{ url('admin/dashboard/delagent') }}/{{ $agent->id }}"
-                                                    style="color:red;" title="Remove agent clients">
+                                                    style="color:red;" title="Удалить представителя">
                                                     <i class="fa fa-times"></i>
                                                 </a>
                                             </td>
@@ -60,7 +60,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <div class="modal-content">
                                             <div class="modal-header  ">
 
-                                                <h4 class="modal-title "><strong>Temsilci Ekle.</strong></h4>
+                                                <h4 class="modal-title "><strong>Добавить представителя</strong></h4>
                                                 <button type="button" class="close " data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body ">
@@ -72,11 +72,11 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                             </option>
                                                         @endforeach
                                                     </select><br>
-                                                    <input class="form-control  " placeholder="Yönlendirilen kullanıcıları artır"
+                                                    <input class="form-control  " placeholder="Увеличить привлеченных пользователей"
                                                         type="number" min="0" name="referred_users"
                                                         value="0"><br />
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <input type="submit" class="btn " value="Gönder">
+                                                    <input type="submit" class="btn " value="Отправить">
                                                 </form>
                                             </div>
                                         </div>

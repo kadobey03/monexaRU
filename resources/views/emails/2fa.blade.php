@@ -1,12 +1,12 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-#2FA kodu.
+#Код 2FA.
 
-Hesabınız kullanılarak geçici bir 2FA kodu isteği yapıldı. <br>
-Lütfen aşağıdaki detayları kullanarak kimlik doğrulayın:<br>
-2FA kodu: <strong>{!! $demo->message !!}</strong> <br>
+Для вашей учетной записи был запрошен временный код 2FA. <br>
+Пожалуйста, подтвердите свою личность, используя следующие данные:<br>
+Код 2FA: <strong>{!! $demo->message !!}</strong> <br>
 
-Teşekkürler,<br>
+Спасибо,<br>
 {{ $demo->sender }}.
 @endcomponent
 {{-- blade-formatter-disable --}}

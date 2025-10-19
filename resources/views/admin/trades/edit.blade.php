@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Edit Trade')
+@section('title', 'Редактировать сделку')
 @section('content')
 
 @include('admin.topmenu')
@@ -9,7 +9,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Edit Trade</h4>
+                <h4 class="page-title">Редактировать сделку</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="{{ route('admin.dashboard') }}">
@@ -20,13 +20,13 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.trades.index') }}">Trades</a>
+                        <a href="{{ route('admin.trades.index') }}">Сделки</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Edit</a>
+                        <a href="#">Редактировать</a>
                     </li>
                 </ul>
             </div>
@@ -71,11 +71,11 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">
-                                    <i class="fas fa-edit mr-2"></i>Edit Trade #{{ $trade->id }}
+                                    <i class="fas fa-edit mr-2"></i>Редактировать сделку #{{ $trade->id }}
                                 </h4>
                                 <div class="ml-auto">
                                     <a href="{{ route('admin.trades.index') }}" class="btn btn-secondary btn-sm">
-                                        <i class="fas fa-arrow-left mr-1"></i>Back to Trades
+                                        <i class="fas fa-arrow-left mr-1"></i>Назад к сделкам
                                     </a>
                                 </div>
                             </div>
@@ -85,10 +85,10 @@
                             <div class="row mb-4">
                                 <div class="col-md-12">
                                     <div class="alert alert-info">
-                                        <h6><i class="fas fa-user mr-2"></i>Trade Owner Information</h6>
-                                        <strong>Name:</strong> {{ $trade->user->name ?? 'N/A' }}<br>
+                                        <h6><i class="fas fa-user mr-2"></i>Информация о владельце сделки</h6>
+                                        <strong>Имя:</strong> {{ $trade->user->name ?? 'N/A' }}<br>
                                         <strong>Email:</strong> {{ $trade->user->email ?? 'N/A' }}<br>
-                                        <strong>Created:</strong> {{ $trade->created_at->format('M d, Y H:i') }}
+                                        <strong>Создано:</strong> {{ $trade->created_at->format('M d, Y H:i') }}
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="assets">Asset <span class="text-danger">*</span></label>
+                                            <label for="assets">Актив <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control @error('assets') is-invalid @enderror"
                                                    id="assets" name="assets" value="{{ old('assets', $trade->assets) }}" required>
                                             @error('assets')
@@ -110,10 +110,10 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="symbol">Symbol</label>
+                                            <label for="symbol">Символ</label>
                                             <input type="text" class="form-control @error('symbol') is-invalid @enderror"
                                                    id="symbol" name="symbol" value="{{ old('symbol', $trade->symbol) }}"
-                                                   placeholder="e.g., BTC/USD">
+                                                   placeholder="например, BTC/USD">
                                             @error('symbol')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -124,9 +124,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="type">Trade Type <span class="text-danger">*</span></label>
+                                            <label for="type">Тип сделки <span class="text-danger">*</span></label>
                                             <select class="form-control @error('type') is-invalid @enderror" id="type" name="type" required>
-                                                <option value="">Select Type</option>
+                                                <option value="">Выберите тип</option>
                                                 <option value="Buy" {{ old('type', $trade->type) == 'Buy' ? 'selected' : '' }}>Buy</option>
                                                 <option value="Sell" {{ old('type', $trade->type) == 'Sell' ? 'selected' : '' }}>Sell</option>
                                             </select>
@@ -137,7 +137,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="amount">Amount ($) <span class="text-danger">*</span></label>
+                                            <label for="amount">Сумма ($) <span class="text-danger">*</span></label>
                                             <input type="number" class="form-control @error('amount') is-invalid @enderror"
                                                    id="amount" name="amount" value="{{ old('amount', $trade->amount) }}"
                                                    step="0.01" min="0" required>
@@ -151,11 +151,11 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="leverage">Leverage</label>
+                                            <label for="leverage">Кредитное плечо</label>
                                             <input type="number" class="form-control @error('leverage') is-invalid @enderror"
                                                    id="leverage" name="leverage" value="{{ old('leverage', $trade->leverage) }}"
                                                    min="1" max="1000">
-                                            <small class="form-text text-muted">Leave empty for no leverage</small>
+                                            <small class="form-text text-muted">Оставьте пустым для отсутствия кредитного плеча</small>
                                             @error('leverage')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -163,11 +163,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="profit_earned">Profit/Loss ($)</label>
+                                            <label for="profit_earned">Прибыль/Убыток ($)</label>
                                             <input type="number" class="form-control @error('profit_earned') is-invalid @enderror"
                                                    id="profit_earned" name="profit_earned" value="{{ old('profit_earned', $trade->profit_earned) }}"
                                                    step="0.01">
-                                            <small class="form-text text-muted">Positive for profit, negative for loss</small>
+                                            <small class="form-text text-muted">Положительное для прибыли, отрицательное для убытка</small>
                                             @error('profit_earned')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -178,7 +178,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="active">Status <span class="text-danger">*</span></label>
+                                            <label for="active">Статус <span class="text-danger">*</span></label>
                                             <select class="form-control @error('active') is-invalid @enderror" id="active" name="active" required>
                                                 <option value="yes" {{ old('active', $trade->active) == 'yes' ? 'selected' : '' }}>Active</option>
                                                 <option value="expired" {{ old('active', $trade->active) == 'expired' ? 'selected' : '' }}>Expired</option>
@@ -190,7 +190,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="expire_date">Expiry Date</label>
+                                            <label for="expire_date">Дата истечения</label>
                                             <input type="datetime-local" class="form-control @error('expire_date') is-invalid @enderror"
                                                    id="expire_date" name="expire_date"
                                                    value="{{ old('expire_date', $trade->expire_date ? \Carbon\Carbon::parse($trade->expire_date)->format('Y-m-d\TH:i') : '') }}">
@@ -207,10 +207,10 @@
                                     <div class="col-md-12">
                                         <div class="form-group text-right">
                                             <a href="{{ route('admin.trades.index') }}" class="btn btn-secondary mr-2">
-                                                <i class="fas fa-times mr-1"></i>Cancel
+                                                <i class="fas fa-times mr-1"></i>Отмена
                                             </a>
                                             <button type="submit" class="btn btn-primary">
-                                                <i class="fas fa-save mr-1"></i>Update Trade
+                                                <i class="fas fa-save mr-1"></i>Обновить сделку
                                             </button>
                                         </div>
                                     </div>
@@ -227,7 +227,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">
-                                <i class="fas fa-bolt mr-2"></i>Quick Actions
+                                <i class="fas fa-bolt mr-2"></i>Быстрые действия
                             </h4>
                         </div>
                         <div class="card-body">
@@ -235,13 +235,13 @@
                                 <div class="col-md-6">
                                     <button type="button" class="btn btn-success btn-block"
                                             onclick="showAddProfitForm({{ $trade->id }})">
-                                        <i class="fas fa-plus mr-2"></i>Add Profit to User ROI
+                                        <i class="fas fa-plus mr-2"></i>Добавить прибыль к ROI пользователя
                                     </button>
                                 </div>
                                 <div class="col-md-6">
                                     <button type="button" class="btn btn-danger btn-block"
                                             onclick="deleteTrade({{ $trade->id }})">
-                                        <i class="fas fa-trash mr-2"></i>Delete This Trade
+                                        <i class="fas fa-trash mr-2"></i>Удалить эту сделку
                                     </button>
                                 </div>
                             </div>

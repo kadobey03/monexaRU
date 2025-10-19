@@ -1,65 +1,65 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-# Para Yatırma Onayı - {{$foramin  ? 'Yönetici Bildirimi' : 'Ticaret Yolculuğunuza Hoş Geldiniz'}}
+# Подтверждение депозита - {{$foramin  ? 'Уведомление администратора' : 'Добро пожаловать в ваше торговое путешествие'}}
 
 @if ($foramin)
-## İdari Uyarı: Yeni Para Yatırma Alındı
+## Административное предупреждение: Получен новый депозит
 
-Sayın Yönetici,
+Уважаемый администратор,
 
-Yeni bir para yatırmanın başarıyla alındığını bildirmekten memnuniyet duyuyoruz:
+Мы рады сообщить, что новый депозит был успешно получен:
 
-**Para Yatırma Detayları:**
-- **Müşteri:** {{$user->name}}
-- **Miktar:** {{$user->currency}}{{number_format($deposit->amount, 2)}}
-- **Durum:** {{$deposit->status}}
-- **Tarih:** {{now()->format('F j, Y \a\t g:i A')}}
+**Детали депозита:**
+- **Клиент:** {{$user->name}}
+- **Сумма:** {{$user->currency}}{{number_format($deposit->amount, 2)}}
+- **Статус:** {{$deposit->status}}
+- **Дата:** {{now()->format('F j, Y \a\t g:i A')}}
 
 @if($deposit->status != "Processed")
-**Eylem Gerekli:** Lütfen yönetici panosu aracılığıyla bu para yatırmayı inceleyin ve işleyin.
+**Требуется действие:** Пожалуйста, проверьте и обработайте этот депозит через административную панель.
 
 @component('mail::button', ['url' => config('app.url').'/admin/dashboard'])
-Para Yatırmayı İşle
+Обработать депозит
 @endcomponent
 @else
-Bu para yatırma otomatik olarak işlendi ve müşterinin hesabına yatırıldı.
+Этот депозит был автоматически обработан и зачислен на счет клиента.
 @endif
 
 @else
-## Sayın {{$user->name}},
+## Уважаемый {{$user->name}},
 
 @if ($deposit->status == 'Processed')
-**Tebrikler! Para yatırmanız başarıyla işlendi.**
+**Поздравляем! Ваш депозит успешно обработан.**
 
-**{{$user->currency}}{{number_format($deposit->amount, 2)}}** tutarındaki para yatırmanızın alındığını ve işlendiğini doğrulamaktan memnuniyet duyuyoruz. Ticaret hesabınıza tam tutar yatırıldı.
+Мы рады подтвердить, что ваш депозит в размере **{{$user->currency}}{{number_format($deposit->amount, 2)}}** был получен и обработан. Полная сумма была зачислена на ваш торговый счет.
 
-**Sonraki Ne?**
-- Fonlarınız artık ticaret için kullanılabilir
-- Gelişmiş ticaret araçlarımızı ve analizlerimizi keşfedin
-- Bugün yatırım portföyünüzü oluşturmaya başlayın
+**Что дальше?**
+- Ваши средства теперь доступны для торговли
+- Исследуйте наши продвинутые торговые инструменты и аналитику
+- Начните создавать свой инвестиционный портфель сегодня
 
 @component('mail::button', ['url' => config('app.url').'/dashboard'])
-Şimdi Ticaret Başlat
+Начать торговлю сейчас
 @endcomponent
 
-**Yatırım Fırsatları Bekliyor:**
-- Kopya Ticaret özelliğimizle başarılı tüccarları kopyalayın
-- Gerçek zamanlı piyasa verilerine ve gelişmiş grafiklere erişin
-- Algoritmik ticaret araçlarımızdan yararlanın
+**Инвестиционные возможности ждут:**
+- Копируйте успешных трейдеров с нашей функцией копирования торговли
+- Получите доступ к данным реального времени рынка и продвинутым графикам
+- Воспользуйтесь нашими алгоритмическими торговыми инструментами
 
 @else
-**Para yatırmanız işleniyor - Bizi seçtiğiniz için teşekkür ederiz!**
+**Ваш депозит обрабатывается - Спасибо за выбор нас!**
 
-**{{$user->currency}}{{number_format($deposit->amount, 2)}}** tutarındaki para yatırmanızı başarıyla aldık. Finans ekibimiz şu anda işleminizi inceliyor ve doğruluyor.
+Мы успешно получили ваш депозит в размере **{{$user->currency}}{{number_format($deposit->amount, 2)}}**. Наша финансовая команда в настоящее время проверяет и подтверждает вашу транзакцию.
 
-**İşleme Durumu:** İnceleme Altında
-**Beklenen İşleme Süresi:** 1-3 iş saati
+**Статус обработки:** На проверке
+**Ожидаемое время обработки:** 1-3 рабочих часа
 
 
-Para yatırmanız doğrulandıktan ve ticaret hesabınıza yatırıldıktan sonra anında bir bildirim alacaksınız.
+Как только ваш депозит будет подтвержден и зачислен на ваш торговый счет, вы получите мгновенное уведомление.
 
 @component('mail::panel')
-**Güvenlik Bildirimi:** Fonlarınızın işleme süresi boyunca güvenli ve güvende olmasını sağlamak için banka düzeyinde güvenlik protokolleri kullanıyoruz.
+**Уведомление о безопасности:** Мы используем протоколы безопасности банковского уровня, чтобы обеспечить безопасность и сохранность ваших средств во время обработки.
 @endcomponent
 
 @endif
@@ -67,19 +67,19 @@ Para yatırmanız doğrulandıktan ve ticaret hesabınıza yatırıldıktan sonr
 
 ---
 
-**Yardıma İhtiyacınız Var mı?**
-Herhangi bir sorunuzda size yardımcı olmak için özel destek ekibimiz 7/24 hazır.
+**Нужна помощь?**
+Наша специальная команда поддержки готова помочь вам с любыми вопросами 24/7.
 
 @component('mail::button', ['url' => config('app.url').'/support', 'color' => 'success'])
-Desteğe Başvurun
+Обратиться в поддержку
 @endcomponent
 
-Saygılarımla,<br>
-**{{config('app.name')}} Ekibi**<br>
-*Güvenilir Ticaret Ortağınız*
+С уважением,<br>
+**Команда {{config('app.name')}}**<br>
+*Ваш надежный торговый партнер*
 
 @component('mail::subcopy')
-Bu, {{config('app.name')}}'dan otomatik bir mesajdır. Güvenlik amacıyla, lütfen bu e-postayı kimseyle paylaşmayın. Bu para yatırmayı başlatmadıysanız, lütfen destek ekibimizle hemen iletişime geçin.
+Это автоматическое сообщение от {{config('app.name')}}. В целях безопасности, пожалуйста, не делитесь этим письмом ни с кем. Если вы не инициировали этот депозит, пожалуйста, немедленно свяжитесь с нашей командой поддержки.
 @endcomponent
 
 @endcomponent

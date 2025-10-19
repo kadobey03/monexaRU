@@ -14,12 +14,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <h5 class="card-title">No Master Trading Account</h5>
-                                        <p>Add a master account</p>
+                                        <h5 class="card-title">Нет главного торгового счета</h5>
+                                        <p>Добавить главный счет</p>
                                         <a href="{{ route('create.master') }}" type="button"
                                             class="text-white btn btn-primary" data-toggle="modal"
                                             data-target="#masterModal">
-                                            Add Account
+                                            Добавить счет
                                         </a>
                                     </div>
 
@@ -29,11 +29,11 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <p>Add a master account</p>
+                                        <p>Добавить главный счет</p>
                                         <a href="{{ route('create.master') }}" type="button"
                                             class="text-white btn btn-primary" data-toggle="modal"
                                             data-target="#masterModal">
-                                            Add Account
+                                            Добавить счет
                                         </a>
                                     </div>
                                 </div>
@@ -42,28 +42,28 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-12 mb-2">
-                                            <h1 class=" font-weight-bold d-md-block d-none">Your Master(Provider) Accounts
+                                            <h1 class=" font-weight-bold d-md-block d-none">Ваши главные (поставщик) счета
                                             </h1>
-                                            <h2 class=" font-weight-bold d-md-none d-block">Your Master(Provider) Accounts
+                                            <h2 class=" font-weight-bold d-md-none d-block">Ваши главные (поставщик) счета
                                             </h2>
                                             <p class="text-primary font-weight-bold">
-                                                NOTE: Your master Account will be
-                                                deleted after
-                                                10 days of
-                                                expiration and have not been renewed.
+                                                ПРИМЕЧАНИЕ: Ваш главный счет будет
+                                                удален через
+                                                10 дней после
+                                                истечения срока действия, если не будет продлен.
                                             </p>
                                             <div class=" table-responsive">
                                                 <table class="table table-hover">
                                                     <thead>
                                                         <tr>
-                                                            <th>Account ID</th>
-                                                            <th>Account Password</th>
-                                                            <th>Account Type</th>
-                                                            <th>Account Name</th>
-                                                            <th>Server</th>
-                                                            <th>Deployment status</th>
-                                                            <th>Started at</th>
-                                                            <th>Expiring at</th>
+                                                            <th>ID счета</th>
+                                                            <th>Пароль счета</th>
+                                                            <th>Тип счета</th>
+                                                            <th>Имя счета</th>
+                                                            <th>Сервер</th>
+                                                            <th>Статус развертывания</th>
+                                                            <th>Начато в</th>
+                                                            <th>Истекает в</th>
                                                             <th></th>
                                                         </tr>
                                                     </thead>
@@ -104,20 +104,20 @@
                                                                     @if (now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($item['end_date'])))
                                                                         <a href="#" class="btn btn-info btn-sm m-1"
                                                                             data-toggle="modal"
-                                                                            data-target="#renewModal{{ $item['id'] }}">Renew</a>
+                                                                            data-target="#renewModal{{ $item['id'] }}">Продлить</a>
                                                                     @endif
                                                                     <button type="button" data-toggle="modal"
                                                                         data-target="#strategyModal{{ $item['id'] }}"
                                                                         class="btn btn-secondary btn-sm m-1">
                                                                         <span>
-                                                                            Update Strategy
+                                                                            Обновить стратегию
                                                                         </span>
                                                                     </button>
                                                                     <button type="button" data-toggle="modal"
                                                                         data-target="#deleteModal{{ $item['id'] }}"
                                                                         class="btn btn-danger btn-sm m-1">
                                                                         <i class="fa fa-trash"></i>
-                                                                        <span> Delete</span>
+                                                                        <span> Удалить</span>
                                                                     </button>
                                                                     @include('admin.subscription.master.delete-master')
                                                                     @include('admin.subscription.master.renew-master')
@@ -126,7 +126,7 @@
                                                         @empty
                                                             <tr>
                                                                 <td colspan="9" class="text-center">
-                                                                    No Data Available
+                                                                    Данные отсутствуют
                                                                 </td>
                                                             </tr>
                                                         @endforelse

@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @inject('content', 'App\Http\Controllers\FrontController')
-@section('title', 'Eğitim Merkezi')
+@section('title', 'Образовательный Центр')
 
 @section('content')
 
@@ -28,11 +28,11 @@
     <div class="container mx-auto px-4 py-24 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 uppercase bg-emerald-900 bg-opacity-30 rounded-full mb-6">
-                Bilgi Güçtür
+                Знание - Сила
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Eğitim Merkezi</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Образовательный Центр</h1>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                Finansal piyasaları kapsamlı eğitim kaynaklarımızla ustalaşın, tüm seviyelerdeki traderler için tasarlandı.
+                Освойте финансовые рынки с помощью наших комплексных образовательных ресурсов, предназначенных для трейдеров всех уровней.
             </p>
 
             <script type="application/ld+json">
@@ -62,7 +62,7 @@
 
             <div class="flex justify-center mt-8">
                 <a href="#markets" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg flex items-center transition duration-300">
-                    <span>Piyasaları Keşfet</span>
+                    <span>Изучить Рынки</span>
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
@@ -77,11 +77,11 @@
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full mb-4">
-                Ticaret Eğitimi
+                Торговое Образование
             </div>
-            <h2 class="text-3xl font-bold text-white mb-4">Ticaret Becerilerinizi Geliştirin</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">Развивайте Свои Торговые Навыки</h2>
             <p class="text-gray-300 max-w-2xl mx-auto">
-                Kendinizi eğitin ve kapsamlı kaynaklarımız ve sağlam ticaret araçlarımızla ticaret stratejilerinizi güçlendirin.
+                Обучайтесь с помощью наших комплексных ресурсов и укрепляйте свои торговые стратегии с помощью надежных торговых инструментов.
             </p>
         </div>
 
@@ -100,12 +100,12 @@
                     </div>
 
                     <p class="text-gray-300 mb-4">
-                        Forex, yabancı döviz değişimi için kısa bir kelimedir. Forex piyasası, para birimlerinin işlem gördüğü bir yerdir. 2019 itibarıyla günlük ortalama cirosu 6.6 trilyon ABD doları olan dünyanın en büyük ve en likit finansal piyasasıdır. Forex piyasasının temeli, döviz kurlarındaki dalgalanmalardır. Forex traderları, para birimi paralarının fiyat dalgalanmalarına spekülasyon yapar, alış ve satış fiyatları arasındaki farktan para kazanır.
+                        Forex - это сокращение от иностранного обмена валюты. Рынок Forex - это место, где торгуют валютами. По состоянию на 2019 год это крупнейший и наиболее ликвидный финансовый рынок в мире с ежедневным средним оборотом 6,6 триллиона долларов США. Основа рынка Forex - колебания валютных курсов. Трейдеры Forex спекулируют на колебаниях цен валютных пар и зарабатывают на разнице между ценами покупки и продажи.
                     </p>
 
                     <div class="mt-4 flex justify-end">
                         <span class="text-blue-400 group-hover:text-blue-300 transition duration-300 flex items-center">
-                            Daha fazla öğren
+                            Узнать Больше
                             <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -128,12 +128,12 @@
                     </div>
 
                     <p class="text-gray-300 mb-4">
-                        CFD veya Fark Sözleşmesi, fiyatların yükselip düşmesinden bağımsız olarak hisse senetlerinin fiyat hareketlerinde işlem yapmanızı sağlayan bir tür finansal araçtır. CFD'nin temel avantajı, temeldeki varlığı gerçekte sahip olmadan bir varlığın fiyat hareketlerine (yukarı veya aşağı) spekülasyon yapma fırsatıdır.
+                        CFD или Контракт на Разницу - это тип финансового инструмента, который позволяет торговать движениями цен акций независимо от того, растут или падают цены. Основное преимущество CFD - возможность спекулировать на движениях цен актива (вверх или вниз) без фактического владения базовым активом.
                     </p>
 
                     <div class="mt-4 flex justify-end">
                         <span class="text-emerald-400 group-hover:text-emerald-300 transition duration-300 flex items-center">
-                            Daha fazla öğren
+                            Узнать Больше
                             <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -152,16 +152,16 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Kripto Para Birimi</h3>
+                        <h3 class="text-xl font-bold text-white">Криптовалюта</h3>
                     </div>
 
                     <p class="text-gray-300 mb-4">
-                        Kripto para birimi, kripto para birimi veya kripto, bir değişim aracı olarak çalışmak üzere tasarlanmış dijital bir varlıktır; burada bireysel madeni para sahipliği kayıtları, işlem kayıtlarını güvence altına almak, ek madeni paraların oluşturulmasını kontrol etmek ve madeni para sahipliğinin transferini doğrulamak için güçlü kriptografi kullanarak bilgisayarlı bir veritabanı biçiminde mevcut bir deftere kaydedilir.
+                        Криптовалюта - это цифровой актив, предназначенный для работы в качестве средства обмена; где записи о владении отдельными монетами, записи транзакций хранятся в распределенном реестре в форме компьютерной базы данных с использованием мощной криптографии для защиты записей транзакций, контроля создания дополнительных монет и проверки передачи владения монетами.
                     </p>
 
                     <div class="mt-4 flex justify-end">
                         <span class="text-purple-400 group-hover:text-purple-300 transition duration-300 flex items-center">
-                            Daha fazla öğren
+                            Узнать Больше
                             <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -180,16 +180,16 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Dijital Opsiyonlar</h3>
+                        <h3 class="text-xl font-bold text-white">Цифровые Опционы</h3>
                     </div>
 
                     <p class="text-gray-300 mb-4">
-                        Dijital Opsiyonlar, genel fiyat yönü üzerinde değil, fiyat değişikliğinin büyüklüğü üzerinde spekülasyon yapmanızı sağlayan bir ticaret aracıdır. Temel varlığın fiyatı trader tarafından seçilen eşik değere ( 'strike price' olarak bilinir) ulaşacak olursa, ödeme %900'e kadar çıkabilir. Ancak, başarısız bir ticaret yatırımın kaybıyla sonuçlanır.
+                        Цифровые Опционы - это торговый инструмент, который позволяет спекулировать на величине изменения цены, а не на общем направлении цены. Если цена базового актива достигает порогового значения, выбранного трейдером (известного как 'страйк-цена'), выплата может достигать 900%. Однако неудачная торговля приводит к потере инвестиций.
                     </p>
 
                     <div class="mt-4 flex justify-end">
                         <span class="text-indigo-400 group-hover:text-indigo-300 transition duration-300 flex items-center">
-                            Daha fazla öğren
+                            Узнать Больше
                             <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -217,11 +217,11 @@
     <div class="container mx-auto px-4 relative">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 uppercase bg-emerald-900 bg-opacity-30 rounded-full mb-4">
-                Ticaret Araç Seti
+                Торговый Инструментарий
             </div>
-            <h2 class="text-3xl font-bold text-white mb-4">Daha Fazla Keşfedilecek</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">Больше для Исследования</h2>
             <p class="text-gray-300 max-w-2xl mx-auto">
-                Ticaret deneyiminizi geliştirmek ve sonuçlarınızı iyileştirmek için tasarlanan gelişmiş ticaret özelliklerimizi keşfedin.
+                Исследуйте наши расширенные торговые функции, предназначенные для улучшения вашего торгового опыта и результатов.
             </p>
         </div>
 
@@ -240,15 +240,15 @@
                         </svg>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">Nihai Platform</h3>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Идеальная Платформа</h3>
 
                     <p class="text-gray-300 flex-grow">
-                        Çoklu grafik düzeni, teknik analiz, tarihsel fiyatlar ve fazlası. Bir platformda aradığınız her şey — tercih ettiğiniz cihazda.
+                        Множественные графики, технический анализ, исторические цены и многое другое. Все, что вы ищете в платформе — на вашем предпочтительном устройстве.
                     </p>
 
                     <div class="mt-6 pt-4 border-t border-gray-700" x-show="activeCard === 1" x-transition>
                         <a href="#" class="flex items-center justify-center text-emerald-400 hover:text-emerald-300 transition">
-                            <span>Platformu keşfedin</span>
+                            <span>Исследовать Платформу</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -271,15 +271,15 @@
                         </svg>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">Analiz ve Uyarılar</h3>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Анализ и Уведомления</h3>
 
                     <p class="text-gray-300 flex-grow">
-                        Haber Akışımız ve Ekonomik Takvimlerimiz ile temel ve teknik analizden en iyi şekilde yararlanın. 100'den fazla en yaygın kullanılan teknik gösterge.
+                        В полной мере используйте фундаментальный и технический анализ с помощью наших новостных лент и экономических календарей. Более 100 наиболее часто используемых технических индикаторов.
                     </p>
 
                     <div class="mt-6 pt-4 border-t border-gray-700" x-show="activeCard === 2" x-transition>
                         <a href="#" class="flex items-center justify-center text-emerald-400 hover:text-emerald-300 transition">
-                            <span>Araçları görüntüle</span>
+                            <span>Посмотреть Инструменты</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -302,15 +302,15 @@
                         </svg>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">Demo Hesap</h3>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Демо-Аккаунт</h3>
 
                     <p class="text-gray-300 flex-grow">
-                        Demo/alıştırma hesabı ve eğitim içeriğiyle becerilerinizi ustalaşın. Herhangi bir risk olmadan gerçek piyasa koşullarında sanal fonlarla pratik yapın.
+                        Освойте свои навыки с помощью демо/тренировочного аккаунта и образовательного контента. Практикуйтесь с виртуальными средствами в реальных рыночных условиях без какого-либо риска.
                     </p>
 
                     <div class="mt-6 pt-4 border-t border-gray-700" x-show="activeCard === 3" x-transition>
                         <a href="#" class="flex items-center justify-center text-emerald-400 hover:text-emerald-300 transition">
-                            <span>Demo'yu başlat</span>
+                            <span>Запустить Демо</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -333,15 +333,15 @@
                         </svg>
                     </div>
 
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">Risk Yönetimi</h3>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Управление Рисками</h3>
 
                     <p class="text-gray-300 flex-grow">
-                        Stop Loss/Take Profit, Negatif bakiye koruması ve Trailing Stop gibi özelliklerle kayıplarınızı ve karlarınızı önceden belirlediğiniz seviyelerde yönetebilirsiniz.
+                        Управляйте своими потерями и прибылями на заранее определенных уровнях с помощью таких функций, как Stop Loss/Take Profit, защита от отрицательного баланса и Trailing Stop.
                     </p>
 
                     <div class="mt-6 pt-4 border-t border-gray-700" x-show="activeCard === 4" x-transition>
                         <a href="#" class="flex items-center justify-center text-emerald-400 hover:text-emerald-300 transition">
-                            <span>Daha fazla öğren</span>
+                            <span>Узнать Больше</span>
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
@@ -365,19 +365,19 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-sm rounded-xl p-8 border border-gray-700">
             <div class="text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Ticaret Yapmaya Hazır mısınız?</h2>
+                <h2 class="text-3xl font-bold text-white mb-4">Готовы к Торговле?</h2>
                 <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Bilginizi uygulayın ve gelişmiş platformumuzla ticaret yolculuğunuza başlayın. Bugün bir hesap oluşturun ve tüm eğitim kaynaklarımıza erişin.
+                    Примените свои знания и начните свое торговое путешествие с нашей продвинутой платформой. Создайте аккаунт сегодня и получите доступ ко всем нашим образовательным ресурсам.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="register" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-emerald-500 text-white font-medium rounded-lg transition duration-300 transform hover:scale-105 flex items-center justify-center">
-                        <span>Hesap Oluştur</span>
+                        <span>Создать Аккаунт</span>
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
                     </a>
                     <a href="login" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition duration-300 flex items-center justify-center">
-                        <span>Giriş Yap</span>
+                        <span>Войти</span>
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
                         </svg>

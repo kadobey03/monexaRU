@@ -6,7 +6,7 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Yeni Yönetici Ekle</h1>
+                    <h1 class="title1 ">Добавить нового администратора</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -16,7 +16,7 @@
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <h4 class="">Ad</h4>
+                                <h4 class="">Имя</h4>
                                 <div>
                                     <input id="name" type="text" class="form-control  " name="fname"
                                         value="{{ old('fname') }}" required>
@@ -28,7 +28,7 @@
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('l_name') ? ' has-error' : '' }}">
-                                <h4 class="">Soyad</h4>
+                                <h4 class="">Фамилия</h4>
                                 <div>
                                     <input id="name" type="text" class="form-control  " name="l_name"
                                         value="{{ old('l_name') }}" required>
@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <h4 class="">E-Posta Adresi</h4>
+                                <h4 class="">Адрес электронной почты</h4>
 
                                 <div>
                                     <input id="email" type="email" class="form-control  " name="email"
@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <h4 class="">Telefon Numarası</h4>
+                                <h4 class="">Номер телефона</h4>
                                 <div>
                                     <input id="phone" type="number" class="form-control  " name="phone"
                                         value="{{ old('phone') }}" required>
@@ -69,17 +69,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <h4 class="">Tür</h4>
+                                <h4 class="">Тип</h4>
                                 <select class="form-control  " name="type">
-                                    <option>Süper Yönetici</option>
-                                    <option>Yönetici</option>
-                                    <option>Dönüştürme Temsilcisi</option>
+                                    <option>Супер администратор</option>
+                                    <option>Администратор</option>
+                                    <option>Представитель по конверсии</option>
                                 </select><br>
                             </div>
 
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-                                <h4 class="">Şifre</h4>
+                                <h4 class="">Пароль</h4>
                                 <div>
                                     <input id="password" type="password" class="form-control  " name="password" required>
 
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                                <h4 class="">Şifreyi Onayla</h4>
+                                <h4 class="">Подтвердить пароль</h4>
                                 <div>
                                     <input id="password-confirm" type="password" class="form-control  "
                                         name="password_confirmation" required>
@@ -108,7 +108,7 @@
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="px-3 btn btn-primary btn-lg">
-                                        <i class="fa fa-plus"></i> Kullanıcıyı Kaydet
+                                        <i class="fa fa-plus"></i> Сохранить пользователя
                                     </button>
                                 </div>
                             </div>

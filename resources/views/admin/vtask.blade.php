@@ -13,7 +13,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2">
-                    <h1 class="title1 ">View My Task</h1> <br> <br>
+                    <h1 class="title1 ">Просмотр моих задач</h1> <br> <br>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -23,14 +23,14 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <table id="ShipTable" class="table table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Task Title</th>
-                                        <th>Assigned To</th>
-                                        <th>Note</th>
-                                        <th>From Date</th>
-                                        <th>To Date</th>
-                                        <th>Status</th>
-                                        <th>Date Created</th>
-                                        <th>Option</th>
+                                        <th>Название задачи</th>
+                                        <th>Назначено</th>
+                                        <th>Заметка</th>
+                                        <th>Дата начала</th>
+                                        <th>Дата окончания</th>
+                                        <th>Статус</th>
+                                        <th>Дата создания</th>
+                                        <th>Опции</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,9 +52,9 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                             <td>
                                                 @if ($task->status == 'Pending')
                                                     <a href="{{ url('admin/dashboard/markdone') }}/{{ $task->id }}"
-                                                        class="btn btn-primary btn-sm m-1">Mark as Done</a>
+                                                        class="btn btn-primary btn-sm m-1">Отметить как выполненное</a>
                                                 @else
-                                                    <a class="btn btn-success btn-sm m-1">No Action Needed</a>
+                                                    <a class="btn btn-success btn-sm m-1">Действие не требуется</a>
                                                 @endif
 
                                             </td>

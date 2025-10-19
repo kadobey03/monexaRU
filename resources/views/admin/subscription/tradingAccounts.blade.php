@@ -7,24 +7,24 @@
             <div class="page-inner ">
                 <div class="mt-2 mb-4 d-flex justify-content-between">
                     <div class="">
-                        <h1 class="title1">Connected Accounts</h1>
+                        <h1 class="title1">Подключенные счета</h1>
                         <div class="">
-                            <h4 class="m-0">These accounts have be connected to your Master Trading account.
+                            <h4 class="m-0">Эти счета подключены к вашему главному торговому счету.
                             </h4>
                             <ul class="text-primary font-weight-bold">
                                 <li>
-                                    Accounts will be deleted after 10 days of expiration and have not been renewed.
+                                    Счета будут удалены через 10 дней после истечения срока действия, если не будут продлены.
 
                                 <li>
-                                    Accounts will not receive trade if they are not deployed, even if copytrade is on.
+                                    Счета не будут получать сделки, если они не развернуты, даже если копи-трейдинг включен.
 
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div>
-                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addccount">Add
-                            account</button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addccount">Добавить
+                            счет</button>
 
                         <div class="modal fade" id="addccount" tabindex="-1" aria-labelledby="delete" aria-hidden="true">
                             <div class="modal-dialog">
@@ -34,7 +34,7 @@
                                             <i class="fa fa-plus"></i>
                                         </div>
                                         <div>
-                                            <h5 class="mb-1">Add Account</h5>
+                                            <h5 class="mb-1">Добавить счет</h5>
                                         </div>
                                     </div>
                                     <div class="modal-body">
@@ -42,39 +42,39 @@
                                             @csrf
                                             <div class="form-row">
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Login*:</label>
+                                                    <label>Логин*:</label>
                                                     <input class="form-control" type="text" name="login" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Account Password*:</label>
+                                                    <label>Пароль счета*:</label>
                                                     <input class="form-control  " type="text" name="password" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Account Name*:</label>
+                                                    <label>Имя счета*:</label>
                                                     <input class="form-control" type="text" name="name" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Server*:</label>
-                                                    <input class="form-control " Placeholder="E.g. HantecGlobal-live"
+                                                    <label>Сервер*:</label>
+                                                    <input class="form-control " Placeholder="Например, HantecGlobal-live"
                                                         type="text" name="serverName" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Account Type:</label>
-                                                    <input class="form-control  " Placeholder="E.g. Standard" type="text"
+                                                    <label>Тип счета:</label>
+                                                    <input class="form-control  " Placeholder="Например, Standard" type="text"
                                                         name="acntype" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Leverage:</label>
-                                                    <input class="form-control  " Placeholder="E.g. 1:500" type="text"
+                                                    <label>Кредитное плечо:</label>
+                                                    <input class="form-control  " Placeholder="Например, 1:500" type="text"
                                                         name="leverage" required>
                                                 </div>
                                                 <div class="form-group col-md-6 text-left">
-                                                    <label>Currency:</label>
-                                                    <input class="form-control" Placeholder="E.g. USD" type="text"
+                                                    <label>Валюта:</label>
+                                                    <input class="form-control" Placeholder="Например, USD" type="text"
                                                         name="currency" required>
                                                 </div>
                                                 <div class="form-group col-md-12 text-left">
-                                                    <input type="submit" class="btn btn-primary" value="Add Account">
+                                                    <input type="submit" class="btn btn-primary" value="Добавить счет">
                                                 </div>
                                             </div>
                                         </form>
@@ -94,10 +94,10 @@
                                 <div class="col-12">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item">
-                                            <a href="{{ route('msubtrade') }}" class="nav-link ">Submited Accounts</a>
+                                            <a href="{{ route('msubtrade') }}" class="nav-link ">Отправленные счета</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('tacnts') }}" class="nav-link active">Connected Accounts</a>
+                                            <a href="{{ route('tacnts') }}" class="nav-link active">Подключенные счета</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -109,14 +109,14 @@
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Account ID</th>
-                                                    <th>Account Password</th>
-                                                    <th>Account Type</th>
-                                                    <th>Account Name</th>
-                                                    <th>Server</th>
-                                                    <th>Started at</th>
-                                                    <th>Expiring at</th>
-                                                    <th>Deployment</th>
+                                                    <th>ID счета</th>
+                                                    <th>Пароль счета</th>
+                                                    <th>Тип счета</th>
+                                                    <th>Имя счета</th>
+                                                    <th>Сервер</th>
+                                                    <th>Начато в</th>
+                                                    <th>Истекает в</th>
+                                                    <th>Развертывание</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
@@ -148,7 +148,7 @@
                                                                     class="text-danger">{{ \Carbon\Carbon::parse($item['end_date'])->toDayDateTimeString() }}</span>
                                                                 <a href="" class="btn btn-info btn-sm"
                                                                     data-target="#renewModal{{ $item['id'] }}"
-                                                                    data-toggle="modal">Renew</a>
+                                                                    data-toggle="modal">Продлить</a>
                                                             @else
                                                                 <span>{{ \Carbon\Carbon::parse($item['end_date'])->toDayDateTimeString() }}</span>
                                                             @endif
@@ -158,13 +158,13 @@
                                                                 <h2 class="badge badge-success">
                                                                     {{ $item['deployment_status'] }}</h2>
                                                                 <a href="{{ route('acnt.deployment', ['id' => $item['id'], 'deployment' => 'Undeploy']) }}"
-                                                                    class="btn btn-warning btn-sm">Undeploy</a>
+                                                                    class="btn btn-warning btn-sm">Отменить развертывание</a>
                                                             @else
                                                                 <h2 class="badge badge-warning">
                                                                     {{ $item['deployment_status'] }}</h2>
                                                                 @if (!now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($item['end_date'])))
                                                                     <a href="{{ route('acnt.deployment', ['id' => $item['id'], 'deployment' => 'Deploy']) }}"
-                                                                        class="btn btn-success btn-sm">Deploy</a>
+                                                                        class="btn btn-success btn-sm">Развернуть</a>
                                                                 @endif
                                                             @endif
                                                         </td>
@@ -173,18 +173,18 @@
                                                                 <button class="btn btn-sm btn-primary m-1"
                                                                     data-toggle="modal"
                                                                     data-target="#copytrade{{ $item['id'] }}">
-                                                                    Start CopyTrade
+                                                                    Начать копи-трейдинг
                                                                 </button>
                                                                 @include('admin.subscription.subscriber.copytrade')
                                                             @else
                                                                 <span class="badge badge-success mt-1">
-                                                                    Copytrade is ON
+                                                                    Копи-трейдинг включен
                                                                 </span>
-                                                                <span>Provider: {{ $item['provider'] }}</span>
+                                                                <span>Поставщик: {{ $item['provider'] }}</span>
                                                             @endif
                                                             <a href="#" class="btn btn-danger btn-sm m-1"
                                                                 data-toggle="modal" data-target="#deleteModal">
-                                                                Delete Account
+                                                                Удалить счет
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -194,8 +194,8 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Delete
-                                                                        Trading Account
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Удалить
+                                                                        торговый счет
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -203,15 +203,15 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body text-left">
-                                                                    Are you sure you want to detele trading account?
+                                                                    Вы уверены, что хотите удалить торговый счет?
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Close
+                                                                        data-dismiss="modal">Закрыть
                                                                     </button>
                                                                     <a href="{{ route('del.sub', ['id' => $item['id']]) }}"
                                                                         type="button" class="btn btn-danger">
-                                                                        Yes Delete
+                                                                        Да, удалить
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -225,8 +225,8 @@
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Renew
-                                                                        Trading Account
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Продлить
+                                                                        торговый счет
                                                                     </h5>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -234,15 +234,15 @@
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body text-center">
-                                                                    <h3>You will be charged ${{ $amountPerSlot }} for
-                                                                        renewal.</h3>
+                                                                    <h3>С вас будет взята плата ${{ $amountPerSlot }} за
+                                                                        продление.</h3>
                                                                     <form action="{{ route('renew.acnt') }}"
                                                                         method="POST">
                                                                         @csrf
                                                                         <input type="hidden" name="account_id"
                                                                             value="{{ $item['id'] }}">
                                                                         <button type="submit" class="btn btn-primary">
-                                                                            Yes Proceed
+                                                                            Да, продолжить
                                                                         </button>
                                                                     </form>
                                                                 </div>
@@ -252,7 +252,7 @@
                                                 @empty
                                                     <tr>
                                                         <td colspan="9" class="text-center">
-                                                            No Data Available
+                                                            Данные отсутствуют
                                                         </td>
                                                     </tr>
                                                 @endforelse

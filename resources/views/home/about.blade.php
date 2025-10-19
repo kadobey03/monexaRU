@@ -1,7 +1,7 @@
 
 @extends('layouts.base')
 @inject('content', 'App\Http\Controllers\FrontController')
-@section('title', 'Hakkımızda')
+@section('title', 'О нас')
 
 @section('content')
 
@@ -37,14 +37,14 @@
     <div class="relative z-10 px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="text-center">
             <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full">
-                Şirketimiz
+                Наша компания
             </div>
             <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                <span class="block">{{$settings->site_name}} Hakkında</span>
-                <span class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Herkese alım satımı mümkün kılıyoruz</span>
+                <span class="block">О компании {{$settings->site_name}}</span>
+                <span class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Делаем торговлю доступной для всех</span>
             </h1>
             <p class="max-w-2xl mt-5 mx-auto text-xl text-gray-300">
-                İnovasyon, güvenlik ve üstün hizmet aracılığıyla dünyanın en güvenilir alım satım platformu olma misyonumuzu keşfedin
+                Откройте для себя нашу миссию стать самой надежной торговой платформой в мире благодаря инновациям, безопасности и превосходному сервису
             </p>
         </div>
     </div>
@@ -54,7 +54,7 @@
 <section class="py-16 bg-gray-900">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white">Değerlerimiz</h2>
+            <h2 class="text-3xl font-bold text-white">Наши ценности</h2>
             <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400"></div>
         </div>
 
@@ -69,8 +69,8 @@
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
                         <img src="temp/custom/img/users.png" alt="Client Focus" class="w-10 h-10">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Müşteri Odaklı</h3>
-                    <p class="text-gray-300 text-center">En iyi müşteri hizmetini sağlamak temel değerimizdir. 100'den fazla hesap yöneticisi müşterilerimizin ihtiyaçlarına odaklanmıştır.</p>
+                    <h3 class="text-xl font-bold text-white mb-4">Клиентоориентированность</h3>
+                    <p class="text-gray-300 text-center">Предоставление лучшего обслуживания клиентов является нашей основной ценностью. Более 100 менеджеров по работе с клиентами сосредоточены на потребностях наших клиентов.</p>
                 </div>
             </div>
 
@@ -81,8 +81,8 @@
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
                         <img src="temp/custom/img/website.png" alt="Simplicity" class="w-10 h-10">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Basitlik</h3>
-                    <p class="text-gray-300 text-center">Herkes en kolay kullanımlı alım satım platformumuzla trader olabilir. {{$settings->site_name}} tüm modern platformlarda mevcuttur: Web, Windows, MacOS, iPhone, iPad ve Android.</p>
+                    <h3 class="text-xl font-bold text-white mb-4">Простота</h3>
+                    <p class="text-gray-300 text-center">Каждый может стать трейдером с помощью нашей самой простой в использовании торговой платформы. {{$settings->site_name}} доступен на всех современных платформах: Web, Windows, MacOS, iPhone, iPad и Android.</p>
                 </div>
             </div>
 
@@ -93,8 +93,8 @@
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
                         <img src="temp/custom/img/speed.png" alt="Speed" class="w-10 h-10">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Hız</h3>
-                    <p class="text-gray-300 text-center">En son teknolojileri kullanarak en hızlı alım satımı sağlıyoruz. Sipariş yürütmelerinde gecikme ve kullanıcı arayüzünde takılma yok.</p>
+                    <h3 class="text-xl font-bold text-white mb-4">Скорость</h3>
+                    <p class="text-gray-300 text-center">Мы обеспечиваем самую быструю торговлю с использованием новейших технологий. Нет задержек в исполнении ордеров и зависаний пользовательского интерфейса.</p>
                 </div>
             </div>
 
@@ -105,8 +105,8 @@
                     <div class="w-20 h-20 mb-6 bg-blue-900 bg-opacity-30 rounded-full flex items-center justify-center">
                         <img src="temp/custom/img/1497835.png" alt="Reliability" class="w-10 h-10">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-4">Güvenilirlik</h3>
-                    <p class="text-gray-300 text-center">Endüstri lideri olarak müşterilerimize ekstra sağlamlık sağlıyoruz. Müşterilerimizin ihtiyaçlarını karşılamak için herkesten daha fazlasını yapıyoruz.</p>
+                    <h3 class="text-xl font-bold text-white mb-4">Надежность</h3>
+                    <p class="text-gray-300 text-center">Как лидер отрасли мы обеспечиваем нашим клиентам дополнительную надежность. Мы делаем больше, чем кто-либо другой, чтобы удовлетворить потребности наших клиентов.</p>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white">{{$settings->site_name}} Neden Dünyanın En Güvenilir Markalarından Biri?</h2>
+            <h2 class="text-3xl font-bold text-white">Почему {{$settings->site_name}} является одной из самых надежных марок в мире?</h2>
             <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400"></div>
         </div>
 
@@ -149,7 +149,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">Küresel Düzenleme</p>
+                            <p class="text-lg font-medium text-white">Глобальное регулирование</p>
                         </div>
                     </li>
                     <li class="flex items-start">
@@ -159,7 +159,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">40+ Uluslararası Ödül</p>
+                            <p class="text-lg font-medium text-white">Более 40 международных наград</p>
                         </div>
                     </li>
                     <li class="flex items-start">
@@ -169,7 +169,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">24/7 Çok Dilli Müşteri Desteği</p>
+                            <p class="text-lg font-medium text-white">Круглосуточная многоязычная поддержка клиентов</p>
                         </div>
                     </li>
                     <li class="flex items-start">
@@ -179,7 +179,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">Ayrılmış Müşteri Fonları</p>
+                            <p class="text-lg font-medium text-white">Выделенные средства клиентов</p>
                         </div>
                     </li>
                     <li class="flex items-start">
@@ -189,7 +189,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">Kişisel Hesap Yöneticileri</p>
+                            <p class="text-lg font-medium text-white">Персональные менеджеры по работе с клиентами</p>
                         </div>
                     </li>
                     <li class="flex items-start">
@@ -199,14 +199,14 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-lg font-medium text-white">Tutarlı Dar Spreadler</p>
+                            <p class="text-lg font-medium text-white">Стабильно узкие спреды</p>
                         </div>
                     </li>
                 </ul>
 
                 <div class="mt-8">
                     <a href="login" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200">
-                        Komisyonlarımız Hakkında Bilgi Edinin
+                        Узнайте о наших комиссиях
                         <svg class="ml-2 -mr-1 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
@@ -224,20 +224,20 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-white">Hakkımızda</h2>
+            <h2 class="text-3xl font-bold text-white">О нас</h2>
             <div class="w-24 h-1 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-500 to-teal-400"></div>
         </div>
 
         <div class="bg-gray-800 bg-opacity-70 backdrop-blur-sm rounded-2xl border border-gray-700 shadow-xl overflow-hidden p-6 md:p-10">
             <div class="prose prose-lg prose-invert max-w-none">
                 <p>
-                    {{$settings->site_name}} endüstride en saygın brokerlerden biri haline geldi ve traderlara Forex, Hisse Senetleri, Emtialar ve Vadeli İşlemler alanlarında CFD'ler sunuyor. Forex piyasasında alım satım, gelir elde etmenin yasal ve doğrudan bir yolu. Ve iyi haber, para kazanmak için profesyonel bir trader olmanız gerekmiyor. Sadece doğru kişiliğe ve doğru beceri setine sahip olmak yeterli; yabancı borsalarda alım satım yaparak para kazanabilirsiniz.
+                    {{$settings->site_name}} стал одним из самых уважаемых брокеров в отрасли и предлагает трейдерам CFD на Форекс, акции, товары и фьючерсы. Торговля на рынке Форекс является законным и прямым способом получения дохода. И хорошая новость: вам не нужно быть профессиональным трейдером, чтобы зарабатывать деньги. Достаточно обладать правильным характером и набором навыков; вы можете зарабатывать деньги, торгуя на иностранных биржах.
                 </p>
                 <p>
-                    {{$settings->site_name}} size en uygun şekilde alım satım yapmanızı sağlar. Az mı çok mu risk almak istiyorsunuz? Kısa vadede mi yoksa uzun vadede mi kazanç istiyorsunuz? Günlük trader, swing trader mi yoksa scalper misiniz? Deneyimli mi yoksa su test eden acemi mi? Önemli değil çünkü {{$settings->site_name}} kontrolü size verir.
+                    {{$settings->site_name}} позволяет вам торговать наиболее подходящим для вас способом. Хотите ли вы взять на себя небольшой или большой риск? Хотите ли вы получить доход в短期 или долгосрочной перспективе? Вы дневной трейдер, свинг-трейдер или скальпер? Опытный или новичок, тестирующий воду? Это не важно, потому что {{$settings->site_name}} дает контроль вам.
                 </p>
                 <p>
-                    Bugünkü başarınızı kontrol edebiliyor ve yarının kararlılığını bulutlandırmıyorsanız, muhtemelen döviz trader'ı olarak para kazanmak sizde var. Forex'teki ödüller kesinlikle parlak ama günü akılcılık ve ısrar kazanıyor. Doğru araçlar, bilgi ve dünyanın tüm para birimlerine erişimle {{$settings->site_name}} yaptığınız işlemleri kontrol etmenizi sağlar.
+                    Если вы можете контролировать свой сегодняшний успех и не позволяете будущей решимости затуманивать ваш разум, то у вас, вероятно, есть то, что нужно, чтобы зарабатывать деньги как валютный трейдер. Награды на Форексе определенно яркие, но день выигрывает рациональность и настойчивость. С правильными инструментами, знаниями и доступом ко всем валютам мира {{$settings->site_name}} позволяет вам контролировать свои сделки.
                 </p>
             </div>
         </div>
@@ -265,22 +265,22 @@
             <!-- Right side: Content -->
             <div class="w-full lg:w-1/2 space-y-8">
                 <div>
-                    <h2 class="text-2xl font-bold text-white mb-4">UZMANLARIMIZLA GÜNCEL KALIN!</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4">ОСТАВАЙТЕСЬ НА СВЯЗИ С НАШИМИ ЭКСПЕРТАМИ!</h2>
                     <p class="text-gray-300">
-                        Yerel ve uluslararası ekiplerimiz, 20'den fazla dilde 24/5 bazında sizi desteklemek için burada, geniş ödeme yöntemleri yelpazemiz ise para yatırma ve çekme konusunda size daha fazla esneklik sağlar.
+                        Наши локальные и международные команды здесь, чтобы поддерживать вас 24/5 на более чем 20 языках, а наш широкий спектр способов оплаты обеспечивает вам большую гибкость для депозитов и снятия средств.
                     </p>
                 </div>
 
                 <div>
-                    <h2 class="text-2xl font-bold text-white mb-4">Alım Satımdan Daha Fazlasını Yaşayın</h2>
+                    <h2 class="text-2xl font-bold text-white mb-4">Испытайте больше, чем просто торговлю</h2>
                     <p class="text-gray-300">
-                        Başarımız bir dizi temel değer etrafında toplanır. Bunlar arasında sıkı spreadler aracılığıyla rekabetçi komisyon ücretleri sağlamak, şimşek hızında yürütme sağlamak, geniş ürün yelpazesiyle gelişmiş alım satım platformlarına erişim ve üstün müşteri hizmetleri bulunur.
+                        Наш успех строится вокруг набора основных ценностей. Среди них предоставление конкурентоспособных комиссионных сборов через узкие спреды, обеспечение молниеносного исполнения, доступ к расширенным торговым платформам с широким спектром продуктов и превосходное обслуживание клиентов.
                     </p>
                 </div>
 
                 <div class="pt-6">
                     <a href="register" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150">
-                        Şimdi Alım Satıma Başla
+                        Начните торговать сейчас
                         <svg class="ml-2 -mr-1 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>

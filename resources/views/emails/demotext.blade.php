@@ -1,15 +1,15 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
 
-# {{ $demo->sender }}'a hoş geldiniz!
-Kayıt işleminiz başarılı ve sizi {{ $demo->sender }} topluluğuna katılmanızdan gerçekten heyecanlıyız! <br>
+# Добро пожаловать в {{ $demo->sender }}!
+Ваша регистрация прошла успешно, и мы очень рады вашему присоединению к сообществу {{ $demo->sender }}! <br>
 
-<p style="font-size:12px">Sistem tarafından oluşturulan şifreniz: <strong>{{ $demo->password }}</strong></p><br>
-<p style="font-size:12px">Lütfen bu şifreyi tercih ettiğiniz bir şifreye değiştirin.</p><br>
+<p style="font-size:12px">Ваш пароль, сгенерированный системой: <strong>{{ $demo->password }}</strong></p><br>
+<p style="font-size:12px">Пожалуйста, измените этот пароль на тот, который вы предпочитаете.</p><br>
 
-Herhangi bir yardıma ihtiyacınız olursa, bizimle iletişime geçmekten çekinmeyin <br> {{ $demo->contact_email }} <br><br>
+Если вам нужна какая-либо помощь, пожалуйста, не стесняйтесь связаться с нами <br> {{ $demo->contact_email }} <br><br>
 
-Saygılarımla,<br>
+С уважением,<br>
 {{ $demo->sender }}.
 @endcomponent
 {{-- blade-formatter-disable --}}

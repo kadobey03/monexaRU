@@ -6,13 +6,13 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">System Signals</h1>
+                    <h1 class="title1 ">Системные сигналы</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
                 <div class="mb-5 row">
                     <div class="mt-2 mb-3 col-lg-12">
-                        <a class="btn btn-primary" href="{{ route('newsignal') }}"><i class="fa fa-plus"></i> New plan</a>
+                        <a class="btn btn-primary" href="{{ route('newsignal') }}"><i class="fa fa-plus"></i> Новый план</a>
                     </div>
                     @forelse ($signals as $signal)
                         <div class="col-lg-4">
@@ -27,11 +27,11 @@
                                     </div>
                                     <!-- Features -->
                                     <div class="pricing-features">
-                                        <div class="feature text-dark">Signal Price:<span
+                                        <div class="feature text-dark">Цена сигнала:<span
                                                 class="">{{ $settings->currency }}{{ number_format($signal->price) }}</span>
                                         </div>
-                                       
-                                        <div class="feature text-dark">Percentage:<span
+
+                                        <div class="feature text-dark">Процент:<span
                                                 class="">{{ $signal->increment_amount	 }}%</span>
                                         </div>
                                     </div> <br>
@@ -51,7 +51,7 @@
                     @empty
                         <div class="col-lg-12 text-center">
                             <div class="pricing-table card purple border p-4">
-                                <h4 class="">No Investment Plan at the moment, click the button above to add a plan.
+                                <h4 class="">В настоящее время нет инвестиционного плана, нажмите кнопку выше, чтобы добавить план.
                                 </h4>
                             </div>
                         </div>

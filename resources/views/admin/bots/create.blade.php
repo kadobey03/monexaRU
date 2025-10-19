@@ -16,7 +16,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
     <div class="content">
         <div class="page-inner">
         <div class="page-header">
-            <h4 class="page-title">Create Trading Bot</h4>
+            <h4 class="page-title">Создать торгового бота</h4>
             <ul class="breadcrumbs">
                 <li class="nav-home">
                     <a href="{{ route('admin.dashboard') }}">
@@ -27,13 +27,13 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.bots.index') }}">Bot Trading</a>
+                    <a href="{{ route('admin.bots.index') }}">Торговые боты</a>
                 </li>
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="#">Create Bot</a>
+                    <a href="#">Создать бота</a>
                 </li>
             </ul>
         </div>
@@ -42,19 +42,19 @@ if (Auth('admin')->User()->dashboard_style == "light") {
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Create New Trading Bot</div>
+                        <div class="card-title">Создать нового торгового бота</div>
                     </div>
                     <form action="{{ route('admin.bots.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <div class="row">
-                                <!-- Basic Information -->
+                                <!-- Основная информация -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Bot Name <span class="text-danger">*</span></label>
+                                        <label for="name">Имя бота <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                id="name" name="name" value="{{ old('name') }}"
-                                               placeholder="Enter bot name" required>
+                                               placeholder="Введите имя бота" required>
                                         @error('name')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
@@ -63,10 +63,10 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="bot_type">Trading Market <span class="text-danger">*</span></label>
+                                        <label for="bot_type">Торговый рынок <span class="text-danger">*</span></label>
                                         <select class="form-control @error('bot_type') is-invalid @enderror"
                                                 id="bot_type" name="bot_type" required>
-                                            <option value="">Select Market</option>
+                                            <option value="">Выбрать рынок</option>
                                             @foreach($botTypes as $key => $value)
                                                 <option value="{{ $key }}" {{ old('bot_type') == $key ? 'selected' : '' }}>
                                                     {{ $value }}
@@ -81,20 +81,20 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="description">Description <span class="text-danger">*</span></label>
+                                        <label for="description">Описание <span class="text-danger">*</span></label>
                                         <textarea class="form-control @error('description') is-invalid @enderror"
                                                   id="description" name="description" rows="4"
-                                                  placeholder="Enter bot description" required>{{ old('description') }}</textarea>
+                                                  placeholder="Введите описание бота" required>{{ old('description') }}</textarea>
                                         @error('description')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <!-- Investment Settings -->
+                                <!-- Настройки инвестиций -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="min_investment">Minimum Investment ($) <span class="text-danger">*</span></label>
+                                        <label for="min_investment">Минимальная инвестиция ($) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('min_investment') is-invalid @enderror"
                                                id="min_investment" name="min_investment" value="{{ old('min_investment', 100) }}"
                                                step="0.01" min="1" required>
@@ -106,7 +106,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="max_investment">Maximum Investment ($) <span class="text-danger">*</span></label>
+                                        <label for="max_investment">Максимальная инвестиция ($) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('max_investment') is-invalid @enderror"
                                                id="max_investment" name="max_investment" value="{{ old('max_investment', 10000) }}"
                                                step="0.01" min="1" required>
@@ -116,10 +116,10 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                     </div>
                                 </div>
 
-                                <!-- Profit Settings -->
+                                <!-- Настройки прибыли -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="daily_profit_min">Daily Profit Min (%) <span class="text-danger">*</span></label>
+                                        <label for="daily_profit_min">Минимальная дневная прибыль (%) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('daily_profit_min') is-invalid @enderror"
                                                id="daily_profit_min" name="daily_profit_min" value="{{ old('daily_profit_min', 0.5) }}"
                                                step="0.01" min="0" max="100" required>
@@ -131,7 +131,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="daily_profit_max">Daily Profit Max (%) <span class="text-danger">*</span></label>
+                                        <label for="daily_profit_max">Максимальная дневная прибыль (%) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('daily_profit_max') is-invalid @enderror"
                                                id="daily_profit_max" name="daily_profit_max" value="{{ old('daily_profit_max', 3.0) }}"
                                                step="0.01" min="0" max="100" required>
@@ -141,10 +141,10 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                     </div>
                                 </div>
 
-                                <!-- Bot Performance -->
+                                <!-- Производительность бота -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="success_rate">Success Rate (%) <span class="text-danger">*</span></label>
+                                        <label for="success_rate">Успешность (%) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('success_rate') is-invalid @enderror"
                                                id="success_rate" name="success_rate" value="{{ old('success_rate', 85) }}"
                                                min="50" max="99" required>
@@ -156,7 +156,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="duration_days">Duration (Days) <span class="text-danger">*</span></label>
+                                        <label for="duration_days">Продолжительность (дней) <span class="text-danger">*</span></label>
                                         <input type="number" class="form-control @error('duration_days') is-invalid @enderror"
                                                id="duration_days" name="duration_days" value="{{ old('duration_days', 30) }}"
                                                min="1" max="365" required>
@@ -169,12 +169,12 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                 <!-- Status -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="status">Status <span class="text-danger">*</span></label>
+                                        <label for="status">Статус <span class="text-danger">*</span></label>
                                         <select class="form-control @error('status') is-invalid @enderror"
                                                 id="status" name="status" required>
-                                            <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Active</option>
-                                            <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                            <option value="maintenance" {{ old('status') == 'maintenance' ? 'selected' : '' }}>Maintenance</option>
+                                            <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Активный</option>
+                                            <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Неактивный</option>
+                                            <option value="maintenance" {{ old('status') == 'maintenance' ? 'selected' : '' }}>Обслуживание</option>
                                         </select>
                                         @error('status')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -185,34 +185,34 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                 <!-- Bot Image -->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="image">Bot Avatar (Optional)</label>
+                                        <label for="image">Аватар бота (необязательно)</label>
                                         <input type="file" class="form-control-file @error('image') is-invalid @enderror"
                                                id="image" name="image" accept="image/*">
-                                        <small class="form-text text-muted">Upload an image for the bot (max 2MB)</small>
+                                        <small class="form-text text-muted">Загрузите изображение для бота (макс. 2МБ)</small>
                                         @error('image')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
 
-                                <!-- Trading Pairs -->
+                                <!-- Торговые пары -->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="trading_pairs">Trading Pairs</label>
+                                        <label for="trading_pairs">Торговые пары</label>
                                         <div id="trading-pairs-container">
                                             <div class="row">
                                                 <div class="col-md-8">
                                                     <input type="text" class="form-control" name="trading_pairs[]"
-                                                           placeholder="e.g., EUR/USD, BTC/USD">
+                                                           placeholder="например, EUR/USD, BTC/USD">
                                                 </div>
                                                 <div class="col-md-4">
                                                     <button type="button" class="btn btn-primary btn-sm" id="add-pair">
-                                                        <i class="fa fa-plus"></i> Add Pair
+                                                        <i class="fa fa-plus"></i> Добавить пару
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <small class="form-text text-muted">Add trading pairs that this bot will trade</small>
+                                        <small class="form-text text-muted">Добавьте торговые пары, которыми будет торговать этот бот</small>
                                     </div>
                                 </div>
                             </div>
@@ -220,10 +220,10 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
                         <div class="card-action">
                             <button type="submit" class="btn btn-success">
-                                <i class="fa fa-save"></i> Create Bot
+                                <i class="fa fa-save"></i> Создать бота
                             </button>
                             <a href="{{ route('admin.bots.index') }}" class="btn btn-danger">
-                                <i class="fa fa-times"></i> Cancel
+                                <i class="fa fa-times"></i> Отмена
                             </a>
                         </div>
                     </form>
@@ -237,7 +237,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 @parent
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Add trading pair functionality
+    // Функционал добавления торговой пары
     let pairCount = 1;
     document.getElementById('add-pair').addEventListener('click', function() {
         if (pairCount < 10) { // Limit to 10 pairs
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Remove trading pair functionality
+    // Функционал удаления торговой пары
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('remove-pair') || e.target.parentElement.classList.contains('remove-pair')) {
             const row = e.target.closest('.row');
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Validate profit ranges
+    // Проверка диапазона прибыли
     document.getElementById('daily_profit_min').addEventListener('change', function() {
         const minVal = parseFloat(this.value);
         const maxInput = document.getElementById('daily_profit_max');
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Validate investment ranges
+    // Проверка диапазона инвестиций
     document.getElementById('min_investment').addEventListener('change', function() {
         const minVal = parseFloat(this.value);
         const maxInput = document.getElementById('max_investment');

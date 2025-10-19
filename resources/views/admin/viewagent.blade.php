@@ -13,7 +13,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">View agent ({{ $agent->name }}) clients</h1>
+                    <h1 class="title1 ">Просмотр клиентов агента ({{ $agent->name }})</h1>
                 </div>
                 @if (Session::has('message'))
                     <div class="row">
@@ -45,10 +45,10 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <table class="table table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Client name</th>
-                                        <th>Client Inv. plan</th>
-                                        <th>Client status</th>
-                                        <th>Earnings</th>
+                                        <th>Имя клиента</th>
+                                        <th>Инвестиционный план клиента</th>
+                                        <th>Статус клиента</th>
+                                        <th>Доходы</th>
                                     </tr>
                                 </thead>
                                 <tbody>

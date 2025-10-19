@@ -48,7 +48,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     <i class="fa fa-search search-icon"></i>
                                 </button>
                             </div>
-                            <input type="text" placeholder="Kullanıcıları yönet"
+                            <input type="text" placeholder="Управление пользователями"
                                 class="form-control text-{{ $text }} ">
                         </div>
                     </form>
@@ -59,7 +59,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         searchuser);
 
                     function searchuser() {
-                        console.log('Kullanıcı arama');
+                        console.log('Поиск пользователей');
                         let url = "{{ route('manageusers') }}";
                         window.location.href = url;
                     }
@@ -133,13 +133,13 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                          <div class="px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
                              <div class="d-flex justify-content-between align-items-center">
                                  <h6 class="m-0 font-weight-bold d-flex align-items-center" style="font-size: 0.9rem;">
-                                     <i class="fas fa-bell mr-2"></i> Bildirimler
+                                     <i class="fas fa-bell mr-2"></i> Уведомления
                                      @if($notificationCount > 0)
                                          <span class="ml-2 badge badge-light">{{ $notificationCount }}</span>
                                      @endif
                                  </h6>
                                  @if($notificationCount > 0)
-                                     <a href="{{ route('admin.markallasread') }}" class="text-white mark-all-read" style="font-size: 0.8rem;">Tümünü Okundu İşaretle</a>
+                                     <a href="{{ route('admin.markallasread') }}" class="text-white mark-all-read" style="font-size: 0.8rem;">Отметить все как прочитанные</a>
                                  @endif
                              </div>
                          </div>
@@ -188,7 +188,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                             </a>
                                         </div>
                                         <div class="ml-1">
-                                            <button class="btn btn-sm btn-outline-secondary mark-as-read" title="Okundu olarak işaretle" style="font-size: 0.7rem; padding: 0.2rem 0.4rem;">
+                                            <button class="btn btn-sm btn-outline-secondary mark-as-read" title="Отметить как прочитанное" style="font-size: 0.7rem; padding: 0.2rem 0.4rem;">
                                                 <i class="fas fa-check"></i>
                                             </button>
                                         </div>
@@ -200,8 +200,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                      <div class="text-muted mb-3">
                                          <i class="fas fa-bell-slash fa-3x"></i>
                                      </div>
-                                     <h6 class="font-weight-bold">Yeni bildirim yok</h6>
-                                     <p class="small text-muted">Her şey güncel!</p>
+                                     <h6 class="font-weight-bold">Нет новых уведомлений</h6>
+                                     <p class="small text-muted">Все актуально!</p>
                                  </div>
                             @endforelse
                         </div>
@@ -210,7 +210,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         @if($notificationCount > 0)
                             <div class="p-3 bg-light border-top">
                                 <a href="{{ route('admin.notifications') }}" class="btn btn-primary btn-block">
-                                    <i class="fas fa-list mr-2"></i> Tüm Bildirimleri Görüntüle
+                                    <i class="fas fa-list mr-2"></i> Просмотреть все уведомления
                                 </a>
                             </div>
                         @endif
@@ -225,15 +225,15 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                     <ul class="dropdown-menu dropdown-user animated fadeIn">
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
-                                <a class="dropdown-item" href="{{ url('admin/dashboard/adminprofile') }}">Hesap
-                                    Ayarları</a>
-                                <a class="dropdown-item" href="{{ url('admin/dashboard/adminchangepassword') }}">Şifre
-                                    Değiştir</a>
+                                <a class="dropdown-item" href="{{ url('admin/dashboard/adminprofile') }}">Настройки
+                                    аккаунта</a>
+                                <a class="dropdown-item" href="{{ url('admin/dashboard/adminchangepassword') }}">Изменить
+                                    пароль</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('adminlogout') }}"
                                     onclick="event.preventDefault();
                                 document.getElementById('logoutform').submit();">
-                                    Çıkış Yap
+                                    Выйти
                                 </a>
                                 <form id="logoutform" action="{{ route('adminlogout') }}" method="POST"
                                     style="display: none;">
@@ -422,8 +422,8 @@ $(document).ready(function() {
                 if(typeof Swal !== 'undefined') {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Başarılı',
-                        text: 'Tüm bildirimler okundu olarak işaretlendi!',
+                        title: 'Успешно',
+                        text: 'Все уведомления отмечены как прочитанные!',
                         timer: 2000,
                         showConfirmButton: false
                     });
@@ -434,8 +434,8 @@ $(document).ready(function() {
                 if(typeof Swal !== 'undefined') {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Hata',
-                        text: 'Bildirimler okundu olarak işaretlenemedi. Lütfen tekrar deneyin.',
+                        title: 'Ошибка',
+                        text: 'Не удалось отметить уведомления как прочитанные. Пожалуйста, попробуйте еще раз.',
                     });
                 }
             }

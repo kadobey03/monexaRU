@@ -1,16 +1,16 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-# Merhaba {{ $demo->receiver_name }},
+# Привет {{ $demo->receiver_name }},
 
-Bu, yatırım planınızın ({{ $demo->receiver_plan }} planı) süresi dolduğunu ve bu plan için sermayenizin çekim için hesabınıza eklendiğini bildirmek için. <br>
+Это уведомление о том, что срок вашего инвестиционного плана (план {{ $demo->receiver_plan }}) истек и капитал по этому плану был добавлен на ваш счет для вывода. <br>
 
-<strong>Plan:</strong> {{ $demo->receiver_plan }} <br>
+<strong>План:</strong> {{ $demo->receiver_plan }} <br>
 
-<strong>Miktar:</strong> {{ $demo->received_amount }} <br>
+<strong>Сумма:</strong> {{ $demo->received_amount }} <br>
 
-<strong>Tarih:</strong> {{ $demo->date }} <br>
+<strong>Дата:</strong> {{ $demo->date }} <br>
 
-Saygılarımla,<br>
+С уважением,<br>
 {{ $demo->sender }}.
 @endcomponent
 {{-- blade-formatter-disable --}}

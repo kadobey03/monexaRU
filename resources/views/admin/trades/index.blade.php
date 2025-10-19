@@ -9,7 +9,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">User Trades Management</h4>
+                <h4 class="page-title">Управление сделками пользователей</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="{{ route('admin.dashboard') }}">
@@ -20,13 +20,13 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Management</a>
+                        <a href="#">Управление</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Trades</a>
+                        <a href="#">Сделки</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Total Trades</p>
+                                        <p class="card-category">Всего сделок</p>
                                         <h4 class="card-title">{{ number_format($stats['total'] ?? 0) }}</h4>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Active Trades</p>
+                                        <p class="card-category">Активные сделки</p>
                                         <h4 class="card-title">{{ number_format($stats['active'] ?? 0) }}</h4>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Completed</p>
+                                        <p class="card-category">Завершенные</p>
                                         <h4 class="card-title">{{ number_format($stats['expired'] ?? 0) }}</h4>
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Total Volume</p>
+                                        <p class="card-category">Общий объем</p>
                                         <h4 class="card-title">${{ number_format($stats['total_volume'] ?? 0, 2) }}</h4>
                                     </div>
                                 </div>
@@ -137,11 +137,11 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">
-                                    <i class="fas fa-filter mr-2"></i>Filters & Search
+                                    <i class="fas fa-filter mr-2"></i>Фильтры и поиск
                                 </h4>
                                 <button class="btn btn-primary btn-round ml-auto" data-toggle="collapse" data-target="#filtersCollapse" aria-expanded="false">
                                     <i class="fas fa-search"></i>
-                                    Toggle Filters
+                                    Переключить фильтры
                                 </button>
                             </div>
                         </div>
@@ -151,36 +151,36 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="search">Search User</label>
+                                                <label for="search">Поиск пользователя</label>
                                                 <input type="text" class="form-control" id="search" name="search"
-                                                       value="{{ request('search') }}" placeholder="Username or Email">
+                                                       value="{{ request('search') }}" placeholder="Имя пользователя или email">
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label for="status">Status</label>
+                                                <label for="status">Статус</label>
                                                 <select class="form-control" id="status" name="status">
-                                                    <option value="">All</option>
-                                                    <option value="yes" {{ request('status') == 'yes' ? 'selected' : '' }}>Active</option>
-                                                    <option value="expired" {{ request('status') == 'expired' ? 'selected' : '' }}>Expired</option>
+                                                    <option value="">Все</option>
+                                                    <option value="yes" {{ request('status') == 'yes' ? 'selected' : '' }}>Активные</option>
+                                                    <option value="expired" {{ request('status') == 'expired' ? 'selected' : '' }}>Истекшие</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label for="type">Trade Type</label>
+                                                <label for="type">Тип сделки</label>
                                                 <select class="form-control" id="type" name="type">
-                                                    <option value="">All</option>
-                                                    <option value="Buy" {{ request('type') == 'Buy' ? 'selected' : '' }}>Buy</option>
-                                                    <option value="Sell" {{ request('type') == 'Sell' ? 'selected' : '' }}>Sell</option>
+                                                    <option value="">Все</option>
+                                                    <option value="Buy" {{ request('type') == 'Buy' ? 'selected' : '' }}>Покупка</option>
+                                                    <option value="Sell" {{ request('type') == 'Sell' ? 'selected' : '' }}>Продажа</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="asset">Asset</label>
+                                                <label for="asset">Актив</label>
                                                 <input type="text" class="form-control" id="asset" name="asset"
-                                                       value="{{ request('asset') }}" placeholder="Asset name">
+                                                       value="{{ request('asset') }}" placeholder="Название актива">
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -188,7 +188,7 @@
                                                 <label>&nbsp;</label>
                                                 <div>
                                                     <button type="submit" class="btn btn-primary btn-block">
-                                                        <i class="fas fa-search mr-1"></i>Filter
+                                                        <i class="fas fa-search mr-1"></i>Фильтр
                                                     </button>
                                                 </div>
                                             </div>
@@ -208,16 +208,16 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">
-                                    <i class="fas fa-table mr-2"></i>User Trades ({{ $trades->total() }} records)
+                                    <i class="fas fa-table mr-2"></i>Сделки пользователей ({{ $trades->total() }} записей)
                                 </h4>
                                 <div class="ml-auto">
                                     <!-- Test URL Button -->
                                     <button type="button" class="btn btn-info btn-sm mr-2" onclick="testRoutes()">
-                                        <i class="fas fa-bug mr-1"></i>Test Routes
+                                        <i class="fas fa-bug mr-1"></i>Тестировать маршруты
                                     </button>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                            <i class="fas fa-download mr-1"></i>Export
+                                            <i class="fas fa-download mr-1"></i>Экспорт
                                         </button>
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{{ route('admin.trades.export', ['format' => 'csv'] + request()->all()) }}">
@@ -237,16 +237,16 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>User</th>
-                                            <th>Asset</th>
-                                            <th>Type</th>
-                                            <th>Amount</th>
-                                            <th>Leverage</th>
-                                            <th>Profit/Loss</th>
-                                            <th>Status</th>
-                                            <th>Created</th>
-                                            <th>Expires</th>
-                                            <th class="no-sort">Actions</th>
+                                            <th>Пользователь</th>
+                                            <th>Актив</th>
+                                            <th>Тип</th>
+                                            <th>Сумма</th>
+                                            <th>Кредитное плечо</th>
+                                            <th>Прибыль/Убыток</th>
+                                            <th>Статус</th>
+                                            <th>Создано</th>
+                                            <th>Истекает</th>
+                                            <th class="no-sort">Действия</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -308,11 +308,11 @@
                                                 <td>
                                                     @if($trade->active == 'yes')
                                                         <span class="badge badge-warning">
-                                                            <i class="fas fa-clock mr-1"></i>Active
+                                                            <i class="fas fa-clock mr-1"></i>Активна
                                                         </span>
                                                     @elseif($trade->active == 'expired')
                                                         <span class="badge badge-success">
-                                                            <i class="fas fa-check mr-1"></i>Completed
+                                                            <i class="fas fa-check mr-1"></i>Завершена
                                                         </span>
                                                     @else
                                                         <span class="badge badge-secondary">{{ ucfirst($trade->active ?? 'N/A') }}</span>
@@ -361,10 +361,10 @@
                                                             <i class="fas fa-chart-line fa-4x text-muted mb-3"></i>
                                                         </div>
                                                         <div class="empty-state-title">
-                                                            <h3 class="text-muted">No trades found</h3>
+                                                            <h3 class="text-muted">Сделки не найдены</h3>
                                                         </div>
                                                         <div class="empty-state-subtitle text-muted">
-                                                            Try adjusting your filters or search criteria.
+                                                            Попробуйте изменить фильтры или критерии поиска.
                                                         </div>
                                                     </div>
                                                 </td>
@@ -392,7 +392,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addProfitModalLabel">
-                    <i class="fas fa-plus-circle mr-2"></i>Add Profit to User ROI
+                    <i class="fas fa-plus-circle mr-2"></i>Добавить прибыль к ROI пользователя
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -403,24 +403,24 @@
                 <div class="modal-body">
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle mr-2"></i>
-                        This will add the specified amount to both the trade's profit_earned and the user's ROI.
+                        Это добавит указанную сумму как к прибыли сделки, так и к ROI пользователя.
                     </div>
                     <div class="form-group">
-                        <label for="profit_amount">Profit Amount ($)</label>
+                        <label for="profit_amount">Сумма прибыли ($)</label>
                         <input type="number" class="form-control" id="profit_amount" name="profit_amount"
-                               step="0.01" required placeholder="Enter amount to add">
-                        <small class="form-text text-muted">Use positive numbers for profit, negative for loss</small>
+                               step="0.01" required placeholder="Введите сумму для добавления">
+                        <small class="form-text text-muted">Используйте положительные числа для прибыли, отрицательные для убытка</small>
                     </div>
                     <div class="form-group">
-                        <label for="profit_note">Note (Optional)</label>
+                        <label for="profit_note">Заметка (Необязательно)</label>
                         <textarea class="form-control" id="profit_note" name="note" rows="3"
-                                  placeholder="Add a note about this profit adjustment..."></textarea>
+                                  placeholder="Добавьте заметку об этой корректировке прибыли..."></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                     <button type="submit" class="btn btn-success">
-                        <i class="fas fa-plus mr-1"></i>Add Profit
+                        <i class="fas fa-plus mr-1"></i>Добавить прибыль
                     </button>
                 </div>
             </form>
@@ -618,17 +618,17 @@ function deleteTrade(tradeId) {
     console.log('Delete URL:', deleteUrl);
 
     swal({
-        title: "Delete Trade?",
-        text: "This action cannot be undone. The trade record will be permanently deleted.",
+        title: "Удалить сделку?",
+        text: "Это действие нельзя отменить. Запись о сделке будет удалена безвозвратно.",
         type: "warning",
         buttons: {
             cancel: {
                 visible: true,
-                text: "Cancel",
+                text: "Отмена",
                 className: "btn btn-secondary"
             },
             confirm: {
-                text: "Yes, delete it!",
+                text: "Да, удалить!",
                 className: "btn btn-danger"
             }
         }

@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-semibold text-red-800 mb-1">Uyarı</h4>
+                <h4 class="text-sm font-semibold text-red-800 mb-1">Предупреждение</h4>
                 <p class="text-sm text-red-700 leading-relaxed">{{ Session::get('message') }}</p>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-semibold text-red-800 mb-2">Doğrulama Hataları</h4>
+                <h4 class="text-sm font-semibold text-red-800 mb-2">Ошибки валидации</h4>
                 <ul class="space-y-1">
                     @foreach ($errors->all() as $error)
                         <li class="flex items-start space-x-2">
@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-semibold text-amber-800 mb-1">Bildirim</h4>
+                <h4 class="text-sm font-semibold text-amber-800 mb-1">Уведомление</h4>
                 <p class="text-sm text-amber-700 leading-relaxed">{{ Auth::user()->notify }}</p>
             </div>
         </div>
@@ -117,14 +117,14 @@
                 </div>
             </div>
             <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-semibold text-red-800 mb-1">Sinyal Gerekli</h4>
+                <h4 class="text-sm font-semibold text-red-800 mb-1">Сигнал обязателен</h4>
                 <p class="text-sm text-red-700 leading-relaxed mb-3">
-                    İşlem işlemlerine devam etmek için <span class="font-semibold text-red-800">{{ Auth::user()->user_signal }}</span> sinyalini satın almanız gerekir.
+                    Для продолжения торговых операций необходимо приобрести <span class="font-semibold text-red-800">{{ Auth::user()->user_signal }}</span> сигнал.
                 </p>
                 <a href="{{ route('signal') }}"
                    class="inline-flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                     <i data-lucide="shopping-cart" class="w-4 h-4"></i>
-                    <span>Sinyal Satın Al</span>
+                    <span>Купить сигнал</span>
                 </a>
             </div>
         </div>
@@ -155,14 +155,14 @@
                 </div>
             </div>
             <div class="flex-1 min-w-0">
-                <h4 class="text-sm font-semibold text-red-800 mb-1">Plan Yükseltmesi Gerekli</h4>
+                <h4 class="text-sm font-semibold text-red-800 mb-1">Необходимо обновить план</h4>
                 <p class="text-sm text-red-700 leading-relaxed mb-3">
-                    Devam etmek ve gelişmiş özelliklere erişmek için lütfen <span class="font-semibold text-red-800">{{ Auth::user()->user_plan_upgade }}</span> planına yükseltin.
+                    Для продолжения и получения доступа к расширенным функциям, пожалуйста, обновитесь до плана <span class="font-semibold text-red-800">{{ Auth::user()->user_plan_upgade }}</span>.
                 </p>
                 <a href="{{ route('mplans') }}"
                    class="inline-flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                     <i data-lucide="arrow-up-circle" class="w-4 h-4"></i>
-                    <span>Planı Yükselt</span>
+                    <span>Обновить план</span>
                 </a>
             </div>
         </div>

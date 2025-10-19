@@ -8,31 +8,31 @@
                 <x-danger-alert />
                 <x-success-alert />
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 m-0">Trade Signals Subscribers</h1>
-                    <p>See users subscription</p>
+                    <h1 class="title1 m-0">Подписчики торговых сигналов</h1>
+                    <p>Посмотреть подписки пользователей</p>
                 </div>
                 <div class="mb-5 row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Subscribers</h5>
+                                <h5 class="card-title">Подписчики</h5>
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead class="bg-primary text-white">
                                             <th>
-                                                Subscriber
+                                                Подписчик
                                             </th>
                                             <th>
-                                                Subscription
+                                                Подписка
                                             </th>
                                             <th>
-                                                Amount
+                                                Сумма
                                             </th>
                                             <th>
-                                                Expiration
+                                                Истечение
                                             </th>
                                             <th>
-                                                Started At
+                                                Начато в
                                             </th>
                                             <th></th>
                                         </thead>
@@ -64,7 +64,7 @@
                                             @empty
                                                 <tr>
                                                     <td colspan="5" class="text-center">
-                                                        No Data Available
+                                                        Данные отсутствуют
                                                     </td>
                                                 </tr>
                                             @endforelse

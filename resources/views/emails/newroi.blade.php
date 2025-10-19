@@ -1,44 +1,44 @@
 {{-- blade-formatter-disable --}}
 @component('mail::message')
-# Portföy Güncellemesi - Yatırım Getirileri Oluşturuldu 📈
+# Обновление портфеля - Инвестиционные доходы созданы 📈
 
-## Sevgili {{$user->name}},
+## Дорогой {{$user->name}},
 
-**Tebrikler!** Yatırım portföyünüz yeni getiriler oluşturdu. Stratejik yatırım seçimlerinizin mevcut piyasa koşullarında iyi performans göstermeye devam ettiğini bildirmekten memnuniyet duyuyoruz.
+**Поздравляем!** Ваш инвестиционный портфель создал новые доходы. Мы рады сообщить, что ваши стратегические инвестиционные решения продолжают демонстрировать хорошую производительность в текущих рыночных условиях.
 
-### 💰 **Getiri Detayları**
+### 💰 **Детали доходов**
 
 @component('mail::panel', ['color' => 'success'])
-**Yatırım Performans Özeti**
+**Сводка инвестиционной производительности**
 
-**Yatırım Planı:** {{$plan}}<br>
-**Getiri Miktarı:** {{$user->currency}}{{number_format($amount, 2)}}<br>
-**Oluşturulma Tarihi:** {{$plandate}}<br>
-**Durum:** Hesabınıza Yatırıldı
+**Инвестиционный план:** {{$plan}}<br>
+**Сумма дохода:** {{$user->currency}}{{number_format($amount, 2)}}<br>
+**Дата создания:** {{$plandate}}<br>
+**Статус:** Зачислено на ваш счет
 @endcomponent
 
-### 📊 **Performans İçgörüleri**
+### 📊 **Анализ производительности**
 
-{{$plan}} yatırım planınız, gelişmiş yatırım stratejimizin bir parçası olarak tutarlı getiriler sunmaya devam ediyor. Bu getiri şunları yansıtıyor:
+Ваш инвестиционный план {{$plan}} продолжает обеспечивать стабильные доходы как часть нашей продвинутой инвестиционной стратегии. Этот доход отражает:
 
-- **Piyasa Analizi**: Uzman ekibimizin stratejik piyasa konumlandırması
-- **Risk Yönetimi**: Dikkatlice dengelenmiş portföy optimizasyonu
-- **Teknoloji Üstünlüğü**: Gelişmiş algoritmik ticaret sistemleri
-- **Çeşitlendirme**: İstikrar için çoklu varlık maruziyeti
+- **Анализ рынка**: Стратегическое позиционирование рынка нашей экспертной командой
+- **Управление рисками**: Тщательно сбалансированная оптимизация портфеля
+- **Технологическое превосходство**: Продвинутые алгоритмические торговые системы
+- **Диверсификация**: Экспозиция на несколько активов для стабильности
 
-### 🚀 **Büyüme Potansiyelinizi Azami Düzeye Çıkarın**
+### 🚀 **Максимизируйте свой потенциал роста**
 
-**Bu Fırsatları Düşünün:**
-- **Bileşik Büyüme**: Üstel büyüme için getirilerinizi yeniden yatırım yapın
-- **Portföy Genişletme**: Ek yatırım planlarını keşfedin
-- **Kopya Ticaret**: En iyi performans gösteren tüccarları otomatik olarak takip edin
-- **Premium Stratejiler**: Daha yüksek katman yatırım planlarına yükseltin
+**Рассмотрите эти возможности:**
+- **Составной рост**: Реинвестируйте свои доходы для экспоненциального роста
+- **Расширение портфеля**: Исследуйте дополнительные инвестиционные планы
+- **Копирование торговли**: Автоматически следуйте за лучшими трейдерами
+- **Премиум стратегии**: Перейдите на инвестиционные планы более высокого уровня
 
 @component('mail::button', ['url' => config('app.url').'/dashboard'])
-Portföy Performansını Görüntüle
+Посмотреть производительность портфеля
 @endcomponent
 
-### 📈 **Yatırım Yolculuğunuz**
+### 📈 **Ваше инвестиционное путешествие**
 
 **Son Etkinlik:**
 ✅ Yatırımımız uzman ekibimiz tarafından aktif olarak yönetiliyor<br>
@@ -51,7 +51,7 @@ Portföy Performansını Görüntüle
 - Bileşik büyüme için yeniden yatırım fırsatlarını düşünün
 - Gelişmiş ticaret araçlarımızı ve analizlerimizi keşfedin
 
-### 💡 **Yatırım İçgörüleri**
+### 💡 **Инвестиционные insights**
 
 @component('mail::panel')
 **Piyasa Yorumu:** Mevcut piyasa koşulları çeşitlendirilmiş yatırım stratejilerini tercih ediyor. {{$plan}} planınız, risk ayarlı getirileri korurken ortaya çıkan fırsatları değerlendirecek şekilde konumlandırılmıştır.

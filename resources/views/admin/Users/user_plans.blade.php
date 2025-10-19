@@ -13,11 +13,11 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1  d-inline"> {{ $user->name }} Clients Trades</h1>
+                    <h1 class="title1  d-inline"> {{ $user->name }} Сделки клиентов</h1>
                     <div class="d-inline">
                         <div class="float-right btn-group">
                             <a class="btn btn-primary btn-sm" href="{{ route('viewuser', $user->id) }}"> <i
-                                    class="fa fa-arrow-left"></i> back</a>
+                                    class="fa fa-arrow-left"></i> назад</a>
                         </div>
                     </div>
                 </div>
@@ -31,16 +31,16 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     <thead>
                                         <tr>
                                             {{-- <th>Client name</th> --}}
-                                            <th>Assets</th>
-                                            <th>Amount</th>
-                                            <th>Status</th>
-                                            <th>Leverage</th>
-                                            <th>Trade Type</th>
-                                            <th>Duration</th>
-                                            <th>Created on</th>
-                                            <th>Expire At</th>
-                                            <th>Profit/Loss</th>
-                                            <th>Option</th>
+                                            <th>Активы</th>
+                                            <th>Сумма</th>
+                                            <th>Статус</th>
+                                            <th>Кредитное плечо</th>
+                                            <th>Тип сделки</th>
+                                            <th>Длительность</th>
+                                            <th>Создано</th>
+                                            <th>Истекает</th>
+                                            <th>Прибыль/Убыток</th>
+                                            <th>Опции</th>
                                             
                                         </tr>
                                     </thead>
@@ -79,23 +79,23 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 
                                                     @if ($plan->active == 'yes')
                                                     <a href="{{ route('markprofit', $plan->id) }}"
-                                                        class="m-1 btn btn-success btn-sm"> Mark as Profit</a>
+                                                        class="m-1 btn btn-success btn-sm"> Отметить как прибыль</a>
                                                         <a href="{{ route('markloss', $plan->id) }}"
-                                                            class="m-1 btn btn-danger btn-sm"> Mark as loss</a>
+                                                            class="m-1 btn btn-danger btn-sm"> Отметить как убыток</a>
                                                             @endif
                                             </td>
                                                 <td>
                                                     
                                                     @if ($plan->active == 'yes')
                                                         <a href="{{ route('markas', ['id' => $plan->id, 'status' => 'expired']) }}"
-                                                            class="m-1 btn btn-danger btn-sm">Mark as expired</a>
+                                                            class="m-1 btn btn-danger btn-sm">Отметить как истекший</a>
                                                     @else
                                                         <a href="{{ route('markas', ['id' => $plan->id, 'status' => 'yes']) }}"
-                                                            class="m-1 btn btn-success btn-sm">Mark as active</a>
+                                                            class="m-1 btn btn-success btn-sm">Отметить как активный</a>
                                                     @endif
 
                                                     <a href="{{ route('deleteplan', $plan->id) }}"
-                                                        class="m-1 btn btn-info btn-sm"> Delete Trade</a>  
+                                                        class="m-1 btn btn-info btn-sm"> Удалить сделку</a>
                                                 </td>
 
                                             

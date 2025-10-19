@@ -1,21 +1,21 @@
 
 @extends('layouts.base')
 
-@section('title', 'Terms And Condition')
+@section('title', 'Условия и Положения')
 
 
 @section('content')
 <section class="hero-section">
 	<div class="container">
-		<h1>Services</h1>
+		<h1>Услуги</h1>
 	</div>
 </section>
 
 <section class="bg-light-blue py-5">
 	<div class="container">
 		<div class="text-center">
-			<div class="text-primary text-uppercase small font-weight-bold">OUR SERVICES</div>
-			<h1 class="my-4">Bring to the table win-win survival<br/>strategies to ensure proactive<br/>domination. </h1>
+			<div class="text-primary text-uppercase small font-weight-bold">НАШИ УСЛУГИ</div>
+			<h1 class="my-4">Принесите к столу стратегии выживания<br/>win-win, чтобы обеспечить проактивное<br/>доминирование. </h1>
 			<div class="divider"></div>
 		</div>
 		<div class="sliderteam mt-4">
@@ -23,10 +23,10 @@
 				<div>
 					<img src="temp/custom/images/investment-consultancy-sm.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Investment Consultancy</h5>
+						<h5>Инвестиционные Консультации</h5>
 						<!-- featured-desc-->
-						<p>We do in-depth work on formulating clients' investment strategies, helping them fulfill their investment dreams.</p>
-                        <p>Bullishforx Limited provides investors with investment products, advice and/or planning, do in-depth work on formulating investment strategies, helping you fulfill your needs and reach your financial goals. We also provide strategic advice on asset allocation, risk management, investment policy development, asset class structuring, investment manager evaluation and monitoring.</p>
+						<p>Мы проводим глубокую работу по формулированию инвестиционных стратегий клиентов, помогая им осуществить свои инвестиционные мечты.</p>
+						                  <p>Bullishforx Limited предоставляет инвесторам инвестиционные продукты, консультации и/или планирование, проводит глубокую работу по формулированию инвестиционных стратегий, помогая вам удовлетворить ваши потребности и достичь ваших финансовых целей. Мы также предоставляем стратегические консультации по распределению активов, управлению рисками, разработке инвестиционной политики, структурированию классов активов, оценке и мониторингу инвестиционных менеджеров.</p>
                                     
 					</div>
 				</div>
@@ -35,10 +35,10 @@
 				<div>
 					<img src="temp/custom/images/crypto-investment-sm.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Cryptocurrency Investment</h5>
+						<h5>Инвестиции в Криптовалюту</h5>
 						<!-- featured-desc-->
-						<p>Virtual or crypto currencies like Bitcoin and Ethereum are definitely by far the hottest investment.</p>
-                        <p>Cryptocurrency is a form of digital money that is designed to be secure and, in many cases, anonymous. It is a currency associated with the internet that uses cryptography, the process of converting legible information into an almost uncrackable code, to track purchases and transfers.</p>
+						<p>Виртуальные или криптовалюты, такие как Bitcoin и Ethereum, определенно являются самыми горячими инвестициями на сегодняшний день.</p>
+						                  <p>Криптовалюта - это форма цифровых денег, которая предназначена для безопасности и, во многих случаях, анонимности. Это валюта, связанная с интернетом, которая использует криптографию, процесс преобразования понятной информации в практически невзламываемый код, для отслеживания покупок и переводов.</p>
 					</div>
 				</div>
 			</div>
@@ -46,10 +46,10 @@
 				<div>
 					<img src="temp/custom/images/forex-investment-sm.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Forex Trading</h5>
+						<h5>Торговля на Форекс</h5>
 						<!-- featured-desc-->
-						<p>The Forex market also referred to as the "Currency market", it is the largest and most liquid market in the world.</p>
-                        <p>The foreign exchange market (Forex) is the "place" where currencies are traded. Currencies are important to most people around the world, whether they realize it or not, because currencies need to be exchanged in order to conduct foreign trade and business. If you are living in the U.S. and want to buy cheese from France, either you or the company that you buy the cheese from has to pay the French for the cheese in euros (EUR).</p>
+						<p>Валютный рынок Форекс, также называемый "валютным рынком", является крупнейшим и наиболее ликвидным рынком в мире.</p>
+						                  <p>Валютный рынок (Forex) - это "место", где торгуются валюты. Валюты важны для большинства людей по всему миру, осознают они это или нет, потому что валюты нужно обменивать для проведения внешней торговли и бизнеса. Если вы живете в США и хотите купить сыр из Франции, либо вы, либо компания, у которой вы покупаете сыр, должны заплатить французам за сыр в евро (EUR).</p>
                                     
 					</div>
 				</div>
