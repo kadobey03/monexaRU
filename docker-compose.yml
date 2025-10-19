@@ -1,10 +1,9 @@
 services:
   # PHP-FPM Service
-  app:
+  app-vicsafe:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: monexa-ru-app
     restart: unless-stopped
     working_dir: /var/www/html
     volumes:
@@ -14,20 +13,18 @@ services:
       - mysql-vicsafe
 
   # Nginx Service
-  nginx:
+  nginx-vicsafe:
     image: nginx:alpine
-    container_name: monexa-ru-nginx
     restart: unless-stopped
     volumes:
       - ./:/var/www/html
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - app
+      - app-vicsafe
 
   # MySQL Service
   mysql-vicsafe:
     image: mysql:8.0
-    container_name: monexa-ru-mysql
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: vicsafe
@@ -40,15 +37,13 @@ services:
       - mysql_data_vicsafe:/var/lib/mysql
 
   # Redis Service (optional but useful for Laravel)
-  redis:
+  redis-vicsafe:
     image: redis:alpine
-    container_name: monexa-ru-redis
     restart: unless-stopped
 
   # PhpMyAdmin Service (optional for database management)
-  phpmyadmin:
+  phpmyadmin-vicsafe:
     image: phpmyadmin/phpmyadmin
-    container_name: monexa-ru-phpmyadmin
     restart: unless-stopped
     environment:
       PMA_HOST: mysql-vicsafe
