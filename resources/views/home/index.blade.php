@@ -34,10 +34,6 @@
                     {
                     "symbols": [
                         {
-                        "proName": "BIST:XU100",
-                        "title": "BIST 100"
-                        },
-                        {
                         "proName": "SPX500",
                         "title": "S&P 500"
                         },
@@ -46,24 +42,28 @@
                         "title": "NASDAQ 100"
                         },
                         {
-                        "proName": "FX:USDTRY",
-                        "title": "USD/TRY"
+                        "proName": "FX:EURUSD",
+                        "title": "EUR/USD"
                         },
                         {
-                        "proName": "FX:EURTRY",
-                        "title": "EUR/TRY"
+                        "proName": "FX:GBPUSD",
+                        "title": "GBP/USD"
                         },
                         {
-                        "proName": "FX:GBPTRY",
-                        "title": "GBP/TRY"
+                        "proName": "FX:USDJPY",
+                        "title": "USD/JPY"
                         },
                         {
-                        "proName": "FX:BTCTRY",
-                        "title": "BTC/TRY"
+                        "proName": "BTCUSD",
+                        "title": "BTC/USD"
                         },
                         {
-                        "proName": "FX:ETHTRY",
-                        "title": "ETH/TRY"
+                        "proName": "ETHUSD",
+                        "title": "ETH/USD"
+                        },
+                        {
+                        "proName": "GOLD",
+                        "title": "Gold"
                         }
                     ],
                     "showSymbolLogo": true,
@@ -119,13 +119,13 @@
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="grid md:grid-cols-2 gap-10 items-center">
             <div class="card-dark p-6">
-                <div class="text-sm text-emerald-300/80">Платформа с Государственной Поддержкой</div>
-                <h2 class="mt-2 text-2xl md:text-3xl font-extrabold heading-accent">Почему Стоит Выбрать Нашу Платформу с Государственной Поддержкой</h2>
-                <p class="mt-3 text-emerald-100/80">Развивайте свои инвестиции с помощью безопасной финансовой платформы, поддерживаемой Турецкой Республикой</p>
+                <div class="text-sm text-emerald-300/80">Международно Регулируемая Платформа</div>
+                <h2 class="mt-2 text-2xl md:text-3xl font-extrabold heading-accent">Почему Стоит Выбрать Нашу Лицензированную Платформу</h2>
+                <p class="mt-3 text-emerald-100/80">Развивайте свои инвестиции с помощью безопасной финансовой платформы, регулируемой международными финансовыми органами</p>
                 <div class="mt-4 p-3 bg-emerald-900/30 rounded-lg border border-emerald-700/50">
                     <p class="text-emerald-200 text-sm">
                         <i class="fas fa-shield-alt text-emerald-400 mr-2"></i>
-                        <strong>Лицензировано SPK и Подконтрольно Государству:</strong> Лицензировано Советом по рынкам капитала и контролируется государственными учреждениями.
+                        <strong>Международное Регулирование и Лицензирование:</strong> Лицензировано и контролируется ведущими международными финансовыми регуляторами.
                     </p>
                 </div>
                 <a href="{{ route('register') }}" class="btn-primary mt-6">Регистрация</a>
@@ -133,10 +133,10 @@
             <div class="grid sm:grid-cols-2 gap-4">
                 @php
                     $features = [
-                        ['title' => 'Государственная Гарантия', 'desc' => 'Безопасная инвестиционная среда, поддерживаемая Турецкой Республикой'],
-                        ['title' => 'Лицензия SPK', 'desc' => 'Прозрачные операции под контролем Совета по рынкам капитала'],
-                        ['title' => 'Местный Капитал', 'desc' => 'Национальная платформа, способствующая турецкой экономике'],
-                        ['title' => 'Государственные Субсидии', 'desc' => 'Воспользуйтесь налоговыми льготами и государственной поддержкой']
+                        ['title' => 'Международная Безопасность', 'desc' => 'Безопасная инвестиционная среда, регулируемая международными органами'],
+                        ['title' => 'Лицензии FCA/CySEC', 'desc' => 'Прозрачные операции под контролем ведущих финансовых регуляторов'],
+                        ['title' => 'Глобальные Рынки', 'desc' => 'Международная платформа с доступом к мировым финансовым рынкам'],
+                        ['title' => 'Конкурентные Условия', 'desc' => 'Низкие комиссии и выгодные условия торговли на международных рынках']
                     ];
                 @endphp
                 @foreach($features as $feature)
@@ -179,9 +179,9 @@
                         'desc' => 'Инвестируйте свои накопления в различные инструменты капитала с помощью профессиональных управляющих.'
                     ],
                     [
-                        'title' => 'С Государственной Поддержкой',
+                        'title' => 'С Международным Регулированием',
                         'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDBrBvxvWYQhuhkLCTyic3o4V1aOKjlJHOgQ&s',
-                        'desc' => 'Зарабатывайте с Государственной Поддержкой.'
+                        'desc' => 'Торгуйте с международными лицензиями и регулированием.'
                     ],
                     [
                         'title' => 'Операции Forex',
@@ -221,36 +221,36 @@
     </div>
 </section>
 
-<!-- Türkiye Piyasaları Section -->
+<!-- Международные Рынки Section -->
 <section class="py-12 bg-gray-800">
     <div class="container mx-auto px-4 max-w-7xl">
         <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-extrabold heading-accent mb-4">Рынки Турции</h2>
+            <h2 class="text-2xl md:text-3xl font-extrabold heading-accent mb-4">Международные Рынки</h2>
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-lg md:text-xl font-semibold text-white mb-4">Вы Можете Торговать Этими Компаниями</h3>
+                <h3 class="text-lg md:text-xl font-semibold text-white mb-4">Торгуйте с Глобальными Лидерами</h3>
                 <p class="text-emerald-100/80 mb-6">
-                    Открывайте позиции в местных лидерах, таких как Baykar, Koç, Türkiye Petrolleri, Aselsan, Havelsan и Togg.
-                    Каждая инвестиция вносит вклад в экономику страны; поддерживайте и открывайте потенциал прибыли.
-                    Принимайте обоснованные решения, работая с независимыми экспертами.
+                    Открывайте позиции в мировых лидерах, таких как Apple, Microsoft, Tesla, Amazon, Google и Meta.
+                    Диверсифицируйте свой портфель на международных рынках и получайте прибыль от глобального роста.
+                    Принимайте обоснованные решения с помощью международной команды экспертов.
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
                     <div class="card-dark p-5">
-                        <div class="text-emerald-300 font-semibold mb-2">Поддержка Государства</div>
+                        <div class="text-emerald-300 font-semibold mb-2">Глобальная Диверсификация</div>
                         <div class="text-emerald-100/70 text-sm">
-                            Инвестиции в местные компании обеспечивают ресурсы для экономики и способствуют устойчивому росту.
+                            Инвестиции в международные рынки снижают риски и обеспечивают доступ к мировому росту.
                         </div>
                     </div>
                     <div class="card-dark p-5">
-                        <div class="text-emerald-300 font-semibold mb-2">Прибыль от Поддержки</div>
+                        <div class="text-emerald-300 font-semibold mb-2">Высокая Ликвидность</div>
                         <div class="text-emerald-100/70 text-sm">
-                            Возможность роста портфеля при использовании долгосрочного создания стоимости.
+                            Торговля на крупнейших биржах мира обеспечивает оптимальное исполнение ордеров.
                         </div>
                     </div>
                     <div class="card-dark p-5">
-                        <div class="text-emerald-300 font-semibold mb-2">Независимые Эксперты</div>
+                        <div class="text-emerald-300 font-semibold mb-2">Профессиональный Анализ</div>
                         <div class="text-emerald-100/70 text-sm">
-                            Объективный взгляд с командой экспертов в исследованиях и управлении рисками.
+                            Международная команда экспертов предоставляет глубокий анализ мировых рынков.
                         </div>
                     </div>
                 </div>
@@ -262,52 +262,52 @@
             @php
                 $companies = [
                     [
-                        'name' => 'Baykar',
-                        'symbol' => 'BAYKAR',
-                        'price' => '485.08',
-                        'change' => '-1.01',
-                        'isPositive' => false,
-                        'logo' => 'https://idsb.tmgrup.com.tr/ly/uploads/images/2025/02/02/366619.jpg'
-                    ],
-                    [
-                        'name' => 'Koç Holding',
-                        'symbol' => 'KCHOL',
-                        'price' => '473.78',
-                        'change' => '+0.35',
+                        'name' => 'Apple Inc.',
+                        'symbol' => 'AAPL',
+                        'price' => '185.12',
+                        'change' => '+1.24',
                         'isPositive' => true,
-                        'logo' => 'https://bursaajansi.com/wp-content/uploads/2024/05/koc-holding-o-sektore-giris-yapiyor-milyarlarca-dolar-yatirim-yapacaklar-IRAEw5Sw.jpg'
+                        'logo' => 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=400&auto=format&fit=crop'
                     ],
                     [
-                        'name' => 'Türkiye Petrolleri',
-                        'symbol' => 'TPAO',
-                        'price' => '68.41',
+                        'name' => 'Microsoft Corp.',
+                        'symbol' => 'MSFT',
+                        'price' => '378.85',
+                        'change' => '+0.67',
+                        'isPositive' => true,
+                        'logo' => 'https://images.unsplash.com/photo-1633409361618-c73427e4e206?q=80&w=400&auto=format&fit=crop'
+                    ],
+                    [
+                        'name' => 'Tesla Inc.',
+                        'symbol' => 'TSLA',
+                        'price' => '248.42',
+                        'change' => '-0.89',
+                        'isPositive' => false,
+                        'logo' => 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=400&auto=format&fit=crop'
+                    ],
+                    [
+                        'name' => 'Amazon.com Inc.',
+                        'symbol' => 'AMZN',
+                        'price' => '143.67',
+                        'change' => '+2.15',
+                        'isPositive' => true,
+                        'logo' => 'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=400&auto=format&fit=crop'
+                    ],
+                    [
+                        'name' => 'Alphabet Inc.',
+                        'symbol' => 'GOOGL',
+                        'price' => '127.33',
+                        'change' => '+1.45',
+                        'isPositive' => true,
+                        'logo' => 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=400&auto=format&fit=crop'
+                    ],
+                    [
+                        'name' => 'Meta Platforms',
+                        'symbol' => 'META',
+                        'price' => '298.71',
                         'change' => '+0.92',
                         'isPositive' => true,
-                        'logo' => 'https://beypet.com/storage/420/WhatsApp-Image-2024-08-14-at-14.50.54-(2).jpeg.jpeg'
-                    ],
-                    [
-                        'name' => 'Aselsan',
-                        'symbol' => 'ASELS',
-                        'price' => '173.44',
-                        'change' => '-0.43',
-                        'isPositive' => false,
-                        'logo' => 'https://image.hurimg.com/i/hurriyet/75/0x0/68c11a9f292d8a4321ac6929.jpg'
-                    ],
-                    [
-                        'name' => 'Havelsan',
-                        'symbol' => 'HAVELSAN',
-                        'price' => '337.97',
-                        'change' => '+1.99',
-                        'isPositive' => true,
-                        'logo' => 'https://www.savunmasanayist.com/wp-content/uploads/2022/05/HAVELSAN-780x470.jpg'
-                    ],
-                    [
-                        'name' => 'Togg',
-                        'symbol' => 'TOGG',
-                        'price' => '388.28',
-                        'change' => '+1.42',
-                        'isPositive' => true,
-                        'logo' => 'https://nextcar.ua/images/blog/548/265874.jpg'
+                        'logo' => 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop'
                     ]
                 ];
             @endphp
@@ -366,7 +366,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Да, наша платформа является поставщиком финансовых услуг с государственной поддержкой. Мы регулируемся и поддерживаемся Советом по рынкам капитала Турецкой Республики (SPK) и соответствующими государственными учреждениями. Это позволяет нам предоставлять пользователям безопасную и регулируемую инвестиционную среду.
+                    Да, наша платформа является лицензированным поставщиком финансовых услуг. Мы регулируемся ведущими международными финансовыми органами, включая FCA (Великобритания) и CySEC (Кипр). Это позволяет нам предоставлять пользователям безопасную и международно регулируемую инвестиционную среду.
                 </div>
             </div>
 
@@ -392,7 +392,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Наша команда состоит из лицензированных финансовых аналитиков с 15+ летним опытом, бывших банковских сотрудников и экспертов по рынкам капитала. Кроме того, наши алгоритмы с поддержкой ИИ проводят рыночный анализ 24/7. Все эксперты имеют лицензию SPK.
+                    Наша команда состоит из лицензированных финансовых аналитиков с 15+ летним опытом, бывших банковских сотрудников и экспертов по международным рынкам капитала. Кроме того, наши алгоритмы с поддержкой ИИ проводят рыночный анализ 24/7. Все эксперты имеют международные лицензии FCA и CySEC.
                 </div>
             </div>
 
@@ -418,7 +418,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Наше государство поддерживает развитие местных финансовых технологий и стремится снизить зависимость граждан от международных платформ. Кроме того, инвестиции в местные компании способствуют экономическому росту. Благодаря этой поддержке мы можем предоставлять услуги по более низкой стоимости.
+                    Международные регуляторы поддерживают развитие инновационных финансовых технологий и стремятся обеспечить безопасную торговую среду для инвесторов. Строгое регулирование и надзор позволяют нам предоставлять надежные услуги с конкурентными условиями и низкими комиссиями.
                 </div>
             </div>
 
@@ -431,7 +431,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Плата за использование платформы составляет ₺99 в месяц. Комиссии за транзакции варьируются от 0,1% до 0,5%. Операции пополнения/снятия бесплатны. Для VIP-пользователей применяются специальные скидки. Все сборы отображаются прозрачно, без скрытых затрат.
+                    Плата за использование платформы составляет $19 в месяц. Комиссии за транзакции варьируются от 0,1% до 0,5%. Операции пополнения/снятия бесплатны. Для VIP-пользователей применяются специальные скидки. Все сборы отображаются прозрачно, без скрытых затрат.
                 </div>
             </div>
 
@@ -444,7 +444,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Мы получаем данные о рынке в режиме реального времени из надежных источников, таких как Borsa İstanbul, международные биржи и Bloomberg Terminal. Кроме того, мы производим технический анализ и прогнозы с помощью ИИ с использованием собственных алгоритмов. Все данные защищены шифрованием SSL.
+                    Мы получаем данные о рынке в режиме реального времени из надежных источников, таких как NYSE, NASDAQ, LSE, международные биржи и Bloomberg Terminal. Кроме того, мы производим технический анализ и прогнозы с помощью ИИ с использованием собственных алгоритмов. Все данные защищены шифрованием SSL.
                 </div>
             </div>
 
@@ -457,7 +457,7 @@
                     </button>
                 </div>
                 <div class="faq-answer mt-3 text-emerald-100/80 d-none">
-                    Вы можете пополнить счет через банковский перевод, кредитную карту, криптовалюту и другие платежные методы 24/7. Минимальная сумма инвестиций ₺1,000. Операции вывода средств осуществляются в течение максимум 24 часов. VIP-пользователи имеют приоритет в обработке.
+                    Вы можете пополнить счет через банковский перевод, кредитную карту, криптовалюту и другие платежные методы 24/7. Минимальная сумма инвестиций $250. Операции вывода средств осуществляются в течение максимум 24 часов. VIP-пользователи имеют приоритет в обработке.
                 </div>
             </div>
 
