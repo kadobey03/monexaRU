@@ -149,29 +149,27 @@
 
 
 <meta property="og:site_name" content="{{$settings->site_name }}">
-<meta property="og:title" content="Trading With {{$settings->site_name }}" />
-<meta name="description" content="{{$settings->site_name }} LIMITED???
-INVEST IN A LEADING
-TRADE AND INVESTMENT
-COMPANY, OPERATING IN
-THE UK.
-SERVICES INCLUDE: FOREX TRADING
-CRYPTOCURRENCIES, STOCKS & COMMODITIES INVESTMENTS. OIL & GAS, REAL ESTATE INVESTMENTS, MARKET
-RESEARCH AND ANALYSIS:
-ASSISTING BOTH INDIVIDUALS & COMPANIES INVEST IN THE
-COMMERCIAL MARKET.TRAINING CLIENTS & INVESTORS TO BECOME
-EXPERTISE.???">
-<meta property="og:description" content="{{$settings->site_name }} LIMITED???
-INVEST IN A LEADING
-TRADE AND INVESTMENT
-COMPANY, OPERATING IN
-THE UK.
-SERVICES INCLUDE: FOREX TRADING
-CRYPTOCURRENCIES, STOCKS & COMMODITIES INVESTMENTS. OIL & GAS, REAL ESTATE INVESTMENTS, MARKET
-RESEARCH AND ANALYSIS:
-ASSISTING BOTH INDIVIDUALS & COMPANIES INVEST IN THE
-COMMERCIAL MARKET.TRAINING CLIENTS & INVESTORS TO BECOME
-EXPERTISE.???">
+<meta property="og:title" content="Торговля с {{$settings->site_name }}" />
+<meta name="description" content="{{$settings->site_name }} LIMITED -
+ИНВЕСТИРУЙТЕ В ВЕДУЩУЮ
+ТОРГОВУЮ И ИНВЕСТИЦИОННУЮ
+КОМПАНИЮ, РАБОТАЮЩУЮ В
+МЕЖДУНАРОДНОМ МАСШТАБЕ.
+УСЛУГИ ВКЛЮЧАЮТ: ТОРГОВЛЮ НА ФОРЕКС,
+КРИПТОВАЛЮТАМИ, АКЦИЯМИ И СЫРЬЕВЫМИ ТОВАРАМИ. ИНВЕСТИЦИИ В НЕФТЬ И ГАЗ, НЕДВИЖИМОСТЬ, ИССЛЕДОВАНИЕ И АНАЛИЗ РЫНКА:
+ПОМОЩЬ КАК ЧАСТНЫМ ЛИЦАМ, ТАК И КОМПАНИЯМ В ИНВЕСТИРОВАНИИ НА
+КОММЕРЧЕСКОМ РЫНКЕ. ОБУЧЕНИЕ КЛИЕНТОВ И ИНВЕСТОРОВ ДЛЯ ПОЛУЧЕНИЯ
+ЭКСПЕРТИЗЫ.">
+<meta property="og:description" content="{{$settings->site_name }} LIMITED -
+ИНВЕСТИРУЙТЕ В ВЕДУЩУЮ
+ТОРГОВУЮ И ИНВЕСТИЦИОННУЮ
+КОМПАНИЮ, РАБОТАЮЩУЮ В
+МЕЖДУНАРОДНОМ МАСШТАБЕ.
+УСЛУГИ ВКЛЮЧАЮТ: ТОРГОВЛЮ НА ФОРЕКС,
+КРИПТОВАЛЮТАМИ, АКЦИЯМИ И СЫРЬЕВЫМИ ТОВАРАМИ. ИНВЕСТИЦИИ В НЕФТЬ И ГАЗ, НЕДВИЖИМОСТЬ, ИССЛЕДОВАНИЕ И АНАЛИЗ РЫНКА:
+ПОМОЩЬ КАК ЧАСТНЫМ ЛИЦАМ, ТАК И КОМПАНИЯМ В ИНВЕСТИРОВАНИИ НА
+КОММЕРЧЕСКОМ РЫНКЕ. ОБУЧЕНИЕ КЛИЕНТОВ И ИНВЕСТОРОВ ДЛЯ ПОЛУЧЕНИЯ
+ЭКСПЕРТИЗЫ.">
 <meta property="og:type" content="website" />
 
 

@@ -141,14 +141,14 @@
         }
     </style>
 
-    <title>{{$settings->site_name}} | CFD Ticareti — Hisse Senetleri, Altın, Petrol, Endeksler</title>
+    <title>{{$settings->site_name}} | CFD Торговля — Акции, Золото, Нефть, Индексы</title>
     <meta name="theme-color" content="#111827">    <meta property="x-session-id" content="ghJjEOrjZ3KUPun1UQksVUbvK88y21dgIhKtb8GT">
     <meta property="og:site_name" content="{{$settings->site_name}}">
-    <meta property="og:description" content="{{$settings->site_name}} ile CFD Ticareti. Ultra hızlı execution ve 0.0 pipten başlayan spreadlerle Hisse Senetleri, Altın, Petrol, Endeksler'de işlem yapın. Tecrübeli ve yeni başlayan traderlar için haberler, makaleler ve eğitim materyalleri.">
-    <meta name="description" content="{{$settings->site_name}} ile CFD Ticareti. Ultra hızlı execution ve 0.0 pipten başlayan spreadlerle Hisse Senetleri, Altın, Petrol, Endeksler'de işlem yapın. Tecrübeli ve yeni başlayan traderlar için haberler, makaleler ve eğitim materyalleri.">
-    <meta name="keywords" content="döviz, CFDler, CFD, Bitcoin ticareti, kripto ticareti, online işlem yaparak, Döviz ticareti, Petrol ticareti, Altın ticareti, endeks ticareti, hisse ticareti, emtia ticareti, işlem yaparak platformu, Kripto paralar günlük ticareti">
+    <meta property="og:description" content="CFD Торговля с {{$settings->site_name}}. Сверхбыстрое исполнение и спреды от 0.0 пунктов для торговли Акциями, Золотом, Нефтью, Индексами. Новости, статьи и обучающие материалы для опытных и начинающих трейдеров.">
+    <meta name="description" content="CFD Торговля с {{$settings->site_name}}. Сверхбыстрое исполнение и спреды от 0.0 пунктов для торговли Акциями, Золотом, Нефтью, Индексами. Новости, статьи и обучающие материалы для опытных и начинающих трейдеров.">
+    <meta name="keywords" content="форекс, CFD, Bitcoin торговля, криптовалюты торговля, онлайн торговля, торговля валютой, торговля нефтью, торговля золотом, торговля индексами, торговля акциями, торговля сырьем, торговая платформа, ежедневная торговля криптовалютами">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="CFD Ticareti — Hisse Senetleri, Altın, Petrol, Endeksler | {{$settings->site_name}}">
+    <meta property="og:title" content="CFD Торговля — Акции, Золото, Нефть, Индексы | {{$settings->site_name}}">
     <meta property="og:image" content="img/share.jpg">
 
     <!-- Favicon -->
@@ -217,7 +217,7 @@
 <body class="antialiased text-gray-200 bg-gray-900 font-sans min-h-screen flex flex-col">
     <!-- Accessibility Skip Link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:bg-blue-700 focus:text-white focus:fixed focus:px-4 focus:py-2 focus:top-2 focus:left-2 focus:z-50">
-        İçeriği Atla
+        Перейти к содержанию
     </a>
 
 
@@ -256,38 +256,38 @@
                 <nav class="hidden md:flex space-x-8">
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.away="open = false" class="group inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white focus:outline-none">
-                            <span>Ticaret</span>
+                            <span>Торговля</span>
                             <svg class="ml-2 h-4 w-4 text-gray-400 group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-dark-300 ring-1 ring-black ring-opacity-5 z-50" style="display: none;">
-                            <a href="cryptocurrencies" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Kripto Para</a>
-                            <a href="forex" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Döviz</a>
-                            <a href="shares" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Hisseler</a>
-                            <a href="indices" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Endeksler</a>
-                            <a href="etfs" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">ETF'ler</a>
+                            <a href="cryptocurrencies" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Криптовалюты</a>
+                            <a href="forex" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Форекс</a>
+                            <a href="shares" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Акции</a>
+                            <a href="indices" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Индексы</a>
+                            <a href="etfs" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">ETF</a>
                         </div>
                     </div>
 
 
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.away="open = false" class="group inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white focus:outline-none">
-                            <span>Şirket</span>
+                            <span>Компания</span>
                             <svg class="ml-2 h-4 w-4 text-gray-400 group-hover:text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-1" class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-dark-300 ring-1 ring-black ring-opacity-5 z-50" style="display: none;">
-                            <a href="about" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Hakkımızda</a>
-                            <a href="why-us" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Neden Biz</a>
-                            <a href="faq" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">SSS</a>
-                            <a href="regulation" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Yasal ve Düzenlemeler</a>
+                            <a href="about" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">О нас</a>
+                            <a href="why-us" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Почему мы</a>
+                            <a href="faq" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">FAQ</a>
+                            <a href="regulation" class="block px-4 py-2 text-sm text-gray-200 hover:bg-dark-200">Правовые документы</a>
                         </div>
                     </div>
 
-                    <a href="for-traders" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white">Eğitim</a>
-                    <a href="contacts" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white">İletişim</a>
+                    <a href="for-traders" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white">Обучение</a>
+                    <a href="contacts" class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-200 hover:text-white">Контакты</a>
                 </nav>
 
                 <!-- Right Navigation -->
@@ -322,10 +322,10 @@
                     <div class="flex items-center space-x-4">
                         <a href="login" class="text-gray-200 hover:text-white flex items-center">
                             <i class="fas fa-lock mr-1"></i>
-                            <span>Giriş Yap</span>
+                            <span>Войти</span>
                         </a>
                         <a href="register" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                            Kayıt Ol
+                            Регистрация
                         </a>
                     </div>
                 </div>
@@ -345,7 +345,7 @@
 
                     <!-- Mobile Menu Toggle -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Меню ач</span>
+                        <span class="sr-only">Открыть меню</span>
                         <svg x-show="!mobileMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -363,48 +363,48 @@
                 <!-- Mobile Navigation -->
                 <div x-data="{ open: false }" class="py-1">
                     <button @click="open = !open" class="w-full flex justify-between items-center px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
-                        <span>Ticaret</span>
+                        <span>Торговля</span>
                         <svg class="h-4 w-4 text-gray-400" :class="{'transform rotate-180': open}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
                     <div x-show="open" class="pl-4">
-                        <a href="cryptocurrencies" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Kripto Para</a>
-                        <a href="forex" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Döviz</a>
-                        <a href="shares" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Hisseler</a>
-                        <a href="indices" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Endeksler</a>
-                        <a href="etfs" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">ETF'ler</a>
+                        <a href="cryptocurrencies" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Криптовалюты</a>
+                        <a href="forex" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Форекс</a>
+                        <a href="shares" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Акции</a>
+                        <a href="indices" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Индексы</a>
+                        <a href="etfs" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">ETF</a>
                     </div>
                 </div>
 
 
                 <div x-data="{ open: false }" class="py-1">
                     <button @click="open = !open" class="w-full flex justify-between items-center px-4 py-2 text-sm text-gray-200 hover:bg-gray-700">
-                        <span>Şirket</span>
+                        <span>Компания</span>
                         <svg class="h-4 w-4 text-gray-400" :class="{'transform rotate-180': open}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
                     <div x-show="open" class="pl-4">
-                        <a href="about" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Hakkımızda</a>
-                        <a href="why-us" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Neden Biz</a>
-                        <a href="faq" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">SSS</a>
-                        <a href="regulation" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Yasal ve Düzenlemeler</a>
+                        <a href="about" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">О нас</a>
+                        <a href="why-us" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Почему мы</a>
+                        <a href="faq" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
+                        <a href="regulation" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Правовые документы</a>
                     </div>
                 </div>
 
-                <a href="for-traders" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Eğitim</a>
-                <a href="contacts" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">İletişim</a>
+                <a href="for-traders" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Обучение</a>
+                <a href="contacts" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Контакты</a>
 
 
                 <div class="pt-4 pb-3 border-t border-gray-700">
                     <div class="flex items-center justify-between px-4">
                         <div class="flex items-center space-x-3">
                             <a href="login" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                <i class="fas fa-lock mr-1"></i> Giriş Yap
+                                <i class="fas fa-lock mr-1"></i> Войти
                             </a>
                             <a href="register" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
-                                Kayıt Ol
+                                Регистрация
                             </a>
                         </div>
                     </div>
@@ -482,36 +482,36 @@
                         </div>
                     </div>
 
-                    <!-- Hızlı Bağlantılar -->
+                    <!-- Быстрые ссылки -->
                     <div>
-                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Hızlı Bağlantılar</h3>
+                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Быстрые ссылки</h3>
                         <ul class="space-y-3">
-                            <li><a href="about" class="text-sm text-gray-400 hover:text-white transition">Hakkımızda</a></li>
-                            <li><a href="why-us" class="text-sm text-gray-400 hover:text-white transition">Neden Bizi Seçmelisiniz</a></li>
-                            <li><a href="for-traders" class="text-sm text-gray-400 hover:text-white transition">Eğitim</a></li>
-                            <li><a href="contacts" class="text-sm text-gray-400 hover:text-white transition">İletişim</a></li>
+                            <li><a href="about" class="text-sm text-gray-400 hover:text-white transition">О нас</a></li>
+                            <li><a href="why-us" class="text-sm text-gray-400 hover:text-white transition">Почему выбирают нас</a></li>
+                            <li><a href="for-traders" class="text-sm text-gray-400 hover:text-white transition">Обучение</a></li>
+                            <li><a href="contacts" class="text-sm text-gray-400 hover:text-white transition">Контакты</a></li>
                         </ul>
                     </div>
 
-                    <!-- Trading -->
+                    <!-- Торговля -->
                     <div>
-                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Ticaret</h3>
+                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Торговля</h3>
                         <ul class="space-y-3">
-                            <li><a href="cryptocurrencies" class="text-sm text-gray-400 hover:text-white transition">Kripto Paralar</a></li>
-                            <li><a href="forex" class="text-sm text-gray-400 hover:text-white transition">Döviz</a></li>
-                            <li><a href="shares" class="text-sm text-gray-400 hover:text-white transition">Hisseler</a></li>
-                            <li><a href="indices" class="text-sm text-gray-400 hover:text-white transition">Endeksler</a></li>
+                            <li><a href="cryptocurrencies" class="text-sm text-gray-400 hover:text-white transition">Криптовалюты</a></li>
+                            <li><a href="forex" class="text-sm text-gray-400 hover:text-white transition">Форекс</a></li>
+                            <li><a href="shares" class="text-sm text-gray-400 hover:text-white transition">Акции</a></li>
+                            <li><a href="indices" class="text-sm text-gray-400 hover:text-white transition">Индексы</a></li>
                         </ul>
                     </div>
 
-                    <!-- Account -->
+                    <!-- Аккаунт -->
                     <div>
-                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Hesabınız</h3>
+                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Ваш аккаунт</h3>
                         <ul class="space-y-3">
-                            <li><a href="login" class="text-sm text-gray-400 hover:text-white transition">Giriş Yap</a></li>
-                            <li><a href="register" class="text-sm text-gray-400 hover:text-white transition">Hesap Oluştur</a></li>
-                            <li><a href="login" class="text-sm text-gray-400 hover:text-white transition">Demo Hesap</a></li>
-                            <li><a href="contact" class="text-sm text-gray-400 hover:text-white transition">Yardım Merkezi</a></li>
+                            <li><a href="login" class="text-sm text-gray-400 hover:text-white transition">Войти</a></li>
+                            <li><a href="register" class="text-sm text-gray-400 hover:text-white transition">Создать аккаунт</a></li>
+                            <li><a href="login" class="text-sm text-gray-400 hover:text-white transition">Демо аккаунт</a></li>
+                            <li><a href="contact" class="text-sm text-gray-400 hover:text-white transition">Центр поддержки</a></li>
                         </ul>
                     </div>
                 </div>
@@ -525,7 +525,7 @@
             <div class="py-6">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div class="mb-4 md:mb-0">
-                        <h4 class="text-sm font-semibold text-white">Uygun Platformlar</h4>
+                        <h4 class="text-sm font-semibold text-white">Доступные платформы</h4>
                     </div>
                     <div class="flex items-center space-x-6">
                         <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Веб-платформа">
@@ -556,14 +556,14 @@
             <div class="py-6">
                 <div class="text-xs text-gray-400">
                     <p class="mb-4 leading-relaxed">
-                        <span class="font-semibold text-gray-300">RİSK UYARISI:</span> Şirket tarafından sunulan finansal ürünler Fark Sözleşmeleri ('CFD'ler') ve diğer karmaşık finansal ürünleri içerir. CFD işlemi yapmak yüksek seviyede risk taşır çünkü kaldıraç hem avantajınıza hem de dezavantajınıza çalışabilir. Sonuç olarak, CFD'ler tüm yatırımcılar için uygun olmayabilir çünkü yatırılan sermayenin tamamını kaybetmek mümkündür. Kaybetmeyi göze alamayacağınız parayı hiçbir zaman yatırmamalısınız. Sunulan karmaşık finansal ürünlerde işlem yapmadan önce, lütfen riskleri anladığınızdan emin olun.
+                        <span class="font-semibold text-gray-300">ПРЕДУПРЕЖДЕНИЕ О РИСКАХ:</span> Финансовые продукты, предлагаемые компанией, включают контракты на разность ('CFD') и другие сложные финансовые продукты. Торговля CFD несет высокий уровень риска, поскольку кредитное плечо может работать как в вашу пользу, так и против вас. В результате CFD могут подходить не всем инвесторам, поскольку возможна потеря всего инвестированного капитала. Никогда не инвестируйте деньги, потерю которых вы не можете себе позволить. Прежде чем торговать сложными финансовыми продуктами, убедитесь, что вы понимаете связанные с этим риски.
                     </p>
                     <div class="flex flex-wrap gap-4 mb-4">
-                        <a href="terms" class="text-blue-400 hover:text-blue-300 transition">Şartlar ve Koşullar</a>
-                        <a href="privacy" class="text-blue-400 hover:text-blue-300 transition">Gizlilik Politikası</a>
-                        <a href="regulation" class="text-blue-400 hover:text-blue-300 transition">Yasal Belgeler</a>
+                        <a href="terms" class="text-blue-400 hover:text-blue-300 transition">Условия и положения</a>
+                        <a href="privacy" class="text-blue-400 hover:text-blue-300 transition">Политика конфиденциальности</a>
+                        <a href="regulation" class="text-blue-400 hover:text-blue-300 transition">Правовые документы</a>
                     </div>
-                    <p>© <script>document.write(new Date().getFullYear())</script> {{$settings->site_name}}. Tüm Hakları Saklıdır.</p>
+                    <p>© <script>document.write(new Date().getFullYear())</script> {{$settings->site_name}}. Все права защищены.</p>
                 </div>
             </div>
         </div>

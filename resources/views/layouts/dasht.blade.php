@@ -196,7 +196,7 @@
              {{$settings->site_name}}
             </span>
             <div class="text-xs text-gray-500 dark:text-gray-400 font-medium">
-              Profesyonel Ticaret
+              Профессиональная торговля
             </div>
           </div>
         </a>
@@ -226,7 +226,7 @@
       <!-- Center Section: Account Balance (Desktop) -->
       <div class="hidden md:flex items-center space-x-6">
         <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 px-4 py-2 rounded-lg border border-blue-100 dark:border-blue-800">
-          <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Hesap Bakiyesi</div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Баланс счета</div>
           <div class="text-lg font-bold text-gray-900 dark:text-white">
             {{ Auth::user()->currency }}{{ number_format(auth()->user()->account_bal, 2) }}
           </div>
@@ -241,7 +241,7 @@
           <button @click="quickActionsOpen = !quickActionsOpen"
                   class="flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200">
             <i data-lucide="zap" class="w-4 h-4"></i>
-            <span>Hızlı İşlem</span>
+            <span>Быстрые операции</span>
             <i data-lucide="chevron-down" class="w-4 h-4" :class="quickActionsOpen ? 'rotate-180' : ''"></i>
           </button>
 
@@ -253,15 +253,15 @@
             <div class="p-2">
               <a href="{{ route('deposits') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="plus-circle" class="w-4 h-4 mr-3 text-green-500"></i>
-                Para Yatırma
+                Пополнение
               </a>
               <a href="{{ route('withdrawalsdeposits') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="minus-circle" class="w-4 h-4 mr-3 text-red-500"></i>
-                Para Çekme
+                Вывод средств
               </a>
               <a href="{{ route('trade.index') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="trending-up" class="w-4 h-4 mr-3 text-blue-500"></i>
-                Piyasa İşlemleri
+                Рыночные операции
               </a>
             </div>
           </div>
@@ -291,7 +291,7 @@
                class="absolute right-0 sm:right-0 sm:left-auto left-1/2 sm:transform-none transform -translate-x-1/2 mt-2 w-80 max-w-[90vw] bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-20" x-cloak>
             <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
               <h3 class="text-sm font-semibold text-gray-900 dark:text-white">
-                Bildirimler
+                Уведомления
                 @if($unreadCount > 0)
                   <span class="ml-2 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-500 rounded-full">
                     {{ $unreadCount }}
@@ -341,15 +341,15 @@
                   <div class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-500 mb-4">
                     <i data-lucide="bell-off" class="h-6 w-6"></i>
                   </div>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">Bildirim yok</p>
-                      <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">Bir şey olduğunda size haber vereceğiz</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">Нет уведомлений</p>
+                      <p class="mt-1 text-xs text-gray-500 dark:text-gray-500">Мы уведомим вас, когда что-то произойдет</p>
                 </div>
               @endforelse
             </div>
 
             @if(count($notifications) > 0)
               <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700 text-center">
-                <a href="{{ route('notifications') }}" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Tüm bildirimleri görüntüle</a>
+                <a href="{{ route('notifications') }}" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Просмотреть все уведомления</a>
               </div>
             @endif
           </div>
@@ -381,7 +381,7 @@
                   {{ auth()->user()->name }}
                 </div>
                 <div class="text-xs text-gray-500 dark:text-gray-400">
-                  Ticaret Hesabı
+                  Торговый счет
                 </div>
               </div>
             </div>
@@ -415,22 +415,22 @@
             <div class="p-2">
               <a href="{{ route('profile') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="user" class="w-4 h-4 mr-3"></i>
-                Profil Ayarları
+                Настройки профиля
               </a>
               <a href="{{ route('accounthistory') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="receipt" class="w-4 h-4 mr-3"></i>
-                Hesap Geçmişi
+                История счета
               </a>
               <a href="{{ route('support') }}" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="help-circle" class="w-4 h-4 mr-3"></i>
-                Destek Merkezi
+                Центр поддержки
               </a>
               <div class="border-t border-gray-200 dark:border-gray-600 my-2"></div>
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="w-full flex items-center px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md">
                   <i data-lucide="log-out" class="w-4 h-4 mr-3"></i>
-                  Çıkış Yap
+                  Выход
                 </button>
               </form>
             </div>
@@ -504,7 +504,7 @@
                     {{ auth()->user()->name }}
                 </h2>
                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                    Hesap Bakiyesi: {{ Auth::user()->currency }}{{ number_format(auth()->user()->account_bal, 2) }}
+                    Баланс счета: {{ Auth::user()->currency }}{{ number_format(auth()->user()->account_bal, 2) }}
                 </p>
             </div>
         </div>
@@ -516,7 +516,7 @@
             <h3 class="text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase">Live Market</h3>
             <span class="flex items-center text-xs text-green-600 dark:text-green-400">
                 <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                <span class="font-medium">Canlı</span>
+                <span class="font-medium">Онлайн</span>
             </span>
         </div>
         <div class="space-y-2">
@@ -536,28 +536,28 @@
         <div class="space-y-2">
             <div class="flex items-center gap-2 px-2 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase">
                 <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
-                <span>Genel Bakış</span>
+                <span>Обзор</span>
             </div>
             <ul class="space-y-1">
                 <li>
                     <a href="{{ route('dashboard') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('dashboard') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="layout-dashboard" class="w-5 h-5 mr-3"></i>
-                        Ana Sayfa
+                        Главная
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('accounthistory') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('accounthistory') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="receipt" class="w-5 h-5 mr-3"></i>
-                        Hesap Özeti
+                        Сводка по счету
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('tradinghistory') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('tradinghistory') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="activity" class="w-5 h-5 mr-3"></i>
-                        İşlem Geçmişi
+                        История операций
                     </a>
                 </li>
             </ul>
@@ -571,21 +571,21 @@
         <div class="space-y-2">
             <div class="flex items-center gap-2 px-2 mt-6 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase">
                 <i data-lucide="wallet" class="w-4 h-4"></i>
-                <span>Cüzdan ve Fonlar</span>
+                <span>Кошелек и средства</span>
             </div>
             <ul class="space-y-1">
                 <li>
                     <a href="{{ route('deposits') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('deposits') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="plus-circle" class="w-5 h-5 mr-3"></i>
-                        Para Yatırma
+                        Пополнение
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('withdrawalsdeposits') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('withdrawalsdeposits') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="minus-circle" class="w-5 h-5 mr-3"></i>
-                        Para Çekme
+                        Вывод средств
                     </a>
                 </li>
                 {{-- <li>
@@ -603,7 +603,7 @@
                     <a href="/dashboard/trade"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('dashboard.trade') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="zap" class="w-5 h-5 mr-3"></i>
-                        İşlem Yap
+                        Торговля
                     </a>
                 </li>
                 </ul>
@@ -613,14 +613,14 @@
         <div class="space-y-2">
             <div class="flex items-center gap-2 px-2 mt-6 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase">
                 <i data-lucide="user-circle" class="w-4 h-4"></i>
-                <span>Hesap Yönetimi</span>
+                <span>Управление счетом</span>
             </div>
             <ul class="space-y-1">
                 <li>
                     <a href="{{ route('profile') }}"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('profile') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="user" class="w-5 h-5 mr-3"></i>
-                        Profil Ayarları
+                        Настройки профиля
                     </a>
                 </li>
                 @if(isset($settings->enable_kyc) && $settings->enable_kyc === 'yes')
@@ -629,7 +629,7 @@
                         <!-- Verified Status -->
                         <div class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800">
                             <i data-lucide="shield-check" class="w-5 h-5 mr-3 text-green-600 dark:text-green-400"></i>
-                            <span class="font-medium text-green-700 dark:text-green-300">Hesap Doğrulandı</span>
+                            <span class="font-medium text-green-700 dark:text-green-300">Счет верифицирован</span>
                         </div>
                     @else
                         <!-- KYC Dropdown -->
@@ -637,7 +637,7 @@
                             <button @click="kycOpen = !kycOpen"
                                     class="flex items-center w-full px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 {{ request()->routeIs('account.verify') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                                 <i data-lucide="shield-alert" class="w-5 h-5 mr-3"></i>
-                                <span class="flex-1 text-left">Kimlik Doğrulama</span>
+                                <span class="flex-1 text-left">Верификация</span>
                                 <i data-lucide="chevron-down"
                                    :class="kycOpen ? 'rotate-180' : 'rotate-0'"
                                    class="w-4 h-4 transition-transform duration-200"></i>
@@ -654,25 +654,25 @@
                                  class="mt-2 ml-8 p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm" x-cloak>
 
                                 <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
-                                    Kimlik Doğrulama
+                                    Верификация
                                 </h4>
 
                                 @if(Auth::user()->account_verify === 'Under review')
                                                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                                                        Doğrulamanız inceleniyor
+                                                        Ваша верификация рассматривается
                                                     </p>
                                                     <div class="flex items-center text-xs text-yellow-600 dark:text-yellow-400">
                                                         <i data-lucide="clock" class="w-3 h-3 mr-1"></i>
-                                                        <span>İşleniyor</span>
+                                                        <span>Обработка</span>
                                                     </div>
                                                 @else
                                                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                                        Tüm ticaret özelliklerini kullanmak için kimlik doğrulaması tamamlayın
+                                                        Завершите верификацию для доступа ко всем торговым функциям
                                                     </p>
                                                     <a href="{{ route('account.verify') }}"
                                                        class="inline-flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200">
                                                         <i data-lucide="shield-check" class="w-4 h-4"></i>
-                                                        <span>Şimdi Doğrula</span>
+                                                        <span>Верифицировать сейчас</span>
                                                     </a>
                                 @endif
                             </div>
@@ -687,17 +687,17 @@
         <div class="space-y-2">
             <div class="flex items-center gap-2 px-2 mt-6 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase">
                 <i data-lucide="trending-up" class="w-4 h-4"></i>
-                <span>Büyüme ve Ödüller</span>
+                <span>Рост и награды</span>
             </div>
             <ul class="space-y-1">
                 <li>
                     <a href="{{ route('referuser') }}"
                        class="group relative flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('referuser') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="users" class="w-5 h-5 mr-3"></i>
-                        Tavsiye Programı
+                        Реферальная программа
                         <span class="ml-auto px-2 py-0.5 text-xs font-medium text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full">{{$settings->referral_commission}}%</span>
                         <div class="hidden group-hover:block absolute left-full ml-2 px-2 py-1 bg-gray-900 text-xs text-white rounded whitespace-nowrap">
-                            Tavsiyelerden {{$settings->referral_commission}}% komisyon kazanın
+                            Зарабатывайте {{$settings->referral_commission}}% комиссии с рефералов
                         </div>
                     </a>
                 </li>
@@ -708,16 +708,16 @@
         <div class="space-y-2">
             <div class="flex items-center gap-2 px-2 mt-6 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase">
                 <i data-lucide="help-circle" class="w-4 h-4"></i>
-                <span>Destek ve Yardım</span>
+                <span>Поддержка и помощь</span>
             </div>
             <ul class="space-y-1">
                 <li>
                     <a href="{{ route('support') }}"
                        class="group relative flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 {{ request()->routeIs('support') ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium' : '' }}">
                         <i data-lucide="headphones" class="w-5 h-5 mr-3"></i>
-                        Destek Merkezi
+                        Центр поддержки
                         <div class="hidden group-hover:block absolute left-full ml-2 px-2 py-1 bg-gray-900 text-xs text-white rounded whitespace-nowrap">
-                            Destek ekibimizden yardım alın
+                            Получите помощь от нашей службы поддержки
                         </div>
                     </a>
                 </li>
@@ -733,7 +733,7 @@
                     <button type="submit"
                             class="flex items-center w-full px-3 py-2 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/50 transition-colors duration-150">
                         <i data-lucide="log-out" class="w-5 h-5 mr-3"></i>
-                        <span>Çıkış Yap</span>
+                        <span>Выход</span>
                     </button>
                 </form>
             </div>
@@ -782,7 +782,7 @@
              {{ request()->routeIs('deposits')
                 ? 'text-blue-600 dark:text-blue-400'
                 : 'text-gray-500 group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-400' }}
-             transition-colors duration-300">Yatırma</span>
+             transition-colors duration-300">Пополнение</span>
     </a>
 
     <a href="{{ route('profile') }}"
@@ -801,7 +801,7 @@
              {{ request()->routeIs('profile')
                 ? 'text-blue-600 dark:text-blue-400'
                 : 'text-gray-500 group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-400' }}
-             transition-colors duration-300">Profil</span>
+             transition-colors duration-300">Профиль</span>
     </a>
 
     <a href="{{ route('trade.index') }}"
@@ -820,14 +820,14 @@
              {{ request()->routeIs('trade.index')
                 ? 'text-blue-600 dark:text-blue-400'
                 : 'text-gray-500 group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-400' }}
-             transition-colors duration-300">İşlem Aç</span>
+             transition-colors duration-300">Открыть сделку</span>
     </a>
 <a href="{{ route('support') }}"
    class="flex flex-col items-center
           {{ request()->routeIs('support') ? 'text-blue-600 font-semibold' : 'text-gray-500' }}
           hover:text-blue-600">
   <i data-lucide="life-buoy" class="w-6 h-6"></i>
-  <span class="text-xs mt-1">Destek</span>
+  <span class="text-xs mt-1">Поддержка</span>
 </a>
 
 
@@ -836,7 +836,7 @@
    class="flex flex-col items-center
           {{ request()->routeIs('dashboard') ? 'text-blue-600' : 'text-gray-500' }} hover:text-blue-600">
  <i data-lucide="home" class="w-6 h-6 transition-colors duration-200"></i>
-  <span class="text-xs mt-1">Anasayfa</span>
+  <span class="text-xs mt-1">Главная</span>
 </a>
   </div>
 
@@ -878,7 +878,7 @@
                           transition-colors duration-200 group">
           <i data-lucide="users" class="w-5 h-5 mr-3 text-orange-400
                                       group-hover:scale-110 transition-transform duration-300"></i>
-          <span class="font-medium">Arkadaş Tavsiye Et</span>
+          <span class="font-medium">Пригласить друга</span>
           <span class="ml-auto text-xs font-bold text-orange-400">+{{$settings->referral_commission}}%</span>
         </a>
 
@@ -887,7 +887,7 @@
                                                transition-colors duration-200 group">
           <i data-lucide="life-buoy" class="w-5 h-5 mr-3 text-cyan-400
                                            group-hover:scale-110 transition-transform duration-300"></i>
-          <span class="font-medium">Destek</span>
+          <span class="font-medium">Поддержка</span>
         </a>
 
       </div>
