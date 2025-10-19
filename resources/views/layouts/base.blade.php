@@ -293,16 +293,16 @@
                 <!-- Right Navigation -->
                 <div class="hidden md:flex items-center">
                     <div class="flex space-x-1 mr-4">
-                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Desktop Version">
+                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Версия для ПК">
                             <i class="fas fa-desktop"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Windows App">
+                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Приложение Windows">
                             <i class="fab fa-windows"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Android App">
+                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Приложение Android">
                             <i class="fab fa-android"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="iOS App">
+                        <a href="#" class="text-gray-400 hover:text-gray-200 p-1" aria-label="Приложение iOS">
                             <i class="fab fa-apple"></i>
                         </a>
                     </div>
@@ -345,7 +345,7 @@
 
                     <!-- Mobile Menu Toggle -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Menüyü Aç</span>
+                        <span class="sr-only">Меню ач</span>
                         <svg x-show="!mobileMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -464,7 +464,7 @@
                             </a>
                         </div>
                         <p class="text-sm text-gray-400 mb-6">
-                            {{$settings->site_name}} offers CFD işlem yaparak on stocks, forex, indices, commodities, and cryptocurrencies with competitive spreads and advanced işlem yaparak tools.
+                            {{$settings->site_name}} предлагает CFD торговлю акциями, форекс, индексами, товарами и криптовалютами с конкурентными спредами и продвинутыми торговыми инструментами.
                         </p>
                         <div class="flex space-x-4">
                             <a href="#" class="text-gray-400 hover:text-white">
@@ -528,19 +528,19 @@
                         <h4 class="text-sm font-semibold text-white">Uygun Platformlar</h4>
                     </div>
                     <div class="flex items-center space-x-6">
-                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Web Platform">
+                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Веб-платформа">
                             <i class="fas fa-desktop mr-2"></i>
                             <span class="text-sm">Web</span>
                         </a>
-                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Windows App">
+                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Приложение Windows">
                             <i class="fab fa-windows mr-2"></i>
                             <span class="text-sm">Windows</span>
                         </a>
-                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Android App">
+                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Приложение Android">
                             <i class="fab fa-android mr-2"></i>
                             <span class="text-sm">Android</span>
                         </a>
-                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="iOS App">
+                        <a href="#" class="flex items-center text-gray-400 hover:text-white" aria-label="Приложение iOS">
                             <i class="fab fa-apple mr-2"></i>
                             <span class="text-sm">iOS</span>
                         </a>

@@ -8,8 +8,8 @@
                         <input type="text" class="form-control" wire:model='inviteLink' readonly>
                     </div>
                     <small>
-                        Copy and use your invite link. You can only used your invite link once and will not be
-                        available again once this pages refreshes.
+                        Скопируйте и используйте вашу ссылку-приглашение. Вы можете использовать ссылку-приглашение только один раз, и она
+                        будет недоступна после обновления страницы.
                     </small>
                 </div>
             </div>
@@ -17,13 +17,13 @@
     @else
         <form action="" wire:submit.prevent='subscribe'>
             <div class="form-group mb-2 text-left">
-                <label for="">Choose Duration</label>
+                <label for="">Выберите длительность</label>
                 <select name="" id="" class="form-control" wire:model='duration'
                     wire:change='calculate'>
-                    <option value="Choose">Choose Duration</option>
-                    <option value="Monthly">Monthly</option>
-                    <option value="Quarterly">Quarterly</option>
-                    <option value="Yearly">Yearly</option>
+                    <option value="Choose">Выберите длительность</option>
+                    <option value="Monthly">Ежемесячно</option>
+                    <option value="Quarterly">Ежеквартально</option>
+                    <option value="Yearly">Ежегодно</option>
                 </select>
             </div>
             <div class="form-group mb-2 text-left">

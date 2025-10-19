@@ -66,7 +66,7 @@
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="text-center row copyright text-align-center">
-                            <p>All Rights Reserved &copy; {{ $settings->site_name }} {{ date('Y') }}</p> <br>
+                            <p>Все права защищены &copy; {{ $settings->site_name }} {{ date('Y') }}</p> <br>
                             
                         </div>
                     </div>
@@ -106,7 +106,7 @@
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
-                    pageLanguage: 'en'
+                    pageLanguage: 'ru'
                 }, 'google_translate_element');
             }
         </script>

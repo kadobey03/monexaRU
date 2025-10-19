@@ -32,10 +32,10 @@
             <!-- Header Content -->
             <div class="space-y-6">
                 <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                    <p class="text-sm font-medium text-blue-400">Professional Trading Platform</p>
+                    <p class="text-sm font-medium text-blue-400">Профессиональная Торговая Платформа</p>
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                    cTRADER <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">TRADE</span>
+                    cTRADER <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">ТОРГОВЛЯ</span>
                 </h1>
 
                 <!-- Breadcrumb -->
@@ -62,7 +62,7 @@
                                 <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                                 </svg>
-                                <span class="text-gray-300 ml-1 md:ml-2">Trade</span>
+                                <span class="text-gray-300 ml-1 md:ml-2">Торговля</span>
                             </div>
                         </li>
                     </ol>
@@ -126,8 +126,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Reliable</h3>
-                    <p class="text-gray-300">Featuring the market's sharpest execution, {{$settings->site_name}} Trade cTrader fills your orders in milliseconds without any requotes or price manipulation.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Надежная</h3>
+                    <p class="text-gray-300">Обладая самым острым исполнением на рынке, {{$settings->site_name}} Trade cTrader заполняет ваши ордера за миллисекунды без каких-либо реквот или манипуляции ценами.</p>
                 </div>
             </div>
 
@@ -140,8 +140,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Intelligent</h3>
-                    <p class="text-gray-300">Make informed decisions with smart market analysis tools, Live Sentiment data and in-platform market insights from Trading Central.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Интеллектуальная</h3>
+                    <p class="text-gray-300">Принимайте обоснованные решения с помощью инструментов интеллектуального анализа рынка, данных Live Sentiment и рыночных insights в платформе от Trading Central.</p>
                 </div>
             </div>
 
@@ -154,8 +154,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Transparent</h3>
-                    <p class="text-gray-300">Access transaction statistics, equity charts and detailed history of your deals for a crystal clear understanding of your performance.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Прозрачная</h3>
+                    <p class="text-gray-300">Получите доступ к статистике транзакций, графикам капитала и подробной истории ваших сделок для кристально чистого понимания вашей производительности.</p>
                 </div>
             </div>
 
@@ -168,8 +168,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Intuitive</h3>
-                    <p class="text-gray-300">Easy to use and navigate, {{$settings->site_name}} Trade cTrader was built with real traders' needs in mind. Trade with {{$settings->site_name}} Trade cTrader and experience its distinct advantage.</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Интуитивная</h3>
+                    <p class="text-gray-300">Простая в использовании и навигации, {{$settings->site_name}} Trade cTrader была построена с учетом потребностей реальных трейдеров. Торгуйте с {{$settings->site_name}} Trade cTrader и ощутите ее особое преимущество.</p>
                 </div>
             </div>
         </div>
@@ -213,10 +213,10 @@
                         <svg class="w-6 h-6 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
                         </svg>
-                        STAY UP TO DATE WITH OUR EXPERTS!
+                        ОСТАВАЙТЕСЬ В КУРСЕ С НАШИМИ ЭКСПЕРТАМИ!
                     </h2>
                     <p class="text-gray-300 leading-relaxed">
-                        Our local and international teams are here to support you on a 24/5 basis in more than 20 languages, while our wide range of payment methods gives you greater flexibility when it comes to deposits and withdrawals.
+                        Наши локальные и международные команды здесь, чтобы поддерживать вас на основе 24/5 на более чем 20 языках, в то время как наш широкий спектр способов оплаты дает вам большую гибкость при внесении депозитов и выводе средств.
                     </p>
                 </div>
 
@@ -226,17 +226,17 @@
                         <svg class="w-6 h-6 text-emerald-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
-                        Experience More Than Trading
+                        Испытайте Больше Чем Торговлю
                     </h2>
                     <p class="text-gray-300 leading-relaxed">
-                        Our success is centred around a number of core values. They include providing competitive brokerage fees through tight spreads, ensuring lightning-fast execution, access to advanced trading platforms with a wide range of products, and exceptional customer service.
+                        Наш успех сосредоточен вокруг ряда основных ценностей. Они включают предоставление конкурентоспособных брокерских комиссий через узкие спреды, обеспечение молниеносного исполнения, доступ к продвинутым торговым платформам с широким спектром продуктов и исключительное обслуживание клиентов.
                     </p>
                 </div>
 
                 <!-- CTA Button -->
                 <div class="pt-4">
                     <a href="about" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg hover:shadow-xl" title="Learn About {{$settings->site_name}} Trade Commissions">
-                        Learn More About Our Services
+                        Узнайте Больше О Наших Услугах
                         <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>

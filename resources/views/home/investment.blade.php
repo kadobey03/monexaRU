@@ -60,7 +60,7 @@
                     <span class="block text-emerald-400">{{$settings->site_name}}</span>
                 </h1>
                 <p class="mt-3 text-xl font-medium text-emerald-400 mb-6">
-                    GET LIFETIME INCOME
+                    ПОЛУЧИТЕ ПОЖИЗНЕННЫЙ ДОХОД
                 </p>
                 <p class="text-base text-gray-300 sm:text-lg lg:text-base xl:text-lg max-w-xl">
                     {{$settings->site_name}} geliştiricileri benzersiz bir kripto para robotu oluşturdu. İşlemler üzerinde günlük kâr üretirken Bitcoin'in değerini tahmin eder. Robot, piyasanın herhangi bir aşamasında fayda sağlayabilir: hem büyüme hem düşüş.

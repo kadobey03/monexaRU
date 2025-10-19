@@ -16,8 +16,8 @@
         },
         onApprove: function(data, actions) {
             return actions.order.capture().then(function(details) {
-                alert('İşlem ' + details.payer.name.given_name + ' tarafından tamamlandı');
-                // Call your server to save the transaction
+                alert('Транзакция завершена ' + details.payer.name.given_name + '');
+                // Вызовите ваш сервер для сохранения транзакции
                 return fetch("dashboard/paypalverify/{{ $amount }}", {
                     method: 'post',
                     headers: {

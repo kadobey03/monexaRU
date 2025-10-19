@@ -68,9 +68,9 @@
 				<div>
 					<img src="temp/custom/images/real-estate-investment-sm.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Real Estate Investment</h5>
-						<p>Buying real estate is about more than just finding a place to call home. Investing in real estate has become increasingly popular over the last 50 years and has become a common investment vehicle.</p>
-						<p>Although the real estate market has plenty of opportunities for making big gains, buying and owning real estate is a lot more complicated than investing in stocks and bonds.</p>
+						<h5>Инвестиции в Недвижимость</h5>
+						<p>Покупка недвижимости - это нечто большее, чем просто поиск места для жилья. Инвестирование в недвижимость становится все более популярным за последние 50 лет и стало распространенным инвестиционным инструментом.</p>
+						<p>Хотя рынок недвижимости предлагает множество возможностей для получения больших прибылей, покупка и владение недвижимостью гораздо сложнее, чем инвестирование в акции и облигации.</p>
 					</div>
 				</div>
 			</div>
@@ -78,16 +78,16 @@
 				<div>
 					<img src="temp/custom/images/cannabis-legalised.jpg" alt="">
 					<div class="feature-10-desc">
-						<h5>Cannabis Investment</h5>
-						
-						<p>Cannabis, also known as marijuana among other names, is a psychoactive drug from the Cannabis plant used for medical or recreational purposes.</p>
-						<p>Global spending on legal cannabis is expected to grow 230%, to $31.3% billion in 2022, compared to $9.5 billion in 2017, according to Arcview Market Research and BDS Analytics.</p>
+						<h5>Инвестиции в Каннабис</h5>
+
+						<p>Каннабис, также известный как марихуана среди других названий, является психоактивным препаратом из растения каннабис, используемым в медицинских или рекреационных целях.</p>
+						<p>Глобальные расходы на легальный каннабис, как ожидается, вырастут на 230% до $31,3 миллиарда в 2022 году по сравнению с $9,5 миллиардами в 2017 году, согласно Arcview Market Research и BDS Analytics.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="text-center my-4">
-			<a href="register" class="btn btn-primary">GET STARTED</a>
+			<a href="register" class="btn btn-primary">НАЧАТЬ</a>
 		</div>
 	</div>
 </section>
@@ -98,7 +98,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="text-primary text-uppercase small font-weight-bold">{{$settings->site_name}}</div>
-					<h1 class="my-4">How Does it Work?</h1>
+					<h1 class="my-4">Как Это Работает?</h1>
 					<div class="divider"></div>
 				</div>
 			</div>
@@ -108,7 +108,7 @@
 			</div></div>
 		</div>
 		<div class="text-center my-4" style="position: relative;">
-			<a href="services" class="btn btn-primary">READ MORE</a>
+			<a href="services" class="btn btn-primary">ЧИТАТЬ ДАЛЕЕ</a>
 		</div>
 	</div>
 </section>

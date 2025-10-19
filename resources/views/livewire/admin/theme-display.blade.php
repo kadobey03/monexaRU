@@ -3,8 +3,8 @@
         <hr>
         <div class="form-row mt-4">
             <div class="col-12">
-                <h5 class="">Website theme colour. Double click to save.
-                    Current theme colour have a blue border</h5>
+                <h5 class="">Цвет темы веб-сайта. Дважды нажмите для сохранения.
+                    Текущий цвет темы имеет синюю рамку</h5>
             </div>
             <div class="col-md-4 p-2">
                 <div class="flex-wrap btn-group-toggle d-flex justify-content-around" data-toggle="buttons">

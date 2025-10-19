@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: localStorage.getItem('theme') === 'light' ? false : true }"
+<html lang="ru" x-data="{ darkMode: localStorage.getItem('theme') === 'light' ? false : true }"
       :class="{ 'dark': darkMode }"
       class="dark bg-gray-300 h-full">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $settings->site_name }} - @yield('title', 'Secure Trading Platform')</title>
+    <title>{{ $settings->site_name }} - @yield('title', 'Безопасная торговая платформа')</title>
 
     <!-- Favicon -->
     <link href="{{ asset('storage/app/public/'.$settings->favicon)}}" rel="icon" type="image/x-icon" />
@@ -293,7 +293,7 @@ EXPERTISE.???">
             <!--    "colorTheme": "dark",-->
             <!--    "isTransparent": true,-->
             <!--    "displayMode": "adaptive",-->
-            <!--    "locale": "en"-->
+            <!--    "locale": "ru"-->
             <!--}-->
             <!--</script>-->
             @include('layouts.lang')

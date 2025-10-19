@@ -14,7 +14,7 @@
                 @if (!$item->is_read)
                     <div>
                         <a href="" wire:click.prevent="markAsRead('{{ $item->id }}')" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="Mark as read">
+                            data-bs-placement="top" data-bs-title="Отметить как прочитанное">
                             <i class="bi bi-eye fs-3"></i>
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                 @endif
                 <div>
                     <a href="" wire:click.prevent="deleteNotification('{{ $item->id }}')"
-                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Delete notification">
+                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Удалить уведомление">
                         <i class="bi bi-trash fs-3 text-danger"></i>
                     </a>
                 </div>
@@ -31,16 +31,16 @@
         @if ($loop->last)
             <div class="text-center p-3">
                 <a href="" wire:click.prevent="markAllAsRead" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-bs-title="Mark all as read">
+                    data-bs-title="Отметить все как прочитанные">
                     <i class="bi bi-eye fs-3"></i>
-                    Mark all as read
+                    Отметить все как прочитанные
                 </a>
             </div>
         @endif
     @empty
         <div class="text-center py-5 mt-5">
             <i class="bi bi-bell-slash fs-1 text-secondary"></i>
-            <p class="text-secondary">There are no new notifications</p>
+            <p class="text-secondary">Новых уведомлений нет</p>
         </div>
     @endforelse
 </div>

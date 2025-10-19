@@ -33,7 +33,7 @@
             <!-- Title and Breadcrumb -->
             <div class="mb-8">
                 <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-emerald-400 uppercase bg-emerald-900 bg-opacity-30 rounded-full mb-4">
-                    Company Information
+                    Информация о Компании
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Yasal Düzenlemeler ve Lisanslar</h1>
                 <nav class="flex" aria-label="Breadcrumb">
@@ -75,7 +75,7 @@
                                 "position": 2,
                                 "item": {
                                     "@id": "{{$settings->site_address}}company",
-                                    "name": "Company"
+                                    "name": "Компания"
                                 }
                             }
                         ]
@@ -157,7 +157,7 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-12">
             <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-900 bg-opacity-30 rounded-full mb-4">
-                Our Commitment
+                Наше Обязательство
             </div>
             <h2 class="text-3xl font-bold text-white mb-4">Yasal Düzenleme Çerçevesi</h2>
             <p class="text-gray-300 max-w-2xl mx-auto">

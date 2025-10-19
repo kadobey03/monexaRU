@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: localStorage.getItem('theme') === 'light' ? false : true }"
+<html lang="ru" x-data="{ darkMode: localStorage.getItem('theme') === 'light' ? false : true }"
       :class="{ 'dark': darkMode }"
       class="dark bg-gray-900">
 <head>
@@ -524,7 +524,7 @@
                 coin-ids="bitcoin,ethereum,eos,ripple,litecoin"
                 currency="usd"
                 background-color="transparent"
-                locale="en"
+                locale="ru"
                 font-color="#333">
             </coingecko-coin-price-marquee-widget>
         </div>
