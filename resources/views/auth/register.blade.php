@@ -6,7 +6,7 @@
       $captcha_answer = $num1 + $num2;
 @endphp
 @extends('layouts.guest1')
-@section('title', 'Hesap Oluştur')
+@section('title', 'Создать аккаунт')
 @section('content')
 
 <!-- Fintech Trading Platform Registration -->
@@ -28,10 +28,10 @@
 
                     <!-- Title -->
                     <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{{ $settings->site_name }}</span>'a Katılın
+                        Присоединяйтесь к <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{{ $settings->site_name }}</span>
                     </h1>
                     <p class="text-gray-300 text-sm sm:text-base lg:text-lg mb-6">
-                        Profesyonel ticaret yolculuğunuza başlayın
+                        Начните свое профессиональное торговое путешествие
                     </p>
 
                     <!-- Trading Stats - Mobile Responsive -->
@@ -53,9 +53,9 @@
                         <div class="text-center p-3 bg-gray-800/50 rounded-xl border border-gray-700/50">
                             <div class="flex items-center justify-center gap-1 text-cyan-400 mb-1">
                                 <i data-lucide="users" class="w-3 h-3"></i>
-                                <span class="font-semibold">1M+ Yatırımcı</span>
+                                <span class="font-semibold">1M+ Инвесторов</span>
                             </div>
-                            <div class="text-gray-400">Topluluk</div>
+                            <div class="text-gray-400">Сообщество</div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                                 <i data-lucide="alert-triangle" class="w-5 h-5 text-red-400"></i>
                             </div>
                             <div class="flex-1">
-                                <h4 class="text-lg font-bold text-red-300 mb-2">Lütfen Bu Sorunları Düzeltin:</h4>
+                                <h4 class="text-lg font-bold text-red-300 mb-2">Пожалуйста, исправьте эти проблемы:</h4>
                                 <ul class="space-y-1">
                                     @foreach ($errors->all() as $error)
                                         <li class="text-sm text-red-200 flex items-start gap-2">
@@ -116,7 +116,7 @@
                                 </ul>
                                 <div class="mt-3 text-xs text-red-300/80">
                                     <i data-lucide="info" class="w-3 h-3 inline mr-1"></i>
-                                    Lütfen aşağı kaydırarak vurgulanan alanları düzeltin, ardından tekrar deneyin.
+                                    Пожалуйста, прокрутите вниз, чтобы исправить выделенные поля, затем повторите попытку.
                                 </div>
                             </div>
                         </div>
@@ -140,8 +140,8 @@
                                     <i data-lucide="user-circle" class="w-5 h-5 text-blue-400"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg sm:text-xl font-bold text-white">Kişisel Bilgiler</h3>
-                                    <p class="text-gray-400 text-sm">Ticaret profilinizi oluşturun</p>
+                                    <h3 class="text-lg sm:text-xl font-bold text-white">Персональная информация</h3>
+                                    <p class="text-gray-400 text-sm">Создайте свой торговый профиль</p>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                             <!-- Username Field -->
                             <div class="space-y-2">
                                 <label for="username" class="block text-sm font-bold text-gray-200">
-                                    Ticaret Kullanıcı Adı <span class="text-red-400">*</span>
+                                    Торговое имя пользователя <span class="text-red-400">*</span>
                                 </label>
                                 <div class="relative group">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -158,7 +158,7 @@
                                     </div>
                                     <input type="text" name="username" id="username" required
                                            class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                                           placeholder="Kullanıcı adı seçin">
+                                           placeholder="Выберите имя пользователя">
                                 </div>
                                 @error('username')
                                     <p class="text-sm text-red-400 flex items-center gap-1">
@@ -170,7 +170,7 @@
                             <!-- Full Name Field -->
                             <div class="space-y-2">
                                 <label for="name" class="block text-sm font-bold text-gray-200">
-                                    Ad Soyad <span class="text-red-400">*</span>
+                                    Полное имя <span class="text-red-400">*</span>
                                 </label>
                                 <div class="relative group">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -178,7 +178,7 @@
                                     </div>
                                     <input type="text" name="name" id="name" required
                                            class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                                           placeholder="Ad soyad giriniz">
+                                           placeholder="Введите ваше полное имя">
                                 </div>
                                 @error('name')
                                     <p class="text-sm text-red-400 flex items-center gap-1">
@@ -190,7 +190,7 @@
                             <!-- Email Field -->
                             <div class="space-y-2">
                                 <label for="email" class="block text-sm font-bold text-gray-200">
-                                    E-posta Adresi <span class="text-red-400">*</span>
+                                    Адрес электронной почты <span class="text-red-400">*</span>
                                 </label>
                                 <div class="relative group">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -198,7 +198,7 @@
                                     </div>
                                     <input type="email" name="email" id="email" required
                                            class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                                           placeholder="eposta@ornek.com">
+                                           placeholder="email@example.com">
                                 </div>
                                 @error('email')
                                     <p class="text-sm text-red-400 flex items-center gap-1">
@@ -210,7 +210,7 @@
                             <!-- Phone Field -->
                             <div class="space-y-2">
                                 <label for="phone" class="block text-sm font-bold text-gray-200">
-                                    Telefon Numarası <span class="text-red-400">*</span>
+                                    Номер телефона <span class="text-red-400">*</span>
                                 </label>
                                 <div class="relative group">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -237,8 +237,8 @@
                                 <i data-lucide="globe-2" class="w-5 h-5 text-purple-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white">Konum</h3>
-                                <p class="text-gray-400 text-sm">Bölgesel ticaret tercihlerinizi ayarlayın</p>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Местоположение</h3>
+                                <p class="text-gray-400 text-sm">Настройте свои региональные торговые предпочтения</p>
                             </div>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
                         <!-- Country Field -->
                         <div class="space-y-2">
                             <label for="country" class="block text-sm font-bold text-gray-200">
-                                Ülke <span class="text-red-400">*</span>
+                                Страна <span class="text-red-400">*</span>
                             </label>
                             <div class="relative group">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-4 z-10">
@@ -255,7 +255,7 @@
                                 </div>
                                 <select name="country" id="country" required
                                         class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-8 py-4 text-white focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold appearance-none">
-                                    <option selected disabled class="text-gray-400">Ülkenizi seçin</option>
+                                    <option selected disabled class="text-gray-400">Выберите свою страну</option>
                                     @include('auth.countries')
                                 </select>
                                 <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
@@ -294,8 +294,8 @@
                         <div class="flex items-start gap-3">
                             <i data-lucide="info" class="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0"></i>
                             <div class="text-sm">
-                                <p class="text-blue-300 font-bold mb-1">Bölgesel Ticaret Bilgileri</p>
-                                <p class="text-gray-300">Konumunuz, bölgeye özel özellikler, uyumluluk ve daha hızlı ticaret yürütme için optimum sunucu bağlantıları sağlamamıza yardımcı olur.</p>
+                                <p class="text-blue-300 font-bold mb-1">Информация о региональной торговле</p>
+                                <p class="text-gray-300">Ваше местоположение помогает нам предоставить региональные функции, соответствие требованиям и оптимальные подключения к серверам для более быстрого выполнения торговых операций.</p>
                             </div>
                         </div>
                     </div>
@@ -314,8 +314,8 @@
                                 <i data-lucide="shield-check" class="w-5 h-5 text-green-400"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white">Hesap Güvenliği</h3>
-                                <p class="text-gray-400 text-sm">Ticaret hesabınızı güvenceye alın</p>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">Безопасность аккаунта</h3>
+                                <p class="text-gray-400 text-sm">Защитите свой торговый аккаунт</p>
                             </div>
                         </div>
                     </div>
@@ -324,7 +324,7 @@
                         <!-- Password Field -->
                         <div class="space-y-2">
                             <label for="password" class="block text-sm font-bold text-gray-200">
-                                Şifre <span class="text-red-400">*</span>
+                                Пароль <span class="text-red-400">*</span>
                             </label>
                             <div class="relative group">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -332,7 +332,7 @@
                                 </div>
                                 <input type="password" name="password" id="password" required
                                        class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                                       placeholder="Güçlü şifre oluşturun">
+                                       placeholder="Создайте надежный пароль">
                             </div>
                             @error('password')
                                 <p class="text-sm text-red-400 flex items-center gap-1">
@@ -344,7 +344,7 @@
                         <!-- Confirm Password Field -->
                         <div class="space-y-2">
                             <label for="password_confirmation" class="block text-sm font-bold text-gray-200">
-                                Şifreyi Onayla <span class="text-red-400">*</span>
+                                Подтвердите пароль <span class="text-red-400">*</span>
                             </label>
                             <div class="relative group">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -352,7 +352,7 @@
                                 </div>
                                 <input type="password" name="password_confirmation" id="password_confirmation" required
                                        class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                                       placeholder="Şifrenizi onaylayın">
+                                       placeholder="Подтвердите ваш пароль">
                             </div>
                         </div>
                     </div>
@@ -361,7 +361,7 @@
                     <div class="space-y-4 mt-6">
                         <div class="space-y-2">
                             <label for="captcha" class="block text-sm font-bold text-gray-200">
-                                Basit Matematik Doğrulama <span class="text-red-400">*</span>
+                                Простая математическая проверка <span class="text-red-400">*</span>
                             </label>
 
                             <!-- CAPTCHA Display -->
@@ -369,7 +369,7 @@
                                 <div class="flex items-center justify-center">
                                     <div class="bg-gradient-to-r from-blue-900 to-purple-900 rounded-lg p-4 border border-gray-600">
                                         <div class="text-center">
-                                            <p class="text-sm text-gray-300 mb-3 font-medium">Bu basit matematiğin cevabı nedir?</p>
+                                            <p class="text-sm text-gray-300 mb-3 font-medium">Каков ответ на эту простую математику?</p>
                                             <div class="bg-gray-900 rounded-lg px-8 py-4 border border-gray-700">
                                                 <span class="text-3xl font-bold text-green-400 tracking-wide select-none"
                                                       style="font-family: 'Arial', sans-serif;">
@@ -388,7 +388,7 @@
                                 </div>
                                 <input type="number" name="captcha" id="captcha" required
                                        class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold text-center"
-                                       placeholder="Cevabı giriniz (sadece rakamlar)"
+                                       placeholder="Введите ответ (только цифры)"
                                        autocomplete="off"
                                        min="0"
                                        max="99">
@@ -403,7 +403,7 @@
                             <!-- Helper text -->
                             <p class="text-xs text-gray-400 flex items-center gap-1">
                                 <i data-lucide="info" class="w-3 h-3"></i>
-                                İnsan olduğunuzu doğrulamak için bu basit matematik problemini çözün. Rastgele kodlar yazmaktan çok daha kolay!
+                                Решите эту простую математическую задачу, чтобы подтвердить, что вы человек. Намного проще, чем писать случайные коды!
                             </p>
                         </div>
                     </div>
@@ -417,19 +417,19 @@
 
                     <!-- Password Requirements -->
                     <div class="mt-6 p-4 bg-gray-800/50 rounded-xl border border-gray-700">
-                        <p class="text-sm font-bold text-gray-200 mb-2">Şifre Gereksinimleri:</p>
+                        <p class="text-sm font-bold text-gray-200 mb-2">Требования к паролю:</p>
                         <ul class="text-xs text-gray-300 space-y-1">
                             <li class="flex items-center gap-2">
                                 <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                                En az 8 karakter uzunluğunda
+                                Минимум 8 символов
                             </li>
                             <li class="flex items-center gap-2">
                                 <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                                Büyük ve küçük harf içerir
+                                Содержит заглавные и строчные буквы
                             </li>
                             <li class="flex items-center gap-2">
                                 <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                                En az bir rakam veya özel karakter içerir
+                                Содержит минимум одну цифру или специальный символ
                             </li>
                         </ul>
                     </div>
@@ -443,18 +443,17 @@
                             </div>
                             <div class="flex-1">
                                 <label for="agree" class="text-sm font-bold text-gray-200 leading-relaxed">
-                                    {{ $settings->site_name }}'ın
+                                    Я принимаю
                                     <a href="rules" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold underline underline-offset-2">
-                                        Şartlar ve Koşullarını
+                                        Условия и положения
                                     </a>
-                                    kabul ediyorum ve
+                                    {{ $settings->site_name }} и подтверждаю, что прочитал и понял
                                     <a href="#" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold underline underline-offset-2">
-                                        Gizlilik Politikasını
+                                        Политику конфиденциальности
                                     </a>
-                                    okuduğumu ve anladığımı beyan ediyorum
                                 </label>
                                 <p class="text-xs text-gray-400 mt-2">
-                                    Hesap oluşturarak en az 18 yaşında olduğunuzu ve ticaret güncellemeleri ile piyasa analizleri almayı kabul ettiğinizi onaylarsınız.
+                                    Создавая аккаунт, вы подтверждаете, что вам не менее 18 лет, и соглашаетесь получать торговые обновления и рыночную аналитику.
                                 </p>
                             </div>
                         </div>
@@ -468,7 +467,7 @@
                             x-show="currentStep > 0"
                             class="inline-flex items-center gap-2 px-6 py-3 text-gray-400 hover:text-white transition-all duration-200 rounded-xl hover:bg-gray-800/50 group">
                         <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
-                        <span class="font-bold">Önceki Adım</span>
+                        <span class="font-bold">Предыдущий шаг</span>
                     </button>
 
                     <!-- Progress Indicator -->
@@ -480,7 +479,7 @@
                     <button type="button" @click="sonrakiAdim()"
                             x-show="currentStep < steps.length - 1"
                             class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 group">
-                        <span>Devam Et</span>
+                        <span>Продолжить</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </button>
 
@@ -488,7 +487,7 @@
                     <button type="submit" x-show="currentStep === steps.length - 1"
                             class="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 group">
                         <i data-lucide="user-plus" class="w-5 h-5"></i>
-                        <span>Ticaret Hesabı Oluştur</span>
+                        <span>Создать торговый аккаунт</span>
                         <i data-lucide="sparkles" class="w-4 h-4 group-hover:rotate-12 transition-transform"></i>
                     </button>
                 </div>
@@ -497,10 +496,10 @@
                 <div class="mt-8 text-center space-y-4">
                     <div class="flex items-center justify-center gap-6 text-sm">
                         <p class="text-gray-400">
-                            Zaten hesabınız var mı?
+                            У вас уже есть аккаунт?
                             <a href="{{ route('login') }}"
                                class="font-bold text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">
-                                Buradan giriş yapın
+                                Войдите здесь
                             </a>
                         </p>
                     </div>
@@ -509,21 +508,21 @@
                     <div class="flex items-center justify-center gap-8 py-4 text-xs text-gray-500">
                         <div class="flex items-center gap-1">
                             <i data-lucide="shield" class="w-3 h-3"></i>
-                            <span>SSL Güvenliği</span>
+                            <span>SSL Безопасность</span>
                         </div>
                         <div class="flex items-center gap-1">
                             <i data-lucide="lock" class="w-3 h-3"></i>
-                            <span>256-bit Şifreleme</span>
+                            <span>256-битное шифрование</span>
                         </div>
                         <div class="flex items-center gap-1">
                             <i data-lucide="award" class="w-3 h-3"></i>
-                            <span>Düzenlenmiş Platform</span>
+                            <span>Регулируемая платформа</span>
                         </div>
                     </div>
 
                     <p class="text-xs text-gray-500">
-                        © {{ date('Y') }} {{ $settings->site_name }}. Tüm hakları saklıdır. |
-                        Lisanslı ve düzenlenmiş ticaret platformu.
+                        © {{ date('Y') }} {{ $settings->site_name }}. Все права защищены. |
+                        Лицензированная и регулируемая торговая платформа.
                     </p>
                 </div>
             </form>
@@ -561,18 +560,18 @@
                 currentStep: 0,
                 steps: [
                     {
-                        title: 'Kişisel Bilgiler',
-                        description: 'Temel bilgiler',
+                        title: 'Персональная информация',
+                        description: 'Основная информация',
                         completed: false
                     },
                     {
-                        title: 'Konum',
-                        description: 'Bölgesel ayarlar',
+                        title: 'Местоположение',
+                        description: 'Региональные настройки',
                         completed: false
                     },
                     {
-                        title: 'Güvenlik',
-                        description: 'Hesap koruması',
+                        title: 'Безопасность',
+                        description: 'Защита аккаунта',
                         completed: false
                     }
                 ],
@@ -606,10 +605,10 @@
                     if (step === 0) {
                         // Validate personal information
                         const fields = [
-                            { id: 'username', name: 'Kullanıcı Adı' },
-                            { id: 'name', name: 'Ad Soyad' },
-                            { id: 'email', name: 'E-posta' },
-                            { id: 'phone', name: 'Telefon Numarası' }
+                            { id: 'username', name: 'Имя пользователя' },
+                            { id: 'name', name: 'Полное имя' },
+                            { id: 'email', name: 'Электронная почта' },
+                            { id: 'phone', name: 'Номер телефона' }
                         ];
 
                         fields.forEach(field => {
@@ -632,7 +631,7 @@
                         const emailElement = document.getElementById('email');
                         const email = emailElement.value.trim();
                         if (email && !email.includes('@')) {
-                            missingFields.push('Geçerli E-posta Formatı');
+                            missingFields.push('Правильный формат электронной почты');
                             isValid = false;
                             emailElement.classList.add('border-red-500', 'bg-red-900/20');
                             emailElement.classList.remove('border-gray-600');
@@ -644,7 +643,7 @@
                         const country = countryElement.value;
 
                         if (!country) {
-                            missingFields.push('Ülke Seçimi');
+                            missingFields.push('Выбор страны');
                             isValid = false;
                             countryElement.classList.add('border-red-500', 'bg-red-900/20');
                             countryElement.classList.remove('border-gray-600');
@@ -667,11 +666,11 @@
 
                         // Password validation
                         if (!password) {
-                            missingFields.push('Şifre');
+                            missingFields.push('Пароль');
                             isValid = false;
                             passwordElement.classList.add('border-red-500', 'bg-red-900/20');
                         } else if (password.length < 8) {
-                            missingFields.push('Şifre (minimum 8 karakter)');
+                            missingFields.push('Пароль (минимум 8 символов)');
                             isValid = false;
                             passwordElement.classList.add('border-red-500', 'bg-red-900/20');
                         } else {
@@ -681,11 +680,11 @@
 
                         // Confirm password validation
                         if (!confirmPassword) {
-                            missingFields.push('Şifre Onaylaması');
+                            missingFields.push('Подтверждение пароля');
                             isValid = false;
                             confirmPasswordElement.classList.add('border-red-500', 'bg-red-900/20');
                         } else if (password !== confirmPassword) {
-                            missingFields.push('Şifreler Eşleşmelidir');
+                            missingFields.push('Пароли должны совпадать');
                             isValid = false;
                             confirmPasswordElement.classList.add('border-red-500', 'bg-red-900/20');
                         } else {
@@ -695,7 +694,7 @@
 
                         // CAPTCHA validation
                         if (!captcha) {
-                            missingFields.push('Matematik Doğrulama Cevabı');
+                            missingFields.push('Ответ математической проверки');
                             isValid = false;
                             captchaElement.classList.add('border-red-500', 'bg-red-900/20');
                         } else {
@@ -705,18 +704,18 @@
 
                         // Terms agreement validation
                         if (!agree) {
-                            missingFields.push('Şartlar ve Koşullar Kabulü');
+                            missingFields.push('Принятие условий и положений');
                             isValid = false;
                         }
                     }
 
                     if (!isValid) {
                         const message = missingFields.length === 1
-                            ? `Lütfen sağlayın: ${missingFields[0]}`
-                            : `Lütfen bu alanları doldurun: ${missingFields.join(', ')}`;
+                            ? `Пожалуйста, предоставьте: ${missingFields[0]}`
+                            : `Пожалуйста, заполните эти поля: ${missingFields.join(', ')}`;
 
                         // Show professional alert
-                        this.showAlert('Gerekli Alanları Doldurun', message, 'warning');
+                        this.showAlert('Заполните обязательные поля', message, 'warning');
                     }
 
                     return isValid;
@@ -729,7 +728,7 @@
                             title: title,
                             text: message,
                             icon: type,
-                            confirmButtonText: 'Anladım',
+                            confirmButtonText: 'Понятно',
                             confirmButtonColor: '#3B82F6'
                         });
                     } else {
@@ -762,7 +761,7 @@
                     const submitBtn = form.querySelector('button[type="submit"]');
                     if (submitBtn) {
                         submitBtn.disabled = true;
-                        submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin mr-2"></i>Hesap Oluşturuluyor...';
+                        submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin mr-2"></i>Создание аккаунта...';
                     }
                 });
             }

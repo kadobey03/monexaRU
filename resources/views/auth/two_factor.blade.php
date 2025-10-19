@@ -1,5 +1,5 @@
 @extends('layouts.guest1')
-@section('title', 'İki Faktörlü Kimlik Doğrulama - Güvenli Doğrulama')
+@section('title', 'Двухфакторная аутентификация - Безопасная проверка')
 @section('content')
 
 <!-- Advanced 2FA Challenge -->
@@ -18,15 +18,15 @@
                 </div>
 
                 <h1 class="text-2xl md:text-3xl font-bold text-white mb-2">
-                    İki Adımlı Doğrulama
+                    Двухэтапная аутентификация
                 </h1>
 
                 <!-- Dynamic Descriptions -->
                 <p class="text-gray-400 text-sm md:text-base" x-show="!recovery">
-                    Ticaret hesabınızı güvenceye almak için kimlik doğrulayıcı uygulamanızdan 6 haneli kodu girin
+                    Введите 6-значный код из вашего приложения аутентификатора для защиты торгового счета
                 </p>
                 <p class="text-gray-400 text-sm md:text-base" x-show="recovery">
-                    Hesabınıza erişimi geri kazanmak için acil kurtarma kodlarınızdan birini kullanın
+                    Используйте один из ваших кодов экстренного восстановления для восстановления доступа к счету
                 </p>
             </div>
 
@@ -38,14 +38,14 @@
                     <i data-lucide="alert-triangle" x-show="recovery" class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0"></i>
                     <div class="text-sm">
                         <p class="font-bold mb-1" :class="recovery ? 'text-amber-300' : 'text-blue-300'">
-                            <span x-show="!recovery">Kimlik Doğrulayıcı Gerekli</span>
-                            <span x-show="recovery">Kurtarma Modu</span>
+                            <span x-show="!recovery">Требуется аутентификатор</span>
+                            <span x-show="recovery">Режим восстановления</span>
                         </p>
                         <p class="text-gray-300" x-show="!recovery">
-                            Kimlik doğrulayıcı uygulamanızı açın (Google Authenticator, Authy vb.) ve mevcut 6 haneli kodu girin.
+                            Откройте ваше приложение аутентификатора (Google Authenticator, Authy и т.д.) и введите текущий 6-значный код.
                         </p>
                         <p class="text-gray-300" x-show="recovery">
-                            Kurtarma kodları tek kullanımlıktır. Kullandıktan sonra kalan kodları güvenli bir yerde saklayın.
+                            Коды восстановления одноразовые. После использования храните оставшиеся коды в безопасном месте.
                         </p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             </label>
                             <!-- Input -->
                             <input type="text" inputmode="numeric" class="form-control"
-                                placeholder="Enter auth code from your app" name="code" autofocus x-ref="code"
+                                placeholder="Введите код из приложения" name="code" autofocus x-ref="code"
                                 autocomplete="one-time-code">
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <div class="col-lg-12" x-show="recovery">
                         <div class="mb-5">
                             <label class="form-label">
-                                Kurtarma Kodu
+                                Код восстановления
                             </label>
                             <input id="recovery_code" class="form-control" type="text" name="recovery_code"
                                 x-ref="recovery_code" autocomplete="one-time-code">
@@ -97,7 +97,7 @@
                                     recovery = true;
                                     $nextTick(() => { $refs.recovery_code.focus() })
                                 ">
-                            Bir kurtarma kodu kullan
+                            Использовать код восстановления
                         </button>
                     </div>
 
@@ -107,14 +107,14 @@
                                     recovery = false;
                                     $nextTick(() => { $refs.code.focus() })
                                 ">
-                            Bir kimlik doğrulama kodu kullan
+                            Использовать код аутентификации
                         </button>
                     </div>
                 </div>
                 <div class="row align-items-center text-center">
                     <div class="col-12">
                         <!-- Button -->
-                        <button type="submit" class="btn w-100 btn-primary mt-3 mb-2">Doğrula ve giriş yap</button>
+                        <button type="submit" class="btn w-100 btn-primary mt-3 mb-2">Проверить и войти</button>
                     </div>
                 </div> <!-- / .row -->
                 <!--end row-->

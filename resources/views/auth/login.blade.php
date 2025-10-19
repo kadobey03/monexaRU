@@ -102,7 +102,7 @@
                                 </div>
                                 <input type="text" name="email" id="email" required
                                        class="block w-full rounded-2xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-medium"
-                                       placeholder="eposta@ornek.com"
+                                       placeholder="email@example.com"
                                        value="{{ old('email') }}">
                             </div>
                         </div>
@@ -219,7 +219,7 @@
 
                         <!-- Copyright -->
                         <p class="text-xs text-gray-500">
-                            © {{ date('Y') }} {{ $settings->site_name }}. Tüm hakları saklıdır.
+                            © {{ date('Y') }} {{ $settings->site_name }}. Все права защищены.
                         </p>
                     </div>
                 </div>
@@ -230,19 +230,19 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // E-posta alanına otomatik odaklanma
+        // Автофокус на поле email
         const emailField = document.getElementById('email');
         if (emailField) {
             emailField.focus();
         }
 
-        // Lucide ikonlarını başlat
+        // Инициализировать иконки Lucide
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
     });
 
-    // Alpine güncellemelerinden sonra ikonları yeniden başlat
+    // Переинициализировать иконки после обновлений Alpine
     document.addEventListener('alpine:updated', () => {
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();

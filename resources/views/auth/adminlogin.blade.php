@@ -108,7 +108,7 @@
                             autocomplete="current-password"
                             required
                             class="block w-full pl-12 pr-12 py-4 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-base font-medium"
-                            placeholder="Enter your password">
+                            placeholder="Введите ваш пароль">
                         <button
                             type="button"
                             @click="showPassword = !showPassword"
@@ -153,7 +153,7 @@
         <!-- Additional Info -->
         <div class="text-center">
             <p class="text-gray-500 text-sm">
-                Нужна помощь? <a href="mailto:support@company.com" class="text-blue-400 hover:text-blue-300 font-medium">свяжитесь с технической поддержкой</a>
+                Нужна помощь? <a href="mailto:support@bluetrade.com" class="text-blue-400 hover:text-blue-300 font-medium">свяжитесь с технической поддержкой</a>
             </p>
         </div>
     </div>

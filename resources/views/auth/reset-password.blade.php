@@ -1,5 +1,5 @@
 @extends('layouts.guest1')
-@section('title', 'Şifrenizi sıfırlayın')
+@section('title', 'Сбросить пароль')
 @section('content')
 <div class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
     <div class="w-full max-w-md space-y-8">
@@ -38,10 +38,10 @@
                     <div class="p-2 bg-blue-500/20 rounded-lg">
                         <i data-lucide="key-round" class="w-6 h-6 text-blue-400"></i>
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-bold text-white">Şifre Sıfırlama</h1>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-white">Сброс пароля</h1>
                 </div>
                 <p class="text-gray-400 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
-                    E-posta adresinizi girin ve ticaret hesabınız için yeni güvenli bir şifre oluşturun.
+                    Введите ваш email и создайте новый безопасный пароль для вашего торгового счета.
                 </p>
             </div>
         </div>
@@ -55,7 +55,7 @@
                 <!-- Email Field -->
                 <div class="space-y-2">
                     <label for="email" class="block text-sm font-bold text-gray-200">
-                        E-posta Adresi <span class="text-red-400">*</span>
+                        Email адрес <span class="text-red-400">*</span>
                     </label>
                     <div class="relative group">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -67,7 +67,7 @@
                                value="{{ old('email') }}"
                                required
                                class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                               placeholder="your.email@example.com">
+                               placeholder="email@example.com">
                     </div>
                     @error('email')
                         <p class="text-sm text-red-400 flex items-center gap-1">
@@ -79,7 +79,7 @@
                 <!-- New Password Field -->
                 <div class="space-y-2">
                     <label for="password" class="block text-sm font-bold text-gray-200">
-                        Yeni Şifre <span class="text-red-400">*</span>
+                        Новый пароль <span class="text-red-400">*</span>
                     </label>
                     <div class="relative group">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -91,7 +91,7 @@
                                required
                                autocomplete="new-password"
                                class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-12 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                               placeholder="Güçlü şifre oluşturun">
+                               placeholder="Создайте надежный пароль">
                         <button type="button"
                                 class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-blue-400 transition-colors"
                                 onclick="togglePassword('password')">
@@ -108,7 +108,7 @@
                 <!-- Confirm Password Field -->
                 <div class="space-y-2">
                     <label for="password_confirmation" class="block text-sm font-bold text-gray-200">
-                        Şifreyi Onayla <span class="text-red-400">*</span>
+                        Подтвердите пароль <span class="text-red-400">*</span>
                     </label>
                     <div class="relative group">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-4">
@@ -120,7 +120,7 @@
                                required
                                autocomplete="new-password"
                                class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-12 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                               placeholder="Şifrenizi onaylayın">
+                               placeholder="Подтвердите ваш пароль">
                         <button type="button"
                                 class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-blue-400 transition-colors"
                                 onclick="togglePassword('password_confirmation')">
@@ -131,19 +131,19 @@
 
                 <!-- Password Requirements -->
                 <div class="p-4 bg-gray-900/50 rounded-xl border border-gray-700">
-                    <p class="text-sm font-bold text-gray-200 mb-2">Şifre Gereksinimleri:</p>
+                    <p class="text-sm font-bold text-gray-200 mb-2">Требования к паролю:</p>
                     <ul class="text-xs text-gray-300 space-y-1">
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                            En az 8 karakter uzunluğunda
+                            Минимум 8 символов
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                            Büyük ve küçük harf içeriyor
+                            Содержит заглавные и строчные буквы
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="check" class="w-3 h-3 text-green-400"></i>
-                            En az bir rakam veya özel karakter içeriyor
+                            Содержит минимум одну цифру или специальный символ
                         </li>
                     </ul>
                 </div>
@@ -152,17 +152,17 @@
                 <button type="submit"
                         class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:ring-2 focus:ring-blue-400/20">
                     <i data-lucide="key-round" class="w-5 h-5"></i>
-                    <span>Şifreyi Sıfırla</span>
+                    <span>Сбросить пароль</span>
                 </button>
             </form>
 
             <!-- Back to Login Link -->
             <div class="text-center pt-4 border-t border-gray-700">
                 <p class="text-gray-400 text-sm">
-                    Şifrenizi hatırlıyor musunuz?
+                    Помните ваш пароль?
                     <a href="{{ route('login') }}"
                        class="font-bold text-blue-400 hover:text-blue-300 transition-colors underline underline-offset-2">
-                        Girişe Dön
+                        Вернуться к входу
                     </a>
                 </p>
             </div>
@@ -172,10 +172,10 @@
                 <div class="flex items-start gap-3">
                     <i data-lucide="shield-alert" class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0"></i>
                     <div>
-                        <h4 class="text-sm font-bold text-amber-300 mb-1">Güvenlik Uyarısı</h4>
+                        <h4 class="text-sm font-bold text-amber-300 mb-1">Предупреждение безопасности</h4>
                         <p class="text-xs text-gray-300">
-                            Güvenliğiniz için bu şifre sıfırlama bağlantısı 60 dakika içinde geçerliliğini yitirecektir.
-                            Ticaret hesabınız için güçlü ve benzersiz bir şifre seçin.
+                            Для вашей безопасности эта ссылка для сброса пароля истекает через 60 минут.
+                            Выберите надежный и уникальный пароль для вашего торгового счета.
                         </p>
                     </div>
                 </div>
@@ -186,15 +186,15 @@
         <div class="flex items-center justify-center gap-6 text-xs text-gray-500">
             <div class="flex items-center gap-1">
                 <i data-lucide="shield" class="w-3 h-3"></i>
-                <span>SSL Güvenli</span>
+                <span>SSL Защищено</span>
             </div>
             <div class="flex items-center gap-1">
                 <i data-lucide="lock" class="w-3 h-3"></i>
-                <span>256-bit Şifreleme</span>
+                <span>256-битное шифрование</span>
             </div>
             <div class="flex items-center gap-1">
                 <i data-lucide="award" class="w-3 h-3"></i>
-                <span>Düzenlenmiş Platform</span>
+                <span>Лицензированная платформа</span>
             </div>
         </div>
     </div>

@@ -57,7 +57,7 @@
                                value="{{ old('email') }}"
                                required
                                class="block w-full rounded-xl border border-gray-600 bg-gray-900 pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:bg-gray-800 transition-all duration-200 text-sm font-bold"
-                               placeholder="ornek@email.com">
+                               placeholder="example@email.com">
                     </div>
                     <p class="text-xs text-gray-400">
                         Введите адрес электронной почты, связанный с вашим торговым аккаунтом
@@ -133,8 +133,8 @@
         <!-- Footer -->
         <div class="text-center">
             <p class="text-xs text-gray-500">
-                © {{ date('Y') }} {{ $settings->site_name }}. Tüm hakları saklıdır. |
-                Lisanslı ve düzenlenmiş ticaret platformu.
+                © {{ date('Y') }} {{ $settings->site_name }}. Все права защищены. |
+                Лицензированная и регулируемая торговая платформа.
             </p>
         </div>
     </div>
