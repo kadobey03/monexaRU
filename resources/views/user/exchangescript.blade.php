@@ -12,7 +12,7 @@
             // options
             icon: 'flaticon-alarm-1',
             title: '',
-            message: 'Source and Destination account cannot be thesame',
+            message: 'Исходный и целевой счета не могут быть одинаковыми',
         },{
             type: 'danger',
         });
@@ -23,8 +23,8 @@
         amount.value = '';
         quatity.value = '';
     } else {
-        amount.placeholder = `Enter amount of ${sourceasset.value}`;
-        quatity.placeholder = `Quantity of ${destinationasset.value}`;
+        amount.placeholder = `Введите количество ${sourceasset.value}`;
+        quatity.placeholder = `Количество ${destinationasset.value}`;
 
     }
     function validate(){
@@ -35,7 +35,7 @@
                 // options
                 icon: 'flaticon-alarm-1',
                 title: '',
-                message: 'Source and Destination account cannot be thesame',
+                message: 'Исходный и целевой счета не могут быть одинаковыми',
             },{
                 type: 'danger',
             });
@@ -46,8 +46,8 @@
             amount.value = '';
             quatity.value = '';
         } else {
-            amount.placeholder = `Enter amount of ${sourceasset.value}`;
-            quatity.placeholder = `Quantity of ${destinationasset.value}`;
+            amount.placeholder = `Введите количество ${sourceasset.value}`;
+            quatity.placeholder = `Количество ${destinationasset.value}`;
 
         }
     }
@@ -62,11 +62,11 @@
         }
 
         // Show loading state
-        quatity.value = 'Loading...';
+        quatity.value = 'Загрузка...';
 
         // Set a timeout to ensure we don't get stuck in "Loading..." state
         const loadingTimeout = setTimeout(function() {
-            if (quatity.value === 'Loading...') {
+            if (quatity.value === 'Загрузка...') {
                 // Use emergency fallback calculation if still loading after 5 seconds
                 let sourceValue = sourceasset.value.toLowerCase();
                 let destValue = destinationasset.value.toLowerCase();
@@ -101,13 +101,13 @@
                     result = (amountValue * sourceRate) / destRate;
                 }
 
-                quatity.value = parseFloat(result).toFixed(8) + ' ' + destValue.toUpperCase() + ' (Emergency Fallback)';
+                quatity.value = parseFloat(result).toFixed(8) + ' ' + destValue.toUpperCase() + ' (Аварийный резерв)';
                 document.getElementById('realquantity').value = result;
 
                 $.notify({
                     icon: 'flaticon-warning',
-                    title: 'Using Emergency Rates',
-                    message: 'Server response timed out. Using local conversion rates.',
+                    title: 'Использование аварийных курсов',
+                    message: 'Ответ сервера превышен по времени. Использование локальных курсов конвертации.',
                 },{
                     type: 'warning',
                     delay: 3000
@@ -138,8 +138,8 @@
                     if (!window.priceCalculated) {
                         $.notify({
                             icon: 'flaticon-check-1',
-                            title: 'Price Updated',
-                            message: 'Exchange rate calculated successfully' + priceSource,
+                            title: 'Цена обновлена',
+                            message: 'Обменный курс успешно рассчитан' + priceSource,
                         },{
                             type: 'success',
                             delay: 2000
@@ -151,8 +151,8 @@
                     document.getElementById('realquantity').value = '';
                     $.notify({
                         icon: 'flaticon-alarm-1',
-                        title: 'Price Error',
-                        message: response.message || 'Unable to get exchange rate. Please check your connection and try again.',
+                        title: 'Ошибка цены',
+                        message: response.message || 'Не удается получить обменный курс. Пожалуйста, проверьте соединение и повторите попытку.',
                     },{
                         type: 'warning',
                     });
@@ -197,24 +197,24 @@
                     result = (amountValue * sourceRate) / destRate;
                 }
 
-                quatity.value = parseFloat(result).toFixed(8) + ' ' + destValue.toUpperCase() + ' (Fallback)';
+                quatity.value = parseFloat(result).toFixed(8) + ' ' + destValue.toUpperCase() + ' (Резерв)';
                 document.getElementById('realquantity').value = result;
 
-                let errorMessage = 'Connection error, using fallback rates. Refresh to try again.';
+                let errorMessage = 'Ошибка соединения, использование резервных курсов. Обновите страницу, чтобы попробовать снова.';
 
                 if (xhr.status === 0) {
-                    errorMessage = 'Network connection error. Using fallback rates.';
+                    errorMessage = 'Ошибка сетевого соединения. Использование резервных курсов.';
                 } else if (xhr.status === 408 || xhr.statusText === 'timeout') {
-                    errorMessage = 'Request timeout. Using fallback rates.';
+                    errorMessage = 'Превышено время ожидания запроса. Использование резервных курсов.';
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    errorMessage = xhr.responseJSON.message + ' Using fallback rates.';
+                    errorMessage = xhr.responseJSON.message + ' Использование резервных курсов.';
                 } else if (xhr.status === 500) {
-                    errorMessage = 'Server error. Using fallback rates.';
+                    errorMessage = 'Ошибка сервера. Использование резервных курсов.';
                 }
 
                 $.notify({
                     icon: 'flaticon-alarm-1',
-                    title: 'Using Backup Exchange Rates',
+                    title: 'Использование резервных обменных курсов',
                     message: errorMessage,
                 },{
                     type: 'warning',
@@ -232,8 +232,8 @@
         if (amount.value === '' || parseFloat(amount.value) <= 0) {
             $.notify({
                 icon: 'flaticon-alarm-1',
-                title: 'Invalid Amount',
-                message: 'Please enter a valid amount to exchange',
+                title: 'Неверная сумма',
+                message: 'Пожалуйста, введите действительную сумму для обмена',
             },{
                 type: 'danger',
             });
@@ -243,8 +243,8 @@
         if (document.getElementById('realquantity').value === '') {
             $.notify({
                 icon: 'flaticon-alarm-1',
-                title: 'Missing Quote',
-                message: 'Please wait for the exchange rate to load',
+                title: 'Отсутствует котировка',
+                message: 'Пожалуйста, подождите загрузки обменного курса',
             },{
                 type: 'warning',
             });
@@ -255,7 +255,7 @@
         let submitBtn = document.querySelector('#exchnageform button[type="submit"]');
         let originalBtnText = submitBtn.innerHTML;
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Processing...';
+        submitBtn.innerHTML = 'Обработка...';
 
         $.ajax({
             url: "{{route('exchangenow')}}",
@@ -265,7 +265,7 @@
                 if (response.status === 200) {
                     $.notify({
                         icon: 'flaticon-alarm-1',
-                        title: 'Success',
+                        title: 'Успешно',
                         message: response.success,
                     },{
                         type: 'success',
@@ -281,15 +281,15 @@
                 } else {
                     $.notify({
                         icon: 'flaticon-alarm-1',
-                        title: 'Exchange Failed',
-                        message: response.message || 'Exchange could not be completed',
+                        title: 'Обмен не удался',
+                        message: response.message || 'Обмен не может быть завершен',
                     },{
                         type: 'danger',
                     });
                 }
             },
             error: function(xhr) {
-                let errorMessage = 'Exchange failed. Please try again.';
+                let errorMessage = 'Обмен не удался. Пожалуйста, попробуйте снова.';
 
                 if (xhr.responseJSON && xhr.responseJSON.message) {
                     errorMessage = xhr.responseJSON.message;
@@ -301,7 +301,7 @@
 
                 $.notify({
                     icon: 'flaticon-alarm-1',
-                    title: 'Exchange Error',
+                    title: 'Ошибка обмена',
                     message: errorMessage,
                 },{
                     type: 'danger',
@@ -340,8 +340,8 @@
         // Show refresh notification
         $.notify({
             icon: 'flaticon-refresh-button',
-            title: 'Refreshing Prices',
-            message: 'Loading exchange rates...',
+            title: 'Обновление цен',
+            message: 'Загрузка обменных курсов...',
         },{
             type: 'info',
             delay: 2000

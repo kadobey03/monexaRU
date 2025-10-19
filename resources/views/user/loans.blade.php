@@ -11,10 +11,10 @@
             <nav class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6" aria-label="Breadcrumb">
                 <a href="{{ route('dashboard') }}" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     <i data-lucide="home" class="w-4 h-4 inline mr-1"></i>
-                    Dashboard
+                    Панель управления
                 </a>
                 <i data-lucide="chevron-right" class="w-4 h-4 mx-2"></i>
-                <span class="text-gray-900 dark:text-gray-100 font-medium">Loan History</span>
+                <span class="text-gray-900 dark:text-gray-100 font-medium">История займов</span>
             </nav>
 
             <!-- Page Title & Stats -->
@@ -22,10 +22,10 @@
                 <div>
                     <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                         <i data-lucide="history" class="w-8 h-8 inline mr-3 text-blue-600 dark:text-blue-400"></i>
-                        Loan History
+                        История займов
                     </h1>
                     <p class="text-gray-600 dark:text-gray-400 text-lg">
-                        Track and manage all your loan applications and their status
+                        Отслеживайте и управляйте всеми своими заявками на займ и их статусом
                     </p>
                 </div>
 
@@ -34,7 +34,7 @@
                     <a href="{{ route('loan.view') }}"
                        class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-105">
                         <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                        New Application
+                        Новая заявка
                     </a>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Applications</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Всего заявок</p>
                         <p class="text-3xl font-bold text-gray-900 dark:text-white">{{ count($loans) }}</p>
                     </div>
                     <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
@@ -65,7 +65,7 @@
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Approved</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Одобрено</p>
                         <p class="text-3xl font-bold text-green-600 dark:text-green-400">
                             {{ $loans->where('active', 'Processed')->count() }}
                         </p>
@@ -80,7 +80,7 @@
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Pending</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">В ожидании</p>
                         <p class="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
                             {{ $loans->where('active', '!=', 'Processed')->count() }}
                         </p>
@@ -95,7 +95,7 @@
             <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-sm ring-1 ring-gray-200 dark:ring-gray-800">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Value</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Общая сумма</p>
                         <p class="text-3xl font-bold text-purple-600 dark:text-purple-400">
                             {{ $settings->currency }}{{ number_format($loans->sum('amount'), 2) }}
                         </p>
@@ -112,7 +112,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <h2 class="text-xl font-bold text-gray-900 dark:text-white">
                     <i data-lucide="filter" class="w-5 h-5 inline mr-2"></i>
-                    Loan Applications
+                    Заявки на займ
                 </h2>
 
                 <!-- Filter Controls -->
@@ -121,21 +121,21 @@
                     <select x-model="statusFilter"
                             @change="filterLoans()"
                             class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
-                        <option value="">All Status</option>
-                        <option value="Processed">Approved</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Under review">Under Review</option>
+                        <option value="">Все статусы</option>
+                        <option value="Processed">Одобрено</option>
+                        <option value="Pending">В ожидании</option>
+                        <option value="Under review">На рассмотрении</option>
                     </select>
 
                     <!-- Date Filter -->
                     <select x-model="dateFilter"
                             @change="filterLoans()"
                             class="px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
-                        <option value="">All Time</option>
-                        <option value="today">Today</option>
-                        <option value="week">This Week</option>
-                        <option value="month">This Month</option>
-                        <option value="year">This Year</option>
+                        <option value="">Все время</option>
+                        <option value="today">Сегодня</option>
+                        <option value="week">На этой неделе</option>
+                        <option value="month">В этом месяце</option>
+                        <option value="year">В этом году</option>
                     </select>
                 </div>
             </div>
@@ -147,19 +147,19 @@
         <!-- Desktop Table View -->
         <div class="hidden lg:block bg-white dark:bg-gray-900 rounded-2xl shadow-sm ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden mb-8">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-800">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Application Details</h3>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Детали заявки</h3>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead class="bg-gray-50 dark:bg-gray-800">
                         <tr>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Amount</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Purpose</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Duration</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date Applied</th>
-                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Сумма</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Цель</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Срок</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Статус</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Дата подачи</th>
+                            <th class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Действия</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
@@ -190,7 +190,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
                                     <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
-                                    {{ $loan->duration }} months
+                                    {{ $loan->duration }} месяцев
                                 </span>
                             </td>
 
@@ -199,12 +199,12 @@
                                 @if($loan->active == 'Processed')
                                 <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
                                     <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                    Approved
+                                    Одобрено
                                 </span>
                                 @elseif($loan->active == 'Under review')
                                 <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
                                     <div class="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
-                                    Under Review
+                                    На рассмотрении
                                 </span>
                                 @else
                                 <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300">
@@ -228,12 +228,12 @@
                                     <button @click="viewLoanDetails('{{ $loan->id }}')"
                                             class="inline-flex items-center px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
                                         <i data-lucide="eye" class="w-4 h-4 mr-1"></i>
-                                        View
+                                        Просмотр
                                     </button>
                                     @if($loan->active != 'Processed')
                                     <button class="inline-flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                                         <i data-lucide="edit" class="w-4 h-4 mr-1"></i>
-                                        Edit
+                                        Изменить
                                     </button>
                                     @endif
                                 </div>
@@ -264,7 +264,7 @@
                     @if($loan->active == 'Processed')
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300">
                         <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                        Approved
+                        Одобрено
                     </span>
                     @else
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300">
@@ -277,20 +277,20 @@
                 <!-- Loan Details -->
                 <div class="space-y-3 mb-4">
                     <div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Purpose</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Цель</p>
                         <p class="text-sm text-gray-900 dark:text-white">{{ Str::limit($loan->purpose, 100) }}</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Duration</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Срок</p>
                             <span class="inline-flex items-center px-2 py-1 rounded-lg text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
-                                {{ $loan->duration }} months
+                                {{ $loan->duration }} месяцев
                             </span>
                         </div>
 
                         <div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Date Applied</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Дата подачи</p>
                             <p class="text-sm text-gray-900 dark:text-white">{{ \Carbon\Carbon::parse($loan->created_at)->format('M d, Y') }}</p>
                         </div>
                     </div>
@@ -301,12 +301,12 @@
                     <button @click="viewLoanDetails('{{ $loan->id }}')"
                             class="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors">
                         <i data-lucide="eye" class="w-4 h-4"></i>
-                        View Details
+                        Подробности
                     </button>
                     @if($loan->active != 'Processed')
                     <button class="inline-flex items-center justify-center gap-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                         <i data-lucide="edit" class="w-4 h-4"></i>
-                        Edit
+                        Изменить
                     </button>
                     @endif
                 </div>
@@ -318,14 +318,14 @@
             <div class="mx-auto w-24 h-24 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-6">
                 <i data-lucide="file-text" class="w-12 h-12 text-gray-400"></i>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Loan Applications</h3>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Нет заявок на займ</h3>
             <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
-                You haven't submitted any loan applications yet. Start by applying for a loan that fits your needs.
+                Вы еще не подавали ни одной заявки на займ. Начните с подачи заявки на займ, который соответствует вашим потребностям.
             </p>
             <a href="{{ route('loan.view') }}"
                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors">
                 <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                Apply for Loan
+                Подать заявку на займ
             </a>
         </div>
         @endforelse
@@ -358,7 +358,7 @@
 
                     <!-- Modal Header -->
                     <div class="flex items-center justify-between mb-6">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Loan Application Details</h3>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white">Детали заявки на займ</h3>
                         <button @click="closeModal()"
                                 class="rounded-lg p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                             <i data-lucide="x" class="w-6 h-6"></i>
@@ -367,7 +367,7 @@
 
                     <!-- Modal content will be populated by JavaScript -->
                     <div id="modalContent">
-                        <p class="text-gray-600 dark:text-gray-400">Loading loan details...</p>
+                        <p class="text-gray-600 dark:text-gray-400">Загрузка деталей займа...</p>
                     </div>
                 </div>
             </div>
@@ -384,8 +384,8 @@ function loanHistory() {
         showModal: false,
 
         filterLoans() {
-            // Filter logic can be implemented here if needed
-            console.log('Filtering loans:', {
+            // Логика фильтрации может быть реализована здесь при необходимости
+            console.log('Фильтрация займов:', {
                 status: this.statusFilter,
                 date: this.dateFilter
             });
@@ -394,7 +394,7 @@ function loanHistory() {
         viewLoanDetails(loanId) {
             this.showModal = true;
             document.body.style.overflow = 'hidden';
-            // Here you can load loan details via AJAX or show existing data
+            // Здесь можно загрузить детали займа через AJAX или показать существующие данные
         },
 
         closeModal() {
@@ -404,7 +404,7 @@ function loanHistory() {
     }
 }
 
-// Initialize Lucide icons when page loads
+// Инициализация иконок Lucide при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();

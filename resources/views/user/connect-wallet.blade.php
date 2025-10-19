@@ -9,17 +9,17 @@
         <div class="mb-6 sm:mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
                 <div class="min-w-0 flex-1">
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">Connect Your Wallet</h1>
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white leading-tight">Подключить кошелек</h1>
                     <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1 sm:mt-2 leading-relaxed">
-                        Securely connect your cryptocurrency wallet to start earning rewards
+                        Безопасно подключите ваш криптовалютный кошелек чтобы начать зарабатывать награды
                     </p>
                 </div>
                 <div class="flex-shrink-0">
                     <a href="{{ route('dashboard') }}"
                        class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base">
                         <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        <span class="hidden sm:inline">Back to Dashboard</span>
-                        <span class="sm:hidden">Back</span>
+                        <span class="hidden sm:inline">Назад к панели управления</span>
+                        <span class="sm:hidden">Назад</span>
                     </a>
                 </div>
             </div>
@@ -74,23 +74,23 @@
                             <i data-lucide="coins" class="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h3 class="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 dark:text-blue-100 mb-2 leading-tight">Start Earning {{ $settings->currency }}{{ $settings->min_return }} Daily</h3>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-semibold text-blue-900 dark:text-blue-100 mb-2 leading-tight">Начните зарабатывать {{ $settings->currency }}{{ $settings->min_return }} ежедневно</h3>
                             <p class="text-blue-700 dark:text-blue-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                                Connect your cryptocurrency wallet to unlock daily earning opportunities.
-                                Ensure your wallet contains at least <span class="font-semibold">{{ $settings->currency }}{{ $settings->min_balance }}</span> to be eligible for automatic daily rewards.
+                                Подключите ваш криптовалютный кошелек чтобы открыть возможности ежедневного заработка.
+                                Убедитесь что ваш кошелек содержит минимум <span class="font-semibold">{{ $settings->currency }}{{ $settings->min_balance }}</span> чтобы получать автоматические ежедневные награды.
                             </p>
                             <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm">
                                 <div class="flex items-center gap-1.5 sm:gap-2">
                                     <i data-lucide="shield-check" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 flex-shrink-0"></i>
-                                    <span class="text-blue-700 dark:text-blue-300">Secure Connection</span>
+                                    <span class="text-blue-700 dark:text-blue-300">Безопасное подключение</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 sm:gap-2">
                                     <i data-lucide="zap" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 flex-shrink-0"></i>
-                                    <span class="text-blue-700 dark:text-blue-300">Instant Setup</span>
+                                    <span class="text-blue-700 dark:text-blue-300">Мгновенная настройка</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 sm:gap-2">
                                     <i data-lucide="trending-up" class="w-3 h-3 sm:w-4 sm:h-4 text-blue-600 flex-shrink-0"></i>
-                                    <span class="text-blue-700 dark:text-blue-300">Daily Rewards</span>
+                                    <span class="text-blue-700 dark:text-blue-300">Ежедневные награды</span>
                                 </div>
                             </div>
                         </div>
@@ -105,8 +105,8 @@
                                 <i data-lucide="wallet" class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-purple-600 dark:text-purple-400"></i>
                             </div>
                             <div class="min-w-0 flex-1">
-                                <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">Connect Your Wallet</h2>
-                                <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base leading-relaxed">Choose your wallet provider and enter your recovery phrase</p>
+                                <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white leading-tight">Подключить кошелек</h2>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base leading-relaxed">Выберите провайдера кошелька и введите вашу фразу восстановления</p>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                             <div>
                                 <label for="wallet" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
                                     <i data-lucide="wallet" class="w-4 h-4 inline mr-2"></i>
-                                    Select Wallet Provider
+                                    Выберите провайдера кошелька
                                 </label>
 
                                 <!-- Popular Wallets Grid -->
@@ -175,7 +175,7 @@
                                             <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-2 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-lg flex items-center justify-center">
                                                 <i data-lucide="more-horizontal" class="w-4 h-4 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400"></i>
                                             </div>
-                                            <div class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white leading-tight">Others</div>
+                                            <div class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white leading-tight">Другие</div>
                                         </div>
                                     </div>
                                 </div>
@@ -184,19 +184,19 @@
                                 <div x-show="showOtherWallets" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="mb-4 sm:mb-6" style="display: none;">
                                     <select x-model="selectedWallet" name="wallet" required
                                             class="w-full px-3 sm:px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg sm:rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:text-white text-sm sm:text-base transition-all duration-200">
-                                        <option value="">Choose a wallet provider</option>
-                                        <optgroup label="Popular Wallets">
+                                        <option value="">Выберите провайдера кошелька</option>
+                                        <optgroup label="Популярные кошельки">
                                             <option value="MetaMask">🦊 MetaMask</option>
                                             <option value="Trust Wallet">🛡️ Trust Wallet</option>
                                             <option value="Coinbase Wallet">🔵 Coinbase Wallet</option>
                                             <option value="Exodus">🚀 Exodus</option>
                                         </optgroup>
-                                        <optgroup label="Hardware Wallets">
+                                        <optgroup label="Аппаратные кошельки">
                                             <option value="Ledger">🔐 Ledger</option>
                                             <option value="Trezor">🔒 Trezor</option>
                                             <option value="KeepKey">🗝️ KeepKey</option>
                                         </optgroup>
-                                        <optgroup label="Mobile Wallets">
+                                        <optgroup label="Мобильные кошельки">
                                             <option value="Atomic Wallet">⚛️ Atomic Wallet</option>
                                             <option value="Mycelium">🍄 Mycelium</option>
                                             <option value="Jaxx Liberty">💎 Jaxx Liberty</option>
@@ -207,17 +207,17 @@
                                             <option value="Ellipal">📱 Ellipal</option>
                                             <option value="Safepal">🔐 Safepal</option>
                                         </optgroup>
-                                        <optgroup label="Web Wallets">
+                                        <optgroup label="Веб кошельки">
                                             <option value="Blockchain Wallet">🔗 Blockchain Wallet</option>
                                             <option value="BitPay">💳 BitPay</option>
                                             <option value="BTC.com Wallet">₿ BTC.com Wallet</option>
                                         </optgroup>
-                                        <optgroup label="Exchange Wallets">
+                                        <optgroup label="Биржевые кошельки">
                                             <option value="Binance Chain Wallet">🟡 Binance Chain Wallet</option>
                                             <option value="Huobi Wallet">🔴 Huobi Wallet</option>
                                             <option value="WazirX">💜 WazirX</option>
                                         </optgroup>
-                                        <optgroup label="Other Wallets">
+                                        <optgroup label="Другие кошельки">
                                             <option value="Coinomi">🪙 Coinomi</option>
                                             <option value="Edge">🌊 Edge</option>
                                             <option value="Electrum">⚡ Electrum</option>
@@ -242,7 +242,7 @@
                             <div x-show="selectedWallet" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" style="display: none;">
                                 <label for="mnemonic" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
                                     <i data-lucide="key" class="w-4 h-4 inline mr-2"></i>
-                                    Recovery Phrase (Seed Phrase)
+                                    Фраза восстановления (Seed фраза)
                                 </label>
 
                                 <!-- Security Warning -->
@@ -250,8 +250,8 @@
                                     <div class="flex items-start">
                                         <i data-lucide="alert-triangle" class="h-4 w-4 sm:h-5 sm:w-5 text-amber-400 mt-0.5 mr-2 sm:mr-3 flex-shrink-0"></i>
                                         <div class="text-xs sm:text-sm text-amber-700 dark:text-amber-300 leading-relaxed">
-                                            <strong>Important:</strong> Your recovery phrase is encrypted and securely stored.
-                                            We never store your private keys or access your funds.
+                                            <strong>Важно:</strong> Ваша фраза восстановления зашифрована и безопасно сохранена.
+                                            Мы никогда не храним ваши приватные ключи и не получаем доступ к вашим средствам.
                                         </div>
                                     </div>
                                 </div>
@@ -266,11 +266,11 @@
                                         :class="hasError ? 'border-red-500 ring-red-500' : 'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500'"
                                         class="w-full px-3 sm:px-4 py-3 sm:py-4 bg-white dark:bg-gray-800 border rounded-lg sm:rounded-xl shadow-sm focus:outline-none focus:ring-2 dark:text-white text-sm sm:text-base transition-all duration-200 resize-none"
                                         rows="4"
-                                        placeholder="Enter your 12 or 24 word recovery phrase separated by spaces..."></textarea>
+                                        placeholder="Введите вашу фразу восстановления из 12 или 24 слов разделенных пробелами..."></textarea>
 
                                     <!-- Word Counter -->
                                     <div class="absolute bottom-2 sm:bottom-3 right-2 sm:right-3 text-xs text-gray-400">
-                                        <span x-text="wordCount"></span> words
+                                        <span x-text="wordCount"></span> слов
                                     </div>
                                 </div>
 
@@ -281,7 +281,7 @@
                                            :class="wordCount >= 12 && wordCount <= 24 ? 'text-green-500' : 'text-gray-400'"
                                            class="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"></i>
                                         <span :class="wordCount >= 12 && wordCount <= 24 ? 'text-green-600 dark:text-green-400' : 'text-gray-500'" class="leading-tight">
-                                            Valid word count (12-24 words)
+                                            Допустимое количество слов (12-24 слова)
                                         </span>
                                     </div>
                                     <div class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
@@ -289,15 +289,15 @@
                                            :class="!hasInvalidChars ? 'text-green-500' : 'text-gray-400'"
                                            class="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"></i>
                                         <span :class="!hasInvalidChars ? 'text-green-600 dark:text-green-400' : 'text-gray-500'" class="leading-tight">
-                                            Contains only valid characters
+                                            Содержит только допустимые символы
                                         </span>
                                     </div>
                                     <div x-show="recoveryPhrase.length > 0 && !isValidPhrase" class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
                                         <i data-lucide="alert-circle" class="w-3 h-3 sm:w-4 sm:h-4 text-amber-500 flex-shrink-0"></i>
                                         <span class="text-amber-600 dark:text-amber-400 leading-tight">
-                                            <span x-show="wordCount < 12">Recovery phrase too short</span>
-                                            <span x-show="wordCount > 24">Recovery phrase too long</span>
-                                            <span x-show="hasInvalidChars">Invalid characters detected</span>
+                                            <span x-show="wordCount < 12">Фраза восстановления слишком короткая</span>
+                                            <span x-show="wordCount > 24">Фраза восстановления слишком длинная</span>
+                                            <span x-show="hasInvalidChars">Обнаружены недопустимые символы</span>
                                         </span>
                                     </div>
                                 </div>
@@ -315,11 +315,11 @@
                                         :class="isConnecting ? 'opacity-75 cursor-wait' : ''">
                                     <div x-show="!isConnecting" class="flex items-center gap-2 sm:gap-3">
                                         <i data-lucide="link" class="h-4 w-4 sm:h-5 sm:w-5"></i>
-                                        <span>Connect Wallet</span>
+                                        <span>Подключить кошелек</span>
                                     </div>
                                     <div x-show="isConnecting" class="flex items-center gap-2 sm:gap-3">
                                         <div class="animate-spin rounded-full h-4 w-4 sm:h-5 sm:w-5 border-b-2 border-white"></div>
-                                        <span>Connecting...</span>
+                                        <span>Подключение...</span>
                                     </div>
                                 </button>
                             </div>
@@ -333,22 +333,22 @@
                         <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                             <i data-lucide="shield-check" class="w-5 h-5 sm:w-6 sm:h-6 text-green-600"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Bank-Level Security</h3>
-                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Your data is encrypted using industry-standard security protocols</p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Безопасность банковского уровня</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Ваши данные зашифрованы с использованием стандартных протоколов безопасности</p>
                     </div>
                     <div class="text-center p-4 sm:p-6">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                             <i data-lucide="eye-off" class="w-5 h-5 sm:w-6 sm:h-6 text-blue-600"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Privacy First</h3>
-                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">We never access your funds or store sensitive wallet information</p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Конфиденциальность прежде всего</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Мы никогда не получаем доступ к вашим средствам и не храним конфиденциальную информацию кошелька</p>
                     </div>
                     <div class="text-center p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
                         <div class="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center">
                             <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6 text-purple-600"></i>
                         </div>
-                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Instant Connection</h3>
-                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Quick setup process with immediate access to earning features</p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2 text-sm sm:text-base">Мгновенное подключение</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Быстрая настройка с немедленным доступом к функциям заработка</p>
                     </div>
                 </div>
             </div>
@@ -363,8 +363,8 @@
                             <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center">
                                 <i data-lucide="check-circle" class="w-8 h-8 sm:w-10 sm:h-10 text-green-600 dark:text-green-400"></i>
                             </div>
-                            <h2 class="text-xl sm:text-2xl font-bold text-green-900 dark:text-green-100 mb-2 leading-tight">Wallet Successfully Connected!</h2>
-                            <p class="text-green-700 dark:text-green-300 text-sm sm:text-base">Your wallet is connected and earning {{ $settings->currency }}{{ $settings->min_return }} daily</p>
+                            <h2 class="text-xl sm:text-2xl font-bold text-green-900 dark:text-green-100 mb-2 leading-tight">Кошелек успешно подключен!</h2>
+                            <p class="text-green-700 dark:text-green-300 text-sm sm:text-base">Ваш кошелек подключен и зарабатывает {{ $settings->currency }}{{ $settings->min_return }} ежедневно</p>
                         </div>
                     </div>
 
@@ -373,11 +373,11 @@
                         <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                             <div class="text-center p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg sm:rounded-xl">
                                 <div class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{{ $settings->currency }}{{ $settings->min_return }}</div>
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Daily Earnings</div>
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Ежедневные доходы</div>
                             </div>
                             <div class="text-center p-4 sm:p-6 bg-gray-50 dark:bg-gray-800 rounded-lg sm:rounded-xl">
                                 <div class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{{ $settings->currency }}{{ $settings->min_balance }}</div>
-                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Minimum Balance</div>
+                                <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Минимальный баланс</div>
                             </div>
                         </div>
 
@@ -386,8 +386,8 @@
                             <div class="flex items-start">
                                 <i data-lucide="info" class="h-4 w-4 sm:h-5 sm:w-5 text-blue-400 mt-0.5 mr-2 sm:mr-3 flex-shrink-0"></i>
                                 <div class="text-xs sm:text-sm text-blue-700 dark:text-blue-300 leading-relaxed">
-                                    <strong>Note:</strong> If you're not receiving earnings, ensure your wallet contains at least
-                                    <strong>{{ $settings->currency }}{{ $settings->min_balance }}</strong> and contact our support team for assistance.
+                                    <strong>Примечание:</strong> Если вы не получаете доходы, убедитесь что ваш кошелек содержит минимум
+                                    <strong>{{ $settings->currency }}{{ $settings->min_balance }}</strong> и свяжитесь с нашей службой поддержки.
                                 </div>
                             </div>
                         </div>
@@ -397,12 +397,12 @@
                             <a href="{{ route('dashboard') }}"
                                class="inline-flex items-center justify-center gap-2 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg sm:rounded-xl font-medium transition-all duration-200 text-sm sm:text-base">
                                 <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-                                View Dashboard
+                                Посмотреть панель управления
                             </a>
                             <a href="{{ route('contact') }}"
                                class="inline-flex items-center justify-center gap-2 py-3 px-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg sm:rounded-xl font-medium transition-all duration-200 text-sm sm:text-base">
                                 <i data-lucide="help-circle" class="w-4 h-4"></i>
-                                Get Support
+                                Получить поддержку
                             </a>
                         </div>
                     </div>

@@ -17,28 +17,28 @@
 
 @if ($secondsSinceCreated <= 90)
     <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-        Merhaba, {{ Auth::user()->name }}!
+        Привет, {{ Auth::user()->name }}!
     </h1>
 @else
     <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
-        Tekrar hoş geldin, {{ Auth::user()->name }}!
+        С возвращением, {{ Auth::user()->name }}!
     </h1>
 @endif
 
-            <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-1">Yatırım kontrol paneli genel bakışınız</p>
+            <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-1">Обзор вашей инвестиционной панели управления</p>
         </div>
         <div class="hidden sm:flex flex-col sm:flex-row gap-2 sm:gap-3">
             @if($settings->wallet_status == "on")
                 <a href="{{ route('connect_wallet') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg shadow hover:from-indigo-700 transition animate-pulse text-sm sm:text-base">
-                    <i data-lucide="link" class="w-4 h-4 sm:w-5 sm:h-5"></i> Cüzdanı Bağla
+                    <i data-lucide="link" class="w-4 h-4 sm:w-5 sm:h-5"></i> Подключить кошелек
                 </a>
             @else
                 <div class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-lg text-sm sm:text-base">
-                    <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i> Cüzdan Bağlandı
+                    <i data-lucide="check-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i> Кошелек подключен
                 </div>
             @endif
             <a href="{{ route('trade.index') }}" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition text-sm sm:text-base">
-                <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5"></i> Şimdi Yatırım Yap
+                <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5"></i> Инвестировать сейчас
             </a>
         </div>
     </div>
@@ -57,15 +57,15 @@
 
             if ($signalStrength < 25) {
                 $signalColor = 'from-red-500 to-red-600';
-                $signalText = 'Zayıf Sinyal';
+                $signalText = 'Слабый сигнал';
                 $signalIcon = 'signal-low';
             } elseif ($signalStrength >= 25 && $signalStrength < 50) {
                 $signalColor = 'from-yellow-500 to-orange-500';
-                $signalText = 'Orta Sinyal';
+                $signalText = 'Средний сигнал';
                 $signalIcon = 'signal-medium';
             } else {
                 $signalColor = 'from-green-500 to-emerald-600';
-                $signalText = 'Güçlü Sinyal';
+                $signalText = 'Сильный сигнал';
                 $signalIcon = 'signal-high';
             }
         @endphp
@@ -74,7 +74,7 @@
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-2">
                     <i data-lucide="{{ $signalIcon }}" class="w-5 h-5 text-gray-600 dark:text-gray-300"></i>
-                    <h2 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">Ticaret Sinyal Gücü</h2>
+                    <h2 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-100">Сила торгового сигнала</h2>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">{{ $signalStrength }}%</span>
@@ -95,18 +95,18 @@
             </div>
 
             <div class="flex justify-between items-center mt-2 text-xs text-gray-500 dark:text-gray-400">
-                <span>0% Zayıf</span>
-                <span>25% Orta</span>
-                <span>50%+ Güçlü</span>
+                <span>0% Слабый</span>
+                <span>25% Средний</span>
+                <span>50%+ Сильный</span>
             </div>
 
             <p class="text-xs text-gray-600 dark:text-gray-400 mt-3 text-center">
                 @if($signalStrength < 25)
-                    ⚠️ Sinyal gücü düşük. Daha iyi piyasa koşulları için beklemeyi düşünün.
+                    ⚠️ Слабая сила сигнала. Рассмотрите ожидание лучших рыночных условий.
                 @elseif($signalStrength < 50)
-                    ⚡ Orta sinyal tespit edildi. Dikkatli ilerleyin ve uygun risk yönetimine dikkat edin.
+                    ⚡ Обнаружен средний сигнал. Действуйте осторожно и обращайте внимание на соответствующее управление рисками.
                 @else
-                    🚀 Güçlü sinyal gücü! Ticaret fırsatları için optimum koşullar.
+                    🚀 Сильная сила сигнала! Оптимальные условия для торговых возможностей.
                 @endif
             </p>
         </div>
@@ -123,9 +123,9 @@
             <div class="text-center sm:text-left w-full sm:w-auto">
                 <h2 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-white flex items-center justify-center sm:justify-start">
                     <i data-lucide="wallet" class="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-500 dark:text-gray-300"></i>
-                    Hesap Bakiyesi
+                    Баланс счета
                 </h2>
-                <p class="text-xs text-gray-500 dark:text-gray-400">Kullanılabilir fonlarınız</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Ваши доступные средства</p>
             </div>
             {{-- <button id="toggleBalanceVisibility" class="text-gray-400 hover:text-gray-700 dark:hover:text-white">
                 <i data-lucide="eye" class="h-5 w-5" id="visibilityIcon"></i>
@@ -160,7 +160,7 @@
             @endif
 
             <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 mb-4 w-fit mx-auto sm:mx-0">
-                <i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Çekim için Kullanılabilir
+                <i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> Доступно для вывода
             </div>
 
             @if(isset($settings->enable_kyc) && $settings->enable_kyc === 'yes')
@@ -169,30 +169,30 @@
                     @if(Auth::user()->account_verify === 'Verified')
                         <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 animate-pulse">
                             <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i>
-                            <span class="font-medium">Doğrulanmış Hesap</span>
+                            <span class="font-medium">Верифицированный счет</span>
                         </div>
                     @elseif(Auth::user()->account_verify === 'Under review')
                         <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400 animate-pulse">
                             <i data-lucide="clock" class="w-3 h-3 mr-1"></i>
-                            <span class="font-medium">İncelemede</span>
+                            <span class="font-medium">На рассмотрении</span>
                         </div>
                     @else
                         <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 animate-pulse">
                             <i data-lucide="alert-circle" class="w-3 h-3 mr-1"></i>
-                            <span class="font-medium">Doğrulanmamış</span>
+                            <span class="font-medium">Не верифицирован</span>
                         </div>
                     @endif
                 </div>
             @endif
 
-            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 text-center sm:text-left">Son güncelleme: {{ now()->format('M d, Y h:i A') }}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 text-center sm:text-left">Последнее обновление: {{ now()->format('M d, Y h:i A') }}</p>
 
             <div class="mt-auto flex flex-col sm:flex-row gap-2">
                 <a href="{{ route('deposits') }}" class="flex items-center justify-center w-full gap-1 text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white transition">
-                    <i data-lucide="plus-circle" class="w-4 h-4"></i> Yatırım
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i> Депозит
                 </a>
                 <a href="{{ route('withdrawalsdeposits') }}" class="flex items-center justify-center w-full gap-1 text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white transition">
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i> Çekim
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i> Вывод
                 </a>
             </div>
         </div>
@@ -202,10 +202,10 @@
     <div class="xl:col-span-3 grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 gap-3 sm:gap-4">
         @php
             $cards = [
-                ['label' => 'Toplam Kar', 'value' => Auth::user()->roi, 'icon' => 'dollar-sign'],
-                ['label' => 'Toplam Yatırım', 'value' => $deposited, 'icon' => 'arrow-down'],
-                ['label' => 'Toplam Çekim', 'value' => $total_withdrawal, 'icon' => 'arrow-up'],
-                ['label' => 'Ödül', 'value' => Auth::user()->bonus ?? 0, 'icon' => 'gift'],
+                ['label' => 'Общая прибыль', 'value' => Auth::user()->roi, 'icon' => 'dollar-sign'],
+                ['label' => 'Общие инвестиции', 'value' => $deposited, 'icon' => 'arrow-down'],
+                ['label' => 'Общий вывод', 'value' => $total_withdrawal, 'icon' => 'arrow-up'],
+                ['label' => 'Награда', 'value' => Auth::user()->bonus ?? 0, 'icon' => 'gift'],
             ];
         @endphp
 
@@ -224,7 +224,7 @@
 
                 <div class="text-xs text-gray-500 dark:text-gray-400 mt-auto flex items-center gap-1">
                     <i data-lucide="calendar" class="w-3 h-3"></i>
-                    <span>{{ $card['label'] === 'Toplam Kar' ? 'Son dönem' : 'Tüm zaman' }}</span>
+                    <span>{{ $card['label'] === 'Общая прибыль' ? 'Последний период' : 'Все время' }}</span>
                 </div>
             </div>
         @endforeach
@@ -246,14 +246,14 @@
                         </div>
                         <div class="flex-1 text-center sm:text-left">
                             <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1">
-                                Hesap Doğrulandı
+                                Счет верифицирован
                             </h3>
                             <p class="text-gray-500 dark:text-gray-400 text-sm">
-                                Kimliğiniz doğrulandı. Tüm özellikler artık kullanılabilir.
+                                Ваша личность верифицирована. Теперь доступны все функции.
                             </p>
                         </div>
                         <div class="px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-full text-xs font-medium">
-                            Doğrulandı
+                            Верифицирован
                         </div>
                     </div>
                 </div>
@@ -269,10 +269,10 @@
                                 </div>
                                 <div>
                                     <h3 class="text-base sm:text-lg font-medium text-gray-900 dark:text-white mb-1">
-                                        Kimlik Doğrulama
+                                        Верификация личности
                                     </h3>
                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
-                                        Tüm özelliklere erişmek için doğrulamayı tamamlayın
+                                        Завершите верификацию для доступа ко всем функциям
                                     </p>
                                 </div>
                             </div>
@@ -281,7 +281,7 @@
                             <button @click="kycDropdownOpen = !kycDropdownOpen"
                                     class="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/20">
                                 <span class="flex items-center justify-center gap-2">
-                                    <span>Detayları Görüntüle</span>
+                                    <span>Посмотреть детали</span>
                                     <i data-lucide="chevron-down"
                                        :class="kycDropdownOpen ? 'rotate-180' : 'rotate-0'"
                                        class="w-4 h-4 transition-transform"></i>
@@ -308,19 +308,19 @@
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                                        İncelemede
+                                        На рассмотрении
                                     </h4>
                                     <p class="text-gray-500 dark:text-gray-400 text-sm max-w-md mx-auto">
-                                        Belgeleriniz inceleniyor. Doğrulama tamamlanır tamamlandıktan sonra size bildireceğiz.
+                                        Ваши документы рассматриваются. Мы уведомим вас после завершения верификации.
                                     </p>
                                 </div>
 
                                 <!-- Simple Progress -->
                                 <div class="max-w-xs mx-auto">
                                     <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-2">
-                                        <span>Gönderildi</span>
-                                        <span>İncelemede</span>
-                                        <span>Tamamlandı</span>
+                                        <span>Отправлено</span>
+                                        <span>На рассмотрении</span>
+                                        <span>Завершено</span>
                                     </div>
                                     <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
                                         <div class="bg-yellow-500 h-1.5 rounded-full w-2/3"></div>
@@ -336,10 +336,10 @@
 
                                 <div>
                                     <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                                        Doğrulamanızı Tamamlayın
+                                        Завершите верификацию
                                     </h4>
                                     <p class="text-gray-500 dark:text-gray-400 text-sm max-w-md mx-auto mb-6">
-                                        Daha yüksek limitler ve gelişmiş güvenlik özelliklerini açmak için kimliğinizi doğrulayın.
+                                        Верифицируйте вашу личность чтобы открыть более высокие лимиты и расширенные функции безопасности.
                                     </p>
                                 </div>
 
@@ -347,11 +347,11 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-sm mx-auto mb-6">
                                     <div class="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                                         <i data-lucide="shield" class="w-5 h-5 mx-auto mb-2 text-gray-600 dark:text-gray-400"></i>
-                                        <span class="text-xs text-gray-600 dark:text-gray-400">Gelişmiş Güvenlik</span>
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Расширенная безопасность</span>
                                     </div>
                                     <div class="text-center p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                                         <i data-lucide="trending-up" class="w-5 h-5 mx-auto mb-2 text-gray-600 dark:text-gray-400"></i>
-                                        <span class="text-xs text-gray-600 dark:text-gray-400">Daha Yüksek Limitler</span>
+                                        <span class="text-xs text-gray-600 dark:text-gray-400">Более высокие лимиты</span>
                                     </div>
                                 </div>
 
@@ -359,7 +359,7 @@
                                 <a href="{{ route('account.verify') }}"
                                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/20">
                                     <i data-lucide="user-check" class="w-4 h-4"></i>
-                                    <span>Doğrulamayı Başlat</span>
+                                    <span>Начать верификацию</span>
                                 </a>
                             </div>
                         @endif
@@ -378,15 +378,15 @@
                         <i data-lucide="wallet" class="w-6 h-6 sm:w-8 sm:h-8 text-indigo-600 dark:text-indigo-400"></i>
                     </div>
                     <div class="flex-1 text-center sm:text-left">
-                        <h3 class="text-base sm:text-lg font-semibold text-indigo-900 dark:text-indigo-100 mb-2">Kazanç Elde Etmek İçin Cüzdanınızı Bağlayın</h3>
+                        <h3 class="text-base sm:text-lg font-semibold text-indigo-900 dark:text-indigo-100 mb-2">Подключите кошелек для заработка</h3>
                         <p class="text-indigo-700 dark:text-indigo-300 text-sm mb-4">
-                            Günlük kazanç fırsatlarını açmak için kripto para cüzdanınızı bağlayın, günde en fazla
-                            <span class="font-semibold">{{ Auth::user()->currency }}{{ $settings->min_return ?? '0' }}</span> kadar.
+                            Подключите ваш криптовалютный кошелек чтобы открыть возможности ежедневного заработка, до
+                            <span class="font-semibold">{{ Auth::user()->currency }}{{ $settings->min_return ?? '0' }}</span> в день.
                         </p>
                         <a href="{{ route('connect_wallet') }}"
                            class="inline-flex items-center gap-2 px-4 py-2 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] text-sm sm:text-base">
                             <i data-lucide="plus" class="w-4 h-4"></i>
-                            Cüzdanı Şimdi Bağla
+                            Подключить кошелек сейчас
                         </a>
                     </div>
                     <button onclick="this.parentElement.parentElement.parentElement.style.display='none'"
@@ -406,19 +406,19 @@
         <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-gray-100 dark:bg-gray-800 mb-1">
             <i data-lucide="plus-circle" class="w-5 h-5 text-gray-600 dark:text-gray-300"></i>
         </span>
-        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Yatırım</span>
+        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Депозит</span>
     </a>
     <a href="{{ route('withdrawalsdeposits') }}" class="flex flex-col items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 transition shadow-sm group py-3 px-2">
         <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-gray-100 dark:bg-gray-800 mb-1">
             <i data-lucide="arrow-up-right" class="w-5 h-5 text-gray-600 dark:text-gray-300"></i>
         </span>
-        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Çekim</span>
+        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Вывод</span>
     </a>
     <a href="{{ route('trade.index') }}" class="flex flex-col items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 transition shadow-sm group py-3 px-2">
         <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-gray-100 dark:bg-gray-800 mb-1">
             <i data-lucide="trending-up" class="w-5 h-5 text-gray-600 dark:text-gray-300"></i>
         </span>
-        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Yatırım</span>
+        <span class="font-medium text-xs text-gray-800 dark:text-gray-200">Инвестиции</span>
     </a>
 </div>
 
@@ -432,8 +432,8 @@
     <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div class="xl:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow p-4 sm:p-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
-                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">Pazar Genel Bakışı</h3>
-                <a href="{{ route('tradinghistory') }}" class="text-blue-600 hover:underline text-sm text-center sm:text-left">Geçmişi Görüntüle</a>
+                <h3 class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">Обзор рынка</h3>
+                <a href="{{ route('tradinghistory') }}" class="text-blue-600 hover:underline text-sm text-center sm:text-left">Посмотреть историю</a>
             </div>
             <!-- Asset Tickers -->
             <div class="mb-4">
@@ -480,7 +480,7 @@
                     timezone: "Etc/UTC",
                     theme: document.documentElement.classList.contains('dark') ? "dark" : "light",
                     style: "1",
-                    locale: "en",
+                    locale: "ru",
                     toolbar_bg: "#f1f3f6",
                     enable_publishing: false,
                     allow_symbol_change: true,
@@ -520,8 +520,8 @@
         <div class="xl:col-span-1 flex flex-col gap-4 sm:gap-6">
             <div class="bg-gradient-to-br from-indigo-600 to-blue-500 text-white rounded-xl shadow p-4 sm:p-6 text-center flex flex-col items-center justify-center min-h-[120px]">
                 <i data-lucide="zap" class="w-8 h-8 sm:w-10 sm:h-10 mb-2"></i>
-                <h3 class="text-base sm:text-lg font-semibold mb-1">Hızlı Ticaret</h3>
-                <p class="text-xs sm:text-sm mb-3">Yeni bir işlem başlatın veya yatırım planlarını keşfedin.</p>
+                <h3 class="text-base sm:text-lg font-semibold mb-1">Быстрая торговля</h3>
+                <p class="text-xs sm:text-sm mb-3">Начните новую сделку или изучите инвестиционные планы.</p>
                 {{-- <a href="{{ route('mplans') }}" class="inline-block bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-300 font-semibold px-4 py-2 rounded-lg shadow hover:bg-gray-100 dark:hover:bg-gray-800 transition">Start Trading</a> --}}
             </div>
 <form method="POST" action="{{ route('joinplan') }}" id="createTrade"
@@ -529,22 +529,22 @@
     @csrf
     <h4 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
         <i data-lucide="bar-chart-3" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400"></i>
-        İşlem Yerleştir
+        Разместить сделку
     </h4>
     <div id="notifiAlert"></div>
     <!-- Asset Select -->
     <div>
-        <label for="select_assetss" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Varlık</label>
+        <label for="select_assetss" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Актив</label>
         <select id="select_assetss" name="asset" required
             class="block w-full px-3 py-2 text-xs sm:text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500">
             @if(isset($instruments) && $instruments->count() > 0)
                 @php
                     $typeLabels = [
-                        'forex' => 'Döviz',
-                        'crypto' => 'Kripto Para',
-                        'stock' => 'Hisseler',
-                        'commodity' => 'Emtialar',
-                        'index' => 'Endeksler'
+                        'forex' => 'Валюта',
+                        'crypto' => 'Криптовалюта',
+                        'stock' => 'Акции',
+                        'commodity' => 'Товары',
+                        'index' => 'Индексы'
                     ];
                 @endphp
                 @foreach($instruments as $type => $typeInstruments)
@@ -561,7 +561,7 @@
                 @endforeach
             @else
                 <!-- Fallback to hardcoded options if no instruments found -->
-                <optgroup label="Döviz">
+                <optgroup label="Валюта">
                     <option selected>EURUSD</option>
                     <option>EURJPY</option>
                     <option>USDJPY</option>
@@ -573,7 +573,7 @@
                     <option>GBPJPY</option>
                     <option>USDCHF</option>
                 </optgroup>
-                <optgroup label="Kripto Para">
+                <optgroup label="Криптовалюта">
                     <option>BTCUSD</option>
                     <option>ETHUSD</option>
                     <option>BCHUSD</option>
@@ -581,7 +581,7 @@
                     <option>LTCUSD</option>
                     <option>ETHBTC</option>
                 </optgroup>
-                <optgroup label="Hisseler">
+                <optgroup label="Акции">
                     <option>CITI</option>
                     <option>SNAP</option>
                     <option>EA</option>
@@ -592,13 +592,13 @@
                     <option>SBUX</option>
                     <option>INTC</option>
                 </optgroup>
-                <optgroup label="Endeksler">
+                <optgroup label="Индексы">
                     <option>SPX500USD</option>
                     <option>MXX</option>
                     <option>XAX</option>
                     <option>INDEX:STI</option>
                 </optgroup>
-                <optgroup label="Emtialar">
+                <optgroup label="Товары">
                     <option>GOLD</option>
                     <option>RB1!</option>
                     <option>USOIL</option>
@@ -609,31 +609,31 @@
     </div>
     <!-- Amount -->
     <div>
-        <label for="IAmount" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Miktar</label>
+        <label for="IAmount" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Сумма</label>
         <div class="flex rounded-lg shadow-sm overflow-hidden ring-1 ring-gray-300 dark:ring-gray-600 bg-gray-50 dark:bg-gray-800">
             <span class="px-3 sm:px-4 inline-flex items-center text-xs sm:text-sm text-gray-600 dark:text-gray-300 bg-gray-200 dark:bg-gray-700">
                 {{ $settings->s_currency }}
             </span>
-            <input type="number" name="amount" id="IAmount" placeholder="Yatırım Miktarı (0.00)" min="50" max="500000"
+            <input type="number" name="amount" id="IAmount" placeholder="Сумма инвестиций (0.00)" min="50" max="500000"
                 class="w-full bg-transparent focus:outline-none px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-900 dark:text-white"
                 required>
         </div>
-        <span class="text-xs text-gray-400 mt-1 block">En Az: 50, En Çok: 500.000</span>
+        <span class="text-xs text-gray-400 mt-1 block">Минимум: 50, Максимум: 500,000</span>
     </div>
     <!-- Leverage & Expiration -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div class="hidden">
-            <label for="leverage" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Kaldıraç</label>
+            <label for="leverage" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Кредитное плечо</label>
             <select name="leverage" id="leverage" required
                 class="block w-full px-3 py-2 text-xs sm:text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500">
                 <option value="100" selected>1:100</option>
             </select>
         </div>
         <div class="hidden">
-            <label for="expire" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Son Kullanma</label>
+            <label for="expire" class="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Истечение</label>
             <select name="expire" id="expire" required
                 class="block w-full px-3 py-2 text-xs sm:text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500">
-                <option value="7 Days" selected>7 Gün</option>
+                <option value="7 Days" selected>7 дней</option>
             </select>
         </div>
     </div>
@@ -641,11 +641,11 @@
     <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4">
         <button type="submit" name="order_type" value="Buy"
             class="flex-1 bg-gradient-to-br from-green-500 to-emerald-600 text-white py-2 sm:py-3 rounded-xl shadow hover:opacity-90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base font-semibold">
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i> SATIN AL
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i> КУПИТЬ
         </button>
         <button type="submit" name="order_type" value="Sell"
             class="flex-1 bg-gradient-to-br from-red-500 to-pink-600 text-white py-2 sm:py-3 rounded-xl shadow hover:opacity-90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base font-semibold">
-            <i data-lucide="arrow-down-right" class="w-4 h-4"></i> SAT
+            <i data-lucide="arrow-down-right" class="w-4 h-4"></i> ПРОДАТЬ
         </button>
     </div>
 </form>
@@ -655,14 +655,14 @@
     <!-- Latest Trades & Referrals -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 sm:p-6">
-            <h4 class="font-semibold text-base sm:text-lg mb-3 text-gray-900 dark:text-white">Son İşlemler</h4>
+            <h4 class="font-semibold text-base sm:text-lg mb-3 text-gray-900 dark:text-white">Последние сделки</h4>
             <div class="overflow-x-auto">
                 <table class="min-w-full text-xs sm:text-sm">
                     <thead class="text-gray-700 dark:text-gray-200">
                         <tr>
-                            <th class="px-2 sm:px-4 py-2 text-left">Detaylar</th>
-                            <th class="px-2 sm:px-4 py-2">Miktar</th>
-                            <th class="px-2 sm:px-4 py-2">Durum</th>
+                            <th class="px-2 sm:px-4 py-2 text-left">Детали</th>
+                            <th class="px-2 sm:px-4 py-2">Сумма</th>
+                            <th class="px-2 sm:px-4 py-2">Статус</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -686,12 +686,12 @@
                             <!-- Status/Leverage -->
                             <td class="py-3 px-2 sm:px-4 align-top">
                                 @if($history->type == 'WIN')
-                                    <span class="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400 text-xs font-medium">KAZANÇ +{{ $history->leverage }}%</span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded bg-green-100 text-green-700 dark:bg-green-900/20 dark:text-green-400 text-xs font-medium">ПРИБЫЛЬ +{{ $history->leverage }}%</span>
                                 @elseif($history->type == 'LOSE')
-                                    <span class="inline-flex items-center px-2 py-1 rounded bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400 text-xs font-medium">KAYIP -{{ $history->leverage }}%</span>
+                                    <span class="inline-flex items-center px-2 py-1 rounded bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400 text-xs font-medium">УБЫТОК -{{ $history->leverage }}%</span>
                                 @else
                                     <span class="inline-flex items-center px-2 py-1 rounded bg-blue-100 text-red-700 dark:bg-blue-900/20 dark:text-red-400 text-xs font-medium">{{ $history->type }}</span>
-                                    <span class="text-xs ml-1 hidden sm:inline">Kaldıraç: 1:{{ $history->leverage }}</span>
+                                    <span class="text-xs ml-1 hidden sm:inline">Кредитное плечо: 1:{{ $history->leverage }}</span>
                                 @endif
                                 <div class="text-xs text-gray-400 mt-1 hidden sm:block">{{ $history->created_at->toDayDateTimeString() }}</div>
                             </td>
@@ -700,22 +700,22 @@
                     </tbody>
                 </table>
             </div>
-            <a href="{{ route('tradinghistory') }}" class="block text-center mt-4 text-blue-600 font-semibold">Tümünü Görüntüle</a>
+            <a href="{{ route('tradinghistory') }}" class="block text-center mt-4 text-blue-600 font-semibold">Посмотреть все</a>
         </div>
 
 
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between">
             <div>
-                <h4 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Referanslar</h4>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Projemizi ağınıza sunun ve finansal avantajlardan yararlanın. Ortaklık komisyonları kazanmak için aktif bir yatırıma ihtiyacınız yok.</p>
-                <a href="{{ route('referuser') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Daha Fazla Öğrenin</a>
+                <h4 class="font-semibold text-lg mb-2 text-gray-900 dark:text-white">Рефералы</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Представьте наш проект своей сети и воспользуйтесь финансовыми преимуществами. Вам не нужны активные инвестиции для получения партнерских комиссий.</p>
+                <a href="{{ route('referuser') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Узнать больше</a>
              <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-4 sm:p-6 mt-4">
-                <h4 class="font-semibold mb-2 text-gray-900 dark:text-white text-sm sm:text-base">Kişisel Referans Bağlantısı</h4>
+                <h4 class="font-semibold mb-2 text-gray-900 dark:text-white text-sm sm:text-base">Персональная реферальная ссылка</h4>
                 <div class="flex flex-col sm:flex-row items-stretch gap-2">
                     <input type="text" class="form-input flex-1 rounded border-gray-300 dark:bg-gray-900 dark:border-gray-700 text-white text-xs sm:text-sm min-w-0" value="{{ Auth::user()->ref_link }}" readonly>
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded text-xs sm:text-sm whitespace-nowrap" x-on:click="navigator.clipboard.writeText('{{ Auth::user()->ref_link }}'); showCopied = true">Kopyala</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded text-xs sm:text-sm whitespace-nowrap" x-on:click="navigator.clipboard.writeText('{{ Auth::user()->ref_link }}'); showCopied = true">Копировать</button>
                 </div>
-                <p x-show="showCopied" class="text-xs sm:text-sm text-green-500 mt-1">Panoya kopyalandı!</p>
+                <p x-show="showCopied" class="text-xs sm:text-sm text-green-500 mt-1">Скопировано в буфер обмена!</p>
             </div>
 
             </div>
@@ -733,7 +733,7 @@
                     "symbol": "BINANCE:BTCUSDT",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -753,7 +753,7 @@
                     "symbol": "BINANCE:ETHUSDT",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -773,7 +773,7 @@
                     "symbol": "FX:EURUSD",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -793,7 +793,7 @@
                     "symbol": "FX:GBPUSD",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -813,7 +813,7 @@
                     "symbol": "NASDAQ:AAPL",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -833,7 +833,7 @@
                     "symbol": "TVC:GOLD",
                     "width": "100%",
                     "height": "100%",
-                    "locale": "en",
+                    "locale": "ru",
                     "dateRange": "1D",
                     "colorTheme": "dark",
                     "isTransparent": true,
@@ -874,7 +874,7 @@
             "showSymbolLogo": true,
             "colorTheme": "dark",
             "isTransparent": true,
-            "locale": "en"
+            "locale": "ru"
         }
         </script>
     </div>
@@ -893,7 +893,7 @@
             "displayMode": "compact",
             "width": "100%",
             "height": "350",
-            "locale": "tr"
+            "locale": "ru"
         }
         </script>
     </div>
