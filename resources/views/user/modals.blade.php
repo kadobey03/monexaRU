@@ -4,7 +4,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header ">
-                <h4 class="modal-title ">Subscribe to subscription Trading</h4>
+                <h4 class="modal-title ">Подписаться на торговые подписки</h4>
                 <button type="button" class="close " data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body ">
@@ -12,59 +12,58 @@
                     @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label class="">Subscription Duration</label>
+                            <label class="">Длительность подписки</label>
                             <select class="form-control  " onchange="calcAmount(this)" name="duration" class="duration"
                                 id="duratn">
-                                <option value="default">Select duration</option>
-                                <option>Monthly</option>
-                                <option>Quaterly</option>
-                                <option>Yearly</option>
+                                <option value="default">Выберите длительность</option>
+                                <option>Ежемесячно</option>
+                                <option>Ежеквартально</option>
+                                <option>Ежегодно</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class="">Amount to Pay</label>
+                            <label class="">Сумма к оплате</label>
                             <input class="form-control subamount  " type="text" id="amount" disabled><br />
 
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Login*:</label>
+                            <label class=" ">Логин*:</label>
                             <input class="form-control  " type="text" name="userid" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Account Password*:</label>
+                            <label class=" ">Пароль счета*:</label>
                             <input class="form-control  " type="text" name="pswrd" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Account Name*:</label>
+                            <label class=" ">Имя счета*:</label>
                             <input class="form-control  " type="text" name="name" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Account Type:</label>
-                            <input class="form-control  " Placeholder="E.g. Standard" type="text" name="acntype"
+                            <label class=" ">Тип счета:</label>
+                            <input class="form-control  " Placeholder="Например, Стандартный" type="text" name="acntype"
                                 required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Currency*:</label>
-                            <input class="form-control  " Placeholder="E.g. USD" type="text" name="currency"
+                            <label class=" ">Валюта*:</label>
+                            <input class="form-control  " Placeholder="Например, USD" type="text" name="currency"
                                 required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Leverage*:</label>
-                            <input class="form-control  " Placeholder="E.g. 1:500" type="text" name="leverage"
+                            <label class=" ">Кредитное плечо*:</label>
+                            <input class="form-control  " Placeholder="Например, 1:500" type="text" name="leverage"
                                 required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label class=" ">Server*:</label>
-                            <input class="form-control  " Placeholder="E.g. HantecGlobal-live" type="text"
+                            <label class=" ">Сервер*:</label>
+                            <input class="form-control  " Placeholder="Например, HantecGlobal-live" type="text"
                                 name="server" required>
                         </div>
                         <div class="form-group col-12">
-                            <small class="">Amount will be deducted from your Account
-                                balance</small>
+                            <small class="">Сумма будет списана с вашего баланса счета</small>
                         </div>
                         <div class="form-group col-md-6">
                             <input id="amountpay" type="hidden" name="amount">
-                            <input type="submit" class="btn btn-primary" value="Subscribe Now">
+                            <input type="submit" class="btn btn-primary" value="Подписаться сейчас">
                         </div>
                     </div>
                 </form>
@@ -75,19 +74,19 @@
 <!-- /plans Modal -->
 <script type="text/javascript">
     function calcAmount(sub) {
-        if (sub.value == "Quaterly") {
+        if (sub.value == "Ежеквартально") {
             var amount = document.getElementById('amount');
             var amountpay = document.getElementById('amountpay');
             amount.value = '<?php echo Auth::user()->currency . $settings->quarterlyfee; ?>';
             amountpay.value = '<?php echo $settings->quarterlyfee; ?>';
         }
-        if (sub.value == "Yearly") {
+        if (sub.value == "Ежегодно") {
             var amount = document.getElementById('amount');
             var amountpay = document.getElementById('amountpay');
             amount.value = '<?php echo Auth::user()->currency . $settings->yearlyfee; ?>';
             amountpay.value = '<?php echo $settings->yearlyfee; ?>';
         }
-        if (sub.value == "Monthly") {
+        if (sub.value == "Ежемесячно") {
             var amount = document.getElementById('amount');
             var amountpay = document.getElementById('amountpay');
             amount.value = '<?php echo Auth::user()->currency . $settings->monthlyfee; ?>';
