@@ -36,14 +36,14 @@ class LanguageController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Language changed successfully',
+                'message' => 'Язык успешно изменен',
                 'language' => $language
             ]);
         }
 
         return response()->json([
             'success' => false,
-            'message' => 'Unsupported language'
+            'message' => 'Неподдерживаемый язык'
         ], 400);
     }
 

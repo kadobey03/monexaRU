@@ -45,6 +45,6 @@ class KycController extends Controller
             \Log::error('Failed to send KYC status notification email to user. User: ' . $user->name . ' (' . $user->email . '), KYC ID: ' . $application->id . ', Action: ' . $request->action . ', Subject: ' . $request->subject . '. Error: ' . $e->getMessage());
         }
 
-        return redirect()->route('kyc')->with('success', 'Action Sucessful!');
+        return redirect()->route('kyc')->with('success', 'Действие успешно!');
     }
 }

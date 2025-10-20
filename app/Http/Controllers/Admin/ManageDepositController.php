@@ -23,7 +23,7 @@ class ManageDepositController extends Controller
         $deposit = Deposit::where('id', $id)->first();
         Storage::disk('public')->delete($deposit->proof);
         Deposit::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Deposit history has been deleted!');
+        return redirect()->back()->with('success', 'История депозитов была удалена!');
     }
 
     //process deposits
@@ -110,7 +110,7 @@ class ManageDepositController extends Controller
         }
 
 
-        return redirect()->back()->with('success', 'Action Sucessful!');
+        return redirect()->back()->with('success', 'Действие успешно!');
     }
 
 
@@ -120,7 +120,7 @@ class ManageDepositController extends Controller
 
         return view('admin.Deposits.depositimg', [
             'deposit' => $deposit,
-            'title' => 'View Deposit Screenshot',
+            'title' => 'Просмотр скриншота депозита',
             'settings' => Settings::where('id', '=', '1')->first(),
         ]);
     }
@@ -307,6 +307,6 @@ class ManageDepositController extends Controller
             );
         }
 
-        return redirect()->back()->with('success', 'Deposit details updated successfully!');
+        return redirect()->back()->with('success', 'Детали депозита успешно обновлены!');
     }
 }

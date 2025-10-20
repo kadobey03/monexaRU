@@ -72,7 +72,7 @@ class ExchangeController extends Controller
         }
 
         return view("user.asset", [
-            'title' =>  'Exchange currency',
+            'title' =>  'Обмен валют',
             'cbalance' => $cbalance,
         ]);
     }
@@ -210,7 +210,7 @@ class ExchangeController extends Controller
     public function history()
     {
         return view("user.crypto-transaction", [
-            'title' => 'Swapping History',
+            'title' => 'История обменов',
             'transactions' => DB::table('crypto_records')->orderByDesc('id')->paginate(10),
         ]);
     }
@@ -233,7 +233,7 @@ class ExchangeController extends Controller
             if ($base === $quote) {
                 return response()->json([
                     'status' => 400,
-                    'message' => 'Source and destination currencies cannot be the same'
+                    'message' => 'Исходная и целевая валюты не могут быть одинаковыми'
                 ]);
             }
 
@@ -250,7 +250,7 @@ class ExchangeController extends Controller
                 if ($rate <= 0) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Unable to get exchange rate for ' . strtoupper($base) . '. Please try again later.'
+                        'message' => 'Невозможно получить курс обмена для ' . strtoupper($base) . '. Попробуйте позже.'
                     ]);
                 }
                 $mainbal = $amount_after_fee * $rate;
@@ -262,7 +262,7 @@ class ExchangeController extends Controller
                 if ($rate <= 0) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Unable to get exchange rate for ' . strtoupper($quote) . '. Please try again later.'
+                        'message' => 'Невозможно получить курс обмена для ' . strtoupper($quote) . '. Попробуйте позже.'
                     ]);
                 }
                 $mainbal = $amount_after_fee / $rate;
@@ -274,7 +274,7 @@ class ExchangeController extends Controller
                 if ($rate <= 0) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Unable to get exchange rate for ' . strtoupper($base) . '. Please try again later.'
+                        'message' => 'Невозможно получить курс обмена для ' . strtoupper($base) . '. Попробуйте позже.'
                     ]);
                 }
                 $prices = round($amount_after_fee * $rate, 8);
@@ -285,7 +285,7 @@ class ExchangeController extends Controller
                 if ($rate <= 0) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Unable to get exchange rate for ' . strtoupper($quote) . '. Please try again later.'
+                        'message' => 'Невозможно получить курс обмена для ' . strtoupper($quote) . '. Попробуйте позже.'
                     ]);
                 }
                 $mainbal = $amount_after_fee / $rate;
@@ -299,7 +299,7 @@ class ExchangeController extends Controller
                 if ($rate1 <= 0 || $rate2 <= 0) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Unable to get exchange rates. Please try again later.'
+                        'message' => 'Невозможно получить курсы обмена. Попробуйте позже.'
                     ]);
                 }
 
@@ -366,7 +366,7 @@ class ExchangeController extends Controller
                 'fee' => round($pluscharge, 8),
                 'fee_percentage' => $fee_percentage,
                 'price_source' => 'emergency_fallback',
-                'message' => 'Using fallback exchange rate'
+                'message' => 'Использование резервного курса обмена'
             ]);
         }
     }
@@ -387,7 +387,7 @@ class ExchangeController extends Controller
             if ($request->source === $request->destination) {
                 return response()->json([
                     'status' => 400,
-                    'message' => 'Source and destination currencies cannot be the same'
+                    'message' => 'Исходная и целевая валюты не могут быть одинаковыми'
                 ]);
             }
 
@@ -405,7 +405,7 @@ class ExchangeController extends Controller
                 if ($acntbal < $request->amount) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Insufficient funds in your USD account. Available: ' . number_format($acntbal, 2)
+                        'message' => 'Недостаточно средств на вашем USD счете. Доступно: ' . number_format($acntbal, 2)
                     ]);
                 }
 
@@ -420,7 +420,7 @@ class ExchangeController extends Controller
                 if ($cryptobalances->$src < $request->amount) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Insufficient funds in your ' . strtoupper($src) . ' account. Available: ' . number_format($cryptobalances->$src, 8)
+                        'message' => 'Недостаточно средств на вашем ' . strtoupper($src) . ' счете. Доступно: ' . number_format($cryptobalances->$src, 8)
                     ]);
                 }
 
@@ -435,7 +435,7 @@ class ExchangeController extends Controller
                 if ($cryptobalances->$src < $request->amount) {
                     return response()->json([
                         'status' => 400,
-                        'message' => 'Insufficient funds in your ' . strtoupper($src) . ' account. Available: ' . number_format($cryptobalances->$src, 8)
+                        'message' => 'Недостаточно средств на вашем ' . strtoupper($src) . ' счете. Доступно: ' . number_format($cryptobalances->$src, 8)
                     ]);
                 }
 
@@ -460,21 +460,21 @@ class ExchangeController extends Controller
 
             return response()->json([
                 'status' => 200,
-                'success' => 'Exchange completed successfully! Your balances are being refreshed.'
+                'success' => 'Обмен успешно завершен! Ваши балансы обновляются.'
             ]);
 
         } catch (\Illuminate\Validation\ValidationException $e) {
             DB::rollBack();
             return response()->json([
                 'status' => 400,
-                'message' => 'Invalid input data: ' . implode(', ', $e->validator->errors()->all())
+                'message' => 'Недопустимые входные данные: ' . implode(', ', $e->validator->errors()->all())
             ]);
         } catch (\Exception $e) {
             DB::rollBack();
             \Log::error('Exchange error for user ' . Auth::id() . ': ' . $e->getMessage());
             return response()->json([
                 'status' => 500,
-                'message' => 'Exchange failed. Please try again later.'
+                'message' => 'Обмен не удался. Попробуйте позже.'
             ]);
         }
     }

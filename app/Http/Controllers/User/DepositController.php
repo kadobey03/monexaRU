@@ -93,7 +93,7 @@ class DepositController extends Controller
                 'payment_mode' => $methodname,
                 'intent' => $request->session()->get('intent'),
                 'asset' => $request->session()->get('asset'),
-                'title' => 'Make Payment',
+                'title' => 'Совершить платеж',
             ));
     }
 
@@ -171,7 +171,7 @@ class DepositController extends Controller
         $request->session()->forget('intent');
         $request->session()->forget('asset');
 
-        return response()->json(['success' => 'Payment Completed, redirecting']);
+        return response()->json(['success' => 'Платеж завершен, перенаправление']);
     }
 
     //Save deposit requests
@@ -193,7 +193,7 @@ class DepositController extends Controller
                 $path = $file->store('uploads', 'public');
             } else {
                 return redirect()->back()
-                    ->with('message', 'Unaccepted Image Uploaded');
+                    ->with('message', 'Загружено недопустимое изображение');
             }
         }
 
@@ -232,7 +232,7 @@ class DepositController extends Controller
         $request->session()->forget('asset');
 
         return redirect()->route('deposits')
-            ->with('success', 'Account Fund Sucessful! Please wait for system to validate this transaction.');
+            ->with('success', 'Пополнение счета успешно! Пожалуйста, дождитесь подтверждения системой этой транзакции.');
     }
 
     //Get uplines

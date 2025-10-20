@@ -76,10 +76,10 @@ class AdminNotificationController extends Controller
         );
 
         if ($notification) {
-            return redirect()->back()->with('success', 'Message sent successfully!');
+            return redirect()->back()->with('success', 'Сообщение успешно отправлено!');
         }
 
-        return redirect()->back()->with('error', 'Failed to send message. Please try again.')->withInput();
+        return redirect()->back()->with('error', 'Не удалось отправить сообщение. Пожалуйста, попробуйте еще раз.')->withInput();
     }
 
     /**
@@ -94,12 +94,12 @@ class AdminNotificationController extends Controller
         $notification = Notification::find($id);
 
         if (!$notification || $notification->admin_id !== Auth::guard('admin')->id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->markAsRead($id);
 
-        return redirect()->back()->with('success', 'Notification marked as read.');
+        return redirect()->back()->with('success', 'Уведомление отмечено как прочитанное.');
     }
 
     /**
@@ -111,7 +111,7 @@ class AdminNotificationController extends Controller
     {
         $count = $this->notificationService->markAllAsReadForAdmin(Auth::guard('admin')->id());
 
-        return redirect()->back()->with('success', "{$count} notifications marked as read.");
+        return redirect()->back()->with('success', "{$count} уведомлений отмечено как прочитанных.");
     }
 
     /**
@@ -125,12 +125,12 @@ class AdminNotificationController extends Controller
         $notification = Notification::find($id);
 
         if (!$notification || $notification->admin_id !== Auth::guard('admin')->id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->deleteNotification($id);
 
-        return redirect()->back()->with('success', 'Notification deleted.');
+        return redirect()->back()->with('success', 'Уведомление удалено.');
     }
 
     /**

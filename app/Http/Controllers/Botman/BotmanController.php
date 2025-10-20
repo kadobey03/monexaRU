@@ -32,7 +32,7 @@ class BotmanController extends Controller
         })->skipsConversation();
 
         $botman->fallback(function ($bot) {
-            $bot->reply('Sorry, I did not understand this command. Enter Hi to start a coversation');
+            $bot->reply('Извините, я не понял эту команду. Введите Hi, чтобы начать разговор');
         });
 
         // Start listening

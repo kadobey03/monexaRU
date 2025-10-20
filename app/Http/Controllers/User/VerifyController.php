@@ -27,7 +27,7 @@ class VerifyController extends Controller
 
         if (!in_array($extension, $whitelist) or !in_array($backimgExtention, $whitelist)) {
             return redirect()->back()
-                ->with('message', 'Kabul edilmeyen resim yüklendi, lütfen doğru belgeyi yüklediğinizden emin olun.');
+                ->with('message', 'Загружено недопустимое изображение, пожалуйста, убедитесь, что вы загружаете правильный документ.');
         }
 
         // upload documents to storage
@@ -61,16 +61,16 @@ class VerifyController extends Controller
             ]);
 
         $settings = Settings::find(1);
-        $message = "Bu, $user->name'in KYC(kimlik doğrulaması) için bir istek gönderdiğini bildirmek içindir, lütfen incelemek ve gerekli eylemi almak için yönetici hesabınıza giriş yapın.";
-        $subject = "$user->name'den Kimlik Doğrulama İsteği";
+        $message = "Это уведомление о том, что $user->name отправил запрос на KYC (верификацию личности), пожалуйста, войдите в вашу учетную запись администратора для проверки и принятия необходимых мер.";
+        $subject = "Запрос на верификацию личности от $user->name";
         $url = config('app.url') . '/admin/dashboard/kyc';
 
         try {
             Mail::to($settings->contact_email)->send(new NewNotification($message, $subject, 'Admin', $url));
         } catch (\Exception $e) {
-            \Log::error('KYC doğrulama bildirim e-postası gönderilemedi. Kullanıcı: ' . $user->name . ' (' . $user->email . '), KYC ID: ' . $kyc->id . '. Hata: ' . $e->getMessage());
+            \Log::error('Не удалось отправить уведомление о верификации KYC. Пользователь: ' . $user->name . ' (' . $user->email . '), KYC ID: ' . $kyc->id . '. Ошибка: ' . $e->getMessage());
         }
 
-        return redirect()->back()->with('success', 'İşlem Başarılı! Başvurunuzu doğrularız, lütfen bekleyin. Başvurunuzun durumu hakkında bir e-posta alacaksınız.');
+        return redirect()->back()->with('success', 'Операция успешна! Мы подтвердим вашу заявку, пожалуйста, подождите. Вы получите электронное письмо о статусе вашей заявки.');
     }
 }

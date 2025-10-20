@@ -61,7 +61,7 @@ class HomeController extends Controller
         $chart_trans = Tp_Transaction::sum('amount');
 
         return view('admin.dashboard', [
-            'title' => 'Admin Dashboard',
+            'title' => 'Панель администратора',
             'total_deposited' => $total_deposited,
             'pending_deposited' => $pending_deposited,
             'total_withdrawn' => $total_withdrawn,
@@ -83,7 +83,7 @@ class HomeController extends Controller
     {
         return view('admin.Plans.plans')
             ->with(array(
-                'title' => 'System Plans',
+                'title' => 'Системные планы',
                 'plans' => Plans::where('type', 'Main')->orderby('created_at', 'ASC')->get(),
                 'pplans' => Plans::where('type', 'Promo')->get(),
 
@@ -94,7 +94,7 @@ class HomeController extends Controller
     {
         return view('admin.Plans.newplan')
             ->with(array(
-                'title' => 'Add Investment Plan',
+                'title' => 'Добавить инвестиционный план',
 
             ));
     }
@@ -103,7 +103,7 @@ class HomeController extends Controller
     {
         return view('admin.Plans.editplan')
             ->with(array(
-                'title' => 'Edit Investment Plan',
+                'title' => 'Редактировать инвестиционный план',
                 'plan' => Plans::where('id', $id)->first(),
 
             ));
@@ -118,7 +118,7 @@ class HomeController extends Controller
     {
         return view('admin.Signals.signals')
             ->with(array(
-                'title' => 'System Signals',
+                'title' => 'Системные сигналы',
                 'signals' => Signal::where('type', 'Main')->orderby('created_at', 'ASC')->get(),
                 'ssignals' => Signal::where('type', 'Promo')->get(),
 
@@ -129,7 +129,7 @@ class HomeController extends Controller
     {
         return view('admin.Signals.newsignal')
             ->with(array(
-                'title' => 'Add Trading Signals',
+                'title' => 'Добавить торговые сигналы',
 
             ));
     }
@@ -138,7 +138,7 @@ class HomeController extends Controller
     {
         return view('admin.Signals.editsignal')
             ->with(array(
-                'title' => 'Edit Trading Signals',
+                'title' => 'Редактировать торговые сигналы',
                 'signal' => Signal::where('id', $id)->first(),
 
             ));
@@ -148,7 +148,7 @@ class HomeController extends Controller
     public function activesignals()
     {
         return view('admin.Signals.activesingnals', [
-            'title' => 'Active Trading Signals',
+            'title' => 'Активные торговые сигналы',
             'signals' => User_signal::orderByDesc('id')->with(['dsignal', 'suser'])->get(),
         ]);
     }
@@ -159,7 +159,7 @@ class HomeController extends Controller
     {
         return view('admin.Users.users')
             ->with(array(
-                'title' => 'All users',
+                'title' => 'Все пользователи',
 
             ));
     }
@@ -167,7 +167,7 @@ class HomeController extends Controller
     public function activeInvestments()
     {
         return view('admin.Plans.activeinv', [
-            'title' => 'Active Trades plans',
+            'title' => 'Активные торговые планы',
             'plans' => User_plans::where('active', 'yes')->orderByDesc('id')->with(['dplan', 'duser'])->get(),
         ]);
     }
@@ -175,7 +175,7 @@ class HomeController extends Controller
     public function activeLoans()
     {
         return view('admin.Plans.loans', [
-            'title' => 'Active Loans',
+            'title' => 'Активные займы',
             'plans' => Loan::where('active', 'Pending')->orderByDesc('id')->with([ 'luser'])->get(),
         ]);
     }
@@ -184,7 +184,7 @@ class HomeController extends Controller
         $plans = investment::where('active', 'yes')->orderByDesc('id')->with(['uplan', 'puser'])->get();
 
         return view('admin.Plans.investment', [
-            'title' => 'Active investment plans',
+            'title' => 'Активные инвестиционные планы',
             'plans' => investment::where('active', 'yes')->orderByDesc('id')->with(['uplan', 'puser'])->get(),
         ]);
     }
@@ -198,7 +198,7 @@ class HomeController extends Controller
         }
         return view('admin.msubtrade')
             ->with(array(
-                'title' => 'Subscription search result',
+                'title' => 'Результат поиска подписки',
                 'subscriptions' => $result,
 
             ));
@@ -219,7 +219,7 @@ class HomeController extends Controller
         return view('admin.mwithdrawals')
             ->with(array(
                 'dp' => $dp,
-                'title' => 'Withdrawals search result',
+                'title' => 'Результат поиска выводов',
                 'withdrawals' => $result,
 
             ));
@@ -231,7 +231,7 @@ class HomeController extends Controller
     {
         return view('admin.Withdrawals.mwithdrawals')
             ->with(array(
-                'title' => 'Manage users withdrawals',
+                'title' => 'Управление выводами пользователей',
                 'withdrawals' => Withdrawal::with('duser')->orderBy('id', 'desc')->get(),
 
             ));
@@ -242,7 +242,7 @@ class HomeController extends Controller
     {
         return view('admin.Deposits.mdeposits')
             ->with(array(
-                'title' => 'Manage users deposits',
+                'title' => 'Управление депозитами пользователей',
                 'deposits' => Deposit::with('duser')->orderBy('id', 'desc')->paginate(15),
             ));
     }
@@ -252,7 +252,7 @@ class HomeController extends Controller
     {
         return view('admin.agents')
             ->with(array(
-                'title' => 'Manage agents',
+                'title' => 'Управление агентами',
                 'users' => User::orderBy('id', 'desc')->get(),
                 'agents' => Agent::all(),
             ));
@@ -262,7 +262,7 @@ class HomeController extends Controller
     {
         return view('admin.about')
             ->with(array(
-                'title' => 'About Remedy Algo trade script',
+                'title' => 'О торговом скрипте Remedy Algo',
 
             ));
     }
@@ -270,7 +270,7 @@ class HomeController extends Controller
     public function emailServices()
     {
         return view('admin.email.index', [
-            'title' =>  "Email services"
+            'title' =>  "Почтовые услуги"
         ]);
     }
 
@@ -279,7 +279,7 @@ class HomeController extends Controller
     {
         return view('admin.viewagent')
             ->with(array(
-                'title' => 'Agent record',
+                'title' => 'Запись агента',
                 'agent' => User::where('id', $agent)->first(),
                 'ag_r' => User::where('ref_by', $agent)->get(),
 
@@ -297,7 +297,7 @@ class HomeController extends Controller
             //'markets' => markets::all(),
             'cpd' => Cp_transaction::where('id', '=', '1')->first(),
             'currencies' => $currencies,
-            'title' => 'System Settings'
+            'title' => 'Системные настройки'
         ));
         //return view('settings')->with(array('title' =>'System Settings'));
     }
@@ -309,7 +309,7 @@ class HomeController extends Controller
  public function mwalletdelete($id)
  {
      Wallets::where('id', $id)->delete();
-     return redirect()->back()->with('success', 'Wallet deleted Sucessful!');
+     return redirect()->back()->with('success', 'Кошелек успешно удален!');
  }
 
     //Return manage mwalletconnect route
@@ -317,7 +317,7 @@ class HomeController extends Controller
     {
         return view('admin.wallet.mwalletconnect')
             ->with(array(
-                'title' => 'Manage users wallet connect',
+                'title' => 'Управление подключением кошельков пользователей',
 
                 'wallets' => Wallets::with('wuser')->orderBy('id', 'desc')->get(),
 
@@ -331,7 +331,7 @@ class HomeController extends Controller
     {
         return view('admin.wallet.mwalletsettings')
             ->with(array(
-                'title' => 'Manage users wallet connect settings',
+                'title' => 'Управление настройками подключения кошельков пользователей',
                 'settings' => Settings::where('id',1)->first(),
 
             ));
@@ -359,7 +359,7 @@ class HomeController extends Controller
             ]);
 
         return redirect()->back()
-          ->with('success', 'Updated added Sucessfull!y');
+          ->with('success', 'Обновление добавлено успешно!');
     }
 
 
@@ -371,7 +371,7 @@ class HomeController extends Controller
         return view('admin.subscription.msubtrade')
             ->with(array(
                 'subscriptions' => Mt4Details::with('tuser')->orderBy('id', 'desc')->paginate(10),
-                'title' => 'Manage Subscription',
+                'title' => 'Управление подписками',
 
             ));
     }
@@ -382,7 +382,7 @@ class HomeController extends Controller
             ->with(array(
                 'plans' => User_plans::where('user', $id)->orderBy('id', 'desc')->get(),
                 'user' => User::where('id', $id)->first(),
-                'title' => 'User Investment trades',
+                'title' => 'Инвестиционные сделки пользователя',
 
             ));
     }
@@ -394,7 +394,7 @@ class HomeController extends Controller
             ->with(array(
                 'plans' => investment::where('user', $id)->orderBy('id', 'desc')->get(),
                 'user' => User::where('id', $id)->first(),
-                'title' => 'User Investment Plan(s)',
+                'title' => 'Инвестиционный план(ы) пользователя',
 
             ));
     }
@@ -406,7 +406,7 @@ class HomeController extends Controller
     public function frontpage()
     {
         return view('admin.Settings.FrontendSettings.frontpage', [
-            'title' => 'Front page management',
+            'title' => 'Управление главной страницей',
             'faqs' => Faq::orderByDesc('id')->get(),
             'images' => Images::orderBy('id', 'desc')->get(),
             'testimonies' => Testimony::orderBy('id', 'desc')->get(),
@@ -418,7 +418,7 @@ class HomeController extends Controller
     public function adduser()
     {
         return view('admin.referuser')->with(array(
-            'title' => 'Add new Users',
+            'title' => 'Добавить новых пользователей',
             'settings' => Settings::where('id', '=', '1')->first()
         ));
     }
@@ -426,7 +426,7 @@ class HomeController extends Controller
     public function addmanager()
     {
         return view('admin.addadmin')->with(array(
-            'title' => 'Add new manager',
+            'title' => 'Добавить нового менеджера',
             'settings' => Settings::where('id', '=', '1')->first()
         ));
     }
@@ -434,7 +434,7 @@ class HomeController extends Controller
     {
         return view('admin.madmin')->with(array(
             'admins' => Admin::orderby('id', 'desc')->get(),
-            'title' => 'Add new manager',
+            'title' => 'Добавить нового менеджера',
 
 
         ));
@@ -444,7 +444,7 @@ class HomeController extends Controller
     public function kyc()
     {
         return view('admin.kyc', [
-            'title' => 'KYC Applications',
+            'title' => 'Заявки KYC',
             'kycs' => Kyc::orderByDesc('id')->with(['user'])->get(),
         ]);
     }
@@ -453,7 +453,7 @@ class HomeController extends Controller
     {
 
         return view('admin.kyc-applications', [
-            'title' => 'View KYC Application',
+            'title' => 'Просмотр заявки KYC',
             'kyc' => Kyc::where('id', $id)->with(['user'])->first(),
         ]);
     }
@@ -462,7 +462,7 @@ class HomeController extends Controller
     {
         return view('admin.Profile.profile')
             ->with(array(
-                'title' => 'Admin Profile',
+                'title' => 'Профиль администратора',
 
 
             ));
@@ -472,7 +472,7 @@ class HomeController extends Controller
     {
 
         return view('admin.Settings.Crypto.pageview', [
-            'title' => 'Manage Crypto Asset',
+            'title' => 'Управление криптоактивами',
             'moresettings' => SettingsCont::find(1),
         ]);
     }
@@ -481,7 +481,7 @@ class HomeController extends Controller
     public function p2pView()
     {
         return view('admin.p2p.show', [
-            'title' => 'Manage P2P transactions',
+            'title' => 'Управление P2P транзакциями',
         ]);
     }
 
@@ -491,7 +491,7 @@ class HomeController extends Controller
         return view('admin.task')
             ->with(array(
                 'admin' => Admin::orderby('id', 'desc')->get(),
-                'title' => 'Create a New Task',
+                'title' => 'Создать новую задачу',
 
             ));
     }
@@ -502,7 +502,7 @@ class HomeController extends Controller
             ->with(array(
                 'admin' => Admin::orderby('id', 'desc')->get(),
                 'tasks' => Task::orderby('id', 'desc')->get(),
-                'title' => 'Manage Task',
+                'title' => 'Управление задачами',
 
             ));
     }
@@ -511,7 +511,7 @@ class HomeController extends Controller
         return view('admin.vtask')
             ->with(array(
                 'tasks' => Task::orderby('id', 'desc')->where('designation', Auth('admin')->User()->id)->get(),
-                'title' => 'View my Task',
+                'title' => 'Просмотр моих задач',
 
             ));
     }
@@ -522,7 +522,7 @@ class HomeController extends Controller
             ->with(array(
                 'admin' => Admin::orderBy('id', 'desc')->get(),
                 'users' => User::orderby('id', 'desc')->where('cstatus', NULL)->get(),
-                'title' => 'Manage New Registered Clients',
+                'title' => 'Управление новыми зарегистрированными клиентами',
             ));
     }
     public function leadsassign()
@@ -534,7 +534,7 @@ class HomeController extends Controller
                     ['cstatus', NULL]
                 ])->get(),
 
-                'title' => 'Manage New Registered Clients',
+                'title' => 'Управление новыми зарегистрированными клиентами',
 
             ));
     }
@@ -545,7 +545,7 @@ class HomeController extends Controller
         return view('admin.customer')
             ->with(array(
                 'users' => User::orderby('id', 'desc')->where('cstatus', 'Customer')->get(),
-                'title' => 'Manage New Registered Clients',
+                'title' => 'Управление новыми зарегистрированными клиентами',
 
             ));
     }

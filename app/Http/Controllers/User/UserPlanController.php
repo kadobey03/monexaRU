@@ -48,7 +48,7 @@ class UserPlanController extends Controller
         // Check if plan is active
         if (!$plan->active) {
             return redirect()->route('user.plans.index')
-                ->with('error', 'The selected plan is no longer available.');
+                ->with('error', 'Выбранный план больше недоступен.');
         }
 
         $plan->load('planFeatures', 'categories');
@@ -126,7 +126,7 @@ class UserPlanController extends Controller
         // Check if the plan belongs to the authenticated user
         if ($userPlan->user_id !== Auth::id()) {
             return redirect()->route('user.plans.my')
-                ->with('error', 'You do not have permission to view this plan.');
+                ->with('error', 'У вас нет разрешения на просмотр этого плана.');
         }
 
         $userPlan->load('plan', 'payouts');
@@ -166,14 +166,14 @@ class UserPlanController extends Controller
         // Check if plan is active
         if (!$plan->active) {
             return redirect()->route('user.plans.index')
-                ->with('error', 'The selected plan is no longer available.');
+                ->with('error', 'Выбранный план больше недоступен.');
         }
 
         // Validate investment amount
         $amount = $request->amount;
         if ($amount < $plan->min_price || $amount > $plan->max_price) {
             return redirect()->back()
-                ->with('error', "Investment amount must be between {$plan->min_price} and {$plan->max_price}.")
+                ->with('error', "Сумма инвестиций должна быть между {$plan->min_price} и {$plan->max_price}.")
                 ->withInput();
         }
 
@@ -184,7 +184,7 @@ class UserPlanController extends Controller
             // Check if user has sufficient balance
             if ($user->account_bal < $amount) {
                 return redirect()->back()
-                    ->with('error', "Insufficient account balance. Your balance: {$user->currency}{$user->account_bal}")
+                    ->with('error', "Недостаточно средств на счете. Ваш баланс: {$user->currency}{$user->account_bal}")
                     ->withInput();
             }
 
@@ -196,14 +196,14 @@ class UserPlanController extends Controller
             $userPlan = $this->createUserPlan($plan, $user, $amount, $request, 'active');
 
             return redirect()->route('user.plans.my')
-                ->with('success', "Investment plan purchased successfully! Your plan is now active.");
+                ->with('success', "Инвестиционный план успешно приобретен! Ваш план теперь активен.");
         } else {
             // Create the user plan with pending status
             $userPlan = $this->createUserPlan($plan, $user, $amount, $request, 'pending');
 
             // Redirect to payment page
             return redirect()->route('user.plans.payment', $userPlan->id)
-                ->with('success', "Please complete your payment to activate the plan.");
+                ->with('success', "Пожалуйста, завершите платеж для активации плана.");
         }
     }
 
@@ -215,13 +215,13 @@ class UserPlanController extends Controller
         // Check if the plan belongs to the authenticated user
         if ($userPlan->user_id !== Auth::id()) {
             return redirect()->route('user.plans.my')
-                ->with('error', 'You do not have permission to view this payment page.');
+                ->with('error', 'У вас нет разрешения на просмотр этой страницы оплаты.');
         }
 
         // Check if the plan is pending
         if ($userPlan->status !== 'pending') {
             return redirect()->route('user.plans.details', $userPlan->id)
-                ->with('error', 'This plan has already been processed.');
+                ->with('error', 'Этот план уже обработан.');
         }
 
         $userPlan->load('plan');
@@ -237,13 +237,13 @@ class UserPlanController extends Controller
         // Check if the plan belongs to the authenticated user
         if ($userPlan->user_id !== Auth::id()) {
             return redirect()->route('user.plans.my')
-                ->with('error', 'You do not have permission to update this plan.');
+                ->with('error', 'У вас нет разрешения на обновление этого плана.');
         }
 
         // Check if the plan is pending
         if ($userPlan->status !== 'pending') {
             return redirect()->route('user.plans.details', $userPlan->id)
-                ->with('error', 'This plan has already been processed.');
+                ->with('error', 'Этот план уже обработан.');
         }
 
         $validator = Validator::make($request->all(), [
@@ -271,7 +271,7 @@ class UserPlanController extends Controller
         $userPlan->save();
 
         return redirect()->route('user.plans.my')
-            ->with('success', 'Payment marked as completed. Your plan will be activated after verification.');
+            ->with('success', 'Платеж отмечен как завершенный. Ваш план будет активирован после проверки.');
     }
 
     /**
@@ -282,13 +282,13 @@ class UserPlanController extends Controller
         // Check if the plan belongs to the authenticated user
         if ($userPlan->user_id !== Auth::id()) {
             return redirect()->route('user.plans.my')
-                ->with('error', 'You do not have permission to cancel this plan.');
+                ->with('error', 'У вас нет разрешения на отмену этого плана.');
         }
 
         // Check if the plan is pending
         if ($userPlan->status !== 'pending') {
             return redirect()->route('user.plans.details', $userPlan->id)
-                ->with('error', 'Only pending plans can be cancelled.');
+                ->with('error', 'Только ожидающие планы могут быть отменены.');
         }
 
         // Update status to cancelled
@@ -296,7 +296,7 @@ class UserPlanController extends Controller
         $userPlan->save();
 
         return redirect()->route('user.plans.my')
-            ->with('success', 'Investment plan cancelled successfully.');
+            ->with('success', 'Инвестиционный план успешно отменен.');
     }
 
     /**
@@ -307,19 +307,19 @@ class UserPlanController extends Controller
         // Check if the plan belongs to the authenticated user
         if ($userPlan->user_id !== Auth::id()) {
             return redirect()->route('user.plans.my')
-                ->with('error', 'You do not have permission to modify this plan.');
+                ->with('error', 'У вас нет разрешения на изменение этого плана.');
         }
 
         // Check if the plan is active
         if ($userPlan->status !== 'active') {
             return redirect()->route('user.plans.details', $userPlan->id)
-                ->with('error', 'Only active plans can be modified.');
+                ->with('error', 'Только активные планы могут быть изменены.');
         }
 
         // Check if the plan allows compounding
         if (!$userPlan->plan->allow_compounding) {
             return redirect()->route('user.plans.details', $userPlan->id)
-                ->with('error', 'This plan does not allow compounding.');
+                ->with('error', 'Этот план не допускает капитализацию.');
         }
 
         $validator = Validator::make($request->all(), [
@@ -339,7 +339,7 @@ class UserPlanController extends Controller
         $userPlan->save();
 
         return redirect()->route('user.plans.details', $userPlan->id)
-            ->with('success', 'Compounding settings updated successfully.');
+            ->with('success', 'Настройки капитализации успешно обновлены.');
     }
 
     /**

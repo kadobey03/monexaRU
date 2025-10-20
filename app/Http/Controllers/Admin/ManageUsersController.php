@@ -80,7 +80,7 @@ class ManageUsersController extends Controller
         $ref->ref_by = $user->id;
         $ref->save();
         return redirect()->back()
-            ->with('success', "$ref->name is now referred by $user->name successfully");
+            ->with('success', "$ref->name теперь успешно реферирован $user->name");
     }
 
     public function clearactivity($id)
@@ -92,10 +92,10 @@ class ManageUsersController extends Controller
                 Activity::where('id', $act->id)->delete();
             }
             return redirect()->back()
-                ->with('success', 'Activity Cleared Successfully!');
+                ->with('success', 'Активность успешно очищена!');
         }
         return redirect()->back()
-            ->with('message', 'No Activity to clear!');
+            ->with('message', 'Нет активности для очистки!');
     }
 
     public function markplanas($status, $id)
@@ -104,7 +104,7 @@ class ManageUsersController extends Controller
             'active' => $status,
         ]);
         return redirect()->back()
-            ->with('success', "Plan Active state changed to $status");
+            ->with('success', "Статус активности плана изменен на $status");
     }
     public function markloanas($status, $id)
     {
@@ -112,7 +112,7 @@ class ManageUsersController extends Controller
             'active' => $status,
         ]);
         return redirect()->back()
-            ->with('success', "Loan state changed to $status");
+            ->with('success', "Статус займа изменен на $status");
     }
 
 
@@ -122,7 +122,7 @@ class ManageUsersController extends Controller
             'status' => $status,
         ]);
         return redirect()->back()
-            ->with('success', "Signal Status state changed to $status");
+            ->with('success', "Состояние статуса сигнала изменено на $status");
     }
 
     public function viewuser($id)
@@ -146,7 +146,7 @@ class ManageUsersController extends Controller
         $user = User::find($id);
 
         if (!$user) {
-            return redirect()->back()->with('error', 'User not found!');
+            return redirect()->back()->with('error', 'Пользователь не найден!');
         }
 
         $user->update([
@@ -160,7 +160,7 @@ class ManageUsersController extends Controller
         $user->remember_token = null;
         $user->save();
 
-        return redirect()->back()->with('success', 'User account has been banned/disabled successfully! The user will be redirected to a blocked page if they try to login.');
+        return redirect()->back()->with('success', 'Аккаунт пользователя был успешно заблокирован/отключен! Пользователь будет перенаправлен на заблокированную страницу при попытке входа.');
     }
 
     //unban/enable user
@@ -169,14 +169,14 @@ class ManageUsersController extends Controller
         $user = User::find($id);
 
         if (!$user) {
-            return redirect()->back()->with('error', 'User not found!');
+            return redirect()->back()->with('error', 'Пользователь не найден!');
         }
 
         $user->update([
             'status' => 'active',
         ]);
 
-        return redirect()->back()->with('success', 'User account has been unbanned/enabled successfully! The user can now login normally.');
+        return redirect()->back()->with('success', 'Аккаунт пользователя был успешно разблокирован/включен! Пользователь теперь может войти нормально.');
     }
 
     //Turn on/off user trade
@@ -187,13 +187,13 @@ class ManageUsersController extends Controller
         } elseif ($action == "off") {
             $action = "Loss";
         } else {
-            return redirect() - back()->with('message', "Unknown action!");
+            return redirect()->back()->with('message', "Неизвестное действие!");
         }
 
         User::where('id', $id)->update([
             'tradetype' => $action,
         ]);
-        return redirect()->back()->with('success', "Action sucessful.");
+        return redirect()->back()->with('success', "Действие успешно.");
     }
 
     //Manually Verify users email
@@ -202,7 +202,7 @@ class ManageUsersController extends Controller
         User::where('id', $id)->update([
             'email_verified_at' => \Carbon\Carbon::now(),
         ]);
-        return redirect()->back()->with('success', 'User Email have been verified');
+        return redirect()->back()->with('success', 'Email пользователя был подтвержден');
     }
 
     //Reset Password
@@ -212,7 +212,7 @@ class ManageUsersController extends Controller
             ->update([
                 'password' => Hash::make('user01236'),
             ]);
-        return redirect()->back()->with('success', 'Password has been reset to default');
+        return redirect()->back()->with('success', 'Пароль был сброшен к значению по умолчанию');
     }
 
     //Clear user Account
@@ -240,7 +240,7 @@ class ManageUsersController extends Controller
             'bonus' => '0',
             'ref_bonus' => '0',
         ]);
-        return redirect()->back()->with('success', "Account cleared to $settings->currency 0.00");
+        return redirect()->back()->with('success', "Счет очищен до $settings->currency 0.00");
     }
 
     //Access users account
@@ -248,7 +248,7 @@ class ManageUsersController extends Controller
     {
         $user = User::where('id', $id)->first();
         Auth::loginUsingId($user->id, true);
-        return redirect()->route('dashboard')->with('success', "You are logged in as $user->name !");
+        return redirect()->route('dashboard')->with('success', "Вы вошли как $user->name!");
     }
 
     //Manually Add Trading History to Users Route
@@ -373,7 +373,7 @@ class ManageUsersController extends Controller
         );
 
         return redirect()->back()
-            ->with('success', 'Trade Executed Sucessful!');
+            ->with('success', 'Сделка выполнена успешно!');
     }
 
 
@@ -404,7 +404,7 @@ public function addplanhistory(Request $request)
     }
 
     return redirect()->back()
-        ->with('success', 'Action Sucessful!');
+        ->with('success', 'Действие успешно!');
 }
 
 
@@ -448,14 +448,14 @@ public function addsignalhistory(Request $request)
     // }
 
     return redirect()->back()
-        ->with('success', 'Signal Created Sucessful!');
+        ->with('success', 'Сигнал создан успешно!');
 }
 
 
 public function deleteloan($id)
     {
         Loan::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'User Loan deleted successfully!');
+        return redirect()->back()->with('success', 'Займ пользователя успешно удален!');
     }
     //Delete user
     public function delsystemuser($id)
@@ -552,7 +552,7 @@ public function deleteloan($id)
 
         User::where('id', $id)->delete();
         return redirect()->route('manageusers')
-            ->with('success', 'User Account deleted successfully!');
+            ->with('success', 'Аккаунт пользователя успешно удален!');
     }
 
     //update users info
@@ -570,7 +570,7 @@ public function deleteloan($id)
                 'currency'=>$request['currency'],
                 's_currency'=>$request['s_currency'],
             ]);
-        return redirect()->back()->with('success', 'User details updated Successfully!');
+        return redirect()->back()->with('success', 'Данные пользователя успешно обновлены!');
     }
 
     //numberoftrades
@@ -585,7 +585,7 @@ public function deleteloan($id)
 
 
             ]);
-        return redirect()->back()->with('success', 'User number of trades before withdrawal updated Successfully!');
+        return redirect()->back()->with('success', 'Количество сделок пользователя до вывода успешно обновлено!');
     }
 //user tax
 
@@ -601,7 +601,7 @@ public function withdrawalcode(Request $request)
 
 
             ]);
-        return redirect()->back()->with('success', 'User Withrawal Code  details updated Successfully!');
+        return redirect()->back()->with('success', 'Данные кода вывода пользователя успешно обновлены!');
     }
 
  public function usertax(Request $request)
@@ -614,7 +614,7 @@ public function withdrawalcode(Request $request)
 
 
             ]);
-        return redirect()->back()->with('success', 'User Tax details updated Successfully!');
+        return redirect()->back()->with('success', 'Налоговые данные пользователя успешно обновлены!');
     }
 
 
@@ -648,7 +648,7 @@ public function withdrawalcode(Request $request)
             'App\\Models\\User'
         );
 
-        return redirect()->back()->with('success', 'User notification Successfully!');
+        return redirect()->back()->with('success', 'Уведомление пользователя успешно!');
     }
 
 
@@ -683,7 +683,7 @@ public function withdrawalcode(Request $request)
             'App\\Models\\User'
         );
 
-        return redirect()->back()->with('success', 'User Upgrade Signal updated Successfully!');
+        return redirect()->back()->with('success', 'Сигнал обновления пользователя успешно обновлен!');
     }
 
 
@@ -717,7 +717,7 @@ public function withdrawalcode(Request $request)
             'App\\Models\\User'
         );
 
-        return redirect()->back()->with('success', 'User notification updated Successfully!');
+        return redirect()->back()->with('success', 'Уведомление пользователя успешно обновлено!');
     }
     //Send mail to one user
     public function sendmailtooneuser(Request $request)
@@ -748,7 +748,7 @@ public function withdrawalcode(Request $request)
             'App\\Models\\User'
         );
 
-        return redirect()->back()->with('success', 'Your message was sent successfully!');
+        return redirect()->back()->with('success', 'Ваше сообщение было отправлено успешно!');
     }
 
     // Send Mail to all users
@@ -786,7 +786,7 @@ public function withdrawalcode(Request $request)
                 });
         }
 
-        return redirect()->back()->with('success', 'Your message was sent successfully!');
+        return redirect()->back()->with('success', 'Ваше сообщение было отправлено успешно!');
     }
 
     // mark user trade as profit
@@ -814,7 +814,7 @@ public function withdrawalcode(Request $request)
         ]);
 
 
-        return redirect()->back()->with('success', 'Trade has been marked as profit successfully!');
+        return redirect()->back()->with('success', 'Сделка была успешно отмечена как прибыльная!');
     }
 
     // Mark user trade as loss
@@ -839,20 +839,20 @@ public function withdrawalcode(Request $request)
             'leverage'=>$trade->leverage,
         ]);
 
-        return redirect()->back()->with('success', 'Trade has been marked as loss successfully!');
+        return redirect()->back()->with('success', 'Сделка была успешно отмечена как убыточная!');
     }
 
     public function deleteplan($id)
     {
         User_plans::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'User Plan deleted successfully!');
+        return redirect()->back()->with('success', 'План пользователя успешно удален!');
     }
 
 
     public function deletesignal($id)
     {
         User_signal::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'User signal deleted successfully!');
+        return redirect()->back()->with('success', 'Сигнал пользователя успешно удален!');
     }
 
     public function saveuser(Request $request)
@@ -883,6 +883,6 @@ public function withdrawalcode(Request $request)
             ->update([
                 'ref_link' => $settings->site_address . '/ref/' . $user->username,
             ]);
-        return redirect()->back()->with('success', 'User created Sucessfully!');
+        return redirect()->back()->with('success', 'Пользователь успешно создан!');
     }
 }

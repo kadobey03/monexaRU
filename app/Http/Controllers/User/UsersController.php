@@ -17,7 +17,7 @@ class UsersController extends Controller
   public function verifyemail()
   {
     return view('auth.verify-email', [
-      'title' => 'Verify Your email address',
+      'title' => 'Подтвердите ваш адрес электронной почты',
     ]);
   }
   public function addusername(Request $request)
@@ -48,7 +48,7 @@ class UsersController extends Controller
     }
 
     return redirect()->back()
-      ->with('success', ' Your message was sent successfully!');
+      ->with('success', ' Ваше сообщение успешно отправлено!');
   }
 
 
@@ -60,9 +60,9 @@ class UsersController extends Controller
       if ($entry->ref_by == $parent) {
 
         if ($level == 0) {
-          $levelQuote = "Direct referral";
+          $levelQuote = "Прямая реферральная ссылка";
         } else {
-          $levelQuote = "Indirect referral level $level";
+          $levelQuote = "Косвенная реферральная ссылка уровень $level";
         }
 
         $referedMembers .= "

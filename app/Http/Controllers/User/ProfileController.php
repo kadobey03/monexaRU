@@ -20,7 +20,7 @@ class ProfileController extends Controller
                 'phone' => $request->phone,
                 'address' => $request->address,
             ]);
-        return response()->json(['status' => 200, 'success' => 'Profile Information Updated Sucessfully!']);
+        return response()->json(['status' => 200, 'success' => 'Информация профиля успешно обновлена!']);
     }
 
     //update account and contact info
@@ -37,7 +37,7 @@ class ProfileController extends Controller
                 'ltc_address' => $request['ltc_address'],
                 'usdt_address' => $request['usdt_address'],
             ]);
-        return response()->json(['status' => 200, 'success' => 'Withdrawal Info updated Sucessfully']);
+        return response()->json(['status' => 200, 'success' => 'Информация для вывода успешно обновлена']);
     }
 
     //Update Password
@@ -52,11 +52,11 @@ class ProfileController extends Controller
         $user = User::find(Auth::user()->id);
 
         if (!Hash::check($request->current_password, $user->password)) {
-            return back()->with('message', 'Current password does not match!');
+            return back()->with('message', 'Текущий пароль не совпадает!');
         }
         $user->password = Hash::make($request->password);
         $user->save();
-        return back()->with('success', 'Password updated successfully');
+        return back()->with('success', 'Пароль успешно обновлен');
     }
 
     // Update email preference logic
@@ -68,6 +68,6 @@ class ProfileController extends Controller
         $user->sendroiemail = $request->roiemail;
         $user->sendinvplanemail = $request->invplanemail;
         $user->save();
-        return response()->json(['status' => 200, 'success' => 'Email Preference updated']);
+        return response()->json(['status' => 200, 'success' => 'Настройки электронной почты обновлены']);
     }
 }

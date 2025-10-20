@@ -26,7 +26,7 @@ class AutoRoiController extends Controller
 
             // Skip if trading mode is off
             if ($settings->trade_mode != 'on') {
-                return response()->json(['message' => 'Trading mode is off. Skipping automatic ROI processing.']);
+                return response()->json(['message' => 'Торговый режим отключен. Пропуск автоматической обработки ROI.']);
             }
 
             // Get all active user plans
@@ -90,7 +90,7 @@ class AutoRoiController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => "ROI processed for {$processed} active plans. {$completed} plans were completed."
+                'message' => "ROI обработан для {$processed} активных планов. {$completed} планов были завершены."
             ]);
 
         } catch (\Exception $e) {

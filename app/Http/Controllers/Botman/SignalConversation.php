@@ -28,12 +28,12 @@ class SignalConversation extends Conversation
 
     public function askWhatToDo()
     {
-        $question = Question::create('Hello Welcome, what would you like to do.')
-            ->fallback('Sorry, i do not understand that, please try again.')
+        $question = Question::create('Добро пожаловать, что бы вы хотели сделать?')
+            ->fallback('Извините, я не понимаю этого, попробуйте еще раз.')
             ->callbackId('choosetodo')
             ->addButtons([
-                Button::create('Post Signal')->value('post_signal'),
-                Button::create('Update Result')->value('update_result'),
+                Button::create('Отправить сигнал')->value('post_signal'),
+                Button::create('Обновить результат')->value('update_result'),
             ]);
 
         $this->ask($question, function (Answer $answer) {
@@ -52,11 +52,11 @@ class SignalConversation extends Conversation
 
     public function askResult()
     {
-        $this->ask('Enter the result for this signal', function (Answer $answer) {
+        $this->ask('Введите результат для этого сигнала', function (Answer $answer) {
             // Save result
             $value = $this->result = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter signal result');
+                return $this->repeat('Пожалуйста, введите результат сигнала');
             } else {
                 $this->postResult();
             }
@@ -82,23 +82,23 @@ class SignalConversation extends Conversation
 
     public function postResult()
     {
-        $question = Question::create('Post Result to channel?')
-            ->fallback('Sorry, i do not understand that, please try again.')
+        $question = Question::create('Опубликовать результат в канале?')
+            ->fallback('Извините, я не понимаю этого, попробуйте еще раз.')
             ->callbackId('postresult')
             ->addButtons([
-                Button::create('Post Result')->value('post_result'),
-                Button::create('pause')->value('pause'),
+                Button::create('Опубликовать результат')->value('post_result'),
+                Button::create('пауза')->value('pause'),
             ]);
         $this->ask($question, function (Answer $answer) {
             // Detect if button was clicked:
             if ($answer->isInteractiveMessageReply()) {
                 $selectedValue = $answer->getValue(); // will be either 'post_signal' or 'update_result'
                 $selectedText = $answer->getText(); // will be either 'Post Signal' or 'Update Result'
-                if ($selectedValue == 'post_result' || $selectedText == 'Post Result') {
+                if ($selectedValue == 'post_result' || $selectedText == 'Опубликовать результат') {
                     $this->updateResult();
-                    $this->say('Result posted succesfully, Enter pause to end conversation');
+                    $this->say('Результат успешно опубликован, введите пауза для завершения разговора');
                 } else {
-                    $this->say('Something went wrong, please try again');
+                    $this->say('Что-то пошло не так, попробуйте еще раз');
                     $this->askWhatToDo();
                 }
             }
@@ -107,12 +107,12 @@ class SignalConversation extends Conversation
 
     public function askTradeRef()
     {
-        $this->ask('Alright lets go - Enter signal reference ID', function (Answer $answer) {
+        $this->ask('Хорошо, поехали - Введите ID сигнала', function (Answer $answer) {
             // Save result
             $value = $this->ref = $answer->getText();
 
             if ($value == '') {
-                return $this->repeat('Please enter signal reference ID');
+                return $this->repeat('Пожалуйста, введите ID сигнала');
             } else {
                 $response = $this->fetctApi("/signal", [
                     'ref' => $value,
@@ -129,7 +129,7 @@ class SignalConversation extends Conversation
                     $this->say($signal);
                     $this->askResult();
                 } else {
-                    $this->say('No Signal found with this reference ID, try again with another value.');
+                    $this->say('Сигнал с этим ID не найден, попробуйте другое значение.');
                     $this->askWhatToDo();
                 }
             }
@@ -139,11 +139,11 @@ class SignalConversation extends Conversation
 
     public function askTradeDir()
     {
-        $this->ask('Alright lets go- Enter Trade direction: Buy/Sell', function (Answer $answer) {
+        $this->ask('Хорошо, поехали - Введите направление торговли: Buy/Sell', function (Answer $answer) {
             // Save result
             $value = $this->tradeDirection = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter trade direction');
+                return $this->repeat('Пожалуйста, введите направление торговли');
             } else {
                 $this->askPair();
             }
@@ -153,11 +153,11 @@ class SignalConversation extends Conversation
 
     public function askPair()
     {
-        $this->ask('Greate- Now enter currency pair: eg EUR/USD', function (Answer $answer) {
+        $this->ask('Отлично - Теперь введите валютную пару: например EUR/USD', function (Answer $answer) {
             // Save result
             $value = $this->pair = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter currency pair');
+                return $this->repeat('Пожалуйста, введите валютную пару');
             } else {
                 $this->askPrice();
             }
@@ -165,11 +165,11 @@ class SignalConversation extends Conversation
     }
     public function askPrice()
     {
-        $this->ask('You\'re getting close- Enter the Price', function (Answer $answer) {
+        $this->ask('Вы близко к цели - Введите цену', function (Answer $answer) {
             // Save result
             $value = $this->price = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter signal price');
+                return $this->repeat('Пожалуйста, введите цену сигнала');
             } else {
                 $this->askTp1();
             }
@@ -178,11 +178,11 @@ class SignalConversation extends Conversation
 
     public function askTp1()
     {
-        $this->ask('Enter the first Take Profit', function (Answer $answer) {
+        $this->ask('Введите первую цель Take Profit', function (Answer $answer) {
             // Save result
             $value = $this->tp1 = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter the first take profit');
+                return $this->repeat('Пожалуйста, введите первую цель прибыли');
             } else {
                 $this->askTp2();
             }
@@ -191,11 +191,11 @@ class SignalConversation extends Conversation
 
     public function askTp2()
     {
-        $this->ask('Enter the second Take Profit', function (Answer $answer) {
+        $this->ask('Введите вторую цель Take Profit', function (Answer $answer) {
             // Save result
             $value = $this->tp2 = $answer->getText();
             if ($value == '') {
-                return ('Please enter trade direction');
+                return ('Пожалуйста, введите вторую цель прибыли');
             } else {
                 $this->askStopLoss();
             }
@@ -204,13 +204,13 @@ class SignalConversation extends Conversation
 
     public function askStopLoss()
     {
-        $this->ask('One more thing - what is your stop loss?', function (Answer $answer) {
+        $this->ask('Еще одна вещь - какой у вас стоп-лосс?', function (Answer $answer) {
             // Save result
             $value = $this->sl = $answer->getText();
             if ($value == '') {
-                return $this->repeat('Please enter trade direction');
+                return $this->repeat('Пожалуйста, введите стоп-лосс');
             } else {
-                $this->say('Great - that is all we need.');
+                $this->say('Отлично - это все, что нам нужно.');
                 $this->addSignal();
             }
         });
@@ -218,7 +218,7 @@ class SignalConversation extends Conversation
 
     public function addSignal()
     {
-        $this->ask('Should i save and publish to channel?: Yes or No', function (Answer $answer) {
+        $this->ask('Сохранить и опубликовать в канале?: Да или Нет', function (Answer $answer) {
             // Save result
             $reply = $answer->getText();
             $this->shouldPub = strtolower($reply);
@@ -237,24 +237,24 @@ class SignalConversation extends Conversation
 
                 if ($response->successful()) {
                     $this->publishSignals($value->data->signal->id);
-                    $question = Question::create('Signal posted successfully, click pause if you which to end this conversation')
-                        ->fallback('Sorry, i do not understand that, please try again.')
+                    $question = Question::create('Сигнал успешно опубликован, нажмите пауза, если хотите завершить разговор')
+                        ->fallback('Извините, я не понимаю этого, попробуйте еще раз.')
                         ->callbackId('discard')
                         ->addButtons([
-                            Button::create('pause')->value('pause'),
-                            Button::create('Post another signal')->value('another'),
+                            Button::create('пауза')->value('pause'),
+                            Button::create('Опубликовать еще один сигнал')->value('another'),
                         ]);
                 }
 
                 if ($response->failed() or $value->error) {
-                    return $this->repeat('Should i try again to save and publish to channel?: Yes or No');
+                    return $this->repeat('Попробовать еще раз сохранить и опубликовать в канале?: Да или Нет');
                 }
             } else {
-                $question = Question::create('Click pause to end conversation')
-                    ->fallback('Sorry, i do not understand that, please try again.')
+                $question = Question::create('Нажмите пауза для завершения разговора')
+                    ->fallback('Извините, я не понимаю этого, попробуйте еще раз.')
                     ->callbackId('discard')
                     ->addButtons([
-                        Button::create('pause')->value('pause'),
+                        Button::create('пауза')->value('pause'),
                     ]);
             }
 
@@ -263,7 +263,7 @@ class SignalConversation extends Conversation
                 if ($answer->isInteractiveMessageReply()) {
                     $selectedValue = $answer->getValue(); // will be either 'post_signal' or 'update_result'
                     $selectedText = $answer->getText(); // will be either 'Post Signal' or 'Update Result'
-                    if ($selectedValue == 'another' or $selectedText == 'Post another signal') {
+                    if ($selectedValue == 'another' or $selectedText == 'Опубликовать еще один сигнал') {
                         $this->askTradeDir();
                     }
                 }
@@ -285,7 +285,7 @@ class SignalConversation extends Conversation
         $info = json_decode($response);
 
         if ($info->error or $response->failed()) {
-            $this->say('Something went wrong, please try again');
+            $this->say('Что-то пошло не так, попробуйте еще раз');
             $this->askWhatToDo();
         } else {
             //send to telegram

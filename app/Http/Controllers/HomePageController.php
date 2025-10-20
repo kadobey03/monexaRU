@@ -87,7 +87,7 @@ class HomePageController extends Controller
         ->with(array(
             'mplans' => Plans::where('type','Main')->get(),
             'pplans' => Plans::where('type','Promo')->get(),
-            'title' => 'Licensing, regulation and registration',
+            'title' => 'Лицензирование, регулирование и регистрация',
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
     }
@@ -98,7 +98,7 @@ class HomePageController extends Controller
         return view('home.terms')
         ->with(array(
             'mplans' => Plans::where('type','Main')->get(),
-            'title' => 'Terms of Service',
+            'title' => 'Условия обслуживания',
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
     }
@@ -110,7 +110,7 @@ class HomePageController extends Controller
         return view('home.privacy')
         ->with(array(
             'mplans' => Plans::where('type','Main')->get(),
-            'title' => 'Privacy Policy',
+            'title' => 'Политика конфиденциальности',
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
     }
@@ -120,7 +120,7 @@ class HomePageController extends Controller
 
         return view('home.faq')
         ->with(array(
-            'title' => 'FAQs',
+            'title' => 'Часто задаваемые вопросы',
             'faqs'=> Faq::orderby('id', 'desc')->get(),
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -131,7 +131,7 @@ class HomePageController extends Controller
 
         return view('home.whyus')
         ->with(array(
-            'title' => 'why-us',
+            'title' => 'Почему мы',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -141,7 +141,7 @@ class HomePageController extends Controller
 
         return view('home.etfs')
         ->with(array(
-            'title' => 'ETFS',
+            'title' => 'ETF фонды',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -152,7 +152,7 @@ class HomePageController extends Controller
 
         return view('home.copy')
         ->with(array(
-            'title' => 'copy',
+            'title' => 'Копи-трейдинг',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -162,7 +162,7 @@ class HomePageController extends Controller
 
         return view('home.trade')
         ->with(array(
-            'title' => 'trade',
+            'title' => 'Торговля',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -172,7 +172,7 @@ class HomePageController extends Controller
 
         return view('home.automate')
         ->with(array(
-            'title' => 'automate',
+            'title' => 'Автоматизация',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -183,7 +183,7 @@ class HomePageController extends Controller
 
         return view('home.indices')
         ->with(array(
-            'title' => 'Indices',
+            'title' => 'Индексы',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -194,7 +194,7 @@ class HomePageController extends Controller
 
         return view('home.nfts')
         ->with(array(
-            'title' => 'NFTS',
+            'title' => 'NFT',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -204,7 +204,7 @@ class HomePageController extends Controller
 
         return view('home.shares')
         ->with(array(
-            'title' => 'Shares',
+            'title' => 'Акции',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -216,7 +216,7 @@ class HomePageController extends Controller
 
         return view('home.forex')
         ->with(array(
-            'title' => 'Forex',
+            'title' => 'Форекс',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -226,7 +226,7 @@ class HomePageController extends Controller
 
         return view('home.regulation')
         ->with(array(
-            'title' => ' regulation',
+            'title' => 'Регулирование',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -238,7 +238,7 @@ class HomePageController extends Controller
 
         return view('home.fortrader')
         ->with(array(
-            'title' => 'for-trader',
+            'title' => 'Для трейдера',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -251,7 +251,7 @@ class HomePageController extends Controller
 
         return view('home.cryptocurrencies')
         ->with(array(
-            'title' => 'cryptocurrencies',
+            'title' => 'Криптовалюты',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -261,7 +261,7 @@ class HomePageController extends Controller
 
         return view('home.trading-conditions')
         ->with(array(
-            'title' => 'trading conditions',
+            'title' => 'Условия торговли',
 
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
@@ -273,7 +273,7 @@ class HomePageController extends Controller
         ->with(array(
             'mplans' => Plans::where('type','Main')->get(),
 
-            'title' => 'About',
+            'title' => 'О нас',
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
     }
@@ -285,7 +285,7 @@ class HomePageController extends Controller
             'mplans' => Plans::where('type','Main')->get(),
                 'pplans' => Plans::where('type','Promo')->get(),
 
-            'title' => 'Contact',
+            'title' => 'Контакты',
             'settings' => Settings::where('id', '=', '1')->first(),
         ));
     }
@@ -309,7 +309,7 @@ class HomePageController extends Controller
         }
 
         return redirect()->back()
-        ->with('success', ' Your message was sent successfully!');
+        ->with('success', 'Ваше сообщение было успешно отправлено!');
     }
 
     /**

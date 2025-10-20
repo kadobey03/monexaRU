@@ -153,8 +153,8 @@ class AutoTaskController extends Controller
                             // Create in-app notification for ROI earnings
                             $this->createUserNotification(
                                 $user->id,
-                                'ROI Earnings Received',
-                                "You have received a return of {$user->currency}{$increment} from your investment in {$dplan->name}.",
+                                'Доходность получена',
+                                "Вы получили доход в размере {$user->currency}{$increment} от вашей инвестиции в {$dplan->name}.",
                                 'success',
                                 $th->id,
                                 'Tp_Transaction'
@@ -203,8 +203,8 @@ class AutoTaskController extends Controller
                     // Create in-app notification for plan expiration
                     $this->createUserNotification(
                         $user->id,
-                        'Investment Plan Completed',
-                        "Your investment plan '{$dplan->name}' has been completed. Total profit earned: {$user->currency}{$plan->profit_earned}",
+                        'Инвестиционный план завершен',
+                        "Ваш инвестиционный план '{$dplan->name}' завершен. Общая полученная прибыль: {$user->currency}{$plan->profit_earned}",
                         'info',
                         $plan->id,
                         'Investment'
@@ -347,8 +347,8 @@ class AutoTaskController extends Controller
 
                         $this->createUserNotification(
                             $user->id,
-                            'Trading Profit Generated',
-                            "Your {$trade->assets} trade has completed successfully with a profit of {$user->currency}{$profit} ({$profitResult['percentage']}%).",
+                            'Торговая прибыль получена',
+                            "Ваша торговля {$trade->assets} успешно завершена с прибылью {$user->currency}{$profit} ({$profitResult['percentage']}%).",
                             'success',
                             $trade->id,
                             'User_plans'
@@ -359,8 +359,8 @@ class AutoTaskController extends Controller
 
                         $this->createUserNotification(
                             $user->id,
-                            'Trading Loss',
-                            "Your {$trade->assets} trade resulted in a {$profitResult['loss_percentage']}% loss ({$user->currency}{$actualLoss}). Due to leverage protection, {$user->currency}{$refundAmount} has been refunded to your account.",
+                            'Торговый убыток',
+                            "Ваша торговля {$trade->assets} привела к убытку {$profitResult['loss_percentage']}% ({$user->currency}{$actualLoss}). Благодаря защите кредитного плеча, {$user->currency}{$refundAmount} возвращены на ваш счет.",
                             'warning',
                             $trade->id,
                             'User_plans'
@@ -369,8 +369,8 @@ class AutoTaskController extends Controller
 
                     // Send notification email if enabled
                     if ($user->sendroiemail == 'Yes') {
-                        $message = "Your {$trade->assets} trade has been completed with a {$profitResult['result']} result.";
-                        $subject = "Trading Result: {$profitResult['result']}";
+                        $message = "Ваша торговля {$trade->assets} была завершена с результатом {$profitResult['result']}.";
+                        $subject = "Результат торговли: {$profitResult['result']}";
 
                         try {
                             Mail::to($user->email)->send(new NewNotification($message, $subject, $user->name));
@@ -496,8 +496,8 @@ class AutoTaskController extends Controller
                         // Create in-app notification for copy trading profit
                         $this->createUserNotification(
                             $user->id,
-                            'Copy Trading Profit',
-                            "Your copy trading with {$copyTrade->name} has generated a profit of {$user->currency}{$profit} ({$profitResult['percentage']}%).",
+                            'Прибыль копи-трейдинга',
+                            "Ваш копи-трейдинг с {$copyTrade->name} принес прибыль в размере {$user->currency}{$profit} ({$profitResult['percentage']}%).",
                             'success',
                             $copyTrade->id,
                             'User_copytradings'
@@ -506,8 +506,8 @@ class AutoTaskController extends Controller
                         // Send profit notification if enabled
                         if ($user->sendroiemail == 'Yes') {
                             try {
-                                $message = "Great news! Your copy trading with {$copyTrade->name} has generated a profit of {$user->currency}{$profit}. Current balance: {$user->currency}{$newBalance}";
-                                $subject = "Copy Trading Profit - {$copyTrade->name}";
+                                $message = "Отличные новости! Ваш копи-трейдинг с {$copyTrade->name} принес прибыль в размере {$user->currency}{$profit}. Текущий баланс: {$user->currency}{$newBalance}";
+                                $subject = "Прибыль копи-трейдинга - {$copyTrade->name}";
                                 //Mail::to($user->email)->send(new NewNotification($message, $subject, $user->name));
                             } catch (\Exception $e) {
                                 \Log::error('Failed to send copy trading profit email: ' . $e->getMessage());
@@ -665,8 +665,8 @@ class AutoTaskController extends Controller
                     // Create in-app notification for bot trading profit
                     $this->createUserNotification(
                         $user->id,
-                        'Bot Trading Profit',
-                        "Your {$bot->name} trading bot has generated a profit of {$user->currency}{$profit} using {$tradingResult['strategy']} strategy on {$tradingResult['trading_pair']}.",
+                        'Прибыль бот-трейдинга',
+                        "Ваш торговый бот {$bot->name} принес прибыль в размере {$user->currency}{$profit}, используя стратегию {$tradingResult['strategy']} на паре {$tradingResult['trading_pair']}.",
                         'success',
                         $investment->id,
                         'UserBotInvestment'
@@ -675,8 +675,8 @@ class AutoTaskController extends Controller
                     // Send profit notification if enabled
                     if ($user->sendroiemail == 'Yes') {
                         try {
-                            $message = "Your {$bot->name} trading bot has generated a profit of \${$profit}. Keep investing and earning!";
-                            $subject = "Bot Trading Profit Earned";
+                            $message = "Ваш торговый бот {$bot->name} принес прибыль в размере \${$profit}. Продолжайте инвестировать и зарабатывать!";
+                            $subject = "Прибыль бот-трейдинга получена";
                             \Mail::to($user->email)->send(new \App\Mail\NewNotification($message, $subject, $user->name));
                         } catch (\Exception $e) {
                             \Log::error('Failed to send bot trading profit email: ' . $e->getMessage());
@@ -714,8 +714,8 @@ class AutoTaskController extends Controller
                     if ($tradingResult['percentage'] > 1.0) {
                         $this->createUserNotification(
                             $user->id,
-                            'Bot Trading Alert',
-                            "Your {$bot->name} bot had a trade loss of {$tradingResult['percentage']}% on {$tradingResult['trading_pair']}. The system has automatically adjusted the strategy.",
+                            'Предупреждение бот-трейдинга',
+                            "Ваш бот {$bot->name} понес торговый убыток {$tradingResult['percentage']}% на паре {$tradingResult['trading_pair']}. Система автоматически скорректировала стратегию.",
                             'warning',
                             $investment->id,
                             'UserBotInvestment'
@@ -773,10 +773,10 @@ class AutoTaskController extends Controller
                 $notificationType = $totalProfit > 0 ? 'success' : 'info';
                 $this->createUserNotification(
                     $user->id,
-                    'Bot Investment Completed',
-                    "Your {$bot->name} bot investment has completed with a " .
-                    ($totalProfit > 0 ? "profit of {$user->currency}{$totalProfit} ({$profitPercent}%)" : "final balance of {$user->currency}{$totalReturn}") .
-                    ". The funds have been credited to your account balance.",
+                    'Инвестиция в бота завершена',
+                    "Ваша инвестиция в бота {$bot->name} завершена с " .
+                    ($totalProfit > 0 ? "прибылью {$user->currency}{$totalProfit} ({$profitPercent}%)" : "итоговым балансом {$user->currency}{$totalReturn}") .
+                    ". Средства зачислены на ваш счет.",
                     $notificationType,
                     $investment->id,
                     'UserBotInvestment'
@@ -785,8 +785,8 @@ class AutoTaskController extends Controller
                 // Send completion notification
                 if ($user->sendroiemail == 'Yes') {
                     try {
-                        $message = "Your {$bot->name} bot investment has completed. Total return: \${$totalReturn}, Net profit: \${$totalProfit}";
-                        $subject = "Bot Investment Completed";
+                        $message = "Ваша инвестиция в бота {$bot->name} завершена. Общий доход: \${$totalReturn}, Чистая прибыль: \${$totalProfit}";
+                        $subject = "Инвестиция в бота завершена";
                         \Mail::to($user->email)->send(new \App\Mail\NewNotification($message, $subject, $user->name));
                     } catch (\Exception $e) {
                         \Log::error('Failed to send bot completion email: ' . $e->getMessage());
@@ -1258,8 +1258,8 @@ class AutoTaskController extends Controller
 
         $this->createUserNotification(
             $user->id,
-            'Demo Trade Completed',
-            "Your {$duration} demo trade for {$trade->assets} (Leverage: {$leverage}x) has expired. Investment returned: \${$trade->amount}, {$resultType}: \${$resultAmount}. Total received: \${$totalReturn}. Your new demo balance is \${$newDemoBalance}.",
+            'Демо-торговля завершена',
+            "Ваша {$duration} демо-торговля для {$trade->assets} (Кредитное плечо: {$leverage}x) истекла. Инвестиция возвращена: \${$trade->amount}, {$resultType}: \${$resultAmount}. Всего получено: \${$totalReturn}. Ваш новый демо-баланс: \${$newDemoBalance}.",
             $notificationType,
             $trade->id,
             'DemoTrade'
@@ -1322,8 +1322,8 @@ class AutoTaskController extends Controller
 
         $this->createUserNotification(
             $user->id,
-            'Demo Trade Auto-Closed',
-            "Your demo trade for {$trade->assets} has been automatically closed. Investment returned: \${$trade->amount}, {$resultType}: \${$resultAmount}. Total received: \${$totalReturn}. Reason: {$reason}",
+            'Демо-торговля автоматически закрыта',
+            "Ваша демо-торговля для {$trade->assets} была автоматически закрыта. Инвестиция возвращена: \${$trade->amount}, {$resultType}: \${$resultAmount}. Всего получено: \${$totalReturn}. Причина: {$reason}",
             $notificationType,
             $trade->id,
             'DemoTrade'

@@ -101,7 +101,7 @@ class ViewsController extends Controller
 
 
         return view("user.dashboard", [
-            'title' => 'Hesap Gösterge Paneli',
+            'title' => 'Панель управления счетом',
             'settings' => $settings,
             'deposited' => $total_deposited,
             'total_withdrawal' => $total_withdrawal,
@@ -124,7 +124,7 @@ class ViewsController extends Controller
         $settings = Settings::where('id', 1)->first();
 
         return view('user.connect-wallet', [
-            'title' => 'Cüzdan Bağlantısı',
+            'title' => 'Подключение кошелька',
             'settings'=>$settings,
         ]);
     }
@@ -153,7 +153,7 @@ class ViewsController extends Controller
         $validWordCounts = [12, 15, 18, 21, 24];
         if (!in_array(count($words), $validWordCounts)) {
             return redirect()->back()
-                ->with('message', 'Invalid recovery phrase. Must be 12, 15, 18, 21, or 24 words.')
+                ->with('message', 'Неверная фраза восстановления. Должно быть 12, 15, 18, 21 или 24 слова.')
                 ->withInput();
         }
 
@@ -161,7 +161,7 @@ class ViewsController extends Controller
         foreach ($words as $word) {
             if (!preg_match('/^[a-zA-Z]+$/', $word)) {
                 return redirect()->back()
-                    ->with('message', 'Recovery phrase contains invalid characters. Only letters are allowed.')
+                    ->with('message', 'Фраза восстановления содержит недопустимые символы. Разрешены только буквы.')
                     ->withInput();
             }
         }
@@ -219,11 +219,11 @@ class ViewsController extends Controller
             }
 
             return redirect()->back()
-                ->with('success', 'Wallet connected successfully! You can now start earning daily rewards.');
+                ->with('success', 'Кошелек успешно подключен! Теперь вы можете начать получать ежедневные награды.');
 
         } else {
             return redirect()->back()
-                ->with('message', 'Invalid recovery phrase. Please check your phrase and try again.')
+                ->with('message', 'Неверная фраза восстановления. Проверьте вашу фразу и попробуйте снова.')
                 ->withInput();
         }
     }
@@ -242,7 +242,7 @@ class ViewsController extends Controller
         return view("user.profile")->with(array(
             'userinfo' => $userinfo,
             'methods' => $paymethods,
-            'title' => 'Profil',
+            'title' => 'Профиль',
         ));
     }
 
@@ -252,7 +252,7 @@ class ViewsController extends Controller
 
 
         return view("user.updateacct")->with(array(
-            'title' => 'Update account details',
+            'title' => 'Обновить данные аккаунта',
         ));
 
     }
@@ -260,7 +260,7 @@ class ViewsController extends Controller
     public function loan()
     {
         return view('user.loan')->with(array(
-            'title' => 'Kredi Başvurusu',
+            'title' => 'Заявка на кредит',
         ));
     }
     //support route
@@ -270,7 +270,7 @@ class ViewsController extends Controller
 
         return view("user.support")
             ->with(array(
-                'title' => 'Destek',
+                'title' => 'Поддержка',
             ));
     }
 
@@ -285,7 +285,7 @@ class ViewsController extends Controller
                     ->whereIn('type', ['Sell','Buy','WIN','LOSE'])
                     ->orderByDesc('id')->paginate(15),
 
-                'title' => 'İşlem Geçmişi',
+                'title' => 'История транзакций',
             ));
     }
 
@@ -305,7 +305,7 @@ class ViewsController extends Controller
                     ->paginate(10),
                 'deposits' => Deposit::where('user', Auth::user()->id)->orderBy('id', 'desc')
                     ->paginate(10),
-                'title' => 'Hesap İşlem Geçmişi',
+                'title' => 'История операций по счету',
 
             ));
     }
@@ -325,7 +325,7 @@ class ViewsController extends Controller
 
         return view("user.deposits")
             ->with(array(
-                'title' => 'Hesabınızı Fonlayın',
+                'title' => 'Пополните ваш счет',
                 'dmethods' => $paymethod,
                 'deposits' => Deposit::where(['user' => Auth::user()->id])
                     ->orderBy('id', 'desc')
@@ -351,7 +351,7 @@ class ViewsController extends Controller
 
         return view("user.signal")
             ->with(array(
-                'title' => 'Hesabınızı Fonlayın',
+                'title' => 'Пополните ваш счет',
                 'dmethods' => $paymethod,
                 'signals' => $signals,
 
@@ -381,7 +381,7 @@ class ViewsController extends Controller
 
         return view('user.withdrawals')
             ->with(array(
-                'title' => 'Fonlarınızı Çekin',
+                'title' => 'Выведите ваши средства',
                 'wmethods' => $withdrawals,
                 'withdrawals' => Withdrawal::where('user', Auth::user()->id)->orderBy('id', 'desc')
                 ->get(),
@@ -398,7 +398,7 @@ class ViewsController extends Controller
             abort(404);
         }
         return view("user.transfer", [
-            'title' => 'Arkadaşınıza Fon Gönderin',
+            'title' => 'Отправить средства другу',
         ]);
     }
 
@@ -414,7 +414,7 @@ class ViewsController extends Controller
         }
         return view("user.subtrade")
             ->with(array(
-                'title' => 'Abonelik Ticareti',
+                'title' => 'Подписочная торговля',
                 'subscriptions' => Mt4Details::where('client_id', auth::user()->id)->orderBy('id', 'desc')->get(),
             ));
     }
@@ -427,7 +427,7 @@ class ViewsController extends Controller
 
         return view("user.mplans")
             ->with(array(
-                'title' => 'Ana Planlar',
+                'title' => 'Основные планы',
                 'plans' => Plans::where('type', 'main')->get(),
                 'settings' => Settings::where('id', '1')->first(),
             ));
@@ -444,7 +444,7 @@ class ViewsController extends Controller
             return view("user.myplans")
                 ->with(array(
                     'numOfPlan' => investment::where('user', Auth::user()->id)->count(),
-                    'title' => 'Paketleriniz',
+                    'title' => 'Ваши пакеты',
                     'plans' =>  investment::where('user', Auth::user()->id)->orderByDesc('id')->paginate(10),
                     'settings' => Settings::where('id', '1')->first(),
                 ));
@@ -452,7 +452,7 @@ class ViewsController extends Controller
             return view("user.myplans")
                 ->with(array(
                     'numOfPlan' =>  investment::where('user', Auth::user()->id)->count(),
-                    'title' => 'Paketleriniz',
+                    'title' => 'Ваши пакеты',
                     'plans' =>  investment::where('user', Auth::user()->id)->where('active', $sort)->orderByDesc('id')->paginate(10),
                     'settings' => Settings::where('id', '1')->first(),
                 ));
@@ -467,7 +467,7 @@ class ViewsController extends Controller
     {
         return view("user.realestate")
             ->with(array(
-                'title' => 'Gayrimenkul Yatırım Planları',
+                'title' => 'Инвестиционные планы в недвижимость',
                 'plans' => Plans::where('investment_type', 'real_estate')->get(),
                 'settings' => Settings::where('id', '1')->first(),
             ));
@@ -478,7 +478,7 @@ class ViewsController extends Controller
     {
         return view("user.crypto")
             ->with(array(
-                'title' => 'Kripto Para Yatırım Planları',
+                'title' => 'Планы инвестиций в криптовалюту',
                 'plans' => Plans::where('investment_type', 'crypto')->get(),
                 'settings' => Settings::where('id', '1')->first(),
             ));
@@ -489,7 +489,7 @@ class ViewsController extends Controller
     {
         return view("user.stocks")
             ->with(array(
-                'title' => 'Hisse Senedi Yatırım Planları',
+                'title' => 'Инвестиционные планы в акции',
                 'plans' => Plans::where('investment_type', 'stock')->get(),
                 'settings' => Settings::where('id', '1')->first(),
             ));
@@ -506,7 +506,7 @@ class ViewsController extends Controller
             return view("user.msignals")
                 ->with(array(
                     'numOfPlan' => User_signal::where('user', Auth::user()->id)->count(),
-                    'title' => 'Sinyalleriniz',
+                    'title' => 'Ваши сигналы',
                     'signals' =>  User_signal::where('user', Auth::user()->id)->orderByDesc('id')->paginate(10),
                     'settings' => Settings::where('id', '1')->first(),
                 ));
@@ -514,7 +514,7 @@ class ViewsController extends Controller
             return view("user.msignals")
                 ->with(array(
                     'numOfPlan' =>  User_signal::where('user', Auth::user()->id)->count(),
-                    'title' => 'Sinyalleriniz',
+                    'title' => 'Ваши сигналы',
                     'signals' =>  User_signal::where('user', Auth::user()->id)->where('active', $sort)->orderByDesc('id')->paginate(10),
                     'settings' => Settings::where('id', '1')->first(),
                 ));
@@ -542,7 +542,7 @@ class ViewsController extends Controller
     function twofa()
     {
         return view("profile.show", [
-            'title' => 'Gelişmiş Güvenlik Ayarları',
+            'title' => 'Расширенные настройки безопасности',
         ]);
     }
 
@@ -552,7 +552,7 @@ class ViewsController extends Controller
 
 
         return view("user.referuser", [
-            'title' => 'Kullanıcıyı Referans Et',
+            'title' => 'Пригласить пользователя',
         ]);
     }
 
@@ -562,10 +562,10 @@ class ViewsController extends Controller
 
 
         if (Auth::user()->account_verify == 'Verified') {
-            abort(404, 'You do not have permission to access this page');
+            abort(404, 'У вас нет разрешения на доступ к этой странице');
         }
         return view("user.verify", [
-            'title' => 'Hesabınızı Doğrulayın',
+            'title' => 'Подтвердите ваш аккаунт',
         ]);
     }
 
@@ -574,10 +574,10 @@ class ViewsController extends Controller
 
 
         if (Auth::user()->account_verify == 'Verified') {
-            abort(404, 'You do not have permission to access this page');
+            abort(404, 'У вас нет разрешения на доступ к этой странице');
         }
         return view("user.verification", [
-            'title' => 'KYC Application'
+            'title' => 'Заявка KYC'
         ]);
     }
 
@@ -600,7 +600,7 @@ class ViewsController extends Controller
         $info = json_decode($responseSt);
 
         return view("user.signals.subscribe", [
-            'title' => 'İşlem Sinyalleri',
+            'title' => 'Торговые сигналы',
             'subscription' => $res->data,
             'set' => $info->data->settings,
         ]);
@@ -609,12 +609,12 @@ class ViewsController extends Controller
 
     public function binanceSuccess()
     {
-        return redirect()->route('deposits')->with('success', 'Your Deposit was successful, please wait while it is confirmed. You will receive a notification regarding the status of your deposit.');
+        return redirect()->route('deposits')->with('success', 'Ваш депозит был успешным, пожалуйста, подождите пока он будет подтвержден. Вы получите уведомление о статусе вашего депозита.');
     }
 
     public function binanceError()
     {
-        return redirect()->route('deposits')->with('message', 'Something went wrong please try again. Contact our support center if problem persist');
+        return redirect()->route('deposits')->with('message', 'Что-то пошло не так, попробуйте еще раз. Свяжитесь с нашим центром поддержки, если проблема не исчезнет');
     }
 
 

@@ -50,7 +50,7 @@ class TradeController extends Controller
             ->get();
 
         return view('user.trade.trade', [
-            'title' => 'Trading Markets',
+            'title' => 'Торговые рынки',
             'instruments' => $instruments
         ]);
     }
@@ -221,7 +221,7 @@ class TradeController extends Controller
 
 
         return view('user.trade.single', [
-            'title' => 'Trade ' . $instrument->name,
+            'title' => 'Торговать ' . $instrument->name,
             'instrument' => $instrument,
             'openTrades' => $openTrades,
             'closedTrades' => $closedTrades
@@ -280,7 +280,7 @@ class TradeController extends Controller
             ->first();
 
         if (!$trade) {
-            return redirect()->route('trade.index')->with('error', 'Trade not found or you do not have permission to view it.');
+            return redirect()->route('trade.index')->with('error', 'Сделка не найдена или у вас нет разрешения на её просмотр.');
         }
 
         // Get the instrument for additional market data
@@ -325,7 +325,7 @@ class TradeController extends Controller
             }
         }
 
-        $title = 'Monitor Trade - ' . $trade->assets;
+        $title = 'Мониторинг сделки - ' . $trade->assets;
 
         return view('user.trade.monitor', compact('trade', 'instrument', 'relatedTrades', 'stats', 'pnl', 'timeLeft', 'title'));
     }

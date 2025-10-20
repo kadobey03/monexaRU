@@ -47,7 +47,7 @@ class WithdrawalController extends Controller
         }
 
         return view("user.withdraw", [
-            'title' => 'Para Çekme Talebini Tamamla',
+            'title' => 'Завершить запрос на вывод средств',
             'payment_mode' => $paymethod,
             'default' => $default,
             'methodtype' => $methodtype,
@@ -63,17 +63,17 @@ class WithdrawalController extends Controller
             'withdrawotp' => $code,
         ]);
 
-        $message = "Para çekme talebi başlattınız, talebinizi tamamlamak için OTP'yi kullanın: $code";
-        $subject = "OTP Talebi";
+        $message = "Вы инициировали запрос на вывод средств, используйте OTP для завершения запроса: $code";
+        $subject = "Запрос OTP";
 
         try {
             Mail::bcc($user->email)->send(new NewNotification($message, $subject, $user->name));
         } catch (\Exception $e) {
-            \Log::error('Para çekme OTP e-postası gönderilemedi. Kullanıcı: ' . $user->name . ' (' . $user->email . '), OTP: ' . $code . '. Hata: ' . $e->getMessage());
+            \Log::error('Не удалось отправить OTP электронное письмо для вывода средств. Пользователь: ' . $user->name . ' (' . $user->email . '), OTP: ' . $code . '. Ошибка: ' . $e->getMessage());
         }
 
         return redirect()->back()
-            ->with('success', 'İşlem Başarılı! OTP e-posta adresinize gönderildi');
+            ->with('success', 'Операция успешна! OTP отправлен на ваш электронный адрес');
     }
 
 
@@ -81,7 +81,7 @@ class WithdrawalController extends Controller
     public function userwithdrawal(Request $request){
         $settings = Settings::where('id', '1')->first();
          if($request->withdrawal_code != Auth::user()->	user_withdrawalcode){
-                 return redirect()->back()->with('message', "Para çekme kodu yanlış!! Bu işlem için doğru para çekme kodu için lütfen $settings->conctact_email ile iletişime geçin");
+                 return redirect()->back()->with('message', "Код вывода неверный!! Для получения правильного кода вывода для этой операции, пожалуйста, свяжитесь с $settings->conctact_email");
 
             }else{
 
@@ -90,7 +90,7 @@ class WithdrawalController extends Controller
                 'withdrawal_code' => 'off'
 
             ]);
-                 return redirect()->back()->with('success', "Para çekme kodu doğru, şimdi Para Çekme işleminize devam edebilirsiniz");
+                 return redirect()->back()->with('success', "Код вывода правильный, теперь вы можете продолжить операцию вывода средств");
 
             }
 
@@ -103,14 +103,14 @@ class WithdrawalController extends Controller
 
         if (Auth::user()->sendotpemail == "Yes") {
             if ($request->otpcode != Auth::user()->withdrawotp) {
-                return redirect()->back()->with('message', 'OTP yanlış, lütfen kodu tekrar kontrol edin');
+                return redirect()->back()->with('message', 'OTP неверный, пожалуйста, проверьте код еще раз');
             }
         }
 
         $settings = Settings::where('id', '1')->first();
         if ($settings->enable_kyc == "yes") {
             if (Auth::user()->account_verify != "Verified") {
-                return redirect()->back()->with('message', 'Para çekme yapabilmek için hesabınızın doğrulanması gerekir.');
+                return redirect()->back()->with('message', 'Ваш аккаунт должен быть верифицирован для вывода средств.');
             }
         }
 
@@ -127,12 +127,12 @@ class WithdrawalController extends Controller
 
         if (Auth::user()->account_bal < $to_withdraw) {
             return redirect()->back()
-                ->with('message', 'Üzgünüz, hesap bakiyeniz bu istek için yetersiz.');
+                ->with('message', 'Извините, баланс вашего счета недостаточен для этого запроса.');
         }
 
         if ($request['amount'] < $method->minimum) {
             return redirect()->back()
-                ->with("message", "Üzgünüz, çekebileceğiniz minimum miktar $settings->currency$method->minimum, lütfen başka bir ödeme yöntemi deneyin.");
+                ->with("message", "Извините, минимальная сумма вывода $settings->currency$method->minimum, пожалуйста, попробуйте другой способ оплаты.");
         }
 
         //get user last investment package
@@ -216,21 +216,21 @@ class WithdrawalController extends Controller
         try {
             Mail::to($settings->contact_email)->send(new WithdrawalStatus($dp, $user, 'Withdrawal Request', true));
         } catch (\Exception $e) {
-            \Log::error('Para çekme bildirim e-postası yöneticiye gönderilemedi. Kullanıcı: ' . $user->name . ' (' . $user->email . '), Para Çekme ID: ' . $dp->id . ', Miktar: ' . $amount . '. Hata: ' . $e->getMessage());
+            \Log::error('Не удалось отправить уведомление о выводе средств администратору. Пользователь: ' . $user->name . ' (' . $user->email . '), ID вывода: ' . $dp->id . ', Сумма: ' . $amount . '. Ошибка: ' . $e->getMessage());
         }
 
         //send notification to user
         try {
             Mail::to($user->email)->send(new WithdrawalStatus($dp, $user, 'Successful Withdrawal Request'));
         } catch (\Exception $e) {
-            \Log::error('Para çekme onay e-postası kullanıcıya gönderilemedi. Kullanıcı: ' . $user->name . ' (' . $user->email . '), Para Çekme ID: ' . $dp->id . ', Miktar: ' . $amount . '. Hata: ' . $e->getMessage());
+            \Log::error('Не удалось отправить подтверждение вывода средств пользователю. Пользователь: ' . $user->name . ' (' . $user->email . '), ID вывода: ' . $dp->id . ', Сумма: ' . $amount . '. Ошибка: ' . $e->getMessage());
         }
 
         // Send notification to user and admin about the withdrawal
         $this->sendWithdrawalNotification($amount, $settings->currency, $dp->id);
 
         return redirect()->route('withdrawalsdeposits')
-            ->with('success', 'İşlem Başarılı! Talebinizi işlerken lütfen bekleyin.');
+            ->with('success', 'Операция успешна! Пожалуйста, подождите, пока ваш запрос будет обработан.');
     }
 
 

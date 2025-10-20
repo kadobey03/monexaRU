@@ -31,27 +31,27 @@ class TransferController extends Controller
         if (!Hash::check($request->password, $sender->password)) {
             return response()->json([
                 'status' => 419,
-                'message' => 'Incorrect Password',
+                'message' => 'Неверный пароль',
             ]);
         }
 
         if ($sender->email == $receiver->email or $sender->username == $receiver->username) {
             return response()->json([
                 'status' => 419,
-                'message' => 'You cannot send funds to yourself',
+                'message' => 'Вы не можете отправить средства себе',
             ]);
         }
         if (!$receiver) {
             return response()->json([
                 'status' => 419,
-                'message' => 'No user with this email address exist',
+                'message' => 'Пользователь с таким адресом электронной почты не существует',
             ]);
         }
 
         if ($sender->account_bal < $todeduct) {
             return response()->json([
                 'status' => 419,
-                'message' => 'Insufficient Funds',
+                'message' => 'Недостаточно средств',
             ]);
         }
 
@@ -90,7 +90,7 @@ class TransferController extends Controller
 
         return response()->json([
             'status' => 200,
-            'message' => 'Transfer Completed, Refreshing page',
+            'message' => 'Перевод завершен, обновление страницы',
         ]);
     }
 
@@ -117,7 +117,7 @@ class TransferController extends Controller
         }
 
         if ($user->account_bal <  floatval($amount)) {
-            return redirect()->back()->with('message', 'Your have insufficient funds in your account balance to perform this operation');
+            return redirect()->back()->with('message', 'У вас недостаточно средств на балансе счета для выполнения этой операции');
         }
 
         $renew =  $this->fetctApi('/renew-subscription', [
@@ -127,8 +127,8 @@ class TransferController extends Controller
         if ($renew->successful()) {
             $user->account_bal = $user->account_bal - floatval($amount);
             $user->save();
-            return redirect()->back()->with('success', 'Your subscription have been renewed successfully.');
+            return redirect()->back()->with('success', 'Ваша подписка была успешно продлена.');
         }
-        return redirect()->back()->with('Something went wrong');
+        return redirect()->back()->with('Что-то пошло не так');
     }
 }

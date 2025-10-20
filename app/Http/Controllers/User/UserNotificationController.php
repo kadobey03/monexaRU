@@ -32,7 +32,7 @@ class UserNotificationController extends Controller
         $notifications = Notification::where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')
             ->paginate(15);
-            $title = 'Notifications';
+            $title = 'Уведомления';
 
         return view('user.notifications.index', [
             'notifications' => $notifications,
@@ -55,12 +55,12 @@ class UserNotificationController extends Controller
         $notification = Notification::find($request->notification_id);
 
         if (!$notification || $notification->user_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->markAsRead($request->notification_id);
 
-        return redirect()->back()->with('success', 'Notification marked as read.');
+        return redirect()->back()->with('success', 'Уведомление отмечено как прочитанное.');
     }
 
     /**
@@ -72,7 +72,7 @@ class UserNotificationController extends Controller
     {
         $count = $this->notificationService->markAllAsReadForUser(Auth::id());
 
-        return redirect()->back()->with('success', "{$count} notifications marked as read.");
+        return redirect()->back()->with('success', "{$count} уведомлений отмечено как прочитанных.");
     }
 
     /**
@@ -90,12 +90,12 @@ class UserNotificationController extends Controller
         $notification = Notification::find($request->notification_id);
 
         if (!$notification || $notification->user_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->deleteNotification($request->notification_id);
 
-        return redirect()->back()->with('success', 'Notification deleted.');
+        return redirect()->back()->with('success', 'Уведомление удалено.');
     }
 
     /**
@@ -113,12 +113,12 @@ class UserNotificationController extends Controller
         $notification = Notification::find($request->notification_id);
 
         if (!$notification || $notification->user_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->markAsRead($request->notification_id);
 
-        return redirect()->back()->with('success', 'Notification marked as read.');
+        return redirect()->back()->with('success', 'Уведомление отмечено как прочитанное.');
     }
 
     /**
@@ -136,12 +136,12 @@ class UserNotificationController extends Controller
         $notification = Notification::find($request->notification_id);
 
         if (!$notification || $notification->user_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'Notification not found or unauthorized.');
+            return redirect()->back()->with('error', 'Уведомление не найдено или нет доступа.');
         }
 
         $this->notificationService->deleteNotification($request->notification_id);
 
-        return redirect()->route('notifications')->with('success', 'Notification deleted successfully.');
+        return redirect()->route('notifications')->with('success', 'Уведомление успешно удалено.');
     }
 
     /**
@@ -167,11 +167,11 @@ class UserNotificationController extends Controller
     public function show($id)
     {
         $notification = Notification::findOrFail($id);
-        $title = 'Notification Details';
+        $title = 'Детали уведомления';
 
         // Check if the notification belongs to the authenticated user
         if ($notification->user_id != Auth::id()) {
-            return redirect()->route('notifications')->with('error', 'Unauthorized access to this notification.');
+            return redirect()->route('notifications')->with('error', 'Нет доступа к этому уведомлению.');
         }
 
         return view('user.notifications.show', compact('notification', 'title'));

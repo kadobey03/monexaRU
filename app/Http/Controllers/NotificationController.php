@@ -73,14 +73,14 @@ class NotificationController extends Controller
         // Check if the notification belongs to the authenticated user or admin
         if (($notification->user_id && $notification->user_id != Auth::id()) &&
             ($notification->admin_id && $notification->admin_id != Auth::guard('admin')->id())) {
-            return response()->json(['message' => 'Unauthorized'], 403);
+            return response()->json(['message' => 'Нет доступа'], 403);
         }
 
         $success = $this->notificationService->markAsRead($request->notification_id);
 
         return response()->json([
             'success' => $success,
-            'message' => $success ? 'Notification marked as read' : 'Failed to mark notification as read'
+            'message' => $success ? 'Уведомление отмечено как прочитанное' : 'Не удалось отметить уведомление как прочитанное'
         ]);
     }
 
@@ -99,7 +99,7 @@ class NotificationController extends Controller
 
         return response()->json([
             'success' => true,
-            'message' => "{$count} notifications marked as read"
+            'message' => "{$count} уведомлений отмечено как прочитанных"
         ]);
     }
 
@@ -120,14 +120,14 @@ class NotificationController extends Controller
         // Check if the notification belongs to the authenticated user or admin
         if (($notification->user_id && $notification->user_id != Auth::id()) &&
             ($notification->admin_id && $notification->admin_id != Auth::guard('admin')->id())) {
-            return response()->json(['message' => 'Unauthorized'], 403);
+            return response()->json(['message' => 'Нет доступа'], 403);
         }
 
         $success = $this->notificationService->deleteNotification($request->notification_id);
 
         return response()->json([
             'success' => $success,
-            'message' => $success ? 'Notification deleted successfully' : 'Failed to delete notification'
+            'message' => $success ? 'Уведомление успешно удалено' : 'Не удалось удалить уведомление'
         ]);
     }
 
@@ -142,9 +142,9 @@ class NotificationController extends Controller
         // Ensure this is only accessible by admins
         if (!Auth::guard('admin')->check()) {
             if ($request->expectsJson()) {
-                return response()->json(['message' => 'Unauthorized'], 403);
+                return response()->json(['message' => 'Нет доступа'], 403);
             }
-            return redirect()->route('admin.notifications')->with('error', 'Unauthorized access.');
+            return redirect()->route('admin.notifications')->with('error', 'Нет доступа.');
         }
 
         $request->validate([
@@ -164,18 +164,18 @@ class NotificationController extends Controller
         if ($request->expectsJson()) {
             return response()->json([
                 'success' => (bool)$notification,
-                'message' => $notification ? 'Message sent successfully' : 'Failed to send message',
+                'message' => $notification ? 'Сообщение успешно отправлено' : 'Не удалось отправить сообщение',
                 'notification' => $notification
             ]);
         }
 
         if ($notification) {
             return redirect()->route('admin.notifications')
-                ->with('success', 'Notification has been sent to the user successfully.');
+                ->with('success', 'Уведомление успешно отправлено пользователю.');
         }
 
         return redirect()->back()
-            ->with('error', 'Failed to send notification.')
+            ->with('error', 'Не удалось отправить уведомление.')
             ->withInput();
     }
 
@@ -206,7 +206,7 @@ class NotificationController extends Controller
     {
         $perPage = 20;
         $notifications = $this->notificationService->getUserNotifications(Auth::id(), $perPage);
-        $title = 'User Notifications';
+        $title = 'Уведомления пользователя';
         return view('user.notifications.index', compact('notifications', 'title'));
     }
 
@@ -219,10 +219,10 @@ class NotificationController extends Controller
     public function show($id)
     {
         $notification = Notification::findOrFail($id);
-        $title = 'Notification Details';
+        $title = 'Детали уведомления';
         // Check if the notification belongs to the authenticated user
         if ($notification->user_id != Auth::id()) {
-            return redirect()->route('notifications')->with('error', 'Unauthorized access to this notification.');
+            return redirect()->route('notifications')->with('error', 'Нет доступа к этому уведомлению.');
         }
 
         return view('user.notifications.show', compact('notification', 'title'));
@@ -239,7 +239,7 @@ class NotificationController extends Controller
         $notifications = Notification::whereNotNull('user_id')
             ->orderBy('created_at', 'desc')
             ->paginate($perPage);
-            $title = 'Admin Notifications';
+            $title = 'Уведомления администратора';
 
         return view('admin.notifications.index', compact('notifications', 'title'));
     }
@@ -253,10 +253,10 @@ class NotificationController extends Controller
     public function adminShow($id)
     {
         $notification = Notification::findOrFail($id);
-         $title = 'Admin Notification Details';
+         $title = 'Детали уведомления администратора';
         // Admin can view any user notification
         if (!Auth::guard('admin')->check()) {
-            return redirect()->route('admin.notifications')->with('error', 'Unauthorized access.');
+            return redirect()->route('admin.notifications')->with('error', 'Нет доступа.');
         }
 
         return view('admin.notifications.show', compact('notification', 'title'));
@@ -270,7 +270,7 @@ class NotificationController extends Controller
     public function showSendMessageForm()
     {
         $users = \App\Models\User::orderBy('name')->get();
-        $title = 'Send Notification to User';
+        $title = 'Отправить уведомление пользователю';
         return view('admin.notifications.send-message', compact('users', 'title'));
     }
 
@@ -290,14 +290,14 @@ class NotificationController extends Controller
 
         // Check if the notification belongs to the authenticated user
         if ($notification->user_id != Auth::id()) {
-            return redirect()->back()->with('error', 'Unauthorized');
+            return redirect()->back()->with('error', 'Нет доступа');
         }
 
         $success = $this->notificationService->markAsRead($request->notification_id);
 
         return redirect()->back()->with(
             $success ? 'success' : 'error',
-            $success ? 'Notification marked as read' : 'Failed to mark notification as read'
+            $success ? 'Уведомление отмечено как прочитанное' : 'Не удалось отметить уведомление как прочитанное'
         );
     }
 
@@ -319,7 +319,7 @@ class NotificationController extends Controller
 
         // Check access permissions
         if (!$isAdmin && $notification->user_id != Auth::id()) {
-            return redirect()->back()->with('error', 'Unauthorized');
+            return redirect()->back()->with('error', 'Нет доступа');
         }
 
         $success = $this->notificationService->deleteNotification($request->notification_id);
@@ -328,7 +328,7 @@ class NotificationController extends Controller
 
         return redirect()->route($redirectRoute)->with(
             $success ? 'success' : 'error',
-            $success ? 'Notification deleted successfully' : 'Failed to delete notification'
+            $success ? 'Уведомление успешно удалено' : 'Не удалось удалить уведомление'
         );
     }
 
@@ -341,13 +341,13 @@ class NotificationController extends Controller
     public function createTestNotification(Request $request)
     {
         if (!config('app.debug')) {
-            return response()->json(['success' => false, 'message' => 'Test notifications only allowed in debug mode'], 403);
+            return response()->json(['success' => false, 'message' => 'Тестовые уведомления разрешены только в режиме отладки'], 403);
         }
 
         try {
             $adminId = Auth::guard('admin')->id();
-            $title = $request->input('title', 'Test Notification');
-            $message = $request->input('message', 'This is a test notification for admin');
+            $title = $request->input('title', 'Тестовое уведомление');
+            $message = $request->input('message', 'Это тестовое уведомление для администратора');
             $type = $request->input('type', 'info');
 
             // Create notification in database
@@ -362,13 +362,13 @@ class NotificationController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'Test notification created successfully',
+                'message' => 'Тестовое уведомление успешно создано',
                 'notification_id' => $notification->id
             ]);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Failed to create test notification: ' . $e->getMessage()
+                'message' => 'Не удалось создать тестовое уведомление: ' . $e->getMessage()
             ], 500);
         }
     }

@@ -43,7 +43,7 @@ class ApiAuthController extends Controller
         Mail::to($user->email)->send(new WelcomeEmail($user));
 
         return response()->json([
-            'message' => 'Registration is successful.',
+            'message' => 'Регистрация успешна.',
             'status_code' => 200,
         ]);
     }
