@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Payment Settings</h1>
+                    <h1 class="title1 ">Настройки платежей</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -25,19 +25,19 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="card p-md-5 p-2 shadow-lg ">
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
-                                    <a href="#dep" class="nav-link active" data-toggle="tab">Payment Methods</a>
+                                    <a href="#dep" class="nav-link active" data-toggle="tab">Методы платежа</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#with" class="nav-link" data-toggle="tab">Payment Preference</a>
+                                    <a href="#with" class="nav-link" data-toggle="tab">Предпочтения платежей</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#coin" class="nav-link" data-toggle="tab">Coinpayment</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#gate" class="nav-link" data-toggle="tab">Gateways</a>
+                                    <a href="#gate" class="nav-link" data-toggle="tab">Шлюзы</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#trans" class="nav-link" data-toggle="tab">Transfer</a>
+                                    <a href="#trans" class="nav-link" data-toggle="tab">Перевод</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -76,7 +76,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -123,7 +123,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -169,7 +169,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -214,7 +214,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings

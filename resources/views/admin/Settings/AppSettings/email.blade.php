@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h4>Configuration</h4>
+        <h4>Конфигурация</h4>
         <hr>
     </div>
     <div class="col-md-12">
@@ -10,7 +10,7 @@
             <div class=" form-row">
                 <div class="form-group col-md-12">
                     <div class="">
-                        <h5 class="">Mail Server</h5>
+                        <h5 class="">Почтовый сервер</h5>
                         <div class="selectgroup">
                             <label class="selectgroup-item">
                                 <input type="radio" name="server" id="sendmailserver" value="sendmail"
@@ -26,37 +26,37 @@
                     </div>
                 </div>
                 <div class="form-group col-md-6">
-                    <h5 class="">Email From</h5>
+                    <h5 class="">Email отправителя</h5>
                     <input type="email" name="emailfrom" class="form-control  " value="{{ $settings->emailfrom }}"
                         required>
                 </div>
                 <div class="form-group col-md-6">
-                    <h5 class="">Email From Name</h5>
+                    <h5 class="">Имя отправителя</h5>
                     <input type="text" name="emailfromname" class="form-control  "
                         value="{{ $settings->emailfromname }}" required>
                 </div>
                 <div class="form-group col-md-6 smtp d-none">
-                    <h5 class="">SMTP Host</h5>
+                    <h5 class="">SMTP хост</h5>
                     <input type="text" name="smtp_host" class="form-control   smtpinput"
                         value="{{ $settings->smtp_host }}">
                 </div>
                 <div class="form-group col-md-6 smtp d-none">
-                    <h5 class="">SMPT Port</h5>
+                    <h5 class="">SMTP порт</h5>
                     <input type="text" name="smtp_port" class="form-control   smtpinput"
                         value="{{ $settings->smtp_port }}">
                 </div>
                 <div class="form-group col-md-6 smtp d-none">
-                    <h5 class="">SMPT Encryption</h5>
+                    <h5 class="">SMTP шифрование</h5>
                     <input type="text" name="smtp_encrypt" class="form-control   smtpinput"
                         value="{{ $settings->smtp_encrypt }}">
                 </div>
                 <div class="form-group col-md-6 smtp d-none">
-                    <h5 class="">SMPT Username</h5>
+                    <h5 class="">SMTP имя пользователя</h5>
                     <input type="text" name="smtp_user" class="form-control   smtpinput"
                         value="{{ $settings->smtp_user }}">
                 </div>
                 <div class="form-group col-md-6 smtp d-none">
-                    <h5 class="">SMPT Password</h5>
+                    <h5 class="">SMTP пароль</h5>
                     <input type="text" name="smtp_password" class="form-control   smtpinput"
                         value="{{ $settings->smtp_password }}">
                 </div>
@@ -64,51 +64,51 @@
             <hr>
             <div class="form-row">
                 <div class="col-md-12">
-                    <h4>Google Login Credentials</h4>
+                    <h4>Учетные данные Google для входа</h4>
                     <hr>
                 </div>
             </div>
             <div class=" form-row">
                 <div class="form-group col-md-6">
-                    <h5 class="">Client ID</h5>
+                    <h5 class="">ID клиента</h5>
                     <input type="text" name="google_id" class="form-control  " value="{{ $settings->google_id }}">
-                    <small class=""> From console.cloud.google.com</small>
+                    <small class=""> Из console.cloud.google.com</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <h5 class="">Client Secret</h5>
+                    <h5 class="">Секретный ключ клиента</h5>
                     <input type="text" name="google_secret" class="form-control  "
                         value="{{ $settings->google_secret }}">
-                    <small class=""> From console.cloud.google.com</small>
+                    <small class=""> Из console.cloud.google.com</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <h5 class="">Redirect URL</h5>
+                    <h5 class="">URL перенаправления</h5>
                     <input type="text" name="google_redirect" class="form-control  "
                         value="{{ $settings->google_redirect }}">
-                    <small class="">Set this to your Valid OAuth Redirect URI in console.cloud.google.com. Be sure
-                        to replace the 'yoursite.com' with your website url </small>
+                    <small class="">Установите это как ваш действительный URI перенаправления OAuth в console.cloud.google.com. Обязательно
+                        замените 'yoursite.com' на URL вашего веб-сайта </small>
                 </div>
             </div>
             <div class="mt-4 form-row">
                 <div class="col-md-12">
-                    <h4>Google Captcha Credentials</h4>
+                    <h4>Учетные данные Google Captcha</h4>
                     <hr>
                 </div>
             </div>
             <div class=" form-row">
                 <div class="form-group col-md-6">
-                    <h5 class="">Captcha Secret</h5>
+                    <h5 class="">Секретный ключ Captcha</h5>
                     <input type="text" name="capt_secret" class="form-control  "
                         value="{{ $settings->capt_secret }}">
-                    <small class=""> From https://www.google.com/recaptcha/admin/create </small>
+                    <small class=""> Из https://www.google.com/recaptcha/admin/create </small>
                 </div>
                 <div class="form-group col-md-6">
-                    <h5 class="">Captcha Site-Key</h5>
+                    <h5 class="">Ключ сайта Captcha</h5>
                     <input type="text" name="capt_sitekey" class="form-control  "
                         value="{{ $settings->capt_sitekey }}">
-                    <small class=""> From https://www.google.com/recaptcha/admin/create</small>
+                    <small class=""> Из https://www.google.com/recaptcha/admin/create</small>
                 </div>
                 <div class="form-group col-md-12">
-                    <input type="submit" class="px-5 btn btn-primary btn-lg" value="Save">
+                    <input type="submit" class="px-5 btn btn-primary btn-lg" value="Сохранить">
                 </div>
             </div>
         </form>

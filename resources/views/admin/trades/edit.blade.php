@@ -52,7 +52,7 @@
 
             @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <h6><i class="fas fa-exclamation-triangle mr-2"></i>Please fix the following errors:</h6>
+                    <h6><i class="fas fa-exclamation-triangle mr-2"></i>Пожалуйста, исправьте следующие ошибки:</h6>
                     <ul class="mb-0">
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -259,7 +259,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="addProfitModalLabel">
-                    <i class="fas fa-plus-circle mr-2"></i>Add Profit to User ROI
+                    <i class="fas fa-plus-circle mr-2"></i>Добавить прибыль к ROI пользователя
                 </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -270,24 +270,24 @@
                 <div class="modal-body">
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle mr-2"></i>
-                        This will add the specified amount to both the trade's profit_earned and the user's ROI.
+                        Это добавит указанную сумму как к прибыли сделки, так и к ROI пользователя.
                     </div>
                     <div class="form-group">
-                        <label for="profit_amount">Profit Amount ($)</label>
+                        <label for="profit_amount">Сумма прибыли ($)</label>
                         <input type="number" class="form-control" id="profit_amount" name="profit_amount"
-                               step="0.01" required placeholder="Enter amount to add">
-                        <small class="form-text text-muted">Use positive numbers for profit, negative for loss</small>
+                               step="0.01" required placeholder="Введите сумму для добавления">
+                        <small class="form-text text-muted">Используйте положительные числа для прибыли, отрицательные для убытка</small>
                     </div>
                     <div class="form-group">
-                        <label for="profit_note">Note (Optional)</label>
+                        <label for="profit_note">Заметка (Необязательно)</label>
                         <textarea class="form-control" id="profit_note" name="note" rows="3"
-                                  placeholder="Add a note about this profit adjustment..."></textarea>
+                                  placeholder="Добавьте заметку об этой корректировке прибыли..."></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
                     <button type="submit" class="btn btn-success">
-                        <i class="fas fa-plus mr-1"></i>Add Profit
+                        <i class="fas fa-plus mr-1"></i>Добавить прибыль
                     </button>
                 </div>
             </form>
@@ -430,17 +430,17 @@ function deleteTrade(tradeId) {
     console.log('Delete URL:', deleteUrl);
 
     swal({
-        title: "Delete Trade?",
-        text: "This action cannot be undone. The trade record will be permanently deleted.",
+        title: "Удалить сделку?",
+        text: "Это действие нельзя отменить. Запись о сделке будет удалена безвозвратно.",
         type: "warning",
         buttons: {
             cancel: {
                 visible: true,
-                text: "Cancel",
+                text: "Отмена",
                 className: "btn btn-secondary"
             },
             confirm: {
-                text: "Yes, delete it!",
+                text: "Да, удалить!",
                 className: "btn btn-danger"
             }
         }

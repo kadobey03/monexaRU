@@ -27,7 +27,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.bots.index') }}">Bot Trading</a>
+                    <a href="{{ route('admin.bots.index') }}">Бот-трейдинг</a>
                 </li>
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>
@@ -82,15 +82,15 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                         <div class="row user-stats text-center">
                             <div class="col">
                                 <div class="number">{{ $bot->user_investments_count ?? 0 }}</div>
-                                <div class="title">Investors</div>
+                                <div class="title">Инвесторы</div>
                             </div>
                             <div class="col">
                                 <div class="number">{{ $bot->success_rate }}%</div>
-                                <div class="title">Success Rate</div>
+                                <div class="title">Успешность</div>
                             </div>
                             <div class="col">
                                 <div class="number">{{ $bot->duration_days }}</div>
-                                <div class="title">Days</div>
+                                <div class="title">Дни</div>
                             </div>
                         </div>
                     </div>

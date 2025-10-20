@@ -27,7 +27,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.bots.index') }}">Bot Trading</a>
+                    <a href="{{ route('admin.bots.index') }}">Бот-трейдинг</a>
                 </li>
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>
@@ -293,11 +293,11 @@ document.addEventListener('DOMContentLoaded', function() {
             newRow.className = 'row mt-2';
             newRow.innerHTML = `
                 <div class="col-md-8">
-                    <input type="text" class="form-control" name="trading_pairs[]" placeholder="e.g., EUR/USD, BTC/USD">
+                    <input type="text" class="form-control" name="trading_pairs[]" placeholder="например, EUR/USD, BTC/USD">
                 </div>
                 <div class="col-md-4">
                     <button type="button" class="btn btn-danger btn-sm remove-pair">
-                        <i class="fa fa-trash"></i> Remove
+                        <i class="fa fa-trash"></i> Удалить
                     </button>
                 </div>
             `;

@@ -9,7 +9,7 @@
     <div class="page-title">
         <div class="row justify-content-between align-items-center">
             <div class="mb-3 col-md-6 mb-md-0">
-                <h5 class="mb-0 text-white h3 font-weight-400">Trading Account(s)</h5>
+                <h5 class="mb-0 text-white h3 font-weight-400">Торговые счета</h5>
             </div>
         </div>
     </div>
@@ -21,21 +21,20 @@
                 <div class="card-body">
                     <div class="mb-5 row">
                         <div class="shadow-lg col-lg-12 card p-lg-3 p-sm-5">
-                            <h2 class="">{{ $settings->site_name }} Account manager</h2> <br>
+                            <h2 class="">{{ $settings->site_name }} Менеджер счета</h2> <br>
                             <div clas="well">
-                                <p class="text-justify ">Don’t have time to trade or learn how to
-                                    trade?
-                                    Our Account Management Service is The Best Profitable Trading Option for you,
-                                    We can help you to manage your account in the financial MARKET with a simple
-                                    subscription model.<br>
-                                    <small>Terms and Conditions apply</small><br>Reach us at {{ $settings->contact_email }}
-                                    for more info.
+                                <p class="text-justify ">Нет времени торговать или изучать торговлю?
+                                    Наш сервис управления счетом - лучший прибыльный торговый вариант для вас,
+                                    Мы можем помочь вам управлять вашим счетом на финансовом рынке с простой
+                                    моделью подписки.<br>
+                                    <small>Действуют условия и положения</small><br>Свяжитесь с нами по адресу {{ $settings->contact_email }}
+                                    для получения дополнительной информации.
                                 </p>
                             </div>
                             <br>
                             <div class="py-3">
                                 <a class="text-white btn btn-primary" data-toggle="modal" data-target="#submitmt4modal">
-                                    Subscribe Now
+                                    Подписаться сейчас
                                 </a>
                             </div>
 
@@ -43,7 +42,7 @@
                     </div>
                     <div class="p-2 mb-5 p-md-4 row">
                         <div class="mb-3 col-12">
-                            <h5 class="">My Trading Accounts</h5>
+                            <h5 class="">Мои торговые счета</h5>
                         </div>
                         @forelse ($subscriptions as $sub)
                             <div class="col-md-4 p-2">
@@ -52,50 +51,50 @@
                                         <h5 class="card-title">{{ $sub->mt4_id }}/{{ $sub->account_type }}
                                         </h5>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Currency</span>
+                                            <span class="text-primary">Валюта</span>
                                             <span>{{ $sub->currency }}</span>
                                         </div>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Leverage</span>
+                                            <span class="text-primary">Кредитное плечо</span>
                                             <span>{{ $sub->leverage }}</span>
                                         </div>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Server</span>
+                                            <span class="text-primary">Сервер</span>
                                             <span>{{ $sub->server }}</span>
                                         </div>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Duration</span>
+                                            <span class="text-primary">Длительность</span>
                                             <span>{{ $sub->duration }}</span>
                                         </div>
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Account Password</span>
+                                            <span class="text-primary">Пароль счета</span>
                                             <span>xxxxxxx</span>
                                         </div>
 
                                         <div class="d-flex justify-content-between mb-2">
-                                            <span class="text-primary">Status</span>
+                                            <span class="text-primary">Статус</span>
                                             <span>{{ $sub->status }}</span>
                                         </div>
                                         <div class="d-flex justify-content-center mb-2">
-                                            <small>Submitted:
+                                            <small>Отправлено:
                                                 {{ \Carbon\Carbon::parse($sub->created_at)->toDayDateTimeString() }}</small>
                                         </div>
                                         <div class="d-flex justify-content-center mb-2">
                                             <small>
-                                                Started:
+                                                Начато:
                                                 @if (!empty($sub->start_date))
                                                     {{ \Carbon\Carbon::parse($sub->start_date)->toDayDateTimeString() }}
                                                 @else
-                                                    Not Started yet
+                                                    Еще не начато
                                                 @endif
                                             </small>
                                         </div>
                                         <div class="d-flex justify-content-center mb-2">
-                                            <small>Expire:
+                                            <small>Истекает:
                                                 @if (!empty($sub->end_date))
                                                     {{ \Carbon\Carbon::parse($sub->end_date)->toDayDateTimeString() }}
                                                 @else
-                                                    Not Started yet
+                                                    Еще не начато
                                                 @endif
                                             </small>
                                         </div>
@@ -105,10 +104,10 @@
                                                 $remindAt = \Carbon\Carbon::parse($sub->reminded_at);
                                             @endphp
                                             <a href="#" data-toggle="modal" class="btn btn-danger btn-sm"
-                                                onclick="deletemt4()">Cancel</a>
+                                                onclick="deletemt4()">Отменить</a>
                                             @if (($sub->status != 'Pending' && now()->isSameDay($remindAt)) || $sub->status == 'Expired')
                                                 <a href="{{ route('renewsub', $sub->id) }}"
-                                                    class="btn btn-success btn-sm">Renew</a>
+                                                    class="btn btn-success btn-sm">Продлить</a>
                                             @endif
 
                                         </div>
@@ -119,7 +118,7 @@
                             <div class="col-md-12">
                                 <div class="py-4 card">
                                     <div class="text-center card-body">
-                                        <p>You do not have an trading at the moment.
+                                        <p>У вас нет торговли в данный момент.
                                         </p>
                                     </div>
                                 </div>
@@ -128,8 +127,8 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <h3 class="">Connect to your trading account to monitor activities on
-                                your trading account(s).</h3>
+                            <h3 class="">Подключитесь к своему торговому счету для мониторинга активности на
+                                ваших торговых счетах.</h3>
                             <iframe src="{{ $sub_link }}" name="WebTrader" title="{{ $title }}" frameborder="0"
                                 style="display: block; border: none; height: 76vh; width: 80vw;"></iframe>
                         </div>
@@ -143,12 +142,12 @@
     <script type="text/javascript">
         function deletemt4() {
             swal({
-                title: "Error!",
-                text: "Send an Email to {{ $settings->contact_email }} to have your MT4 Details cancelled.",
+                title: "Ошибка!",
+                text: "Отправьте электронное письмо на {{ $settings->contact_email }} чтобы отменить ваши данные MT4.",
                 icon: "error",
                 buttons: {
                     confirm: {
-                        text: "Okay",
+                        text: "Хорошо",
                         value: true,
                         visible: true,
                         className: "btn btn-danger",

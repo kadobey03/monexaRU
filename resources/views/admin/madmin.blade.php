@@ -58,8 +58,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         </div>
                     </div>
                     <div>
-                        <h1 class="title1 mb-1">Yöneticiler Listesi</h1>
-                        <p class="text-muted mb-0">Sistem yöneticilerini görüntüleyin ve yönetin</p>
+                        <h1 class="title1 mb-1">Список администраторов</h1>
+                        <p class="text-muted mb-0">Просматривайте и управляйте системными администраторами</p>
                     </div>
                 </div>
                 <x-danger-alert />
@@ -71,7 +71,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-header bg-gradient-primary text-white py-3">
                                 <div class="d-flex align-items-center">
                                     <i class="fas fa-table fa-lg me-2"></i>
-                                    <h5 class="mb-0 text-white">Yönetici Listesi</h5>
+                                    <h5 class="mb-0 text-white">Список администраторов</h5>
                                 </div>
                             </div>
                             <div class="card-body p-0">
@@ -83,25 +83,25 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-id-badge me-2 text-primary"></i>ID
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-user me-2 text-success"></i>Ad
+                                                    <i class="fas fa-user me-2 text-success"></i>Имя
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-user me-2 text-info"></i>Soyad
+                                                    <i class="fas fa-user me-2 text-info"></i>Фамилия
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-envelope me-2 text-warning"></i>E-posta
+                                                    <i class="fas fa-envelope me-2 text-warning"></i>Email
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-phone me-2 text-danger"></i>Telefon
+                                                    <i class="fas fa-phone me-2 text-danger"></i>Телефон
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-tag me-2 text-secondary"></i>Tür
+                                                    <i class="fas fa-tag me-2 text-secondary"></i>Тип
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-toggle-on me-2 text-primary"></i>Durum
+                                                    <i class="fas fa-toggle-on me-2 text-primary"></i>Статус
                                                 </th>
                                                 <th class="border-0 py-3 text-center">
-                                                    <i class="fas fa-cogs me-2 text-primary"></i>Eylemler
+                                                    <i class="fas fa-cogs me-2 text-primary"></i>Действия
                                                 </th>
                                             </tr>
                                         </thead>
@@ -120,30 +120,30 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                    <a class="btn btn-primary btn-sm dropdown-toggle px-3" href="#"
                                                        role="button" id="dropdownMenuLink" data-toggle="dropdown"
                                                        aria-haspopup="true" aria-expanded="false">
-                                                       <i class="fas fa-cogs me-1"></i>Eylemler
+                                                       <i class="fas fa-cogs me-1"></i>Действия
                                                    </a>
                                                     <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
 
                                                         @if ($admin->acnt_type_active == null || $admin->acnt_type_active == 'blocked')
                                                             <a class="m-1 btn btn-primary btn-sm"
-                                                                href="{{ url('admin/dashboard/unblock') }}/{{ $admin->id }}">Engeli Kaldır</a>
+                                                                href="{{ url('admin/dashboard/unblock') }}/{{ $admin->id }}">Разблокировать</a>
                                                         @else
                                                             <a class="m-1 btn btn-danger btn-sm"
-                                                                href="{{ url('admin/dashboard/ublock') }}/{{ $admin->id }}">Engelle</a>
+                                                                href="{{ url('admin/dashboard/ublock') }}/{{ $admin->id }}">Заблокировать</a>
                                                         @endif
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#resetpswdModal{{ $admin->id }}"
-                                                            class="m-1 btn btn-warning btn-sm">Şifreyi Sıfırla</a>
+                                                            class="m-1 btn btn-warning btn-sm">Сбросить пароль</a>
 
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#deleteModal{{ $admin->id }}"
-                                                            class="m-1 btn btn-danger btn-sm">Sil</a>
+                                                            class="m-1 btn btn-danger btn-sm">Удалить</a>
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#edituser{{ $admin->id }}"
-                                                            class="m-1 btn btn-secondary btn-sm">Düzenle</a>
+                                                            class="m-1 btn btn-secondary btn-sm">Редактировать</a>
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#sendmailModal{{ $admin->id }}"
-                                                            class="m-1 btn btn-info btn-sm">E-posta Gönder</a>
+                                                            class="m-1 btn btn-info btn-sm">Отправить email</a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -161,8 +161,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                                 <i class="fas fa-key fa-2x"></i>
                                                             </div>
                                                             <div>
-                                                                <h4 class="modal-title mb-0 text-white">Şifre Sıfırlama</h4>
-                                                                <small class="text-white-50">{{ $admin->firstName }} {{ $admin->lastName }} için şifre sıfırlama</small>
+                                                                <h4 class="modal-title mb-0 text-white">Сброс пароля</h4>
+                                                                <small class="text-white-50">Сброс пароля для {{ $admin->firstName }} {{ $admin->lastName }}</small>
                                                             </div>
                                                         </div>
                                                         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -172,7 +172,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <div class="modal-body p-4">
                                                         <div class="alert alert-warning">
                                                             <i class="fas fa-exclamation-triangle me-2"></i>
-                                                            <strong>Dikkat!</strong> Bu işlem kullanıcının şifresini varsayılan değer olarak değiştirecek.
+                                                            <strong>Внимание!</strong> Эта операция изменит пароль пользователя на значение по умолчанию.
                                                         </div>
 
                                                         <div class="password-info bg-light p-3 rounded-lg mb-3">
@@ -181,21 +181,21 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                                     <i class="fas fa-lock"></i>
                                                                 </div>
                                                                 <div>
-                                                                    <h6 class="mb-1">Yeni Şifre</h6>
-                                                                    <p class="mb-0 text-muted">Kullanıcı şifresi: <strong class="text-primary">admin01236</strong></p>
+                                                                    <h6 class="mb-1">Новый пароль</h6>
+                                                                    <p class="mb-0 text-muted">Пароль пользователя: <strong class="text-primary">admin01236</strong></p>
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <p class="mb-4">{{ $admin->firstName }} için şifreyi varsayılan değer olarak sıfırlamak istediğinizden emin misiniz?</p>
+                                                        <p class="mb-4">Вы уверены, что хотите сбросить пароль для {{ $admin->firstName }} на значение по умолчанию?</p>
 
                                                         <div class="d-flex gap-2">
                                                             <a class="btn btn-warning btn-lg px-4 flex-fill"
                                                                 href="{{ url('admin/dashboard/resetadpwd') }}/{{ $admin->id }}">
-                                                                <i class="fas fa-key me-2"></i>Evet, Sıfırla
+                                                                <i class="fas fa-key me-2"></i>Да, сбросить
                                                             </a>
                                                             <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
-                                                                <i class="fas fa-times me-2"></i>İptal
+                                                                <i class="fas fa-times me-2"></i>Отмена
                                                             </button>
                                                         </div>
                                                     </div>
@@ -212,14 +212,14 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <div class="modal-content">
                                                     <div class="modal-header ">
 
-                                                        <h4 class="modal-title ">Yöneticileri Sil</strong></h4>
+                                                        <h4 class="modal-title ">Удалить администраторов</strong></h4>
                                                         <button type="button" class="close "
                                                             data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body  p-3">
-                                                        <p class="">{{ $admin->firstName }} kullanıcısını silmek istediğinizden emin misiniz?</p>
+                                                        <p class="">Вы уверены, что хотите удалить пользователя {{ $admin->firstName }}?</p>
                                                         <a class="btn btn-danger"
-                                                            href="{{ url('admin/dashboard/deleletadmin') }}/{{ $admin->id }}">Evet, eminim</a>
+                                                            href="{{ url('admin/dashboard/deleletadmin') }}/{{ $admin->id }}">Да, я уверен</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,43 +233,43 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <div class="modal-content">
                                                     <div class="modal-header ">
 
-                                                        <h4 class="modal-title ">Kullanıcı detaylarını düzenle.</strong></h4>
+                                                        <h4 class="modal-title ">Редактировать детали пользователя.</strong></h4>
                                                         <button type="button" class="close "
                                                             data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body ">
                                                         <form style="padding:3px;" role="form" method="post"
                                                             action="{{ route('editadmin') }}">
-                                                            <h5 class=" ">Ad</h5>
+                                                            <h5 class=" ">Имя</h5>
                                                             <input style="padding:5px;" class="form-control  "
                                                                 value="{{ $admin->firstName }}" type="text"
                                                                 name="fname" required><br />
-                                                            <h5 class=" ">Soyad</h5>
+                                                            <h5 class=" ">Фамилия</h5>
                                                             <input style="padding:5px;" class="form-control  "
                                                                 value="{{ $admin->lastName }}" type="text"
                                                                 name="l_name" required><br />
-                                                            <h5 class=" ">E-posta</h5>
+                                                            <h5 class=" ">Email</h5>
                                                             <input style="padding:5px;" class="form-control  "
                                                                 value="{{ $admin->email }}" type="email"
                                                                 name="email" required><br />
-                                                            <h5 class=" ">Telefon Numarası</h5>
+                                                            <h5 class=" ">Номер телефона</h5>
                                                             <input style="padding:5px;" class="form-control  "
                                                                 value="{{ $admin->phone }}" type="text"
                                                                 name="phone" required>
                                                             <br>
-                                                            <h5 class=" ">Tür</h5>
+                                                            <h5 class=" ">Тип</h5>
                                                             <select class="form-control  " name="type">
                                                                 <option>{{ $admin->type }}</option>
-                                                                <option>Süper Yönetici</option>
-                                                                <option>Yönetici</option>
-                                                                <option>Dönüşüm Aracısı</option>
+                                                                <option>Супер Администратор</option>
+                                                                <option>Администратор</option>
+                                                                <option>Агент по конверсии</option>
                                                             </select><br>
                                                             <input type="hidden" name="_token"
                                                                 value="{{ csrf_token() }}">
                                                             <input type="hidden" name="user_id"
                                                                 value="{{ $admin->id }}">
                                                             <input type="submit" class="btn btn-info"
-                                                                value="Hesabı Güncelle">
+                                                                value="Обновить аккаунт">
                                                         </form>
                                                     </div>
                                                 </div>
@@ -282,13 +282,13 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <!-- Modal content-->
                                                 <div class="modal-content">
                                                     <div class="modal-header ">
-                                                        <h4 class="modal-title ">E-posta Mesajı Gönder</h4>
+                                                        <h4 class="modal-title ">Отправить сообщение по email</h4>
                                                         <button type="button" class="close "
                                                             data-dismiss="modal">&times;</button>
                                                     </div>
 
                                                     <div class="modal-body ">
-                                                        <p class="">Bu mesaj {{ $admin->firstName }} {{ $admin->lastName }} kullanıcısına gönderilecek.</p>
+                                                        <p class="">Это сообщение будет отправлено пользователю {{ $admin->firstName }} {{ $admin->lastName }}.</p>
                                                         <form role="form" method="post"
                                                             action="{{ route('sendmailtoadmin') }}">
                                                             <input type="hidden" name="user_id"
@@ -296,16 +296,16 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                             <div class="form-group">
                                                                 <input type="text" name="subject"
                                                                     class="form-control  "
-                                                                    placeholder="E-posta Konusu Girin">
+                                                                    placeholder="Введите тему email">
                                                             </div>
                                                             <div class="form-group">
-                                                                <textarea class="form-control  " name="message " row="3" placeholder="Mesajınızı buraya yazın" required></textarea>
+                                                                <textarea class="form-control  " name="message " row="3" placeholder="Напишите ваше сообщение здесь" required></textarea>
                                                             </div>
                                                             <div class="form-group">
                                                                 <input type="hidden" name="_token"
                                                                     value="{{ csrf_token() }}">
                                                                 <input type="submit" class="btn btn-primary"
-                                                                    value="Gönder">
+                                                                    value="Отправить">
                                                             </div>
                                                         </form>
                                                     </div>

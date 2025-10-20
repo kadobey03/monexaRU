@@ -17,10 +17,10 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                     <div>
                         <h1 class="mb-2" style="color: #2c3e50; font-weight: 700; font-size: 2.2rem;">
                             <i class="fas fa-wallet mr-3" style="color: #007bff;"></i>
-                            Müşteri Çekimlerini Yönet
+                            Управление выводами клиентов
                         </h1>
                         <p class="text-muted" style="font-size: 1.1rem; margin-bottom: 0;">
-                            Tüm müşteri çekim taleplerini buradan yönetebilirsiniz
+                           Здесь вы можете управлять всеми запросами клиентов на вывод средств
                         </p>
                     </div>
                     <div class="d-flex align-items-center">
@@ -29,7 +29,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <i class="fas fa-chart-line mr-2"></i>
                                 <div>
                                     <div style="font-size: 1.5rem; font-weight: bold;">{{ count($withdrawals) }}</div>
-                                    <div style="font-size: 0.85rem; opacity: 0.9;">Toplam Talep</div>
+                                    <div style="font-size: 0.85rem; opacity: 0.9;">Всего запросов</div>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-body p-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6 class="mb-1">Bekleyen</h6>
+                                        <h6 class="mb-1">Ожидающие</h6>
                                         <h3 class="mb-0">{{ collect($withdrawals)->where('status', '!=', 'Processed')->count() }}</h3>
                                     </div>
                                     <i class="fas fa-clock fa-2x opacity-75"></i>
@@ -59,7 +59,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-body p-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6 class="mb-1">İşlenen</h6>
+                                        <h6 class="mb-1">Обработанные</h6>
                                         <h3 class="mb-0">{{ collect($withdrawals)->where('status', 'Processed')->count() }}</h3>
                                     </div>
                                     <i class="fas fa-check-circle fa-2x opacity-75"></i>
@@ -72,7 +72,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-body p-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6 class="mb-1">Toplam Tutar</h6>
+                                        <h6 class="mb-1">Общая сумма</h6>
                                         <h3 class="mb-0">{{ $settings->currency }}{{ number_format(collect($withdrawals)->sum('amount')) }}</h3>
                                     </div>
                                     <i class="fas fa-dollar-sign fa-2x opacity-75"></i>
@@ -85,7 +85,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-body p-3">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6 class="mb-1">Bu Ay</h6>
+                                        <h6 class="mb-1">В этом месяце</h6>
                                         <h3 class="mb-0">{{ collect($withdrawals)->where('created_at', '>=', now()->startOfMonth())->count() }}</h3>
                                     </div>
                                     <i class="fas fa-calendar-alt fa-2x opacity-75"></i>
@@ -101,12 +101,12 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">
                                 <i class="fas fa-list mr-2"></i>
-                                Çekim Talepleri
+                                Запросы на вывод
                             </h5>
                             <div class="card-header-actions">
                                 <button class="btn btn-light btn-sm" onclick="refreshTable()">
                                     <i class="fas fa-sync-alt mr-1"></i>
-                                    Yenile
+                                    Обновить
                                 </button>
                             </div>
                         </div>
@@ -118,35 +118,35 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     <tr>
                                         <th class="border-0 py-3 px-4">
                                             <i class="fas fa-user mr-2 text-primary"></i>
-                                            Müşteri Adı
+                                            Имя клиента
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-money-bill-wave mr-2 text-success"></i>
-                                            Talep Edilen Tutar
+                                            Запрашиваемая сумма
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-calculator mr-2 text-info"></i>
-                                            Tutar + Masraflar
+                                            Сумма + расходы
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-credit-card mr-2 text-warning"></i>
-                                            Ödeme Yöntemi
+                                            Способ оплаты
                                         </th>
                                         <th class="border-0 py-3 px-4">
                                             <i class="fas fa-envelope mr-2 text-secondary"></i>
-                                            E-posta
+                                            Электронная почта
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-info-circle mr-2 text-primary"></i>
-                                            Durum
+                                            Статус
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-calendar mr-2 text-muted"></i>
-                                            Tarih
+                                            Дата
                                         </th>
                                         <th class="border-0 py-3 px-4 text-center">
                                             <i class="fas fa-cogs mr-2 text-dark"></i>
-                                            İşlemler
+                                            Действия
                                         </th>
                                     </tr>
                                 </thead>
@@ -174,8 +174,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                             <i class="fas fa-user-slash"></i>
                                                         </div>
                                                         <div>
-                                                            <div class="font-weight-bold text-muted">Kullanıcı Silindi</div>
-                                                            <small class="text-muted">Hesap mevcut değil</small>
+                                                            <div class="font-weight-bold text-muted">Пользователь удален</div>
+                                                            <small class="text-muted">Аккаунт недоступен</small>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -210,12 +210,12 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 @if ($withdrawal->status == 'Processed')
                                                     <span class="status-badge badge-success-modern px-3 py-2 rounded-pill">
                                                         <i class="fas fa-check-circle mr-1"></i>
-                                                        İşlendi
+                                                        Обработан
                                                     </span>
                                                 @else
                                                     <span class="status-badge badge-danger-modern px-3 py-2 rounded-pill">
                                                         <i class="fas fa-clock mr-1"></i>
-                                                        Bekliyor
+                                                        Ожидает
                                                     </span>
                                                 @endif
                                             </td>
@@ -231,9 +231,9 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <div class="action-buttons">
                                                     <a href="{{ route('processwithdraw', $withdrawal->id) }}"
                                                        class="btn btn-primary btn-sm btn-action"
-                                                       title="Çekim talebini görüntüle ve işle">
+                                                       title="Просмотреть и обработать запрос на вывод">
                                                         <i class="fas fa-eye mr-1"></i>
-                                                        Görüntüle
+                                                        Просмотреть
                                                     </a>
                                                 </div>
                                             </td>
@@ -243,8 +243,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                             <td colspan="8" class="text-center py-5">
                                                 <div class="empty-state">
                                                     <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
-                                                    <h5 class="text-muted">Henüz çekim talebi yok</h5>
-                                                    <p class="text-muted">Müşterilerden gelen çekim talepleri burada listelenecek.</p>
+                                                    <h5 class="text-muted">Пока нет запросов на вывод</h5>
+                                                    <p class="text-muted">Запросы клиентов на вывод средств будут отображаться здесь.</p>
                                                 </div>
                                             </td>
                                         </tr>
@@ -410,7 +410,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                 document.getElementById('withdrawalsTable').style.opacity = '1';
                 // Show success message
                 if (typeof toastr !== 'undefined') {
-                    toastr.success('Tablo yenilendi');
+                    toastr.success('Таблица обновлена');
                 }
             }, 1000);
         }

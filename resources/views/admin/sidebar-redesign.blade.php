@@ -28,7 +28,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-chart-pie"></i>
                         </div>
-                        <span class="nav-text">Dashboard</span>
+                        <span class="nav-text">Панель управления</span>
                     </a>
                 </li>
 
@@ -38,7 +38,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <span class="nav-text">User Management</span>
+                        <span class="nav-text">Управление пользователями</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'users' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -46,22 +46,22 @@
                     <ul class="nav-section-items" x-show="activeSection === 'users'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('manageusers') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/manageusers') }}" class="nav-link">
-                                <span class="nav-text">All Users</span>
+                                <span class="nav-text">Все пользователи</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('loginactivity') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/loginactivity') }}" class="nav-link">
-                                <span class="nav-text">Login Activity</span>
+                                <span class="nav-text">Активность входов</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('user.plans') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/userplans') }}" class="nav-link">
-                                <span class="nav-text">User Plans</span>
+                                <span class="nav-text">Планы пользователей</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/user-verification') }}" class="nav-link">
-                                <span class="nav-text">Verification</span>
+                                <span class="nav-text">Верификация</span>
                                 <span class="nav-badge bg-danger">3</span>
                             </a>
                         </li>
@@ -74,7 +74,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-money-bill-wave"></i>
                         </div>
-                        <span class="nav-text">Financial</span>
+                        <span class="nav-text">Финансы</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'financial' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -82,23 +82,23 @@
                     <ul class="nav-section-items" x-show="activeSection === 'financial'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('mdeposits') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/mdeposits') }}" class="nav-link">
-                                <span class="nav-text">Deposits</span>
+                                <span class="nav-text">Депозиты</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('mwithdrawals') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/mwithdrawals') }}" class="nav-link">
-                                <span class="nav-text">Withdrawals</span>
+                                <span class="nav-text">Выводы</span>
                                 <span class="nav-badge bg-warning">8</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/transactions') }}" class="nav-link">
-                                <span class="nav-text">Transactions</span>
+                                <span class="nav-text">Транзакции</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/payment-methods') }}" class="nav-link">
-                                <span class="nav-text">Payment Methods</span>
+                                <span class="nav-text">Способы оплаты</span>
                             </a>
                         </li>
                     </ul>
@@ -110,7 +110,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <span class="nav-text">Trading</span>
+                        <span class="nav-text">Торговля</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'trading' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -118,22 +118,22 @@
                     <ul class="nav-section-items" x-show="activeSection === 'trading'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('admin.bots.index') ? 'active' : '' }}">
                             <a href="{{ route('admin.bots.index') }}" class="nav-link">
-                                <span class="nav-text">Trading Bots</span>
+                                <span class="nav-text">Торговые боты</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('admin.bots.create') ? 'active' : '' }}">
                             <a href="{{ route('admin.bots.create') }}" class="nav-link">
-                                <span class="nav-text">Add New Bot</span>
+                                <span class="nav-text">Добавить нового бота</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('admin.bots.dashboard') ? 'active' : '' }}">
                             <a href="{{ route('admin.bots.dashboard') }}" class="nav-link">
-                                <span class="nav-text">Bot Analytics</span>
+                                <span class="nav-text">Аналитика ботов</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/trading-history') }}" class="nav-link">
-                                <span class="nav-text">Trading History</span>
+                                <span class="nav-text">История торговли</span>
                             </a>
                         </li>
                     </ul>
@@ -145,7 +145,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-layer-group"></i>
                         </div>
-                        <span class="nav-text">Investment Plans</span>
+                        <span class="nav-text">Инвестиционные планы</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'plans' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -153,12 +153,12 @@
                     <ul class="nav-section-items" x-show="activeSection === 'plans'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('plans') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/plans') }}" class="nav-link">
-                                <span class="nav-text">Manage Plans</span>
+                                <span class="nav-text">Управление планами</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/newplan') }}" class="nav-link">
-                                <span class="nav-text">New Plan</span>
+                                <span class="nav-text">Новый план</span>
                             </a>
                         </li>
                     </ul>
@@ -170,7 +170,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-file-alt"></i>
                         </div>
-                        <span class="nav-text">Content</span>
+                        <span class="nav-text">Контент</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'content' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -178,17 +178,17 @@
                     <ul class="nav-section-items" x-show="activeSection === 'content'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('frontpage') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/frontpage') }}" class="nav-link">
-                                <span class="nav-text">Frontend</span>
+                                <span class="nav-text">Интерфейс</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('faqmanager') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/faqmanager') }}" class="nav-link">
-                                <span class="nav-text">FAQ Manager</span>
+                                <span class="nav-text">Менеджер FAQ</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('testimonials') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/testimonials') }}" class="nav-link">
-                                <span class="nav-text">Testimonials</span>
+                                <span class="nav-text">Отзывы</span>
                             </a>
                         </li>
                     </ul>
@@ -200,7 +200,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-bell"></i>
                         </div>
-                        <span class="nav-text">Communications</span>
+                        <span class="nav-text">Коммуникации</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'communications' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -208,18 +208,18 @@
                     <ul class="nav-section-items" x-show="activeSection === 'communications'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('admin.notifications') ? 'active' : '' }}">
                             <a href="{{ route('admin.notifications') }}" class="nav-link">
-                                <span class="nav-text">Notifications</span>
+                                <span class="nav-text">Уведомления</span>
                                 <span class="nav-badge bg-primary">12</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('admin.send.message.form') ? 'active' : '' }}">
                             <a href="{{ route('admin.send.message.form') }}" class="nav-link">
-                                <span class="nav-text">Send Message</span>
+                                <span class="nav-text">Отправить сообщение</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/mailbox') }}" class="nav-link">
-                                <span class="nav-text">Mailbox</span>
+                                <span class="nav-text">Почтовый ящик</span>
                             </a>
                         </li>
                     </ul>
@@ -231,7 +231,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-cog"></i>
                         </div>
-                        <span class="nav-text">Settings</span>
+                        <span class="nav-text">Настройки</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'settings' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -239,22 +239,22 @@
                     <ul class="nav-section-items" x-show="activeSection === 'settings'" x-collapse>
                         <li class="nav-item {{ request()->routeIs('appsettingshow') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/appsettingshow') }}" class="nav-link">
-                                <span class="nav-text">General Settings</span>
+                                <span class="nav-text">Общие настройки</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('paymentgtway') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/paymentgateway') }}" class="nav-link">
-                                <span class="nav-text">Payment Gateways</span>
+                                <span class="nav-text">Платежные шлюзы</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('managecryptoasset') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/managecryptoasset') }}" class="nav-link">
-                                <span class="nav-text">Crypto Assets</span>
+                                <span class="nav-text">Криптовалютные активы</span>
                             </a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('adminprofile') ? 'active' : '' }}">
                             <a href="{{ url('/admin/dashboard/profile') }}" class="nav-link">
-                                <span class="nav-text">Profile</span>
+                                <span class="nav-text">Профиль</span>
                             </a>
                         </li>
                     </ul>
@@ -266,7 +266,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-clipboard-list"></i>
                         </div>
-                        <span class="nav-text">Logs & Reports</span>
+                        <span class="nav-text">Логи и отчеты</span>
                         <div class="nav-arrow" :class="{ 'rotated': activeSection === 'logs' }">
                             <i class="fas fa-chevron-right"></i>
                         </div>
@@ -274,17 +274,17 @@
                     <ul class="nav-section-items" x-show="activeSection === 'logs'" x-collapse>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/activity-log') }}" class="nav-link">
-                                <span class="nav-text">Activity Log</span>
+                                <span class="nav-text">Лог активности</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/system-log') }}" class="nav-link">
-                                <span class="nav-text">System Log</span>
+                                <span class="nav-text">Системный лог</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/dashboard/reports') }}" class="nav-link">
-                                <span class="nav-text">Reports</span>
+                                <span class="nav-text">Отчеты</span>
                             </a>
                         </li>
                     </ul>
@@ -297,7 +297,7 @@
                         <div class="nav-icon">
                             <i class="fas fa-sign-out-alt"></i>
                         </div>
-                        <span class="nav-text">Logout</span>
+                        <span class="nav-text">Выйти</span>
                     </a>
                     <form id="logout-form" action="{{ route('adminlogout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}

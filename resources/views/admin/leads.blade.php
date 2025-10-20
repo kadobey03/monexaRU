@@ -77,13 +77,13 @@
                         </div>
                     </div>
                     <div>
-                        <h1 class="title1 mb-1">Müşteri Adaylarını Yönet</h1>
-                        <p class="text-muted mb-0">Müşteri adayları henüz herhangi bir yatırım yapmamış yeni kullanıcılardır.</p>
+                        <h1 class="title1 mb-1">Управление потенциальными клиентами</h1>
+                        <p class="text-muted mb-0">Потенциальные клиенты - это новые пользователи, которые еще не сделали никаких инвестиций.</p>
                     </div>
                 </div>
                     <div>
                         <a href="#" data-toggle="modal" data-target="#assignModal" class="btn btn-primary btn-lg px-4 py-2 shadow-sm">
-                            <i class="fas fa-user-plus me-2"></i>Atama
+                            <i class="fas fa-user-plus me-2"></i>Назначение
                         </a>
                         <!-- Assign Modal -->
                         <div id="assignModal" class="modal fade" role="dialog">
@@ -96,8 +96,8 @@
                                                 <i class="fas fa-users-cog fa-2x"></i>
                                             </div>
                                             <div>
-                                                <h4 class="modal-title mb-0 text-white">Kullanıcı Atama Paneli</h4>
-                                                <small class="text-white-50">Takip için kullanıcıları yöneticiye ata</small>
+                                                <h4 class="modal-title mb-0 text-white">Панель назначения пользователей</h4>
+                                                <small class="text-white-50">Назначить пользователей администратору для отслеживания</small>
                                             </div>
                                         </div>
                                         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -112,22 +112,22 @@
                                                 <div class="col-md-6">
                                                     <div class="assignment-card bg-light-success text-center p-3 rounded-lg">
                                                         <i class="fas fa-user-plus fa-3x text-success mb-2"></i>
-                                                        <h6 class="text-success mb-0">Kullanıcı Seçimi</h6>
-                                                        <small class="text-muted">Atanacak kullanıcıyı seçin</small>
+                                                        <h6 class="text-success mb-0">Выбор пользователя</h6>
+                                                        <small class="text-muted">Выберите пользователя для назначения</small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="assignment-card bg-light-primary text-center p-3 rounded-lg">
                                                         <i class="fas fa-user-tie fa-3x text-primary mb-2"></i>
-                                                        <h6 class="text-primary mb-0">Yönetici Seçimi</h6>
-                                                        <small class="text-muted">Sorumlu yöneticiyi seçin</small>
+                                                        <h6 class="text-primary mb-0">Выбор администратора</h6>
+                                                        <small class="text-muted">Выберите ответственного администратора</small>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group mb-4">
                                                 <label class="form-label text-primary font-weight-bold">
-                                                    <i class="fas fa-users me-2"></i>Atanacak Kullanıcıyı Seçin
+                                                    <i class="fas fa-users me-2"></i>Выберите пользователя для назначения
                                                 </label>
                                                 <select name="user_name" id="" class="form-control form-control-lg select2"
                                                     style="width:100%">
@@ -139,10 +139,10 @@
 
                                             <div class="form-group mb-4">
                                                 <label class="form-label text-primary font-weight-bold">
-                                                    <i class="fas fa-user-cog me-2"></i>Sorumlu Yöneticiyi Seçin
+                                                    <i class="fas fa-user-cog me-2"></i>Выберите ответственного администратора
                                                 </label>
                                                 <select name="admin" id="" class="form-control form-control-lg">
-                                                    <option value="">Yönetici Seçin</option>
+                                                    <option value="">Выберите администратора</option>
                                                     @foreach ($admin as $user)
                                                         <option value="{{ $user->id }}">{{ $user->firstName }} {{ $user->lastName }}</option>
                                                     @endforeach
@@ -151,10 +151,10 @@
 
                                             <div class="form-group d-flex gap-2">
                                                 <button type="submit" class="btn btn-success btn-lg px-4 flex-fill">
-                                                    <i class="fas fa-check me-2"></i>Atamayı Tamamla
+                                                    <i class="fas fa-check me-2"></i>Завершить назначение
                                                 </button>
                                                 <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
-                                                    <i class="fas fa-times me-2"></i>İptal
+                                                    <i class="fas fa-times me-2"></i>Отмена
                                                 </button>
                                             </div>
                                         </form>
@@ -177,10 +177,10 @@
                                             <i class="fas fa-file-excel fa-lg"></i>
                                         </div>
                                         <div>
-                                            <h5 class="mb-1 text-primary">Excel İçe Aktarma</h5>
-                                            <p class="mb-0 text-muted">Excel belgesinden müşteri adayları içe aktarın.
+                                            <h5 class="mb-1 text-primary">Импорт Excel</h5>
+                                            <p class="mb-0 text-muted">Импортируйте потенциальных клиентов из Excel документа.
                                                 <a href="{{ route('downlddoc') }}" class="btn btn-link p-0 text-primary font-weight-bold">
-                                                    <i class="fas fa-download me-1"></i>örnek belgeyi indirin
+                                                    <i class="fas fa-download me-1"></i>скачать образец документа
                                                 </a>
                                             </p>
                                         </div>
@@ -194,7 +194,7 @@
                                         </div>
                                         <div>
                                             <button class="btn btn-primary btn-lg px-4" type="submit">
-                                                <i class="fas fa-upload me-1"></i>Kaydet
+                                                <i class="fas fa-upload me-1"></i>Сохранить
                                             </button>
                                         </div>
                                     </form>
@@ -209,7 +209,7 @@
                             <div class="card-header bg-gradient-primary text-white py-3">
                                 <div class="d-flex align-items-center">
                                     <i class="fas fa-table fa-lg me-2"></i>
-                                    <h5 class="mb-0 text-white">Müşteri Adayları Listesi</h5>
+                                    <h5 class="mb-0 text-white">Список потенциальных клиентов</h5>
                                 </div>
                             </div>
                             <div class="card-body p-0">
@@ -218,25 +218,25 @@
                                         <thead class="bg-light">
                                             <tr>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-user me-2 text-primary"></i>İsim
+                                                    <i class="fas fa-user me-2 text-primary"></i>Имя
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-envelope me-2 text-success"></i>E-posta
+                                                    <i class="fas fa-envelope me-2 text-success"></i>Email
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-phone me-2 text-warning"></i>Telefon
+                                                    <i class="fas fa-phone me-2 text-warning"></i>Телефон
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-toggle-on me-2 text-info"></i>Durum
+                                                    <i class="fas fa-toggle-on me-2 text-info"></i>Статус
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-calendar me-2 text-secondary"></i>Kayıt Tarihi
+                                                    <i class="fas fa-calendar me-2 text-secondary"></i>Дата регистрации
                                                 </th>
                                                 <th class="border-0 py-3">
-                                                    <i class="fas fa-user-tie me-2 text-primary"></i>Atanan Kişi
+                                                    <i class="fas fa-user-tie me-2 text-primary"></i>Назначенное лицо
                                                 </th>
                                                 <th class="border-0 py-3 text-center">
-                                                    <i class="fas fa-cogs me-2 text-primary"></i>İşlem
+                                                    <i class="fas fa-cogs me-2 text-primary"></i>Действие
                                                 </th>
                                             </tr>
                                         </thead>
@@ -248,9 +248,9 @@
                                                     <td>{{ $list->phone }}</td>
                                                     <td>
                                                         @if ($list->status == 'active')
-                                                            <span class="badge badge-success">Aktif</span>
+                                                            <span class="badge badge-success">Активный</span>
                                                         @else
-                                                            <span class="badge badge-danger">Pasif</span>
+                                                            <span class="badge badge-danger">Неактивный</span>
                                                         @endif
                                                     </td>
                                                     <td>{{ $list->created_at->toDayDateTimeString() }}
@@ -259,13 +259,13 @@
                                                         @if ($list->tuser->firstName)
                                                             {{ $list->tuser->firstName }} {{ $list->tuser->lastName }}
                                                         @else
-                                                            <span class="text-info">Henüz atanmadı</span>
+                                                            <span class="text-info">Еще не назначен</span>
                                                         @endif
 
                                                     </td>
                                                     <td>
                                                         <a class="m-1 btn btn-info btn-sm text-white" data-toggle="modal"
-                                                            data-target="#editModal{{ $list->id }}">Durumu Düzenle</a>
+                                                            data-target="#editModal{{ $list->id }}">Редактировать статус</a>
                                                     </td>
                                                 </tr>
 
@@ -279,8 +279,8 @@
                                                                         <i class="fas fa-user-edit fa-2x"></i>
                                                                     </div>
                                                                     <div>
-                                                                        <h4 class="modal-title mb-0 text-white">Kullanıcı Durumu Düzenleme</h4>
-                                                                        <small class="text-white-50">{{ $list->name }} kullanıcısının durumunu güncelleyin</small>
+                                                                        <h4 class="modal-title mb-0 text-white">Редактирование статуса пользователя</h4>
+                                                                        <small class="text-white-50">Обновите статус пользователя {{ $list->name }}</small>
                                                                     </div>
                                                                 </div>
                                                                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
@@ -291,11 +291,11 @@
                                                                 <form method="post" action="{{ route('updateuser') }}">
                                                                     <div class="form-group mb-4">
                                                                         <label class="form-label text-primary font-weight-bold">
-                                                                            <i class="fas fa-edit me-2"></i>Kullanıcı Durumu
+                                                                            <i class="fas fa-edit me-2"></i>Статус пользователя
                                                                         </label>
                                                                         <textarea name="userupdate" id="" rows="5"
                                                                             class="form-control form-control-lg"
-                                                                            placeholder="Kullanıcı durumu ile ilgili notları buraya girin..."
+                                                                            placeholder="Введите здесь заметки о статусе пользователя..."
                                                                             required>{{ $list->userupdate }}</textarea>
                                                                     </div>
 
@@ -304,10 +304,10 @@
 
                                                                     <div class="d-flex gap-2">
                                                                         <button type="submit" class="btn btn-warning btn-lg px-4 flex-fill">
-                                                                            <i class="fas fa-save me-2"></i>Değişiklikleri Kaydet
+                                                                            <i class="fas fa-save me-2"></i>Сохранить изменения
                                                                         </button>
                                                                         <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">
-                                                                            <i class="fas fa-times me-2"></i>İptal
+                                                                            <i class="fas fa-times me-2"></i>Отмена
                                                                         </button>
                                                                     </div>
                                                                 </form>

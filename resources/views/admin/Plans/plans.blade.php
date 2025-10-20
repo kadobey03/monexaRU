@@ -6,13 +6,13 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">System Plans</h1>
+                    <h1 class="title1 ">Системные планы</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
                 <div class="mb-5 row">
                     <div class="mt-2 mb-3 col-lg-12">
-                        <a class="btn btn-primary" href="{{ route('newplan') }}"><i class="fa fa-plus"></i> New plan</a>
+                        <a class="btn btn-primary" href="{{ route('newplan') }}"><i class="fa fa-plus"></i> Новый план</a>
                     </div>
                     @forelse ($plans as $plan)
                         <div class="col-lg-4">
@@ -27,19 +27,19 @@
                                     </div>
                                     <!-- Features -->
                                     <div class="pricing-features">
-                                        <div class="feature text-dark">Minimum Possible Deposit:<span
+                                        <div class="feature text-dark">Минимальный возможный депозит:<span
                                                 class="">{{ $settings->currency }}{{ number_format($plan->min_price) }}</span>
                                         </div>
-                                        <div class="feature text-dark">Maximum Possible Deposit:<span
+                                        <div class="feature text-dark">Максимальный возможный депозит:<span
                                                 class="">{{ $settings->currency }}{{ number_format($plan->max_price) }}</span>
                                         </div>
-                                        <div class="feature text-dark">Minimum Return:<span
+                                        <div class="feature text-dark">Минимальная доходность:<span
                                                 class="">{{ number_format($plan->minr) }}%</span></div>
-                                        <div class="feature text-dark">Maximum Return:<span
+                                        <div class="feature text-dark">Максимальная доходность:<span
                                                 class="">{{ number_format($plan->maxr) }}%</span></div>
-                                        <div class="feature text-dark">Gift Bonus:<span
+                                        <div class="feature text-dark">Подарочный бонус:<span
                                                 class="">{{ $settings->currency }}{{ $plan->gift }}</span></div>
-                                        <div class="feature text-dark">Duration:<span
+                                        <div class="feature text-dark">Продолжительность:<span
                                                 class="">{{ $plan->expiration }}</span>
                                         </div>
                                     </div> <br>
@@ -59,7 +59,7 @@
                     @empty
                         <div class="col-lg-12 text-center">
                             <div class="pricing-table card purple border p-4">
-                                <h4 class="">No Investment Plan at the moment, click the button above to add a plan.
+                                <h4 class="">В данный момент инвестиционных планов нет, нажмите кнопку выше, чтобы добавить план.
                                 </h4>
                             </div>
                         </div>

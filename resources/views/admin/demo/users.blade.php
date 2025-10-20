@@ -15,18 +15,18 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 d-inline text-{{ $text }}">Demo Users Management</h1>
+                    <h1 class="title1 d-inline text-{{ $text }}">Управление демо-пользователями</h1>
                     <div class="d-inline">
                         <div class="float-right btn-group">
                             <form action="{{ route('admin.demo.bulk-reset') }}" method="POST" class="d-inline"
-                                  onsubmit="return confirm('Are you sure you want to reset ALL demo accounts? This will affect all users.')">
+                                  onsubmit="return confirm('Вы уверены, что хотите сбросить ВСЕ демо-аккаунты? Это повлияет на всех пользователей.')">
                                 @csrf
                                 <button type="submit" class="btn btn-warning btn-sm">
-                                    <i class="fa fa-sync-alt"></i> Bulk Reset All
+                                    <i class="fa fa-sync-alt"></i> Массовый сброс всех
                                 </button>
                             </form>
                             <a class="btn btn-primary btn-sm ml-2" href="{{ route('admin.demo.trades') }}">
-                                <i class="fa fa-chart-line"></i> Demo Trades
+                                <i class="fa fa-chart-line"></i> Демо-торги
                             </a>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Total Demo Users</div>
+                                            Всего демо-пользователей</div>
                                         <div class="h5 mb-0 font-weight-bold text-{{ $text }}">{{ $demoStats['total_users'] ?? $users->total() }}</div>
                                     </div>
                                     <div class="col-auto">
@@ -59,7 +59,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Active Demo Trades</div>
+                                            Активные демо-торги</div>
                                         <div class="h5 mb-0 font-weight-bold text-{{ $text }}">
                                             {{ $demoStats['active_demo_trades'] ?? 0 }}
                                         </div>
@@ -78,7 +78,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                            Avg Demo Balance</div>
+                                            Средний демо-баланс</div>
                                         <div class="h5 mb-0 font-weight-bold text-{{ $text }}">
                                             ${{ number_format($demoStats['avg_demo_balance'] ?? 0, 2) }}
                                         </div>
@@ -97,7 +97,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Total Demo Volume</div>
+                                            Общий демо-объем</div>
                                         <div class="h5 mb-0 font-weight-bold text-{{ $text }}">
                                             ${{ number_format($demoStats['total_demo_volume'] ?? 0, 2) }}
                                         </div>
@@ -114,15 +114,15 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                 <!-- Search Filter -->
                 <div class="mb-4 row">
                     <div class="col-12 card shadow p-4">
-                        <h6 class="m-0 font-weight-bold text-primary mb-3">Search Demo Users</h6>
+                        <h6 class="m-0 font-weight-bold text-primary mb-3">Поиск демо-пользователей</h6>
                         <form method="GET" class="row">
                             <div class="col-md-9 mb-3">
                                 <input type="text" class="form-control" name="search"
                                        value="{{ request('search') }}" placeholder="Search by name, email, or username">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <button type="submit" class="btn btn-primary me-2">Search</button>
-                                <a href="{{ route('admin.demo.users') }}" class="btn btn-secondary ml-2">Clear</a>
+                                <button type="submit" class="btn btn-primary me-2">Поиск</button>
+                                <a href="{{ route('admin.demo.users') }}" class="btn btn-secondary ml-2">Очистить</a>
                             </div>
                         </form>
                     </div>
@@ -135,14 +135,14 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <table id="ShipTable" class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>User ID</th>
-                                        <th>User Name</th>
-                                        <th>User Email</th>
-                                        <th>Demo Balance</th>
-                                        <th>Demo Mode</th>
-                                        <th>Account Balance</th>
-                                        <th>Registration Date</th>
-                                        <th>Option</th>
+                                        <th>ID пользователя</th>
+                                        <th>Имя пользователя</th>
+                                        <th>Email пользователя</th>
+                                        <th>Демо-баланс</th>
+                                        <th>Демо-режим</th>
+                                        <th>Баланс аккаунта</th>
+                                        <th>Дата регистрации</th>
+                                        <th>Опция</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -158,9 +158,9 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </td>
                                         <td>
                                             @if($user->demo_mode)
-                                                <span class="badge badge-success">Active</span>
+                                                <span class="badge badge-success">Активный</span>
                                             @else
-                                                <span class="badge badge-secondary">Inactive</span>
+                                                <span class="badge badge-secondary">Неактивный</span>
                                             @endif
                                         </td>
                                         <td>${{ number_format($user->account_bal, 2) }}</td>
@@ -171,16 +171,16 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     data-user-id="{{ $user->id }}"
                                                     data-user-name="{{ $user->name }}"
                                                     data-demo-balance="{{ $user->demo_balance }}"
-                                                    title="Edit Demo Balance">
-                                                <i class="fa fa-edit"></i> Edit
+                                                    title="Редактировать демо-баланс">
+                                                <i class="fa fa-edit"></i> Редактировать
                                             </button>
 
                                             <form action="{{ route('admin.demo.reset-user', $user->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 <button type="submit" class="btn btn-warning btn-sm m-1"
-                                                        onclick="return confirm('Are you sure you want to reset this user demo account?')"
-                                                        title="Reset Demo Account">
-                                                    <i class="fa fa-sync-alt"></i> Reset
+                                                        onclick="return confirm('Вы уверены, что хотите сбросить демо-аккаунт этого пользователя?')"
+                                                        title="Сбросить демо-аккаунт">
+                                                    <i class="fa fa-sync-alt"></i> Сбросить
                                                 </button>
                                             </form>
                                         </td>
@@ -190,8 +190,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <td colspan="8" class="text-center">
                                             <div class="py-4">
                                                 <i class="fas fa-users fa-3x text-gray-300 mb-3"></i>
-                                                <h5 class="text-gray-500">No users found</h5>
-                                                <p class="text-muted">No users match your current search criteria.</p>
+                                                <h5 class="text-gray-500">Пользователи не найдены</h5>
+                                                <p class="text-muted">Ни один пользователь не соответствует вашим критериям поиска.</p>
                                             </div>
                                         </td>
                                     </tr>
@@ -217,7 +217,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Edit Demo Balance</h5>
+                    <h5 class="modal-title">Редактировать демо-баланс</h5>
                     <button type="button" class="close" data-dismiss="modal">
                         <span>&times;</span>
                     </button>
@@ -226,26 +226,26 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <label><strong>User Name:</strong></label>
+                            <label><strong>Имя пользователя:</strong></label>
                             <input type="text" id="user-name-display" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label><strong>Current Demo Balance:</strong></label>
+                            <label><strong>Текущий демо-баланс:</strong></label>
                             <input type="text" id="current-balance-display" class="form-control" readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="action"><strong>Action</strong></label>
+                            <label for="action"><strong>Действие</strong></label>
                             <select name="action" id="action" class="form-control" required>
-                                <option value="set">Set Balance To</option>
-                                <option value="add">Add Amount</option>
-                                <option value="subtract">Subtract Amount</option>
+                                <option value="set">Установить баланс на</option>
+                                <option value="add">Добавить сумму</option>
+                                <option value="subtract">Вычесть сумму</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="demo_balance"><strong>Amount</strong></label>
+                            <label for="demo_balance"><strong>Сумма</strong></label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">$</span>
@@ -257,8 +257,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Balance</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                        <button type="submit" class="btn btn-primary">Обновить баланс</button>
                     </div>
                 </form>
             </div>

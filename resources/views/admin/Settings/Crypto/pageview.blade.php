@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Crypto Assets/Exchnage Settings</h1>
+                    <h1 class="title1 ">Криптовалютные активы/Настройки обмена</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -24,7 +24,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="card p-3 p-md-5 shadow-lg ">
                             <div class="row">
                                 <div class="form-group col-12 d-inline">
-                                    <h5 class="">Use this Feature</h5>
+                                    <h5 class="">Использовать эту функцию</h5>
                                     <div class="selectgroup">
                                         <label class="selectgroup-item">
                                             <input type="radio" name="crypto" id="cryptoyes" value="true"
@@ -38,8 +38,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </label>
                                     </div>
                                     <div>
-                                        <small class="">Your users will not be able to see/use this service if turned
-                                            off</small>
+                                        <small class="">Ваши пользователи не смогут видеть/использовать эту услугу если выключена</small>
                                     </div>
                                     @if ($moresettings->use_crypto_feature == 'true')
                                         <script>
@@ -56,7 +55,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     <form action="{{ route('exchangefee') }}" method="post">
                                         @csrf
                                         <div class=" form-group">
-                                            <h5 class="">Exchange Fee</h5>
+                                            <h5 class="">Комиссия за обмен</h5>
                                             <input type="text" name="fee" value="{{ $moresettings->fee }}"
                                                 class=" form-control " id="">
                                         </div>
@@ -66,13 +65,12 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <input type="number" name="rate"
                                                     value="{{ $moresettings->currency_rate }}" step=".0"
                                                     class=" form-control " placeholder="450">
-                                                <small class="">This rate will be used to calculate your users crypto
-                                                    equivilent in your chosen currency.</small>
+                                                <small class="">Этот курс будет использован для расчета криптоэквивалента ваших пользователей в выбранной валюте.</small>
                                             </div>
                                         @endif
 
                                         <div class=" form-group">
-                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button type="submit" class="btn btn-primary">Сохранить</button>
                                         </div>
                                     </form>
                                 </div>
@@ -81,10 +79,10 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">Asset Name</th>
-                                                    <th scope="col">Asset Symbol</th>
-                                                    <th scope="col">Status</th>
-                                                    <th scope="col">Option</th>
+                                                    <th scope="col">Название актива</th>
+                                                    <th scope="col">Символ актива</th>
+                                                    <th scope="col">Статус</th>
+                                                    <th scope="col">Действие</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -93,8 +91,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </table>
                                     </div>
                                     <div>
-                                        <small class="">Be sure that non of your users have balances greater than 0 in
-                                            thier asset account before you disable the asset.</small>
+                                        <small class="">Убедитесь, что ни у одного из ваших пользователей нет балансов больше 0 на их аккаунтах активов перед отключением актива.</small>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +113,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -160,7 +157,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings

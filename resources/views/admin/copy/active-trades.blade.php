@@ -6,23 +6,23 @@
     <div class="flex items-center justify-between mb-8">
         <div>
             <nav class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
-                <a href="{{ route('admin.copy.index') }}" class="hover:text-gray-900 dark:hover:text-white">Copy Trading</a>
+                <a href="{{ route('admin.copy.index') }}" class="hover:text-gray-900 dark:hover:text-white">Копи-трейдинг</a>
                 <i data-lucide="chevron-right" class="w-4 h-4 mx-2"></i>
-                <span class="text-gray-900 dark:text-white">Active Trades</span>
+                <span class="text-gray-900 dark:text-white">Активные сделки</span>
             </nav>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $title }}</h1>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">Monitor all active copy trading positions</p>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Отслеживание всех активных позиций копи-трейдинга</p>
         </div>
         <div class="flex gap-3">
             <a href="{{ route('admin.copy.statistics') }}"
                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg font-medium hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
                 <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-                Statistics
+                Статистика
             </a>
             <a href="{{ route('admin.copy.index') }}"
                class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                Back to List
+                Назад к списку
             </a>
         </div>
     </div>
@@ -32,7 +32,7 @@
         <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-lg text-white p-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-green-100 text-sm font-medium">Active Positions</p>
+                    <p class="text-green-100 text-sm font-medium">Активные позиции</p>
                     <p class="text-3xl font-bold">{{ $activeTrades->count() }}</p>
                 </div>
                 <div class="bg-white/20 rounded-lg p-3">
@@ -44,7 +44,7 @@
         <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg text-white p-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-blue-100 text-sm font-medium">Total Volume</p>
+                    <p class="text-blue-100 text-sm font-medium">Общий объем</p>
                     <p class="text-3xl font-bold">${{ number_format($activeTrades->sum('amount'), 0) }}</p>
                 </div>
                 <div class="bg-white/20 rounded-lg p-3">
@@ -56,7 +56,7 @@
         <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl shadow-lg text-white p-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-purple-100 text-sm font-medium">Total Profit</p>
+                    <p class="text-purple-100 text-sm font-medium">Общая прибыль</p>
                     <p class="text-3xl font-bold">${{ number_format($activeTrades->sum('profit'), 2) }}</p>
                 </div>
                 <div class="bg-white/20 rounded-lg p-3">
@@ -68,7 +68,7 @@
         <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl shadow-lg text-white p-6">
             <div class="flex items-center justify-between">
                 <div>
-                    <p class="text-orange-100 text-sm font-medium">Avg Profit</p>
+                    <p class="text-orange-100 text-sm font-medium">Ср. прибыль</p>
                     <p class="text-3xl font-bold">{{ $activeTrades->count() > 0 ? number_format($activeTrades->avg('profit'), 2) : '0.00' }}%</p>
                 </div>
                 <div class="bg-white/20 rounded-lg p-3">
@@ -81,8 +81,8 @@
     <!-- Active Trades Table -->
     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Active Copy Trading Positions</h2>
-            <p class="text-sm text-gray-600 dark:text-gray-400">All currently active copy trading positions</p>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Активные позиции копи-трейдинга</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Все активные позиции копи-трейдинга в системе</p>
         </div>
 
         @if($activeTrades->count() > 0)
@@ -90,13 +90,13 @@
                 <table class="w-full">
                     <thead class="bg-gray-50 dark:bg-gray-700/50">
                         <tr>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">User</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Expert</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Amount</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Profit/Loss</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Пользователь</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Эксперт</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Сумма</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Прибыль/Убыток</th>
                             <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">ROI</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Duration</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Status</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Продолжительность</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Статус</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -117,14 +117,14 @@
                                                 @if($trade->user)
                                                     {{ $trade->user->name }}
                                                 @else
-                                                    Unknown User
+                                                    Неизвестный пользователь
                                                 @endif
                                             </h3>
                                             <p class="text-sm text-gray-600 dark:text-gray-400">
                                                 @if($trade->user)
                                                     {{ $trade->user->email }}
                                                 @else
-                                                    No email
+                                                    Нет email
                                                 @endif
                                             </p>
                                         </div>
@@ -152,7 +152,7 @@
                                                 @if($trade->expert)
                                                     {{ $trade->expert->name }}
                                                 @else
-                                                    Unknown Expert
+                                                    Неизвестный эксперт
                                                 @endif
                                             </h3>
                                             <div class="flex items-center gap-1 mt-1">
@@ -176,7 +176,7 @@
                                         ${{ number_format((float)$trade->amount, 2) }}
                                     </div>
                                     <div class="text-sm text-gray-600 dark:text-gray-400">
-                                        Investment
+                                        Инвестиция
                                     </div>
                                 </td>
 
@@ -187,21 +187,21 @@
                                             +${{ number_format((float)$trade->profit, 2) }}
                                         </div>
                                         <div class="text-sm text-green-600 dark:text-green-400">
-                                            Profit
+                                            Прибыль
                                         </div>
                                     @elseif($trade->profit < 0)
                                         <div class="text-lg font-semibold text-red-600 dark:text-red-400">
                                             -${{ number_format(abs((float)$trade->profit), 2) }}
                                         </div>
                                         <div class="text-sm text-red-600 dark:text-red-400">
-                                            Loss
+                                            Убыток
                                         </div>
                                     @else
                                         <div class="text-lg font-semibold text-gray-600 dark:text-gray-400">
                                             $0.00
                                         </div>
                                         <div class="text-sm text-gray-600 dark:text-gray-400">
-                                            Break-even
+                                            Безубыток
                                         </div>
                                     @endif
                                 </td>
@@ -225,7 +225,7 @@
                                         </div>
                                     @endif
                                     <div class="text-sm text-gray-600 dark:text-gray-400">
-                                        Return
+                                        Доходность
                                     </div>
                                 </td>
 
@@ -235,7 +235,7 @@
                                         {{ $trade->created_at->diffForHumans() }}
                                     </div>
                                     <div class="text-xs text-gray-600 dark:text-gray-400">
-                                        Started {{ $trade->created_at->format('M j, Y') }}
+                                        Начато {{ $trade->created_at->format('M j, Y') }}
                                     </div>
                                 </td>
 
@@ -243,15 +243,15 @@
                                 <td class="py-4 px-6">
                                     <div class="flex flex-col gap-2">
                                         <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg text-xs font-medium inline-block">
-                                            Active
+                                            Активная
                                         </span>
                                         @if($trade->expert && $trade->expert->status === 'active')
                                             <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg text-xs font-medium inline-block">
-                                                Expert Active
+                                                Эксперт активен
                                             </span>
                                         @else
                                             <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg text-xs font-medium inline-block">
-                                                Expert Inactive
+                                                Эксперт неактивен
                                             </span>
                                         @endif
                                     </div>
@@ -267,14 +267,14 @@
                 <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="activity" class="w-8 h-8 text-gray-400"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Active Trades</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Нет активных сделок</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    There are currently no active copy trading positions.
+                    В настоящее время нет активных позиций копи-трейдинга.
                 </p>
                 <a href="{{ route('admin.copy.index') }}"
                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
                     <i data-lucide="users" class="w-4 h-4"></i>
-                    Manage Experts
+                    Управление экспертами
                 </a>
             </div>
         @endif

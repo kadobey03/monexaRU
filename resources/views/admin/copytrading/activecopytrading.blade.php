@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content bg-{{ $bg }}">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 text-{{ $text }}">Active Trade Copying</h1>
+                    <h1 class="title1 text-{{ $text }}">Активное копирование торгов</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -24,11 +24,11 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <table id="ShipTable" class="table table-hover text-{{ $text }}">
                             <thead>
                                 <tr>
-                                    <th>Expert Name</th>
-                                    <th>Expert Tag</th>
-                                    <th>Amount </th>
-                                    <th>User</th>
-                                    <th>Date created</th>
+                                    <th>Имя эксперта</th>
+                                    <th>Тег эксперта</th>
+                                    <th>Сумма</th>
+                                    <th>Пользователь</th>
+                                    <th>Дата создания</th>
                                    
                                 </tr>
                             </thead>

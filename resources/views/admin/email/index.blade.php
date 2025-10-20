@@ -61,13 +61,13 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             </div>
                         </div>
                         <div>
-                            <h1 class="title1 text-{{ $text }} mb-1">E-posta Servisleri</h1>
-                            <p class="text-muted mb-0">Kullanıcılara toplu e-posta gönderin</p>
+                            <h1 class="title1 text-{{ $text }} mb-1">Почтовые службы</h1>
+                            <p class="text-muted mb-0">Отправить групповую электронную почту пользователям</p>
                         </div>
                     </div>
                     <div>
                         <a class='btn btn-info btn-lg px-4 py-2' href='https://t.me/+VRumJJSKKGdjM2I0'>
-                            <i class="fab fa-telegram me-2"></i>Yardım
+                            <i class="fab fa-telegram me-2"></i>Помощь
                         </a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="card-header bg-gradient-primary text-white py-3">
                                 <div class="d-flex align-items-center">
                                     <i class="fas fa-paper-plane fa-lg me-2"></i>
-                                    <h4 class="mb-0 text-white">E-posta Oluşturma Formu</h4>
+                                    <h4 class="mb-0 text-white">Форма создания электронной почты</h4>
                                 </div>
                             </div>
                             <div class="card-body p-4">
@@ -95,15 +95,15 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-users"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-primary mb-0">Alıcı Kategorisi</h6>
-                                                    <small class="text-muted">E-posta gönderilecek kullanıcı grubunu seçin</small>
+                                                    <h6 class="text-primary mb-0">Категория получателей</h6>
+                                                    <small class="text-muted">Выберите группу пользователей для отправки электронной почты</small>
                                                 </div>
                                             </div>
                                             <select class="form-control form-control-lg" id="category" name="category">
-                                                <option value="All">🌐 Tüm Kullanıcılar</option>
-                                                <option value="No active plans">📊 Aktif yatırım planı olmayan kullanıcılar</option>
-                                                <option value="No deposit">💰 Herhangi bir yatırımı olmayan kullanıcılar</option>
-                                                <option value="Select Users">👤 Kullanıcıları Manuel Seç</option>
+                                                <option value="All">🌐 Все пользователи</option>
+                                                <option value="No active plans">📊 Пользователи без активного инвестиционного плана</option>
+                                                <option value="No deposit">💰 Пользователи без каких-либо инвестиций</option>
+                                                <option value="Select Users">👤 Выбрать пользователей вручную</option>
                                             </select>
                                         </div>
                                     </div>
@@ -116,8 +116,8 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-user-check"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-warning mb-0">Kullanıcı Seçimi</h6>
-                                                    <small class="text-muted">Gönderilecek kullanıcıları seçin (<span class="text-primary font-weight-bold" id="numofusers">0</span> kişi seçildi)</small>
+                                                    <h6 class="text-warning mb-0">Выбор пользователей</h6>
+                                                    <small class="text-muted">Выберите пользователей для отправки (<span class="text-primary font-weight-bold" id="numofusers">0</span> человек выбрано)</small>
                                                 </div>
                                             </div>
                                             <select onChange="SelectPage(this)" name="users[]" multiple class="form-control form-control-lg select2" style="width: 100%" id="showusers"></select>
@@ -132,16 +132,16 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-hand-paper"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-success mb-0">Selamlama ve Başlık</h6>
-                                                    <small class="text-muted">E-postanın başlangıç selamlaması</small>
+                                                    <h6 class="text-success mb-0">Приветствие и заголовок</h6>
+                                                    <small class="text-muted">Начальное приветствие электронного письма</small>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <input type="text" value="Merhaba" name="greet" class="form-control form-control-lg" placeholder="Selamlama (örn: Merhaba)">
+                                                    <input type="text" value="Здравствуйте" name="greet" class="form-control form-control-lg" placeholder="Приветствие (например: Здравствуйте)">
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="text" value="Yatırımcı" name="title" class="form-control form-control-lg" placeholder="Başlık (örn: Değerli Yatırımcı)">
+                                                    <input type="text" value="Инвестор" name="title" class="form-control form-control-lg" placeholder="Заголовок (например: Уважаемый инвестор)">
                                                 </div>
                                             </div>
                                         </div>
@@ -155,11 +155,11 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-heading"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-info mb-0">E-posta Konusu</h6>
-                                                    <small class="text-muted">Alıcıların göreceği konu başlığı</small>
+                                                    <h6 class="text-info mb-0">Тема электронного письма</h6>
+                                                    <small class="text-muted">Заголовок темы, который увидят получатели</small>
                                                 </div>
                                             </div>
-                                            <input type="text" name="subject" class="form-control form-control-lg" placeholder="E-posta konusu..." required>
+                                            <input type="text" name="subject" class="form-control form-control-lg" placeholder="Тема электронного письма..." required>
                                         </div>
                                     </div>
 
@@ -171,18 +171,18 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                     <i class="fas fa-align-left"></i>
                                                 </div>
                                                 <div>
-                                                    <h6 class="text-danger mb-0">E-posta Mesajı</h6>
-                                                    <small class="text-muted">Gönderilecek e-posta içeriği</small>
+                                                    <h6 class="text-danger mb-0">Сообщение электронной почты</h6>
+                                                    <small class="text-muted">Содержание отправляемого электронного письма</small>
                                                 </div>
                                             </div>
-                                            <textarea placeholder="E-posta mesajınızı buraya yazın..." class="form-control form-control-lg ckeditor" name="message" rows="8" required></textarea>
+                                            <textarea placeholder="Напишите свое сообщение электронной почты здесь..." class="form-control form-control-lg ckeditor" name="message" rows="8" required></textarea>
                                         </div>
                                     </div>
 
                                     <!-- Submit Button -->
                                     <div class="form-group text-center">
                                         <button type="submit" class="btn btn-primary btn-lg px-5 py-3">
-                                            <i class="fas fa-paper-plane me-2"></i>E-postayı Gönder
+                                            <i class="fas fa-paper-plane me-2"></i>Отправить электронную почту
                                         </button>
                                     </div>
                                 </form>

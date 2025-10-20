@@ -142,10 +142,10 @@
                                                 </div>
                                             </div>
                                             <select class="form-control form-control-lg" name="priority" required>
-                                                <option value="Hemen">🚨 Немедленно</option>
-                                                <option value="Yüksek">🔥 Высокий</option>
-                                                <option value="Orta">⚡ Средний</option>
-                                                <option value="Düşük">⏰ Низкий</option>
+                                                <option value="Немедленно">🚨 Немедленно</option>
+                                                <option value="Высокий">🔥 Высокий</option>
+                                                <option value="Средний">⚡ Средний</option>
+                                                <option value="Низкий">⏰ Низкий</option>
                                             </select>
                                         </div>
                                     </div>

@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">MT4 Subscription Settings</h1>
+                    <h1 class="title1 ">Настройки подписки MT4</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -28,25 +28,25 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 @method('PUT')
 
                                 <div class="form-group">
-                                    <h4 class="">Monthly Subscription Fee:</h4>
+                                    <h4 class="">Ежемесячная плата за подписку:</h4>
                                     <input type="text" name="monthlyfee" class="form-control  "
                                         value="{{ $settings->monthlyfee }}">
                                 </div>
 
                                 <div class="form-group">
-                                    <h4 class="">Quaterly Subscription Fee:</h4>
+                                    <h4 class="">Квартальная плата за подписку:</h4>
                                     <input type="text" name="quaterlyfee" class="form-control  "
                                         value="{{ $settings->quarterlyfee }}">
                                 </div>
 
                                 <div class="form-group">
-                                    <h4 class="">Yearly Subscription Fee:</h4>
+                                    <h4 class="">Годовая плата за подписку:</h4>
                                     <input type="text" name="yearlyfee" class="form-control  "
                                         value="{{ $settings->yearlyfee }}">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="submit" class="px-5 btn btn-primary btn-lg" value="Save">
+                                    <input type="submit" class="px-5 btn btn-primary btn-lg" value="Сохранить">
                                     <input type="hidden" name="id" value="1">
                                 </div>
 
@@ -78,7 +78,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings

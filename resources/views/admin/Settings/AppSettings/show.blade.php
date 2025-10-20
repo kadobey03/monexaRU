@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-3 d-inline">
-                    <h1 class="title1 text-{{ $text }} d-inline mr-4">App Settings</h1>
+                    <h1 class="title1 text-{{ $text }} d-inline mr-4">Настройки приложения</h1>
                 </div>
 
                 <x-danger-alert />
@@ -43,19 +43,19 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="card p-md-5 p-2 shadow-lg ">
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
-                                    <a href="#module" class="nav-link " data-toggle="tab">Module</a>
+                                    <a href="#module" class="nav-link " data-toggle="tab">Модуль</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#info" class="nav-link  active" data-toggle="tab">Website Information</a>
+                                    <a href="#info" class="nav-link  active" data-toggle="tab">Информация о веб-сайте</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#pref" class="nav-link" data-toggle="tab">Preference</a>
+                                    <a href="#pref" class="nav-link" data-toggle="tab">Настройки</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#email" class="nav-link" data-toggle="tab">Email/Google Login-Captcha</a>
+                                    <a href="#email" class="nav-link" data-toggle="tab">Email/Google Логин-Captcha</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#display" class="nav-link" data-toggle="tab">Theme/Display</a>
+                                    <a href="#display" class="nav-link" data-toggle="tab">Тема/Отображение</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -108,7 +108,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -182,7 +182,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings

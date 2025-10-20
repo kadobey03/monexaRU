@@ -6,7 +6,7 @@
             </div>
             <div class="ml-3">
                 <p class="text-sm text-indigo-700 dark:text-indigo-400">
-                    Configure your notification preferences to control what emails you receive from our platform.
+                    Настройте ваши предпочтения уведомлений для контроля электронных писем, которые вы получаете с нашей платформы.
                 </p>
             </div>
         </div>
@@ -27,9 +27,9 @@
                         </div>
                     </div>
                     <div class="flex-1 min-w-0">
-                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Withdrawal Security</h3>
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Безопасность вывода</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                            Send confirmation OTP to my email when withdrawing funds
+                            Отправлять подтверждающий OTP на мой email при выводе средств
                         </p>
                     </div>
                     <div class="flex items-center">
@@ -38,14 +38,14 @@
                                 <input type="radio" id="otpsendYes" name="otpsend" value="Yes"
                                     class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-blue-600">
                                 <label for="otpsendYes" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    Yes
+                                    Да
                                 </label>
                             </div>
                             <div class="flex items-center">
                                 <input type="radio" id="otpsendNo" name="otpsend" value="No"
                                     class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-blue-600">
                                 <label for="otpsendNo" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    No
+                                    Нет
                                 </label>
                             </div>
                         </div>
@@ -62,9 +62,9 @@
                         </div>
                     </div>
                     <div class="flex-1 min-w-0">
-                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Profit Notifications</h3>
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Уведомления о прибыли</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                            Send me email notifications when I receive profit
+                            Отправлять мне уведомления по email при получении прибыли
                         </p>
                     </div>
                     <div class="flex items-center">
@@ -73,14 +73,14 @@
                                 <input type="radio" id="roiemailYes" name="roiemail" value="Yes"
                                     class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-green-600">
                                 <label for="roiemailYes" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    Yes
+                                    Да
                                 </label>
                             </div>
                             <div class="flex items-center">
                                 <input type="radio" id="roiemailNo" name="roiemail" value="No"
                                     class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-green-600">
                                 <label for="roiemailNo" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    No
+                                    Нет
                                 </label>
                             </div>
                         </div>
@@ -97,9 +97,9 @@
                         </div>
                     </div>
                     <div class="flex-1 min-w-0">
-                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Plan Expiration</h3>
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Истечение плана</h3>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                            Send me email when my investment plan expires
+                            Отправлять мне email когда истекает мой инвестиционный план
                         </p>
                     </div>
                     <div class="flex items-center">
@@ -108,14 +108,14 @@
                                 <input type="radio" id="invplanemailYes" name="invplanemail" value="Yes"
                                     class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-purple-600">
                                 <label for="invplanemailYes" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    Yes
+                                    Да
                                 </label>
                             </div>
                             <div class="flex items-center">
                                 <input type="radio" id="invplanemailNo" name="invplanemail" value="No"
                                     class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-purple-600">
                                 <label for="invplanemailNo" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
-                                    No
+                                    Нет
                                 </label>
                             </div>
                         </div>
@@ -135,14 +135,14 @@
                 >
                     <span x-show="!saving">
                         <i data-lucide="save" class="mr-2 h-5 w-5"></i>
-                        Save Preferences
+                        Сохранить предпочтения
                     </span>
                     <span x-show="saving" style="display: none;">
                         <svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Processing...
+                        Обработка...
                     </span>
                 </button>
             </div>
@@ -284,7 +284,7 @@
                             </svg>
                         </div>
                         <div class="ml-3">
-                            <p class="text-sm font-medium">Failed to update preferences. Please try again.</p>
+                            <p class="text-sm font-medium">Не удалось обновить предпочтения. Пожалуйста, попробуйте еще раз.</p>
                         </div>
                         <div class="ml-auto pl-3">
                             <div class="-mx-1.5 -my-1.5">

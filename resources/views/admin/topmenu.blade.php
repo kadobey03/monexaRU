@@ -410,8 +410,8 @@ $(document).ready(function() {
                         <div class="text-muted mb-3">
                             <i class="fas fa-bell-slash fa-3x"></i>
                         </div>
-                        <h6 class="font-weight-bold">No new notifications</h6>
-                        <p class="small text-muted">You're all caught up!</p>
+                        <h6 class="font-weight-bold">Нет новых уведомлений</h6>
+                        <p class="small text-muted">Все актуально!</p>
                     </div>
                 `);
 
@@ -474,8 +474,8 @@ $(document).ready(function() {
                                     <div class="text-muted mb-3">
                                         <i class="fas fa-bell-slash fa-3x"></i>
                                     </div>
-                                    <h6 class="font-weight-bold">No new notifications</h6>
-                                    <p class="small text-muted">You're all caught up!</p>
+                                    <h6 class="font-weight-bold">Нет новых уведомлений</h6>
+                                    <p class="small text-muted">Все актуально!</p>
                                 </div>
                             `);
                             $('.dropdown-menu .bg-light').fadeOut();

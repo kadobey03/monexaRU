@@ -5,24 +5,24 @@
         <fieldset>
             <div class="row">
                 <div class="mb-3 col-md-6">
-                    <label class="">Bank Name</label>
+                    <label class="">Название банка</label>
                     <input type="text" name="bank_name" value="{{ Auth::user()->bank_name }}" class="form-control "
-                        placeholder="Enter bank name">
+                        placeholder="Введите название банка">
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label class="">Account Name</label>
+                    <label class="">Имя владельца счета</label>
                     <input type="text" name="account_name" value="{{ Auth::user()->account_name }}"
                         class="form-control " placeholder="Enter Account name">
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label class="">Account Number</label>
+                    <label class="">Номер счета</label>
                     <input type="text" name="account_no" value="{{ Auth::user()->account_number }}"
                         class="form-control " placeholder="Enter Account Number">
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label class="">Swift Code</label>
+                    <label class="">SWIFT код</label>
                     <input type="text" name="swiftcode" value="{{ Auth::user()->swift_code }}" class="form-control "
-                        placeholder="Enter Swift Code">
+                        placeholder="Введите SWIFT код">
                 </div>
             </div>
         </fieldset>
@@ -32,7 +32,7 @@
         <div class="row">
             @if ($methods[0]->status == 'enabled')
                 <div class="mb-3 col-md-6">
-                    <label class="">Bitcoin</label>
+                    <label class="">Биткоин</label>
                     <input type="text" name="btc_address" value="{{ Auth::user()->btc_address }}"
                         class="form-control " placeholder="Enter Bitcoin Address">
                     <small class="">Enter your Bitcoin Address that will be used to withdraw your funds</small>
@@ -65,7 +65,7 @@
             @endif
         </div>
     </fieldset>
-    <button type="submit" class="px-5 btn btn-primary">Save</button>
+    <button type="submit" class="px-5 btn btn-primary">Сохранить</button>
 </form>
 
 
@@ -82,7 +82,7 @@
                     $.notify({
                         // options
                         icon: 'flaticon-alarm-1',
-                        title: 'Success',
+                        title: 'Успех',
                         message: response.success,
                     }, {
                         // settings

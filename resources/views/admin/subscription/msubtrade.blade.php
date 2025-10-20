@@ -6,10 +6,10 @@
         <div class="content">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1">Trading Accounts</h1>
+                    <h1 class="title1">Торговые счета</h1>
                     <p class="">
-                        Manage trading accounts submitted by users. Collect their submitted details and connect to your
-                        master trading account
+                        Управляйте торговыми счетами, поданными пользователями. Собирайте их отправленные данные и подключайтесь к вашему
+                        основному торговому счету
                     </p>
                 </div>
                 <x-danger-alert />
@@ -21,10 +21,10 @@
                                 <div class="col-12">
                                     <ul class="nav nav-pills">
                                         <li class="nav-item">
-                                            <a href="{{ route('msubtrade') }}" class="nav-link active">Submited Accounts</a>
+                                            <a href="{{ route('msubtrade') }}" class="nav-link active">Отправленные счета</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('tacnts') }}" class="nav-link">Connected Accounts</a>
+                                            <a href="{{ route('tacnts') }}" class="nav-link">Подключенные счета</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -39,20 +39,20 @@
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>USER</th>
-                                                    <th>Account ID</th>
-                                                    <th>Account Password</th>
-                                                    <th>Account Type</th>
-                                                    <th>Account Name</th>
-                                                    <th>Currency</th>
-                                                    <th>Leverage</th>
-                                                    <th>Server</th>
-                                                    <th>Duration</th>
-                                                    <th>Submitted at</th>
-                                                    <th>Started at</th>
-                                                    <th>Expiring at</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th>ПОЛЬЗОВАТЕЛЬ</th>
+                                                    <th>ID счета</th>
+                                                    <th>Пароль счета</th>
+                                                    <th>Тип счета</th>
+                                                    <th>Имя счета</th>
+                                                    <th>Валюта</th>
+                                                    <th>Кредитное плечо</th>
+                                                    <th>Сервер</th>
+                                                    <th>Длительность</th>
+                                                    <th>Отправлено в</th>
+                                                    <th>Начато в</th>
+                                                    <th>Истекает в</th>
+                                                    <th>Статус</th>
+                                                    <th>Действие</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -73,14 +73,14 @@
                                                             @if (!empty($sub->start_date))
                                                                 {{ $sub->start_date->toDayDateTimeString() }}
                                                             @else
-                                                                Not Started yet
+                                                                Еще не начато
                                                             @endif
                                                         </td>
                                                         <td>
                                                             @if (!empty($sub->end_date))
                                                                 {{ $sub->end_date->toDayDateTimeString() }}
                                                             @else
-                                                                Not Started yet
+                                                                Еще не начато
                                                             @endif
 
                                                         </td>
@@ -106,13 +106,13 @@
                                                                     <input type="hidden" name="mt4id"
                                                                         value="{{ $sub->id }}">
                                                                     <button type="submit"
-                                                                        class="mb-2 btn btn-primary btn-sm">Process</button>
+                                                                        class="mb-2 btn btn-primary btn-sm">Обработать</button>
                                                                 </form>
                                                             @else
                                                                 {{-- <a class="mb-2 btn btn-success btn-sm">Active</a> --}}
                                                             @endif
                                                             <a href="{{ url('admin/dashboard/delsub') }}/{{ $sub->id }}"
-                                                                class="btn btn-danger btn-sm">Delete</a>
+                                                                class="btn btn-danger btn-sm">Удалить</a>
                                                         </td>
                                                     </tr>
                                                 @endforeach

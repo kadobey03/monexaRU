@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 			<div class="content bg-{{$bg}}">
 				<div class="page-inner">
 					<div class="mt-2 mb-4">
-						<h1 class="title1 text-{{$text}}">Update Copy Trading Plan</h1>
+						<h1 class="title1 text-{{$text}}">Обновить план копи-трейдинга</h1>
 					</div>
 					<x-danger-alert/>
                     <x-success-alert/>
@@ -25,56 +25,56 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                                 <form role="form" method="post" action="{{ route('updatecopytrading') }}" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Expert Trader Tag (MID/PRO)</h5>
-                                            <input  class="form-control text-{{$text}} bg-{{$bg}}" value ="{{ $copytrading->tag }}" placeholder="Enter Expert Trader Tag" type="text" name="tag" required>
+                                            <h5 class="text-{{$text}}">Тег эксперта-трейдера (MID/PRO)</h5>
+                                            <input  class="form-control text-{{$text}} bg-{{$bg}}" value ="{{ $copytrading->tag }}" placeholder="Введите тег эксперта-трейдера" type="text" name="tag" required>
                                         </div>
                                         <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Trader Name</h5> 
-                                            <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Enter Expert Trader Name" type="text" name="name" value ="{{ $copytrading->name }}" required>   
+                                            <h5 class="text-{{$text}}">Имя трейдера</h5>
+                                            <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Введите имя эксперта-трейдера" type="text" name="name" value ="{{ $copytrading->name }}" required>
                                             
                                        </div>	
                                        <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Expert Trader Number of Followers</h5> 			 
-                                             <input placeholder="Enter Expert Trader Number of Followers" class="form-control text-{{$text}} bg-{{$bg}}" type="text" name="followers" value ="{{ $copytrading->followers }}" required>  
-                                             <small class="text-{{$text}}">This is the  number of followers who currently trading with the Expert</small> 
+                                            <h5 class="text-{{$text}}">Количество подписчиков эксперта-трейдера</h5>
+                                             <input placeholder="Введите количество подписчиков эксперта-трейдера" class="form-control text-{{$text}} bg-{{$bg}}" type="text" name="followers" value ="{{ $copytrading->followers }}" required>
+                                             <small class="text-{{$text}}">Это количество подписчиков, которые в настоящее время торгуют с экспертом</small>
                                        </div>
                                        <div class="form-group col-md-5">
-                                             <h5 class="text-{{$text}}">Enter Expert Total profit ({{$settings->currency}})</h5> 			 
-                                             <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Enter Expert Total profit" type="text" name="total_profit"  value ="{{ $copytrading->total_profit }}" required> 
-                                            <small class="text-{{$text}}">This is the Total Profit made by this Expert trader</small> 
+                                             <h5 class="text-{{$text}}">Введите общую прибыль эксперта ({{$settings->currency}})</h5>
+                                             <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Введите общую прибыль эксперта" type="text" name="total_profit"  value ="{{ $copytrading->total_profit }}" required>
+                                            <small class="text-{{$text}}">Это общая прибыль, полученная этим экспертом-трейдером</small>
                                        </div>
                                        <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Copy Trade Type (Copy/Buy)</h5> 
+                                            <h5 class="text-{{$text}}">Тип копи-трейдинга (Копировать/Купить)</h5>
                                             <select class="form-control text-{{$text}} bg-{{$bg}}" name="button_name" value ="{{ $copytrading->button_name }}">
-                                                <option>Copy</option>
-                                                <option>Buy</option>
+                                                <option>Копировать</option>
+                                                <option>Купить</option>
                 
                                             </select>  
                                         
                                        </div>
                                        <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Expert Trader Active Days</h5> 
-                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Enter maximum return" type="text" name="active_days"  value ="{{ $copytrading->active_days }}" required>  
-                                           <small class="text-{{$text}}">This is the expected days trader is available</small> 
+                                            <h5 class="text-{{$text}}">Активные дни эксперта-трейдера</h5>
+                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Введите максимальную доходность" type="text" name="active_days"  value ="{{ $copytrading->active_days }}" required>
+                                           <small class="text-{{$text}}">Это ожидаемые дни, когда трейдер доступен</small>
                                        </div>
                                        <div class="form-group col-md-5">
-                                            <h5 class="text-{{$text}}">Equity (Wining rate) %</h5> 
-                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Enter Expert trade Equity" type="text" name="equity" value ="{{ $copytrading->equity }}" value="0" required>  
-                                           <small class="text-{{$text}}">This is Expert Wining Rate </small>  
+                                            <h5 class="text-{{$text}}">Капитал (Процент побед) %</h5>
+                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Введите капитал торговли эксперта" type="text" name="equity" value ="{{ $copytrading->equity }}" value="0" required>
+                                           <small class="text-{{$text}}">Это процент побед эксперта</small>
                                        </div>
                                        
                                       
 
                                        <div class="form-group col-md-5">
-                                           <h5 class="text-{{$text}}"> Startup Amount ({{$settings->currency}})</h5> 
-                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder=" Startup Amount" type="text" name="price" value ="{{ $copytrading->price }}" required> 
-                                           <small class="text-{{$text}}">This is the price of this Copytrading </small>   
+                                           <h5 class="text-{{$text}}">Стартовая сумма ({{$settings->currency}})</h5>
+                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Стартовая сумма" type="text" name="price" value ="{{ $copytrading->price }}" required>
+                                           <small class="text-{{$text}}">Это цена этого копи-трейдинга</small>
                                        </div>
                                       
                                        <div class="form-group col-md-5">
-                                        <h5 class="text-{{$text}}">Expert Trader rating</h5> 
-                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Expert Trader rating" type="text" name="rating"   value ="{{ $copytrading->rating }}" required> 
-                                           <small class="text-{{$text}}">This Expert Trader rating </small> 
+                                        <h5 class="text-{{$text}}">Рейтинг эксперта-трейдера</h5>
+                                           <input class="form-control text-{{$text}} bg-{{$bg}}" placeholder="Рейтинг эксперта-трейдера" type="text" name="rating"   value ="{{ $copytrading->rating }}" required>
+                                           <small class="text-{{$text}}">Это рейтинг эксперта-трейдера</small>
                                            <span class="fa fa-star checked"></span>
                                             <span class="fa fa-star checked"></span>
                                              <span class="fa fa-star checked"></span>
@@ -86,15 +86,15 @@ if (Auth('admin')->User()->dashboard_style == "light") {
 
 
                                        <div class="form-group col-md-5">
-                                        <h5 class="text-{{$text}}">Expert Trader Photo</h5> 
-                                           <input class="form-control text-{{$text}} bg-{{$bg}}"  value ="{{ $copytrading->photo }}" placeholder="Expert Trader photo" type="file" name="photo"  > 
-                                           <small class="text-{{$text}}">This Expert Trader Photo </small> 
+                                        <h5 class="text-{{$text}}">Фото эксперта-трейдера</h5>
+                                           <input class="form-control text-{{$text}} bg-{{$bg}}"  value ="{{ $copytrading->photo }}" placeholder="Фото эксперта-трейдера" type="file" name="photo"  >
+                                           <small class="text-{{$text}}">Это фото эксперта-трейдера</small>
                                             
                                        </div>
                                        <div class="form-group col-md-12">
                                         <input type="hidden" name="id" value="{{ $copytrading->id}}">
                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                           <input type="submit" class="btn btn-secondary" value="Add New Copy Trading Plan">   
+                                           <input type="submit" class="btn btn-secondary" value="Добавить новый план копи-трейдинга">
                                        </div>
                                     </div>
                                </form>

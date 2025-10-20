@@ -13,7 +13,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2">
-                    <h1 class="title1 ">New Members Assigned to Me </h1>
+                    <h1 class="title1 ">Новые участники, назначенные мне</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -25,16 +25,16 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Balance</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
+                                        <th>Баланс</th>
+                                        <th>Имя</th>
+                                        <th>Фамилия</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Inv. plan</th>
-                                        <th>Status</th>
-                                        <th>Date registered</th>
-                                        <th>Assigned To</th>
-                                        <th>Action</th>
+                                        <th>Телефон</th>
+                                        <th>Инв. план</th>
+                                        <th>Статус</th>
+                                        <th>Дата регистрации</th>
+                                        <th>Назначен</th>
+                                        <th>Действие</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,14 +56,14 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                             <td>{{ $list->tuser->firstName }} {{ $list->tuser->lastName }}</td>
                                             <td>
                                                 @if ($list->cstatus == 'Customer')
-                                                    <a class="btn btn-success btn-sm m-1">Converted</a>
+                                                    <a class="btn btn-success btn-sm m-1">Конвертирован</a>
                                                 @else
                                                     <a href="{{ url('admin/dashboard/convert') }}/{{ $list->id }}"
-                                                        class="btn btn-primary btn-sm m-1">Convert</a>
+                                                        class="btn btn-primary btn-sm m-1">Конвертировать</a>
                                                 @endif
 
                                                 <a class="btn btn-info btn-sm m-1" data-toggle="modal"
-                                                    data-target="#editModal{{ $list->id }}">Edit Status</a>
+                                                    data-target="#editModal{{ $list->id }}">Редактировать статус</a>
                                             </td>
                                         </tr>
 
@@ -72,21 +72,21 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                                 <!-- Modal content-->
                                                 <div class="modal-content">
                                                     <div class="modal-header ">
-                                                        <h4 class="modal-title">Edit this User status</h4>
+                                                        <h4 class="modal-title">Редактировать статус этого пользователя</h4>
                                                         <button type="button" class="close "
                                                             data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body ">
                                                         <form method="post" action="{{ route('updateuser') }}">
                                                             <div class="form-group">
-                                                                <h5 class=" ">User Status</h5>
-                                                                <textarea name="userupdate" id="" rows="5" class="form-control  " placeholder="Enter here" required>{{ $list->userupdate }}</textarea>
+                                                                <h5 class=" ">Статус пользователя</h5>
+                                                                <textarea name="userupdate" id="" rows="5" class="form-control  " placeholder="Введите здесь" required>{{ $list->userupdate }}</textarea>
                                                             </div>
                                                             <input type="hidden" name="id"
                                                                 value="{{ $list->id }}">
                                                             <input type="hidden" name="_token"
                                                                 value="{{ csrf_token() }}">
-                                                            <input type="submit" class="btn btn-primary" value="Save">
+                                                            <input type="submit" class="btn btn-primary" value="Сохранить">
 
                                                         </form>
                                                     </div>

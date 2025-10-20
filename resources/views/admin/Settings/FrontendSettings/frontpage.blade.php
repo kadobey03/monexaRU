@@ -6,7 +6,7 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 ">Edit Front page of your website</h1>
+                    <h1 class="title1 ">Редактировать главную страницу вашего сайта</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -36,16 +36,16 @@
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="mb-2 nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#1"
                                     role="tab" aria-controls="nav-home" aria-selected="true">
-                                    FAQ(S)</a>
+                                    ЧЗВО</a>
 
                                 <a class="mb-2 nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#2"
-                                    role="tab" aria-controls="nav-profile" aria-selected="false">TESTIMONIALS</a>
+                                    role="tab" aria-controls="nav-profile" aria-selected="false">ОТЗЫВЫ</a>
 
                                 <a class="mb-2 nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#3"
-                                    role="tab" aria-controls="nav-contact" aria-selected="false">WEBSITE CONTENTS</a>
+                                    role="tab" aria-controls="nav-contact" aria-selected="false">КОНТЕНТ САЙТА</a>
 
                                 <a class="mb-2 nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#4"
-                                    role="tab" aria-controls="nav-about" aria-selected="false">IMAGES</a>
+                                    role="tab" aria-controls="nav-about" aria-selected="false">ИЗОБРАЖЕНИЯ</a>
                             </div>
                         </nav>
 
@@ -69,7 +69,7 @@
                                                                 class="fa fa-times"></i></a> &nbsp;
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#editfaq{{ $faq->id }}"
-                                                            class="btn btn-primary btn-sm">Edit</a>
+                                                            class="btn btn-primary btn-sm">Редактировать</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -78,7 +78,7 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header ">
-                                                            <h4 class="modal-title" style="text-align:center;">Update Faq
+                                                            <h4 class="modal-title" style="text-align:center;">Обновить ЧЗВО
                                                             </h4>
                                                             <button type="button" class="close "
                                                                 data-dismiss="modal">&times;</button>
@@ -87,21 +87,21 @@
                                                             <form action="{{ route('updatefaq') }}" method="post">
                                                                 {{ csrf_field() }}
                                                                 <div class="form-group">
-                                                                    <h5 class="">Question</h5>
+                                                                    <h5 class="">Вопрос</h5>
                                                                     <input type="text" name="question"
                                                                         value="{{ $faq->question }}"
-                                                                        placeholder="Enter the Question here"
+                                                                        placeholder="Введите вопрос здесь"
                                                                         class="form-control  " required>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class="">Answer</h5>
-                                                                    <textarea name="answer" placeholder="Enter the Answer to the question above" class="form-control  " rows="4"
+                                                                    <h5 class="">Ответ</h5>
+                                                                    <textarea name="answer" placeholder="Введите ответ на вопрос выше" class="form-control  " rows="4"
                                                                         required>{{ $faq->answer }}</textarea>
                                                                 </div>
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $faq->id }}">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary">Update</button>
+                                                                    class="btn btn-primary">Обновить</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -111,7 +111,7 @@
                                             <div class="col-12">
                                                 <div class="card border">
                                                     <div class="card-body text-center">
-                                                        <h5>No Data Available</h5>
+                                                        <h5>Данные отсутствуют</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -147,7 +147,7 @@
                                                                 class="fa fa-times"></i></a> &nbsp; &nbsp;
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#edittes{{ $faq->id }}"
-                                                            class="btn btn-primary btn-sm">Edit</a>
+                                                            class="btn btn-primary btn-sm">Редактировать</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,8 +155,8 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header ">
-                                                            <h4 class="modal-title" style="text-align:center;">Update
-                                                                Testimony</h4>
+                                                            <h4 class="modal-title" style="text-align:center;">Обновить
+                                                                Отзыв</h4>
                                                             <button type="button" class="close "
                                                                 data-dismiss="modal">&times;</button>
                                                         </div>
@@ -164,25 +164,25 @@
                                                             <form action="{{ route('updatetestimony') }}" method="post">
                                                                 {{ csrf_field() }}
                                                                 <div class="form-group">
-                                                                    <h5 class="">Testifier Name</h5>
+                                                                    <h5 class="">Имя клиента</h5>
                                                                     <input type="text" name="testifier"
-                                                                        placeholder="Full name"
+                                                                        placeholder="Полное имя"
                                                                         value="{{ $faq->name }}"
                                                                         class="form-control  ">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class=" ">Position</h5>
+                                                                    <h5 class=" ">Должность</h5>
                                                                     <input type="text" name="position"
                                                                         value="{{ $faq->position }}"
-                                                                        placeholder="System user or anonymus"
+                                                                        placeholder="Пользователь системы или анонимный"
                                                                         class="form-control  ">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class=" ">What testifier said</h5>
+                                                                    <h5 class=" ">Что сказал клиент</h5>
                                                                     <textarea name="said" class="form-control  " rows="4">{{ $faq->what_is_said }}</textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class=" ">Picture</h5>
+                                                                    <h5 class=" ">Изображение</h5>
                                                                     <select name="picture" class="form-control  ">
                                                                         <option value="{{ $faq->picture }}">
                                                                             {{ $faq->picture }}</option>
@@ -194,7 +194,7 @@
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $faq->id }}">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary">Update</button>
+                                                                    class="btn btn-primary">Обновить</button>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -204,7 +204,7 @@
                                             <div class="col-12">
                                                 <div class="card border">
                                                     <div class="card-body text-center">
-                                                        <h5>No Data Available</h5>
+                                                        <h5>Данные отсутствуют</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,7 +227,7 @@
 
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#editcont{{ $faq->id }}"
-                                                            class="btn btn-primary btn-sm">Edit</a>
+                                                            class="btn btn-primary btn-sm">Редактировать</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -235,8 +235,8 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header ">
-                                                            <h4 class="modal-title" style="text-align:center;">Update
-                                                                General Content</h4>
+                                                            <h4 class="modal-title" style="text-align:center;">Обновить
+                                                                Общий контент</h4>
                                                             <button type="button" class="close "
                                                                 data-dismiss="modal">&times;</button>
                                                         </div>
@@ -244,20 +244,20 @@
                                                             <form action="{{ route('updatecontents') }}" method="post">
                                                                 {{ csrf_field() }}
                                                                 <div class="form-group">
-                                                                    <h5 class=" ">Title of Content</h5>
+                                                                    <h5 class=" ">Заголовок контента</h5>
                                                                     <input type="text" name="title"
-                                                                        placeholder="Name of Content"
+                                                                        placeholder="Название контента"
                                                                         value="{{ $faq->title }} "
                                                                         class="form-control  " required>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class="">Content Description</h5>
-                                                                    <textarea name="content" placeholder="Describe the content" class="form-control  " rows="2" required>{{ $faq->description }}</textarea>
+                                                                    <h5 class="">Описание контента</h5>
+                                                                    <textarea name="content" placeholder="Опишите контент" class="form-control  " rows="2" required>{{ $faq->description }}</textarea>
                                                                 </div>
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $faq->id }}">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary">Update</button>
+                                                                    class="btn btn-primary">Обновить</button>
                                                             </form>
 
                                                         </div>
@@ -268,7 +268,7 @@
                                             <div class="col-12">
                                                 <div class="card border">
                                                     <div class="card-body text-center">
-                                                        <h5>No Data Available</h5>
+                                                        <h5>Данные отсутствуют</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -296,7 +296,7 @@
                                                     <div class="card-body">
                                                         <a href="#" data-toggle="modal"
                                                             data-target="#editimg{{ $faq->id }}"
-                                                            class="btn btn-primary btn-sm">Edit</a>
+                                                            class="btn btn-primary btn-sm">Редактировать</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -304,8 +304,8 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header ">
-                                                            <h4 class="modal-title" style="text-align:center;">Update
-                                                                Image</h4>
+                                                            <h4 class="modal-title" style="text-align:center;">Обновить
+                                                                Изображение</h4>
                                                             <button type="button" class="close "
                                                                 data-dismiss="modal">&times;</button>
                                                         </div>
@@ -314,25 +314,25 @@
                                                                 enctype="multipart/form-data">
                                                                 {{ csrf_field() }}
                                                                 <div class="form-group">
-                                                                    <h5 class="">Title of Image</h5>
+                                                                    <h5 class="">Заголовок изображения</h5>
                                                                     <input type="text" name="img_title"
                                                                         value="{{ $faq->title }}"
-                                                                        placeholder="Name of Image"
+                                                                        placeholder="Название изображения"
                                                                         class="form-control  ">
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class="">Images Description</h5>
-                                                                    <textarea name="img_desc" placeholder="Describe the image" class="form-control  " rows="2">{{ $faq->description }}</textarea>
+                                                                    <h5 class="">Описание изображения</h5>
+                                                                    <textarea name="img_desc" placeholder="Опишите изображение" class="form-control  " rows="2">{{ $faq->description }}</textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <h5 class="">Image</h5>
+                                                                    <h5 class="">Изображение</h5>
                                                                     <input name="image" class="form-control  "
                                                                         type="file">
                                                                 </div>
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $faq->id }}">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary">Update</button>
+                                                                    class="btn btn-primary">Обновить</button>
                                                             </form>
 
                                                         </div>

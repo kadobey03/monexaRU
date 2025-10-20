@@ -9,16 +9,16 @@
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <h1 class="page-title text-primary mb-2">
-                            <i class="fas fa-chart-line mr-2"></i>Müşteri Yatırımlarını Yönetin
+                            <i class="fas fa-chart-line mr-2"></i>Управление клиентскими депозитами
                         </h1>
-                        <p class="text-muted mb-0">Sistemdeki tüm müşteri yatırımlarını görüntüleyin, onaylayın ve yönetin</p>
+                        <p class="text-muted mb-0">Просмотр, одобрение и управление всеми клиентскими депозитами в системе</p>
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="badge badge-info px-3 py-2 mr-2">
-                             <i class="fas fa-database mr-1"></i>{{ $deposits->count() }} Toplam Kayıt
+                             <i class="fas fa-database mr-1"></i>{{ $deposits->count() }} Всего записей
                          </span>
                         <button class="btn btn-outline-primary" onclick="window.location.reload()">
-                            <i class="fas fa-sync-alt mr-2"></i>Yenile
+                            <i class="fas fa-sync-alt mr-2"></i>Обновить
                         </button>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                                 <h3 class="stats-value">
                                     {{ $settings->currency }}{{ number_format($deposits->sum('amount')) }}
                                 </h3>
-                                <p class="stats-label">Toplam Tutar</p>
+                                <p class="stats-label">Общая сумма</p>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                 <h3 class="stats-value">
                                     {{ $deposits->where('status', 'Processed')->count() }}
                                 </h3>
-                                <p class="stats-label">İşlenmiş</p>
+                                <p class="stats-label">Обработано</p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                 <h3 class="stats-value">
                                     {{ $deposits->where('status', '!=', 'Processed')->count() }}
                                 </h3>
-                                <p class="stats-label">Beklemede</p>
+                                <p class="stats-label">В ожидании</p>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                                 <h3 class="stats-value">
                                     {{ $deposits->pluck('duser_id')->unique()->count() }}
                                 </h3>
-                                <p class="stats-label">Aktif Kullanıcı</p>
+                                <p class="stats-label">Активные пользователи</p>
                             </div>
                         </div>
                     </div>
@@ -88,11 +88,11 @@
                     <div class="card-header bg-white border-0 pt-4 pb-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title mb-0 text-dark font-weight-bold">
-                                <i class="fas fa-list mr-2 text-primary"></i>Yatırım Listesi
+                                <i class="fas fa-list mr-2 text-primary"></i>Список депозитов
                             </h5>
                             <div class="card-header-actions d-flex align-items-center gap-3">
                                 <div class="input-group" style="width: 300px;">
-                                    <input type="text" class="form-control" id="searchInput" placeholder="Müşteri, tutar veya durum ara..." aria-label="Yatırım arama" autocomplete="off">
+                                    <input type="text" class="form-control" id="searchInput" placeholder="Поиск по клиенту, сумме или статусу..." aria-label="Поиск депозитов" autocomplete="off">
                                     <div class="input-group-append">
                                         <span class="input-group-text bg-primary text-white" aria-hidden="true">
                                             <i class="fas fa-search"></i>
@@ -101,15 +101,15 @@
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fas fa-filter mr-2"></i>Filtrele
+                                        <i class="fas fa-filter mr-2"></i>Фильтр
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="filterDropdown">
-                                        <a class="dropdown-item" href="#" onclick="filterDeposits('all')">Tümü</a>
-                                        <a class="dropdown-item" href="#" onclick="filterDeposits('Processed')">İşlenmiş</a>
-                                        <a class="dropdown-item" href="#" onclick="filterDeposits('pending')">Beklemede</a>
+                                        <a class="dropdown-item" href="#" onclick="filterDeposits('all')">Все</a>
+                                        <a class="dropdown-item" href="#" onclick="filterDeposits('Processed')">Обработано</a>
+                                        <a class="dropdown-item" href="#" onclick="filterDeposits('pending')">В ожидании</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#" onclick="filterDeposits('investment')">Yatırım Ödemesi</a>
-                                        <a class="dropdown-item" href="#" onclick="filterDeposits('signal')">Sinyal Ödemesi</a>
+                                        <a class="dropdown-item" href="#" onclick="filterDeposits('investment')">Инвестиционный платеж</a>
+                                        <a class="dropdown-item" href="#" onclick="filterDeposits('signal')">Сигнальный платеж</a>
                                     </div>
                                 </div>
                             </div>
@@ -119,32 +119,32 @@
                     <div class="card-body p-0">
                         <div class="table-container">
                             <div class="table-responsive">
-                                <table id="depositsTable" class="table modern-table mb-0" role="table" aria-label="Müşteri yatırımları tablosu">
+                                <table id="depositsTable" class="table modern-table mb-0" role="table" aria-label="Таблица клиентских депозитов">
                                     <thead class="thead-light">
                                         <tr>
                                             <th class="border-0">
-                                                <i class="fas fa-user mr-1"></i>Müşteri
+                                                <i class="fas fa-user mr-1"></i>Клиент
                                             </th>
                                             <th class="border-0">
-                                                <i class="fas fa-envelope mr-1"></i>E-posta
+                                                <i class="fas fa-envelope mr-1"></i>Email
                                             </th>
                                             <th class="border-0 text-right">
-                                                <i class="fas fa-money-bill mr-1"></i>Tutar
+                                                <i class="fas fa-money-bill mr-1"></i>Сумма
                                             </th>
                                             <th class="border-0">
-                                                <i class="fas fa-credit-card mr-1"></i>Ödeme Yöntemi
+                                                <i class="fas fa-credit-card mr-1"></i>Способ оплаты
                                             </th>
                                             <th class="border-0">
-                                                <i class="fas fa-tag mr-1"></i>Yatırım Türü
+                                                <i class="fas fa-tag mr-1"></i>Тип инвестиций
                                             </th>
                                             <th class="border-0">
-                                                <i class="fas fa-info-circle mr-1"></i>Durum
+                                                <i class="fas fa-info-circle mr-1"></i>Статус
                                             </th>
                                             <th class="border-0">
-                                                <i class="fas fa-calendar mr-1"></i>Tarih
+                                                <i class="fas fa-calendar mr-1"></i>Дата
                                             </th>
                                             <th class="border-0 text-center">
-                                                <i class="fas fa-cogs mr-1"></i>İşlemler
+                                                <i class="fas fa-cogs mr-1"></i>Действия
                                             </th>
                                         </tr>
                                     </thead>
@@ -158,14 +158,14 @@
                                                         </div>
                                                         <div>
                                                             <span class="user-name">
-                                                                {{ isset($deposit->duser->name) && $deposit->duser->name != null ? $deposit->duser->name : "Kullanıcı silinmiş" }}
+                                                                {{ isset($deposit->duser->name) && $deposit->duser->name != null ? $deposit->duser->name : "Пользователь удален" }}
                                                             </span>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="email-text">
-                                                        {{ isset($deposit->duser->email) && $deposit->duser->email != null ? $deposit->duser->email : "Kullanıcı silinmiş" }}
+                                                        {{ isset($deposit->duser->email) && $deposit->duser->email != null ? $deposit->duser->email : "Пользователь удален" }}
                                                     </span>
                                                 </td>
                                                 <td class="text-right">
@@ -181,11 +181,11 @@
                                                 <td>
                                                     @if ($deposit->signals == Null)
                                                         <span class="badge badge-investment">
-                                                            <i class="fas fa-piggy-bank mr-1"></i>Yatırım Ödemesi
+                                                            <i class="fas fa-piggy-bank mr-1"></i>Инвестиционный платеж
                                                         </span>
                                                     @else
                                                         <span class="badge badge-signal">
-                                                            <i class="fas fa-wave-square mr-1"></i>Sinyal Ödemesi
+                                                            <i class="fas fa-wave-square mr-1"></i>Сигнальный платеж
                                                         </span>
                                                     @endif
                                                 </td>
@@ -212,18 +212,18 @@
                                                     <div class="btn-group-vertical btn-group-sm" role="group">
                                                         <a href="{{ route('viewdepositimage', $deposit->id) }}"
                                                            class="btn btn-info btn-sm mb-1"
-                                                           title="Ödeme ekran görüntüsünü görüntüle">
-                                                            <i class="fas fa-image mr-1"></i>Görüntüle
+                                                           title="Просмотреть скриншот платежа">
+                                                            <i class="fas fa-image mr-1"></i>Просмотр
                                                         </a>
                                                         <a href="{{ url('admin/dashboard/deldeposit') }}/{{ $deposit->id }}"
                                                            class="btn btn-danger btn-sm mb-1"
-                                                           onclick="return confirm('Bu yatırımı silmek istediğinizden emin misiniz?')">
-                                                            <i class="fas fa-trash mr-1"></i>Sil
+                                                           onclick="return confirm('Вы уверены, что хотите удалить этот депозит?')">
+                                                            <i class="fas fa-trash mr-1"></i>Удалить
                                                         </a>
                                                         @if ($deposit->status != 'Processed')
                                                             <a class="btn btn-success btn-sm"
                                                                href="{{ url('admin/dashboard/pdeposit') }}/{{ $deposit->id }}">
-                                                                <i class="fas fa-play mr-1"></i>Onayla
+                                                                <i class="fas fa-play mr-1"></i>Одобрить
                                                             </a>
                                                         @endif
                                                     </div>
@@ -234,10 +234,10 @@
                                                 <td colspan="8" class="text-center py-5">
                                                     <div class="empty-state text-center">
                                                         <i class="fas fa-chart-line fa-3x text-muted mb-3"></i>
-                                                        <h5 class="text-muted">Henüz yatırım kaydı bulunmamaktadır</h5>
-                                                        <p class="text-muted">Müşteriler yatırım yaptığında kayıtlar burada görünecektir.</p>
+                                                        <h5 class="text-muted">Пока нет записей о депозитах</h5>
+                                                        <p class="text-muted">Записи будут отображаться здесь, когда клиенты сделают депозиты.</p>
                                                         <button class="btn btn-primary mt-3" onclick="window.location.reload()">
-                                                            <i class="fas fa-sync-alt mr-2"></i>Sayfayı Yenile
+                                                            <i class="fas fa-sync-alt mr-2"></i>Обновить страницу
                                                         </button>
                                                     </div>
                                                 </td>
@@ -255,11 +255,11 @@
                     <div class="d-flex justify-content-between align-items-center mt-3">
                         <div class="text-muted">
                             <i class="fas fa-info-circle mr-1"></i>
-                            {{ $deposits->firstItem() ?? 0 }} - {{ $deposits->lastItem() ?? 0 }} arası kayıt gösteriliyor
-                            (Toplam {{ $deposits->total() ?? 0 }} kayıt)
+                            {{ $deposits->firstItem() ?? 0 }} - {{ $deposits->lastItem() ?? 0 }} записей показано
+                            (Всего {{ $deposits->total() ?? 0 }} записей)
                         </div>
                         <div class="d-flex align-items-center">
-                            <label class="mr-2 mb-0 text-muted">Sayfa başına:</label>
+                            <label class="mr-2 mb-0 text-muted">На странице:</label>
                             <select class="form-control form-control-sm" style="width: 80px;" onchange="changePerPage(this.value)">
                                 <option value="10" {{ request('per_page', 10) == 10 ? 'selected' : '' }}>10</option>
                                 <option value="25" {{ request('per_page', 10) == 25 ? 'selected' : '' }}>25</option>

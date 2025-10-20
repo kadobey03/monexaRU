@@ -6,23 +6,23 @@
     <div class="flex items-center justify-between mb-8">
         <div>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $title }}</h1>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">Manage expert traders and copy trading system</p>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Управляйте экспертами-трейдерами и системой копи-трейдинга</p>
         </div>
         <div class="flex gap-3">
             <a href="{{ route('admin.copy.statistics') }}"
                class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg font-medium hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
                 <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-                Statistics
+                Статистика
             </a>
             <a href="{{ route('admin.copy.active-trades') }}"
                class="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg font-medium hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors">
                 <i data-lucide="activity" class="w-4 h-4"></i>
-                Active Trades
+                Активные сделки
             </a>
             <a href="{{ route('admin.copy.create') }}"
                class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
                 <i data-lucide="plus" class="w-4 h-4"></i>
-                Add Expert
+                Добавить эксперта
             </a>
         </div>
     </div>
@@ -49,8 +49,8 @@
     <!-- Experts Table -->
     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
         <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Expert Traders</h2>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Manage all expert traders in the system</p>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Эксперты-трейдеры</h2>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Управляйте всеми экспертами-трейдерами в системе</p>
         </div>
 
         @if($experts->count() > 0)
@@ -58,12 +58,12 @@
                 <table class="w-full">
                     <thead class="bg-gray-50 dark:bg-gray-700/50">
                         <tr>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Expert</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Performance</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Followers</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Min Investment</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Status</th>
-                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Actions</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Эксперт</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Производительность</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Подписчики</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Мин. инвестиция</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Статус</th>
+                            <th class="text-left py-3 px-6 font-semibold text-gray-900 dark:text-white text-sm">Действия</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -104,16 +104,16 @@
                                 <td class="py-4 px-6">
                                     <div class="space-y-1">
                                         <div class="flex items-center gap-2">
-                                            <span class="text-sm font-medium text-gray-900 dark:text-white">{{ $expert->win_rate }}% Win Rate</span>
+                                            <span class="text-sm font-medium text-gray-900 dark:text-white">{{ $expert->win_rate }}% Процент побед</span>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <span class="text-sm text-green-600 dark:text-green-400">+{{ number_format((float)$expert->total_profit, 1) }}% Profit</span>
+                                            <span class="text-sm text-green-600 dark:text-green-400">+{{ number_format((float)$expert->total_profit, 1) }}% Прибыль</span>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <span class="text-xs text-gray-600 dark:text-gray-400">{{ number_format($expert->total_trades) }} trades</span>
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">{{ number_format($expert->total_trades) }} сделок</span>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <span class="text-xs text-gray-600 dark:text-gray-400">${{ number_format((float)$expert->equity) }} equity</span>
+                                            <span class="text-xs text-gray-600 dark:text-gray-400">${{ number_format((float)$expert->equity) }} капитал</span>
                                         </div>
                                     </div>
                                 </td>
@@ -122,9 +122,9 @@
                                 <td class="py-4 px-6">
                                     <div class="text-center">
                                         <div class="text-lg font-bold text-gray-900 dark:text-white">{{ number_format($expert->followers) }}</div>
-                                        <div class="text-xs text-gray-600 dark:text-gray-400">Total</div>
+                                        <div class="text-xs text-gray-600 dark:text-gray-400">Всего</div>
                                         @if($expert->active_copiers_count > 0)
-                                            <div class="text-xs text-green-600 dark:text-green-400 mt-1">{{ $expert->active_copiers_count }} active</div>
+                                            <div class="text-xs text-green-600 dark:text-green-400 mt-1">{{ $expert->active_copiers_count }} активных</div>
                                         @endif
                                     </div>
                                 </td>
@@ -138,11 +138,11 @@
                                 <td class="py-4 px-6">
                                     @if($expert->status === 'active')
                                         <span class="px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg text-xs font-medium">
-                                            Active
+                                            Активный
                                         </span>
                                     @else
                                         <span class="px-2 py-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg text-xs font-medium">
-                                            Inactive
+                                            Неактивный
                                         </span>
                                     @endif
                                 </td>
@@ -152,19 +152,19 @@
                                     <div class="flex items-center gap-2">
                                         <a href="{{ route('admin.copy.edit', $expert->id) }}"
                                            class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
-                                           title="Edit">
+                                           title="Редактировать">
                                             <i data-lucide="edit" class="w-4 h-4"></i>
                                         </a>
                                         
                                         @if($expert->active_copiers_count == 0)
                                             <button onclick="deleteExpert({{ $expert->id }})"
                                                     class="p-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors"
-                                                    title="Delete">
+                                                    title="Удалить">
                                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
                                             </button>
                                         @else
                                             <span class="p-2 bg-gray-100 dark:bg-gray-700 text-gray-400 rounded-lg cursor-not-allowed"
-                                                  title="Cannot delete - has active copiers">
+                                                  title="Нельзя удалить - есть активные копировщики">
                                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
                                             </span>
                                         @endif
@@ -181,14 +181,14 @@
                 <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="users" class="w-8 h-8 text-gray-400"></i>
                 </div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Expert Traders</h3>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Нет экспертов-трейдеров</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    Get started by adding your first expert trader to the system.
+                    Начните с добавления первого эксперта-трейдера в систему.
                 </p>
                 <a href="{{ route('admin.copy.create') }}"
                    class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
                     <i data-lucide="plus" class="w-4 h-4"></i>
-                    Add First Expert
+                    Добавить первого эксперта
                 </a>
             </div>
         @endif
@@ -203,12 +203,12 @@
     <script>
         function deleteExpert(expertId) {
             Swal.fire({
-                title: 'Delete Expert Trader?',
-                text: 'This action cannot be undone. The expert trader will be permanently removed.',
+                title: 'Удалить эксперта-трейдера?',
+                text: 'Это действие нельзя отменить. Эксперт-трейдер будет удален навсегда.',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Yes, Delete',
-                cancelButtonText: 'Cancel',
+                confirmButtonText: 'Да, удалить',
+                cancelButtonText: 'Отмена',
                 customClass: {
                     popup: 'rounded-2xl',
                     confirmButton: 'bg-red-600 hover:bg-red-700 text-white rounded-xl px-6 py-2',

@@ -15,7 +15,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
         <div class="content ">
             <div class="page-inner">
                 <div class="mt-2 mb-4">
-                    <h1 class="title1 text-{{ $text }}">Referral/Other Bonus Settings</h1>
+                    <h1 class="title1 text-{{ $text }}">Настройки рефералов/Других бонусов</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -25,10 +25,10 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="card p-md-5 p-2 shadow-lg ">
                             <ul class="nav nav-pills">
                                 <li class="nav-item">
-                                    <a href="#dep" class="nav-link active" data-toggle="tab">Referral Bonus</a>
+                                    <a href="#dep" class="nav-link active" data-toggle="tab">Реферальные бонусы</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#with" class="nav-link" data-toggle="tab">Other Bonus(s)</a>
+                                    <a href="#with" class="nav-link" data-toggle="tab">Другие бонусы</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
@@ -58,7 +58,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings
@@ -101,7 +101,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             $.notify({
                                 // options
                                 icon: 'flaticon-alarm-1',
-                                title: 'Success',
+                                title: 'Успех',
                                 message: response.success,
                             }, {
                                 // settings

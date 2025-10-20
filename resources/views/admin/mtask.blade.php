@@ -6,7 +6,7 @@
         <div class="content ">
             <div class="page-inner">
                 <div class="my-2 mb-4">
-                    <h1 class="title1 ">Manage All Task</h1>
+                    <h1 class="title1 ">Управление всеми задачами</h1>
                 </div>
                 <x-danger-alert />
                 <x-success-alert />
@@ -18,12 +18,12 @@
                                     <table id="ShipTable" class="table table-hover ">
                                         <thead>
                                             <tr>
-                                                <th>Task Title</th>
-                                                <th>Assigned To</th>
-                                                <th>From Date</th>
-                                                <th>To Date</th>
-                                                <th>Status</th>
-                                                <th>Date Created</th>
+                                                <th>Название задачи</th>
+                                                <th>Назначено</th>
+                                                <th>Дата начала</th>
+                                                <th>Дата окончания</th>
+                                                <th>Статус</th>
+                                                <th>Дата создания</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -46,11 +46,11 @@
                                                         @if ($task->status == 'Pending')
                                                             <a class="btn btn-success btn-sm m-1 text-white"
                                                                 data-toggle="modal"
-                                                                data-target="#edittaskModal{{ $task->id }}">Edit</a>
+                                                                data-target="#edittaskModal{{ $task->id }}">Редактировать</a>
                                                         @endif
 
                                                         <a href="{{ url('admin/dashboard/deltask') }}/{{ $task->id }}"
-                                                            class="btn btn-danger btn-sm m-1">Delete</a>
+                                                            class="btn btn-danger btn-sm m-1">Удалить</a>
                                                     </td>
                                                 </tr>
 
@@ -61,7 +61,7 @@
                                                         <!-- Modal content-->
                                                         <div class="modal-content">
                                                             <div class="modal-header ">
-                                                                <h4 class="modal-title">Edit this Task</h4>
+                                                                <h4 class="modal-title">Редактировать эту задачу</h4>
                                                                 <button type="button" class="close "
                                                                     data-dismiss="modal">&times;</button>
                                                             </div>
@@ -70,7 +70,7 @@
                                                                     enctype="multipart/form-data">
                                                                     <div class="form-group">
                                                                         <div class=" ">
-                                                                            <h5 class=" ">Task Title</h5>
+                                                                            <h5 class=" ">Название задачи</h5>
                                                                             <input type="text" name="tasktitle"
                                                                                 value="{{ $task->title }}"
                                                                                 class="form-control  " required>
@@ -79,13 +79,13 @@
 
                                                                     <div class="form-group">
                                                                         <div class=" ">
-                                                                            <h5 class=" ">Note </h5>
+                                                                            <h5 class=" ">Заметка</h5>
                                                                             <textarea name="note" id="" rows="5" class="form-control  " required>{{ $task->note }}</textarea>
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="form-group">
-                                                                        <h5 class=" ">Task Delegations</h5>
+                                                                        <h5 class=" ">Делегирование задач</h5>
                                                                         <select class="form-control  " name="delegation"
                                                                             required>
                                                                             <option value="{{ $task->designation }}">
@@ -103,13 +103,13 @@
                                                                     <div class="form-group">
                                                                         <div class="form-row">
                                                                             <div class="col-md-6">
-                                                                                <h5 class=" ">From</h5>
+                                                                                <h5 class=" ">С</h5>
                                                                                 <input type="date" name="start_date"
                                                                                     value="{{ $task->start_date }}"
                                                                                     class="form-control  " required>
                                                                             </div>
                                                                             <div class="col-md-6">
-                                                                                <h5 class=" ">To</h5>
+                                                                                <h5 class=" ">До</h5>
                                                                                 <input type="date"
                                                                                     value="{{ $task->end_date }}"
                                                                                     name="end_date" class="form-control  "
@@ -119,15 +119,15 @@
                                                                     </div>
 
                                                                     <div class="form-group">
-                                                                        <h5 class=" ">Priority</h5>
+                                                                        <h5 class=" ">Приоритет</h5>
                                                                         <select class="form-control  " name="priority"
                                                                             required>
                                                                             <option value="{{ $task->priority }}">
                                                                                 {{ $task->priority }}</option>
-                                                                            <option>Immediately</option>
-                                                                            <option>High</option>
-                                                                            <option>Medium</option>
-                                                                            <option>Low</option>
+                                                                            <option>Немедленно</option>
+                                                                            <option>Высокий</option>
+                                                                            <option>Средний</option>
+                                                                            <option>Низкий</option>
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
@@ -136,7 +136,7 @@
                                                                         <input type="hidden" name="_token"
                                                                             value="{{ csrf_token() }}">
                                                                         <input type="submit" class="btn btn-primary"
-                                                                            value="Apply Change">
+                                                                            value="Применить изменения">
                                                                     </div>
 
 

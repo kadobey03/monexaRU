@@ -27,7 +27,7 @@ if (Auth('admin')->User()->dashboard_style == "light") {
                     <i class="flaticon-right-arrow"></i>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.bots.index') }}">Bot Trading</a>
+                    <a href="{{ route('admin.bots.index') }}">Бот-трейдинг</a>
                 </li>
                 <li class="separator">
                     <i class="flaticon-right-arrow"></i>

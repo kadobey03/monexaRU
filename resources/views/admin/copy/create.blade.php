@@ -6,17 +6,17 @@
     <div class="flex items-center justify-between mb-8">
         <div>
             <nav class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
-                <a href="{{ route('admin.copy.index') }}" class="hover:text-gray-900 dark:hover:text-white">Copy Trading</a>
+                <a href="{{ route('admin.copy.index') }}" class="hover:text-gray-900 dark:hover:text-white">Копи-трейдинг</a>
                 <i data-lucide="chevron-right" class="w-4 h-4 mx-2"></i>
-                <span class="text-gray-900 dark:text-white">Add Expert</span>
+                <span class="text-gray-900 dark:text-white">Добавить эксперта</span>
             </nav>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ $title }}</h1>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">Create a new expert trader for the copy trading system</p>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Создайте нового эксперта-трейдера для системы копи-трейдинга</p>
         </div>
         <a href="{{ route('admin.copy.index') }}"
            class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            Back to List
+            Назад к списку
         </a>
     </div>
 
@@ -24,8 +24,8 @@
     <div class="max-w-4xl">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
             <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
-                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Expert Trader Information</h2>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Fill in the details for the new expert trader</p>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Информация об эксперте-трейдере</h2>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Заполните данные нового эксперта-трейдера</p>
             </div>
 
             <form action="{{ route('admin.copy.store') }}" method="POST" enctype="multipart/form-data" class="p-6">
@@ -35,13 +35,13 @@
                     <!-- Basic Information -->
                     <div class="space-y-6">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
-                            Basic Information
+                            Основная информация
                         </h3>
 
                         <!-- Name -->
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Expert Name *
+                                Имя эксперта *
                             </label>
                             <input type="text" 
                                    id="name" 
@@ -49,7 +49,7 @@
                                    value="{{ old('name') }}"
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., John Crypto Pro">
+                                   placeholder="например, Иван Криптопро">
                             @error('name')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -58,14 +58,14 @@
                         <!-- Tag/Title -->
                         <div>
                             <label for="tag" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Professional Tag
+                                Профессиональный тег
                             </label>
                             <input type="text" 
                                    id="tag" 
                                    name="tag" 
                                    value="{{ old('tag') }}"
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., Crypto Specialist, Day Trader">
+                                   placeholder="например, Криптоспециалист, Дневной трейдер">
                             @error('tag')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -74,7 +74,7 @@
                         <!-- Photo Upload -->
                         <div>
                             <label for="photo" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Profile Photo
+                                Фото профиля
                             </label>
                             <div class="flex items-center space-x-4">
                                 <div id="photo-preview" class="w-20 h-20 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
@@ -87,7 +87,7 @@
                                            accept="image/*"
                                            onchange="previewPhoto(this)"
                                            class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                                    <p class="text-xs text-gray-500 mt-1">JPG, PNG, GIF up to 2MB</p>
+                                    <p class="text-xs text-gray-500 mt-1">JPG, PNG, GIF до 2МБ</p>
                                 </div>
                             </div>
                             @error('photo')
@@ -98,13 +98,13 @@
                         <!-- Description -->
                         <div>
                             <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Description
+                                Описание
                             </label>
                             <textarea id="description" 
                                       name="description" 
                                       rows="4"
                                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                      placeholder="Brief description of the expert's trading style and expertise...">{{ old('description') }}</textarea>
+                                      placeholder="Краткое описание торгового стиля и экспертизы эксперта...">{{ old('description') }}</textarea>
                             @error('description')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -114,22 +114,22 @@
                     <!-- Performance & Pricing -->
                     <div class="space-y-6">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700 pb-2">
-                            Performance & Pricing
+                            Производительность и ценообразование
                         </h3>
 
                         <!-- Rating -->
                         <div>
                             <label for="rating" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Rating (1-5) *
+                                Рейтинг (1-5) *
                             </label>
                             <select id="rating" 
                                     name="rating" 
                                     required
                                     class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                                <option value="">Select Rating</option>
+                                <option value="">Выберите рейтинг</option>
                                 @for($i = 1; $i <= 5; $i++)
                                     <option value="{{ $i }}" {{ old('rating') == $i ? 'selected' : '' }}>
-                                        {{ $i }} Star{{ $i > 1 ? 's' : '' }}
+                                        {{ $i }} {{ $i == 1 ? 'Звезда' : ($i < 5 ? 'Звезды' : 'Звезд') }}
                                     </option>
                                 @endfor
                             </select>
@@ -141,7 +141,7 @@
                         <!-- Win Rate -->
                         <div>
                             <label for="win_rate" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Win Rate (%) *
+                                Процент побед (%) *
                             </label>
                             <input type="number" 
                                    id="win_rate" 
@@ -151,7 +151,7 @@
                                    max="100" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 85">
+                                   placeholder="например, 85">
                             @error('win_rate')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -160,7 +160,7 @@
                         <!-- Total Profit -->
                         <div>
                             <label for="total_profit" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Total Profit (%) *
+                                Общая прибыль (%) *
                             </label>
                             <input type="number" 
                                    id="total_profit" 
@@ -170,7 +170,7 @@
                                    min="0" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 125.50">
+                                   placeholder="например, 125.50">
                             @error('total_profit')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -179,7 +179,7 @@
                         <!-- Equity -->
                         <div>
                             <label for="equity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Current Equity ($) *
+                                Текущий капитал ($) *
                             </label>
                             <input type="number" 
                                    id="equity" 
@@ -189,7 +189,7 @@
                                    min="0" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 50000.00">
+                                   placeholder="например, 50000.00">
                             @error('equity')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -198,7 +198,7 @@
                         <!-- Total Trades -->
                         <div>
                             <label for="total_trades" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Total Trades *
+                                Всего сделок *
                             </label>
                             <input type="number" 
                                    id="total_trades" 
@@ -207,7 +207,7 @@
                                    min="0" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 1250">
+                                   placeholder="например, 1250">
                             @error('total_trades')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -216,7 +216,7 @@
                         <!-- Minimum Investment Price -->
                         <div>
                             <label for="price" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Minimum Investment ($) *
+                                Минимальная инвестиция ($) *
                             </label>
                             <input type="number" 
                                    id="price" 
@@ -226,7 +226,7 @@
                                    min="0" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 100.00">
+                                   placeholder="например, 100.00">
                             @error('price')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -235,7 +235,7 @@
                         <!-- Followers -->
                         <div>
                             <label for="followers" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Initial Followers *
+                                Начальные подписчики *
                             </label>
                             <input type="number" 
                                    id="followers" 
@@ -244,7 +244,7 @@
                                    min="0" 
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                                   placeholder="e.g., 150">
+                                   placeholder="например, 150">
                             @error('followers')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                             @enderror
@@ -253,15 +253,15 @@
                         <!-- Status -->
                         <div>
                             <label for="status" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                Status *
+                                Статус *
                             </label>
                             <select id="status" 
                                     name="status" 
                                     required
                                     class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                                <option value="">Select Status</option>
-                                <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Active</option>
-                                <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
+                                <option value="">Выберите статус</option>
+                                <option value="active" {{ old('status') == 'active' ? 'selected' : '' }}>Активный</option>
+                                <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Неактивный</option>
                             </select>
                             @error('status')
                                 <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
@@ -275,12 +275,12 @@
                     <button type="submit"
                             class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
                         <i data-lucide="save" class="w-4 h-4"></i>
-                        Create Expert Trader
+                        Создать эксперта-трейдера
                     </button>
                     <a href="{{ route('admin.copy.index') }}"
                        class="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
                         <i data-lucide="x" class="w-4 h-4"></i>
-                        Cancel
+                        Отмена
                     </a>
                 </div>
             </form>

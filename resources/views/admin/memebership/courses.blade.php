@@ -7,14 +7,14 @@
             <div class="page-inner">
                 <div class="mt-2 mb-3 d-flex justify-content-between">
                     <div>
-                        <h1 class="title1  d-inline mr-4">Courses</h1>
-                        <p>List all the courses you have created.</p>
+                        <h1 class="title1  d-inline mr-4">Курсы</h1>
+                        <p>Список всех созданных вами курсов.</p>
                     </div>
                     <div>
                         <button class="btn btn-light shadow-sm px-3 border" type="button" data-toggle="modal"
                             data-target="#adduser">
                             <i class=" fa fa-plus"></i>
-                            Create New
+                            Создать новый
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" tabindex="-1" id="adduser" aria-h6ledby="exampleModalh6"
@@ -22,7 +22,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header ">
-                                        <h3 class="mb-2 d-inline ">Add Course</h3>
+                                        <h3 class="mb-2 d-inline ">Добавить курс</h3>
                                         <button type="button" class="close " data-dismiss="modal" aria-h6="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -34,7 +34,7 @@
                                                 @csrf
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Category</h6>
+                                                        <h6 class="">Категория курса</h6>
                                                         <select name="category" id="" class="form-control  ">
                                                             <option value="Null">Null</option>
                                                             @foreach ($categories as $cat)
@@ -44,12 +44,12 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Title</h6>
+                                                        <h6 class="">Название курса</h6>
                                                         <input type="text" class="form-control  " name="title"
                                                             required>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Description</h6>
+                                                        <h6 class="">Описание</h6>
                                                         <textarea name="desc" id="" cols="4" class="form-control  " required></textarea>
                                                     </div>
                                                     <div class="form-group col-md-12">
@@ -57,16 +57,16 @@
                                                             {{ $settings->currency }}
                                                         </h6>
                                                         <input type="number" class="form-control  " name="amount">
-                                                        <span class=" mt-2"> Enter amount a user
-                                                            can
-                                                            pay to
-                                                            get this course. If empty the course will
-                                                            be available for free.
+                                                        <span class=" mt-2"> Введите сумму, которую пользователь
+                                                            может
+                                                            заплатить за
+                                                            этот курс. Если поле пустое, курс будет
+                                                            доступен бесплатно.
                                                         </span>
                                                     </div>
 
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Image (File)</h6>
+                                                        <h6 class="">Изображение курса (Файл)</h6>
                                                         <input type="file" class="form-control  " name="image">
 
                                                         @error('image')
@@ -75,15 +75,14 @@
                                                     </div>
 
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Image (Url)</h6>
+                                                        <h6 class="">Изображение курса (URL)</h6>
                                                         <input type="text" class="form-control  " name="image_url">
                                                     </div>
-                                                    <h6 class="">Use either file upload or url to
-                                                        choose a course image, if both is entered, the file upload will be
-                                                        used.
+                                                    <h6 class="">Используйте либо загрузку файла, либо URL для
+                                                        выбора изображения курса. Если введены оба варианта, будет использована загрузка файла.
                                                     </h6>
                                                 </div>
-                                                <button type="submit" class="px-4 btn btn-primary">Add Course</button>
+                                                <button type="submit" class="px-4 btn btn-primary">Добавить курс</button>
                                             </form>
                                         </div>
 
@@ -122,13 +121,13 @@
                                     </h4>
                                     <div class="d-flex justify-content-between align-items-center mt-2">
                                         <a href="#" class="btn btn-primary btn-sm px-2" data-toggle="modal"
-                                            data-target="#editcourse{{ $course->course->id }}">Edit Course</a>
+                                            data-target="#editcourse{{ $course->course->id }}">Редактировать курс</a>
                                         <a href="{{ route('lessons', $course->course->id) }}">
                                             <div class="d-flex align-items-center ">
                                                 <i class="mr-1 fa fa-book"></i>
                                                 <span>
                                                     {{ count($course->lessons) }}
-                                                    {{ count($course->lessons) > 1 ? 'Lessons' : 'Lesson' }}
+                                                    {{ count($course->lessons) > 1 ? 'Уроков' : 'Урок' }}
                                                 </span>
                                                 <i class="fa fa-share ml-1"></i>
                                             </div>
@@ -136,12 +135,12 @@
                                     </div>
                                     <div class="mt-3">
                                         <h2 class=" font-weight-bolder ">
-                                            {{ !$course->course->amount ? 'Free' : $settings->currency . $course->course->amount }}
+                                            {{ !$course->course->amount ? 'Бесплатно' : $settings->currency . $course->course->amount }}
                                         </h2>
                                     </div>
                                     <a href="#" class="btn btn-danger btn-sm px-2 btn-block mt-3" data-toggle="modal"
-                                        data-target="#courseDeleteModal{{ $course->course->id }}">Delete
-                                        Course</a>
+                                        data-target="#courseDeleteModal{{ $course->course->id }}">Удалить
+                                        курс</a>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +150,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header ">
-                                        <h3 class="mb-2 d-inline ">Update Course</h3>
+                                        <h3 class="mb-2 d-inline ">Обновить курс</h3>
                                         <button type="button" class="close " data-dismiss="modal" aria-h6="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -164,7 +163,7 @@
                                                 @method('PATCH')
                                                 <div class="form-row">
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Category</h6>
+                                                        <h6 class="">Категория курса</h6>
                                                         <select name="category" id="" class="form-control  ">
                                                             <option value="{{ $course->course->category }}">
                                                                 {{ $course->course->category }}</option>
@@ -175,12 +174,12 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Title</h6>
+                                                        <h6 class="">Название курса</h6>
                                                         <input type="text" class="form-control  " name="title"
                                                             value="{{ $course->course->course_title }}" required>
                                                     </div>
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Description</h6>
+                                                        <h6 class="">Описание</h6>
                                                         <textarea name="desc" id="" cols="4" class="form-control  " required>
                                                         {{ $course->course->description }}
                                                         </textarea>
@@ -191,16 +190,15 @@
                                                         </h6>
                                                         <input type="number" class="form-control  " name="amount"
                                                             value="{{ $course->course->amount }}">
-                                                        <span class=" mt-2"> Enter amount a user
-                                                            can
-                                                            pay to
-                                                            get this course. If empty the course will
-                                                            be available for free.</span>
+                                                        <span class=" mt-2"> Введите сумму, которую пользователь
+                                                            может
+                                                            заплатить за
+                                                            этот курс. Если поле пустое, курс будет доступен бесплатно.</span>
 
                                                     </div>
 
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Image (File)</h6>
+                                                        <h6 class="">Изображение курса (Файл)</h6>
                                                         <input type="file" class="form-control  " name="image">
 
                                                         @error('image')
@@ -209,18 +207,17 @@
                                                     </div>
 
                                                     <div class="form-group col-md-12">
-                                                        <h6 class="">Course Image (Url)</h6>
+                                                        <h6 class="">Изображение курса (URL)</h6>
                                                         <input type="text" class="form-control  " name="image_url"
                                                             value="{{ $course->course->course_image }}">
                                                     </div>
-                                                    <h6 class="">Use either file upload or url to
-                                                        choose a course image, if both is entered, the file upload will be
-                                                        used.
+                                                    <h6 class="">Используйте либо загрузку файла, либо URL для
+                                                        выбора изображения курса. Если введены оба варианта, будет использована загрузка файла.
                                                     </h6>
                                                 </div>
                                                 <input type="hidden" name="course_id"
                                                     value="{{ $course->course->id }}">
-                                                <button type="submit" class="px-4 btn btn-primary">Update Course</button>
+                                                <button type="submit" class="px-4 btn btn-primary">Обновить курс</button>
                                             </form>
                                         </div>
                                     </div>
@@ -235,18 +232,18 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header ">
-                                        <h3 class="mb-2 d-inline ">Delete Course</h3>
+                                        <h3 class="mb-2 d-inline ">Удалить курс</h3>
                                         <button type="button" class="close " data-dismiss="modal" aria-h6="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body ">
                                         <div>
-                                            <p class="">Are you sure you want delete this Course
-                                                and it's related lessons?
+                                            <p class="">Вы уверены, что хотите удалить этот курс
+                                                и связанные с ним уроки?
                                             </p>
                                             <a href="{{ route('deletecourse', $course->course->id) }}"
-                                                class="btn btn-danger">DELETE</a>
+                                                class="btn btn-danger">УДАЛИТЬ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -256,10 +253,10 @@
                     @empty
                         <div class="col-md-12">
                             <div class="card  text-center py-5">
-                                <h5 class="">No Course added</h5>
+                                <h5 class="">Курсы не добавлены</h5>
                                 <div>
-                                    <button class="btn btn-secondary px-3" data-toggle="modal" data-target="#adduser">Add
-                                        Course</button>
+                                    <button class="btn btn-secondary px-3" data-toggle="modal" data-target="#adduser">Добавить
+                                        курс</button>
                                 </div>
                             </div>
                         </div>

@@ -14,13 +14,13 @@
                  <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center mb-4 gap-3">
                      <div class="flex-grow-1">
                          <h1 class="fw-bold text-primary mb-1" style="font-size: 1.75rem; line-height: 1.2;">
-                             <i class="fas fa-users me-2"></i>{{ $settings->site_name }} Kullanıcıları
+                             <i class="fas fa-users me-2"></i>Пользователи {{ $settings->site_name }}
                          </h1>
-                         <p class="text-muted mb-0" style="font-size: 1rem;">Kullanıcı hesaplarını yönetin ve düzenleyin</p>
+                         <p class="text-muted mb-0" style="font-size: 1rem;">Управляйте и редактируйте пользовательские аккаунты</p>
                      </div>
                      <div class="d-flex gap-2 flex-shrink-0">
                          <span class="badge bg-primary fs-6 px-3 py-2" style="border-radius: 8px; font-weight: 500;">
-                             <i class="fas fa-user-check me-1"></i>{{ $users->total() }} Kullanıcı
+                             <i class="fas fa-user-check me-1"></i>{{ $users->total() }} пользователей
                          </span>
                      </div>
                  </div>
@@ -29,10 +29,10 @@
                      <div class="d-flex align-items-center">
                          <i class="fas fa-exclamation-triangle me-2 text-danger"></i>
                          <div class="flex-grow-1">
-                             <strong>Bir Hata Oluştu!</strong>
-                             <span id="error-message-text">Lütfen tekrar deneyin veya sistem yöneticisiyle iletişime geçin.</span>
+                             <strong>Произошла ошибка!</strong>
+                             <span id="error-message-text">Попробуйте еще раз или обратитесь к системному администратору.</span>
                          </div>
-                         <button type="button" class="btn-close" onclick="hideErrorAlert()" aria-label="Hata mesajını kapat"></button>
+                         <button type="button" class="btn-close" onclick="hideErrorAlert()" aria-label="Закрыть сообщение об ошибке"></button>
                      </div>
                  </div>
 
@@ -41,10 +41,10 @@
                      <div class="d-flex align-items-center">
                          <i class="fas fa-check-circle me-2 text-success"></i>
                          <div class="flex-grow-1">
-                             <strong>Başarılı!</strong>
-                             <span id="success-message-text">İşlem başarıyla tamamlandı.</span>
+                             <strong>Успешно!</strong>
+                             <span id="success-message-text">Операция успешно завершена.</span>
                          </div>
-                         <button type="button" class="btn-close" onclick="hideSuccessAlert()" aria-label="Başarı mesajını kapat"></button>
+                         <button type="button" class="btn-close" onclick="hideSuccessAlert()" aria-label="Закрыть сообщение об успехе"></button>
                      </div>
                  </div>
 
@@ -53,10 +53,10 @@
                      <div class="d-flex align-items-center">
                          <i class="fas fa-exclamation-circle me-2 text-warning"></i>
                          <div class="flex-grow-1">
-                             <strong>Dikkat!</strong>
-                             <span id="warning-message-text">Lütfen dikkatli olun.</span>
+                             <strong>Внимание!</strong>
+                             <span id="warning-message-text">Пожалуйста, будьте осторожны.</span>
                          </div>
-                         <button type="button" class="btn-close" onclick="hideWarningAlert()" aria-label="Uyarı mesajını kapat"></button>
+                         <button type="button" class="btn-close" onclick="hideWarningAlert()" aria-label="Закрыть предупреждение"></button>
                      </div>
                  </div>
 
@@ -65,10 +65,10 @@
                      <div class="d-flex align-items-center">
                          <i class="fas fa-info-circle me-2 text-info"></i>
                          <div class="flex-grow-1">
-                             <strong>Bilgi:</strong>
-                             <span id="info-message-text">Bilgilendirme mesajı.</span>
+                             <strong>Информация:</strong>
+                             <span id="info-message-text">Информационное сообщение.</span>
                          </div>
-                         <button type="button" class="btn-close" onclick="hideInfoAlert()" aria-label="Bilgi mesajını kapat"></button>
+                         <button type="button" class="btn-close" onclick="hideInfoAlert()" aria-label="Закрыть информационное сообщение"></button>
                      </div>
                  </div>
 
@@ -93,8 +93,8 @@
                                                  <input wire:model.debounce.500ms='searchvalue'
                                                      class="form-control border-start-0 border-end-0"
                                                      type="search"
-                                                     placeholder="👤 İsim, kullanıcı adı veya 📧 e-posta adresi ile ara..."
-                                                     aria-label="Kullanıcı arama"
+                                                     placeholder="👤 Поиск по имени, имени пользователя или 📧 адресу электронной почты..."
+                                                     aria-label="Поиск пользователей"
                                                      style="border-radius: 0; font-size: 0.95rem; padding: 0.75rem 1rem;"
                                                      autocomplete="off" />
                                                  <span class="input-group-text bg-white border-start-0" style="border-radius: 0 8px 8px 0;">
@@ -104,7 +104,7 @@
                                              <div class="search-suggestions position-absolute bg-white border shadow-sm rounded mt-1 w-100" style="display: none; z-index: 1000;">
                                                  <div class="p-2 text-muted small">
                                                      <i class="fas fa-lightbulb me-1"></i>
-                                                     İpucu: Hızlı arama için isim, kullanıcı adı veya e-posta adresinin baş harflerini yazın
+                                                     Подсказка: Для быстрого поиска введите первые буквы имени, имени пользователя или адреса электронной почты
                                                  </div>
                                              </div>
                                          </div>
@@ -117,32 +117,32 @@
                                                      <select wire:model='action'
                                                          class="form-select form-select-sm me-2"
                                                          style="min-width: 150px;"
-                                                         aria-label="Toplu İşlemler">
-                                                         <option value="Delete">🗑️ Sil</option>
-                                                         <option value="Clear">🧹 Hesabı Temizle</option>
+                                                         aria-label="Массовые операции">
+                                                         <option value="Delete">🗑️ Удалить</option>
+                                                         <option value="Clear">🧹 Очистить аккаунт</option>
                                                      </select>
                                                      <button class="btn btn-danger btn-sm"
                                                          wire:click='delsystemuser' type="button">
-                                                         <i class="fas fa-check me-1"></i>Uygula
+                                                         <i class="fas fa-check me-1"></i>Применить
                                                      </button>
                                                  </div>
                                                  <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
                                                      data-bs-target="#TradingModal" type="button">
-                                                     <i class="fas fa-coins me-1"></i>ROI Ekle
+                                                     <i class="fas fa-coins me-1"></i>Добавить ROI
                                                  </button>
                                                  <button class="btn btn-success btn-sm" data-bs-toggle="modal"
                                                      data-bs-target="#topupModal" type="button">
-                                                     <i class="fas fa-plus me-1"></i>Bakiye Yükle
+                                                     <i class="fas fa-plus me-1"></i>Пополнить баланс
                                                  </button>
                                              </div>
                                          @else
                                              <div class="d-flex flex-wrap gap-2 justify-content-md-end">
                                                  <button class="btn btn-primary" type="button"
                                                      data-bs-toggle="modal" data-bs-target="#adduser">
-                                                     <i class="fas fa-user-plus me-2"></i>Yeni Kullanıcı
+                                                     <i class="fas fa-user-plus me-2"></i>Новый пользователь
                                                  </button>
                                                  <a class="btn btn-info" href="{{ route('emailservices') }}">
-                                                     <i class="fas fa-envelope me-2"></i>Mesaj Gönder
+                                                     <i class="fas fa-envelope me-2"></i>Отправить сообщение
                                                  </a>
                                              </div>
                                          @endif
@@ -153,36 +153,36 @@
                                 <div class="table-responsive">
                                     <table class="table table-hover mb-0 user-management-table"
                                            role="table"
-                                           aria-label="Kullanıcı listesi tablosu"
+                                           aria-label="Таблица списка пользователей"
                                            style="border-collapse: separate; border-spacing: 0;">
                                         <thead class="table-light" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-bottom: 3px solid #dee2e6;">
                                             <tr class="table-header-row">
                                                 <th class="border-0 fw-bold text-center" style="width: 50px;" scope="col">
                                                     <input type="checkbox" wire:model='selectPage'
                                                            class="form-check-input"
-                                                           aria-label="Tüm kullanıcıları seç"
-                                                           title="Tüm kullanıcıları seç" />
+                                                           aria-label="Выбрать всех пользователей"
+                                                           title="Выбрать всех пользователей" />
                                                 </th>
                                                 <th class="border-0 fw-bold" scope="col">
-                                                    <i class="fas fa-user me-2 text-primary" aria-hidden="true"></i>Müşteri Adı
+                                                    <i class="fas fa-user me-2 text-primary" aria-hidden="true"></i>Имя клиента
                                                 </th>
                                                 <th class="border-0 fw-bold" scope="col">
-                                                    <i class="fas fa-at me-2 text-primary" aria-hidden="true"></i>Kullanıcı Adı
+                                                    <i class="fas fa-at me-2 text-primary" aria-hidden="true"></i>Имя пользователя
                                                 </th>
                                                 <th class="border-0 fw-bold" scope="col">
-                                                    <i class="fas fa-envelope me-2 text-primary" aria-hidden="true"></i>E-posta
+                                                    <i class="fas fa-envelope me-2 text-primary" aria-hidden="true"></i>Электронная почта
                                                 </th>
                                                 <th class="border-0 fw-bold" scope="col">
-                                                    <i class="fas fa-phone me-2 text-primary" aria-hidden="true"></i>Telefon
+                                                    <i class="fas fa-phone me-2 text-primary" aria-hidden="true"></i>Телефон
                                                 </th>
                                                 <th class="border-0 fw-bold text-center" scope="col">
-                                                    <i class="fas fa-toggle-on me-2 text-primary" aria-hidden="true"></i>Durum
+                                                    <i class="fas fa-toggle-on me-2 text-primary" aria-hidden="true"></i>Статус
                                                 </th>
                                                 <th class="border-0 fw-bold" scope="col">
-                                                    <i class="fas fa-calendar me-2 text-primary" aria-hidden="true"></i>Kayıt Tarihi
+                                                    <i class="fas fa-calendar me-2 text-primary" aria-hidden="true"></i>Дата регистрации
                                                 </th>
                                                 <th class="border-0 fw-bold text-center" scope="col">
-                                                    <i class="fas fa-cogs me-2 text-primary" aria-hidden="true"></i>İşlem
+                                                    <i class="fas fa-cogs me-2 text-primary" aria-hidden="true"></i>Действие
                                                 </th>
                                             </tr>
                                         </thead>

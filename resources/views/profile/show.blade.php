@@ -6,7 +6,7 @@
     <div class="page-title">
         <div class="row justify-content-between align-items-center">
             <div class="mb-3 col-md-6 mb-md-0">
-                <h5 class="h2 m-0">{{ __('Security/Account Deletion') }}</h5>
+                <h5 class="h2 m-0">{{ __('Безопасность/Удаление аккаунта') }}</h5>
             </div>
         </div>
     </div>

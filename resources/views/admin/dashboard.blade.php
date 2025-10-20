@@ -22,14 +22,14 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                         <div class="flex-grow-1">
                             <div class="welcome-badge mb-3">
                                 <span class="badge bg-white bg-opacity-20 text-white px-3 py-2">
-                                    <i class="fas fa-user-shield me-2"></i>Yönetim Paneli
+                                    <i class="fas fa-user-shield me-2"></i>Панель администратора
                                 </span>
                             </div>
                             <h1 class="display-5 text-white fw-bold mb-2">
-                                <i class="fas fa-tachometer-alt me-3"></i>Kontrol Paneli
+                                <i class="fas fa-tachometer-alt me-3"></i>Панель управления
                             </h1>
                             <h5 class="text-white op-8 mb-3">
-                                Hoş geldiniz, {{ Auth('admin')->User()->firstName }} {{ Auth('admin')->User()->lastName }}!
+                                Добро пожаловать, {{ Auth('admin')->User()->firstName }} {{ Auth('admin')->User()->lastName }}!
                             </h5>
                             <div class="d-flex align-items-center text-white op-7">
                                 <div class="date-time-display">
@@ -43,13 +43,13 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                             <div class="py-2 ml-md-auto py-md-0">
                                 <div class="btn-group-vertical btn-group-lg" role="group">
                                     <a href="{{ route('mdeposits') }}" class="btn btn-success mb-2 modern-btn shadow-sm">
-                                        <i class="fas fa-arrow-down me-2"></i>Yatırımlar
+                                        <i class="fas fa-arrow-down me-2"></i>Инвестиции
                                     </a>
                                     <a href="{{ route('mwithdrawals') }}" class="btn btn-danger mb-2 modern-btn shadow-sm">
-                                        <i class="fas fa-arrow-up me-2"></i>Çekimler
+                                        <i class="fas fa-arrow-up me-2"></i>Выводы
                                     </a>
                                     <a href="{{ route('manageusers') }}" class="btn btn-info modern-btn shadow-sm">
-                                        <i class="fas fa-users me-2"></i>Kullanıcılar
+                                        <i class="fas fa-users me-2"></i>Пользователи
                                     </a>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Toplam Yatırımlar</span>
+                                            <span class="stat-label">Всего инвестиций</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-arrow-up text-success"></i>
                                             </div>
@@ -92,7 +92,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-calendar-alt me-1"></i>Tüm zamanlar toplamı
+                                                <i class="fas fa-calendar-alt me-1"></i>За все время
                                             </small>
                                         </div>
                                     </div>
@@ -113,7 +113,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Bekleyen Yatırımlar</span>
+                                            <span class="stat-label">Ожидающие инвестиции</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-clock text-warning"></i>
                                             </div>
@@ -129,7 +129,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-exclamation-circle me-1"></i>Onay bekliyor
+                                                <i class="fas fa-exclamation-circle me-1"></i>Ожидает подтверждения
                                             </small>
                                         </div>
                                     </div>
@@ -150,7 +150,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Toplam Çekimler</span>
+                                            <span class="stat-label">Всего выводов</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-arrow-down text-danger"></i>
                                             </div>
@@ -166,7 +166,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-calendar-alt me-1"></i>Tüm zamanlar toplamı
+                                                <i class="fas fa-calendar-alt me-1"></i>За все время
                                             </small>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Bekleyen Çekimler</span>
+                                            <span class="stat-label">Ожидающие выводы</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-cog text-info"></i>
                                             </div>
@@ -203,7 +203,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         </div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-clock me-1"></i>İşleniyor
+                                                <i class="fas fa-clock me-1"></i>Обработка
                                             </small>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Toplam Kullanıcılar</span>
+                                            <span class="stat-label">Всего пользователей</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-user-plus text-primary"></i>
                                             </div>
@@ -234,7 +234,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <div class="stat-value">{{ number_format($user_count) }}</div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-chart-line me-1"></i>Toplam kayıtlı
+                                                <i class="fas fa-chart-line me-1"></i>Всего зарегистрировано
                                             </small>
                                         </div>
                                     </div>
@@ -254,7 +254,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Aktif Kullanıcılar</span>
+                                            <span class="stat-label">Активные пользователи</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-circle text-success"></i>
                                             </div>
@@ -262,7 +262,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <div class="stat-value">{{ $activeusers }}</div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-bolt me-1"></i>Şu anda çevrimiçi
+                                                <i class="fas fa-bolt me-1"></i>Сейчас онлайн
                                             </small>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Engellenen Kullanıcılar</span>
+                                            <span class="stat-label">Заблокированные пользователи</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-ban text-danger"></i>
                                             </div>
@@ -290,7 +290,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <div class="stat-value">{{ $blockeusers }}</div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-shield-alt me-1"></i>Askıya alınmış hesaplar
+                                                <i class="fas fa-shield-alt me-1"></i>Приостановленные аккаунты
                                             </small>
                                         </div>
                                     </div>
@@ -310,7 +310,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     </div>
                                     <div class="stat-content">
                                         <div class="stat-header">
-                                            <span class="stat-label">Yatırım Planları</span>
+                                            <span class="stat-label">Инвестиционные планы</span>
                                             <div class="stat-badge">
                                                 <i class="fas fa-chart-line text-warning"></i>
                                             </div>
@@ -318,7 +318,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                         <div class="stat-value">{{ $plans }}</div>
                                         <div class="stat-footer">
                                             <small class="text-muted">
-                                                <i class="fas fa-boxes me-1"></i>Mevcut planlar
+                                                <i class="fas fa-boxes me-1"></i>Доступные планы
                                             </small>
                                         </div>
                                     </div>
@@ -337,24 +337,24 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                     <div class="chart-header-info">
                                         <div class="chart-title">
                                             <h4 class="fw-bold mb-1">
-                                                <i class="fas fa-chart-line me-2 gradient-text"></i>Sistem Analitiği
+                                                <i class="fas fa-chart-line me-2 gradient-text"></i>Системная аналитика
                                             </h4>
-                                            <p class="text-muted mb-0">Finansal genel bakış ve işlem analitiği</p>
+                                            <p class="text-muted mb-0">Финансовый обзор и аналитика транзакций</p>
                                         </div>
                                     </div>
                                     <div class="chart-controls">
                                         <div class="btn-group chart-period-selector" role="group">
                                             <input type="radio" class="btn-check" name="chartPeriod" id="today" autocomplete="off">
-                                            <label class="btn btn-outline-primary btn-sm" for="today">Bugün</label>
+                                            <label class="btn btn-outline-primary btn-sm" for="today">Сегодня</label>
 
                                             <input type="radio" class="btn-check" name="chartPeriod" id="week" autocomplete="off">
-                                            <label class="btn btn-outline-primary btn-sm" for="week">Bu Hafta</label>
+                                            <label class="btn btn-outline-primary btn-sm" for="week">На этой неделе</label>
 
                                             <input type="radio" class="btn-check" name="chartPeriod" id="month" autocomplete="off" checked>
-                                            <label class="btn btn-primary btn-sm" for="month">Bu Ay</label>
+                                            <label class="btn btn-primary btn-sm" for="month">В этом месяце</label>
 
                                             <input type="radio" class="btn-check" name="chartPeriod" id="year" autocomplete="off">
-                                            <label class="btn btn-outline-primary btn-sm" for="year">Bu Yıl</label>
+                                            <label class="btn btn-outline-primary btn-sm" for="year">В этом году</label>
                                         </div>
                                     </div>
                                 </div>
@@ -369,25 +369,25 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                             <div class="col-md-3">
                                                 <div class="chart-info-item">
                                                     <span class="chart-info-value">{{ $settings->currency }}{{ number_format($chart_pdepsoit) }}</span>
-                                                    <span class="chart-info-label">Toplam Yatırımlar</span>
+                                                    <span class="chart-info-label">Всего инвестиций</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="chart-info-item">
                                                     <span class="chart-info-value">{{ $settings->currency }}{{ number_format($chart_pwithdraw) }}</span>
-                                                    <span class="chart-info-label">Toplam Çekimler</span>
+                                                    <span class="chart-info-label">Всего выводов</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="chart-info-item">
                                                     <span class="chart-info-value">{{ $settings->currency }}{{ number_format($chart_pendepsoit) }}</span>
-                                                    <span class="chart-info-label">Bekleyen Yatırımlar</span>
+                                                    <span class="chart-info-label">Ожидающие инвестиции</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="chart-info-item">
                                                     <span class="chart-info-value">{{ $settings->currency }}{{ number_format($chart_trans) }}</span>
-                                                    <span class="chart-info-label">İşlemler</span>
+                                                    <span class="chart-info-label">Транзакции</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -472,9 +472,9 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                 const myChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Toplam Yatırımlar', 'Bekleyen Yatırımlar', 'Toplam Çekimler', 'Bekleyen Çekimler', 'Toplam İşlemler'],
+                        labels: ['Всего инвестиций', 'Ожидающие инвестиции', 'Всего выводов', 'Ожидающие выводы', 'Всего транзакций'],
                         datasets: [{
-                            label: `Amount in {{ $settings->currency }}`,
+                            label: `Сумма в {{ $settings->currency }}`,
                             data: chartData,
                             backgroundColor: gradients,
                             borderColor: [
@@ -517,7 +517,7 @@ if (Auth('admin')->User()->dashboard_style == 'light') {
                                 callbacks: {
                                     label: function(context) {
                                         const value = new Intl.NumberFormat().format(context.parsed.y);
-                                        return `Amount: {{ $settings->currency }}${value}`;
+                                        return `Сумма: {{ $settings->currency }}${value}`;
                                     }
                                 }
                             }

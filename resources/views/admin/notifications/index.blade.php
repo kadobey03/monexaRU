@@ -1,13 +1,13 @@
 @extends('layouts.app')
-@section('title', 'Notifications')
+@section('title', 'Уведомления')
 
 
 @section('content')
 @include('admin.topmenu')
     @include('admin.sidebar')
 <div class="mt-2 mb-4 d-flex align-items-center justify-content-between">
-    <h1 class="h3 mb-0 text-gray-800">Notifications</h1>
-    <a href="{{ route('admin.markallasread') }}" class="btn btn-primary">Mark All as Read</a>
+    <h1 class="h3 mb-0 text-gray-800">Уведомления</h1>
+    <a href="{{ route('admin.markallasread') }}" class="btn btn-primary">Отметить все как прочитанные</a>
 </div>
 
 <div class="row">
@@ -31,11 +31,11 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                    <th>Message</th>
-                                    <th>Type</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
+                                    <th>Заголовок</th>
+                                    <th>Сообщение</th>
+                                    <th>Тип</th>
+                                    <th>Дата</th>
+                                    <th>Действия</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,10 +52,10 @@
                                         <td>
                                             @if(!$notification->is_read)
                                                 <a href="{{ route('admin.markasread', $notification->id) }}" class="btn btn-sm btn-primary">
-                                                    <i class="fa fa-check"></i> Mark as Read
+                                                    <i class="fa fa-check"></i> Отметить как прочитанное
                                                 </a>
                                             @endif
-                                            <a href="{{ route('admin.deletenotification', $notification->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this notification?')">
+                                            <a href="{{ route('admin.deletenotification', $notification->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Вы уверены, что хотите удалить это уведомление?')">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
@@ -71,7 +71,7 @@
                 @else
                     <div class="text-center py-5">
                         <i class="fa fa-bell-slash fa-3x text-muted"></i>
-                        <p class="mt-3">You have no notifications</p>
+                        <p class="mt-3">У вас нет уведомлений</p>
                     </div>
                 @endif
             </div>

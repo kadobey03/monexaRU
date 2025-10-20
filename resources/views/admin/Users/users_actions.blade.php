@@ -75,7 +75,7 @@
          <!-- Modal content-->
          <div class="modal-content">
              <div class="modal-header ">
-                 <h4 class="modal-title ">{{ $user->name }} {{ $user->l_name }} için para çekme öncesi işlem sayısı belirle </h4>
+                 <h4 class="modal-title ">Установить количество сделок перед выводом средств для {{ $user->name }} {{ $user->l_name }} </h4>
                  <button type="button" class="close " data-dismiss="modal">&times;</button>
              </div>
              <div class="modal-body ">
@@ -92,15 +92,15 @@
                          </select>
                      </div> --}}
                      <div class="form-group">
-                         <h5 class=" ">Para çekme öncesi işlem sayısı</h5>
+                         <h5 class=" ">Количество сделок перед выводом средств</h5>
                          <input type="number" name="numberoftrades" class="form-control" placeholder="{{ $user->numberoftrades }}" min="0" required>
                          <div class="invalid-feedback">
-                             Lütfen geçerli bir işlem sayısı giriniz.
+                             Пожалуйста, введите действительное количество сделок.
                          </div>
                      </div>
 
                      <div class="form-group">
-                         <input type="submit" class="btn btn-info" value="Para Çekme İçin İşlem Sayısı Belirle" data-bs-toggle="tooltip" title="Kullanıcının para çekebilmesi için tamamlaması gereken minimum işlem sayısını belirler">
+                         <input type="submit" class="btn btn-info" value="Установить количество сделок для вывода средств" data-bs-toggle="tooltip" title="Устанавливает минимальное количество сделок, которые пользователь должен завершить для возможности вывода средств">
                          <input type="hidden" name="user_id" value="{{ $user->id }}">
                      </div>
                  </form>
@@ -118,32 +118,32 @@
          <!-- Modal content-->
          <div class="modal-content">
              <div class="modal-header ">
-                 <h4 class="modal-title ">{{ $user->name }} {{ $user->l_name }} için kullanıcı vergisini aç/kapat </h4>
+                 <h4 class="modal-title ">Включить/выключить пользовательский налог для {{ $user->name }} {{ $user->l_name }} </h4>
                  <button type="button" class="close " data-dismiss="modal">&times;</button>
              </div>
              <div class="modal-body ">
                  <form role="form" method="post" action="{{ route('usertax') }}">
                      @csrf
                      <div class="form-group">
-                         <h5 class=" ">Açık/Kapalı</h5>
+                         <h5 class=" ">Включено/Выключено</h5>
                          <select class="form-control" name="taxtype">
                              <option value="" selected disabled></option>
 
-                                 <option value="on">Açık</option>
-                                 <option value="off">Kapalı</option>
+                                 <option value="on">Включено</option>
+                                 <option value="off">Выключено</option>
 
                          </select>
                      </div>
                      <div class="form-group">
-                         <h5 class=" ">Miktar</h5>
+                         <h5 class=" ">Сумма</h5>
                          <input type="number" name="taxamount" class="form-control" min="0" max="100" step="0.01" placeholder="0.00">
                          <div class="invalid-feedback">
-                             Lütfen 0-100 arasında geçerli bir vergi oranı giriniz.
+                             Пожалуйста, введите действительную налоговую ставку от 0 до 100.
                          </div>
                      </div>
 
                      <div class="form-group">
-                         <input type="submit" class="btn btn-warning" value="Kullanıcı Vergisi Ekle" data-bs-toggle="tooltip" title="Kullanıcı için özel vergi oranı belirler">
+                         <input type="submit" class="btn btn-warning" value="Добавить пользовательский налог" data-bs-toggle="tooltip" title="Устанавливает индивидуальную налоговую ставку для пользователя">
                          <input type="hidden" name="user_id" value="{{ $user->id }}">
                      </div>
                  </form>
@@ -160,13 +160,13 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header ">
-                <h4 class="modal-title ">Hesabı Temizle</strong></h4>
+                <h4 class="modal-title ">Очистить аккаунт</strong></h4>
                 <button type="button" class="close " data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body ">
-                <p class="">{{ $user->name }} kullanıcısının hesabını {{ $user->currency }}0.00 olarak temizliyorsunuz
+                <p class="">Вы очищаете аккаунт пользователя {{ $user->name }} до {{ $user->currency }}0.00
                 </p>
-                <a class="btn " href="{{ url('admin/dashboard/clearacct') }}/{{ $user->id }}">Devam Et</a>
+                <a class="btn " href="{{ url('admin/dashboard/clearacct') }}/{{ $user->id }}">Продолжить</a>
             </div>
         </div>
     </div>
@@ -178,33 +178,33 @@
          <!-- Modal content-->
          <div class="modal-content">
              <div class="modal-header ">
-                 <h4 class="modal-title ">{{ $user->name }} {{ $user->l_name }} için para çekme kodunu girin </h4>
+                 <h4 class="modal-title ">Введите код для вывода средств для {{ $user->name }} {{ $user->l_name }} </h4>
                  <button type="button" class="close " data-dismiss="modal">&times;</button>
              </div>
              <div class="modal-body ">
                  <form role="form" method="post" action="{{ route('withdrawalcode') }}">
                      @csrf
                       <div class="form-group">
-                         <h5 class=" ">Para Çekme Kodu Durumunu Seçin</h5>
+                         <h5 class=" ">Выберите статус кода вывода средств</h5>
                          <select class="form-control  " name="withdrawal_code">
 
 
-                                 <option value="on">Açık</option>
-                                  <option value="off">Kapalı</option>
+                                 <option value="on">Включено</option>
+                                  <option value="off">Выключено</option>
 
                          </select>
                      </div>
 
                      <div class="form-group">
-                         <h5 class=" ">Para Çekme Kodu</h5>
+                         <h5 class=" ">Код вывода средств</h5>
                          <input type="text" name="user_withdrawalcode" class="form-control" value="{{ $user->user_withdrawalcode }}" maxlength="50" required>
                          <div class="invalid-feedback">
-                             Lütfen geçerli bir para çekme kodu giriniz.
+                             Пожалуйста, введите действительный код вывода средств.
                          </div>
                      </div>
 
                      <div class="form-group">
-                         <input type="submit" class="btn btn-success" value="Kullanıcı Para Çekme Kodunu Belirle" data-bs-toggle="tooltip" title="Kullanıcı için özel para çekme kodu ve durumunu belirler">
+                         <input type="submit" class="btn btn-success" value="Установить код вывода средств пользователя" data-bs-toggle="tooltip" title="Устанавливает индивидуальный код вывода средств и его статус для пользователя">
                          <input type="hidden" name="user_id" value="{{ $user->id }}">
                      </div>
                  </form>
@@ -219,29 +219,29 @@
          <!-- Modal content-->
          <div class="modal-content">
              <div class="modal-header ">
-                 <h4 class="modal-title ">E-posta Gönder</h4>
+                 <h4 class="modal-title ">Отправить электронное письмо</h4>
                  <button type="button" class="close " data-dismiss="modal">&times;</button>
              </div>
              <div class="modal-body ">
-                 <p class="">Bu mesaj {{ $user->name }} kullanıcısına gönderilecek</p>
+                 <p class="">Это сообщение будет отправлено пользователю {{ $user->name }}</p>
                  <form style="padding:3px;" role="form" method="post" action="{{ route('sendmailtooneuser') }}">
                      @csrf
                      <div class=" form-group">
-                         <input type="text" name="subject" class="form-control" placeholder="E-posta konusu" maxlength="100" required>
+                         <input type="text" name="subject" class="form-control" placeholder="Тема электронного письма" maxlength="100" required>
                          <div class="invalid-feedback">
-                             Lütfen e-posta konusu giriniz (maksimum 100 karakter).
+                             Пожалуйста, введите тему электронного письма (максимум 100 символов).
                          </div>
                      </div>
                      <div class=" form-group">
-                         <textarea placeholder="Mesajınızı buraya yazın" class="form-control" name="message" rows="8"
+                         <textarea placeholder="Напишите свое сообщение здесь" class="form-control" name="message" rows="8"
                              maxlength="1000" required></textarea>
                          <div class="invalid-feedback">
-                             Lütfen bir mesaj giriniz (maksimum 1000 karakter).
+                             Пожалуйста, введите сообщение (максимум 1000 символов).
                          </div>
                      </div>
                      <div class=" form-group">
                          <input type="hidden" name="user_id" value="{{ $user->id }}">
-                         <input type="submit" class="btn btn-primary" value="Gönder" data-bs-toggle="tooltip" title="E-posta mesajını kullanıcıya gönderir">
+                         <input type="submit" class="btn btn-primary" value="Отправить" data-bs-toggle="tooltip" title="Отправляет сообщение электронной почты пользователю">
                      </div>
                  </form>
              </div>
@@ -263,9 +263,9 @@
                      @csrf
                      <div class="form-group">
                         <h5 class=" ">Amount</h5>
-                        <input type="number" name="amount" class="form-control" placeholder="İşlem tutarını giriniz {{ $user->currency }}" min="0.01" step="0.01" required>
+                        <input type="number" name="amount" class="form-control" placeholder="Введите сумму сделки {{ $user->currency }}" min="0.01" step="0.01" required>
                         <div class="invalid-feedback">
-                            Lütfen geçerli bir işlem tutarı giriniz (minimum 0.01 {{ $user->currency }}).
+                            Пожалуйста, введите действительную сумму сделки (минимум 0.01 {{ $user->currency }}).
                         </div>
                     </div>
                      <div class="form-group">
@@ -357,7 +357,7 @@
                         </select>
                     </div>
                      <div class="form-group">
-                         <input type="submit" class="btn btn-primary" value="İşlem Yap" data-bs-toggle="tooltip" title="Kullanıcı için manuel işlem oluşturur">
+                         <input type="submit" class="btn btn-primary" value="Совершить сделку" data-bs-toggle="tooltip" title="Создает ручную сделку для пользователя">
                          <input type="hidden" name="user_id" value="{{ $user->id }}">
                      </div>
                  </form>
@@ -443,9 +443,9 @@
 
                    <div class="form-group">
                     <h5 class=" ">Tutar</h5>
-                    <input type="number" name="amount" class="form-control" placeholder="Sinyal tutarını giriniz {{ $user->currency }}" min="0.01" step="0.01" required>
+                    <input type="number" name="amount" class="form-control" placeholder="Введите сумму сигнала {{ $user->currency }}" min="0.01" step="0.01" required>
                     <div class="invalid-feedback">
-                        Lütfen geçerli bir sinyal tutarı giriniz (minimum 0.01 {{ $user->currency }}).
+                        Пожалуйста, введите действительную сумму сигнала (минимум 0.01 {{ $user->currency }}).
                     </div>
                 </div>
                    <div class="form-group">
@@ -480,7 +480,7 @@
                        </select>
                    </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Sinyal Oluştur" data-bs-toggle="tooltip" title="Kullanıcı için manuel sinyal oluşturur">
+                        <input type="submit" class="btn btn-primary" value="Создать сигнал" data-bs-toggle="tooltip" title="Создает ручной сигнал для пользователя">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
                     </div>
                 </form>
@@ -517,9 +517,9 @@
                     </div>
                     <div class="form-group">
                         <h5 class=" ">Сумма</h5>
-                        <input type="number" name="amount" class="form-control" placeholder="Plan tutarını giriniz" min="0.01" step="0.01" required>
+                        <input type="number" name="amount" class="form-control" placeholder="Введите сумму плана" min="0.01" step="0.01" required>
                         <div class="invalid-feedback">
-                            Lütfen geçerli bir plan tutarı giriniz (minimum 0.01).
+                            Пожалуйста, введите действительную сумму плана (минимум 0.01).
                         </div>
                     </div>
                     <div class="form-group">
@@ -531,7 +531,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-secondary" value="Geçmiş Ekle" data-bs-toggle="tooltip" title="Kullanıcı için plan geçmiş kaydı ekler">
+                        <input type="submit" class="btn btn-secondary" value="Добавить историю" data-bs-toggle="tooltip" title="Добавляет запись истории плана для пользователя">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
                     </div>
                 </form>
@@ -561,7 +561,7 @@
                              </label>
                              <input class="form-control form-control-lg" id="input1" value="{{ $user->username }}" type="text" name="username" pattern="[a-zA-Z0-9_]{3,50}" maxlength="50" required>
                              <div class="invalid-feedback">
-                                 Kullanıcı adı 3-50 karakter arası olmalı ve sadece harf, rakam ve alt çizgi içerebilir.
+                                 Имя пользователя должно быть от 3 до 50 символов и содержать только буквы, цифры и подчеркивания.
                              </div>
                              <small class="text-muted mt-1 d-block">
                                  <i class="fas fa-info-circle me-1"></i>Примечание: То же имя пользователя должно использоваться в реферальной ссылке.
@@ -581,7 +581,7 @@
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->email }}" type="email" name="email" maxlength="100" required>
                              <div class="invalid-feedback">
-                                 Lütfen geçerli bir e-posta adresi giriniz.
+                                 Пожалуйста, введите действительный адрес электронной почты.
                              </div>
                          </div>
                          <div class="col-md-6">
@@ -590,7 +590,7 @@
                              </label>
                              <input class="form-control form-control-lg" value="{{ $user->phone }}" type="tel" name="phone" pattern="[+]?[0-9\s\-\(\)]{10,20}" maxlength="20" required>
                              <div class="invalid-feedback">
-                                 Lütfen geçerli bir telefon numarası giriniz.
+                                 Пожалуйста, введите действительный номер телефона.
                              </div>
                          </div>
                      </div>
@@ -627,7 +627,7 @@
                          <div class="col-12">
                              <input type="hidden" name="user_id" value="{{ $user->id }}">
                              <button type="submit" class="btn btn-success btn-lg w-100" data-bs-toggle="tooltip" title="Kullanıcı bilgilerini günceller">
-                                 <i class="fas fa-save me-2"></i>Kullanıcı Bilgilerini Güncelle
+                                 <i class="fas fa-save me-2"></i>Обновить информацию пользователя
                              </button>
                          </div>
                      </div>
@@ -665,8 +665,8 @@
                          </button>
                      </div>
                      <div class="col-6">
-                         <a class="btn btn-warning btn-lg w-100" href="{{ url('admin/dashboard/resetpswd') }}/{{ $user->id }}" onclick="return confirm('{{ $user->name }} kullanıcısının şifresini gerçekten sıfırlamak istiyor musunuz? Yeni şifre: user01236')">
-                             <i class="fas fa-key me-2"></i>Şifreyi Sıfırla
+                         <a class="btn btn-warning btn-lg w-100" href="{{ url('admin/dashboard/resetpswd') }}/{{ $user->id }}" onclick="return confirm('Вы действительно хотите сбросить пароль пользователя {{ $user->name }}? Новый пароль: user01236')">
+                             <i class="fas fa-key me-2"></i>Сбросить пароль
                          </a>
                      </div>
                  </div>
@@ -692,7 +692,7 @@
                         <h5 class=" text-{{$text}}">Торговый сигнал %</h5>
                         <input class="form-control bg-{{$bg}} text-{{$text}}" value="{{$user->progress}}" type="number" name="progress" min="0" max="100" step="0.1" required>
                         <div class="invalid-feedback">
-                            Lütfen 0-100 arasında geçerli bir yüzde değeri giriniz.
+                            Пожалуйста, введите действительное процентное значение от 0 до 100.
                         </div>
                          <small>Сила сигнала в %. Для отображения силы сигнала на панели пользователя увеличьте его значение </small>
                     </div>
@@ -701,7 +701,7 @@
                     <div class="form-group">
                         @csrf
                         <input type="hidden" name="user_id" value="{{$user->id}}">
-                        <input type="submit" class="btn btn-{{$text}}" value="Sinyal Gücünü Güncelle" data-bs-toggle="tooltip" title="Kullanıcı için sinyal gücünü belirler">
+                        <input type="submit" class="btn btn-{{$text}}" value="Обновить силу сигнала" data-bs-toggle="tooltip" title="Устанавливает силу сигнала для пользователя">
                     </div>
                 </form>
             </div>
@@ -736,8 +736,8 @@
                          </button>
                      </div>
                      <div class="col-6">
-                         <a class="btn btn-info btn-lg w-100" href="{{ url('admin/dashboard/switchuser') }}/{{ $user->id }}" onclick="return confirm('{{ $user->name }} kullanıcısı olarak giriş yapmak istediğinizden emin misiniz? Yönetici paneline istediğiniz zaman dönebilirsiniz.')">
-                             <i class="fas fa-sign-in-alt me-2"></i>Kullanıcı Hesabına Geç
+                         <a class="btn btn-info btn-lg w-100" href="{{ url('admin/dashboard/switchuser') }}/{{ $user->id }}" onclick="return confirm('Вы уверены, что хотите войти как пользователь {{ $user->name }}? Вы можете вернуться в админ-панель в любое время.')">
+                             <i class="fas fa-sign-in-alt me-2"></i>Переключиться на аккаунт пользователя
                          </a>
                      </div>
                  </div>
@@ -769,15 +769,15 @@
                         </select>
                     </div>
                     <div class=" form-group">
-                        <textarea placeholder="Bildirim mesajınızı yazınız" class="form-control" name="notify" rows="8"
+                        <textarea placeholder="Напишите свое уведомление" class="form-control" name="notify" rows="8"
                             maxlength="500" required></textarea>
                         <div class="invalid-feedback">
-                            Lütfen bir bildirim mesajı giriniz (maksimum 500 karakter).
+                            Пожалуйста, введите сообщение уведомления (максимум 500 символов).
                         </div>
                     </div>
                     <div class=" form-group">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
-                        <input type="submit" class="btn btn-info" value="Gönder" data-bs-toggle="tooltip" title="Bildirim mesajını kullanıcı paneline gönderir">
+                        <input type="submit" class="btn btn-info" value="Отправить" data-bs-toggle="tooltip" title="Отправляет уведомление на панель пользователя">
                     </div>
                 </form>
             </div>
@@ -861,7 +861,7 @@
                     </div>
                     <div class=" form-group">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
-                        <input type="submit" class="btn btn-info" value="Sinyali Yükselt" data-bs-toggle="tooltip" title="Kullanıcı için sinyal yükseltme durumunu ayarlar">
+                        <input type="submit" class="btn btn-info" value="Обновить сигнал" data-bs-toggle="tooltip" title="Устанавливает статус обновления сигнала для пользователя">
                     </div>
                 </form>
             </div>
@@ -894,8 +894,8 @@
                          </button>
                      </div>
                      <div class="col-6">
-                         <a class="btn btn-danger btn-lg w-100" href="{{ url('admin/dashboard/delsystemuser') }}/{{ $user->id }}" onclick="return confirm('Bu işlem geri alınamaz. {{ $user->name }} kullanıcısını gerçekten silmek istiyor musunuz?')">
-                             <i class="fas fa-trash me-2"></i>Evet, Hesabı Sil
+                         <a class="btn btn-danger btn-lg w-100" href="{{ url('admin/dashboard/delsystemuser') }}/{{ $user->id }}" onclick="return confirm('Эта операция необратима. Вы действительно хотите удалить пользователя {{ $user->name }}?')">
+                             <i class="fas fa-trash me-2"></i>Да, удалить аккаунт
                          </a>
                      </div>
                  </div>

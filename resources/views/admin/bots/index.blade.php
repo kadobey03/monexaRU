@@ -320,7 +320,7 @@ function generateBulkTrades() {
     }).then((confirmed) => {
         if (confirmed) {
             // Show loading state
-            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Generating Trades...';
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Генерация сделок...';
             btn.disabled = true;
 
             // Make the request

@@ -3,22 +3,22 @@
      <div class="modal-dialog">
          <div class="modal-content">
              <div class="modal-header ">
-                 <h4 class="modal-title" style="text-align:center;">Add General Content</h4>
+                 <h4 class="modal-title" style="text-align:center;">Добавить общий контент</h4>
                  <button type="button" class="close " data-dismiss="modal">&times;</button>
              </div>
              <div class="modal-body ">
                  <form action="{{ route('savecontents') }}" method="post">
                      {{ csrf_field() }}
                      <div class="form-group">
-                         <h5 class=" ">Title of Content</h5>
-                         <input type="text" name="title" placeholder="Name of Content" class="form-control  "
+                         <h5 class=" ">Заголовок контента</h5>
+                         <input type="text" name="title" placeholder="Название контента" class="form-control  "
                              required>
                      </div>
                      <div class="form-group">
-                         <h5 class="">Content Description</h5>
-                         <textarea name="content" placeholder="Describe the content" class="form-control  " rows="2" required></textarea>
+                         <h5 class="">Описание контента</h5>
+                         <textarea name="content" placeholder="Опишите контент" class="form-control  " rows="2" required></textarea>
                      </div>
-                     <button type="submit" class="btn btn-primary">Save</button>
+                     <button type="submit" class="btn btn-primary">Сохранить</button>
                  </form>
 
              </div>
